@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """
 MS-COCO Naturalistic Stimuli Dataset Creator
-
-Filters MS-COCO images to create ~200 naturalistic stimuli with:
 """
 
 import json
 import os
+import shutil
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Dict, List, Tuple
@@ -16,12 +15,17 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+from pycocotools import mask as mask_utils
 from pycocotools.coco import COCO
-from scipy.cluster.hierarchy import fclusterdata
 from tqdm import tqdm
 
-# Import configuration
-import utils.config as config
+# Import configuration if available
+try:
+    import utils.config as config
+
+    HAS_CONFIG = True
+except ImportError:
+    HAS_CONFIG = False
 
 
 class COCONaturalisticDataset:
@@ -29,39 +33,54 @@ class COCONaturalisticDataset:
 
     def __init__(
         self,
-        output_dir: str,
+        coco_root: str = None,
+        output_dir: str = "./coco_naturalistic_stimuli",
         min_area_percent: float = 0.5,
+        min_objects: int = 6,
         min_coverage_percent: float = 85.0,
         target_size: Tuple[int, int] = (1024, 768),
-        cluster_distance_threshold: float = 0.15,
         target_count: int = 200,
     ):
         """
         Initialize the dataset creator.
 
         Args:
-            coco_root: Path to COCO dataset root (contains annotations/ and images/)
+            coco_root: Path to COCO dataset root (if None, tries to load from config)
             output_dir: Where to save processed images and annotations
-            min_area_percent: Minimum area % for an AOI (0.5 = 0.5%)
+            min_area_percent: Minimum area % to count toward object threshold (0.5 = 0.5%)
+            min_objects: Minimum number of objects (>= min_area_percent) required
             min_coverage_percent: Minimum % of image covered by AOIs (85 = 85%)
             target_size: Fixed canvas size (width, height) for letterboxing
-            cluster_distance_threshold: Distance threshold for merging clusters (0-1)
             target_count: Target number of images to select
         """
-        self.config = config
-        self.coco_root = Path(self.config.COCO_PATH)
+        # Handle config
+        if coco_root is None:
+            if HAS_CONFIG:
+                self.coco_root = Path(config.COCO_PATH)
+            else:
+                raise ValueError(
+                    "coco_root must be provided or config.COCO_PATH must be set"
+                )
+        else:
+            self.coco_root = Path(coco_root)
+
         self.output_dir = Path(output_dir)
         self.min_area_percent = min_area_percent
+        self.min_objects = min_objects  # NEW
         self.min_coverage_percent = min_coverage_percent
         self.target_size = target_size
-        self.cluster_distance_threshold = cluster_distance_threshold
         self.target_count = target_count
+
+        # Create output directories (delete existing contents if present)
+        if self.output_dir.exists():
+            shutil.rmtree(self.output_dir)
 
         # Create output directories
         self.output_dir.mkdir(parents=True, exist_ok=True)
         (self.output_dir / "images").mkdir(exist_ok=True)
         (self.output_dir / "visualizations").mkdir(exist_ok=True)
         (self.output_dir / "annotations").mkdir(exist_ok=True)
+        print(f"Created fresh output directory: {self.output_dir}")
 
         # Load COCO API
         ann_file = self.coco_root / "annotations" / "instances_train2017.json"
@@ -86,104 +105,58 @@ class COCONaturalisticDataset:
             return (ann["area"] / img_area) * 100
         return 0.0
 
-    def _calculate_coverage_percent(self, anns: List[Dict], img_area: float) -> float:
-        """Calculate total coverage of annotations as percentage of image."""
-        total_area = sum(ann.get("area", 0) for ann in anns)
-        return (total_area / img_area) * 100
-
-    def _get_bbox_center(self, bbox: List[float]) -> np.ndarray:
-        """Get center point of bounding box [x, y, w, h]."""
-        x, y, w, h = bbox
-        return np.array([x + w / 2, y + h / 2])
-
-    def _merge_clustered_instances(
+    def _calculate_coverage_percent(
         self, anns: List[Dict], img_width: int, img_height: int
-    ) -> List[Dict]:
+    ) -> float:
         """
-        Merge nearby instances of the same class into single AOIs.
-
-        Args:
-            anns: List of annotation dictionaries
-            img_width: Image width for normalization
-            img_height: Image height for normalization
-
-        Returns:
-            List of merged annotations
+        Calculate true coverage using segmentation masks to avoid double-counting overlaps.
+        Returns percentage of image covered by union of all masks.
         """
-        # Group by category
-        category_groups = defaultdict(list)
+        img_area = img_width * img_height
+
+        # Create binary mask for the entire image
+        coverage_mask = np.zeros((img_height, img_width), dtype=np.uint8)
+
         for ann in anns:
-            category_groups[ann["category_id"]].append(ann)
+            # Get segmentation mask
+            if "segmentation" in ann:
+                seg = ann["segmentation"]
 
-        merged_anns = []
-
-        for cat_id, cat_anns in category_groups.items():
-            if len(cat_anns) == 1:
-                # No clustering needed
-                merged_anns.extend(cat_anns)
-                continue
-
-            # Extract normalized centers for clustering
-            centers = []
-            for ann in cat_anns:
-                center = self._get_bbox_center(ann["bbox"])
-                # Normalize to 0-1 range
-                norm_center = center / np.array([img_width, img_height])
-                centers.append(norm_center)
-
-            centers = np.array(centers)
-
-            # Cluster if we have multiple instances
-            if len(centers) > 1:
-                try:
-                    # Use hierarchical clustering
-                    cluster_labels = fclusterdata(
-                        centers,
-                        self.cluster_distance_threshold,
-                        criterion="distance",
-                        metric="euclidean",
-                    )
-                except:
-                    # If clustering fails, treat all as separate
-                    cluster_labels = np.arange(len(centers))
-            else:
-                cluster_labels = [0]
-
-            # Merge annotations in same cluster
-            clusters = defaultdict(list)
-            for idx, label in enumerate(cluster_labels):
-                clusters[label].append(cat_anns[idx])
-
-            for cluster_anns in clusters.values():
-                if len(cluster_anns) == 1:
-                    merged_anns.append(cluster_anns[0])
+                # Check if it's a list (polygon format) - most common in COCO
+                if isinstance(seg, list) and len(seg) > 0:
+                    # Check if it's a list of polygons (not RLE)
+                    if isinstance(seg[0], list):
+                        # Polygon format - convert to RLE then decode
+                        try:
+                            rle = mask_utils.frPyObjects(seg, img_height, img_width)
+                            mask = mask_utils.decode(rle)
+                            if len(mask.shape) == 3:
+                                mask = mask.max(axis=2)  # Combine multiple polygons
+                        except:
+                            # Skip if conversion fails
+                            continue
+                    else:
+                        # Might be RLE in list format, skip for now
+                        continue
+                elif isinstance(seg, dict) and "counts" in seg:
+                    # RLE format as dict
+                    try:
+                        mask = mask_utils.decode(seg)
+                    except:
+                        # Skip if decode fails
+                        continue
                 else:
-                    # Merge multiple annotations
-                    merged = self._merge_annotations(cluster_anns)
-                    merged_anns.append(merged)
+                    # Unknown format, skip
+                    continue
 
-        return merged_anns
+                # Add to coverage mask (union)
+                coverage_mask = np.maximum(coverage_mask, mask)
 
-    def _merge_annotations(self, anns: List[Dict]) -> Dict:
-        """Merge multiple annotations into one."""
-        # Compute union bounding box
-        bboxes = np.array([ann["bbox"] for ann in anns])
-        x1 = bboxes[:, 0].min()
-        y1 = bboxes[:, 1].min()
-        x2 = (bboxes[:, 0] + bboxes[:, 2]).max()
-        y2 = (bboxes[:, 1] + bboxes[:, 3]).max()
+        # Calculate percentage
+        covered_pixels = np.sum(coverage_mask > 0)
+        coverage_percent = (covered_pixels / img_area) * 100
 
-        merged = {
-            "id": anns[0]["id"],
-            "category_id": anns[0]["category_id"],
-            "bbox": [x1, y1, x2 - x1, y2 - y1],
-            "area": sum(ann["area"] for ann in anns),
-            "iscrowd": 1,  # Mark as crowd/merged
-            "merged_from": len(anns),  # Track merge count
-            "segmentation": anns[0].get("segmentation", []),
-        }
-
-        return merged
+        return coverage_percent
 
     def _get_dominant_category(self, anns: List[Dict]) -> int:
         """
@@ -201,25 +174,28 @@ class COCONaturalisticDataset:
     def _calculate_quality_score(self, img_data: Dict) -> float:
         """
         Calculate quality score based on AOI count and sizes.
-        Higher score = more AOIs and larger AOIs.
+        Higher score = more AOIs and better size distribution.
         """
-        merged_anns = img_data["annotations_merged"]
+        counted_anns = img_data["annotations_filtered"]  # Objects >= min_area_percent
         img_area = img_data["image_info"]["width"] * img_data["image_info"]["height"]
 
-        # Component 1: Number of AOIs (normalized to 0-1)
-        aoi_count = len(merged_anns)
+        # Component 1: Number of counted AOIs (normalized to 0-1) - HIGHEST WEIGHT
+        aoi_count = len(counted_anns)
         aoi_score = min(aoi_count / 30, 1.0)  # Cap at 30
 
         # Component 2: Average AOI size as % of image
-        avg_size = np.mean([ann["area"] / img_area * 100 for ann in merged_anns])
-        size_score = min(avg_size / 10, 1.0)  # Cap at 10%
+        if len(counted_anns) > 0:
+            avg_size = np.mean([ann["area"] / img_area * 100 for ann in counted_anns])
+            size_score = min(avg_size / 10, 1.0)  # Cap at 10%
+        else:
+            size_score = 0.0
 
         # Component 3: Coverage (already filtered to be >min_coverage)
         coverage = img_data["coverage_percent"]
         coverage_score = min(coverage / 100, 1.0)
 
-        # Weighted combination (prioritize coverage and count)
-        quality_score = 0.5 * coverage_score + 0.3 * aoi_score + 0.2 * size_score
+        # Weighted combination (prioritize object count)
+        quality_score = 0.6 * aoi_score + 0.25 * coverage_score + 0.15 * size_score
 
         return quality_score
 
@@ -296,7 +272,9 @@ class COCONaturalisticDataset:
         """
         print("\nFiltering COCO images...")
         print(
-            f"Criteria: Coverage >= {self.min_coverage_percent}%, AOI size >= {self.min_area_percent}%"
+            f"Criteria:\n"
+            f"  - Minimum {self.min_objects} objects (>= {self.min_area_percent}% area)\n"
+            f"  - Coverage: >= {self.min_coverage_percent}%"
         )
 
         img_ids = self.coco.getImgIds()
@@ -313,47 +291,57 @@ class COCONaturalisticDataset:
             # Calculate image area
             img_area = img_info["width"] * img_info["height"]
 
-            # Filter by area threshold
-            valid_anns = [
+            # Keep ALL objects (including small ones)
+            all_valid_anns = [ann for ann in anns if ann.get("area", 0) > 0]
+
+            # Count only objects >= min_area_percent toward the threshold
+            counted_anns = [
                 ann
-                for ann in anns
+                for ann in all_valid_anns
                 if self._calculate_area_percent(ann, img_area) >= self.min_area_percent
             ]
 
-            if len(valid_anns) == 0:
+            # Check minimum object count
+            if len(counted_anns) < self.min_objects:
                 continue
 
-            # Merge clustered instances
-            merged_anns = self._merge_clustered_instances(
-                valid_anns, img_info["width"], img_info["height"]
+            # Calculate coverage using ALL objects (including small ones)
+            coverage = self._calculate_coverage_percent(
+                all_valid_anns, img_info["width"], img_info["height"]
             )
-
-            # Calculate coverage
-            coverage = self._calculate_coverage_percent(merged_anns, img_area)
 
             # Filter by coverage threshold
             if coverage >= self.min_coverage_percent:
                 # Get dominant category for stratification
-                dominant_cat = self._get_dominant_category(merged_anns)
+                dominant_cat = self._get_dominant_category(counted_anns)
 
                 candidate_images.append(
                     {
                         "image_info": img_info,
                         "annotations_original": anns,
-                        "annotations_filtered": valid_anns,
-                        "annotations_merged": merged_anns,
-                        "object_count": len(merged_anns),
+                        "annotations_all": all_valid_anns,  # All objects
+                        "annotations_filtered": counted_anns,  # Objects >= threshold
+                        "object_count": len(
+                            counted_anns
+                        ),  # Count of >= threshold objects
                         "coverage_percent": coverage,
                         "dominant_category": dominant_cat,
                     }
                 )
 
         print(
-            f"\nFound {len(candidate_images)} candidate images with {self.min_coverage_percent}%+ coverage"
+            f"\nFound {len(candidate_images)} candidate images with "
+            f"{self.min_coverage_percent}%+ coverage and {self.min_objects}+ objects"
         )
 
         if len(candidate_images) == 0:
             print("No images met the criteria!")
+            print("\nTry adjusting parameters:")
+            print(
+                f"  - Lower min_coverage_percent (currently {self.min_coverage_percent}%)"
+            )
+            print(f"  - Lower min_objects (currently {self.min_objects})")
+            print(f"  - Lower min_area_percent (currently {self.min_area_percent}%)")
             return []
 
         # Calculate quality scores
@@ -453,11 +441,11 @@ class COCONaturalisticDataset:
 
     def visualize_image(self, img_data: Dict, show_stages: bool = True) -> None:
         """
-        Create visualization showing filtering pipeline.
+        Create visualization showing filtering pipeline with segmentation masks.
 
         Args:
             img_data: Image metadata from filter_images()
-            show_stages: If True, show original, filtered, and merged stages
+            show_stages: If True, show original and filtered stages
         """
         img_info = img_data["image_info"]
         img_id = img_info["id"]
@@ -486,9 +474,8 @@ class COCONaturalisticDataset:
 
             fig.suptitle(
                 f"Image {img_id}: {img_info['file_name']}\n"
-                f"Original: {len(img_data['annotations_original'])} objects → "
-                f"Filtered: {len(img_data['annotations_filtered'])} → "
-                f"Merged: {len(img_data['annotations_merged'])} AOIs\n"
+                f"All objects: {len(img_data['annotations_all'])} → "
+                f"Counted objects (>={self.min_area_percent}%): {len(img_data['annotations_filtered'])}\n"
                 f"Coverage: {img_data['coverage_percent']:.1f}% | "
                 f"Quality Score: {img_data['quality_score']:.3f} | "
                 f"Dominant: {dom_cat_name}",
@@ -501,49 +488,52 @@ class COCONaturalisticDataset:
             ax.imshow(img)
             self._draw_annotations(
                 ax,
-                img,
                 img_data["annotations_original"],
                 title="Stage 1: All Original Annotations",
-                alpha=0.3,
+                alpha=0.4,
             )
 
-            # Stage 2: Filtered by size
+            # Stage 2: All valid objects (including small ones)
             ax = axes[0, 1]
             ax.imshow(img)
             self._draw_annotations(
                 ax,
-                img,
-                img_data["annotations_filtered"],
-                title=f"Stage 2: After Size Filter (>{self.min_area_percent}% area)",
-                alpha=0.4,
+                img_data["annotations_all"],
+                title=f"Stage 2: All Valid Objects (n={len(img_data['annotations_all'])})",
+                alpha=0.5,
+                use_masks=True,
             )
 
-            # Stage 3: Merged clusters
+            # Stage 3: Coverage visualization
             ax = axes[1, 0]
-            ax.imshow(img)
-            self._draw_annotations(
-                ax,
+            coverage_vis = self._create_coverage_visualization(
                 img,
-                img_data["annotations_merged"],
-                title=f"Stage 3: After Merging ({img_data['coverage_percent']:.1f}% coverage)",
-                alpha=0.5,
-                show_merged=True,
+                img_data["annotations_all"],
+                img_info["width"],
+                img_info["height"],
             )
+            ax.imshow(coverage_vis)
+            ax.set_title(
+                f"Stage 3: Coverage Map ({img_data['coverage_percent']:.1f}%)",
+                fontsize=12,
+                fontweight="bold",
+            )
+            ax.axis("off")
 
             # Stage 4: Letterboxed final
             letterboxed, scale, offset = self._letterbox_image(img, self.target_size)
             transformed_anns = self._transform_annotations(
-                img_data["annotations_merged"], scale, offset
+                img_data["annotations_all"], scale, offset
             )
 
             ax = axes[1, 1]
             ax.imshow(letterboxed)
             self._draw_annotations(
                 ax,
-                letterboxed,
                 transformed_anns,
                 title=f"Stage 4: Letterboxed to {self.target_size[0]}×{self.target_size[1]}",
                 alpha=0.5,
+                use_masks=True,
             )
 
             plt.tight_layout()
@@ -554,16 +544,16 @@ class COCONaturalisticDataset:
 
             letterboxed, scale, offset = self._letterbox_image(img, self.target_size)
             transformed_anns = self._transform_annotations(
-                img_data["annotations_merged"], scale, offset
+                img_data["annotations_all"], scale, offset
             )
 
             ax.imshow(letterboxed)
             self._draw_annotations(
                 ax,
-                letterboxed,
                 transformed_anns,
                 title=f"Final: {len(transformed_anns)} AOIs",
-                alpha=0.4,
+                alpha=0.5,
+                use_masks=True,
             )
 
         # Save visualization
@@ -571,18 +561,74 @@ class COCONaturalisticDataset:
         plt.savefig(output_path, dpi=150, bbox_inches="tight")
         plt.close()
 
-        print(f"Saved visualization: {output_path}")
+    def _create_coverage_visualization(
+        self,
+        img: np.ndarray,
+        anns: List[Dict],
+        img_width: int,
+        img_height: int,
+    ) -> np.ndarray:
+        """Create visualization showing coverage with segmentation masks."""
+        # Create overlay
+        overlay = img.copy()
+
+        # Create binary mask
+        coverage_mask = np.zeros((img_height, img_width), dtype=np.uint8)
+
+        for ann in anns:
+            if "segmentation" in ann:
+                seg = ann["segmentation"]
+
+                # Check if it's a list (polygon format) - most common in COCO
+                if isinstance(seg, list) and len(seg) > 0:
+                    # Check if it's a list of polygons (not RLE)
+                    if isinstance(seg[0], list):
+                        # Polygon format - convert to RLE then decode
+                        try:
+                            rle = mask_utils.frPyObjects(seg, img_height, img_width)
+                            mask = mask_utils.decode(rle)
+                            if len(mask.shape) == 3:
+                                mask = mask.max(axis=2)
+                        except:
+                            # Skip if conversion fails
+                            continue
+                    else:
+                        # Might be RLE in list format, skip for now
+                        continue
+                elif isinstance(seg, dict) and "counts" in seg:
+                    # RLE format as dict
+                    try:
+                        mask = mask_utils.decode(seg)
+                    except:
+                        # Skip if decode fails
+                        continue
+                else:
+                    # Unknown format, skip
+                    continue
+
+                coverage_mask = np.maximum(coverage_mask, mask)
+
+        # Create green overlay for covered areas
+        green_overlay = np.zeros_like(img)
+        green_overlay[:, :, 1] = 255  # Green channel
+
+        # Blend
+        covered = coverage_mask > 0
+        overlay[covered] = cv2.addWeighted(
+            img[covered], 0.5, green_overlay[covered], 0.5, 0
+        )
+
+        return overlay
 
     def _draw_annotations(
         self,
         ax: plt.Axes,
-        img: np.ndarray,
         anns: List[Dict],
         title: str = "",
         alpha: float = 0.4,
-        show_merged: bool = False,
+        use_masks: bool = False,
     ) -> None:
-        """Draw annotations on axis."""
+        """Draw annotations with segmentation masks."""
         ax.set_title(title, fontsize=12, fontweight="bold")
         ax.axis("off")
 
@@ -592,22 +638,85 @@ class COCONaturalisticDataset:
             cat_info = self.coco.loadCats(cat_id)[0]
             color = self.colors[cat_id % len(self.colors)]
 
-            # Draw bounding box
-            x, y, w, h = ann["bbox"]
-            rect = mpatches.Rectangle(
-                (x, y),
-                w,
-                h,
-                linewidth=2,
-                edgecolor=color,
-                facecolor=(*color, alpha),
-            )
-            ax.add_patch(rect)
+            if use_masks and "segmentation" in ann:
+                seg = ann["segmentation"]
 
-            # Label
+                # Draw segmentation mask
+                if isinstance(seg, list) and len(seg) > 0:
+                    # Check if it's polygon format
+                    if isinstance(seg[0], list):
+                        # Polygon format
+                        for s in seg:
+                            poly = np.array(s).reshape(-1, 2)
+                            polygon = mpatches.Polygon(
+                                poly,
+                                closed=True,
+                                linewidth=2,
+                                edgecolor=color,
+                                facecolor=(*color, alpha),
+                            )
+                            ax.add_patch(polygon)
+                    else:
+                        # Unknown list format, fall back to bbox
+                        x, y, w, h = ann["bbox"]
+                        rect = mpatches.Rectangle(
+                            (x, y),
+                            w,
+                            h,
+                            linewidth=2,
+                            edgecolor=color,
+                            facecolor=(*color, alpha),
+                        )
+                        ax.add_patch(rect)
+                elif isinstance(seg, dict) and "counts" in seg:
+                    # RLE format - decode and draw
+                    try:
+                        mask = mask_utils.decode(seg)
+                        # Create colored overlay
+                        colored_mask = np.zeros((*mask.shape, 4))
+                        colored_mask[:, :, :3] = color
+                        colored_mask[:, :, 3] = mask * alpha
+                        ax.imshow(colored_mask)
+                    except:
+                        # Fall back to bbox if decode fails
+                        x, y, w, h = ann["bbox"]
+                        rect = mpatches.Rectangle(
+                            (x, y),
+                            w,
+                            h,
+                            linewidth=2,
+                            edgecolor=color,
+                            facecolor=(*color, alpha),
+                        )
+                        ax.add_patch(rect)
+                else:
+                    # Unknown format, fall back to bbox
+                    x, y, w, h = ann["bbox"]
+                    rect = mpatches.Rectangle(
+                        (x, y),
+                        w,
+                        h,
+                        linewidth=2,
+                        edgecolor=color,
+                        facecolor=(*color, alpha),
+                    )
+                    ax.add_patch(rect)
+            else:
+                # Fall back to bounding box
+                x, y, w, h = ann["bbox"]
+                rect = mpatches.Rectangle(
+                    (x, y),
+                    w,
+                    h,
+                    linewidth=2,
+                    edgecolor=color,
+                    facecolor=(*color, alpha),
+                )
+                ax.add_patch(rect)
+
+            # Label at bbox position
+            x, y, w, h = ann["bbox"]
             label = cat_info["name"]
-            if show_merged and ann.get("merged_from", 0) > 1:
-                label += f" (×{ann['merged_from']})"
 
             ax.text(
                 x,
@@ -647,7 +756,7 @@ class COCONaturalisticDataset:
         ax = axes[0, 1]
         all_cats = []
         for img in selected_images:
-            all_cats.extend([ann["category_id"] for ann in img["annotations_merged"]])
+            all_cats.extend([ann["category_id"] for ann in img["annotations_filtered"]])
 
         cat_counts = defaultdict(int)
         for cat_id in all_cats:
@@ -735,7 +844,9 @@ class COCONaturalisticDataset:
         plt.tight_layout()
 
         # Save
-        output_path = self.output_dir / "visualizations" / "summary_statistics.png"
+        output_path = (
+            self.output_dir / "summary_statistics.png"
+        )  # Changed from visualizations/
         plt.savefig(output_path, dpi=150, bbox_inches="tight")
         plt.close()
 
@@ -792,9 +903,9 @@ class COCONaturalisticDataset:
             # Letterbox
             letterboxed, scale, offset = self._letterbox_image(img, self.target_size)
 
-            # Transform annotations
+            # Transform ALL annotations (including small ones)
             transformed_anns = self._transform_annotations(
-                img_data["annotations_merged"], scale, offset
+                img_data["annotations_all"], scale, offset
             )
 
             # Save letterboxed image
@@ -813,6 +924,9 @@ class COCONaturalisticDataset:
                 "scale": scale,
                 "offset": offset,
                 "num_aois": len(transformed_anns),
+                "num_counted_aois": len(
+                    img_data["annotations_filtered"]
+                ),  # >= threshold
                 "coverage_percent": img_data["coverage_percent"],
                 "quality_score": img_data["quality_score"],
                 "dominant_category": img_data["dominant_category"],
@@ -831,13 +945,15 @@ class COCONaturalisticDataset:
             json.dump(
                 {
                     "info": {
-                        "description": "Naturalistic MS-COCO stimuli dataset with high coverage",
+                        "description": "Naturalistic MS-COCO stimuli with segmentation masks",
                         "date_created": "2025-10-30",
                         "min_area_percent": self.min_area_percent,
+                        "min_objects": self.min_objects,
                         "min_coverage_percent": self.min_coverage_percent,
                         "target_size": self.target_size,
                         "num_images": len(dataset_metadata),
-                        "selection_method": "quality-sorted + stratified by dominant category",
+                        "selection_method": "quality-sorted + stratified, prioritize object count",
+                        "uses_segmentation_masks": True,
                     },
                     "images": dataset_metadata,
                     "categories": [
@@ -852,21 +968,28 @@ class COCONaturalisticDataset:
         print(f"  Images saved: {self.output_dir / 'images'}")
         print(f"  Visualizations: {self.output_dir / 'visualizations'}")
         print(f"  Metadata: {metadata_path}")
+        print(f"\nKey features:")
+        print(f"  ✓ Minimum {self.min_objects} objects per image")
+        print(f"  ✓ No max size filter (keeps all objects)")
+        print(f"  ✓ Small objects (<{self.min_area_percent}%) included but not counted")
+        print(f"  ✓ Uses segmentation masks (precise boundaries)")
 
 
 def main():
     """Main entry point."""
 
     # Configuration
+    COCO_ROOT = None
     OUTPUT_DIR = "./coco_naturalistic_stimuli"
 
     # Initialize dataset creator
     creator = COCONaturalisticDataset(
+        coco_root=COCO_ROOT,
         output_dir=OUTPUT_DIR,
-        min_area_percent=0.5,  # Minimum AOI size
-        min_coverage_percent=85.0,  # NEW: Minimum 85% coverage
+        min_area_percent=0.5,  # Objects >= this count toward minimum
+        min_objects=6,  # Minimum number of counted objects
+        min_coverage_percent=85.0,  # Minimum 85% coverage
         target_size=(1024, 768),  # Fixed canvas size
-        cluster_distance_threshold=0.15,  # Adjust for more/less aggressive merging
         target_count=200,  # Target number of images
     )
 

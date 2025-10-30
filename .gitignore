@@ -1,1 +1,4 @@
 /coco_data/
+.conda/
+.env
+/coco_naturalistic_stimuli/

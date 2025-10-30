@@ -8,7 +8,7 @@ import os
 import shutil
 from collections import Counter, defaultdict
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Set, Tuple
 
 import cv2
 import matplotlib.patches as mpatches
@@ -41,6 +41,7 @@ class COCONaturalisticDataset:
         max_objects: int = 25,
         min_coverage_percent: float = 85.0,
         target_size: Tuple[int, int] = (1024, 768),
+        require_person: bool = True,
     ):
         """
         Initialize the dataset creator.
@@ -54,6 +55,7 @@ class COCONaturalisticDataset:
             max_objects: Maximum number of objects per image
             min_coverage_percent: Minimum % of image covered by AOIs (85 = 85%)
             target_size: Fixed canvas size (width, height) for letterboxing
+            require_person: Require at least 1 person in the scene
         """
         # Handle config
         if coco_root is None:
@@ -73,6 +75,7 @@ class COCONaturalisticDataset:
         self.max_objects = max_objects
         self.min_coverage_percent = min_coverage_percent
         self.target_size = target_size
+        self.require_person = require_person
 
         # Create output directories (delete existing contents if present)
         if self.output_dir.exists():
@@ -108,12 +111,12 @@ class COCONaturalisticDataset:
             return (ann["area"] / img_area) * 100
         return 0.0
 
-    def _check_complete_overlap(
+    def _find_overlapping_aois(
         self, anns: List[Dict], img_width: int, img_height: int
-    ) -> bool:
+    ) -> Set[int]:
         """
-        Check if any AOI completely overlaps another AOI (100% coverage).
-        Returns True if complete overlap is found.
+        Find AOIs that overlap other AOIs >= 95%.
+        Returns set of indices to remove (the larger objects that contain smaller ones).
 
         Optimized with:
         - Strategy 1: Bounding box pre-filtering
@@ -122,10 +125,12 @@ class COCONaturalisticDataset:
         - Strategy 5: Early termination
         """
         if len(anns) < 2:
-            return False
+            return set()
 
         # Strategy 3: Sort by area (largest first) - enables directional checking
-        sorted_anns = sorted(anns, key=lambda a: a.get("area", 0), reverse=True)
+        sorted_indices = sorted(
+            range(len(anns)), key=lambda i: anns[i].get("area", 0), reverse=True
+        )
 
         # Helper function for Strategy 1: Check if bbox_a contains bbox_b
         def bbox_contains(bbox_a, bbox_b):
@@ -136,33 +141,33 @@ class COCONaturalisticDataset:
 
             return x1_a <= x1_b and y1_a <= y1_b and x2_a >= x2_b and y2_a >= y2_b
 
+        indices_to_remove = set()
+
         # Strategy 3: Only check larger → smaller (i always has area >= j)
-        for i in range(len(sorted_anns)):
-            ann_i = sorted_anns[i]
+        for idx_i, i in enumerate(sorted_indices):
+            ann_i = anns[i]
             area_i = ann_i.get("area", 0)
 
             if area_i == 0:
                 continue
 
-            for j in range(i + 1, len(sorted_anns)):
-                ann_j = sorted_anns[j]
+            for j in sorted_indices[idx_i + 1 :]:
+                ann_j = anns[j]
                 area_j = ann_j.get("area", 0)
 
                 if area_j == 0:
                     continue
 
                 # Strategy 2: Area-based early rejection
-                # If smaller object is <85% of larger, it can't be completely contained
                 area_ratio = area_j / area_i
                 if area_ratio < 0.85:
                     continue
 
                 # Strategy 1: Bounding box pre-filtering
-                # Only compute masks if bbox suggests possible containment
                 if not bbox_contains(ann_i["bbox"], ann_j["bbox"]):
                     continue
 
-                # Now check actual masks (only reached if bbox and area suggest overlap)
+                # Now check actual masks
                 if "segmentation" in ann_i and "segmentation" in ann_j:
                     seg_i = ann_i["segmentation"]
                     seg_j = ann_j["segmentation"]
@@ -195,17 +200,17 @@ class COCONaturalisticDataset:
                             if mask_i_area == 0 or mask_j_area == 0:
                                 continue
 
-                            # Check if larger mask (i) completely contains smaller mask (j)
+                            # Check if larger mask (i) contains >= 95% of smaller mask (j)
                             intersection = np.sum((mask_i > 0) & (mask_j > 0))
 
-                            # If intersection equals the smaller mask's area, complete overlap exists
-                            if intersection >= mask_j_area * 0.99:
-                                return True  # Strategy 5: Early termination
+                            if intersection >= mask_j_area * 0.95:
+                                # Remove the LARGER object (i) that's "eating" the smaller one
+                                indices_to_remove.add(i)
 
                         except:
                             continue
 
-        return False
+        return indices_to_remove
 
     def _calculate_coverage_percent(
         self, anns: List[Dict], img_width: int, img_height: int
@@ -272,36 +277,6 @@ class COCONaturalisticDataset:
         cat_counts = Counter(ann["category_id"] for ann in anns)
         # Return most common category
         return cat_counts.most_common(1)[0][0]
-
-    def _calculate_quality_score(self, img_data: Dict) -> float:
-        """
-        Calculate quality score based on AOI count and sizes.
-        Higher score = more AOIs around optimal (15), better size distribution.
-        """
-        counted_anns = img_data["annotations_filtered"]  # Objects >= min_area_percent
-        img_area = img_data["image_info"]["width"] * img_data["image_info"]["height"]
-
-        # Component 1: Number of counted AOIs - Gaussian centered at 15
-        aoi_count = len(counted_anns)
-        optimal_count = 15
-        std_dev = 5
-        aoi_score = np.exp(-((aoi_count - optimal_count) ** 2) / (2 * std_dev**2))
-
-        # Component 2: Average AOI size as % of image - INCREASED WEIGHT
-        if len(counted_anns) > 0:
-            avg_size = np.mean([ann["area"] / img_area * 100 for ann in counted_anns])
-            size_score = min(avg_size / 10, 1.0)  # Cap at 10%
-        else:
-            size_score = 0.0
-
-        # Component 3: Coverage (already filtered to be >min_coverage)
-        coverage = img_data["coverage_percent"]
-        coverage_score = min(coverage / 100, 1.0)
-
-        # Weighted combination (increased size importance)
-        quality_score = 0.4 * aoi_score + 0.35 * size_score + 0.25 * coverage_score
-
-        return quality_score
 
     def _letterbox_image(
         self, img: np.ndarray, target_size: Tuple[int, int]
@@ -380,11 +355,15 @@ class COCONaturalisticDataset:
             f"  - Objects: {self.min_objects}-{self.max_objects} (>= {self.min_area_percent}% area)\n"
             f"  - Minimum {self.min_categories} distinct categories\n"
             f"  - Coverage: >= {self.min_coverage_percent}%\n"
-            f"  - No complete AOI overlaps"
+            f"  - Require person: {self.require_person}\n"
+            f"  - Remove crowd annotations (iscrowd=1)\n"
+            f"  - Remove AOIs with >= 95% overlaps"
         )
 
         img_ids = self.coco.getImgIds()
         candidate_images = []
+        overlap_removals = 0
+        crowd_removals = 0
 
         for img_id in tqdm(img_ids, desc="Scanning images"):
             img_info = self.coco.loadImgs(img_id)[0]
@@ -397,8 +376,39 @@ class COCONaturalisticDataset:
             # Calculate image area
             img_area = img_info["width"] * img_info["height"]
 
-            # Keep ALL objects (including small ones)
-            all_valid_anns = [ann for ann in anns if ann.get("area", 0) > 0]
+            # Keep ALL objects (including small ones) but filter out crowd annotations
+            all_valid_anns = [
+                ann
+                for ann in anns
+                if ann.get("area", 0) > 0 and ann.get("iscrowd", 0) == 0
+            ]
+
+            # Track crowd removals
+            crowd_removals += (
+                len(anns)
+                - len([ann for ann in anns if ann.get("area", 0) > 0])
+                - len(
+                    [
+                        ann
+                        for ann in anns
+                        if ann.get("area", 0) > 0 and ann.get("iscrowd", 0) == 1
+                    ]
+                )
+            )
+
+            # Check for complete overlaps and get indices to remove
+            overlapping_indices = self._find_overlapping_aois(
+                all_valid_anns, img_info["width"], img_info["height"]
+            )
+
+            # Remove overlapping AOIs
+            if overlapping_indices:
+                overlap_removals += len(overlapping_indices)
+                all_valid_anns = [
+                    ann
+                    for i, ann in enumerate(all_valid_anns)
+                    if i not in overlapping_indices
+                ]
 
             # Count only objects >= min_area_percent toward the threshold
             counted_anns = [
@@ -414,15 +424,15 @@ class COCONaturalisticDataset:
             ):
                 continue
 
+            # Check for at least 1 person (category_id = 1 in COCO)
+            if self.require_person:
+                has_person = any(ann["category_id"] == 1 for ann in counted_anns)
+                if not has_person:
+                    continue
+
             # Check minimum distinct categories
             distinct_categories = len(set(ann["category_id"] for ann in counted_anns))
             if distinct_categories < self.min_categories:
-                continue
-
-            # Check for complete overlaps
-            if self._check_complete_overlap(
-                all_valid_anns, img_info["width"], img_info["height"]
-            ):
                 continue
 
             # Calculate coverage using ALL objects (including small ones)
@@ -439,7 +449,7 @@ class COCONaturalisticDataset:
                     {
                         "image_info": img_info,
                         "annotations_original": anns,
-                        "annotations_all": all_valid_anns,  # All objects
+                        "annotations_all": all_valid_anns,  # All objects (minus crowds and overlaps)
                         "annotations_filtered": counted_anns,  # Objects >= threshold
                         "object_count": len(counted_anns),
                         "category_count": distinct_categories,
@@ -448,7 +458,18 @@ class COCONaturalisticDataset:
                     }
                 )
 
-        print(f"\nFound {len(candidate_images)} images meeting all criteria")
+        # Count total crowd annotations removed
+        total_crowd_removals = 0
+        for img_id in img_ids:
+            ann_ids = self.coco.getAnnIds(imgIds=img_id)
+            anns = self.coco.loadAnns(ann_ids)
+            total_crowd_removals += len(
+                [ann for ann in anns if ann.get("iscrowd", 0) == 1]
+            )
+
+        print(f"\nRemoved {total_crowd_removals} crowd annotations (iscrowd=1)")
+        print(f"Removed {overlap_removals} overlapping AOIs across all images")
+        print(f"Found {len(candidate_images)} images meeting all criteria")
 
         if len(candidate_images) == 0:
             print("No images met the criteria!")
@@ -460,20 +481,10 @@ class COCONaturalisticDataset:
             print(f"  - Raise max_objects (currently {self.max_objects})")
             print(f"  - Lower min_categories (currently {self.min_categories})")
             print(f"  - Lower min_area_percent (currently {self.min_area_percent}%)")
+            if self.require_person:
+                print(f"  - Set require_person=False")
             return []
 
-        # Calculate quality scores
-        print("\nCalculating quality scores...")
-        for img_data in candidate_images:
-            img_data["quality_score"] = self._calculate_quality_score(img_data)
-
-        # Sort by quality score (descending) - keep all images
-        candidate_images.sort(key=lambda x: x["quality_score"], reverse=True)
-
-        print(f"Top quality score: {candidate_images[0]['quality_score']:.3f}")
-        print(
-            f"Median quality score: {candidate_images[len(candidate_images)//2]['quality_score']:.3f}"
-        )
         print(f"Selected all {len(candidate_images)} images")
 
         return candidate_images
@@ -517,7 +528,6 @@ class COCONaturalisticDataset:
                 f"Counted objects (>={self.min_area_percent}%): {len(img_data['annotations_filtered'])} → "
                 f"Categories: {img_data['category_count']}\n"
                 f"Coverage: {img_data['coverage_percent']:.1f}% | "
-                f"Quality Score: {img_data['quality_score']:.3f} | "
                 f"Dominant: {dom_cat_name}",
                 fontsize=14,
                 fontweight="bold",
@@ -750,18 +760,24 @@ class COCONaturalisticDataset:
                 )
                 ax.add_patch(rect)
 
-            # Label at bbox position
+            # Label at CENTER of bbox
             x, y, w, h = ann["bbox"]
             label = cat_info["name"]
 
+            # Calculate center position
+            center_x = x + w / 2
+            center_y = y + h / 2
+
             ax.text(
-                x,
-                y - 5,
+                center_x,
+                center_y,
                 label,
                 fontsize=8,
                 bbox=dict(boxstyle="round,pad=0.3", facecolor=color, alpha=0.7),
                 color="white",
                 fontweight="bold",
+                ha="center",  # Horizontal alignment
+                va="center",  # Vertical alignment
             )
 
     def create_summary_statistics(self, selected_images: List[Dict]) -> None:
@@ -829,23 +845,8 @@ class COCONaturalisticDataset:
         )
         ax.legend()
 
-        # Quality score distribution
-        ax = axes[1, 0]
-        scores = [img["quality_score"] for img in selected_images]
-        ax.hist(scores, bins=20, edgecolor="black", alpha=0.7, color="purple")
-        ax.set_xlabel("Quality Score")
-        ax.set_ylabel("Frequency")
-        ax.set_title("Quality Score Distribution")
-        ax.axvline(
-            np.mean(scores),
-            color="red",
-            linestyle="--",
-            label=f"Mean: {np.mean(scores):.3f}",
-        )
-        ax.legend()
-
         # Category count distribution
-        ax = axes[1, 1]
+        ax = axes[1, 0]
         cat_counts_per_img = [img["category_count"] for img in selected_images]
         ax.hist(
             cat_counts_per_img,
@@ -866,7 +867,7 @@ class COCONaturalisticDataset:
         ax.legend()
 
         # Image dimensions
-        ax = axes[1, 2]
+        ax = axes[1, 1]
         widths = [img["image_info"]["width"] for img in selected_images]
         heights = [img["image_info"]["height"] for img in selected_images]
 
@@ -882,6 +883,9 @@ class COCONaturalisticDataset:
         )
         ax.axvline(self.target_size[0], color="red", linestyle="--")
         ax.legend()
+
+        # Hide the unused subplot
+        axes[1, 2].axis("off")
 
         plt.tight_layout()
 
@@ -967,7 +971,6 @@ class COCONaturalisticDataset:
                 "num_counted_aois": len(img_data["annotations_filtered"]),
                 "num_categories": img_data["category_count"],
                 "coverage_percent": img_data["coverage_percent"],
-                "quality_score": img_data["quality_score"],
                 "dominant_category": img_data["dominant_category"],
                 "dominant_category_name": (
                     self.coco.loadCats(img_data["dominant_category"])[0]["name"]
@@ -991,9 +994,12 @@ class COCONaturalisticDataset:
                         "max_objects": self.max_objects,
                         "min_categories": self.min_categories,
                         "min_coverage_percent": self.min_coverage_percent,
+                        "require_person": self.require_person,
+                        "overlap_threshold": 0.95,
+                        "removes_crowd_annotations": True,
                         "target_size": self.target_size,
                         "num_images": len(dataset_metadata),
-                        "selection_method": "quality-sorted, no stratification",
+                        "selection_method": "crowd annotations removed (iscrowd=1), overlapping AOIs removed (>= 95%)",
                         "uses_segmentation_masks": True,
                     },
                     "images": dataset_metadata,
@@ -1012,8 +1018,9 @@ class COCONaturalisticDataset:
         print(f"\nKey features:")
         print(f"  ✓ {self.min_objects}-{self.max_objects} objects per image")
         print(f"  ✓ Minimum {self.min_categories} distinct categories")
-        print(f"  ✓ No complete AOI overlaps")
-        print(f"  ✓ Quality score optimized for ~15 AOIs")
+        print(f"  ✓ Requires person in scene: {self.require_person}")
+        print(f"  ✓ Crowd annotations removed (iscrowd=1)")
+        print(f"  ✓ Overlapping AOIs removed (>= 95% overlap)")
         print(f"  ✓ Small objects (<{self.min_area_percent}%) included but not counted")
         print(f"  ✓ Uses segmentation masks (precise boundaries)")
 
@@ -1035,10 +1042,11 @@ def main():
         max_objects=25,
         min_coverage_percent=80.0,
         target_size=(1024, 768),
+        require_person=True,
     )
 
     # Process dataset
-    creator.process_dataset(visualize_samples=15)
+    creator.process_dataset(visualize_samples=20)
 
 
 if __name__ == "__main__":

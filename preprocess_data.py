@@ -37,9 +37,10 @@ class COCONaturalisticDataset:
         output_dir: str = "./coco_naturalistic_stimuli",
         min_area_percent: float = 0.5,
         min_objects: int = 6,
+        min_categories: int = 3,
+        max_objects: int = 25,
         min_coverage_percent: float = 85.0,
         target_size: Tuple[int, int] = (1024, 768),
-        target_count: int = 200,
     ):
         """
         Initialize the dataset creator.
@@ -49,9 +50,10 @@ class COCONaturalisticDataset:
             output_dir: Where to save processed images and annotations
             min_area_percent: Minimum area % to count toward object threshold (0.5 = 0.5%)
             min_objects: Minimum number of objects (>= min_area_percent) required
+            min_categories: Minimum number of distinct categories required
+            max_objects: Maximum number of objects per image
             min_coverage_percent: Minimum % of image covered by AOIs (85 = 85%)
             target_size: Fixed canvas size (width, height) for letterboxing
-            target_count: Target number of images to select
         """
         # Handle config
         if coco_root is None:
@@ -66,10 +68,11 @@ class COCONaturalisticDataset:
 
         self.output_dir = Path(output_dir)
         self.min_area_percent = min_area_percent
-        self.min_objects = min_objects  # NEW
+        self.min_objects = min_objects
+        self.min_categories = min_categories
+        self.max_objects = max_objects
         self.min_coverage_percent = min_coverage_percent
         self.target_size = target_size
-        self.target_count = target_count
 
         # Create output directories (delete existing contents if present)
         if self.output_dir.exists():
@@ -104,6 +107,51 @@ class COCONaturalisticDataset:
         if "area" in ann:
             return (ann["area"] / img_area) * 100
         return 0.0
+
+    def _check_complete_overlap(
+        self, anns: List[Dict], img_width: int, img_height: int
+    ) -> bool:
+        """
+        Check if any AOI completely overlaps another AOI (100% coverage).
+        Returns True if complete overlap is found.
+        """
+        if len(anns) < 2:
+            return False
+
+        masks = []
+        for ann in anns:
+            if "segmentation" in ann:
+                seg = ann["segmentation"]
+                if isinstance(seg, list) and len(seg) > 0 and isinstance(seg[0], list):
+                    try:
+                        rle = mask_utils.frPyObjects(seg, img_height, img_width)
+                        mask = mask_utils.decode(rle)
+                        if len(mask.shape) == 3:
+                            mask = mask.max(axis=2)
+                        masks.append(mask)
+                    except:
+                        continue
+
+        # Check each pair of masks for complete overlap
+        for i in range(len(masks)):
+            for j in range(i + 1, len(masks)):
+                mask_i_area = np.sum(masks[i] > 0)
+                mask_j_area = np.sum(masks[j] > 0)
+
+                if mask_i_area == 0 or mask_j_area == 0:
+                    continue
+
+                # Check if one mask completely contains the other
+                intersection = np.sum((masks[i] > 0) & (masks[j] > 0))
+
+                # If intersection equals one of the mask areas, complete overlap exists
+                if (
+                    intersection >= mask_i_area * 0.99
+                    or intersection >= mask_j_area * 0.99
+                ):
+                    return True
+
+        return False
 
     def _calculate_coverage_percent(
         self, anns: List[Dict], img_width: int, img_height: int
@@ -174,16 +222,18 @@ class COCONaturalisticDataset:
     def _calculate_quality_score(self, img_data: Dict) -> float:
         """
         Calculate quality score based on AOI count and sizes.
-        Higher score = more AOIs and better size distribution.
+        Higher score = more AOIs around optimal (15), better size distribution.
         """
         counted_anns = img_data["annotations_filtered"]  # Objects >= min_area_percent
         img_area = img_data["image_info"]["width"] * img_data["image_info"]["height"]
 
-        # Component 1: Number of counted AOIs (normalized to 0-1) - HIGHEST WEIGHT
+        # Component 1: Number of counted AOIs - Gaussian centered at 15
         aoi_count = len(counted_anns)
-        aoi_score = min(aoi_count / 30, 1.0)  # Cap at 30
+        optimal_count = 15
+        std_dev = 5
+        aoi_score = np.exp(-((aoi_count - optimal_count) ** 2) / (2 * std_dev**2))
 
-        # Component 2: Average AOI size as % of image
+        # Component 2: Average AOI size as % of image - INCREASED WEIGHT
         if len(counted_anns) > 0:
             avg_size = np.mean([ann["area"] / img_area * 100 for ann in counted_anns])
             size_score = min(avg_size / 10, 1.0)  # Cap at 10%
@@ -194,8 +244,8 @@ class COCONaturalisticDataset:
         coverage = img_data["coverage_percent"]
         coverage_score = min(coverage / 100, 1.0)
 
-        # Weighted combination (prioritize object count)
-        quality_score = 0.6 * aoi_score + 0.25 * coverage_score + 0.15 * size_score
+        # Weighted combination (increased size importance)
+        quality_score = 0.4 * aoi_score + 0.35 * size_score + 0.25 * coverage_score
 
         return quality_score
 
@@ -273,8 +323,10 @@ class COCONaturalisticDataset:
         print("\nFiltering COCO images...")
         print(
             f"Criteria:\n"
-            f"  - Minimum {self.min_objects} objects (>= {self.min_area_percent}% area)\n"
-            f"  - Coverage: >= {self.min_coverage_percent}%"
+            f"  - Objects: {self.min_objects}-{self.max_objects} (>= {self.min_area_percent}% area)\n"
+            f"  - Minimum {self.min_categories} distinct categories\n"
+            f"  - Coverage: >= {self.min_coverage_percent}%\n"
+            f"  - No complete AOI overlaps"
         )
 
         img_ids = self.coco.getImgIds()
@@ -301,8 +353,22 @@ class COCONaturalisticDataset:
                 if self._calculate_area_percent(ann, img_area) >= self.min_area_percent
             ]
 
-            # Check minimum object count
-            if len(counted_anns) < self.min_objects:
+            # Check minimum and maximum object count
+            if (
+                len(counted_anns) < self.min_objects
+                or len(counted_anns) > self.max_objects
+            ):
+                continue
+
+            # Check minimum distinct categories
+            distinct_categories = len(set(ann["category_id"] for ann in counted_anns))
+            if distinct_categories < self.min_categories:
+                continue
+
+            # Check for complete overlaps
+            if self._check_complete_overlap(
+                all_valid_anns, img_info["width"], img_info["height"]
+            ):
                 continue
 
             # Calculate coverage using ALL objects (including small ones)
@@ -312,7 +378,7 @@ class COCONaturalisticDataset:
 
             # Filter by coverage threshold
             if coverage >= self.min_coverage_percent:
-                # Get dominant category for stratification
+                # Get dominant category
                 dominant_cat = self._get_dominant_category(counted_anns)
 
                 candidate_images.append(
@@ -321,18 +387,14 @@ class COCONaturalisticDataset:
                         "annotations_original": anns,
                         "annotations_all": all_valid_anns,  # All objects
                         "annotations_filtered": counted_anns,  # Objects >= threshold
-                        "object_count": len(
-                            counted_anns
-                        ),  # Count of >= threshold objects
+                        "object_count": len(counted_anns),
+                        "category_count": distinct_categories,
                         "coverage_percent": coverage,
                         "dominant_category": dominant_cat,
                     }
                 )
 
-        print(
-            f"\nFound {len(candidate_images)} candidate images with "
-            f"{self.min_coverage_percent}%+ coverage and {self.min_objects}+ objects"
-        )
+        print(f"\nFound {len(candidate_images)} images meeting all criteria")
 
         if len(candidate_images) == 0:
             print("No images met the criteria!")
@@ -341,6 +403,8 @@ class COCONaturalisticDataset:
                 f"  - Lower min_coverage_percent (currently {self.min_coverage_percent}%)"
             )
             print(f"  - Lower min_objects (currently {self.min_objects})")
+            print(f"  - Raise max_objects (currently {self.max_objects})")
+            print(f"  - Lower min_categories (currently {self.min_categories})")
             print(f"  - Lower min_area_percent (currently {self.min_area_percent}%)")
             return []
 
@@ -349,95 +413,16 @@ class COCONaturalisticDataset:
         for img_data in candidate_images:
             img_data["quality_score"] = self._calculate_quality_score(img_data)
 
-        # Sort by quality score (descending)
+        # Sort by quality score (descending) - keep all images
         candidate_images.sort(key=lambda x: x["quality_score"], reverse=True)
 
         print(f"Top quality score: {candidate_images[0]['quality_score']:.3f}")
         print(
             f"Median quality score: {candidate_images[len(candidate_images)//2]['quality_score']:.3f}"
         )
+        print(f"Selected all {len(candidate_images)} images")
 
-        # Stratified sampling by dominant category
-        print(f"\nPerforming stratified sampling for {self.target_count} images...")
-        selected_images = self._stratified_sample(candidate_images, self.target_count)
-
-        print(f"Selected {len(selected_images)} images")
-        return selected_images
-
-    def _stratified_sample(self, candidates: List[Dict], n_samples: int) -> List[Dict]:
-        """
-        Sample images using stratified sampling by dominant category.
-        Ensures diversity in scene types while prioritizing quality.
-        """
-        # Group by dominant category
-        category_groups = defaultdict(list)
-        for img in candidates:
-            cat = img["dominant_category"]
-            category_groups[cat].append(img)
-
-        # Count images per category
-        cat_counts = {cat: len(imgs) for cat, imgs in category_groups.items()}
-        print(f"\nCategory distribution in candidates:")
-        sorted_cats = sorted(cat_counts.items(), key=lambda x: x[1], reverse=True)
-        for cat_id, count in sorted_cats[:10]:
-            cat_name = self.coco.loadCats(cat_id)[0]["name"]
-            print(f"  {cat_name}: {count} images ({count/len(candidates)*100:.1f}%)")
-        if len(sorted_cats) > 10:
-            print(f"  ... and {len(sorted_cats)-10} more categories")
-
-        # Calculate samples per category (proportional to availability)
-        total_candidates = len(candidates)
-        samples_per_cat = {}
-        for cat_id, imgs in category_groups.items():
-            # Proportional allocation
-            proportion = len(imgs) / total_candidates
-            n_cat_samples = max(
-                1, int(proportion * n_samples)
-            )  # At least 1 per category
-            samples_per_cat[cat_id] = min(n_cat_samples, len(imgs))
-
-        # Adjust if we're over/under the target
-        total_allocated = sum(samples_per_cat.values())
-        if total_allocated > n_samples:
-            # Remove excess from largest categories
-            while total_allocated > n_samples:
-                largest_cat = max(samples_per_cat, key=samples_per_cat.get)
-                if samples_per_cat[largest_cat] > 1:
-                    samples_per_cat[largest_cat] -= 1
-                    total_allocated -= 1
-                else:
-                    break
-        elif total_allocated < n_samples:
-            # Add to categories that have more images available
-            remaining = n_samples - total_allocated
-            for cat_id in sorted(
-                category_groups.keys(),
-                key=lambda c: len(category_groups[c]),
-                reverse=True,
-            ):
-                if remaining == 0:
-                    break
-                available = len(category_groups[cat_id])
-                current = samples_per_cat[cat_id]
-                can_add = min(remaining, available - current)
-                if can_add > 0:
-                    samples_per_cat[cat_id] += can_add
-                    remaining -= can_add
-
-        # Sample from each category (top quality images)
-        selected = []
-        for cat_id, n_cat in samples_per_cat.items():
-            cat_images = category_groups[cat_id]
-            # Already sorted by quality, take top n
-            selected.extend(cat_images[:n_cat])
-
-        print(f"\nFinal selection distribution:")
-        final_cat_counts = Counter(img["dominant_category"] for img in selected)
-        for cat_id, count in final_cat_counts.most_common(10):
-            cat_name = self.coco.loadCats(cat_id)[0]["name"]
-            print(f"  {cat_name}: {count} images ({count/len(selected)*100:.1f}%)")
-
-        return selected
+        return candidate_images
 
     def visualize_image(self, img_data: Dict, show_stages: bool = True) -> None:
         """
@@ -475,7 +460,8 @@ class COCONaturalisticDataset:
             fig.suptitle(
                 f"Image {img_id}: {img_info['file_name']}\n"
                 f"All objects: {len(img_data['annotations_all'])} → "
-                f"Counted objects (>={self.min_area_percent}%): {len(img_data['annotations_filtered'])}\n"
+                f"Counted objects (>={self.min_area_percent}%): {len(img_data['annotations_filtered'])} → "
+                f"Categories: {img_data['category_count']}\n"
                 f"Coverage: {img_data['coverage_percent']:.1f}% | "
                 f"Quality Score: {img_data['quality_score']:.3f} | "
                 f"Dominant: {dom_cat_name}",
@@ -483,15 +469,11 @@ class COCONaturalisticDataset:
                 fontweight="bold",
             )
 
-            # Stage 1: Original with all annotations
+            # Stage 1: Original image without annotations
             ax = axes[0, 0]
             ax.imshow(img)
-            self._draw_annotations(
-                ax,
-                img_data["annotations_original"],
-                title="Stage 1: All Original Annotations",
-                alpha=0.4,
-            )
+            ax.set_title("Stage 1: Original Image", fontsize=12, fontweight="bold")
+            ax.axis("off")
 
             # Stage 2: All valid objects (including small ones)
             ax = axes[0, 1]
@@ -808,20 +790,26 @@ class COCONaturalisticDataset:
         )
         ax.legend()
 
-        # Dominant category distribution (stratification check)
+        # Category count distribution
         ax = axes[1, 1]
-        dom_cats = [img["dominant_category"] for img in selected_images]
-        dom_cat_counts = Counter(dom_cats)
-
-        # Top 10 dominant categories
-        top_dom = dom_cat_counts.most_common(10)
-        dom_names = [self.coco.loadCats(c[0])[0]["name"] for c in top_dom]
-        dom_vals = [c[1] for c in top_dom]
-
-        ax.barh(dom_names, dom_vals, alpha=0.7, color="orange")
-        ax.set_xlabel("Number of Images")
-        ax.set_title("Dominant Categories (Stratification)")
-        ax.invert_yaxis()
+        cat_counts_per_img = [img["category_count"] for img in selected_images]
+        ax.hist(
+            cat_counts_per_img,
+            bins=range(self.min_categories, max(cat_counts_per_img) + 2),
+            edgecolor="black",
+            alpha=0.7,
+            color="orange",
+        )
+        ax.set_xlabel("Number of Categories")
+        ax.set_ylabel("Frequency")
+        ax.set_title("Category Count per Image")
+        ax.axvline(
+            np.mean(cat_counts_per_img),
+            color="red",
+            linestyle="--",
+            label=f"Mean: {np.mean(cat_counts_per_img):.1f}",
+        )
+        ax.legend()
 
         # Image dimensions
         ax = axes[1, 2]
@@ -844,15 +832,13 @@ class COCONaturalisticDataset:
         plt.tight_layout()
 
         # Save
-        output_path = (
-            self.output_dir / "summary_statistics.png"
-        )  # Changed from visualizations/
+        output_path = self.output_dir / "summary_statistics.png"
         plt.savefig(output_path, dpi=150, bbox_inches="tight")
         plt.close()
 
         print(f"\nSaved summary statistics: {output_path}")
 
-    def process_dataset(self, visualize_samples: int = 10) -> None:
+    def process_dataset(self, visualize_samples: int = 20) -> None:
         """
         Main processing pipeline.
 
@@ -924,9 +910,8 @@ class COCONaturalisticDataset:
                 "scale": scale,
                 "offset": offset,
                 "num_aois": len(transformed_anns),
-                "num_counted_aois": len(
-                    img_data["annotations_filtered"]
-                ),  # >= threshold
+                "num_counted_aois": len(img_data["annotations_filtered"]),
+                "num_categories": img_data["category_count"],
                 "coverage_percent": img_data["coverage_percent"],
                 "quality_score": img_data["quality_score"],
                 "dominant_category": img_data["dominant_category"],
@@ -949,10 +934,12 @@ class COCONaturalisticDataset:
                         "date_created": "2025-10-30",
                         "min_area_percent": self.min_area_percent,
                         "min_objects": self.min_objects,
+                        "max_objects": self.max_objects,
+                        "min_categories": self.min_categories,
                         "min_coverage_percent": self.min_coverage_percent,
                         "target_size": self.target_size,
                         "num_images": len(dataset_metadata),
-                        "selection_method": "quality-sorted + stratified, prioritize object count",
+                        "selection_method": "quality-sorted, no stratification",
                         "uses_segmentation_masks": True,
                     },
                     "images": dataset_metadata,
@@ -969,8 +956,10 @@ class COCONaturalisticDataset:
         print(f"  Visualizations: {self.output_dir / 'visualizations'}")
         print(f"  Metadata: {metadata_path}")
         print(f"\nKey features:")
-        print(f"  ✓ Minimum {self.min_objects} objects per image")
-        print(f"  ✓ No max size filter (keeps all objects)")
+        print(f"  ✓ {self.min_objects}-{self.max_objects} objects per image")
+        print(f"  ✓ Minimum {self.min_categories} distinct categories")
+        print(f"  ✓ No complete AOI overlaps")
+        print(f"  ✓ Quality score optimized for ~15 AOIs")
         print(f"  ✓ Small objects (<{self.min_area_percent}%) included but not counted")
         print(f"  ✓ Uses segmentation masks (precise boundaries)")
 
@@ -986,15 +975,16 @@ def main():
     creator = COCONaturalisticDataset(
         coco_root=COCO_ROOT,
         output_dir=OUTPUT_DIR,
-        min_area_percent=0.5,  # Objects >= this count toward minimum
-        min_objects=6,  # Minimum number of counted objects
-        min_coverage_percent=85.0,  # Minimum 85% coverage
-        target_size=(1024, 768),  # Fixed canvas size
-        target_count=200,  # Target number of images
+        min_area_percent=0.5,
+        min_objects=6,
+        min_categories=3,
+        max_objects=25,
+        min_coverage_percent=85.0,
+        target_size=(1024, 768),
     )
 
     # Process dataset
-    creator.process_dataset(visualize_samples=10)
+    creator.process_dataset(visualize_samples=20)
 
 
 if __name__ == "__main__":

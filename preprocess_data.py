@@ -114,42 +114,96 @@ class COCONaturalisticDataset:
         """
         Check if any AOI completely overlaps another AOI (100% coverage).
         Returns True if complete overlap is found.
+
+        Optimized with:
+        - Strategy 1: Bounding box pre-filtering
+        - Strategy 2: Area-based early rejection
+        - Strategy 3: Hierarchical checking (sort by area)
+        - Strategy 5: Early termination
         """
         if len(anns) < 2:
             return False
 
-        masks = []
-        for ann in anns:
-            if "segmentation" in ann:
-                seg = ann["segmentation"]
-                if isinstance(seg, list) and len(seg) > 0 and isinstance(seg[0], list):
-                    try:
-                        rle = mask_utils.frPyObjects(seg, img_height, img_width)
-                        mask = mask_utils.decode(rle)
-                        if len(mask.shape) == 3:
-                            mask = mask.max(axis=2)
-                        masks.append(mask)
-                    except:
-                        continue
+        # Strategy 3: Sort by area (largest first) - enables directional checking
+        sorted_anns = sorted(anns, key=lambda a: a.get("area", 0), reverse=True)
 
-        # Check each pair of masks for complete overlap
-        for i in range(len(masks)):
-            for j in range(i + 1, len(masks)):
-                mask_i_area = np.sum(masks[i] > 0)
-                mask_j_area = np.sum(masks[j] > 0)
+        # Helper function for Strategy 1: Check if bbox_a contains bbox_b
+        def bbox_contains(bbox_a, bbox_b):
+            x1_a, y1_a, w_a, h_a = bbox_a
+            x1_b, y1_b, w_b, h_b = bbox_b
+            x2_a, y2_a = x1_a + w_a, y1_a + h_a
+            x2_b, y2_b = x1_b + w_b, y1_b + h_b
 
-                if mask_i_area == 0 or mask_j_area == 0:
+            return x1_a <= x1_b and y1_a <= y1_b and x2_a >= x2_b and y2_a >= y2_b
+
+        # Strategy 3: Only check larger → smaller (i always has area >= j)
+        for i in range(len(sorted_anns)):
+            ann_i = sorted_anns[i]
+            area_i = ann_i.get("area", 0)
+
+            if area_i == 0:
+                continue
+
+            for j in range(i + 1, len(sorted_anns)):
+                ann_j = sorted_anns[j]
+                area_j = ann_j.get("area", 0)
+
+                if area_j == 0:
                     continue
 
-                # Check if one mask completely contains the other
-                intersection = np.sum((masks[i] > 0) & (masks[j] > 0))
+                # Strategy 2: Area-based early rejection
+                # If smaller object is <85% of larger, it can't be completely contained
+                area_ratio = area_j / area_i
+                if area_ratio < 0.85:
+                    continue
 
-                # If intersection equals one of the mask areas, complete overlap exists
-                if (
-                    intersection >= mask_i_area * 0.99
-                    or intersection >= mask_j_area * 0.99
-                ):
-                    return True
+                # Strategy 1: Bounding box pre-filtering
+                # Only compute masks if bbox suggests possible containment
+                if not bbox_contains(ann_i["bbox"], ann_j["bbox"]):
+                    continue
+
+                # Now check actual masks (only reached if bbox and area suggest overlap)
+                if "segmentation" in ann_i and "segmentation" in ann_j:
+                    seg_i = ann_i["segmentation"]
+                    seg_j = ann_j["segmentation"]
+
+                    # Only process polygon format
+                    if (
+                        isinstance(seg_i, list)
+                        and len(seg_i) > 0
+                        and isinstance(seg_i[0], list)
+                        and isinstance(seg_j, list)
+                        and len(seg_j) > 0
+                        and isinstance(seg_j[0], list)
+                    ):
+
+                        try:
+                            # Decode masks
+                            rle_i = mask_utils.frPyObjects(seg_i, img_height, img_width)
+                            mask_i = mask_utils.decode(rle_i)
+                            if len(mask_i.shape) == 3:
+                                mask_i = mask_i.max(axis=2)
+
+                            rle_j = mask_utils.frPyObjects(seg_j, img_height, img_width)
+                            mask_j = mask_utils.decode(rle_j)
+                            if len(mask_j.shape) == 3:
+                                mask_j = mask_j.max(axis=2)
+
+                            mask_i_area = np.sum(mask_i > 0)
+                            mask_j_area = np.sum(mask_j > 0)
+
+                            if mask_i_area == 0 or mask_j_area == 0:
+                                continue
+
+                            # Check if larger mask (i) completely contains smaller mask (j)
+                            intersection = np.sum((mask_i > 0) & (mask_j > 0))
+
+                            # If intersection equals the smaller mask's area, complete overlap exists
+                            if intersection >= mask_j_area * 0.99:
+                                return True  # Strategy 5: Early termination
+
+                        except:
+                            continue
 
         return False
 
@@ -976,15 +1030,15 @@ def main():
         coco_root=COCO_ROOT,
         output_dir=OUTPUT_DIR,
         min_area_percent=0.5,
-        min_objects=6,
+        min_objects=5,
         min_categories=3,
         max_objects=25,
-        min_coverage_percent=85.0,
+        min_coverage_percent=80.0,
         target_size=(1024, 768),
     )
 
     # Process dataset
-    creator.process_dataset(visualize_samples=20)
+    creator.process_dataset(visualize_samples=15)
 
 
 if __name__ == "__main__":

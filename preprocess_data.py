@@ -3,33 +3,25 @@
 MS-COCO Naturalistic Stimuli Dataset Creator
 
 Filters MS-COCO images to create ~200 naturalistic stimuli with:
-- 10-30 object AOIs per image
-- AOIs > 0.5% of image area
-- Merged clusters of same-class instances
-- Letterboxed to fixed canvas size
-- Visual outputs for evaluation
-
-Author: Claude
-Date: 2025-10-29
 """
 
 import json
 import os
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Tuple
 
 import cv2
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-from matplotlib.collections import PatchCollection
-from pycocotools import mask as mask_utils
 from pycocotools.coco import COCO
 from scipy.cluster.hierarchy import fclusterdata
-from scipy.spatial.distance import cdist
 from tqdm import tqdm
+
+# Import configuration
+import utils.config as config
 
 
 class COCONaturalisticDataset:
@@ -37,11 +29,9 @@ class COCONaturalisticDataset:
 
     def __init__(
         self,
-        coco_root: str,
         output_dir: str,
-        min_objects: int = 10,
-        max_objects: int = 30,
         min_area_percent: float = 0.5,
+        min_coverage_percent: float = 85.0,
         target_size: Tuple[int, int] = (1024, 768),
         cluster_distance_threshold: float = 0.15,
         target_count: int = 200,
@@ -52,18 +42,17 @@ class COCONaturalisticDataset:
         Args:
             coco_root: Path to COCO dataset root (contains annotations/ and images/)
             output_dir: Where to save processed images and annotations
-            min_objects: Minimum objects per image
-            max_objects: Maximum objects per image
             min_area_percent: Minimum area % for an AOI (0.5 = 0.5%)
+            min_coverage_percent: Minimum % of image covered by AOIs (85 = 85%)
             target_size: Fixed canvas size (width, height) for letterboxing
             cluster_distance_threshold: Distance threshold for merging clusters (0-1)
             target_count: Target number of images to select
         """
-        self.coco_root = Path(coco_root)
+        self.config = config
+        self.coco_root = Path(self.config.COCO_PATH)
         self.output_dir = Path(output_dir)
-        self.min_objects = min_objects
-        self.max_objects = max_objects
         self.min_area_percent = min_area_percent
+        self.min_coverage_percent = min_coverage_percent
         self.target_size = target_size
         self.cluster_distance_threshold = cluster_distance_threshold
         self.target_count = target_count
@@ -96,6 +85,11 @@ class COCONaturalisticDataset:
         if "area" in ann:
             return (ann["area"] / img_area) * 100
         return 0.0
+
+    def _calculate_coverage_percent(self, anns: List[Dict], img_area: float) -> float:
+        """Calculate total coverage of annotations as percentage of image."""
+        total_area = sum(ann.get("area", 0) for ann in anns)
+        return (total_area / img_area) * 100
 
     def _get_bbox_center(self, bbox: List[float]) -> np.ndarray:
         """Get center point of bounding box [x, y, w, h]."""
@@ -191,6 +185,44 @@ class COCONaturalisticDataset:
 
         return merged
 
+    def _get_dominant_category(self, anns: List[Dict]) -> int:
+        """
+        Get the most frequent category in the image.
+        Returns category_id of the dominant category.
+        """
+        if not anns:
+            return -1
+
+        # Count instances by category
+        cat_counts = Counter(ann["category_id"] for ann in anns)
+        # Return most common category
+        return cat_counts.most_common(1)[0][0]
+
+    def _calculate_quality_score(self, img_data: Dict) -> float:
+        """
+        Calculate quality score based on AOI count and sizes.
+        Higher score = more AOIs and larger AOIs.
+        """
+        merged_anns = img_data["annotations_merged"]
+        img_area = img_data["image_info"]["width"] * img_data["image_info"]["height"]
+
+        # Component 1: Number of AOIs (normalized to 0-1)
+        aoi_count = len(merged_anns)
+        aoi_score = min(aoi_count / 30, 1.0)  # Cap at 30
+
+        # Component 2: Average AOI size as % of image
+        avg_size = np.mean([ann["area"] / img_area * 100 for ann in merged_anns])
+        size_score = min(avg_size / 10, 1.0)  # Cap at 10%
+
+        # Component 3: Coverage (already filtered to be >min_coverage)
+        coverage = img_data["coverage_percent"]
+        coverage_score = min(coverage / 100, 1.0)
+
+        # Weighted combination (prioritize coverage and count)
+        quality_score = 0.5 * coverage_score + 0.3 * aoi_score + 0.2 * size_score
+
+        return quality_score
+
     def _letterbox_image(
         self, img: np.ndarray, target_size: Tuple[int, int]
     ) -> Tuple[np.ndarray, float, Tuple[int, int]]:
@@ -234,7 +266,12 @@ class COCONaturalisticDataset:
         for ann in anns.copy():
             # Transform bbox
             x, y, w, h = ann["bbox"]
-            ann["bbox"] = [x * scale + x_off, y * scale + y_off, w * scale, h * scale]
+            ann["bbox"] = [
+                x * scale + x_off,
+                y * scale + y_off,
+                w * scale,
+                h * scale,
+            ]
 
             # Transform segmentation if present
             if "segmentation" in ann and isinstance(ann["segmentation"], list):
@@ -258,9 +295,12 @@ class COCONaturalisticDataset:
             List of selected image metadata with annotations
         """
         print("\nFiltering COCO images...")
+        print(
+            f"Criteria: Coverage >= {self.min_coverage_percent}%, AOI size >= {self.min_area_percent}%"
+        )
 
         img_ids = self.coco.getImgIds()
-        selected_images = []
+        candidate_images = []
 
         for img_id in tqdm(img_ids, desc="Scanning images"):
             img_info = self.coco.loadImgs(img_id)[0]
@@ -280,7 +320,7 @@ class COCONaturalisticDataset:
                 if self._calculate_area_percent(ann, img_area) >= self.min_area_percent
             ]
 
-            if len(valid_anns) < self.min_objects:
+            if len(valid_anns) == 0:
                 continue
 
             # Merge clustered instances
@@ -288,33 +328,128 @@ class COCONaturalisticDataset:
                 valid_anns, img_info["width"], img_info["height"]
             )
 
-            # Check final object count
-            final_count = len(merged_anns)
-            if self.min_objects <= final_count <= self.max_objects:
-                selected_images.append(
+            # Calculate coverage
+            coverage = self._calculate_coverage_percent(merged_anns, img_area)
+
+            # Filter by coverage threshold
+            if coverage >= self.min_coverage_percent:
+                # Get dominant category for stratification
+                dominant_cat = self._get_dominant_category(merged_anns)
+
+                candidate_images.append(
                     {
                         "image_info": img_info,
                         "annotations_original": anns,
                         "annotations_filtered": valid_anns,
                         "annotations_merged": merged_anns,
-                        "object_count": final_count,
+                        "object_count": len(merged_anns),
+                        "coverage_percent": coverage,
+                        "dominant_category": dominant_cat,
                     }
                 )
 
-            # Early stop if we have enough
-            if len(selected_images) >= self.target_count * 2:  # Get extras for sampling
-                break
+        print(
+            f"\nFound {len(candidate_images)} candidate images with {self.min_coverage_percent}%+ coverage"
+        )
 
-        # Sample if we have too many
-        if len(selected_images) > self.target_count:
-            np.random.seed(42)
-            indices = np.random.choice(
-                len(selected_images), self.target_count, replace=False
-            )
-            selected_images = [selected_images[i] for i in sorted(indices)]
+        if len(candidate_images) == 0:
+            print("No images met the criteria!")
+            return []
 
-        print(f"\nSelected {len(selected_images)} images")
+        # Calculate quality scores
+        print("\nCalculating quality scores...")
+        for img_data in candidate_images:
+            img_data["quality_score"] = self._calculate_quality_score(img_data)
+
+        # Sort by quality score (descending)
+        candidate_images.sort(key=lambda x: x["quality_score"], reverse=True)
+
+        print(f"Top quality score: {candidate_images[0]['quality_score']:.3f}")
+        print(
+            f"Median quality score: {candidate_images[len(candidate_images)//2]['quality_score']:.3f}"
+        )
+
+        # Stratified sampling by dominant category
+        print(f"\nPerforming stratified sampling for {self.target_count} images...")
+        selected_images = self._stratified_sample(candidate_images, self.target_count)
+
+        print(f"Selected {len(selected_images)} images")
         return selected_images
+
+    def _stratified_sample(self, candidates: List[Dict], n_samples: int) -> List[Dict]:
+        """
+        Sample images using stratified sampling by dominant category.
+        Ensures diversity in scene types while prioritizing quality.
+        """
+        # Group by dominant category
+        category_groups = defaultdict(list)
+        for img in candidates:
+            cat = img["dominant_category"]
+            category_groups[cat].append(img)
+
+        # Count images per category
+        cat_counts = {cat: len(imgs) for cat, imgs in category_groups.items()}
+        print(f"\nCategory distribution in candidates:")
+        sorted_cats = sorted(cat_counts.items(), key=lambda x: x[1], reverse=True)
+        for cat_id, count in sorted_cats[:10]:
+            cat_name = self.coco.loadCats(cat_id)[0]["name"]
+            print(f"  {cat_name}: {count} images ({count/len(candidates)*100:.1f}%)")
+        if len(sorted_cats) > 10:
+            print(f"  ... and {len(sorted_cats)-10} more categories")
+
+        # Calculate samples per category (proportional to availability)
+        total_candidates = len(candidates)
+        samples_per_cat = {}
+        for cat_id, imgs in category_groups.items():
+            # Proportional allocation
+            proportion = len(imgs) / total_candidates
+            n_cat_samples = max(
+                1, int(proportion * n_samples)
+            )  # At least 1 per category
+            samples_per_cat[cat_id] = min(n_cat_samples, len(imgs))
+
+        # Adjust if we're over/under the target
+        total_allocated = sum(samples_per_cat.values())
+        if total_allocated > n_samples:
+            # Remove excess from largest categories
+            while total_allocated > n_samples:
+                largest_cat = max(samples_per_cat, key=samples_per_cat.get)
+                if samples_per_cat[largest_cat] > 1:
+                    samples_per_cat[largest_cat] -= 1
+                    total_allocated -= 1
+                else:
+                    break
+        elif total_allocated < n_samples:
+            # Add to categories that have more images available
+            remaining = n_samples - total_allocated
+            for cat_id in sorted(
+                category_groups.keys(),
+                key=lambda c: len(category_groups[c]),
+                reverse=True,
+            ):
+                if remaining == 0:
+                    break
+                available = len(category_groups[cat_id])
+                current = samples_per_cat[cat_id]
+                can_add = min(remaining, available - current)
+                if can_add > 0:
+                    samples_per_cat[cat_id] += can_add
+                    remaining -= can_add
+
+        # Sample from each category (top quality images)
+        selected = []
+        for cat_id, n_cat in samples_per_cat.items():
+            cat_images = category_groups[cat_id]
+            # Already sorted by quality, take top n
+            selected.extend(cat_images[:n_cat])
+
+        print(f"\nFinal selection distribution:")
+        final_cat_counts = Counter(img["dominant_category"] for img in selected)
+        for cat_id, count in final_cat_counts.most_common(10):
+            cat_name = self.coco.loadCats(cat_id)[0]["name"]
+            print(f"  {cat_name}: {count} images ({count/len(selected)*100:.1f}%)")
+
+        return selected
 
     def visualize_image(self, img_data: Dict, show_stages: bool = True) -> None:
         """
@@ -342,11 +477,21 @@ class COCONaturalisticDataset:
         if show_stages:
             # Create multi-stage visualization
             fig, axes = plt.subplots(2, 2, figsize=(20, 15))
+
+            # Get dominant category name
+            dom_cat = img_data["dominant_category"]
+            dom_cat_name = (
+                self.coco.loadCats(dom_cat)[0]["name"] if dom_cat != -1 else "none"
+            )
+
             fig.suptitle(
                 f"Image {img_id}: {img_info['file_name']}\n"
                 f"Original: {len(img_data['annotations_original'])} objects → "
                 f"Filtered: {len(img_data['annotations_filtered'])} → "
-                f"Merged: {len(img_data['annotations_merged'])} AOIs",
+                f"Merged: {len(img_data['annotations_merged'])} AOIs\n"
+                f"Coverage: {img_data['coverage_percent']:.1f}% | "
+                f"Quality Score: {img_data['quality_score']:.3f} | "
+                f"Dominant: {dom_cat_name}",
                 fontsize=14,
                 fontweight="bold",
             )
@@ -380,7 +525,7 @@ class COCONaturalisticDataset:
                 ax,
                 img,
                 img_data["annotations_merged"],
-                title="Stage 3: After Merging Clusters",
+                title=f"Stage 3: After Merging ({img_data['coverage_percent']:.1f}% coverage)",
                 alpha=0.5,
                 show_merged=True,
             )
@@ -450,7 +595,12 @@ class COCONaturalisticDataset:
             # Draw bounding box
             x, y, w, h = ann["bbox"]
             rect = mpatches.Rectangle(
-                (x, y), w, h, linewidth=2, edgecolor=color, facecolor=(*color, alpha)
+                (x, y),
+                w,
+                h,
+                linewidth=2,
+                edgecolor=color,
+                facecolor=(*color, alpha),
             )
             ax.add_patch(rect)
 
@@ -481,12 +631,7 @@ class COCONaturalisticDataset:
         # Object count distribution
         ax = axes[0, 0]
         counts = [img["object_count"] for img in selected_images]
-        ax.hist(
-            counts,
-            bins=range(self.min_objects, self.max_objects + 2),
-            edgecolor="black",
-            alpha=0.7,
-        )
+        ax.hist(counts, bins=20, edgecolor="black", alpha=0.7)
         ax.set_xlabel("Number of AOIs per Image")
         ax.set_ylabel("Frequency")
         ax.set_title("AOI Count Distribution")
@@ -518,67 +663,56 @@ class COCONaturalisticDataset:
         ax.set_title("Top 15 Object Categories")
         ax.invert_yaxis()
 
-        # Filtering funnel
+        # Coverage distribution
         ax = axes[0, 2]
-        original_counts = [len(img["annotations_original"]) for img in selected_images]
-        filtered_counts = [len(img["annotations_filtered"]) for img in selected_images]
-        merged_counts = [len(img["annotations_merged"]) for img in selected_images]
-
-        stages = ["Original", "After\nSize Filter", "After\nMerging"]
-        means = [
-            np.mean(original_counts),
-            np.mean(filtered_counts),
-            np.mean(merged_counts),
-        ]
-
-        ax.plot(stages, means, "o-", linewidth=2, markersize=10)
-        ax.set_ylabel("Average Objects per Image")
-        ax.set_title("Filtering Pipeline")
-        ax.grid(True, alpha=0.3)
-
-        # Merge statistics
-        ax = axes[1, 0]
-        merge_counts = []
-        for img in selected_images:
-            for ann in img["annotations_merged"]:
-                if ann.get("merged_from", 1) > 1:
-                    merge_counts.append(ann["merged_from"])
-
-        if merge_counts:
-            ax.hist(
-                merge_counts,
-                bins=range(2, max(merge_counts) + 2),
-                edgecolor="black",
-                alpha=0.7,
-            )
-            ax.set_xlabel("Instances Merged")
-            ax.set_ylabel("Frequency")
-            ax.set_title(f"Cluster Merging ({len(merge_counts)} merged AOIs)")
-        else:
-            ax.text(
-                0.5,
-                0.5,
-                "No clusters merged",
-                ha="center",
-                va="center",
-                transform=ax.transAxes,
-            )
-            ax.set_title("Cluster Merging")
-
-        # Area distribution
-        ax = axes[1, 1]
-        areas = []
-        for img in selected_images:
-            img_area = img["image_info"]["width"] * img["image_info"]["height"]
-            for ann in img["annotations_merged"]:
-                area_pct = (ann["area"] / img_area) * 100
-                areas.append(area_pct)
-
-        ax.hist(areas, bins=50, edgecolor="black", alpha=0.7)
-        ax.set_xlabel("AOI Area (% of image)")
+        coverages = [img["coverage_percent"] for img in selected_images]
+        ax.hist(coverages, bins=20, edgecolor="black", alpha=0.7, color="green")
+        ax.set_xlabel("Coverage (%)")
         ax.set_ylabel("Frequency")
-        ax.set_title("AOI Size Distribution")
-        ax.set_xlim(0, min(100, np.percentile(areas, 99)))
+        ax.set_title(f"Coverage Distribution (min: {self.min_coverage_percent}%)")
+        ax.axvline(
+            self.min_coverage_percent,
+            color="red",
+            linestyle="--",
+            label=f"Threshold: {self.min_coverage_percent}%",
+        )
+        ax.axvline(
+            np.mean(coverages),
+            color="blue",
+            linestyle="--",
+            label=f"Mean: {np.mean(coverages):.1f}%",
+        )
+        ax.legend()
+
+        # Quality score distribution
+        ax = axes[1, 0]
+        scores = [img["quality_score"] for img in selected_images]
+        ax.hist(scores, bins=20, edgecolor="black", alpha=0.7, color="purple")
+        ax.set_xlabel("Quality Score")
+        ax.set_ylabel("Frequency")
+        ax.set_title("Quality Score Distribution")
+        ax.axvline(
+            np.mean(scores),
+            color="red",
+            linestyle="--",
+            label=f"Mean: {np.mean(scores):.3f}",
+        )
+        ax.legend()
+
+        # Dominant category distribution (stratification check)
+        ax = axes[1, 1]
+        dom_cats = [img["dominant_category"] for img in selected_images]
+        dom_cat_counts = Counter(dom_cats)
+
+        # Top 10 dominant categories
+        top_dom = dom_cat_counts.most_common(10)
+        dom_names = [self.coco.loadCats(c[0])[0]["name"] for c in top_dom]
+        dom_vals = [c[1] for c in top_dom]
+
+        ax.barh(dom_names, dom_vals, alpha=0.7, color="orange")
+        ax.set_xlabel("Number of Images")
+        ax.set_title("Dominant Categories (Stratification)")
+        ax.invert_yaxis()
 
         # Image dimensions
         ax = axes[1, 2]
@@ -679,6 +813,14 @@ class COCONaturalisticDataset:
                 "scale": scale,
                 "offset": offset,
                 "num_aois": len(transformed_anns),
+                "coverage_percent": img_data["coverage_percent"],
+                "quality_score": img_data["quality_score"],
+                "dominant_category": img_data["dominant_category"],
+                "dominant_category_name": (
+                    self.coco.loadCats(img_data["dominant_category"])[0]["name"]
+                    if img_data["dominant_category"] != -1
+                    else "none"
+                ),
                 "annotations": transformed_anns,
             }
             dataset_metadata.append(metadata)
@@ -689,13 +831,13 @@ class COCONaturalisticDataset:
             json.dump(
                 {
                     "info": {
-                        "description": "Naturalistic MS-COCO stimuli dataset",
-                        "date_created": "2025-10-29",
-                        "min_objects": self.min_objects,
-                        "max_objects": self.max_objects,
+                        "description": "Naturalistic MS-COCO stimuli dataset with high coverage",
+                        "date_created": "2025-10-30",
                         "min_area_percent": self.min_area_percent,
+                        "min_coverage_percent": self.min_coverage_percent,
                         "target_size": self.target_size,
                         "num_images": len(dataset_metadata),
+                        "selection_method": "quality-sorted + stratified by dominant category",
                     },
                     "images": dataset_metadata,
                     "categories": [
@@ -716,19 +858,16 @@ def main():
     """Main entry point."""
 
     # Configuration
-    COCO_ROOT = "/path/to/coco"  # UPDATE THIS PATH
     OUTPUT_DIR = "./coco_naturalistic_stimuli"
 
     # Initialize dataset creator
     creator = COCONaturalisticDataset(
-        coco_root=COCO_ROOT,
         output_dir=OUTPUT_DIR,
-        min_objects=10,
-        max_objects=30,
-        min_area_percent=0.5,
+        min_area_percent=0.5,  # Minimum AOI size
+        min_coverage_percent=85.0,  # NEW: Minimum 85% coverage
         target_size=(1024, 768),  # Fixed canvas size
         cluster_distance_threshold=0.15,  # Adjust for more/less aggressive merging
-        target_count=200,
+        target_count=200,  # Target number of images
     )
 
     # Process dataset

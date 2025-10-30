@@ -1,0 +1,19 @@
+# Conda environment file for COCO preprocessor
+# Install with: conda env update --file environment.yml --prune
+
+name: relational_scanpath
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.8
+  - numpy>=1.21.0
+  - opencv>=4.5.0
+  - matplotlib>=3.3.0
+  - seaborn>=0.11.0
+  - scipy>=1.7.0
+  - pillow>=8.0.0
+  - tqdm>=4.60.0
+  - pip
+  - pip:
+      - pycocotools>=2.0.0

@@ -88,13 +88,27 @@ class COCONaturalisticDataset:
         (self.output_dir / "annotations").mkdir(exist_ok=True)
         print(f"Created fresh output directory: {self.output_dir}")
 
-        # Load COCO API
+        # Load COCO API for instances
         ann_file = self.coco_root / "annotations" / "instances_train2017.json"
         if not ann_file.exists():
             ann_file = self.coco_root / "annotations" / "instances_val2017.json"
 
         print(f"Loading COCO annotations from {ann_file}...")
         self.coco = COCO(str(ann_file))
+
+        # Load COCO API for captions
+        caption_file = self.coco_root / "annotations" / "captions_train2017.json"
+        if not caption_file.exists():
+            caption_file = self.coco_root / "annotations" / "captions_val2017.json"
+
+        if caption_file.exists():
+            print(f"Loading COCO captions from {caption_file}...")
+            self.coco_caps = COCO(str(caption_file))
+            self.has_captions = True
+        else:
+            print("Warning: Caption file not found. Continuing without captions.")
+            self.coco_caps = None
+            self.has_captions = False
 
         # Color palette for visualization
         self.colors = self._generate_colors(len(self.coco.getCatIds()))
@@ -104,6 +118,24 @@ class COCONaturalisticDataset:
         np.random.seed(42)
         colors = sns.color_palette("husl", n)
         return np.array(colors)
+
+    def _get_captions(self, img_id: int) -> List[str]:
+        """
+        Get all captions for an image.
+
+        Args:
+            img_id: COCO image ID
+
+        Returns:
+            List of caption strings (typically 5 per image)
+        """
+        if not self.has_captions:
+            return []
+
+        ann_ids = self.coco_caps.getAnnIds(imgIds=img_id)
+        anns = self.coco_caps.loadAnns(ann_ids)
+        captions = [ann["caption"] for ann in anns]
+        return captions
 
     def _calculate_area_percent(self, ann: Dict, img_area: float) -> float:
         """Calculate annotation area as percentage of image."""
@@ -314,14 +346,18 @@ class COCONaturalisticDataset:
     def _transform_annotations(
         self, anns: List[Dict], scale: float, offset: Tuple[int, int]
     ) -> List[Dict]:
-        """Transform annotation coordinates for letterboxed image."""
+        """Transform annotation coordinates for letterboxed image, without
+        mutating the originals.
+        """
         x_off, y_off = offset
-
         transformed = []
-        for ann in anns.copy():
+
+        for ann in anns:
+            ann_new = ann.copy()  # shallow copy of dict
+
             # Transform bbox
-            x, y, w, h = ann["bbox"]
-            ann["bbox"] = [
+            x, y, w, h = ann_new["bbox"]
+            ann_new["bbox"] = [
                 x * scale + x_off,
                 y * scale + y_off,
                 w * scale,
@@ -329,16 +365,15 @@ class COCONaturalisticDataset:
             ]
 
             # Transform segmentation if present
-            if "segmentation" in ann and isinstance(ann["segmentation"], list):
+            if "segmentation" in ann_new and isinstance(ann_new["segmentation"], list):
                 new_segs = []
-                for seg in ann["segmentation"]:
-                    # seg is [x1, y1, x2, y2, ...]
+                for seg in ann_new["segmentation"]:
                     seg_array = np.array(seg).reshape(-1, 2)
                     seg_array = seg_array * scale + [x_off, y_off]
                     new_segs.append(seg_array.flatten().tolist())
-                ann["segmentation"] = new_segs
+                ann_new["segmentation"] = new_segs
 
-            transformed.append(ann)
+            transformed.append(ann_new)
 
         return transformed
 
@@ -445,6 +480,9 @@ class COCONaturalisticDataset:
                 # Get dominant category
                 dominant_cat = self._get_dominant_category(counted_anns)
 
+                # Get captions for this image
+                captions = self._get_captions(img_id)
+
                 candidate_images.append(
                     {
                         "image_info": img_info,
@@ -455,6 +493,7 @@ class COCONaturalisticDataset:
                         "category_count": distinct_categories,
                         "coverage_percent": coverage,
                         "dominant_category": dominant_cat,
+                        "captions": captions,
                     }
                 )
 
@@ -522,13 +561,19 @@ class COCONaturalisticDataset:
                 self.coco.loadCats(dom_cat)[0]["name"] if dom_cat != -1 else "none"
             )
 
+            # Get first caption if available
+            caption_text = ""
+            if img_data["captions"]:
+                caption_text = f"\n\"{img_data['captions'][0]}\""
+
             fig.suptitle(
                 f"Image {img_id}: {img_info['file_name']}\n"
                 f"All objects: {len(img_data['annotations_all'])} → "
                 f"Counted objects (>={self.min_area_percent}%): {len(img_data['annotations_filtered'])} → "
                 f"Categories: {img_data['category_count']}\n"
                 f"Coverage: {img_data['coverage_percent']:.1f}% | "
-                f"Dominant: {dom_cat_name}",
+                f"Dominant: {dom_cat_name}"
+                f"{caption_text}",
                 fontsize=14,
                 fontweight="bold",
             )
@@ -977,6 +1022,7 @@ class COCONaturalisticDataset:
                     if img_data["dominant_category"] != -1
                     else "none"
                 ),
+                "captions": img_data["captions"],
                 "annotations": transformed_anns,
             }
             dataset_metadata.append(metadata)
@@ -987,7 +1033,7 @@ class COCONaturalisticDataset:
             json.dump(
                 {
                     "info": {
-                        "description": "Naturalistic MS-COCO stimuli with segmentation masks",
+                        "description": "Naturalistic MS-COCO stimuli with segmentation masks and captions",
                         "date_created": "2025-10-30",
                         "min_area_percent": self.min_area_percent,
                         "min_objects": self.min_objects,
@@ -997,6 +1043,7 @@ class COCONaturalisticDataset:
                         "require_person": self.require_person,
                         "overlap_threshold": 0.95,
                         "removes_crowd_annotations": True,
+                        "includes_captions": self.has_captions,
                         "target_size": self.target_size,
                         "num_images": len(dataset_metadata),
                         "selection_method": "crowd annotations removed (iscrowd=1), overlapping AOIs removed (>= 95%)",
@@ -1023,6 +1070,7 @@ class COCONaturalisticDataset:
         print(f"  ✓ Overlapping AOIs removed (>= 95% overlap)")
         print(f"  ✓ Small objects (<{self.min_area_percent}%) included but not counted")
         print(f"  ✓ Uses segmentation masks (precise boundaries)")
+        print(f"  ✓ Includes captions: {self.has_captions}")
 
 
 def main():

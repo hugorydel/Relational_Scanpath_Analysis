@@ -1,0 +1,1938 @@
+{
+  "60623": {
+    "status": "return_to",
+    "file_name": "000000060623.jpg",
+    "num_aois": 7,
+    "num_categories": 5,
+    "coverage_percent": 91.99612119437938,
+    "dominant_category": "person"
+  },
+  "515779": {
+    "status": "selected",
+    "file_name": "000000515779.jpg",
+    "num_aois": 19,
+    "num_categories": 4,
+    "coverage_percent": 81.74578313253012,
+    "dominant_category": "person"
+  },
+  "438723": {
+    "status": "return_to",
+    "file_name": "000000438723.jpg",
+    "num_aois": 7,
+    "num_categories": 3,
+    "coverage_percent": 98.9341865904366,
+    "dominant_category": "handbag"
+  },
+  "303590": {
+    "status": "eliminated",
+    "file_name": "000000303590.jpg",
+    "num_aois": 8,
+    "num_categories": 4,
+    "coverage_percent": 82.864,
+    "dominant_category": "person"
+  },
+  "177941": {
+    "status": "eliminated",
+    "file_name": "000000177941.jpg",
+    "num_aois": 12,
+    "num_categories": 7,
+    "coverage_percent": 86.30024941314554,
+    "dominant_category": "pizza"
+  },
+  "24223": {
+    "status": "eliminated",
+    "file_name": "000000024223.jpg",
+    "num_aois": 5,
+    "num_categories": 5,
+    "coverage_percent": 97.05143229166666,
+    "dominant_category": "fork"
+  },
+  "365289": {
+    "status": "return_to",
+    "file_name": "000000365289.jpg",
+    "num_aois": 7,
+    "num_categories": 4,
+    "coverage_percent": 82.67783957845434,
+    "dominant_category": "chair"
+  },
+  "235839": {
+    "status": "eliminated",
+    "file_name": "000000235839.jpg",
+    "num_aois": 5,
+    "num_categories": 3,
+    "coverage_percent": 86.0179012345679,
+    "dominant_category": "bottle"
+  },
+  "69577": {
+    "status": "eliminated",
+    "file_name": "000000069577.jpg",
+    "num_aois": 26,
+    "num_categories": 8,
+    "coverage_percent": 81.02809565727699,
+    "dominant_category": "person"
+  },
+  "334511": {
+    "status": "selected",
+    "file_name": "000000334511.jpg",
+    "num_aois": 25,
+    "num_categories": 6,
+    "coverage_percent": 86.71907552083333,
+    "dominant_category": "person"
+  },
+  "391300": {
+    "status": "eliminated",
+    "file_name": "000000391300.jpg",
+    "num_aois": 7,
+    "num_categories": 4,
+    "coverage_percent": 84.61651053864169,
+    "dominant_category": "person"
+  },
+  "411027": {
+    "status": "eliminated",
+    "file_name": "000000411027.jpg",
+    "num_aois": 11,
+    "num_categories": 6,
+    "coverage_percent": 88.53396420187794,
+    "dominant_category": "cup"
+  },
+  "405261": {
+    "status": "eliminated",
+    "file_name": "000000405261.jpg",
+    "num_aois": 6,
+    "num_categories": 4,
+    "coverage_percent": 86.54289973498234,
+    "dominant_category": "person"
+  },
+  "125228": {
+    "status": "eliminated",
+    "file_name": "000000125228.jpg",
+    "num_aois": 5,
+    "num_categories": 5,
+    "coverage_percent": 89.0146484375,
+    "dominant_category": "bed"
+  },
+  "85826": {
+    "status": "selected",
+    "file_name": "000000085826.jpg",
+    "num_aois": 5,
+    "num_categories": 5,
+    "coverage_percent": 83.62760416666667,
+    "dominant_category": "bed"
+  },
+  "64599": {
+    "status": "eliminated",
+    "file_name": "000000064599.jpg",
+    "num_aois": 16,
+    "num_categories": 5,
+    "coverage_percent": 80.15559623430963,
+    "dominant_category": "bowl"
+  },
+  "257629": {
+    "status": "eliminated",
+    "file_name": "000000257629.jpg",
+    "num_aois": 9,
+    "num_categories": 5,
+    "coverage_percent": 93.01204427083334,
+    "dominant_category": "book"
+  },
+  "404687": {
+    "status": "eliminated",
+    "file_name": "000000404687.jpg",
+    "num_aois": 5,
+    "num_categories": 3,
+    "coverage_percent": 87.34276935146443,
+    "dominant_category": "tie"
+  },
+  "415179": {
+    "status": "eliminated",
+    "file_name": "000000415179.jpg",
+    "num_aois": 9,
+    "num_categories": 4,
+    "coverage_percent": 93.39029947916667,
+    "dominant_category": "banana"
+  },
+  "500871": {
+    "status": "eliminated",
+    "file_name": "000000500871.jpg",
+    "num_aois": 12,
+    "num_categories": 5,
+    "coverage_percent": 94.93684895833333,
+    "dominant_category": "hot dog"
+  },
+  "301029": {
+    "status": "eliminated",
+    "file_name": "000000301029.jpg",
+    "num_aois": 6,
+    "num_categories": 4,
+    "coverage_percent": 94.18717447916667,
+    "dominant_category": "cup"
+  },
+  "3001": {
+    "status": "eliminated",
+    "file_name": "000000003001.jpg",
+    "num_aois": 13,
+    "num_categories": 4,
+    "coverage_percent": 84.5009765625,
+    "dominant_category": "donut"
+  },
+  "488832": {
+    "status": "eliminated",
+    "file_name": "000000488832.jpg",
+    "num_aois": 6,
+    "num_categories": 3,
+    "coverage_percent": 80.13876748251748,
+    "dominant_category": "person"
+  },
+  "429985": {
+    "status": "return_to",
+    "file_name": "000000429985.jpg",
+    "num_aois": 13,
+    "num_categories": 5,
+    "coverage_percent": 83.17990860849058,
+    "dominant_category": "person"
+  },
+  "452866": {
+    "status": "return_to",
+    "file_name": "000000452866.jpg",
+    "num_aois": 6,
+    "num_categories": 5,
+    "coverage_percent": 81.01931949250289,
+    "dominant_category": "person"
+  },
+  "75636": {
+    "status": "eliminated",
+    "file_name": "000000075636.jpg",
+    "num_aois": 9,
+    "num_categories": 5,
+    "coverage_percent": 81.30296296296297,
+    "dominant_category": "bottle"
+  },
+  "225352": {
+    "status": "eliminated",
+    "file_name": "000000225352.jpg",
+    "num_aois": 10,
+    "num_categories": 7,
+    "coverage_percent": 90.12917154566745,
+    "dominant_category": "dining table"
+  },
+  "574103": {
+    "status": "eliminated",
+    "file_name": "000000574103.jpg",
+    "num_aois": 8,
+    "num_categories": 6,
+    "coverage_percent": 92.34118852459017,
+    "dominant_category": "cup"
+  },
+  "344271": {
+    "status": "selected",
+    "file_name": "000000344271.jpg",
+    "num_aois": 9,
+    "num_categories": 7,
+    "coverage_percent": 99.27506510416667,
+    "dominant_category": "bottle"
+  },
+  "191301": {
+    "status": "eliminated",
+    "file_name": "000000191301.jpg",
+    "num_aois": 8,
+    "num_categories": 5,
+    "coverage_percent": 93.97591145833334,
+    "dominant_category": "cup"
+  },
+  "54955": {
+    "status": "return_to",
+    "file_name": "000000054955.jpg",
+    "num_aois": 6,
+    "num_categories": 3,
+    "coverage_percent": 97.00035112359551,
+    "dominant_category": "person"
+  },
+  "549255": {
+    "status": "selected",
+    "file_name": "000000549255.jpg",
+    "num_aois": 5,
+    "num_categories": 5,
+    "coverage_percent": 81.99099099099098,
+    "dominant_category": "bottle"
+  },
+  "367578": {
+    "status": "eliminated",
+    "file_name": "000000367578.jpg",
+    "num_aois": 20,
+    "num_categories": 4,
+    "coverage_percent": 81.00455729166667,
+    "dominant_category": "person"
+  },
+  "434142": {
+    "status": "eliminated",
+    "file_name": "000000434142.jpg",
+    "num_aois": 7,
+    "num_categories": 5,
+    "coverage_percent": 83.11135654885655,
+    "dominant_category": "pizza"
+  },
+  "526028": {
+    "status": "eliminated",
+    "file_name": "000000526028.jpg",
+    "num_aois": 5,
+    "num_categories": 5,
+    "coverage_percent": 91.45572916666667,
+    "dominant_category": "person"
+  },
+  "544216": {
+    "status": "eliminated",
+    "file_name": "000000544216.jpg",
+    "num_aois": 6,
+    "num_categories": 5,
+    "coverage_percent": 96.78450520833334,
+    "dominant_category": "cup"
+  },
+  "353411": {
+    "status": "eliminated",
+    "file_name": "000000353411.jpg",
+    "num_aois": 11,
+    "num_categories": 6,
+    "coverage_percent": 84.16178385416667,
+    "dominant_category": "cup"
+  },
+  "47940": {
+    "status": "eliminated",
+    "file_name": "000000047940.jpg",
+    "num_aois": 6,
+    "num_categories": 4,
+    "coverage_percent": 91.01745892018779,
+    "dominant_category": "book"
+  },
+  "419860": {
+    "status": "eliminated",
+    "file_name": "000000419860.jpg",
+    "num_aois": 7,
+    "num_categories": 6,
+    "coverage_percent": 84.84505208333334,
+    "dominant_category": "person"
+  },
+  "71136": {
+    "status": "eliminated",
+    "file_name": "000000071136.jpg",
+    "num_aois": 11,
+    "num_categories": 6,
+    "coverage_percent": 94.19596354166667,
+    "dominant_category": "person"
+  },
+  "65655": {
+    "status": "eliminated",
+    "file_name": "000000065655.jpg",
+    "num_aois": 30,
+    "num_categories": 5,
+    "coverage_percent": 82.32689950980392,
+    "dominant_category": "person"
+  },
+  "108051": {
+    "status": "eliminated",
+    "file_name": "000000108051.jpg",
+    "num_aois": 7,
+    "num_categories": 5,
+    "coverage_percent": 85.8334834293948,
+    "dominant_category": "bottle"
+  },
+  "287387": {
+    "status": "return_to",
+    "file_name": "000000287387.jpg",
+    "num_aois": 5,
+    "num_categories": 5,
+    "coverage_percent": 82.92903645833334,
+    "dominant_category": "cup"
+  },
+  "46941": {
+    "status": "return_to",
+    "file_name": "000000046941.jpg",
+    "num_aois": 6,
+    "num_categories": 3,
+    "coverage_percent": 88.59870158450704,
+    "dominant_category": "person"
+  },
+  "164899": {
+    "status": "eliminated",
+    "file_name": "000000164899.jpg",
+    "num_aois": 20,
+    "num_categories": 8,
+    "coverage_percent": 91.23101635514018,
+    "dominant_category": "person"
+  },
+  "174336": {
+    "status": "eliminated",
+    "file_name": "000000174336.jpg",
+    "num_aois": 12,
+    "num_categories": 5,
+    "coverage_percent": 82.65104166666667,
+    "dominant_category": "bottle"
+  },
+  "221547": {
+    "status": "return_to",
+    "file_name": "000000221547.jpg",
+    "num_aois": 7,
+    "num_categories": 6,
+    "coverage_percent": 97.927734375,
+    "dominant_category": "person"
+  },
+  "151826": {
+    "status": "eliminated",
+    "file_name": "000000151826.jpg",
+    "num_aois": 10,
+    "num_categories": 3,
+    "coverage_percent": 85.03841145833333,
+    "dominant_category": "umbrella"
+  },
+  "409627": {
+    "status": "eliminated",
+    "file_name": "000000409627.jpg",
+    "num_aois": 5,
+    "num_categories": 4,
+    "coverage_percent": 89.98770053475937,
+    "dominant_category": "chair"
+  },
+  "312524": {
+    "status": "eliminated",
+    "file_name": "000000312524.jpg",
+    "num_aois": 23,
+    "num_categories": 7,
+    "coverage_percent": 81.0342710068777,
+    "dominant_category": "potted plant"
+  },
+  "547212": {
+    "status": "selected",
+    "file_name": "000000547212.jpg",
+    "num_aois": 5,
+    "num_categories": 3,
+    "coverage_percent": 93.94401041666667,
+    "dominant_category": "person"
+  },
+  "160483": {
+    "status": "eliminated",
+    "file_name": "000000160483.jpg",
+    "num_aois": 10,
+    "num_categories": 5,
+    "coverage_percent": 88.46750585480093,
+    "dominant_category": "carrot"
+  },
+  "135399": {
+    "status": "eliminated",
+    "file_name": "000000135399.jpg",
+    "num_aois": 17,
+    "num_categories": 4,
+    "coverage_percent": 81.9482421875,
+    "dominant_category": "bowl"
+  },
+  "566757": {
+    "status": "eliminated",
+    "file_name": "000000566757.jpg",
+    "num_aois": 8,
+    "num_categories": 3,
+    "coverage_percent": 100.0,
+    "dominant_category": "person"
+  },
+  "498856": {
+    "status": "return_to",
+    "file_name": "000000498856.jpg",
+    "num_aois": 6,
+    "num_categories": 4,
+    "coverage_percent": 81.53944672131146,
+    "dominant_category": "book"
+  },
+  "535933": {
+    "status": "eliminated",
+    "file_name": "000000535933.jpg",
+    "num_aois": 7,
+    "num_categories": 4,
+    "coverage_percent": 94.83826112412179,
+    "dominant_category": "cup"
+  },
+  "550702": {
+    "status": "eliminated",
+    "file_name": "000000550702.jpg",
+    "num_aois": 16,
+    "num_categories": 10,
+    "coverage_percent": 90.24156642259415,
+    "dominant_category": "chair"
+  },
+  "250345": {
+    "status": "eliminated",
+    "file_name": "000000250345.jpg",
+    "num_aois": 6,
+    "num_categories": 3,
+    "coverage_percent": 94.25826990632319,
+    "dominant_category": "pizza"
+  },
+  "346774": {
+    "status": "eliminated",
+    "file_name": "000000346774.jpg",
+    "num_aois": 14,
+    "num_categories": 7,
+    "coverage_percent": 80.77897135416666,
+    "dominant_category": "chair"
+  },
+  "544794": {
+    "status": "eliminated",
+    "file_name": "000000544794.jpg",
+    "num_aois": 5,
+    "num_categories": 5,
+    "coverage_percent": 91.64127876569039,
+    "dominant_category": "dining table"
+  },
+  "117089": {
+    "status": "eliminated",
+    "file_name": "000000117089.jpg",
+    "num_aois": 33,
+    "num_categories": 9,
+    "coverage_percent": 85.6982421875,
+    "dominant_category": "person"
+  },
+  "191724": {
+    "status": "eliminated",
+    "file_name": "000000191724.jpg",
+    "num_aois": 8,
+    "num_categories": 6,
+    "coverage_percent": 91.72716627634661,
+    "dominant_category": "hot dog"
+  },
+  "82889": {
+    "status": "eliminated",
+    "file_name": "000000082889.jpg",
+    "num_aois": 20,
+    "num_categories": 4,
+    "coverage_percent": 86.82845052083333,
+    "dominant_category": "chair"
+  },
+  "561523": {
+    "status": "eliminated",
+    "file_name": "000000561523.jpg",
+    "num_aois": 13,
+    "num_categories": 5,
+    "coverage_percent": 82.2543078271028,
+    "dominant_category": "wine glass"
+  },
+  "120340": {
+    "status": "return_to",
+    "file_name": "000000120340.jpg",
+    "num_aois": 10,
+    "num_categories": 3,
+    "coverage_percent": 92.32389322916667,
+    "dominant_category": "person"
+  },
+  "226988": {
+    "status": "eliminated",
+    "file_name": "000000226988.jpg",
+    "num_aois": 15,
+    "num_categories": 3,
+    "coverage_percent": 90.46186666666667,
+    "dominant_category": "person"
+  },
+  "384983": {
+    "status": "eliminated",
+    "file_name": "000000384983.jpg",
+    "num_aois": 6,
+    "num_categories": 3,
+    "coverage_percent": 80.626953125,
+    "dominant_category": "pizza"
+  },
+  "275657": {
+    "status": "eliminated",
+    "file_name": "000000275657.jpg",
+    "num_aois": 8,
+    "num_categories": 5,
+    "coverage_percent": 90.45746294160367,
+    "dominant_category": "person"
+  },
+  "43261": {
+    "status": "eliminated",
+    "file_name": "000000043261.jpg",
+    "num_aois": 11,
+    "num_categories": 4,
+    "coverage_percent": 97.4873046875,
+    "dominant_category": "bowl"
+  },
+  "218404": {
+    "status": "eliminated",
+    "file_name": "000000218404.jpg",
+    "num_aois": 17,
+    "num_categories": 7,
+    "coverage_percent": 91.86841334894613,
+    "dominant_category": "cup"
+  },
+  "161222": {
+    "status": "eliminated",
+    "file_name": "000000161222.jpg",
+    "num_aois": 14,
+    "num_categories": 6,
+    "coverage_percent": 89.78651373403392,
+    "dominant_category": "cup"
+  },
+  "163929": {
+    "status": "return_to",
+    "file_name": "000000163929.jpg",
+    "num_aois": 19,
+    "num_categories": 3,
+    "coverage_percent": 94.26467065868263,
+    "dominant_category": "bench"
+  },
+  "548336": {
+    "status": "eliminated",
+    "file_name": "000000548336.jpg",
+    "num_aois": 7,
+    "num_categories": 3,
+    "coverage_percent": 80.14778645833334,
+    "dominant_category": "chair"
+  },
+  "147309": {
+    "status": "eliminated",
+    "file_name": "000000147309.jpg",
+    "num_aois": 7,
+    "num_categories": 6,
+    "coverage_percent": 86.23893229166667,
+    "dominant_category": "cake"
+  },
+  "232950": {
+    "status": "eliminated",
+    "file_name": "000000232950.jpg",
+    "num_aois": 8,
+    "num_categories": 6,
+    "coverage_percent": 84.54427083333333,
+    "dominant_category": "cup"
+  },
+  "490505": {
+    "status": "eliminated",
+    "file_name": "000000490505.jpg",
+    "num_aois": 8,
+    "num_categories": 6,
+    "coverage_percent": 85.30171286610879,
+    "dominant_category": "person"
+  },
+  "160104": {
+    "status": "eliminated",
+    "file_name": "000000160104.jpg",
+    "num_aois": 12,
+    "num_categories": 7,
+    "coverage_percent": 85.67191037635098,
+    "dominant_category": "cup"
+  },
+  "3779": {
+    "status": "eliminated",
+    "file_name": "000000003779.jpg",
+    "num_aois": 15,
+    "num_categories": 4,
+    "coverage_percent": 94.2216796875,
+    "dominant_category": "wine glass"
+  },
+  "407286": {
+    "status": "return_to",
+    "file_name": "000000407286.jpg",
+    "num_aois": 6,
+    "num_categories": 3,
+    "coverage_percent": 89.59108315098469,
+    "dominant_category": "dog"
+  },
+  "53580": {
+    "status": "eliminated",
+    "file_name": "000000053580.jpg",
+    "num_aois": 6,
+    "num_categories": 3,
+    "coverage_percent": 98.19326810747664,
+    "dominant_category": "chair"
+  },
+  "394079": {
+    "status": "eliminated",
+    "file_name": "000000394079.jpg",
+    "num_aois": 6,
+    "num_categories": 4,
+    "coverage_percent": 85.28190104166666,
+    "dominant_category": "person"
+  },
+  "198464": {
+    "status": "eliminated",
+    "file_name": "000000198464.jpg",
+    "num_aois": 6,
+    "num_categories": 5,
+    "coverage_percent": 85.32603922716628,
+    "dominant_category": "person"
+  },
+  "568426": {
+    "status": "eliminated",
+    "file_name": "000000568426.jpg",
+    "num_aois": 5,
+    "num_categories": 5,
+    "coverage_percent": 93.11067708333334,
+    "dominant_category": "dining table"
+  },
+  "95866": {
+    "status": "eliminated",
+    "file_name": "000000095866.jpg",
+    "num_aois": 5,
+    "num_categories": 3,
+    "coverage_percent": 91.69010416666666,
+    "dominant_category": "person"
+  },
+  "9002": {
+    "status": "eliminated",
+    "file_name": "000000009002.jpg",
+    "num_aois": 5,
+    "num_categories": 5,
+    "coverage_percent": 89.45377604166667,
+    "dominant_category": "pizza"
+  },
+  "47720": {
+    "status": "eliminated",
+    "file_name": "000000047720.jpg",
+    "num_aois": 10,
+    "num_categories": 5,
+    "coverage_percent": 81.41953949335725,
+    "dominant_category": "person"
+  },
+  "419190": {
+    "status": "return_to",
+    "file_name": "000000419190.jpg",
+    "num_aois": 8,
+    "num_categories": 3,
+    "coverage_percent": 87.1865234375,
+    "dominant_category": "umbrella"
+  },
+  "154931": {
+    "status": "eliminated",
+    "file_name": "000000154931.jpg",
+    "num_aois": 19,
+    "num_categories": 6,
+    "coverage_percent": 84.55013020833333,
+    "dominant_category": "cup"
+  },
+  "456730": {
+    "status": "eliminated",
+    "file_name": "000000456730.jpg",
+    "num_aois": 11,
+    "num_categories": 5,
+    "coverage_percent": 97.47233072916667,
+    "dominant_category": "chair"
+  },
+  "141163": {
+    "status": "eliminated",
+    "file_name": "000000141163.jpg",
+    "num_aois": 12,
+    "num_categories": 7,
+    "coverage_percent": 89.80013020833333,
+    "dominant_category": "cup"
+  },
+  "408364": {
+    "status": "return_to",
+    "file_name": "000000408364.jpg",
+    "num_aois": 15,
+    "num_categories": 3,
+    "coverage_percent": 86.25410284463895,
+    "dominant_category": "person"
+  },
+  "94379": {
+    "status": "eliminated",
+    "file_name": "000000094379.jpg",
+    "num_aois": 11,
+    "num_categories": 4,
+    "coverage_percent": 89.10416666666666,
+    "dominant_category": "wine glass"
+  },
+  "420610": {
+    "status": "eliminated",
+    "file_name": "000000420610.jpg",
+    "num_aois": 25,
+    "num_categories": 7,
+    "coverage_percent": 86.7380360878661,
+    "dominant_category": "bowl"
+  },
+  "487548": {
+    "status": "eliminated",
+    "file_name": "000000487548.jpg",
+    "num_aois": 11,
+    "num_categories": 6,
+    "coverage_percent": 89.53743489583333,
+    "dominant_category": "cup"
+  },
+  "19763": {
+    "status": "eliminated",
+    "file_name": "000000019763.jpg",
+    "num_aois": 11,
+    "num_categories": 5,
+    "coverage_percent": 84.59928385416666,
+    "dominant_category": "chair"
+  },
+  "391891": {
+    "status": "eliminated",
+    "file_name": "000000391891.jpg",
+    "num_aois": 16,
+    "num_categories": 5,
+    "coverage_percent": 82.0777224824356,
+    "dominant_category": "chair"
+  },
+  "381296": {
+    "status": "return_to",
+    "file_name": "000000381296.jpg",
+    "num_aois": 25,
+    "num_categories": 7,
+    "coverage_percent": 91.75075148265496,
+    "dominant_category": "donut"
+  },
+  "89445": {
+    "status": "eliminated",
+    "file_name": "000000089445.jpg",
+    "num_aois": 7,
+    "num_categories": 4,
+    "coverage_percent": 98.84993489583334,
+    "dominant_category": "sandwich"
+  },
+  "409239": {
+    "status": "eliminated",
+    "file_name": "000000409239.jpg",
+    "num_aois": 5,
+    "num_categories": 4,
+    "coverage_percent": 97.19345238095238,
+    "dominant_category": "pizza"
+  },
+  "397": {
+    "status": "eliminated",
+    "file_name": "000000000397.jpg",
+    "num_aois": 7,
+    "num_categories": 5,
+    "coverage_percent": 88.71451822916666,
+    "dominant_category": "cup"
+  },
+  "472691": {
+    "status": "eliminated",
+    "file_name": "000000472691.jpg",
+    "num_aois": 5,
+    "num_categories": 4,
+    "coverage_percent": 86.88509114583334,
+    "dominant_category": "pizza"
+  },
+  "92985": {
+    "status": "selected",
+    "file_name": "000000092985.jpg",
+    "num_aois": 5,
+    "num_categories": 4,
+    "coverage_percent": 85.72941888619854,
+    "dominant_category": "person"
+  },
+  "551581": {
+    "status": "return_to",
+    "file_name": "000000551581.jpg",
+    "num_aois": 14,
+    "num_categories": 4,
+    "coverage_percent": 80.89745603015075,
+    "dominant_category": "person"
+  },
+  "534162": {
+    "status": "return_to",
+    "file_name": "000000534162.jpg",
+    "num_aois": 6,
+    "num_categories": 4,
+    "coverage_percent": 82.82505580357142,
+    "dominant_category": "person"
+  },
+  "383087": {
+    "status": "eliminated",
+    "file_name": "000000383087.jpg",
+    "num_aois": 12,
+    "num_categories": 7,
+    "coverage_percent": 83.72265625,
+    "dominant_category": "chair"
+  },
+  "85390": {
+    "status": "return_to",
+    "file_name": "000000085390.jpg",
+    "num_aois": 5,
+    "num_categories": 5,
+    "coverage_percent": 100.0,
+    "dominant_category": "person"
+  },
+  "330954": {
+    "status": "eliminated",
+    "file_name": "000000330954.jpg",
+    "num_aois": 24,
+    "num_categories": 7,
+    "coverage_percent": 92.36277810304449,
+    "dominant_category": "sandwich"
+  },
+  "447460": {
+    "status": "eliminated",
+    "file_name": "000000447460.jpg",
+    "num_aois": 5,
+    "num_categories": 5,
+    "coverage_percent": 97.37866666666667,
+    "dominant_category": "person"
+  },
+  "201301": {
+    "status": "eliminated",
+    "file_name": "000000201301.jpg",
+    "num_aois": 9,
+    "num_categories": 7,
+    "coverage_percent": 97.99578651685394,
+    "dominant_category": "sandwich"
+  },
+  "434527": {
+    "status": "return_to",
+    "file_name": "000000434527.jpg",
+    "num_aois": 9,
+    "num_categories": 3,
+    "coverage_percent": 85.3289156626506,
+    "dominant_category": "chair"
+  },
+  "420960": {
+    "status": "eliminated",
+    "file_name": "000000420960.jpg",
+    "num_aois": 6,
+    "num_categories": 3,
+    "coverage_percent": 83.91569010416666,
+    "dominant_category": "person"
+  },
+  "302716": {
+    "status": "return_to",
+    "file_name": "000000302716.jpg",
+    "num_aois": 9,
+    "num_categories": 3,
+    "coverage_percent": 86.53693693693694,
+    "dominant_category": "bottle"
+  },
+  "422516": {
+    "status": "eliminated",
+    "file_name": "000000422516.jpg",
+    "num_aois": 8,
+    "num_categories": 6,
+    "coverage_percent": 84.94895143487858,
+    "dominant_category": "bottle"
+  },
+  "540172": {
+    "status": "eliminated",
+    "file_name": "000000540172.jpg",
+    "num_aois": 13,
+    "num_categories": 7,
+    "coverage_percent": 84.13671875,
+    "dominant_category": "bicycle"
+  },
+  "210204": {
+    "status": "eliminated",
+    "file_name": "000000210204.jpg",
+    "num_aois": 18,
+    "num_categories": 8,
+    "coverage_percent": 87.703125,
+    "dominant_category": "chair"
+  },
+  "461572": {
+    "status": "eliminated",
+    "file_name": "000000461572.jpg",
+    "num_aois": 5,
+    "num_categories": 4,
+    "coverage_percent": 81.16456277500107,
+    "dominant_category": "pizza"
+  },
+  "160703": {
+    "status": "eliminated",
+    "file_name": "000000160703.jpg",
+    "num_aois": 11,
+    "num_categories": 7,
+    "coverage_percent": 96.20572916666667,
+    "dominant_category": "pizza"
+  },
+  "89210": {
+    "status": "return_to",
+    "file_name": "000000089210.jpg",
+    "num_aois": 9,
+    "num_categories": 3,
+    "coverage_percent": 87.40201822916667,
+    "dominant_category": "person"
+  },
+  "580791": {
+    "status": "eliminated",
+    "file_name": "000000580791.jpg",
+    "num_aois": 12,
+    "num_categories": 7,
+    "coverage_percent": 96.00160256410255,
+    "dominant_category": "pizza"
+  },
+  "160836": {
+    "status": "eliminated",
+    "file_name": "000000160836.jpg",
+    "num_aois": 6,
+    "num_categories": 4,
+    "coverage_percent": 80.39420572916667,
+    "dominant_category": "bottle"
+  },
+  "196313": {
+    "status": "eliminated",
+    "file_name": "000000196313.jpg",
+    "num_aois": 17,
+    "num_categories": 3,
+    "coverage_percent": 82.38070843091336,
+    "dominant_category": "person"
+  },
+  "573605": {
+    "status": "eliminated",
+    "file_name": "000000573605.jpg",
+    "num_aois": 7,
+    "num_categories": 4,
+    "coverage_percent": 83.70149739583333,
+    "dominant_category": "wine glass"
+  },
+  "205570": {
+    "status": "return_to",
+    "file_name": "000000205570.jpg",
+    "num_aois": 8,
+    "num_categories": 5,
+    "coverage_percent": 99.333984375,
+    "dominant_category": "person"
+  },
+  "52238": {
+    "status": "eliminated",
+    "file_name": "000000052238.jpg",
+    "num_aois": 11,
+    "num_categories": 3,
+    "coverage_percent": 90.0419921875,
+    "dominant_category": "person"
+  },
+  "146773": {
+    "status": "eliminated",
+    "file_name": "000000146773.jpg",
+    "num_aois": 7,
+    "num_categories": 4,
+    "coverage_percent": 92.88735617154812,
+    "dominant_category": "cake"
+  },
+  "185559": {
+    "status": "return_to",
+    "file_name": "000000185559.jpg",
+    "num_aois": 21,
+    "num_categories": 5,
+    "coverage_percent": 82.9222775175644,
+    "dominant_category": "person"
+  },
+  "528821": {
+    "status": "eliminated",
+    "file_name": "000000528821.jpg",
+    "num_aois": 23,
+    "num_categories": 5,
+    "coverage_percent": 90.26066004672897,
+    "dominant_category": "sandwich"
+  },
+  "525202": {
+    "status": "eliminated",
+    "file_name": "000000525202.jpg",
+    "num_aois": 17,
+    "num_categories": 5,
+    "coverage_percent": 83.55234375,
+    "dominant_category": "person"
+  },
+  "33216": {
+    "status": "eliminated",
+    "file_name": "000000033216.jpg",
+    "num_aois": 13,
+    "num_categories": 5,
+    "coverage_percent": 87.46601562500001,
+    "dominant_category": "person"
+  },
+  "364665": {
+    "status": "eliminated",
+    "file_name": "000000364665.jpg",
+    "num_aois": 12,
+    "num_categories": 3,
+    "coverage_percent": 96.09394812680115,
+    "dominant_category": "cake"
+  },
+  "139921": {
+    "status": "return_to",
+    "file_name": "000000139921.jpg",
+    "num_aois": 7,
+    "num_categories": 3,
+    "coverage_percent": 80.0746487119438,
+    "dominant_category": "bottle"
+  },
+  "380979": {
+    "status": "selected",
+    "file_name": "000000380979.jpg",
+    "num_aois": 7,
+    "num_categories": 3,
+    "coverage_percent": 80.85863797169812,
+    "dominant_category": "person"
+  },
+  "452137": {
+    "status": "eliminated",
+    "file_name": "000000452137.jpg",
+    "num_aois": 7,
+    "num_categories": 4,
+    "coverage_percent": 91.50980247641509,
+    "dominant_category": "hot dog"
+  },
+  "572147": {
+    "status": "return_to",
+    "file_name": "000000572147.jpg",
+    "num_aois": 18,
+    "num_categories": 5,
+    "coverage_percent": 85.24764150943396,
+    "dominant_category": "chair"
+  },
+  "567877": {
+    "status": "return_to",
+    "file_name": "000000567877.jpg",
+    "num_aois": 12,
+    "num_categories": 5,
+    "coverage_percent": 87.32248263888889,
+    "dominant_category": "person"
+  },
+  "71737": {
+    "status": "eliminated",
+    "file_name": "000000071737.jpg",
+    "num_aois": 11,
+    "num_categories": 3,
+    "coverage_percent": 94.82179449648712,
+    "dominant_category": "person"
+  },
+  "150208": {
+    "status": "eliminated",
+    "file_name": "000000150208.jpg",
+    "num_aois": 13,
+    "num_categories": 9,
+    "coverage_percent": 97.06523132128669,
+    "dominant_category": "cup"
+  },
+  "469936": {
+    "status": "eliminated",
+    "file_name": "000000469936.jpg",
+    "num_aois": 8,
+    "num_categories": 6,
+    "coverage_percent": 87.694091796875,
+    "dominant_category": "person"
+  },
+  "501400": {
+    "status": "eliminated",
+    "file_name": "000000501400.jpg",
+    "num_aois": 13,
+    "num_categories": 6,
+    "coverage_percent": 94.35342573221757,
+    "dominant_category": "sandwich"
+  },
+  "462327": {
+    "status": "eliminated",
+    "file_name": "000000462327.jpg",
+    "num_aois": 6,
+    "num_categories": 5,
+    "coverage_percent": 97.56557307018669,
+    "dominant_category": "cup"
+  },
+  "290819": {
+    "status": "eliminated",
+    "file_name": "000000290819.jpg",
+    "num_aois": 13,
+    "num_categories": 7,
+    "coverage_percent": 90.3754966038703,
+    "dominant_category": "cup"
+  },
+  "44677": {
+    "status": "eliminated",
+    "file_name": "000000044677.jpg",
+    "num_aois": 11,
+    "num_categories": 5,
+    "coverage_percent": 87.91437054124482,
+    "dominant_category": "person"
+  },
+  "252468": {
+    "status": "return_to",
+    "file_name": "000000252468.jpg",
+    "num_aois": 5,
+    "num_categories": 3,
+    "coverage_percent": 80.11806981519507,
+    "dominant_category": "bench"
+  },
+  "48684": {
+    "status": "selected",
+    "file_name": "000000048684.jpg",
+    "num_aois": 26,
+    "num_categories": 4,
+    "coverage_percent": 82.3134765625,
+    "dominant_category": "person"
+  },
+  "113905": {
+    "status": "eliminated",
+    "file_name": "000000113905.jpg",
+    "num_aois": 8,
+    "num_categories": 4,
+    "coverage_percent": 91.43880208333334,
+    "dominant_category": "hot dog"
+  },
+  "405192": {
+    "status": "eliminated",
+    "file_name": "000000405192.jpg",
+    "num_aois": 7,
+    "num_categories": 5,
+    "coverage_percent": 85.70989461358313,
+    "dominant_category": "person"
+  },
+  "535569": {
+    "status": "eliminated",
+    "file_name": "000000535569.jpg",
+    "num_aois": 24,
+    "num_categories": 7,
+    "coverage_percent": 92.71028645833333,
+    "dominant_category": "bowl"
+  },
+  "551288": {
+    "status": "eliminated",
+    "file_name": "000000551288.jpg",
+    "num_aois": 17,
+    "num_categories": 7,
+    "coverage_percent": 88.17037470725995,
+    "dominant_category": "person"
+  },
+  "341969": {
+    "status": "return_to",
+    "file_name": "000000341969.jpg",
+    "num_aois": 11,
+    "num_categories": 3,
+    "coverage_percent": 87.70225060827251,
+    "dominant_category": "book"
+  },
+  "125527": {
+    "status": "eliminated",
+    "file_name": "000000125527.jpg",
+    "num_aois": 11,
+    "num_categories": 3,
+    "coverage_percent": 95.00066489361703,
+    "dominant_category": "book"
+  },
+  "454607": {
+    "status": "eliminated",
+    "file_name": "000000454607.jpg",
+    "num_aois": 11,
+    "num_categories": 3,
+    "coverage_percent": 82.31482712765957,
+    "dominant_category": "book"
+  },
+  "490964": {
+    "status": "eliminated",
+    "file_name": "000000490964.jpg",
+    "num_aois": 7,
+    "num_categories": 7,
+    "coverage_percent": 86.94303385416666,
+    "dominant_category": "bicycle"
+  },
+  "375881": {
+    "status": "return_to",
+    "file_name": "000000375881.jpg",
+    "num_aois": 5,
+    "num_categories": 3,
+    "coverage_percent": 92.31510416666666,
+    "dominant_category": "person"
+  },
+  "554620": {
+    "status": "return_to",
+    "file_name": "000000554620.jpg",
+    "num_aois": 5,
+    "num_categories": 3,
+    "coverage_percent": 86.76643192488262,
+    "dominant_category": "umbrella"
+  },
+  "329433": {
+    "status": "eliminated",
+    "file_name": "000000329433.jpg",
+    "num_aois": 8,
+    "num_categories": 5,
+    "coverage_percent": 95.70367388758783,
+    "dominant_category": "sandwich"
+  },
+  "274109": {
+    "status": "eliminated",
+    "file_name": "000000274109.jpg",
+    "num_aois": 20,
+    "num_categories": 8,
+    "coverage_percent": 94.0302734375,
+    "dominant_category": "sandwich"
+  },
+  "250790": {
+    "status": "eliminated",
+    "file_name": "000000250790.jpg",
+    "num_aois": 8,
+    "num_categories": 6,
+    "coverage_percent": 92.78542154566745,
+    "dominant_category": "spoon"
+  },
+  "539075": {
+    "status": "return_to",
+    "file_name": "000000539075.jpg",
+    "num_aois": 12,
+    "num_categories": 3,
+    "coverage_percent": 86.0032,
+    "dominant_category": "person"
+  },
+  "431398": {
+    "status": "eliminated",
+    "file_name": "000000431398.jpg",
+    "num_aois": 9,
+    "num_categories": 4,
+    "coverage_percent": 85.07172131147541,
+    "dominant_category": "pizza"
+  },
+  "501760": {
+    "status": "eliminated",
+    "file_name": "000000501760.jpg",
+    "num_aois": 6,
+    "num_categories": 4,
+    "coverage_percent": 93.22402402402402,
+    "dominant_category": "bowl"
+  },
+  "494810": {
+    "status": "eliminated",
+    "file_name": "000000494810.jpg",
+    "num_aois": 7,
+    "num_categories": 5,
+    "coverage_percent": 90.28678385416666,
+    "dominant_category": "cup"
+  },
+  "396302": {
+    "status": "eliminated",
+    "file_name": "000000396302.jpg",
+    "num_aois": 13,
+    "num_categories": 7,
+    "coverage_percent": 85.28580729166667,
+    "dominant_category": "bowl"
+  },
+  "304744": {
+    "status": "eliminated",
+    "file_name": "000000304744.jpg",
+    "num_aois": 20,
+    "num_categories": 6,
+    "coverage_percent": 83.8006161971831,
+    "dominant_category": "person"
+  },
+  "320872": {
+    "status": "eliminated",
+    "file_name": "000000320872.jpg",
+    "num_aois": 6,
+    "num_categories": 5,
+    "coverage_percent": 95.08404046997389,
+    "dominant_category": "knife"
+  },
+  "312298": {
+    "status": "eliminated",
+    "file_name": "000000312298.jpg",
+    "num_aois": 5,
+    "num_categories": 5,
+    "coverage_percent": 83.75028001792114,
+    "dominant_category": "teddy bear"
+  },
+  "387369": {
+    "status": "selected",
+    "file_name": "000000387369.jpg",
+    "num_aois": 21,
+    "num_categories": 4,
+    "coverage_percent": 80.0400390625,
+    "dominant_category": "teddy bear"
+  },
+  "489873": {
+    "status": "eliminated",
+    "file_name": "000000489873.jpg",
+    "num_aois": 20,
+    "num_categories": 5,
+    "coverage_percent": 91.02278645833334,
+    "dominant_category": "person"
+  },
+  "73209": {
+    "status": "return_to",
+    "file_name": "000000073209.jpg",
+    "num_aois": 19,
+    "num_categories": 3,
+    "coverage_percent": 82.30696614583334,
+    "dominant_category": "bottle"
+  },
+  "416337": {
+    "status": "eliminated",
+    "file_name": "000000416337.jpg",
+    "num_aois": 16,
+    "num_categories": 4,
+    "coverage_percent": 92.50919117647058,
+    "dominant_category": "banana"
+  },
+  "494218": {
+    "status": "eliminated",
+    "file_name": "000000494218.jpg",
+    "num_aois": 9,
+    "num_categories": 6,
+    "coverage_percent": 80.67626666666666,
+    "dominant_category": "person"
+  },
+  "517515": {
+    "status": "eliminated",
+    "file_name": "000000517515.jpg",
+    "num_aois": 6,
+    "num_categories": 6,
+    "coverage_percent": 86.81973333333333,
+    "dominant_category": "bottle"
+  },
+  "545289": {
+    "status": "eliminated",
+    "file_name": "000000545289.jpg",
+    "num_aois": 6,
+    "num_categories": 5,
+    "coverage_percent": 97.16407185628742,
+    "dominant_category": "sandwich"
+  },
+  "314074": {
+    "status": "return_to",
+    "file_name": "000000314074.jpg",
+    "num_aois": 20,
+    "num_categories": 5,
+    "coverage_percent": 86.44108072916666,
+    "dominant_category": "person"
+  },
+  "154590": {
+    "status": "eliminated",
+    "file_name": "000000154590.jpg",
+    "num_aois": 35,
+    "num_categories": 8,
+    "coverage_percent": 91.061767578125,
+    "dominant_category": "person"
+  },
+  "392511": {
+    "status": "return_to",
+    "file_name": "000000392511.jpg",
+    "num_aois": 15,
+    "num_categories": 3,
+    "coverage_percent": 80.00065104166667,
+    "dominant_category": "person"
+  },
+  "118246": {
+    "status": "eliminated",
+    "file_name": "000000118246.jpg",
+    "num_aois": 7,
+    "num_categories": 4,
+    "coverage_percent": 89.9814453125,
+    "dominant_category": "hot dog"
+  },
+  "549112": {
+    "status": "eliminated",
+    "file_name": "000000549112.jpg",
+    "num_aois": 8,
+    "num_categories": 5,
+    "coverage_percent": 88.2662118544601,
+    "dominant_category": "cup"
+  },
+  "147179": {
+    "status": "return_to",
+    "file_name": "000000147179.jpg",
+    "num_aois": 6,
+    "num_categories": 4,
+    "coverage_percent": 86.51479007633588,
+    "dominant_category": "person"
+  },
+  "267694": {
+    "status": "eliminated",
+    "file_name": "000000267694.jpg",
+    "num_aois": 7,
+    "num_categories": 6,
+    "coverage_percent": 87.5126953125,
+    "dominant_category": "bottle"
+  },
+  "161447": {
+    "status": "return_to",
+    "file_name": "000000161447.jpg",
+    "num_aois": 19,
+    "num_categories": 6,
+    "coverage_percent": 83.7854609929078,
+    "dominant_category": "person"
+  },
+  "279078": {
+    "status": "eliminated",
+    "file_name": "000000279078.jpg",
+    "num_aois": 15,
+    "num_categories": 3,
+    "coverage_percent": 83.52897135416667,
+    "dominant_category": "bottle"
+  },
+  "290959": {
+    "status": "eliminated",
+    "file_name": "000000290959.jpg",
+    "num_aois": 6,
+    "num_categories": 3,
+    "coverage_percent": 91.68266817269077,
+    "dominant_category": "person"
+  },
+  "198658": {
+    "status": "eliminated",
+    "file_name": "000000198658.jpg",
+    "num_aois": 5,
+    "num_categories": 5,
+    "coverage_percent": 84.677734375,
+    "dominant_category": "cat"
+  },
+  "56567": {
+    "status": "eliminated",
+    "file_name": "000000056567.jpg",
+    "num_aois": 10,
+    "num_categories": 6,
+    "coverage_percent": 86.56575520833333,
+    "dominant_category": "chair"
+  },
+  "3091": {
+    "status": "eliminated",
+    "file_name": "000000003091.jpg",
+    "num_aois": 11,
+    "num_categories": 7,
+    "coverage_percent": 97.38020833333333,
+    "dominant_category": "bottle"
+  },
+  "53465": {
+    "status": "eliminated",
+    "file_name": "000000053465.jpg",
+    "num_aois": 17,
+    "num_categories": 5,
+    "coverage_percent": 92.40449355971897,
+    "dominant_category": "cup"
+  },
+  "406848": {
+    "status": "eliminated",
+    "file_name": "000000406848.jpg",
+    "num_aois": 7,
+    "num_categories": 4,
+    "coverage_percent": 84.28125,
+    "dominant_category": "person"
+  },
+  "183456": {
+    "status": "eliminated",
+    "file_name": "000000183456.jpg",
+    "num_aois": 29,
+    "num_categories": 6,
+    "coverage_percent": 89.85600000000001,
+    "dominant_category": "pizza"
+  },
+  "376469": {
+    "status": "eliminated",
+    "file_name": "000000376469.jpg",
+    "num_aois": 7,
+    "num_categories": 4,
+    "coverage_percent": 88.97964071856286,
+    "dominant_category": "person"
+  },
+  "171461": {
+    "status": "return_to",
+    "file_name": "000000171461.jpg",
+    "num_aois": 7,
+    "num_categories": 3,
+    "coverage_percent": 83.03573333333333,
+    "dominant_category": "person"
+  },
+  "296797": {
+    "status": "return_to",
+    "file_name": "000000296797.jpg",
+    "num_aois": 20,
+    "num_categories": 5,
+    "coverage_percent": 85.60367647058823,
+    "dominant_category": "person"
+  },
+  "526555": {
+    "status": "return_to",
+    "file_name": "000000526555.jpg",
+    "num_aois": 34,
+    "num_categories": 7,
+    "coverage_percent": 83.35047957920793,
+    "dominant_category": "person"
+  },
+  "350619": {
+    "status": "eliminated",
+    "file_name": "000000350619.jpg",
+    "num_aois": 22,
+    "num_categories": 6,
+    "coverage_percent": 91.02699530516432,
+    "dominant_category": "broccoli"
+  },
+  "488250": {
+    "status": "eliminated",
+    "file_name": "000000488250.jpg",
+    "num_aois": 5,
+    "num_categories": 5,
+    "coverage_percent": 80.09244791666667,
+    "dominant_category": "sandwich"
+  },
+  "412136": {
+    "status": "eliminated",
+    "file_name": "000000412136.jpg",
+    "num_aois": 12,
+    "num_categories": 8,
+    "coverage_percent": 98.66634114583334,
+    "dominant_category": "bowl"
+  },
+  "451324": {
+    "status": "return_to",
+    "file_name": "000000451324.jpg",
+    "num_aois": 17,
+    "num_categories": 6,
+    "coverage_percent": 83.47721354166666,
+    "dominant_category": "person"
+  },
+  "205308": {
+    "status": "eliminated",
+    "file_name": "000000205308.jpg",
+    "num_aois": 9,
+    "num_categories": 6,
+    "coverage_percent": 94.41049473067916,
+    "dominant_category": "bottle"
+  },
+  "235278": {
+    "status": "eliminated",
+    "file_name": "000000235278.jpg",
+    "num_aois": 31,
+    "num_categories": 7,
+    "coverage_percent": 83.08454572446556,
+    "dominant_category": "person"
+  },
+  "67833": {
+    "status": "eliminated",
+    "file_name": "000000067833.jpg",
+    "num_aois": 13,
+    "num_categories": 7,
+    "coverage_percent": 96.76009114583334,
+    "dominant_category": "wine glass"
+  },
+  "66468": {
+    "status": "eliminated",
+    "file_name": "000000066468.jpg",
+    "num_aois": 10,
+    "num_categories": 6,
+    "coverage_percent": 83.83528645833334,
+    "dominant_category": "chair"
+  },
+  "256197": {
+    "status": "eliminated",
+    "file_name": "000000256197.jpg",
+    "num_aois": 12,
+    "num_categories": 7,
+    "coverage_percent": 94.87629629629629,
+    "dominant_category": "cake"
+  },
+  "172686": {
+    "status": "eliminated",
+    "file_name": "000000172686.jpg",
+    "num_aois": 5,
+    "num_categories": 4,
+    "coverage_percent": 91.62141927083334,
+    "dominant_category": "bowl"
+  },
+  "283254": {
+    "status": "return_to",
+    "file_name": "000000283254.jpg",
+    "num_aois": 11,
+    "num_categories": 5,
+    "coverage_percent": 80.98469746716698,
+    "dominant_category": "person"
+  },
+  "491515": {
+    "status": "eliminated",
+    "file_name": "000000491515.jpg",
+    "num_aois": 17,
+    "num_categories": 3,
+    "coverage_percent": 81.1611328125,
+    "dominant_category": "suitcase"
+  },
+  "560365": {
+    "status": "eliminated",
+    "file_name": "000000560365.jpg",
+    "num_aois": 7,
+    "num_categories": 4,
+    "coverage_percent": 94.68880208333333,
+    "dominant_category": "person"
+  },
+  "250614": {
+    "status": "eliminated",
+    "file_name": "000000250614.jpg",
+    "num_aois": 8,
+    "num_categories": 6,
+    "coverage_percent": 92.77616279069767,
+    "dominant_category": "chair"
+  },
+  "272880": {
+    "status": "eliminated",
+    "file_name": "000000272880.jpg",
+    "num_aois": 6,
+    "num_categories": 6,
+    "coverage_percent": 97.85047743055556,
+    "dominant_category": "dining table"
+  },
+  "79113": {
+    "status": "return_to",
+    "file_name": "000000079113.jpg",
+    "num_aois": 6,
+    "num_categories": 6,
+    "coverage_percent": 86.52454304245283,
+    "dominant_category": "couch"
+  },
+  "99081": {
+    "status": "return_to",
+    "file_name": "000000099081.jpg",
+    "num_aois": 13,
+    "num_categories": 3,
+    "coverage_percent": 90.63578648915187,
+    "dominant_category": "person"
+  },
+  "363286": {
+    "status": "return_to",
+    "file_name": "000000363286.jpg",
+    "num_aois": 18,
+    "num_categories": 4,
+    "coverage_percent": 97.13736979166666,
+    "dominant_category": "chair"
+  },
+  "212853": {
+    "status": "eliminated",
+    "file_name": "000000212853.jpg",
+    "num_aois": 10,
+    "num_categories": 4,
+    "coverage_percent": 82.1708984375,
+    "dominant_category": "umbrella"
+  },
+  "264155": {
+    "status": "eliminated",
+    "file_name": "000000264155.jpg",
+    "num_aois": 18,
+    "num_categories": 5,
+    "coverage_percent": 91.7716911764706,
+    "dominant_category": "bottle"
+  },
+  "39671": {
+    "status": "eliminated",
+    "file_name": "000000039671.jpg",
+    "num_aois": 10,
+    "num_categories": 6,
+    "coverage_percent": 94.79217980295567,
+    "dominant_category": "pizza"
+  },
+  "393971": {
+    "status": "eliminated",
+    "file_name": "000000393971.jpg",
+    "num_aois": 8,
+    "num_categories": 6,
+    "coverage_percent": 83.96150468384074,
+    "dominant_category": "cat"
+  },
+  "156889": {
+    "status": "return_to",
+    "file_name": "000000156889.jpg",
+    "num_aois": 17,
+    "num_categories": 4,
+    "coverage_percent": 83.396484375,
+    "dominant_category": "person"
+  },
+  "536708": {
+    "status": "eliminated",
+    "file_name": "000000536708.jpg",
+    "num_aois": 14,
+    "num_categories": 7,
+    "coverage_percent": 88.99283854166666,
+    "dominant_category": "hot dog"
+  },
+  "442214": {
+    "status": "eliminated",
+    "file_name": "000000442214.jpg",
+    "num_aois": 20,
+    "num_categories": 7,
+    "coverage_percent": 82.69880457380458,
+    "dominant_category": "person"
+  },
+  "170729": {
+    "status": "eliminated",
+    "file_name": "000000170729.jpg",
+    "num_aois": 26,
+    "num_categories": 9,
+    "coverage_percent": 86.55367416317992,
+    "dominant_category": "person"
+  },
+  "11198": {
+    "status": "eliminated",
+    "file_name": "000000011198.jpg",
+    "num_aois": 22,
+    "num_categories": 8,
+    "coverage_percent": 81.54639929742389,
+    "dominant_category": "bottle"
+  },
+  "402109": {
+    "status": "return_to",
+    "file_name": "000000402109.jpg",
+    "num_aois": 14,
+    "num_categories": 8,
+    "coverage_percent": 82.1397751046025,
+    "dominant_category": "keyboard"
+  },
+  "561062": {
+    "status": "selected",
+    "file_name": "000000561062.jpg",
+    "num_aois": 7,
+    "num_categories": 4,
+    "coverage_percent": 82.16094192634561,
+    "dominant_category": "dog"
+  },
+  "100203": {
+    "status": "eliminated",
+    "file_name": "000000100203.jpg",
+    "num_aois": 31,
+    "num_categories": 6,
+    "coverage_percent": 87.34338492990655,
+    "dominant_category": "person"
+  },
+  "235203": {
+    "status": "return_to",
+    "file_name": "000000235203.jpg",
+    "num_aois": 7,
+    "num_categories": 6,
+    "coverage_percent": 84.51497395833333,
+    "dominant_category": "chair"
+  },
+  "110672": {
+    "status": "eliminated",
+    "file_name": "000000110672.jpg",
+    "num_aois": 25,
+    "num_categories": 9,
+    "coverage_percent": 87.9638671875,
+    "dominant_category": "bottle"
+  },
+  "484432": {
+    "status": "eliminated",
+    "file_name": "000000484432.jpg",
+    "num_aois": 5,
+    "num_categories": 5,
+    "coverage_percent": 92.50186666666667,
+    "dominant_category": "spoon"
+  },
+  "329687": {
+    "status": "eliminated",
+    "file_name": "000000329687.jpg",
+    "num_aois": 5,
+    "num_categories": 3,
+    "coverage_percent": 80.12478044496487,
+    "dominant_category": "person"
+  },
+  "254838": {
+    "status": "eliminated",
+    "file_name": "000000254838.jpg",
+    "num_aois": 5,
+    "num_categories": 4,
+    "coverage_percent": 93.09828747072599,
+    "dominant_category": "sandwich"
+  },
+  "189241": {
+    "status": "return_to",
+    "file_name": "000000189241.jpg",
+    "num_aois": 27,
+    "num_categories": 7,
+    "coverage_percent": 81.28287760416667,
+    "dominant_category": "bottle"
+  },
+  "331084": {
+    "status": "return_to",
+    "file_name": "000000331084.jpg",
+    "num_aois": 15,
+    "num_categories": 6,
+    "coverage_percent": 82.74151053864168,
+    "dominant_category": "person"
+  },
+  "21686": {
+    "status": "eliminated",
+    "file_name": "000000021686.jpg",
+    "num_aois": 17,
+    "num_categories": 7,
+    "coverage_percent": 84.3818082788671,
+    "dominant_category": "person"
+  },
+  "78929": {
+    "status": "eliminated",
+    "file_name": "000000078929.jpg",
+    "num_aois": 12,
+    "num_categories": 6,
+    "coverage_percent": 90.59235724233984,
+    "dominant_category": "sandwich"
+  },
+  "561589": {
+    "status": "eliminated",
+    "file_name": "000000561589.jpg",
+    "num_aois": 20,
+    "num_categories": 8,
+    "coverage_percent": 81.29438086854461,
+    "dominant_category": "person"
+  },
+  "570094": {
+    "status": "eliminated",
+    "file_name": "000000570094.jpg",
+    "num_aois": 22,
+    "num_categories": 6,
+    "coverage_percent": 95.82079999999999,
+    "dominant_category": "bowl"
+  },
+  "560297": {
+    "status": "return_to",
+    "file_name": "000000560297.jpg",
+    "num_aois": 6,
+    "num_categories": 5,
+    "coverage_percent": 81.256,
+    "dominant_category": "bottle"
+  },
+  "222674": {
+    "status": "eliminated",
+    "file_name": "000000222674.jpg",
+    "num_aois": 32,
+    "num_categories": 6,
+    "coverage_percent": 85.625244140625,
+    "dominant_category": "person"
+  },
+  "404476": {
+    "status": "return_to",
+    "file_name": "000000404476.jpg",
+    "num_aois": 19,
+    "num_categories": 3,
+    "coverage_percent": 85.05313907657658,
+    "dominant_category": "chair"
+  },
+  "2477": {
+    "status": "eliminated",
+    "file_name": "000000002477.jpg",
+    "num_aois": 10,
+    "num_categories": 6,
+    "coverage_percent": 92.48516483516484,
+    "dominant_category": "chair"
+  },
+  "396324": {
+    "status": "eliminated",
+    "file_name": "000000396324.jpg",
+    "num_aois": 11,
+    "num_categories": 5,
+    "coverage_percent": 88.03524633123689,
+    "dominant_category": "chair"
+  },
+  "77889": {
+    "status": "eliminated",
+    "file_name": "000000077889.jpg",
+    "num_aois": 6,
+    "num_categories": 5,
+    "coverage_percent": 83.69140625,
+    "dominant_category": "wine glass"
+  },
+  "111024": {
+    "status": "eliminated",
+    "file_name": "000000111024.jpg",
+    "num_aois": 10,
+    "num_categories": 5,
+    "coverage_percent": 95.89908854166667,
+    "dominant_category": "donut"
+  },
+  "351808": {
+    "status": "eliminated",
+    "file_name": "000000351808.jpg",
+    "num_aois": 20,
+    "num_categories": 7,
+    "coverage_percent": 92.68196614583334,
+    "dominant_category": "pizza"
+  },
+  "518375": {
+    "status": "eliminated",
+    "file_name": "000000518375.jpg",
+    "num_aois": 8,
+    "num_categories": 6,
+    "coverage_percent": 92.55598653395785,
+    "dominant_category": "person"
+  }
+}

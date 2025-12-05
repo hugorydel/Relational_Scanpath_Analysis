@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-MS-COCO Naturalistic Stimuli Dataset Creator
+Synthetic Visual Genome (SVG) Relational Dataset Creator
+Filters SVG images for gaze-based relational memory experiments
 """
 
 import json
@@ -8,110 +9,185 @@ import os
 import shutil
 from collections import Counter, defaultdict
 from pathlib import Path
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Optional, Set, Tuple
 
 import cv2
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-from pycocotools import mask as mask_utils
-from pycocotools.coco import COCO
+
+# Try to import memorability predictor
+import torch
+from datasets import load_dataset
+
+# You'll need to install/implement ResMem or ViTMem
+from resmem import ResMemPredictor
 from tqdm import tqdm
 
-# Import configuration if available
-try:
-    import utils.config as config
-
-    HAS_CONFIG = True
-except ImportError:
-    HAS_CONFIG = False
+ds = load_dataset("jamepark3922/svg", split="train")
 
 
-class COCONaturalisticDataset:
-    """Filter and process MS-COCO for naturalistic stimuli."""
+class SVGRelationalDataset:
+    """Filter and process SVG for relational gaze experiments."""
 
     def __init__(
         self,
-        coco_root: str = None,
-        output_dir: str = "./coco_naturalistic_stimuli",
-        min_area_percent: float = 0.5,
-        min_objects: int = 6,
-        min_categories: int = 3,
-        max_objects: int = 25,
-        min_coverage_percent: float = 85.0,
+        svg_root: str,
+        output_dir: str = "./svg_relational_stimuli",
+        # Filtering thresholds
+        min_memorability: float = 0.5,
+        min_mask_area_percent: float = 0.3,
+        min_objects: int = 10,
+        max_objects: int = 30,
+        min_relations: int = 10,
+        min_coverage_percent: float = 70.0,
+        # Relational weights
+        interaction_predicates: List[str] = None,
+        spatial_predicates: List[str] = None,
+        interaction_weight: float = 1.0,
+        spatial_weight: float = 0.3,
+        # Image parameters
         target_size: Tuple[int, int] = (1024, 768),
-        require_person: bool = True,
+        source_filter: str = "visual_genome",  # Filter to VG-sourced images
     ):
         """
-        Initialize the dataset creator.
+        Initialize the SVG dataset creator.
 
         Args:
-            coco_root: Path to COCO dataset root (if None, tries to load from config)
+            svg_root: Path to SVG dataset root
             output_dir: Where to save processed images and annotations
-            min_area_percent: Minimum area % to count toward object threshold (0.5 = 0.5%)
-            min_objects: Minimum number of objects (>= min_area_percent) required
-            min_categories: Minimum number of distinct categories required
-            max_objects: Maximum number of objects per image
-            min_coverage_percent: Minimum % of image covered by AOIs (85 = 85%)
+            min_memorability: Minimum memorability score (0-1)
+            min_mask_area_percent: Minimum mask area as % of image
+            min_objects: Minimum number of objects after filtering tiny masks
+            max_objects: Maximum number of objects
+            min_relations: Minimum number of relations in scene graph
+            min_coverage_percent: Minimum % of image covered by AOIs
+            interaction_predicates: List of interaction predicate names (higher weight)
+            spatial_predicates: List of spatial predicate names (lower weight)
+            interaction_weight: Weight for interaction predicates (0-1)
+            spatial_weight: Weight for spatial predicates (0-1)
             target_size: Fixed canvas size (width, height) for letterboxing
-            require_person: Require at least 1 person in the scene
+            source_filter: Filter to specific source dataset (e.g., "visual_genome")
         """
-        # Handle config
-        if coco_root is None:
-            if HAS_CONFIG:
-                self.coco_root = Path(config.COCO_PATH)
-            else:
-                raise ValueError(
-                    "coco_root must be provided or config.COCO_PATH must be set"
-                )
-        else:
-            self.coco_root = Path(coco_root)
-
+        self.svg_root = Path(svg_root)
         self.output_dir = Path(output_dir)
-        self.min_area_percent = min_area_percent
+        self.min_memorability = min_memorability
+        self.min_mask_area_percent = min_mask_area_percent
         self.min_objects = min_objects
-        self.min_categories = min_categories
         self.max_objects = max_objects
+        self.min_relations = min_relations
         self.min_coverage_percent = min_coverage_percent
         self.target_size = target_size
-        self.require_person = require_person
+        self.source_filter = source_filter
 
-        # Create output directories (delete existing contents if present)
+        # Default interaction predicates (higher semantic weight)
+        if interaction_predicates is None:
+            interaction_predicates = [
+                "holding",
+                "carrying",
+                "wearing",
+                "reading",
+                "eating",
+                "drinking",
+                "sitting on",
+                "standing on",
+                "riding",
+                "using",
+                "playing",
+                "looking at",
+                "touching",
+                "hugging",
+                "kissing",
+                "petting",
+                "cutting",
+                "cooking",
+                "writing",
+                "typing",
+                "painting",
+                "has",
+                "belongs to",
+                "part of",
+                "attached to",
+                "connected to",
+            ]
+
+        # Default spatial predicates (lower semantic weight)
+        if spatial_predicates is None:
+            spatial_predicates = [
+                "left of",
+                "right of",
+                "above",
+                "below",
+                "in front of",
+                "behind",
+                "in",
+                "inside",
+                "on",
+                "under",
+                "between",
+                "around",
+                "outside",
+                "near",
+                "far from",
+                "next to",
+                "beside",
+                "by",
+                "near to",
+                "close to",
+                "touching",
+                "overlapping",
+                "against",
+                "covering",
+                "intersecting",
+                "on top of",
+                "over",
+                "top of",
+                "on top",
+                "over the top of",
+                "underneath",
+                "beneath",
+                "with",
+                "at",
+                "inside of",
+                "towards",
+                "away from",
+                "into",
+                "out of",
+                "across",
+                "along",
+                "through",
+                "past",
+                "beyond",
+                "across from",
+                "opposite",
+                "at the top of",
+                "bottom of",
+            ]
+
+        self.interaction_predicates = set(p.lower() for p in interaction_predicates)
+        self.spatial_predicates = set(p.lower() for p in spatial_predicates)
+        self.interaction_weight = interaction_weight
+        self.spatial_weight = spatial_weight
+
+        # Create output directories
         if self.output_dir.exists():
             shutil.rmtree(self.output_dir)
 
-        # Create output directories
         self.output_dir.mkdir(parents=True, exist_ok=True)
         (self.output_dir / "images").mkdir(exist_ok=True)
         (self.output_dir / "visualizations").mkdir(exist_ok=True)
         (self.output_dir / "annotations").mkdir(exist_ok=True)
         print(f"Created fresh output directory: {self.output_dir}")
 
-        # Load COCO API for instances
-        ann_file = self.coco_root / "annotations" / "instances_train2017.json"
-        if not ann_file.exists():
-            ann_file = self.coco_root / "annotations" / "instances_val2017.json"
-
-        print(f"Loading COCO annotations from {ann_file}...")
-        self.coco = COCO(str(ann_file))
-
-        # Load COCO API for captions
-        caption_file = self.coco_root / "annotations" / "captions_train2017.json"
-        if not caption_file.exists():
-            caption_file = self.coco_root / "annotations" / "captions_val2017.json"
-
-        if caption_file.exists():
-            print(f"Loading COCO captions from {caption_file}...")
-            self.coco_caps = COCO(str(caption_file))
-            self.has_captions = True
-        else:
-            print("Warning: Caption file not found. Continuing without captions.")
-            self.coco_caps = None
-            self.has_captions = False
+        # Load memorability predictor
+        self.memorability_predictor = None
+        print("Loading memorability predictor...")
+        self.memorability_predictor = ResMemPredictor()
+        print("Memorability predictor loaded")
 
         # Color palette for visualization
-        self.colors = self._generate_colors(len(self.coco.getCatIds()))
+        self.colors = self._generate_colors(100)  # Enough for most scenes
 
     def _generate_colors(self, n: int) -> np.ndarray:
         """Generate distinguishable colors for visualization."""
@@ -119,196 +195,295 @@ class COCONaturalisticDataset:
         colors = sns.color_palette("husl", n)
         return np.array(colors)
 
-    def _get_captions(self, img_id: int) -> List[str]:
+    def _load_svg_metadata(self) -> List[Dict]:
         """
-        Get all captions for an image.
-
-        Args:
-            img_id: COCO image ID
+        Load SVG scene graphs and metadata.
 
         Returns:
-            List of caption strings (typically 5 per image)
+            List of scene graph dictionaries
         """
-        if not self.has_captions:
-            return []
+        # SVG typically has scene_graphs.json or similar
+        scene_graph_path = self.svg_root / "scene_graphs.json"
 
-        ann_ids = self.coco_caps.getAnnIds(imgIds=img_id)
-        anns = self.coco_caps.loadAnns(ann_ids)
-        captions = [ann["caption"] for ann in anns]
-        return captions
+        if not scene_graph_path.exists():
+            raise FileNotFoundError(f"Scene graphs not found at {scene_graph_path}")
 
-    def _calculate_area_percent(self, ann: Dict, img_area: float) -> float:
-        """Calculate annotation area as percentage of image."""
-        if "area" in ann:
-            return (ann["area"] / img_area) * 100
-        return 0.0
+        print(f"Loading SVG scene graphs from {scene_graph_path}...")
+        with open(scene_graph_path, "r") as f:
+            scene_graphs = json.load(f)
 
-    def _find_overlapping_aois(
-        self, anns: List[Dict], img_width: int, img_height: int
-    ) -> Set[int]:
+        print(f"Loaded {len(scene_graphs)} scene graphs")
+        return scene_graphs
+
+    def _predict_memorability(self, img_path: Path) -> float:
         """
-        Find AOIs that overlap other AOIs >= 95%.
-        Returns set of indices to remove (the larger objects that contain smaller ones).
+        Predict memorability score for an image.
 
-        Optimized with:
-        - Strategy 1: Bounding box pre-filtering
-        - Strategy 2: Area-based early rejection
-        - Strategy 3: Hierarchical checking (sort by area)
-        - Strategy 5: Early termination
+        Args:
+            img_path: Path to image
+
+        Returns:
+            Memorability score (0-1)
         """
-        if len(anns) < 2:
-            return set()
+        # Load and preprocess image
+        img = cv2.imread(str(img_path))
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-        # Strategy 3: Sort by area (largest first) - enables directional checking
-        sorted_indices = sorted(
-            range(len(anns)), key=lambda i: anns[i].get("area", 0), reverse=True
-        )
+        # Run predictor
+        score = self.memorability_predictor.predict(img)
 
-        # Helper function for Strategy 1: Check if bbox_a contains bbox_b
-        def bbox_contains(bbox_a, bbox_b):
-            x1_a, y1_a, w_a, h_a = bbox_a
-            x1_b, y1_b, w_b, h_b = bbox_b
-            x2_a, y2_a = x1_a + w_a, y1_a + h_a
-            x2_b, y2_b = x1_b + w_b, y1_b + h_b
+        return float(score)
 
-            return x1_a <= x1_b and y1_a <= y1_b and x2_a >= x2_b and y2_a >= y2_b
-
-        indices_to_remove = set()
-
-        # Strategy 3: Only check larger → smaller (i always has area >= j)
-        for idx_i, i in enumerate(sorted_indices):
-            ann_i = anns[i]
-            area_i = ann_i.get("area", 0)
-
-            if area_i == 0:
-                continue
-
-            for j in sorted_indices[idx_i + 1 :]:
-                ann_j = anns[j]
-                area_j = ann_j.get("area", 0)
-
-                if area_j == 0:
-                    continue
-
-                # Strategy 2: Area-based early rejection
-                area_ratio = area_j / area_i
-                if area_ratio < 0.85:
-                    continue
-
-                # Strategy 1: Bounding box pre-filtering
-                if not bbox_contains(ann_i["bbox"], ann_j["bbox"]):
-                    continue
-
-                # Now check actual masks
-                if "segmentation" in ann_i and "segmentation" in ann_j:
-                    seg_i = ann_i["segmentation"]
-                    seg_j = ann_j["segmentation"]
-
-                    # Only process polygon format
-                    if (
-                        isinstance(seg_i, list)
-                        and len(seg_i) > 0
-                        and isinstance(seg_i[0], list)
-                        and isinstance(seg_j, list)
-                        and len(seg_j) > 0
-                        and isinstance(seg_j[0], list)
-                    ):
-
-                        try:
-                            # Decode masks
-                            rle_i = mask_utils.frPyObjects(seg_i, img_height, img_width)
-                            mask_i = mask_utils.decode(rle_i)
-                            if len(mask_i.shape) == 3:
-                                mask_i = mask_i.max(axis=2)
-
-                            rle_j = mask_utils.frPyObjects(seg_j, img_height, img_width)
-                            mask_j = mask_utils.decode(rle_j)
-                            if len(mask_j.shape) == 3:
-                                mask_j = mask_j.max(axis=2)
-
-                            mask_i_area = np.sum(mask_i > 0)
-                            mask_j_area = np.sum(mask_j > 0)
-
-                            if mask_i_area == 0 or mask_j_area == 0:
-                                continue
-
-                            # Check if larger mask (i) contains >= 95% of smaller mask (j)
-                            intersection = np.sum((mask_i > 0) & (mask_j > 0))
-
-                            if intersection >= mask_j_area * 0.95:
-                                # Remove the LARGER object (i) that's "eating" the smaller one
-                                indices_to_remove.add(i)
-
-                        except:
-                            continue
-
-        return indices_to_remove
-
-    def _calculate_coverage_percent(
-        self, anns: List[Dict], img_width: int, img_height: int
+    def _calculate_mask_area(
+        self, mask: Dict, img_width: int, img_height: int
     ) -> float:
         """
-        Calculate true coverage using segmentation masks to avoid double-counting overlaps.
-        Returns percentage of image covered by union of all masks.
+        Calculate mask area as percentage of image.
+
+        Args:
+            mask: Mask dictionary (could be polygon, RLE, or bbox)
+            img_width: Image width
+            img_height: Image height
+
+        Returns:
+            Area as percentage of image
         """
         img_area = img_width * img_height
 
-        # Create binary mask for the entire image
+        if "polygon" in mask:
+            # Polygon format: list of [x, y] points
+            polygon = np.array(mask["polygon"]).reshape(-1, 2)
+            # Calculate area using shoelace formula
+            x = polygon[:, 0]
+            y = polygon[:, 1]
+            area = 0.5 * np.abs(np.dot(x, np.roll(y, 1)) - np.dot(y, np.roll(x, 1)))
+            return (area / img_area) * 100
+
+        elif "bbox" in mask:
+            # Bounding box: [x, y, w, h]
+            x, y, w, h = mask["bbox"]
+            area = w * h
+            return (area / img_area) * 100
+
+        elif "area" in mask:
+            # Direct area field
+            return (mask["area"] / img_area) * 100
+
+        return 0.0
+
+    def _compute_relational_graph(self, scene_graph: Dict) -> Tuple[np.ndarray, Dict]:
+        """
+        Compute weighted relational graph from scene graph.
+
+        Args:
+            scene_graph: SVG scene graph dictionary
+
+        Returns:
+            adjacency_matrix: NxN weighted adjacency matrix
+            object_id_map: Mapping from object indices to object IDs
+        """
+        objects = scene_graph.get("objects", [])
+        relations = scene_graph.get("relationships", [])
+
+        n_objects = len(objects)
+        adjacency = np.zeros((n_objects, n_objects))
+
+        # Create object ID to index mapping
+        object_id_map = {obj["object_id"]: idx for idx, obj in enumerate(objects)}
+
+        # Process relations
+        for rel in relations:
+            subj_id = rel.get("subject_id")
+            obj_id = rel.get("object_id")
+            predicate = rel.get("predicate", "").lower()
+
+            # Check if both objects exist
+            if subj_id not in object_id_map or obj_id not in object_id_map:
+                continue
+
+            subj_idx = object_id_map[subj_id]
+            obj_idx = object_id_map[obj_id]
+
+            # Determine weight based on predicate type
+            if predicate in self.interaction_predicates:
+                weight = self.interaction_weight
+            elif predicate in self.spatial_predicates:
+                weight = self.spatial_weight
+            else:
+                # Unknown predicate - give it medium weight
+                weight = (self.interaction_weight + self.spatial_weight) / 2
+
+            # Add edge (weighted by predicate type)
+            # If multiple relations exist, sum them up
+            adjacency[subj_idx, obj_idx] += weight
+            # Make symmetric (undirected graph)
+            adjacency[obj_idx, subj_idx] += weight
+
+        # Normalize to [0, 1] per edge
+        max_weight = adjacency.max()
+        if max_weight > 0:
+            adjacency = adjacency / max_weight
+
+        return adjacency, object_id_map
+
+    def _calculate_coverage(
+        self, objects: List[Dict], img_width: int, img_height: int
+    ) -> float:
+        """
+        Calculate coverage of image by objects.
+
+        Args:
+            objects: List of object dictionaries with masks
+            img_width: Image width
+            img_height: Image height
+
+        Returns:
+            Coverage percentage
+        """
+        # Create binary mask
         coverage_mask = np.zeros((img_height, img_width), dtype=np.uint8)
 
-        for ann in anns:
-            # Get segmentation mask
-            if "segmentation" in ann:
-                seg = ann["segmentation"]
+        for obj in objects:
+            if "polygon" in obj:
+                # Draw polygon
+                polygon = np.array(obj["polygon"]).reshape(-1, 2).astype(np.int32)
+                cv2.fillPoly(coverage_mask, [polygon], 1)
+            elif "bbox" in obj:
+                # Draw bbox
+                x, y, w, h = obj["bbox"]
+                coverage_mask[int(y) : int(y + h), int(x) : int(x + w)] = 1
 
-                # Check if it's a list (polygon format) - most common in COCO
-                if isinstance(seg, list) and len(seg) > 0:
-                    # Check if it's a list of polygons (not RLE)
-                    if isinstance(seg[0], list):
-                        # Polygon format - convert to RLE then decode
-                        try:
-                            rle = mask_utils.frPyObjects(seg, img_height, img_width)
-                            mask = mask_utils.decode(rle)
-                            if len(mask.shape) == 3:
-                                mask = mask.max(axis=2)  # Combine multiple polygons
-                        except:
-                            # Skip if conversion fails
-                            continue
-                    else:
-                        # Might be RLE in list format, skip for now
-                        continue
-                elif isinstance(seg, dict) and "counts" in seg:
-                    # RLE format as dict
-                    try:
-                        mask = mask_utils.decode(seg)
-                    except:
-                        # Skip if decode fails
-                        continue
-                else:
-                    # Unknown format, skip
-                    continue
-
-                # Add to coverage mask (union)
-                coverage_mask = np.maximum(coverage_mask, mask)
-
-        # Calculate percentage
+        # Calculate coverage
         covered_pixels = np.sum(coverage_mask > 0)
-        coverage_percent = (covered_pixels / img_area) * 100
+        total_pixels = img_width * img_height
+        coverage_percent = (covered_pixels / total_pixels) * 100
 
         return coverage_percent
 
-    def _get_dominant_category(self, anns: List[Dict]) -> int:
+    def filter_images(self) -> List[Dict]:
         """
-        Get the most frequent category in the image.
-        Returns category_id of the dominant category.
-        """
-        if not anns:
-            return -1
+        Filter SVG images based on criteria.
 
-        # Count instances by category
-        cat_counts = Counter(ann["category_id"] for ann in anns)
-        # Return most common category
-        return cat_counts.most_common(1)[0][0]
+        Returns:
+            List of selected image metadata with scene graphs
+        """
+        print("\nFiltering SVG images...")
+        print(f"Criteria:")
+        print(f"  - Source: {self.source_filter}")
+        print(f"  - Memorability: >= {self.min_memorability}")
+        print(
+            f"  - Objects: {self.min_objects}-{self.max_objects} (>= {self.min_mask_area_percent}% area)"
+        )
+        print(f"  - Relations: >= {self.min_relations}")
+        print(f"  - Coverage: >= {self.min_coverage_percent}%")
+
+        scene_graphs = self._load_svg_metadata()
+        candidate_images = []
+
+        stats = {
+            "total": len(scene_graphs),
+            "wrong_source": 0,
+            "low_memorability": 0,
+            "too_few_objects": 0,
+            "too_many_objects": 0,
+            "too_few_relations": 0,
+            "low_coverage": 0,
+            "missing_image": 0,
+        }
+
+        for scene_graph in tqdm(scene_graphs, desc="Scanning images"):
+            # Check source
+            source = scene_graph.get("source", "").lower()
+            if self.source_filter and self.source_filter.lower() not in source:
+                stats["wrong_source"] += 1
+                continue
+
+            # Get image path
+            img_filename = scene_graph.get("image", "")
+            img_path = self.svg_root / "images" / img_filename
+
+            if not img_path.exists():
+                stats["missing_image"] += 1
+                continue
+
+            # Check memorability
+            memorability = self._predict_memorability(img_path)
+            if memorability < self.min_memorability:
+                stats["low_memorability"] += 1
+                continue
+
+            # Get image dimensions
+            img = cv2.imread(str(img_path))
+            if img is None:
+                stats["missing_image"] += 1
+                continue
+            img_height, img_width = img.shape[:2]
+
+            # Filter objects by mask area
+            objects = scene_graph.get("objects", [])
+            valid_objects = []
+
+            for obj in objects:
+                area_percent = self._calculate_mask_area(obj, img_width, img_height)
+                if area_percent >= self.min_mask_area_percent:
+                    obj["area_percent"] = area_percent
+                    valid_objects.append(obj)
+
+            # Check object count
+            n_objects = len(valid_objects)
+            if n_objects < self.min_objects:
+                stats["too_few_objects"] += 1
+                continue
+            if n_objects > self.max_objects:
+                stats["too_many_objects"] += 1
+                continue
+
+            # Check relation count
+            relations = scene_graph.get("relationships", [])
+            if len(relations) < self.min_relations:
+                stats["too_few_relations"] += 1
+                continue
+
+            # Check coverage
+            coverage = self._calculate_coverage(valid_objects, img_width, img_height)
+            if coverage < self.min_coverage_percent:
+                stats["low_coverage"] += 1
+                continue
+
+            # Compute relational graph
+            adjacency, object_id_map = self._compute_relational_graph(scene_graph)
+
+            # Passed all filters
+            candidate_images.append(
+                {
+                    "scene_graph": scene_graph,
+                    "image_path": img_path,
+                    "img_width": img_width,
+                    "img_height": img_height,
+                    "objects": valid_objects,
+                    "relations": relations,
+                    "adjacency_matrix": adjacency,
+                    "object_id_map": object_id_map,
+                    "memorability": memorability,
+                    "coverage_percent": coverage,
+                    "n_objects": n_objects,
+                    "n_relations": len(relations),
+                }
+            )
+
+        # Print filtering statistics
+        print(f"\nFiltering Statistics:")
+        print(f"  Total images: {stats['total']}")
+        print(f"  ✗ Wrong source: {stats['wrong_source']}")
+        print(f"  ✗ Low memorability: {stats['low_memorability']}")
+        print(f"  ✗ Too few objects: {stats['too_few_objects']}")
+        print(f"  ✗ Too many objects: {stats['too_many_objects']}")
+        print(f"  ✗ Too few relations: {stats['too_few_relations']}")
+        print(f"  ✗ Low coverage: {stats['low_coverage']}")
+        print(f"  ✗ Missing image: {stats['missing_image']}")
+        print(f"  ✓ Selected: {len(candidate_images)}")
+
+        return candidate_images
 
     def _letterbox_image(
         self, img: np.ndarray, target_size: Tuple[int, int]
@@ -324,506 +499,250 @@ class COCONaturalisticDataset:
         h, w = img.shape[:2]
         target_w, target_h = target_size
 
-        # Calculate scale to fit image within target
+        # Calculate scale
         scale = min(target_w / w, target_h / h)
         new_w, new_h = int(w * scale), int(h * scale)
 
-        # Resize image
+        # Resize
         resized = cv2.resize(img, (new_w, new_h), interpolation=cv2.INTER_LINEAR)
 
-        # Create letterboxed canvas
+        # Create canvas
         letterboxed = np.full((target_h, target_w, 3), 114, dtype=np.uint8)
 
-        # Calculate offsets for centering
+        # Center
         x_offset = (target_w - new_w) // 2
         y_offset = (target_h - new_h) // 2
 
-        # Place resized image on canvas
         letterboxed[y_offset : y_offset + new_h, x_offset : x_offset + new_w] = resized
 
         return letterboxed, scale, (x_offset, y_offset)
 
-    def _transform_annotations(
-        self, anns: List[Dict], scale: float, offset: Tuple[int, int]
+    def _transform_objects(
+        self, objects: List[Dict], scale: float, offset: Tuple[int, int]
     ) -> List[Dict]:
-        """Transform annotation coordinates for letterboxed image, without
-        mutating the originals.
-        """
+        """Transform object coordinates for letterboxed image."""
         x_off, y_off = offset
         transformed = []
 
-        for ann in anns:
-            ann_new = ann.copy()  # shallow copy of dict
+        for obj in objects:
+            obj_new = obj.copy()
 
-            # Transform bbox
-            x, y, w, h = ann_new["bbox"]
-            ann_new["bbox"] = [
-                x * scale + x_off,
-                y * scale + y_off,
-                w * scale,
-                h * scale,
-            ]
+            # Transform polygon if present
+            if "polygon" in obj_new:
+                polygon = np.array(obj_new["polygon"]).reshape(-1, 2)
+                polygon = polygon * scale + [x_off, y_off]
+                obj_new["polygon"] = polygon.flatten().tolist()
 
-            # Transform segmentation if present
-            if "segmentation" in ann_new and isinstance(ann_new["segmentation"], list):
-                new_segs = []
-                for seg in ann_new["segmentation"]:
-                    seg_array = np.array(seg).reshape(-1, 2)
-                    seg_array = seg_array * scale + [x_off, y_off]
-                    new_segs.append(seg_array.flatten().tolist())
-                ann_new["segmentation"] = new_segs
+            # Transform bbox if present
+            if "bbox" in obj_new:
+                x, y, w, h = obj_new["bbox"]
+                obj_new["bbox"] = [
+                    x * scale + x_off,
+                    y * scale + y_off,
+                    w * scale,
+                    h * scale,
+                ]
 
-            transformed.append(ann_new)
+            transformed.append(obj_new)
 
         return transformed
 
-    def filter_images(self) -> List[Dict]:
+    def visualize_image(self, img_data: Dict) -> None:
         """
-        Filter COCO images based on criteria.
-
-        Returns:
-            List of selected image metadata with annotations
-        """
-        print("\nFiltering COCO images...")
-        print(
-            f"Criteria:\n"
-            f"  - Objects: {self.min_objects}-{self.max_objects} (>= {self.min_area_percent}% area)\n"
-            f"  - Minimum {self.min_categories} distinct categories\n"
-            f"  - Coverage: >= {self.min_coverage_percent}%\n"
-            f"  - Require person: {self.require_person}\n"
-            f"  - Remove crowd annotations (iscrowd=1)\n"
-            f"  - Remove AOIs with >= 95% overlaps"
-        )
-
-        img_ids = self.coco.getImgIds()
-        candidate_images = []
-        overlap_removals = 0
-        crowd_removals = 0
-
-        for img_id in tqdm(img_ids, desc="Scanning images"):
-            img_info = self.coco.loadImgs(img_id)[0]
-            ann_ids = self.coco.getAnnIds(imgIds=img_id)
-            anns = self.coco.loadAnns(ann_ids)
-
-            if len(anns) == 0:
-                continue
-
-            # Calculate image area
-            img_area = img_info["width"] * img_info["height"]
-
-            # Keep ALL objects (including small ones) but filter out crowd annotations
-            all_valid_anns = [
-                ann
-                for ann in anns
-                if ann.get("area", 0) > 0 and ann.get("iscrowd", 0) == 0
-            ]
-
-            # Track crowd removals
-            crowd_removals += (
-                len(anns)
-                - len([ann for ann in anns if ann.get("area", 0) > 0])
-                - len(
-                    [
-                        ann
-                        for ann in anns
-                        if ann.get("area", 0) > 0 and ann.get("iscrowd", 0) == 1
-                    ]
-                )
-            )
-
-            # Check for complete overlaps and get indices to remove
-            overlapping_indices = self._find_overlapping_aois(
-                all_valid_anns, img_info["width"], img_info["height"]
-            )
-
-            # Remove overlapping AOIs
-            if overlapping_indices:
-                overlap_removals += len(overlapping_indices)
-                all_valid_anns = [
-                    ann
-                    for i, ann in enumerate(all_valid_anns)
-                    if i not in overlapping_indices
-                ]
-
-            # Count only objects >= min_area_percent toward the threshold
-            counted_anns = [
-                ann
-                for ann in all_valid_anns
-                if self._calculate_area_percent(ann, img_area) >= self.min_area_percent
-            ]
-
-            # Check minimum and maximum object count
-            if (
-                len(counted_anns) < self.min_objects
-                or len(counted_anns) > self.max_objects
-            ):
-                continue
-
-            # Check for at least 1 person (category_id = 1 in COCO)
-            if self.require_person:
-                has_person = any(ann["category_id"] == 1 for ann in counted_anns)
-                if not has_person:
-                    continue
-
-            # Check minimum distinct categories
-            distinct_categories = len(set(ann["category_id"] for ann in counted_anns))
-            if distinct_categories < self.min_categories:
-                continue
-
-            # Calculate coverage using ALL objects (including small ones)
-            coverage = self._calculate_coverage_percent(
-                all_valid_anns, img_info["width"], img_info["height"]
-            )
-
-            # Filter by coverage threshold
-            if coverage >= self.min_coverage_percent:
-                # Get dominant category
-                dominant_cat = self._get_dominant_category(counted_anns)
-
-                # Get captions for this image
-                captions = self._get_captions(img_id)
-
-                candidate_images.append(
-                    {
-                        "image_info": img_info,
-                        "annotations_original": anns,
-                        "annotations_all": all_valid_anns,  # All objects (minus crowds and overlaps)
-                        "annotations_filtered": counted_anns,  # Objects >= threshold
-                        "object_count": len(counted_anns),
-                        "category_count": distinct_categories,
-                        "coverage_percent": coverage,
-                        "dominant_category": dominant_cat,
-                        "captions": captions,
-                    }
-                )
-
-        # Count total crowd annotations removed
-        total_crowd_removals = 0
-        for img_id in img_ids:
-            ann_ids = self.coco.getAnnIds(imgIds=img_id)
-            anns = self.coco.loadAnns(ann_ids)
-            total_crowd_removals += len(
-                [ann for ann in anns if ann.get("iscrowd", 0) == 1]
-            )
-
-        print(f"\nRemoved {total_crowd_removals} crowd annotations (iscrowd=1)")
-        print(f"Removed {overlap_removals} overlapping AOIs across all images")
-        print(f"Found {len(candidate_images)} images meeting all criteria")
-
-        if len(candidate_images) == 0:
-            print("No images met the criteria!")
-            print("\nTry adjusting parameters:")
-            print(
-                f"  - Lower min_coverage_percent (currently {self.min_coverage_percent}%)"
-            )
-            print(f"  - Lower min_objects (currently {self.min_objects})")
-            print(f"  - Raise max_objects (currently {self.max_objects})")
-            print(f"  - Lower min_categories (currently {self.min_categories})")
-            print(f"  - Lower min_area_percent (currently {self.min_area_percent}%)")
-            if self.require_person:
-                print(f"  - Set require_person=False")
-            return []
-
-        print(f"Selected all {len(candidate_images)} images")
-
-        return candidate_images
-
-    def visualize_image(self, img_data: Dict, show_stages: bool = True) -> None:
-        """
-        Create visualization showing filtering pipeline with segmentation masks.
+        Create visualization showing objects and relational graph.
 
         Args:
             img_data: Image metadata from filter_images()
-            show_stages: If True, show original and filtered stages
         """
-        img_info = img_data["image_info"]
-        img_id = img_info["id"]
+        scene_graph = img_data["scene_graph"]
+        img_id = scene_graph.get("image_id", "unknown")
 
         # Load image
-        img_path = self.coco_root / "train2017" / img_info["file_name"]
-        if not img_path.exists():
-            img_path = self.coco_root / "val2017" / img_info["file_name"]
-
-        if not img_path.exists():
-            print(f"Warning: Image not found: {img_path}")
-            return
-
-        img = cv2.imread(str(img_path))
+        img = cv2.imread(str(img_data["image_path"]))
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-        if show_stages:
-            # Create multi-stage visualization
-            fig, axes = plt.subplots(2, 2, figsize=(20, 15))
+        # Create figure with multiple subplots
+        fig = plt.figure(figsize=(20, 10))
+        gs = fig.add_gridspec(2, 2, hspace=0.3, wspace=0.3)
 
-            # Get dominant category name
-            dom_cat = img_data["dominant_category"]
-            dom_cat_name = (
-                self.coco.loadCats(dom_cat)[0]["name"] if dom_cat != -1 else "none"
-            )
+        # Title
+        fig.suptitle(
+            f"Image {img_id}\n"
+            f"Objects: {img_data['n_objects']} | Relations: {img_data['n_relations']} | "
+            f"Coverage: {img_data['coverage_percent']:.1f}% | "
+            f"Memorability: {img_data['memorability']:.2f}",
+            fontsize=14,
+            fontweight="bold",
+        )
 
-            # Get first caption if available
-            caption_text = ""
-            if img_data["captions"]:
-                caption_text = f"\n\"{img_data['captions'][0]}\""
+        # Plot 1: Original with objects
+        ax1 = fig.add_subplot(gs[0, 0])
+        ax1.imshow(img)
+        self._draw_objects(ax1, img_data["objects"], "Objects & Labels")
 
-            fig.suptitle(
-                f"Image {img_id}: {img_info['file_name']}\n"
-                f"All objects: {len(img_data['annotations_all'])} → "
-                f"Counted objects (>={self.min_area_percent}%): {len(img_data['annotations_filtered'])} → "
-                f"Categories: {img_data['category_count']}\n"
-                f"Coverage: {img_data['coverage_percent']:.1f}% | "
-                f"Dominant: {dom_cat_name}"
-                f"{caption_text}",
-                fontsize=14,
-                fontweight="bold",
-            )
+        # Plot 2: Relational graph overlay
+        ax2 = fig.add_subplot(gs[0, 1])
+        ax2.imshow(img)
+        self._draw_relational_graph(
+            ax2,
+            img_data["objects"],
+            img_data["adjacency_matrix"],
+            "Relational Graph (edge thickness = strength)",
+        )
 
-            # Stage 1: Original image without annotations
-            ax = axes[0, 0]
-            ax.imshow(img)
-            ax.set_title("Stage 1: Original Image", fontsize=12, fontweight="bold")
-            ax.axis("off")
+        # Plot 3: Letterboxed
+        letterboxed, scale, offset = self._letterbox_image(img, self.target_size)
+        transformed_objects = self._transform_objects(
+            img_data["objects"], scale, offset
+        )
 
-            # Stage 2: All valid objects (including small ones)
-            ax = axes[0, 1]
-            ax.imshow(img)
-            self._draw_annotations(
-                ax,
-                img_data["annotations_all"],
-                title=f"Stage 2: All Valid Objects (n={len(img_data['annotations_all'])})",
-                alpha=0.5,
-                use_masks=True,
-            )
+        ax3 = fig.add_subplot(gs[1, 0])
+        ax3.imshow(letterboxed)
+        self._draw_objects(
+            ax3,
+            transformed_objects,
+            f"Letterboxed to {self.target_size[0]}×{self.target_size[1]}",
+        )
 
-            # Stage 3: Coverage visualization
-            ax = axes[1, 0]
-            coverage_vis = self._create_coverage_visualization(
-                img,
-                img_data["annotations_all"],
-                img_info["width"],
-                img_info["height"],
-            )
-            ax.imshow(coverage_vis)
-            ax.set_title(
-                f"Stage 3: Coverage Map ({img_data['coverage_percent']:.1f}%)",
-                fontsize=12,
-                fontweight="bold",
-            )
-            ax.axis("off")
+        # Plot 4: Adjacency matrix
+        ax4 = fig.add_subplot(gs[1, 1])
+        self._draw_adjacency_matrix(
+            ax4, img_data["adjacency_matrix"], "Adjacency Matrix (Relation Strengths)"
+        )
 
-            # Stage 4: Letterboxed final
-            letterboxed, scale, offset = self._letterbox_image(img, self.target_size)
-            transformed_anns = self._transform_annotations(
-                img_data["annotations_all"], scale, offset
-            )
+        plt.tight_layout()
 
-            ax = axes[1, 1]
-            ax.imshow(letterboxed)
-            self._draw_annotations(
-                ax,
-                transformed_anns,
-                title=f"Stage 4: Letterboxed to {self.target_size[0]}×{self.target_size[1]}",
-                alpha=0.5,
-                use_masks=True,
-            )
-
-            plt.tight_layout()
-
-        else:
-            # Single final visualization
-            fig, ax = plt.subplots(1, 1, figsize=(15, 10))
-
-            letterboxed, scale, offset = self._letterbox_image(img, self.target_size)
-            transformed_anns = self._transform_annotations(
-                img_data["annotations_all"], scale, offset
-            )
-
-            ax.imshow(letterboxed)
-            self._draw_annotations(
-                ax,
-                transformed_anns,
-                title=f"Final: {len(transformed_anns)} AOIs",
-                alpha=0.5,
-                use_masks=True,
-            )
-
-        # Save visualization
-        output_path = self.output_dir / "visualizations" / f"{img_id:012d}_viz.png"
+        # Save
+        output_path = self.output_dir / "visualizations" / f"{img_id}_viz.png"
         plt.savefig(output_path, dpi=150, bbox_inches="tight")
         plt.close()
 
-    def _create_coverage_visualization(
-        self,
-        img: np.ndarray,
-        anns: List[Dict],
-        img_width: int,
-        img_height: int,
-    ) -> np.ndarray:
-        """Create visualization showing coverage with segmentation masks."""
-        # Create overlay
-        overlay = img.copy()
-
-        # Create binary mask
-        coverage_mask = np.zeros((img_height, img_width), dtype=np.uint8)
-
-        for ann in anns:
-            if "segmentation" in ann:
-                seg = ann["segmentation"]
-
-                # Check if it's a list (polygon format) - most common in COCO
-                if isinstance(seg, list) and len(seg) > 0:
-                    # Check if it's a list of polygons (not RLE)
-                    if isinstance(seg[0], list):
-                        # Polygon format - convert to RLE then decode
-                        try:
-                            rle = mask_utils.frPyObjects(seg, img_height, img_width)
-                            mask = mask_utils.decode(rle)
-                            if len(mask.shape) == 3:
-                                mask = mask.max(axis=2)
-                        except:
-                            # Skip if conversion fails
-                            continue
-                    else:
-                        # Might be RLE in list format, skip for now
-                        continue
-                elif isinstance(seg, dict) and "counts" in seg:
-                    # RLE format as dict
-                    try:
-                        mask = mask_utils.decode(seg)
-                    except:
-                        # Skip if decode fails
-                        continue
-                else:
-                    # Unknown format, skip
-                    continue
-
-                coverage_mask = np.maximum(coverage_mask, mask)
-
-        # Create green overlay for covered areas
-        green_overlay = np.zeros_like(img)
-        green_overlay[:, :, 1] = 255  # Green channel
-
-        # Blend
-        covered = coverage_mask > 0
-        overlay[covered] = cv2.addWeighted(
-            img[covered], 0.5, green_overlay[covered], 0.5, 0
-        )
-
-        return overlay
-
-    def _draw_annotations(
-        self,
-        ax: plt.Axes,
-        anns: List[Dict],
-        title: str = "",
-        alpha: float = 0.4,
-        use_masks: bool = False,
-    ) -> None:
-        """Draw annotations with segmentation masks."""
+    def _draw_objects(self, ax: plt.Axes, objects: List[Dict], title: str) -> None:
+        """Draw objects with labels."""
         ax.set_title(title, fontsize=12, fontweight="bold")
         ax.axis("off")
 
-        # Draw each annotation
-        for ann in anns:
-            cat_id = ann["category_id"]
-            cat_info = self.coco.loadCats(cat_id)[0]
-            color = self.colors[cat_id % len(self.colors)]
+        for idx, obj in enumerate(objects):
+            color = self.colors[idx % len(self.colors)]
 
-            if use_masks and "segmentation" in ann:
-                seg = ann["segmentation"]
+            # Draw polygon or bbox
+            if "polygon" in obj:
+                polygon = np.array(obj["polygon"]).reshape(-1, 2)
+                patch = mpatches.Polygon(
+                    polygon,
+                    closed=True,
+                    linewidth=2,
+                    edgecolor=color,
+                    facecolor=(*color, 0.3),
+                )
+                ax.add_patch(patch)
 
-                # Draw segmentation mask
-                if isinstance(seg, list) and len(seg) > 0:
-                    # Check if it's polygon format
-                    if isinstance(seg[0], list):
-                        # Polygon format
-                        for s in seg:
-                            poly = np.array(s).reshape(-1, 2)
-                            polygon = mpatches.Polygon(
-                                poly,
-                                closed=True,
-                                linewidth=2,
-                                edgecolor=color,
-                                facecolor=(*color, alpha),
-                            )
-                            ax.add_patch(polygon)
-                    else:
-                        # Unknown list format, fall back to bbox
-                        x, y, w, h = ann["bbox"]
-                        rect = mpatches.Rectangle(
-                            (x, y),
-                            w,
-                            h,
-                            linewidth=2,
-                            edgecolor=color,
-                            facecolor=(*color, alpha),
-                        )
-                        ax.add_patch(rect)
-                elif isinstance(seg, dict) and "counts" in seg:
-                    # RLE format - decode and draw
-                    try:
-                        mask = mask_utils.decode(seg)
-                        # Create colored overlay
-                        colored_mask = np.zeros((*mask.shape, 4))
-                        colored_mask[:, :, :3] = color
-                        colored_mask[:, :, 3] = mask * alpha
-                        ax.imshow(colored_mask)
-                    except:
-                        # Fall back to bbox if decode fails
-                        x, y, w, h = ann["bbox"]
-                        rect = mpatches.Rectangle(
-                            (x, y),
-                            w,
-                            h,
-                            linewidth=2,
-                            edgecolor=color,
-                            facecolor=(*color, alpha),
-                        )
-                        ax.add_patch(rect)
-                else:
-                    # Unknown format, fall back to bbox
-                    x, y, w, h = ann["bbox"]
-                    rect = mpatches.Rectangle(
-                        (x, y),
-                        w,
-                        h,
-                        linewidth=2,
-                        edgecolor=color,
-                        facecolor=(*color, alpha),
-                    )
-                    ax.add_patch(rect)
-            else:
-                # Fall back to bounding box
-                x, y, w, h = ann["bbox"]
+                # Label at centroid
+                centroid = polygon.mean(axis=0)
+                label = obj.get("name", f"obj_{idx}")
+                ax.text(
+                    centroid[0],
+                    centroid[1],
+                    label,
+                    fontsize=8,
+                    bbox=dict(boxstyle="round,pad=0.3", facecolor=color, alpha=0.7),
+                    color="white",
+                    fontweight="bold",
+                    ha="center",
+                    va="center",
+                )
+
+            elif "bbox" in obj:
+                x, y, w, h = obj["bbox"]
                 rect = mpatches.Rectangle(
                     (x, y),
                     w,
                     h,
                     linewidth=2,
                     edgecolor=color,
-                    facecolor=(*color, alpha),
+                    facecolor=(*color, 0.3),
                 )
                 ax.add_patch(rect)
 
-            # Label at CENTER of bbox
-            x, y, w, h = ann["bbox"]
-            label = cat_info["name"]
+                # Label at center
+                label = obj.get("name", f"obj_{idx}")
+                ax.text(
+                    x + w / 2,
+                    y + h / 2,
+                    label,
+                    fontsize=8,
+                    bbox=dict(boxstyle="round,pad=0.3", facecolor=color, alpha=0.7),
+                    color="white",
+                    fontweight="bold",
+                    ha="center",
+                    va="center",
+                )
 
-            # Calculate center position
-            center_x = x + w / 2
-            center_y = y + h / 2
+    def _draw_relational_graph(
+        self, ax: plt.Axes, objects: List[Dict], adjacency: np.ndarray, title: str
+    ) -> None:
+        """Draw relational graph as overlay on image."""
+        ax.set_title(title, fontsize=12, fontweight="bold")
+        ax.axis("off")
 
-            ax.text(
-                center_x,
-                center_y,
-                label,
-                fontsize=8,
-                bbox=dict(boxstyle="round,pad=0.3", facecolor=color, alpha=0.7),
-                color="white",
-                fontweight="bold",
-                ha="center",  # Horizontal alignment
-                va="center",  # Vertical alignment
+        # Get object centroids
+        centroids = []
+        for obj in objects:
+            if "polygon" in obj:
+                polygon = np.array(obj["polygon"]).reshape(-1, 2)
+                centroid = polygon.mean(axis=0)
+            elif "bbox" in obj:
+                x, y, w, h = obj["bbox"]
+                centroid = np.array([x + w / 2, y + h / 2])
+            else:
+                centroid = np.array([0, 0])
+            centroids.append(centroid)
+
+        centroids = np.array(centroids)
+
+        # Draw edges
+        for i in range(len(objects)):
+            for j in range(i + 1, len(objects)):
+                weight = adjacency[i, j]
+                if weight > 0:
+                    # Line thickness proportional to weight
+                    linewidth = 0.5 + weight * 3
+                    alpha = 0.3 + weight * 0.5
+
+                    ax.plot(
+                        [centroids[i, 0], centroids[j, 0]],
+                        [centroids[i, 1], centroids[j, 1]],
+                        color="red",
+                        linewidth=linewidth,
+                        alpha=alpha,
+                        zorder=1,
+                    )
+
+        # Draw nodes
+        for idx, centroid in enumerate(centroids):
+            ax.plot(
+                centroid[0],
+                centroid[1],
+                "o",
+                color=self.colors[idx % len(self.colors)],
+                markersize=8,
+                markeredgecolor="white",
+                markeredgewidth=2,
+                zorder=2,
             )
+
+    def _draw_adjacency_matrix(
+        self, ax: plt.Axes, adjacency: np.ndarray, title: str
+    ) -> None:
+        """Draw adjacency matrix heatmap."""
+        ax.set_title(title, fontsize=12, fontweight="bold")
+
+        im = ax.imshow(adjacency, cmap="hot", vmin=0, vmax=1)
+        ax.set_xlabel("Object Index")
+        ax.set_ylabel("Object Index")
+
+        # Add colorbar
+        plt.colorbar(im, ax=ax, label="Relation Strength")
 
     def create_summary_statistics(self, selected_images: List[Dict]) -> None:
         """Create summary statistics visualization."""
@@ -836,11 +755,11 @@ class COCONaturalisticDataset:
 
         # Object count distribution
         ax = axes[0, 0]
-        counts = [img["object_count"] for img in selected_images]
+        counts = [img["n_objects"] for img in selected_images]
         ax.hist(counts, bins=20, edgecolor="black", alpha=0.7)
-        ax.set_xlabel("Number of AOIs per Image")
+        ax.set_xlabel("Number of Objects")
         ax.set_ylabel("Frequency")
-        ax.set_title("AOI Count Distribution")
+        ax.set_title("Object Count Distribution")
         ax.axvline(
             np.mean(counts),
             color="red",
@@ -849,88 +768,85 @@ class COCONaturalisticDataset:
         )
         ax.legend()
 
-        # Category distribution
+        # Relations count distribution
         ax = axes[0, 1]
-        all_cats = []
-        for img in selected_images:
-            all_cats.extend([ann["category_id"] for ann in img["annotations_filtered"]])
-
-        cat_counts = defaultdict(int)
-        for cat_id in all_cats:
-            cat_counts[cat_id] += 1
-
-        # Top 15 categories
-        top_cats = sorted(cat_counts.items(), key=lambda x: x[1], reverse=True)[:15]
-        cat_names = [self.coco.loadCats(c[0])[0]["name"] for c in top_cats]
-        cat_vals = [c[1] for c in top_cats]
-
-        ax.barh(cat_names, cat_vals, alpha=0.7)
-        ax.set_xlabel("Count")
-        ax.set_title("Top 15 Object Categories")
-        ax.invert_yaxis()
+        rel_counts = [img["n_relations"] for img in selected_images]
+        ax.hist(rel_counts, bins=20, edgecolor="black", alpha=0.7, color="green")
+        ax.set_xlabel("Number of Relations")
+        ax.set_ylabel("Frequency")
+        ax.set_title("Relations Count Distribution")
+        ax.axvline(
+            np.mean(rel_counts),
+            color="red",
+            linestyle="--",
+            label=f"Mean: {np.mean(rel_counts):.1f}",
+        )
+        ax.legend()
 
         # Coverage distribution
         ax = axes[0, 2]
         coverages = [img["coverage_percent"] for img in selected_images]
-        ax.hist(coverages, bins=20, edgecolor="black", alpha=0.7, color="green")
+        ax.hist(coverages, bins=20, edgecolor="black", alpha=0.7, color="orange")
         ax.set_xlabel("Coverage (%)")
         ax.set_ylabel("Frequency")
-        ax.set_title(f"Coverage Distribution (min: {self.min_coverage_percent}%)")
-        ax.axvline(
-            self.min_coverage_percent,
-            color="red",
-            linestyle="--",
-            label=f"Threshold: {self.min_coverage_percent}%",
-        )
+        ax.set_title("Coverage Distribution")
         ax.axvline(
             np.mean(coverages),
-            color="blue",
+            color="red",
             linestyle="--",
             label=f"Mean: {np.mean(coverages):.1f}%",
         )
         ax.legend()
 
-        # Category count distribution
+        # Memorability distribution
         ax = axes[1, 0]
-        cat_counts_per_img = [img["category_count"] for img in selected_images]
-        ax.hist(
-            cat_counts_per_img,
-            bins=range(self.min_categories, max(cat_counts_per_img) + 2),
-            edgecolor="black",
-            alpha=0.7,
-            color="orange",
-        )
-        ax.set_xlabel("Number of Categories")
+        mems = [img["memorability"] for img in selected_images]
+        ax.hist(mems, bins=20, edgecolor="black", alpha=0.7, color="purple")
+        ax.set_xlabel("Memorability Score")
         ax.set_ylabel("Frequency")
-        ax.set_title("Category Count per Image")
+        ax.set_title("Memorability Distribution")
         ax.axvline(
-            np.mean(cat_counts_per_img),
+            self.min_memorability,
             color="red",
             linestyle="--",
-            label=f"Mean: {np.mean(cat_counts_per_img):.1f}",
+            label=f"Threshold: {self.min_memorability}",
         )
         ax.legend()
 
-        # Image dimensions
+        # Relations/Objects ratio
         ax = axes[1, 1]
-        widths = [img["image_info"]["width"] for img in selected_images]
-        heights = [img["image_info"]["height"] for img in selected_images]
-
-        ax.scatter(widths, heights, alpha=0.5, s=20)
-        ax.set_xlabel("Width (pixels)")
-        ax.set_ylabel("Height (pixels)")
-        ax.set_title("Original Image Dimensions")
-        ax.axhline(
-            self.target_size[1],
+        ratios = [img["n_relations"] / img["n_objects"] for img in selected_images]
+        ax.hist(ratios, bins=20, edgecolor="black", alpha=0.7, color="cyan")
+        ax.set_xlabel("Relations per Object")
+        ax.set_ylabel("Frequency")
+        ax.set_title("Relational Density")
+        ax.axvline(
+            np.mean(ratios),
             color="red",
             linestyle="--",
-            label=f"Target: {self.target_size[0]}×{self.target_size[1]}",
+            label=f"Mean: {np.mean(ratios):.1f}",
         )
-        ax.axvline(self.target_size[0], color="red", linestyle="--")
         ax.legend()
 
-        # Hide the unused subplot
-        axes[1, 2].axis("off")
+        # Edge weight distribution
+        ax = axes[1, 2]
+        all_weights = []
+        for img in selected_images:
+            adj = img["adjacency_matrix"]
+            weights = adj[adj > 0]  # Non-zero weights
+            all_weights.extend(weights)
+
+        ax.hist(all_weights, bins=30, edgecolor="black", alpha=0.7, color="brown")
+        ax.set_xlabel("Edge Weight")
+        ax.set_ylabel("Frequency")
+        ax.set_title("Relational Edge Strength Distribution")
+        ax.axvline(
+            np.mean(all_weights),
+            color="red",
+            linestyle="--",
+            label=f"Mean: {np.mean(all_weights):.2f}",
+        )
+        ax.legend()
 
         plt.tight_layout()
 
@@ -969,61 +885,50 @@ class COCONaturalisticDataset:
         )
 
         for idx in tqdm(sample_indices, desc="Creating visualizations"):
-            self.visualize_image(selected_images[idx], show_stages=True)
+            self.visualize_image(selected_images[idx])
 
         # Process and save all images
         print("\nProcessing all selected images...")
         dataset_metadata = []
 
         for img_data in tqdm(selected_images, desc="Processing images"):
-            img_info = img_data["image_info"]
-            img_id = img_info["id"]
+            scene_graph = img_data["scene_graph"]
+            img_id = scene_graph.get("image_id", "unknown")
 
             # Load image
-            img_path = self.coco_root / "train2017" / img_info["file_name"]
-            if not img_path.exists():
-                img_path = self.coco_root / "val2017" / img_info["file_name"]
-
-            if not img_path.exists():
-                continue
-
-            img = cv2.imread(str(img_path))
+            img = cv2.imread(str(img_data["image_path"]))
 
             # Letterbox
             letterboxed, scale, offset = self._letterbox_image(img, self.target_size)
 
-            # Transform ALL annotations (including small ones)
-            transformed_anns = self._transform_annotations(
-                img_data["annotations_all"], scale, offset
+            # Transform objects
+            transformed_objects = self._transform_objects(
+                img_data["objects"], scale, offset
             )
 
             # Save letterboxed image
-            output_img_path = self.output_dir / "images" / f"{img_id:012d}.jpg"
+            output_img_path = self.output_dir / "images" / f"{img_id}.jpg"
             cv2.imwrite(str(output_img_path), letterboxed)
 
-            # Save metadata
+            # Prepare metadata
             metadata = {
                 "image_id": img_id,
-                "file_name": f"{img_id:012d}.jpg",
-                "original_file": img_info["file_name"],
+                "file_name": f"{img_id}.jpg",
+                "original_file": scene_graph.get("image", ""),
                 "width": self.target_size[0],
                 "height": self.target_size[1],
-                "original_width": img_info["width"],
-                "original_height": img_info["height"],
+                "original_width": img_data["img_width"],
+                "original_height": img_data["img_height"],
                 "scale": scale,
                 "offset": offset,
-                "num_aois": len(transformed_anns),
-                "num_counted_aois": len(img_data["annotations_filtered"]),
-                "num_categories": img_data["category_count"],
+                "memorability": img_data["memorability"],
                 "coverage_percent": img_data["coverage_percent"],
-                "dominant_category": img_data["dominant_category"],
-                "dominant_category_name": (
-                    self.coco.loadCats(img_data["dominant_category"])[0]["name"]
-                    if img_data["dominant_category"] != -1
-                    else "none"
-                ),
-                "captions": img_data["captions"],
-                "annotations": transformed_anns,
+                "n_objects": img_data["n_objects"],
+                "n_relations": img_data["n_relations"],
+                "objects": transformed_objects,
+                "relations": img_data["relations"],
+                "adjacency_matrix": img_data["adjacency_matrix"].tolist(),
+                "scene_graph": scene_graph,
             }
             dataset_metadata.append(metadata)
 
@@ -1033,26 +938,21 @@ class COCONaturalisticDataset:
             json.dump(
                 {
                     "info": {
-                        "description": "Naturalistic MS-COCO stimuli with segmentation masks and captions",
-                        "date_created": "2025-10-30",
-                        "min_area_percent": self.min_area_percent,
+                        "description": "SVG Relational Stimuli for Gaze-Based Memory Experiments",
+                        "date_created": "2025-12-04",
+                        "source_filter": self.source_filter,
+                        "min_memorability": self.min_memorability,
+                        "min_mask_area_percent": self.min_mask_area_percent,
                         "min_objects": self.min_objects,
                         "max_objects": self.max_objects,
-                        "min_categories": self.min_categories,
+                        "min_relations": self.min_relations,
                         "min_coverage_percent": self.min_coverage_percent,
-                        "require_person": self.require_person,
-                        "overlap_threshold": 0.95,
-                        "removes_crowd_annotations": True,
-                        "includes_captions": self.has_captions,
                         "target_size": self.target_size,
+                        "interaction_weight": self.interaction_weight,
+                        "spatial_weight": self.spatial_weight,
                         "num_images": len(dataset_metadata),
-                        "selection_method": "crowd annotations removed (iscrowd=1), overlapping AOIs removed (>= 95%)",
-                        "uses_segmentation_masks": True,
                     },
                     "images": dataset_metadata,
-                    "categories": [
-                        self.coco.loadCats(c)[0] for c in self.coco.getCatIds()
-                    ],
                 },
                 f,
                 indent=2,
@@ -1063,34 +963,37 @@ class COCONaturalisticDataset:
         print(f"  Visualizations: {self.output_dir / 'visualizations'}")
         print(f"  Metadata: {metadata_path}")
         print(f"\nKey features:")
+        print(f"  ✓ Source: {self.source_filter}")
         print(f"  ✓ {self.min_objects}-{self.max_objects} objects per image")
-        print(f"  ✓ Minimum {self.min_categories} distinct categories")
-        print(f"  ✓ Requires person in scene: {self.require_person}")
-        print(f"  ✓ Crowd annotations removed (iscrowd=1)")
-        print(f"  ✓ Overlapping AOIs removed (>= 95% overlap)")
-        print(f"  ✓ Small objects (<{self.min_area_percent}%) included but not counted")
-        print(f"  ✓ Uses segmentation masks (precise boundaries)")
-        print(f"  ✓ Includes captions: {self.has_captions}")
+        print(f"  ✓ Minimum {self.min_relations} relations per image")
+        print(f"  ✓ Memorability >= {self.min_memorability}")
+        print(
+            f"  ✓ Weighted relational graphs (interaction={self.interaction_weight}, spatial={self.spatial_weight})"
+        )
+        print(f"  ✓ Ready for gaze-relational memory analysis")
 
 
 def main():
     """Main entry point."""
 
     # Configuration
-    COCO_ROOT = None
-    OUTPUT_DIR = "./coco_naturalistic_stimuli"
+    SVG_ROOT = "./svg_dataset"  # Adjust to your SVG dataset path
+    OUTPUT_DIR = "./svg_relational_stimuli"
 
     # Initialize dataset creator
-    creator = COCONaturalisticDataset(
-        coco_root=COCO_ROOT,
+    creator = SVGRelationalDataset(
+        svg_root=SVG_ROOT,
         output_dir=OUTPUT_DIR,
-        min_area_percent=0.5,
-        min_objects=5,
-        min_categories=3,
-        max_objects=25,
-        min_coverage_percent=80.0,
+        min_memorability=0.5,
+        min_mask_area_percent=0.3,
+        min_objects=10,
+        max_objects=30,
+        min_relations=10,
+        min_coverage_percent=70.0,
+        interaction_weight=1.0,
+        spatial_weight=0.3,
         target_size=(1024, 768),
-        require_person=True,
+        source_filter="visual_genome",
     )
 
     # Process dataset

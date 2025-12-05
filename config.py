@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+"""
+config.py - Configuration file for SVG Relational Dataset Creator
+"""
+
+# Paths
+VG_IMAGE_ROOT = r"D:\Relational Scanpath Research\synthetic_visual_genome_data"
+OUTPUT_DIR = "data/processed"
+SVG_ROOT = "data/svg"
+MEMORABILITY_CACHE_PATH = "data/processed/memorability_cache.json"
+SVG_CACHE_PATH = "data/svg_sg_cache.pkl"
+
+# Filtering thresholds
+MIN_MEMORABILITY = 0.5
+MIN_MASK_AREA_PERCENT = 0.5
+MIN_OBJECTS = 10
+MAX_OBJECTS = 30
+MIN_RELATIONS = 10
+MIN_COVERAGE_PERCENT = 70.0
+
+# Image parameters
+TARGET_SIZE = (1024, 768)
+
+# Data source filter
+SOURCE_FILTER = "visual_genome"
+
+# Predicate category weights
+PREDICATE_WEIGHTS = {
+    "interactional": 1.0,
+    "functional": 0.8,
+    "social": 0.7,
+    "emotional": 0.7,
+    "spatial": 0.3,
+}
+
+# Debug/testing
+MAX_IMAGES = 100  # Set to int for quick debugging runs
+RANDOM_SEED = 42
+VISUALIZE_SAMPLES = 20

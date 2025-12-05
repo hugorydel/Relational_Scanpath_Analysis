@@ -2,173 +2,112 @@
 """
 Synthetic Visual Genome (SVG) Relational Dataset Creator
 Filters SVG images for gaze-based relational memory experiments
+
+Refactored with:
+- Memorability caching
+- SVG dataset caching
+- Category-based predicate weighting
+- Config-driven parameters
 """
 
 import json
-import os
+import pickle
 import shutil
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
+import config
 import cv2
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-
-# Try to import memorability predictor
-import torch
 from datasets import load_dataset
-
-# You'll need to install/implement ResMem or ViTMem
-from resmem import ResMemPredictor
+from resmem import ResMem
 from tqdm import tqdm
 
-ds = load_dataset("jamepark3922/svg", split="train")
+
+class MemorabilityCache:
+    """Manages caching of memorability scores."""
+
+    def __init__(self, cache_path: Path):
+        self.cache_path = cache_path
+        self.cache = self._load_cache()
+        self.modified = False
+
+    def _load_cache(self) -> Dict[str, float]:
+        """Load existing cache from disk."""
+        if self.cache_path.exists():
+            with open(self.cache_path, "r") as f:
+                return json.load(f)
+        return {}
+
+    def get(self, image_id: str) -> Optional[float]:
+        """Get cached memorability score."""
+        return self.cache.get(image_id)
+
+    def set(self, image_id: str, score: float):
+        """Store memorability score in cache."""
+        self.cache[image_id] = float(score)
+        self.modified = True
+
+    def save(self):
+        """Save cache to disk if modified."""
+        if self.modified:
+            self.cache_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(self.cache_path, "w") as f:
+                json.dump(self.cache, f, indent=2)
+            print(f"Saved memorability cache with {len(self.cache)} entries")
+
+
+class SVGDatasetCache:
+    """Manages caching of preprocessed SVG dataset."""
+
+    def __init__(self, cache_path: Path):
+        self.cache_path = cache_path
+
+    def exists(self) -> bool:
+        """Check if cache exists."""
+        return self.cache_path.exists()
+
+    def load(self) -> List[Dict]:
+        """Load preprocessed dataset from cache."""
+        print(f"Loading SVG dataset from cache: {self.cache_path}")
+        with open(self.cache_path, "rb") as f:
+            dataset = pickle.load(f)
+        print(f"Loaded {len(dataset)} scene graphs from cache")
+        return dataset
+
+    def save(self, dataset: List[Dict]):
+        """Save preprocessed dataset to cache."""
+        self.cache_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(self.cache_path, "wb") as f:
+            pickle.dump(dataset, f)
+        print(f"Saved SVG dataset cache with {len(dataset)} entries")
 
 
 class SVGRelationalDataset:
     """Filter and process SVG for relational gaze experiments."""
 
-    def __init__(
-        self,
-        svg_root: str,
-        output_dir: str = "./svg_relational_stimuli",
-        # Filtering thresholds
-        min_memorability: float = 0.5,
-        min_mask_area_percent: float = 0.3,
-        min_objects: int = 10,
-        max_objects: int = 30,
-        min_relations: int = 10,
-        min_coverage_percent: float = 70.0,
-        # Relational weights
-        interaction_predicates: List[str] = None,
-        spatial_predicates: List[str] = None,
-        interaction_weight: float = 1.0,
-        spatial_weight: float = 0.3,
-        # Image parameters
-        target_size: Tuple[int, int] = (1024, 768),
-        source_filter: str = "visual_genome",  # Filter to VG-sourced images
-    ):
-        """
-        Initialize the SVG dataset creator.
+    def __init__(self):
+        """Initialize the SVG dataset creator using config parameters."""
+        self.svg_root = Path(config.SVG_ROOT)
+        self.vg_image_root = Path(config.VG_IMAGE_ROOT)
+        self.output_dir = Path(config.OUTPUT_DIR)
+        self.target_size = config.TARGET_SIZE
+        self.source_filter = config.SOURCE_FILTER
 
-        Args:
-            svg_root: Path to SVG dataset root
-            output_dir: Where to save processed images and annotations
-            min_memorability: Minimum memorability score (0-1)
-            min_mask_area_percent: Minimum mask area as % of image
-            min_objects: Minimum number of objects after filtering tiny masks
-            max_objects: Maximum number of objects
-            min_relations: Minimum number of relations in scene graph
-            min_coverage_percent: Minimum % of image covered by AOIs
-            interaction_predicates: List of interaction predicate names (higher weight)
-            spatial_predicates: List of spatial predicate names (lower weight)
-            interaction_weight: Weight for interaction predicates (0-1)
-            spatial_weight: Weight for spatial predicates (0-1)
-            target_size: Fixed canvas size (width, height) for letterboxing
-            source_filter: Filter to specific source dataset (e.g., "visual_genome")
-        """
-        self.svg_root = Path(svg_root)
-        self.output_dir = Path(output_dir)
-        self.min_memorability = min_memorability
-        self.min_mask_area_percent = min_mask_area_percent
-        self.min_objects = min_objects
-        self.max_objects = max_objects
-        self.min_relations = min_relations
-        self.min_coverage_percent = min_coverage_percent
-        self.target_size = target_size
-        self.source_filter = source_filter
+        # Filtering thresholds from config
+        self.min_memorability = config.MIN_MEMORABILITY
+        self.min_mask_area_percent = config.MIN_MASK_AREA_PERCENT
+        self.min_objects = config.MIN_OBJECTS
+        self.max_objects = config.MAX_OBJECTS
+        self.min_relations = config.MIN_RELATIONS
+        self.min_coverage_percent = config.MIN_COVERAGE_PERCENT
 
-        # Default interaction predicates (higher semantic weight)
-        if interaction_predicates is None:
-            interaction_predicates = [
-                "holding",
-                "carrying",
-                "wearing",
-                "reading",
-                "eating",
-                "drinking",
-                "sitting on",
-                "standing on",
-                "riding",
-                "using",
-                "playing",
-                "looking at",
-                "touching",
-                "hugging",
-                "kissing",
-                "petting",
-                "cutting",
-                "cooking",
-                "writing",
-                "typing",
-                "painting",
-                "has",
-                "belongs to",
-                "part of",
-                "attached to",
-                "connected to",
-            ]
-
-        # Default spatial predicates (lower semantic weight)
-        if spatial_predicates is None:
-            spatial_predicates = [
-                "left of",
-                "right of",
-                "above",
-                "below",
-                "in front of",
-                "behind",
-                "in",
-                "inside",
-                "on",
-                "under",
-                "between",
-                "around",
-                "outside",
-                "near",
-                "far from",
-                "next to",
-                "beside",
-                "by",
-                "near to",
-                "close to",
-                "touching",
-                "overlapping",
-                "against",
-                "covering",
-                "intersecting",
-                "on top of",
-                "over",
-                "top of",
-                "on top",
-                "over the top of",
-                "underneath",
-                "beneath",
-                "with",
-                "at",
-                "inside of",
-                "towards",
-                "away from",
-                "into",
-                "out of",
-                "across",
-                "along",
-                "through",
-                "past",
-                "beyond",
-                "across from",
-                "opposite",
-                "at the top of",
-                "bottom of",
-            ]
-
-        self.interaction_predicates = set(p.lower() for p in interaction_predicates)
-        self.spatial_predicates = set(p.lower() for p in spatial_predicates)
-        self.interaction_weight = interaction_weight
-        self.spatial_weight = spatial_weight
+        # Predicate weights from config
+        self.predicate_weights = config.PREDICATE_WEIGHTS
 
         # Create output directories
         if self.output_dir.exists():
@@ -180,107 +119,152 @@ class SVGRelationalDataset:
         (self.output_dir / "annotations").mkdir(exist_ok=True)
         print(f"Created fresh output directory: {self.output_dir}")
 
+        # Initialize caches
+        self.memorability_cache = MemorabilityCache(
+            Path(config.MEMORABILITY_CACHE_PATH)
+        )
+        self.svg_cache = SVGDatasetCache(Path(config.SVG_CACHE_PATH))
+
         # Load memorability predictor
-        self.memorability_predictor = None
-        print("Loading memorability predictor...")
-        self.memorability_predictor = ResMemPredictor()
-        print("Memorability predictor loaded")
+        print("Loading ResMem predictor...")
+        self.resmem = ResMem()
+        print("ResMem predictor loaded")
 
         # Color palette for visualization
-        self.colors = self._generate_colors(100)  # Enough for most scenes
+        np.random.seed(config.RANDOM_SEED)
+        self.colors = self._generate_colors(100)
 
     def _generate_colors(self, n: int) -> np.ndarray:
         """Generate distinguishable colors for visualization."""
-        np.random.seed(42)
         colors = sns.color_palette("husl", n)
         return np.array(colors)
 
     def _load_svg_metadata(self) -> List[Dict]:
         """
-        Load SVG scene graphs and metadata.
+        Load SVG scene graphs from cache or HuggingFace.
 
         Returns:
-            List of scene graph dictionaries
+            List of preprocessed scene graph dictionaries
         """
-        # SVG typically has scene_graphs.json or similar
-        scene_graph_path = self.svg_root / "scene_graphs.json"
+        # Try to load from cache first
+        if self.svg_cache.exists():
+            return self.svg_cache.load()
 
-        if not scene_graph_path.exists():
-            raise FileNotFoundError(f"Scene graphs not found at {scene_graph_path}")
+        # Load from HuggingFace
+        print("Loading SVG dataset from HuggingFace...")
+        dataset = load_dataset("jamepark3922/svg", split="train")
 
-        print(f"Loading SVG scene graphs from {scene_graph_path}...")
-        with open(scene_graph_path, "r") as f:
-            scene_graphs = json.load(f)
+        # Preprocess into our format
+        scene_graphs = []
+        for row in tqdm(dataset, desc="Preprocessing SVG dataset"):
+            # Parse scene graph
+            scene_graph = {
+                "image_id": row["image_id"],
+                "image": row["image_path"],
+                "source": row.get("source", ""),
+                "width": row["width"],
+                "height": row["height"],
+                "objects": [],
+                "relationships": [],
+            }
 
-        print(f"Loaded {len(scene_graphs)} scene graphs")
+            # Parse objects/regions
+            if "regions" in row and row["regions"]:
+                for region in row["regions"]:
+                    obj = {
+                        "object_id": region["region_id"],
+                        "name": region.get("phrase", "unknown"),
+                        "bbox": [
+                            region["x"],
+                            region["y"],
+                            region["width"],
+                            region["height"],
+                        ],
+                    }
+                    # Add polygon if available
+                    if "segmentation" in region and region["segmentation"]:
+                        obj["polygon"] = region["segmentation"]
+                    scene_graph["objects"].append(obj)
+
+            # Parse relationships
+            if "relationships" in row and row["relationships"]:
+                for rel in row["relationships"]:
+                    relationship = {
+                        "subject_id": rel["subject_id"],
+                        "object_id": rel["object_id"],
+                        "predicate": rel["predicate"],
+                        "predicate_category": rel.get("predicate_category", "spatial"),
+                    }
+                    scene_graph["relationships"].append(relationship)
+
+            scene_graphs.append(scene_graph)
+
+            # Debug: limit for testing
+            if config.MAX_IMAGES and len(scene_graphs) >= config.MAX_IMAGES:
+                break
+
+        # Save to cache
+        self.svg_cache.save(scene_graphs)
+
         return scene_graphs
 
-    def _predict_memorability(self, img_path: Path) -> float:
+    def get_memorability(self, image_path: Path, image_id: str) -> float:
         """
-        Predict memorability score for an image.
+        Get memorability score with caching.
 
         Args:
-            img_path: Path to image
+            image_path: Path to image
+            image_id: Unique image identifier for cache key
 
         Returns:
             Memorability score (0-1)
         """
-        # Load and preprocess image
-        img = cv2.imread(str(img_path))
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        # Check cache first
+        cached_score = self.memorability_cache.get(image_id)
+        if cached_score is not None:
+            return cached_score
 
-        # Run predictor
-        score = self.memorability_predictor.predict(img)
+        # Compute with ResMem
+        img = cv2.imread(str(image_path))
+        if img is None:
+            return 0.0
+
+        img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        score = self.resmem.predict(img_rgb)
+
+        # Cache the result
+        self.memorability_cache.set(image_id, score)
 
         return float(score)
 
-    def _calculate_mask_area(
-        self, mask: Dict, img_width: int, img_height: int
-    ) -> float:
-        """
-        Calculate mask area as percentage of image.
-
-        Args:
-            mask: Mask dictionary (could be polygon, RLE, or bbox)
-            img_width: Image width
-            img_height: Image height
-
-        Returns:
-            Area as percentage of image
-        """
+    def _calculate_mask_area(self, obj: Dict, img_width: int, img_height: int) -> float:
+        """Calculate object area as percentage of image."""
         img_area = img_width * img_height
 
-        if "polygon" in mask:
-            # Polygon format: list of [x, y] points
-            polygon = np.array(mask["polygon"]).reshape(-1, 2)
-            # Calculate area using shoelace formula
+        if "polygon" in obj:
+            polygon = np.array(obj["polygon"]).reshape(-1, 2)
             x = polygon[:, 0]
             y = polygon[:, 1]
             area = 0.5 * np.abs(np.dot(x, np.roll(y, 1)) - np.dot(y, np.roll(x, 1)))
             return (area / img_area) * 100
 
-        elif "bbox" in mask:
-            # Bounding box: [x, y, w, h]
-            x, y, w, h = mask["bbox"]
+        elif "bbox" in obj:
+            x, y, w, h = obj["bbox"]
             area = w * h
             return (area / img_area) * 100
-
-        elif "area" in mask:
-            # Direct area field
-            return (mask["area"] / img_area) * 100
 
         return 0.0
 
     def _compute_relational_graph(self, scene_graph: Dict) -> Tuple[np.ndarray, Dict]:
         """
-        Compute weighted relational graph from scene graph.
+        Compute weighted relational graph using predicate categories.
 
         Args:
             scene_graph: SVG scene graph dictionary
 
         Returns:
             adjacency_matrix: NxN weighted adjacency matrix
-            object_id_map: Mapping from object indices to object IDs
+            object_id_map: Mapping from object IDs to indices
         """
         objects = scene_graph.get("objects", [])
         relations = scene_graph.get("relationships", [])
@@ -291,11 +275,11 @@ class SVGRelationalDataset:
         # Create object ID to index mapping
         object_id_map = {obj["object_id"]: idx for idx, obj in enumerate(objects)}
 
-        # Process relations
+        # Process relations using predicate_category
         for rel in relations:
             subj_id = rel.get("subject_id")
             obj_id = rel.get("object_id")
-            predicate = rel.get("predicate", "").lower()
+            predicate_category = rel.get("predicate_category", "spatial")
 
             # Check if both objects exist
             if subj_id not in object_id_map or obj_id not in object_id_map:
@@ -304,22 +288,15 @@ class SVGRelationalDataset:
             subj_idx = object_id_map[subj_id]
             obj_idx = object_id_map[obj_id]
 
-            # Determine weight based on predicate type
-            if predicate in self.interaction_predicates:
-                weight = self.interaction_weight
-            elif predicate in self.spatial_predicates:
-                weight = self.spatial_weight
-            else:
-                # Unknown predicate - give it medium weight
-                weight = (self.interaction_weight + self.spatial_weight) / 2
+            # Get weight from config based on category
+            weight = self.predicate_weights.get(predicate_category, 0.3)
 
-            # Add edge (weighted by predicate type)
-            # If multiple relations exist, sum them up
+            # Add edge (accumulate if multiple relations)
             adjacency[subj_idx, obj_idx] += weight
-            # Make symmetric (undirected graph)
+            # Make undirected
             adjacency[obj_idx, subj_idx] += weight
 
-        # Normalize to [0, 1] per edge
+        # Normalize to [0, 1]
         max_weight = adjacency.max()
         if max_weight > 0:
             adjacency = adjacency / max_weight
@@ -329,31 +306,17 @@ class SVGRelationalDataset:
     def _calculate_coverage(
         self, objects: List[Dict], img_width: int, img_height: int
     ) -> float:
-        """
-        Calculate coverage of image by objects.
-
-        Args:
-            objects: List of object dictionaries with masks
-            img_width: Image width
-            img_height: Image height
-
-        Returns:
-            Coverage percentage
-        """
-        # Create binary mask
+        """Calculate coverage of image by objects."""
         coverage_mask = np.zeros((img_height, img_width), dtype=np.uint8)
 
         for obj in objects:
             if "polygon" in obj:
-                # Draw polygon
                 polygon = np.array(obj["polygon"]).reshape(-1, 2).astype(np.int32)
                 cv2.fillPoly(coverage_mask, [polygon], 1)
             elif "bbox" in obj:
-                # Draw bbox
                 x, y, w, h = obj["bbox"]
                 coverage_mask[int(y) : int(y + h), int(x) : int(x + w)] = 1
 
-        # Calculate coverage
         covered_pixels = np.sum(coverage_mask > 0)
         total_pixels = img_width * img_height
         coverage_percent = (covered_pixels / total_pixels) * 100
@@ -362,7 +325,7 @@ class SVGRelationalDataset:
 
     def filter_images(self) -> List[Dict]:
         """
-        Filter SVG images based on criteria.
+        Filter SVG images based on config criteria.
 
         Returns:
             List of selected image metadata with scene graphs
@@ -400,14 +363,15 @@ class SVGRelationalDataset:
 
             # Get image path
             img_filename = scene_graph.get("image", "")
-            img_path = self.svg_root / "images" / img_filename
+            img_id = scene_graph.get("image_id", img_filename)
+            img_path = self.vg_image_root / img_filename
 
             if not img_path.exists():
                 stats["missing_image"] += 1
                 continue
 
-            # Check memorability
-            memorability = self._predict_memorability(img_path)
+            # Check memorability (with caching)
+            memorability = self.get_memorability(img_path, img_id)
             if memorability < self.min_memorability:
                 stats["low_memorability"] += 1
                 continue
@@ -471,7 +435,10 @@ class SVGRelationalDataset:
                 }
             )
 
-        # Print filtering statistics
+        # Save memorability cache
+        self.memorability_cache.save()
+
+        # Print statistics
         print(f"\nFiltering Statistics:")
         print(f"  Total images: {stats['total']}")
         print(f"  ✗ Wrong source: {stats['wrong_source']}")
@@ -488,28 +455,16 @@ class SVGRelationalDataset:
     def _letterbox_image(
         self, img: np.ndarray, target_size: Tuple[int, int]
     ) -> Tuple[np.ndarray, float, Tuple[int, int]]:
-        """
-        Letterbox image to target size while maintaining aspect ratio.
-
-        Returns:
-            letterboxed_img: Padded image
-            scale: Scale factor applied
-            offset: (x_offset, y_offset) for coordinate transformation
-        """
+        """Letterbox image while maintaining aspect ratio."""
         h, w = img.shape[:2]
         target_w, target_h = target_size
 
-        # Calculate scale
         scale = min(target_w / w, target_h / h)
         new_w, new_h = int(w * scale), int(h * scale)
 
-        # Resize
         resized = cv2.resize(img, (new_w, new_h), interpolation=cv2.INTER_LINEAR)
-
-        # Create canvas
         letterboxed = np.full((target_h, target_w, 3), 114, dtype=np.uint8)
 
-        # Center
         x_offset = (target_w - new_w) // 2
         y_offset = (target_h - new_h) // 2
 
@@ -527,13 +482,11 @@ class SVGRelationalDataset:
         for obj in objects:
             obj_new = obj.copy()
 
-            # Transform polygon if present
             if "polygon" in obj_new:
                 polygon = np.array(obj_new["polygon"]).reshape(-1, 2)
                 polygon = polygon * scale + [x_off, y_off]
                 obj_new["polygon"] = polygon.flatten().tolist()
 
-            # Transform bbox if present
             if "bbox" in obj_new:
                 x, y, w, h = obj_new["bbox"]
                 obj_new["bbox"] = [
@@ -548,24 +501,16 @@ class SVGRelationalDataset:
         return transformed
 
     def visualize_image(self, img_data: Dict) -> None:
-        """
-        Create visualization showing objects and relational graph.
-
-        Args:
-            img_data: Image metadata from filter_images()
-        """
+        """Create visualization showing objects and relational graph."""
         scene_graph = img_data["scene_graph"]
         img_id = scene_graph.get("image_id", "unknown")
 
-        # Load image
         img = cv2.imread(str(img_data["image_path"]))
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-        # Create figure with multiple subplots
         fig = plt.figure(figsize=(20, 10))
         gs = fig.add_gridspec(2, 2, hspace=0.3, wspace=0.3)
 
-        # Title
         fig.suptitle(
             f"Image {img_id}\n"
             f"Objects: {img_data['n_objects']} | Relations: {img_data['n_relations']} | "
@@ -612,7 +557,6 @@ class SVGRelationalDataset:
 
         plt.tight_layout()
 
-        # Save
         output_path = self.output_dir / "visualizations" / f"{img_id}_viz.png"
         plt.savefig(output_path, dpi=150, bbox_inches="tight")
         plt.close()
@@ -625,7 +569,6 @@ class SVGRelationalDataset:
         for idx, obj in enumerate(objects):
             color = self.colors[idx % len(self.colors)]
 
-            # Draw polygon or bbox
             if "polygon" in obj:
                 polygon = np.array(obj["polygon"]).reshape(-1, 2)
                 patch = mpatches.Polygon(
@@ -637,7 +580,6 @@ class SVGRelationalDataset:
                 )
                 ax.add_patch(patch)
 
-                # Label at centroid
                 centroid = polygon.mean(axis=0)
                 label = obj.get("name", f"obj_{idx}")
                 ax.text(
@@ -664,7 +606,6 @@ class SVGRelationalDataset:
                 )
                 ax.add_patch(rect)
 
-                # Label at center
                 label = obj.get("name", f"obj_{idx}")
                 ax.text(
                     x + w / 2,
@@ -681,11 +622,11 @@ class SVGRelationalDataset:
     def _draw_relational_graph(
         self, ax: plt.Axes, objects: List[Dict], adjacency: np.ndarray, title: str
     ) -> None:
-        """Draw relational graph as overlay on image."""
+        """Draw relational graph as overlay."""
         ax.set_title(title, fontsize=12, fontweight="bold")
         ax.axis("off")
 
-        # Get object centroids
+        # Get centroids
         centroids = []
         for obj in objects:
             if "polygon" in obj:
@@ -705,7 +646,6 @@ class SVGRelationalDataset:
             for j in range(i + 1, len(objects)):
                 weight = adjacency[i, j]
                 if weight > 0:
-                    # Line thickness proportional to weight
                     linewidth = 0.5 + weight * 3
                     alpha = 0.3 + weight * 0.5
 
@@ -736,12 +676,9 @@ class SVGRelationalDataset:
     ) -> None:
         """Draw adjacency matrix heatmap."""
         ax.set_title(title, fontsize=12, fontweight="bold")
-
         im = ax.imshow(adjacency, cmap="hot", vmin=0, vmax=1)
         ax.set_xlabel("Object Index")
         ax.set_ylabel("Object Index")
-
-        # Add colorbar
         plt.colorbar(im, ax=ax, label="Relation Strength")
 
     def create_summary_statistics(self, selected_images: List[Dict]) -> None:
@@ -753,7 +690,7 @@ class SVGRelationalDataset:
             fontweight="bold",
         )
 
-        # Object count distribution
+        # Object count
         ax = axes[0, 0]
         counts = [img["n_objects"] for img in selected_images]
         ax.hist(counts, bins=20, edgecolor="black", alpha=0.7)
@@ -768,7 +705,7 @@ class SVGRelationalDataset:
         )
         ax.legend()
 
-        # Relations count distribution
+        # Relations count
         ax = axes[0, 1]
         rel_counts = [img["n_relations"] for img in selected_images]
         ax.hist(rel_counts, bins=20, edgecolor="black", alpha=0.7, color="green")
@@ -783,7 +720,7 @@ class SVGRelationalDataset:
         )
         ax.legend()
 
-        # Coverage distribution
+        # Coverage
         ax = axes[0, 2]
         coverages = [img["coverage_percent"] for img in selected_images]
         ax.hist(coverages, bins=20, edgecolor="black", alpha=0.7, color="orange")
@@ -798,7 +735,7 @@ class SVGRelationalDataset:
         )
         ax.legend()
 
-        # Memorability distribution
+        # Memorability
         ax = axes[1, 0]
         mems = [img["memorability"] for img in selected_images]
         ax.hist(mems, bins=20, edgecolor="black", alpha=0.7, color="purple")
@@ -813,7 +750,7 @@ class SVGRelationalDataset:
         )
         ax.legend()
 
-        # Relations/Objects ratio
+        # Relational density
         ax = axes[1, 1]
         ratios = [img["n_relations"] / img["n_objects"] for img in selected_images]
         ax.hist(ratios, bins=20, edgecolor="black", alpha=0.7, color="cyan")
@@ -828,12 +765,12 @@ class SVGRelationalDataset:
         )
         ax.legend()
 
-        # Edge weight distribution
+        # Edge weights
         ax = axes[1, 2]
         all_weights = []
         for img in selected_images:
             adj = img["adjacency_matrix"]
-            weights = adj[adj > 0]  # Non-zero weights
+            weights = adj[adj > 0]
             all_weights.extend(weights)
 
         ax.hist(all_weights, bins=30, edgecolor="black", alpha=0.7, color="brown")
@@ -850,20 +787,14 @@ class SVGRelationalDataset:
 
         plt.tight_layout()
 
-        # Save
         output_path = self.output_dir / "summary_statistics.png"
         plt.savefig(output_path, dpi=150, bbox_inches="tight")
         plt.close()
 
         print(f"\nSaved summary statistics: {output_path}")
 
-    def process_dataset(self, visualize_samples: int = 20) -> None:
-        """
-        Main processing pipeline.
-
-        Args:
-            visualize_samples: Number of example visualizations to create
-        """
+    def process_dataset(self) -> None:
+        """Main processing pipeline."""
         # Filter images
         selected_images = self.filter_images()
 
@@ -876,13 +807,9 @@ class SVGRelationalDataset:
         self.create_summary_statistics(selected_images)
 
         # Visualize sample images
-        print(f"\nGenerating {visualize_samples} example visualizations...")
-        sample_indices = np.linspace(
-            0,
-            len(selected_images) - 1,
-            min(visualize_samples, len(selected_images)),
-            dtype=int,
-        )
+        n_samples = min(config.VISUALIZE_SAMPLES, len(selected_images))
+        print(f"\nGenerating {n_samples} example visualizations...")
+        sample_indices = np.linspace(0, len(selected_images) - 1, n_samples, dtype=int)
 
         for idx in tqdm(sample_indices, desc="Creating visualizations"):
             self.visualize_image(selected_images[idx])
@@ -939,7 +866,7 @@ class SVGRelationalDataset:
                 {
                     "info": {
                         "description": "SVG Relational Stimuli for Gaze-Based Memory Experiments",
-                        "date_created": "2025-12-04",
+                        "date_created": "2025-12-05",
                         "source_filter": self.source_filter,
                         "min_memorability": self.min_memorability,
                         "min_mask_area_percent": self.min_mask_area_percent,
@@ -948,8 +875,7 @@ class SVGRelationalDataset:
                         "min_relations": self.min_relations,
                         "min_coverage_percent": self.min_coverage_percent,
                         "target_size": self.target_size,
-                        "interaction_weight": self.interaction_weight,
-                        "spatial_weight": self.spatial_weight,
+                        "predicate_weights": self.predicate_weights,
                         "num_images": len(dataset_metadata),
                     },
                     "images": dataset_metadata,
@@ -967,37 +893,15 @@ class SVGRelationalDataset:
         print(f"  ✓ {self.min_objects}-{self.max_objects} objects per image")
         print(f"  ✓ Minimum {self.min_relations} relations per image")
         print(f"  ✓ Memorability >= {self.min_memorability}")
-        print(
-            f"  ✓ Weighted relational graphs (interaction={self.interaction_weight}, spatial={self.spatial_weight})"
-        )
+        print(f"  ✓ Category-based predicate weighting")
+        print(f"  ✓ Memorability caching enabled")
         print(f"  ✓ Ready for gaze-relational memory analysis")
 
 
 def main():
     """Main entry point."""
-
-    # Configuration
-    SVG_ROOT = "./svg_dataset"  # Adjust to your SVG dataset path
-    OUTPUT_DIR = "./svg_relational_stimuli"
-
-    # Initialize dataset creator
-    creator = SVGRelationalDataset(
-        svg_root=SVG_ROOT,
-        output_dir=OUTPUT_DIR,
-        min_memorability=0.5,
-        min_mask_area_percent=0.3,
-        min_objects=10,
-        max_objects=30,
-        min_relations=10,
-        min_coverage_percent=70.0,
-        interaction_weight=1.0,
-        spatial_weight=0.3,
-        target_size=(1024, 768),
-        source_filter="visual_genome",
-    )
-
-    # Process dataset
-    creator.process_dataset(visualize_samples=20)
+    creator = SVGRelationalDataset()
+    creator.process_dataset()
 
 
 if __name__ == "__main__":

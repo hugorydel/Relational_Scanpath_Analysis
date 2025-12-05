@@ -22,9 +22,10 @@ MIN_COVERAGE_PERCENT = 70.0
 TARGET_SIZE = (1024, 768)
 
 # Data source filter
-# Note: SVG is already derived from Visual Genome, so this filter is optional
-# Set to empty string "" to disable filtering
-SOURCE_FILTER = ""  # Changed from "visual_genome" since SVG is already VG-derived
+# Note: SVG contains multiple datasets (VG, ADE20K, etc.)
+# We filter by filename pattern: VG images are numeric (1.jpg, 2.jpg, 2345678.jpg)
+# Set to empty string "" to disable filtering and process all sources
+SOURCE_FILTER = ""  # Filtering done by filename pattern in preprocessing
 
 # Predicate category weights
 PREDICATE_WEIGHTS = {
@@ -36,6 +37,6 @@ PREDICATE_WEIGHTS = {
 }
 
 # Debug/testing
-MAX_IMAGES = None  # Set to int for quick debugging runs
+MAX_IMAGES = 100  # Set to int for quick debugging runs
 RANDOM_SEED = 42
 VISUALIZE_SAMPLES = 20

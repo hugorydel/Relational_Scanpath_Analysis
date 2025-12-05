@@ -124,11 +124,15 @@ class SVGRelationalDataset:
         print("IMPORTANT: SVG Dataset Schema Notes")
         print("=" * 60)
         print("SVG uses the following structure:")
-        print("  - image_id: filename (e.g., '61512.jpg')")
+        print(
+            "  - image_id: filename (e.g., '1.jpg' for VG, 'ADE_frame_*.jpg' for ADE)"
+        )
+        print("  - Metadata is FLATTENED: 'metadata/height', 'metadata/width'")
         print("  - scene_graph: JSON string with objects & relations")
         print("  - regions: segmentation masks and bboxes")
         print("  - relations format: [[subj_idx, obj_idx, predicate], ...]")
-        print("  - Already derived from Visual Genome")
+        print("  - Contains MULTIPLE datasets: VG, ADE20K, etc.")
+        print("  - VG filtering: images with numeric filenames (1.jpg, 234.jpg)")
         print("=" * 60 + "\n")
 
         # Initialize caches
@@ -154,7 +158,7 @@ class SVGRelationalDataset:
     def _load_svg_metadata(self) -> List[Dict]:
         """
         Load SVG scene graphs from cache or HuggingFace.
-        FIXED: Now correctly parses actual SVG dataset schema.
+        FIXED: Now correctly parses actual SVG HuggingFace schema.
 
         Returns:
             List of preprocessed scene graph dictionaries
@@ -167,61 +171,136 @@ class SVGRelationalDataset:
         print("Loading SVG dataset from HuggingFace...")
         dataset = load_dataset("jamepark3922/svg", split="train")
 
+        # PRE-FILTER to Visual Genome images only (numeric filenames)
+        print("Pre-filtering to Visual Genome images only...")
+
+        def is_vg_image(example):
+            img_id = example.get("image_id", "")
+            if not img_id:
+                return False
+            filename_without_ext = img_id.replace(".jpg", "")
+            return filename_without_ext.isdigit()
+
+        dataset = dataset.filter(is_vg_image)
+        print(f"After VG filtering: {len(dataset)} images")
+
+        # Limit for debugging if MAX_IMAGES is set
+        if config.MAX_IMAGES and config.MAX_IMAGES < len(dataset):
+            dataset = dataset.select(range(config.MAX_IMAGES))
+            print(f"Limited to {config.MAX_IMAGES} images for debugging")
+
         # Preprocess into our format
         scene_graphs = []
-        skipped = 0
+        skip_reasons = {
+            "no_image_id": 0,
+            "no_dimensions": 0,
+            "image_not_found": 0,
+            "json_decode_error": 0,
+            "no_objects_after_parse": 0,
+            "other_error": 0,
+        }
+
+        # Debug: Print first row structure
+        if len(dataset) > 0:
+            first_row = dataset[0]
+            print(f"\nDEBUG - First VG row:")
+            print(f"  image_id: {first_row.get('image_id')}")
+            print(f"  Available keys: {list(first_row.keys())}")
+            print(f"  metadata/height: {first_row.get('metadata/height')}")
+            print(f"  metadata/width: {first_row.get('metadata/width')}")
+            print(f"  regions count: {len(first_row.get('regions', []))}")
+            sg = first_row.get("scene_graph", "")
+            print(f"  scene_graph length: {len(sg)} chars")
+            print(f"  scene_graph preview: {sg[:200]}...")
+
+            # Debug path construction
+            test_img_id = first_row.get("image_id", "")
+            test_path = self.vg_image_root / test_img_id
+            print(f"\nDEBUG - Path construction:")
+            print(f"  VG_IMAGE_ROOT: {self.vg_image_root}")
+            print(f"  image_id: {test_img_id}")
+            print(f"  Constructed path: {test_path}")
+            print(f"  Path exists: {test_path.exists()}")
+
+            # List first 10 files in VG_IMAGE_ROOT
+            if self.vg_image_root.exists():
+                files = sorted(list(self.vg_image_root.glob("*.jpg")))[:10]
+                print(f"  First 10 files in VG_IMAGE_ROOT: {[f.name for f in files]}")
+            else:
+                print(f"  WARNING: VG_IMAGE_ROOT does not exist!")
 
         for row in tqdm(dataset, desc="Preprocessing SVG dataset"):
             try:
-                # FIXED: SVG uses image_id as filename (e.g., "61512.jpg")
-                image_id = str(row.get("image_id", ""))
+                # Get image_id
+                image_id = row.get("image_id", "")
                 if not image_id:
-                    skipped += 1
+                    skip_reasons["no_image_id"] += 1
                     continue
 
-                # Parse scene_graph JSON string
-                scene_graph_json = row.get("scene_graph", {})
-                if isinstance(scene_graph_json, str):
-                    scene_graph_json = json.loads(scene_graph_json)
+                # FIXED: Try multiple ways to get dimensions
+                # After filtering, flattened columns might not work
+                img_width = row.get("metadata/width")
+                img_height = row.get("metadata/height")
 
-                # Get image dimensions - try from image file first
-                img_path = self.vg_image_root / image_id
-                if img_path.exists():
-                    img = cv2.imread(str(img_path))
-                    if img is not None:
-                        img_height, img_width = img.shape[:2]
-                    else:
-                        skipped += 1
-                        continue
-                else:
-                    # Fallback: try to get from regions segmentation
-                    regions = row.get("regions", [])
-                    if regions and len(regions) > 0 and "segmentation" in regions[0]:
-                        seg = regions[0]["segmentation"]
-                        if isinstance(seg, dict) and "size" in seg:
-                            img_height, img_width = seg["size"]
+                # If None, try getting from image file directly
+                if img_width is None or img_height is None:
+                    img_path = self.vg_image_root / image_id
+                    if img_path.exists():
+                        img = cv2.imread(str(img_path))
+                        if img is not None:
+                            img_height, img_width = img.shape[:2]
                         else:
-                            skipped += 1
+                            skip_reasons["no_dimensions"] += 1
                             continue
                     else:
-                        skipped += 1
+                        skip_reasons["image_not_found"] += 1
                         continue
+
+                if img_width == 0 or img_height == 0:
+                    skip_reasons["no_dimensions"] += 1
+                    continue
+
+                # Check if image exists (if we haven't already)
+                img_path = self.vg_image_root / image_id
+                if not img_path.exists():
+                    skip_reasons["image_not_found"] += 1
+                    continue
+
+                # Parse scene_graph JSON STRING
+                raw_scene_graph = row.get("scene_graph", "{}")
+                if isinstance(raw_scene_graph, str):
+                    try:
+                        scene_graph_json = json.loads(raw_scene_graph)
+                    except json.JSONDecodeError as e:
+                        skip_reasons["json_decode_error"] += 1
+                        continue
+                else:
+                    scene_graph_json = raw_scene_graph
+
+                # Get regions (already a list of dicts)
+                regions = row.get("regions", [])
+                if not isinstance(regions, list):
+                    regions = []
 
                 # Build our scene graph structure
                 scene_graph = {
                     "image_id": image_id,
-                    "image": image_id,  # Use image_id as filename
-                    "source": "visual_genome",  # SVG is derived from VG
+                    "image": image_id,
+                    "source": "visual_genome",
                     "width": img_width,
                     "height": img_height,
                     "objects": [],
                     "relationships": [],
                 }
 
-                # FIXED: Parse objects from scene_graph JSON
+                # Parse objects from scene_graph JSON
                 sg_objects = scene_graph_json.get("objects", [])
+
                 for idx, obj in enumerate(sg_objects):
-                    # Object format: {"object_id": int, "names": [str], ...}
+                    # FIXED: Ensure obj is a dict, not a string
+                    if not isinstance(obj, dict):
+                        continue
+
                     obj_entry = {
                         "object_id": obj.get("object_id", idx),
                         "name": (
@@ -231,47 +310,25 @@ class SVGRelationalDataset:
                         ),
                     }
 
-                    # Try to get bbox from regions if available
-                    regions = row.get("regions", [])
+                    # Get bbox from regions
                     if idx < len(regions):
                         region = regions[idx]
-                        if "bbox" in region:
-                            bbox = region["bbox"]
-                            obj_entry["bbox"] = [bbox[0], bbox[1], bbox[2], bbox[3]]
-                        elif "x" in region:
-                            obj_entry["bbox"] = [
-                                region["x"],
-                                region["y"],
-                                region.get("width", region.get("w", 0)),
-                                region.get("height", region.get("h", 0)),
-                            ]
+                        # FIXED: Ensure region is a dict
+                        if not isinstance(region, dict):
+                            continue
 
-                        # Add segmentation if available
-                        if "segmentation" in region and region["segmentation"]:
-                            seg = region["segmentation"]
-                            if isinstance(seg, dict) and "counts" in seg:
-                                # RLE format - skip for now, use bbox
-                                pass
-                            elif isinstance(seg, list):
-                                # Polygon format
-                                obj_entry["polygon"] = seg
+                        bbox = region.get("bbox", [])
+                        if isinstance(bbox, list) and len(bbox) == 4:
+                            obj_entry["bbox"] = bbox
 
-                    # If no bbox from regions, create from scene_graph data
-                    if "bbox" not in obj_entry and "x" in obj:
-                        obj_entry["bbox"] = [
-                            obj.get("x", 0),
-                            obj.get("y", 0),
-                            obj.get("w", 0),
-                            obj.get("h", 0),
-                        ]
+                    # Skip objects without bbox
+                    if "bbox" not in obj_entry:
+                        continue
 
                     scene_graph["objects"].append(obj_entry)
 
-                # FIXED: Parse relations from scene_graph JSON
-                # Format: [[subj_idx, obj_idx, predicate], ...]
-                sg_relations = scene_graph_json.get(
-                    "relations", scene_graph_json.get("relationships", [])
-                )
+                # Parse relations from scene_graph JSON
+                sg_relations = scene_graph_json.get("relations", [])
 
                 for rel in sg_relations:
                     if isinstance(rel, list) and len(rel) >= 3:
@@ -300,35 +357,34 @@ class SVGRelationalDataset:
                                 ),
                             }
                             scene_graph["relationships"].append(relationship)
-                    elif isinstance(rel, dict):
-                        # Alternative format: {"subject": idx, "object": idx, "predicate": str}
-                        relationship = {
-                            "subject_id": rel.get("subject", rel.get("subject_id")),
-                            "object_id": rel.get("object", rel.get("object_id")),
-                            "predicate": rel.get("predicate", ""),
-                            "predicate_category": rel.get(
-                                "predicate_category",
-                                self._infer_predicate_category(
-                                    rel.get("predicate", "")
-                                ),
-                            ),
-                        }
-                        scene_graph["relationships"].append(relationship)
 
-                scene_graphs.append(scene_graph)
+                # Only add if we have objects
+                if len(scene_graph["objects"]) > 0:
+                    scene_graphs.append(scene_graph)
+                else:
+                    skip_reasons["no_objects_after_parse"] += 1
 
             except Exception as e:
-                print(f"Warning: Skipping row due to error: {e}")
-                skipped += 1
+                skip_reasons["other_error"] += 1
+                # Print first 5 errors with details
+                if skip_reasons["other_error"] <= 5:
+                    print(
+                        f"\nError #{skip_reasons['other_error']} - image_id: {image_id}"
+                    )
+                    print(f"  Exception: {type(e).__name__}: {e}")
+                    import traceback
+
+                    traceback.print_exc()
                 continue
 
-            # Debug: limit for testing
-            if config.MAX_IMAGES and len(scene_graphs) >= config.MAX_IMAGES:
-                break
-
+        total_skipped = sum(skip_reasons.values())
         print(
-            f"Successfully preprocessed {len(scene_graphs)} scene graphs (skipped {skipped})"
+            f"Successfully preprocessed {len(scene_graphs)} scene graphs (skipped {total_skipped})"
         )
+        print(f"Skip reasons breakdown:")
+        for reason, count in skip_reasons.items():
+            if count > 0:
+                print(f"  - {reason}: {count}")
 
         # Save to cache
         if len(scene_graphs) > 0:

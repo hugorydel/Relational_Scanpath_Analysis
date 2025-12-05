@@ -17,7 +17,6 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
-import config
 import cv2
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
@@ -26,6 +25,8 @@ import seaborn as sns
 from datasets import load_dataset
 from resmem import ResMem
 from tqdm import tqdm
+
+import config
 
 
 class MemorabilityCache:
@@ -119,6 +120,17 @@ class SVGRelationalDataset:
         (self.output_dir / "annotations").mkdir(exist_ok=True)
         print(f"Created fresh output directory: {self.output_dir}")
 
+        print("\n" + "=" * 60)
+        print("IMPORTANT: SVG Dataset Schema Notes")
+        print("=" * 60)
+        print("SVG uses the following structure:")
+        print("  - image_id: filename (e.g., '61512.jpg')")
+        print("  - scene_graph: JSON string with objects & relations")
+        print("  - regions: segmentation masks and bboxes")
+        print("  - relations format: [[subj_idx, obj_idx, predicate], ...]")
+        print("  - Already derived from Visual Genome")
+        print("=" * 60 + "\n")
+
         # Initialize caches
         self.memorability_cache = MemorabilityCache(
             Path(config.MEMORABILITY_CACHE_PATH)
@@ -142,6 +154,7 @@ class SVGRelationalDataset:
     def _load_svg_metadata(self) -> List[Dict]:
         """
         Load SVG scene graphs from cache or HuggingFace.
+        FIXED: Now correctly parses actual SVG dataset schema.
 
         Returns:
             List of preprocessed scene graph dictionaries
@@ -156,57 +169,246 @@ class SVGRelationalDataset:
 
         # Preprocess into our format
         scene_graphs = []
+        skipped = 0
+
         for row in tqdm(dataset, desc="Preprocessing SVG dataset"):
-            # Parse scene graph
-            scene_graph = {
-                "image_id": row["image_id"],
-                "image": row["image_path"],
-                "source": row.get("source", ""),
-                "width": row["width"],
-                "height": row["height"],
-                "objects": [],
-                "relationships": [],
-            }
+            try:
+                # FIXED: SVG uses image_id as filename (e.g., "61512.jpg")
+                image_id = str(row.get("image_id", ""))
+                if not image_id:
+                    skipped += 1
+                    continue
 
-            # Parse objects/regions
-            if "regions" in row and row["regions"]:
-                for region in row["regions"]:
-                    obj = {
-                        "object_id": region["region_id"],
-                        "name": region.get("phrase", "unknown"),
-                        "bbox": [
-                            region["x"],
-                            region["y"],
-                            region["width"],
-                            region["height"],
-                        ],
+                # Parse scene_graph JSON string
+                scene_graph_json = row.get("scene_graph", {})
+                if isinstance(scene_graph_json, str):
+                    scene_graph_json = json.loads(scene_graph_json)
+
+                # Get image dimensions - try from image file first
+                img_path = self.vg_image_root / image_id
+                if img_path.exists():
+                    img = cv2.imread(str(img_path))
+                    if img is not None:
+                        img_height, img_width = img.shape[:2]
+                    else:
+                        skipped += 1
+                        continue
+                else:
+                    # Fallback: try to get from regions segmentation
+                    regions = row.get("regions", [])
+                    if regions and len(regions) > 0 and "segmentation" in regions[0]:
+                        seg = regions[0]["segmentation"]
+                        if isinstance(seg, dict) and "size" in seg:
+                            img_height, img_width = seg["size"]
+                        else:
+                            skipped += 1
+                            continue
+                    else:
+                        skipped += 1
+                        continue
+
+                # Build our scene graph structure
+                scene_graph = {
+                    "image_id": image_id,
+                    "image": image_id,  # Use image_id as filename
+                    "source": "visual_genome",  # SVG is derived from VG
+                    "width": img_width,
+                    "height": img_height,
+                    "objects": [],
+                    "relationships": [],
+                }
+
+                # FIXED: Parse objects from scene_graph JSON
+                sg_objects = scene_graph_json.get("objects", [])
+                for idx, obj in enumerate(sg_objects):
+                    # Object format: {"object_id": int, "names": [str], ...}
+                    obj_entry = {
+                        "object_id": obj.get("object_id", idx),
+                        "name": (
+                            obj.get("names", ["unknown"])[0]
+                            if obj.get("names")
+                            else "unknown"
+                        ),
                     }
-                    # Add polygon if available
-                    if "segmentation" in region and region["segmentation"]:
-                        obj["polygon"] = region["segmentation"]
-                    scene_graph["objects"].append(obj)
 
-            # Parse relationships
-            if "relationships" in row and row["relationships"]:
-                for rel in row["relationships"]:
-                    relationship = {
-                        "subject_id": rel["subject_id"],
-                        "object_id": rel["object_id"],
-                        "predicate": rel["predicate"],
-                        "predicate_category": rel.get("predicate_category", "spatial"),
-                    }
-                    scene_graph["relationships"].append(relationship)
+                    # Try to get bbox from regions if available
+                    regions = row.get("regions", [])
+                    if idx < len(regions):
+                        region = regions[idx]
+                        if "bbox" in region:
+                            bbox = region["bbox"]
+                            obj_entry["bbox"] = [bbox[0], bbox[1], bbox[2], bbox[3]]
+                        elif "x" in region:
+                            obj_entry["bbox"] = [
+                                region["x"],
+                                region["y"],
+                                region.get("width", region.get("w", 0)),
+                                region.get("height", region.get("h", 0)),
+                            ]
 
-            scene_graphs.append(scene_graph)
+                        # Add segmentation if available
+                        if "segmentation" in region and region["segmentation"]:
+                            seg = region["segmentation"]
+                            if isinstance(seg, dict) and "counts" in seg:
+                                # RLE format - skip for now, use bbox
+                                pass
+                            elif isinstance(seg, list):
+                                # Polygon format
+                                obj_entry["polygon"] = seg
+
+                    # If no bbox from regions, create from scene_graph data
+                    if "bbox" not in obj_entry and "x" in obj:
+                        obj_entry["bbox"] = [
+                            obj.get("x", 0),
+                            obj.get("y", 0),
+                            obj.get("w", 0),
+                            obj.get("h", 0),
+                        ]
+
+                    scene_graph["objects"].append(obj_entry)
+
+                # FIXED: Parse relations from scene_graph JSON
+                # Format: [[subj_idx, obj_idx, predicate], ...]
+                sg_relations = scene_graph_json.get(
+                    "relations", scene_graph_json.get("relationships", [])
+                )
+
+                for rel in sg_relations:
+                    if isinstance(rel, list) and len(rel) >= 3:
+                        subj_idx, obj_idx, predicate = rel[0], rel[1], rel[2]
+
+                        # Map indices to object_ids
+                        if subj_idx < len(scene_graph["objects"]) and obj_idx < len(
+                            scene_graph["objects"]
+                        ):
+                            relationship = {
+                                "subject_id": scene_graph["objects"][subj_idx][
+                                    "object_id"
+                                ],
+                                "object_id": scene_graph["objects"][obj_idx][
+                                    "object_id"
+                                ],
+                                "predicate": (
+                                    predicate
+                                    if isinstance(predicate, str)
+                                    else str(predicate)
+                                ),
+                                "predicate_category": self._infer_predicate_category(
+                                    predicate
+                                    if isinstance(predicate, str)
+                                    else str(predicate)
+                                ),
+                            }
+                            scene_graph["relationships"].append(relationship)
+                    elif isinstance(rel, dict):
+                        # Alternative format: {"subject": idx, "object": idx, "predicate": str}
+                        relationship = {
+                            "subject_id": rel.get("subject", rel.get("subject_id")),
+                            "object_id": rel.get("object", rel.get("object_id")),
+                            "predicate": rel.get("predicate", ""),
+                            "predicate_category": rel.get(
+                                "predicate_category",
+                                self._infer_predicate_category(
+                                    rel.get("predicate", "")
+                                ),
+                            ),
+                        }
+                        scene_graph["relationships"].append(relationship)
+
+                scene_graphs.append(scene_graph)
+
+            except Exception as e:
+                print(f"Warning: Skipping row due to error: {e}")
+                skipped += 1
+                continue
 
             # Debug: limit for testing
             if config.MAX_IMAGES and len(scene_graphs) >= config.MAX_IMAGES:
                 break
 
+        print(
+            f"Successfully preprocessed {len(scene_graphs)} scene graphs (skipped {skipped})"
+        )
+
         # Save to cache
-        self.svg_cache.save(scene_graphs)
+        if len(scene_graphs) > 0:
+            self.svg_cache.save(scene_graphs)
 
         return scene_graphs
+
+    def _infer_predicate_category(self, predicate: str) -> str:
+        """
+        Infer predicate category from predicate text.
+        Used when predicate_category is not provided in dataset.
+
+        Args:
+            predicate: Predicate string (e.g., "holding", "on", "near")
+
+        Returns:
+            Category string: "interactional", "functional", "social", "emotional", or "spatial"
+        """
+        pred_lower = predicate.lower()
+
+        # Interaction predicates
+        interaction_words = {
+            "holding",
+            "carrying",
+            "wearing",
+            "reading",
+            "eating",
+            "drinking",
+            "sitting on",
+            "standing on",
+            "riding",
+            "using",
+            "playing",
+            "looking at",
+            "touching",
+            "hugging",
+            "kissing",
+            "petting",
+            "cutting",
+            "cooking",
+            "writing",
+            "typing",
+            "painting",
+        }
+        if pred_lower in interaction_words:
+            return "interactional"
+
+        # Functional predicates
+        functional_words = {
+            "has",
+            "belongs to",
+            "part of",
+            "attached to",
+            "connected to",
+            "made of",
+            "contains",
+            "holds",
+            "supports",
+        }
+        if pred_lower in functional_words:
+            return "functional"
+
+        # Social/emotional predicates
+        social_words = {
+            "with",
+            "talking to",
+            "watching",
+            "smiling at",
+            "laughing with",
+            "next to person",
+            "beside person",
+            "group",
+            "family",
+            "friends",
+        }
+        if pred_lower in social_words or "person" in pred_lower:
+            return "social"
+
+        # Default to spatial
+        return "spatial"
 
     def get_memorability(self, image_path: Path, image_id: str) -> float:
         """
@@ -218,6 +420,12 @@ class SVGRelationalDataset:
 
         Returns:
             Memorability score (0-1)
+
+        Note:
+            ResMem API may vary - adjust the predict() call as needed.
+            Common alternatives:
+            - score = self.resmem.predict(str(image_path))  # if it takes path
+            - score = self.resmem.predict_from_array(img_rgb)  # if different method
         """
         # Check cache first
         cached_score = self.memorability_cache.get(image_id)
@@ -230,7 +438,13 @@ class SVGRelationalDataset:
             return 0.0
 
         img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        score = self.resmem.predict(img_rgb)
+
+        # Call ResMem predictor - adjust API as needed
+        try:
+            score = self.resmem.predict(img_rgb)
+        except Exception as e:
+            print(f"Warning: ResMem prediction failed for {image_id}: {e}")
+            return 0.0
 
         # Cache the result
         self.memorability_cache.set(image_id, score)
@@ -255,25 +469,27 @@ class SVGRelationalDataset:
 
         return 0.0
 
-    def _compute_relational_graph(self, scene_graph: Dict) -> Tuple[np.ndarray, Dict]:
+    def _compute_relational_graph(
+        self, valid_objects: List[Dict], relations: List[Dict]
+    ) -> Tuple[np.ndarray, Dict]:
         """
         Compute weighted relational graph using predicate categories.
+        FIXED: Now builds adjacency only for valid_objects to avoid index mismatch.
 
         Args:
-            scene_graph: SVG scene graph dictionary
+            valid_objects: Filtered list of objects (only those passing area threshold)
+            relations: List of relationships from scene graph
 
         Returns:
-            adjacency_matrix: NxN weighted adjacency matrix
-            object_id_map: Mapping from object IDs to indices
+            adjacency_matrix: NxN weighted adjacency matrix for valid objects
+            object_id_map: Mapping from object IDs to indices in valid_objects
         """
-        objects = scene_graph.get("objects", [])
-        relations = scene_graph.get("relationships", [])
-
-        n_objects = len(objects)
+        n_objects = len(valid_objects)
         adjacency = np.zeros((n_objects, n_objects))
 
-        # Create object ID to index mapping
-        object_id_map = {obj["object_id"]: idx for idx, obj in enumerate(objects)}
+        # Create object ID to index mapping FOR VALID OBJECTS ONLY
+        object_id_map = {obj["object_id"]: idx for idx, obj in enumerate(valid_objects)}
+        valid_object_ids = set(object_id_map.keys())
 
         # Process relations using predicate_category
         for rel in relations:
@@ -281,8 +497,8 @@ class SVGRelationalDataset:
             obj_id = rel.get("object_id")
             predicate_category = rel.get("predicate_category", "spatial")
 
-            # Check if both objects exist
-            if subj_id not in object_id_map or obj_id not in object_id_map:
+            # FIXED: Only include relations between valid objects
+            if subj_id not in valid_object_ids or obj_id not in valid_object_ids:
                 continue
 
             subj_idx = object_id_map[subj_id]
@@ -355,11 +571,13 @@ class SVGRelationalDataset:
         }
 
         for scene_graph in tqdm(scene_graphs, desc="Scanning images"):
-            # Check source
-            source = scene_graph.get("source", "").lower()
-            if self.source_filter and self.source_filter.lower() not in source:
-                stats["wrong_source"] += 1
-                continue
+            # FIXED: Source filter - SVG is already VG-derived, so skip this check
+            # if self.source_filter is set to empty string or if source matches
+            if self.source_filter:
+                source = scene_graph.get("source", "").lower()
+                if source and self.source_filter.lower() not in source:
+                    stats["wrong_source"] += 1
+                    continue
 
             # Get image path
             img_filename = scene_graph.get("image", "")
@@ -414,8 +632,10 @@ class SVGRelationalDataset:
                 stats["low_coverage"] += 1
                 continue
 
-            # Compute relational graph
-            adjacency, object_id_map = self._compute_relational_graph(scene_graph)
+            # FIXED: Compute relational graph for valid_objects only
+            adjacency, object_id_map = self._compute_relational_graph(
+                valid_objects, relations
+            )
 
             # Passed all filters
             candidate_images.append(

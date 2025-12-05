@@ -22,8 +22,10 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+import torch
 from datasets import load_dataset
-from resmem import ResMem
+from PIL import Image
+from resmem import ResMem, transformer
 from tqdm import tqdm
 
 import config
@@ -229,6 +231,18 @@ class SVGRelationalDataset:
             else:
                 print(f"  WARNING: VG_IMAGE_ROOT does not exist!")
 
+            # Debug regions structure
+            if len(first_row.get("regions", [])) > 0:
+                first_region = first_row["regions"][0]
+                print(f"\nDEBUG - First region structure:")
+                print(f"  Type: {type(first_region)}")
+                if isinstance(first_region, dict):
+                    print(f"  Keys: {list(first_region.keys())}")
+                    print(f"  bbox: {first_region.get('bbox')}")
+                    print(f"  Full region: {first_region}")
+                else:
+                    print(f"  Value: {first_region}")
+
         for row in tqdm(dataset, desc="Preprocessing SVG dataset"):
             try:
                 # Get image_id
@@ -294,23 +308,23 @@ class SVGRelationalDataset:
                 }
 
                 # Parse objects from scene_graph JSON
+                # CRITICAL FIX: SVG objects are STRINGS, not dicts!
+                # Format: {"objects": ["description1", "description2", ...]}
                 sg_objects = scene_graph_json.get("objects", [])
 
-                for idx, obj in enumerate(sg_objects):
-                    # FIXED: Ensure obj is a dict, not a string
-                    if not isinstance(obj, dict):
-                        continue
-
+                for idx, obj_description in enumerate(sg_objects):
+                    # obj_description is a STRING like "green clock on tall pole"
+                    # Create object entry
                     obj_entry = {
-                        "object_id": obj.get("object_id", idx),
+                        "object_id": idx,  # Use index as ID
                         "name": (
-                            obj.get("names", ["unknown"])[0]
-                            if obj.get("names")
-                            else "unknown"
+                            obj_description
+                            if isinstance(obj_description, str)
+                            else str(obj_description)
                         ),
                     }
 
-                    # Get bbox from regions
+                    # Get bbox from regions (regions[idx] corresponds to objects[idx])
                     if idx < len(regions):
                         region = regions[idx]
                         # FIXED: Ensure region is a dict
@@ -320,6 +334,15 @@ class SVGRelationalDataset:
                         bbox = region.get("bbox", [])
                         if isinstance(bbox, list) and len(bbox) == 4:
                             obj_entry["bbox"] = bbox
+                        else:
+                            # Try alternative bbox field names
+                            if "x" in region and "y" in region:
+                                x = region.get("x", 0)
+                                y = region.get("y", 0)
+                                w = region.get("width", region.get("w", 0))
+                                h = region.get("height", region.get("h", 0))
+                                if w > 0 and h > 0:
+                                    obj_entry["bbox"] = [x, y, w, h]
 
                     # Skip objects without bbox
                     if "bbox" not in obj_entry:
@@ -478,10 +501,10 @@ class SVGRelationalDataset:
             Memorability score (0-1)
 
         Note:
-            ResMem API may vary - adjust the predict() call as needed.
-            Common alternatives:
-            - score = self.resmem.predict(str(image_path))  # if it takes path
-            - score = self.resmem.predict_from_array(img_rgb)  # if different method
+            ResMem usage:
+            - Use transformer to preprocess image
+            - Call model directly: model(image_tensor)
+            - Input shape: (batch_size, 3, 227, 227)
         """
         # Check cache first
         cached_score = self.memorability_cache.get(image_id)
@@ -489,15 +512,21 @@ class SVGRelationalDataset:
             return cached_score
 
         # Compute with ResMem
-        img = cv2.imread(str(image_path))
-        if img is None:
-            return 0.0
-
-        img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-
-        # Call ResMem predictor - adjust API as needed
         try:
-            score = self.resmem.predict(img_rgb)
+            # Load image with PIL (ResMem expects PIL Image)
+            img = Image.open(image_path).convert("RGB")
+
+            # Apply transformer (preprocessing)
+            image_x = transformer(img)
+
+            # Reshape to batch format and run inference
+            # Shape: (1, 3, 227, 227)
+            with torch.no_grad():
+                prediction = self.resmem(image_x.view(-1, 3, 227, 227))
+
+            # Extract score (single value)
+            score = prediction.item()
+
         except Exception as e:
             print(f"Warning: ResMem prediction failed for {image_id}: {e}")
             return 0.0

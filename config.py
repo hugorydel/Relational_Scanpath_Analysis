@@ -5,7 +5,7 @@ config.py - Configuration file for SVG Relational Dataset Creator
 
 # Paths
 SVG_ROOT = "data/svg_sg"
-VG_IMAGE_ROOT = "data/vg_images"
+VG_IMAGE_ROOT = r"D:\Relational Scanpath Research\synthetic_visual_genome_data"
 OUTPUT_DIR = "data/processed"
 MEMORABILITY_CACHE_PATH = "data/processed/memorability_cache.json"
 SVG_CACHE_PATH = "data/svg_sg_cache.pkl"

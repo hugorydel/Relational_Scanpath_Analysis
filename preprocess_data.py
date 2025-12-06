@@ -35,6 +35,7 @@ import seaborn as sns
 import torch
 from datasets import load_dataset
 from PIL import Image
+from pycocotools import mask as mask_utils
 from resmem import ResMem, transformer
 from tqdm import tqdm
 
@@ -334,7 +335,7 @@ class SVGRelationalDataset:
                         ),
                     }
 
-                    # Get bbox from regions (regions[idx] corresponds to objects[idx])
+                    # Get bbox and segmentation from regions (regions[idx] corresponds to objects[idx])
                     if idx < len(regions):
                         region = regions[idx]
                         # FIXED: Ensure region is a dict
@@ -353,6 +354,10 @@ class SVGRelationalDataset:
                                 h = region.get("height", region.get("h", 0))
                                 if w > 0 and h > 0:
                                     obj_entry["bbox"] = [x, y, w, h]
+
+                        # Store segmentation mask for visualization
+                        if "segmentation" in region:
+                            obj_entry["segmentation"] = region["segmentation"]
 
                     # Skip objects without bbox
                     if "bbox" not in obj_entry:
@@ -509,12 +514,6 @@ class SVGRelationalDataset:
 
         Returns:
             Memorability score (0-1)
-
-        Note:
-            ResMem usage:
-            - Use transformer to preprocess image
-            - Call model directly: model(image_tensor)
-            - Input shape: (batch_size, 3, 227, 227)
         """
         # Check cache first
         cached_score = self.memorability_cache.get(image_id)
@@ -534,11 +533,21 @@ class SVGRelationalDataset:
             with torch.no_grad():
                 prediction = self.resmem(image_x.view(-1, 3, 227, 227))
 
-            # Extract score (single value)
-            score = prediction.item()
+            # FIXED: Handle ResMem output properly
+            # Output might be multi-dimensional, take mean like in examples
+            if prediction.dim() > 1:
+                score = prediction.view(-1).mean().item()
+            else:
+                score = prediction.item()
+
+            # Ensure score is in [0, 1] range
+            score = max(0.0, min(1.0, score))
 
         except Exception as e:
             print(f"Warning: ResMem prediction failed for {image_id}: {e}")
+            import traceback
+
+            traceback.print_exc()
             return 0.0
 
         # Cache the result
@@ -995,6 +1004,80 @@ class SVGRelationalDataset:
         ax.set_xlabel("Object Index")
         ax.set_ylabel("Object Index")
         plt.colorbar(im, ax=ax, label="Relation Strength")
+
+    def _draw_edge_statistics(
+        self, ax: plt.Axes, adjacency: np.ndarray, relations: List[Dict]
+    ) -> None:
+        """Draw edge weight distribution and relation type statistics."""
+        ax.set_title("Relational Statistics", fontsize=12, fontweight="bold")
+
+        # Get non-zero edge weights
+        edge_weights = adjacency[adjacency > 0]
+
+        # Count relation types
+        category_counts = Counter(rel["predicate_category"] for rel in relations)
+
+        # Create text summary
+        stats_text = []
+        stats_text.append(f"Total Relations: {len(relations)}")
+        stats_text.append(f"Unique Edges: {len(edge_weights)}")
+        stats_text.append(f"Avg Edge Strength: {edge_weights.mean():.3f}")
+        stats_text.append(f"Max Edge Strength: {edge_weights.max():.3f}")
+        stats_text.append("")
+        stats_text.append("Relation Types:")
+
+        for category, count in category_counts.most_common():
+            weight = self.predicate_weights.get(category, 0.0)
+            stats_text.append(f"  {category}: {count} (w={weight})")
+
+        # Display as text
+        ax.text(
+            0.05,
+            0.95,
+            "\n".join(stats_text),
+            transform=ax.transAxes,
+            fontsize=10,
+            verticalalignment="top",
+            fontfamily="monospace",
+            bbox=dict(boxstyle="round", facecolor="wheat", alpha=0.5),
+        )
+
+        # Add a small histogram of edge weights
+        from matplotlib.patches import Rectangle
+
+        ax.set_xlim(0, 1)
+        ax.set_ylim(0, 1)
+
+        # Histogram in bottom half
+        if len(edge_weights) > 0:
+            bins = np.linspace(0, 1, 11)
+            hist, bin_edges = np.histogram(edge_weights, bins=bins)
+            max_count = hist.max() if hist.max() > 0 else 1
+
+            for i, (count, left_edge) in enumerate(zip(hist, bin_edges[:-1])):
+                width = bin_edges[1] - bin_edges[0]
+                height = (count / max_count) * 0.3
+                rect = Rectangle(
+                    (left_edge, 0.05),
+                    width,
+                    height,
+                    facecolor="steelblue",
+                    edgecolor="black",
+                    alpha=0.7,
+                )
+                ax.add_patch(rect)
+
+            ax.text(
+                0.5,
+                0.02,
+                "Edge Strength Distribution",
+                transform=ax.transAxes,
+                ha="center",
+                fontsize=9,
+            )
+
+        ax.set_xticks([])
+        ax.set_yticks([])
 
     def create_summary_statistics(self, selected_images: List[Dict]) -> None:
         """Create summary statistics visualization."""

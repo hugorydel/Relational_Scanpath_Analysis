@@ -102,6 +102,57 @@ class SVGDatasetCache:
         print(f"Saved SVG dataset cache with {len(dataset)} entries")
 
 
+class PrecomputedStatsCache:
+    """
+    Manages caching of precomputed image statistics.
+    Caches expensive computations: memorability, coverage, object counts.
+    This avoids recomputing when only config thresholds change.
+    """
+
+    def __init__(self, cache_path: Path):
+        self.cache_path = cache_path
+        self.cache = self._load_cache()
+        self.modified = False
+
+    def _load_cache(self) -> Dict:
+        """Load existing cache from disk."""
+        if self.cache_path.exists():
+            with open(self.cache_path, "rb") as f:
+                cache = pickle.load(f)
+                print(f"Loaded precomputed stats cache with {len(cache)} entries")
+                return cache
+        return {}
+
+    def _get_cache_key(self, img_id: str, min_mask_area: float) -> str:
+        """Generate cache key including mask area threshold (affects object counts)."""
+        return f"{img_id}_{min_mask_area}"
+
+    def get(self, img_id: str, min_mask_area: float) -> Optional[Dict]:
+        """
+        Get cached stats for an image.
+
+        Returns dict with: memorability, coverage_percent, n_objects, n_relations,
+                          valid_objects, img_width, img_height
+        """
+        key = self._get_cache_key(img_id, min_mask_area)
+        return self.cache.get(key)
+
+    def set(self, img_id: str, min_mask_area: float, stats: Dict):
+        """Store precomputed stats in cache."""
+        key = self._get_cache_key(img_id, min_mask_area)
+        self.cache[key] = stats
+        self.modified = True
+
+    def save(self):
+        """Save cache to disk if modified."""
+        if self.modified:
+            self.cache_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(self.cache_path, "wb") as f:
+                pickle.dump(self.cache, f)
+            print(f"Saved precomputed stats cache with {len(self.cache)} entries")
+            self.modified = False
+
+
 class SVGRelationalDataset:
     """Filter and process SVG for relational gaze experiments."""
 
@@ -172,6 +223,9 @@ class SVGRelationalDataset:
 
         self.memorability_cache = MemorabilityCache(mem_cache_path)
         self.svg_cache = SVGDatasetCache(Path(config.SVG_CACHE_PATH))
+        self.precomputed_stats_cache = PrecomputedStatsCache(
+            Path(config.PRECOMPUTED_STATS_CACHE_PATH)
+        )
 
         # Load memorability predictor
         print("Loading ResMem predictor...")
@@ -552,6 +606,57 @@ class SVGRelationalDataset:
         # Default to spatial
         return "spatial"
 
+    def get_memorability(self, image_path: Path, image_id: str) -> float:
+        """
+        Get memorability score with caching (single image).
+
+        Args:
+            image_path: Path to image
+            image_id: Unique image identifier for cache key
+
+        Returns:
+            Memorability score (0-1)
+        """
+        # Check cache first
+        cached_score = self.memorability_cache.get(image_id)
+        if cached_score is not None:
+            return cached_score
+
+        # Compute with ResMem
+        try:
+            # Load image with PIL (ResMem expects PIL Image)
+            img = Image.open(image_path).convert("RGB")
+
+            # Apply transformer (preprocessing)
+            image_x = transformer(img)
+
+            # Reshape to batch format and run inference
+            # Shape: (1, 3, 227, 227)
+            with torch.no_grad():
+                prediction = self.resmem(image_x.view(-1, 3, 227, 227))
+
+            # FIXED: Handle ResMem output properly
+            # Output might be multi-dimensional, take mean like in examples
+            if prediction.dim() > 1:
+                score = prediction.view(-1).mean().item()
+            else:
+                score = prediction.item()
+
+            # Ensure score is in [0, 1] range
+            score = max(0.0, min(1.0, score))
+
+        except Exception as e:
+            print(f"Warning: ResMem prediction failed for {image_id}: {e}")
+            import traceback
+
+            traceback.print_exc()
+            return 0.0
+
+        # Cache the result
+        self.memorability_cache.set(image_id, score)
+
+        return float(score)
+
     def get_memorability_batch(
         self, image_data_list: List[Tuple[Path, str]]
     ) -> List[float]:
@@ -725,16 +830,57 @@ class SVGRelationalDataset:
 
         return coverage_percent
 
+    def _compute_image_stats(
+        self, scene_graph: Dict, img_path: Path, img_id: str
+    ) -> Optional[Dict]:
+        """
+        Compute all expensive statistics for an image.
+        Returns None if image can't be loaded or has critical errors.
+        """
+        # Load image to get dimensions
+        img = cv2.imread(str(img_path))
+        if img is None:
+            return None
+        img_height, img_width = img.shape[:2]
+
+        # Filter objects by mask area
+        objects = scene_graph.get("objects", [])
+        valid_objects = []
+
+        for obj in objects:
+            area_percent = self._calculate_mask_area(obj, img_width, img_height)
+            if area_percent >= self.min_mask_area_percent:
+                obj["area_percent"] = area_percent
+                valid_objects.append(obj)
+
+        # Get relations
+        relations = scene_graph.get("relationships", [])
+
+        # Calculate coverage
+        coverage = self._calculate_coverage(valid_objects, img_width, img_height)
+
+        return {
+            "img_width": img_width,
+            "img_height": img_height,
+            "valid_objects": valid_objects,
+            "n_objects": len(valid_objects),
+            "relations": relations,
+            "n_relations": len(relations),
+            "coverage_percent": coverage,
+        }
+
     def filter_images(self) -> List[Dict]:
         """
         Filter SVG images based on config criteria.
-        1. Fast pre-filtering (objects, relations, coverage) - no image loading
-        2. Batch memorability computation only for passing images
+        OPTIMIZED with comprehensive caching:
+        1. Check precomputed stats cache (memorability, coverage, object counts)
+        2. If missing, compute and cache expensive stats
+        3. Apply threshold filters (cheap - just comparisons)
+        4. Batch memorability computation for uncached images
 
-        Returns:
-            List of selected image metadata with scene graphs
+        This allows changing thresholds without recomputing everything!
         """
-        print("\nFiltering SVG images (OPTIMIZED)...")
+        print("Filtering SVG images (OPTIMIZED with comprehensive caching)...")
         print(f"Criteria:")
         print(f"  - Source: {self.source_filter}")
         print(f"  - Memorability: >= {self.min_memorability}")
@@ -755,14 +901,17 @@ class SVGRelationalDataset:
             "too_few_relations": 0,
             "low_coverage": 0,
             "low_memorability": 0,
+            "cached_stats": 0,
+            "computed_stats": 0,
         }
 
-        # ========== PHASE 1: FAST PRE-FILTERING (no image loading, no memorability) ==========
-        print("\n[Phase 1/2] Fast pre-filtering (objects, relations, coverage)...")
+        # ========== PHASE 1: LOAD OR COMPUTE IMAGE STATS ==========
+        print("[Phase 1/3] Loading/computing image statistics...")
 
-        candidates_for_memorability = []
+        images_needing_memorability = []
+        all_image_data = []
 
-        for scene_graph in tqdm(scene_graphs, desc="Pre-filtering"):
+        for scene_graph in tqdm(scene_graphs, desc="Processing image stats"):
             # Source filter
             if self.source_filter:
                 source = scene_graph.get("source", "").lower()
@@ -779,123 +928,170 @@ class SVGRelationalDataset:
                 stats["missing_image"] += 1
                 continue
 
-            # Quick relation count check (before loading image)
-            relations = scene_graph.get("relationships", [])
-            if len(relations) < self.min_relations:
-                stats["too_few_relations"] += 1
-                continue
-
-            # Load image to get dimensions and filter objects
-            img = cv2.imread(str(img_path))
-            if img is None:
-                stats["missing_image"] += 1
-                continue
-            img_height, img_width = img.shape[:2]
-
-            # Filter objects by mask area
-            objects = scene_graph.get("objects", [])
-            valid_objects = []
-
-            for obj in objects:
-                area_percent = self._calculate_mask_area(obj, img_width, img_height)
-                if area_percent >= self.min_mask_area_percent:
-                    obj["area_percent"] = area_percent
-                    valid_objects.append(obj)
-
-            # Check object count
-            n_objects = len(valid_objects)
-            if n_objects < self.min_objects:
-                stats["too_few_objects"] += 1
-                continue
-            if n_objects > self.max_objects:
-                stats["too_many_objects"] += 1
-                continue
-
-            # Check coverage
-            coverage = self._calculate_coverage(valid_objects, img_width, img_height)
-            if coverage < self.min_coverage_percent:
-                stats["low_coverage"] += 1
-                continue
-
-            # Compute relational graph
-            adjacency, object_id_map = self._compute_relational_graph(
-                valid_objects, relations
+            # Check precomputed stats cache
+            cached_stats = self.precomputed_stats_cache.get(
+                img_id, self.min_mask_area_percent
             )
 
-            # Passed pre-filtering - add to candidates for memorability check
-            candidates_for_memorability.append(
-                {
-                    "scene_graph": scene_graph,
-                    "image_path": img_path,
-                    "img_id": img_id,
-                    "img_width": img_width,
-                    "img_height": img_height,
-                    "objects": valid_objects,
-                    "relations": relations,
-                    "adjacency_matrix": adjacency,
-                    "object_id_map": object_id_map,
-                    "coverage_percent": coverage,
-                    "n_objects": n_objects,
-                    "n_relations": len(relations),
-                }
-            )
+            if cached_stats is not None:
+                # Use cached stats
+                stats["cached_stats"] += 1
+                image_stats = cached_stats.copy()
+            else:
+                # Compute stats
+                stats["computed_stats"] += 1
+                image_stats = self._compute_image_stats(scene_graph, img_path, img_id)
+
+                if image_stats is None:
+                    stats["missing_image"] += 1
+                    continue
+
+                # Mark for caching (will add memorability later)
+                image_stats["needs_caching"] = True
+
+            # Add scene graph and path info
+            image_stats["scene_graph"] = scene_graph
+            image_stats["image_path"] = img_path
+            image_stats["img_id"] = img_id
+
+            # Check if we need memorability
+            if "memorability" not in image_stats:
+                images_needing_memorability.append(image_stats)
+
+            all_image_data.append(image_stats)
 
         print(
-            f"\nPhase 1 complete: {len(candidates_for_memorability)}/{len(scene_graphs)} images passed pre-filtering"
+            f"Phase 1 complete: {len(all_image_data)} images with stats loaded/computed"
         )
+        print(f"  → Used cached stats: {stats['cached_stats']}")
+        print(f"  → Computed new stats: {stats['computed_stats']}")
         print(
-            f"  → Skipped {len(scene_graphs) - len(candidates_for_memorability)} images before memorability computation"
-        )
-        print(
-            f"  → This saves ~{(len(scene_graphs) - len(candidates_for_memorability)) / max(1, len(scene_graphs)) * 100:.1f}% of memorability computations!"
+            f"  → Cache hit rate: {stats['cached_stats'] / max(1, len(all_image_data)) * 100:.1f}%"
         )
 
         # ========== PHASE 2: BATCH MEMORABILITY COMPUTATION ==========
+        if images_needing_memorability:
+            print(
+                f"[Phase 2/3] Computing memorability for {len(images_needing_memorability)} images..."
+            )
+            print(f"  Batch size: {config.MEMORABILITY_BATCH_SIZE}")
+
+            batch_size = config.MEMORABILITY_BATCH_SIZE
+
+            for i in tqdm(
+                range(0, len(images_needing_memorability), batch_size),
+                desc="Memorability batches",
+            ):
+                batch = images_needing_memorability[i : i + batch_size]
+
+                # Prepare batch data
+                image_data_list = [
+                    (img_data["image_path"], img_data["img_id"]) for img_data in batch
+                ]
+
+                # Compute memorability for batch
+                memorability_scores = self.get_memorability_batch(image_data_list)
+
+                # Add memorability to stats
+                for img_data, memorability in zip(batch, memorability_scores):
+                    img_data["memorability"] = memorability
+
+            # Save memorability cache
+            self.memorability_cache.save()
+
+            # Now cache all the new precomputed stats (with memorability)
+            print("Caching precomputed stats...")
+            for img_data in all_image_data:
+                if img_data.get("needs_caching", False):
+                    cache_data = {
+                        "img_width": img_data["img_width"],
+                        "img_height": img_data["img_height"],
+                        "valid_objects": img_data["valid_objects"],
+                        "n_objects": img_data["n_objects"],
+                        "relations": img_data["relations"],
+                        "n_relations": img_data["n_relations"],
+                        "coverage_percent": img_data["coverage_percent"],
+                        "memorability": img_data["memorability"],
+                    }
+                    self.precomputed_stats_cache.set(
+                        img_data["img_id"], self.min_mask_area_percent, cache_data
+                    )
+
+            self.precomputed_stats_cache.save()
+        else:
+            print(
+                "[Phase 2/3] All images have cached memorability - skipping computation!"
+            )
+
+        # ========== PHASE 3: APPLY THRESHOLD FILTERS ==========
         print(
-            f"\n[Phase 2/2] Computing memorability for {len(candidates_for_memorability)} candidates..."
+            f"[Phase 3/3] Applying threshold filters to {len(all_image_data)} images..."
         )
-        print(f"  Batch size: {config.MEMORABILITY_BATCH_SIZE}")
 
         candidate_images = []
-        batch_size = config.MEMORABILITY_BATCH_SIZE
 
-        # Process in batches
-        for i in tqdm(
-            range(0, len(candidates_for_memorability), batch_size),
-            desc="Memorability batches",
-        ):
-            batch = candidates_for_memorability[i : i + batch_size]
+        for img_data in tqdm(all_image_data, desc="Applying filters"):
+            # Check object count
+            if img_data["n_objects"] < self.min_objects:
+                stats["too_few_objects"] += 1
+                continue
+            if img_data["n_objects"] > self.max_objects:
+                stats["too_many_objects"] += 1
+                continue
 
-            # Prepare batch data
-            image_data_list = [(cand["image_path"], cand["img_id"]) for cand in batch]
+            # Check relation count
+            if img_data["n_relations"] < self.min_relations:
+                stats["too_few_relations"] += 1
+                continue
 
-            # Compute memorability for batch
-            memorability_scores = self.get_memorability_batch(image_data_list)
+            # Check coverage
+            if img_data["coverage_percent"] < self.min_coverage_percent:
+                stats["low_coverage"] += 1
+                continue
 
-            # Filter by memorability and add to final candidates
-            for cand, memorability in zip(batch, memorability_scores):
-                if memorability >= self.min_memorability:
-                    cand["memorability"] = memorability
-                    candidate_images.append(cand)
-                else:
-                    stats["low_memorability"] += 1
+            # Check memorability
+            if img_data["memorability"] < self.min_memorability:
+                stats["low_memorability"] += 1
+                continue
 
-        # Save memorability cache
-        self.memorability_cache.save()
+            # Compute relational graph (relatively fast, not worth caching)
+            adjacency, object_id_map = self._compute_relational_graph(
+                img_data["valid_objects"], img_data["relations"]
+            )
+
+            # Passed all filters
+            candidate_images.append(
+                {
+                    "scene_graph": img_data["scene_graph"],
+                    "image_path": img_data["image_path"],
+                    "img_width": img_data["img_width"],
+                    "img_height": img_data["img_height"],
+                    "objects": img_data["valid_objects"],
+                    "relations": img_data["relations"],
+                    "adjacency_matrix": adjacency,
+                    "object_id_map": object_id_map,
+                    "memorability": img_data["memorability"],
+                    "coverage_percent": img_data["coverage_percent"],
+                    "n_objects": img_data["n_objects"],
+                    "n_relations": img_data["n_relations"],
+                }
+            )
 
         # Print statistics
-        print(f"\n{'='*60}")
+        print(f"{'='*60}")
         print("FILTERING STATISTICS (OPTIMIZED)")
         print(f"{'='*60}")
         print(f"  Total images: {stats['total']}")
-        print(f"  Phase 1 rejections (before memorability):")
+        print(f"  Cache performance:")
+        print(f"    ✓ Cached stats used: {stats['cached_stats']}")
+        print(f"    ✓ New stats computed: {stats['computed_stats']}")
+        print(f"  Rejections:")
         print(f"    ✗ Wrong source: {stats['wrong_source']}")
         print(f"    ✗ Missing image: {stats['missing_image']}")
         print(f"    ✗ Too few relations: {stats['too_few_relations']}")
         print(f"    ✗ Too few objects: {stats['too_few_objects']}")
         print(f"    ✗ Too many objects: {stats['too_many_objects']}")
         print(f"    ✗ Low coverage: {stats['low_coverage']}")
-        print(f"  Phase 2 rejections (memorability):")
         print(f"    ✗ Low memorability: {stats['low_memorability']}")
         print(f"  ✓ Final selected: {len(candidate_images)}")
         print(f"{'='*60}")

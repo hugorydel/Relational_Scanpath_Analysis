@@ -7,8 +7,9 @@ config.py - Configuration file for SVG Relational Dataset Creator
 SVG_ROOT = "data/svg_sg"
 VG_IMAGE_ROOT = r"D:\Relational Scanpath Research\synthetic_visual_genome_data"
 OUTPUT_DIR = "data/processed"
-MEMORABILITY_CACHE_PATH = "data/processed/memorability_cache.json"
+MEMORABILITY_CACHE_PATH = "data/memorability_cache.json"
 SVG_CACHE_PATH = "data/svg_sg_cache.pkl"
+PRECOMPUTED_STATS_CACHE_PATH = "data/precomputed_stats_cache.pkl"
 
 # Filtering thresholds
 MIN_MEMORABILITY = 0.8
@@ -29,11 +30,11 @@ SOURCE_FILTER = ""  # Filtering done by filename pattern in preprocessing
 
 # Predicate category weights
 PREDICATE_WEIGHTS = {
-    "interactional": 1.0,
-    "functional": 0.8,
-    "social": 0.7,
-    "emotional": 0.7,
-    "spatial": 0.3,
+    "spatial": 0.20,  # layout only – faint
+    "functional": 0.65,  # affordances / “used for”
+    "social": 0.80,  # people–people relations
+    "emotional": 0.85,  # people–people with affect
+    "interactional": 1.00,  # direct, physical/attentional actions
 }
 
 # Debug/testing

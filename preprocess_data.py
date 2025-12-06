@@ -149,14 +149,33 @@ class SVGRelationalDataset:
         print("=" * 60 + "\n")
 
         # Initialize caches
-        self.memorability_cache = MemorabilityCache(
-            Path(config.MEMORABILITY_CACHE_PATH)
-        )
+        mem_cache_path = Path(config.MEMORABILITY_CACHE_PATH)
+        if mem_cache_path.exists():
+            # Check if cache might have bad scores
+            with open(mem_cache_path, "r") as f:
+                cache_data = json.load(f)
+                if cache_data:
+                    scores = list(cache_data.values())
+                    mean_score = np.mean(scores)
+                    std_score = np.std(scores)
+
+                    if std_score < 0.01:  # Very low variance = probably random weights
+                        print(
+                            f"⚠️  WARNING: Memorability cache has suspiciously low variance!"
+                        )
+                        print(f"   Mean: {mean_score:.4f}, Std: {std_score:.6f}")
+                        print(
+                            f"   This suggests the cache was created with random (non-pretrained) weights."
+                        )
+                        print(f"   DELETE {mem_cache_path} and re-run to fix.\n")
+
+        self.memorability_cache = MemorabilityCache(mem_cache_path)
         self.svg_cache = SVGDatasetCache(Path(config.SVG_CACHE_PATH))
 
         # Load memorability predictor
         print("Loading ResMem predictor...")
-        self.resmem = ResMem()
+        self.resmem = ResMem(pretrained=True)
+        self.resmem.eval()
         print("ResMem predictor loaded")
 
         # Color palette for visualization
@@ -355,9 +374,37 @@ class SVGRelationalDataset:
                                 if w > 0 and h > 0:
                                     obj_entry["bbox"] = [x, y, w, h]
 
-                        # Store segmentation mask for visualization
+                        # CRITICAL FIX: Convert segmentation RLE to polygon
+                        # This allows all existing code to use fine-grained masks
                         if "segmentation" in region:
-                            obj_entry["segmentation"] = region["segmentation"]
+                            seg = region["segmentation"]
+                            if isinstance(seg, dict) and "counts" in seg:
+                                try:
+                                    # Decode RLE mask
+                                    mask = mask_utils.decode(seg)
+
+                                    # Extract contours
+                                    contours, _ = cv2.findContours(
+                                        mask.astype(np.uint8),
+                                        cv2.RETR_EXTERNAL,
+                                        cv2.CHAIN_APPROX_SIMPLE,
+                                    )
+
+                                    if len(contours) > 0:
+                                        # Use the largest contour
+                                        largest_contour = max(
+                                            contours, key=cv2.contourArea
+                                        )
+                                        polygon = largest_contour.squeeze()
+
+                                        # Only use if polygon has enough points
+                                        if len(polygon.shape) == 2 and len(polygon) > 2:
+                                            obj_entry["polygon"] = (
+                                                polygon.flatten().tolist()
+                                            )
+                                except Exception as e:
+                                    # If conversion fails, we'll use bbox
+                                    pass
 
                     # Skip objects without bbox
                     if "bbox" not in obj_entry:

@@ -37,6 +37,6 @@ PREDICATE_WEIGHTS = {
 }
 
 # Debug/testing
-MAX_IMAGES = 1000  # Set to int for quick debugging runs
+MAX_IMAGES = None  # Set to int for quick debugging runs
 RANDOM_SEED = 42
 VISUALIZE_SAMPLES = 20

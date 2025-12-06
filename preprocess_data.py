@@ -914,16 +914,17 @@ class SVGRelationalDataset:
 
         ax3 = fig.add_subplot(gs[1, 0])
         ax3.imshow(letterboxed)
-        self._draw_objects(
-            ax3,
-            transformed_objects,
+        ax3.set_title(
             f"Letterboxed to {self.target_size[0]}×{self.target_size[1]}",
+            fontsize=12,
+            fontweight="bold",
         )
+        ax3.axis("off")
 
-        # Plot 4: Adjacency matrix
+        # Plot 4: Edge statistics (replaces adjacency matrix)
         ax4 = fig.add_subplot(gs[1, 1])
-        self._draw_adjacency_matrix(
-            ax4, img_data["adjacency_matrix"], "Adjacency Matrix (Relation Strengths)"
+        self._draw_edge_statistics(
+            ax4, img_data["adjacency_matrix"], img_data["relations"]
         )
 
         plt.tight_layout()

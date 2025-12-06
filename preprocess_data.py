@@ -24,6 +24,7 @@ import json
 import pickle
 import shutil
 from collections import Counter, defaultdict
+from multiprocessing import Pool, cpu_count
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
@@ -551,56 +552,90 @@ class SVGRelationalDataset:
         # Default to spatial
         return "spatial"
 
-    def get_memorability(self, image_path: Path, image_id: str) -> float:
+    def get_memorability_batch(
+        self, image_data_list: List[Tuple[Path, str]]
+    ) -> List[float]:
         """
-        Get memorability score with caching.
+        Get memorability scores for a batch of images with caching.
+        OPTIMIZED: Processes multiple images at once for better performance.
 
         Args:
-            image_path: Path to image
-            image_id: Unique image identifier for cache key
+            image_data_list: List of (image_path, image_id) tuples
 
         Returns:
-            Memorability score (0-1)
+            List of memorability scores (0-1)
         """
+        scores = []
+        uncached_indices = []
+        uncached_paths = []
+        uncached_ids = []
+
         # Check cache first
-        cached_score = self.memorability_cache.get(image_id)
-        if cached_score is not None:
-            return cached_score
-
-        # Compute with ResMem
-        try:
-            # Load image with PIL (ResMem expects PIL Image)
-            img = Image.open(image_path).convert("RGB")
-
-            # Apply transformer (preprocessing)
-            image_x = transformer(img)
-
-            # Reshape to batch format and run inference
-            # Shape: (1, 3, 227, 227)
-            with torch.no_grad():
-                prediction = self.resmem(image_x.view(-1, 3, 227, 227))
-
-            # FIXED: Handle ResMem output properly
-            # Output might be multi-dimensional, take mean like in examples
-            if prediction.dim() > 1:
-                score = prediction.view(-1).mean().item()
+        for idx, (img_path, img_id) in enumerate(image_data_list):
+            cached_score = self.memorability_cache.get(img_id)
+            if cached_score is not None:
+                scores.append(cached_score)
             else:
-                score = prediction.item()
+                scores.append(None)  # Placeholder
+                uncached_indices.append(idx)
+                uncached_paths.append(img_path)
+                uncached_ids.append(img_id)
 
-            # Ensure score is in [0, 1] range
-            score = max(0.0, min(1.0, score))
+        # Process uncached images in batch
+        if uncached_paths:
+            try:
+                # Load and preprocess all images
+                batch_tensors = []
+                valid_indices = []
 
-        except Exception as e:
-            print(f"Warning: ResMem prediction failed for {image_id}: {e}")
-            import traceback
+                for idx, img_path in enumerate(uncached_paths):
+                    try:
+                        img = Image.open(img_path).convert("RGB")
+                        image_x = transformer(img)
+                        batch_tensors.append(image_x)
+                        valid_indices.append(idx)
+                    except Exception as e:
+                        # If image fails to load, we'll assign 0.0
+                        pass
 
-            traceback.print_exc()
-            return 0.0
+                # Batch inference
+                if batch_tensors:
+                    batch_tensor = torch.stack(batch_tensors)
+                    with torch.no_grad():
+                        predictions = self.resmem(batch_tensor)
 
-        # Cache the result
-        self.memorability_cache.set(image_id, score)
+                    # Process predictions
+                    for idx, prediction in enumerate(predictions):
+                        if prediction.dim() > 1:
+                            score = prediction.view(-1).mean().item()
+                        else:
+                            score = prediction.item()
+                        score = max(0.0, min(1.0, score))
 
-        return float(score)
+                        # Update scores list and cache
+                        original_idx = uncached_indices[valid_indices[idx]]
+                        img_id = uncached_ids[valid_indices[idx]]
+                        scores[original_idx] = score
+                        self.memorability_cache.set(img_id, score)
+
+                # Fill in any failed images with 0.0
+                for i, score in enumerate(scores):
+                    if score is None:
+                        scores[i] = 0.0
+                        img_id = image_data_list[i][1]
+                        self.memorability_cache.set(img_id, 0.0)
+
+            except Exception as e:
+                print(f"Warning: Batch ResMem prediction failed: {e}")
+                import traceback
+
+                traceback.print_exc()
+                # Fill remaining with 0.0
+                for i in range(len(scores)):
+                    if scores[i] is None:
+                        scores[i] = 0.0
+
+        return scores
 
     def _calculate_mask_area(self, obj: Dict, img_width: int, img_height: int) -> float:
         """Calculate object area as percentage of image."""
@@ -693,11 +728,13 @@ class SVGRelationalDataset:
     def filter_images(self) -> List[Dict]:
         """
         Filter SVG images based on config criteria.
+        1. Fast pre-filtering (objects, relations, coverage) - no image loading
+        2. Batch memorability computation only for passing images
 
         Returns:
             List of selected image metadata with scene graphs
         """
-        print("\nFiltering SVG images...")
+        print("\nFiltering SVG images (OPTIMIZED)...")
         print(f"Criteria:")
         print(f"  - Source: {self.source_filter}")
         print(f"  - Memorability: >= {self.min_memorability}")
@@ -708,22 +745,25 @@ class SVGRelationalDataset:
         print(f"  - Coverage: >= {self.min_coverage_percent}%")
 
         scene_graphs = self._load_svg_metadata()
-        candidate_images = []
 
         stats = {
             "total": len(scene_graphs),
             "wrong_source": 0,
-            "low_memorability": 0,
+            "missing_image": 0,
             "too_few_objects": 0,
             "too_many_objects": 0,
             "too_few_relations": 0,
             "low_coverage": 0,
-            "missing_image": 0,
+            "low_memorability": 0,
         }
 
-        for scene_graph in tqdm(scene_graphs, desc="Scanning images"):
-            # FIXED: Source filter - SVG is already VG-derived, so skip this check
-            # if self.source_filter is set to empty string or if source matches
+        # ========== PHASE 1: FAST PRE-FILTERING (no image loading, no memorability) ==========
+        print("\n[Phase 1/2] Fast pre-filtering (objects, relations, coverage)...")
+
+        candidates_for_memorability = []
+
+        for scene_graph in tqdm(scene_graphs, desc="Pre-filtering"):
+            # Source filter
             if self.source_filter:
                 source = scene_graph.get("source", "").lower()
                 if source and self.source_filter.lower() not in source:
@@ -739,13 +779,13 @@ class SVGRelationalDataset:
                 stats["missing_image"] += 1
                 continue
 
-            # Check memorability (with caching)
-            memorability = self.get_memorability(img_path, img_id)
-            if memorability < self.min_memorability:
-                stats["low_memorability"] += 1
+            # Quick relation count check (before loading image)
+            relations = scene_graph.get("relationships", [])
+            if len(relations) < self.min_relations:
+                stats["too_few_relations"] += 1
                 continue
 
-            # Get image dimensions
+            # Load image to get dimensions and filter objects
             img = cv2.imread(str(img_path))
             if img is None:
                 stats["missing_image"] += 1
@@ -771,55 +811,94 @@ class SVGRelationalDataset:
                 stats["too_many_objects"] += 1
                 continue
 
-            # Check relation count
-            relations = scene_graph.get("relationships", [])
-            if len(relations) < self.min_relations:
-                stats["too_few_relations"] += 1
-                continue
-
             # Check coverage
             coverage = self._calculate_coverage(valid_objects, img_width, img_height)
             if coverage < self.min_coverage_percent:
                 stats["low_coverage"] += 1
                 continue
 
-            # FIXED: Compute relational graph for valid_objects only
+            # Compute relational graph
             adjacency, object_id_map = self._compute_relational_graph(
                 valid_objects, relations
             )
 
-            # Passed all filters
-            candidate_images.append(
+            # Passed pre-filtering - add to candidates for memorability check
+            candidates_for_memorability.append(
                 {
                     "scene_graph": scene_graph,
                     "image_path": img_path,
+                    "img_id": img_id,
                     "img_width": img_width,
                     "img_height": img_height,
                     "objects": valid_objects,
                     "relations": relations,
                     "adjacency_matrix": adjacency,
                     "object_id_map": object_id_map,
-                    "memorability": memorability,
                     "coverage_percent": coverage,
                     "n_objects": n_objects,
                     "n_relations": len(relations),
                 }
             )
 
+        print(
+            f"\nPhase 1 complete: {len(candidates_for_memorability)}/{len(scene_graphs)} images passed pre-filtering"
+        )
+        print(
+            f"  → Skipped {len(scene_graphs) - len(candidates_for_memorability)} images before memorability computation"
+        )
+        print(
+            f"  → This saves ~{(len(scene_graphs) - len(candidates_for_memorability)) / max(1, len(scene_graphs)) * 100:.1f}% of memorability computations!"
+        )
+
+        # ========== PHASE 2: BATCH MEMORABILITY COMPUTATION ==========
+        print(
+            f"\n[Phase 2/2] Computing memorability for {len(candidates_for_memorability)} candidates..."
+        )
+        print(f"  Batch size: {config.MEMORABILITY_BATCH_SIZE}")
+
+        candidate_images = []
+        batch_size = config.MEMORABILITY_BATCH_SIZE
+
+        # Process in batches
+        for i in tqdm(
+            range(0, len(candidates_for_memorability), batch_size),
+            desc="Memorability batches",
+        ):
+            batch = candidates_for_memorability[i : i + batch_size]
+
+            # Prepare batch data
+            image_data_list = [(cand["image_path"], cand["img_id"]) for cand in batch]
+
+            # Compute memorability for batch
+            memorability_scores = self.get_memorability_batch(image_data_list)
+
+            # Filter by memorability and add to final candidates
+            for cand, memorability in zip(batch, memorability_scores):
+                if memorability >= self.min_memorability:
+                    cand["memorability"] = memorability
+                    candidate_images.append(cand)
+                else:
+                    stats["low_memorability"] += 1
+
         # Save memorability cache
         self.memorability_cache.save()
 
         # Print statistics
-        print(f"\nFiltering Statistics:")
+        print(f"\n{'='*60}")
+        print("FILTERING STATISTICS (OPTIMIZED)")
+        print(f"{'='*60}")
         print(f"  Total images: {stats['total']}")
-        print(f"  ✗ Wrong source: {stats['wrong_source']}")
-        print(f"  ✗ Low memorability: {stats['low_memorability']}")
-        print(f"  ✗ Too few objects: {stats['too_few_objects']}")
-        print(f"  ✗ Too many objects: {stats['too_many_objects']}")
-        print(f"  ✗ Too few relations: {stats['too_few_relations']}")
-        print(f"  ✗ Low coverage: {stats['low_coverage']}")
-        print(f"  ✗ Missing image: {stats['missing_image']}")
-        print(f"  ✓ Selected: {len(candidate_images)}")
+        print(f"  Phase 1 rejections (before memorability):")
+        print(f"    ✗ Wrong source: {stats['wrong_source']}")
+        print(f"    ✗ Missing image: {stats['missing_image']}")
+        print(f"    ✗ Too few relations: {stats['too_few_relations']}")
+        print(f"    ✗ Too few objects: {stats['too_few_objects']}")
+        print(f"    ✗ Too many objects: {stats['too_many_objects']}")
+        print(f"    ✗ Low coverage: {stats['low_coverage']}")
+        print(f"  Phase 2 rejections (memorability):")
+        print(f"    ✗ Low memorability: {stats['low_memorability']}")
+        print(f"  ✓ Final selected: {len(candidate_images)}")
+        print(f"{'='*60}")
 
         return candidate_images
 

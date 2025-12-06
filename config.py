@@ -11,7 +11,7 @@ MEMORABILITY_CACHE_PATH = "data/processed/memorability_cache.json"
 SVG_CACHE_PATH = "data/svg_sg_cache.pkl"
 
 # Filtering thresholds
-MIN_MEMORABILITY = 0.70
+MIN_MEMORABILITY = 0.8
 MIN_MASK_AREA_PERCENT = 0.5  # Minimum area percent to count mask in coverage percentage
 MIN_OBJECTS = 10
 MAX_OBJECTS = 30
@@ -30,9 +30,9 @@ SOURCE_FILTER = ""  # Filtering done by filename pattern in preprocessing
 # Predicate category weights
 PREDICATE_WEIGHTS = {
     "interactional": 1.0,
+    "functional": 0.8,
     "social": 0.7,
     "emotional": 0.7,
-    "functional": 0.5,
     "spatial": 0.3,
 }
 
@@ -40,3 +40,7 @@ PREDICATE_WEIGHTS = {
 MAX_IMAGES = None  # Set to int for quick debugging runs
 RANDOM_SEED = 42
 VISUALIZE_SAMPLES = 20
+
+# Performance optimization
+MEMORABILITY_BATCH_SIZE = 32  # Process this many images at once
+NUM_WORKERS = None  # None = auto-detect CPU cores, or set to specific number (e.g., 8)

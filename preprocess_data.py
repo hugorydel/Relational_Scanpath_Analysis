@@ -10,6 +10,16 @@ Refactored with:
 - Config-driven parameters
 """
 
+# Fix OpenMP conflict BEFORE importing other libraries
+import os
+
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
+# Use non-interactive matplotlib backend to avoid Qt threading issues
+import matplotlib
+
+matplotlib.use("Agg")
+
 import json
 import pickle
 import shutil

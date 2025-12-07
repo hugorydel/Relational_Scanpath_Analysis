@@ -924,20 +924,21 @@ class SVGRelationalDataset:
             img_id = scene_graph.get("image_id", img_filename)
             img_path = self.vg_image_root / img_filename
 
-            if not img_path.exists():
-                stats["missing_image"] += 1
-                continue
-
-            # Check precomputed stats cache
+            # Check precomputed stats cache FIRST (avoid filesystem calls)
             cached_stats = self.precomputed_stats_cache.get(
                 img_id, self.min_mask_area_percent
             )
 
             if cached_stats is not None:
-                # Use cached stats
+                # Use cached stats (skip filesystem check - already validated when cached)
                 stats["cached_stats"] += 1
                 image_stats = cached_stats.copy()
             else:
+                # Need to compute - check if image exists first
+                if not img_path.exists():
+                    stats["missing_image"] += 1
+                    continue
+
                 # Compute stats
                 stats["computed_stats"] += 1
                 image_stats = self._compute_image_stats(scene_graph, img_path, img_id)
@@ -946,7 +947,7 @@ class SVGRelationalDataset:
                     stats["missing_image"] += 1
                     continue
 
-                # Mark for caching (will add memorability later)
+                # Mark for caching
                 image_stats["needs_caching"] = True
 
             # Add scene graph and path info

@@ -113,6 +113,7 @@ class PrecomputedStatsCache:
         self.cache_path = cache_path
         self.cache = self._load_cache()
         self.modified = False
+        self._key_suffix_cache = {}  # Cache formatted suffixes
 
     def _load_cache(self) -> Dict:
         """Load existing cache from disk."""
@@ -125,7 +126,10 @@ class PrecomputedStatsCache:
 
     def _get_cache_key(self, img_id: str, min_mask_area: float) -> str:
         """Generate cache key including mask area threshold (affects object counts)."""
-        return f"{img_id}_{min_mask_area}"
+        # OPTIMIZED: Cache the formatted suffix to avoid repeated string formatting
+        if min_mask_area not in self._key_suffix_cache:
+            self._key_suffix_cache[min_mask_area] = f"_{min_mask_area}"
+        return f"{img_id}{self._key_suffix_cache[min_mask_area]}"
 
     def get(self, img_id: str, min_mask_area: float) -> Optional[Dict]:
         """
@@ -911,7 +915,9 @@ class SVGRelationalDataset:
         images_needing_memorability = []
         all_image_data = []
 
-        for scene_graph in tqdm(scene_graphs, desc="Processing image stats"):
+        for scene_graph in tqdm(
+            scene_graphs, desc="Processing image stats", mininterval=0.5
+        ):
             # Source filter
             if self.source_filter:
                 source = scene_graph.get("source", "").lower()
@@ -932,7 +938,13 @@ class SVGRelationalDataset:
             if cached_stats is not None:
                 # Use cached stats (skip filesystem check - already validated when cached)
                 stats["cached_stats"] += 1
-                image_stats = cached_stats.copy()
+                # OPTIMIZED: Build dict once with unpacking (faster than copy + assignments)
+                image_stats = {
+                    **cached_stats,
+                    "scene_graph": scene_graph,
+                    "image_path": img_path,
+                    "img_id": img_id,
+                }
             else:
                 # Need to compute - check if image exists first
                 if not img_path.exists():
@@ -947,13 +959,13 @@ class SVGRelationalDataset:
                     stats["missing_image"] += 1
                     continue
 
-                # Mark for caching
+                # Mark for caching (will add memorability later)
                 image_stats["needs_caching"] = True
 
-            # Add scene graph and path info
-            image_stats["scene_graph"] = scene_graph
-            image_stats["image_path"] = img_path
-            image_stats["img_id"] = img_id
+                # Add scene graph and path info
+                image_stats["scene_graph"] = scene_graph
+                image_stats["image_path"] = img_path
+                image_stats["img_id"] = img_id
 
             # Check if we need memorability
             if "memorability" not in image_stats:

@@ -13,6 +13,8 @@ Refactored with:
 # Fix OpenMP conflict BEFORE importing other libraries
 import os
 
+from caching import MemorabilityCache, PrecomputedStatsCache, SVGDatasetCache
+
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 # Use non-interactive matplotlib backend to avoid Qt threading issues
@@ -21,12 +23,10 @@ import matplotlib
 matplotlib.use("Agg")
 
 import json
-import pickle
 import shutil
-from collections import Counter, defaultdict
-from multiprocessing import Pool, cpu_count
+from collections import Counter
 from pathlib import Path
-from typing import Dict, List, Optional, Set, Tuple
+from typing import Dict, List, Optional, Tuple
 
 import cv2
 import matplotlib.patches as mpatches
@@ -41,120 +41,6 @@ from resmem import ResMem, transformer
 from tqdm import tqdm
 
 import config
-
-
-class MemorabilityCache:
-    """Manages caching of memorability scores."""
-
-    def __init__(self, cache_path: Path):
-        self.cache_path = cache_path
-        self.cache = self._load_cache()
-        self.modified = False
-
-    def _load_cache(self) -> Dict[str, float]:
-        """Load existing cache from disk."""
-        if self.cache_path.exists():
-            with open(self.cache_path, "r") as f:
-                return json.load(f)
-        return {}
-
-    def get(self, image_id: str) -> Optional[float]:
-        """Get cached memorability score."""
-        return self.cache.get(image_id)
-
-    def set(self, image_id: str, score: float):
-        """Store memorability score in cache."""
-        self.cache[image_id] = float(score)
-        self.modified = True
-
-    def save(self):
-        """Save cache to disk if modified."""
-        if self.modified:
-            self.cache_path.parent.mkdir(parents=True, exist_ok=True)
-            with open(self.cache_path, "w") as f:
-                json.dump(self.cache, f, indent=2)
-            print(f"Saved memorability cache with {len(self.cache)} entries")
-
-
-class SVGDatasetCache:
-    """Manages caching of preprocessed SVG dataset."""
-
-    def __init__(self, cache_path: Path):
-        self.cache_path = cache_path
-
-    def exists(self) -> bool:
-        """Check if cache exists."""
-        return self.cache_path.exists()
-
-    def load(self) -> List[Dict]:
-        """Load preprocessed dataset from cache."""
-        print(f"Loading SVG dataset from cache: {self.cache_path}")
-        with open(self.cache_path, "rb") as f:
-            dataset = pickle.load(f)
-        print(f"Loaded {len(dataset)} scene graphs from cache")
-        return dataset
-
-    def save(self, dataset: List[Dict]):
-        """Save preprocessed dataset to cache."""
-        self.cache_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(self.cache_path, "wb") as f:
-            pickle.dump(dataset, f)
-        print(f"Saved SVG dataset cache with {len(dataset)} entries")
-
-
-class PrecomputedStatsCache:
-    """
-    Manages caching of precomputed image statistics.
-    Caches expensive computations: memorability, coverage, object counts.
-    This avoids recomputing when only config thresholds change.
-    """
-
-    def __init__(self, cache_path: Path):
-        self.cache_path = cache_path
-        self.cache = self._load_cache()
-        self.modified = False
-        self._key_suffix_cache = {}  # Cache formatted suffixes
-
-    def _load_cache(self) -> Dict:
-        """Load existing cache from disk."""
-        if self.cache_path.exists():
-            with open(self.cache_path, "rb") as f:
-                cache = pickle.load(f)
-                print(f"Loaded precomputed stats cache with {len(cache)} entries")
-                return cache
-        return {}
-
-    def _get_cache_key(self, img_id: str, min_mask_area: float) -> str:
-        """Generate cache key including mask area threshold (affects object counts)."""
-        # OPTIMIZED: Cache the formatted suffix to avoid repeated string formatting
-        if min_mask_area not in self._key_suffix_cache:
-            self._key_suffix_cache[min_mask_area] = f"_{min_mask_area}"
-        return f"{img_id}{self._key_suffix_cache[min_mask_area]}"
-
-    def get(self, img_id: str, min_mask_area: float) -> Optional[Dict]:
-        """
-        Get cached stats for an image.
-
-        Returns dict with: memorability, coverage_percent, n_objects, n_relations,
-                          valid_objects, img_width, img_height
-        """
-        key = self._get_cache_key(img_id, min_mask_area)
-        return self.cache.get(key)
-
-    def set(self, img_id: str, min_mask_area: float, stats: Dict):
-        """Store precomputed stats in cache."""
-        key = self._get_cache_key(img_id, min_mask_area)
-        self.cache[key] = stats
-        self.modified = True
-
-    def save(self):
-        """Save cache to disk if modified."""
-        if self.modified:
-            self.cache_path.parent.mkdir(parents=True, exist_ok=True)
-            with open(self.cache_path, "wb") as f:
-                pickle.dump(self.cache, f)
-            print(f"Saved precomputed stats cache with {len(self.cache)} entries")
-            self.modified = False
 
 
 class SVGRelationalDataset:
@@ -245,6 +131,220 @@ class SVGRelationalDataset:
         """Generate distinguishable colors for visualization."""
         colors = sns.color_palette("husl", n)
         return np.array(colors)
+
+    def _build_scene_graph_lookup(
+        self, passing_image_ids: List[Tuple[str, Dict]]
+    ) -> Dict[str, Dict]:
+        """
+        Build lookup for scene graphs of ONLY passing images.
+        Memory-efficient: Only loads ~1.5K scene graphs instead of 40K!
+
+        Args:
+            passing_image_ids: List of (img_id, cached_stats) tuples for passing images
+
+        Returns:
+            Dict mapping img_id to scene_graph
+        """
+        # Extract just the image IDs
+        needed_ids = set(img_id for img_id, _ in passing_image_ids)
+
+        print(f"  Building scene graph lookup for {len(needed_ids)} images...")
+        print("  Strategy: Load from HuggingFace on-demand (avoids loading all 40K)")
+
+        # Load from HuggingFace dataset
+        from datasets import load_dataset
+        from tqdm import tqdm
+
+        print("  Loading HuggingFace dataset...")
+        dataset = load_dataset("jamepark3922/svg", split="train")
+
+        # Filter to VG images
+        def is_vg_image(example):
+            img_id = example.get("image_id", "")
+            if not img_id:
+                return False
+            filename_without_ext = img_id.replace(".jpg", "")
+            return filename_without_ext.isdigit()
+
+        print("  Filtering to Visual Genome images...")
+        dataset = dataset.filter(is_vg_image)
+
+        # Build lookup for only needed images (lazy - only process what we need)
+        lookup = {}
+        print(f"  Extracting {len(needed_ids)} needed scene graphs...")
+
+        for row in tqdm(dataset, desc="  Loading scene graphs", mininterval=0.5):
+            img_id = row.get("image_id", "")
+
+            # Only process if we need this image
+            if img_id in needed_ids:
+                scene_graph = self._parse_scene_graph_row(row)
+                if scene_graph:
+                    lookup[img_id] = scene_graph
+
+                # Stop early if we've found all needed images
+                if len(lookup) >= len(needed_ids):
+                    print(f"  ✓ Found all {len(lookup)} needed scene graphs")
+                    break
+
+        if len(lookup) < len(needed_ids):
+            print(
+                f"  ⚠️  Warning: Only found {len(lookup)}/{len(needed_ids)} scene graphs"
+            )
+
+        return lookup
+
+    def _parse_scene_graph_row(self, row: Dict) -> Optional[Dict]:
+        """
+        Parse a single HuggingFace row into scene graph format.
+        Extracted from _load_svg_metadata for lazy loading.
+        """
+        try:
+            import json
+
+            # Get image_id
+            image_id = row.get("image_id", "")
+            if not image_id:
+                return None
+
+            # Get dimensions
+            img_width = row.get("metadata/width")
+            img_height = row.get("metadata/height")
+
+            if img_width is None or img_height is None:
+                img_path = self.vg_image_root / image_id
+                if img_path.exists():
+                    img = cv2.imread(str(img_path))
+                    if img is not None:
+                        img_height, img_width = img.shape[:2]
+                    else:
+                        return None
+                else:
+                    return None
+
+            if img_width == 0 or img_height == 0:
+                return None
+
+            # Parse scene_graph JSON
+            raw_scene_graph = row.get("scene_graph", "{}")
+            if isinstance(raw_scene_graph, str):
+                try:
+                    scene_graph_json = json.loads(raw_scene_graph)
+                except json.JSONDecodeError:
+                    return None
+            else:
+                scene_graph_json = raw_scene_graph
+
+            # Get regions
+            regions = row.get("regions", [])
+            if not isinstance(regions, list):
+                regions = []
+
+            # Build scene graph structure
+            scene_graph = {
+                "image_id": image_id,
+                "image": image_id,
+                "source": "visual_genome",
+                "width": img_width,
+                "height": img_height,
+                "objects": [],
+                "relationships": [],
+            }
+
+            # Parse objects from scene_graph JSON
+            sg_objects = scene_graph_json.get("objects", [])
+
+            for idx, obj_description in enumerate(sg_objects):
+                obj_entry = {
+                    "object_id": idx,
+                    "name": (
+                        obj_description
+                        if isinstance(obj_description, str)
+                        else str(obj_description)
+                    ),
+                }
+
+                # Get bbox and segmentation from regions
+                if idx < len(regions):
+                    region = regions[idx]
+                    if not isinstance(region, dict):
+                        continue
+
+                    bbox = region.get("bbox", [])
+                    if isinstance(bbox, list) and len(bbox) == 4:
+                        obj_entry["bbox"] = bbox
+                    else:
+                        if "x" in region and "y" in region:
+                            x = region.get("x", 0)
+                            y = region.get("y", 0)
+                            w = region.get("width", region.get("w", 0))
+                            h = region.get("height", region.get("h", 0))
+                            if w > 0 and h > 0:
+                                obj_entry["bbox"] = [x, y, w, h]
+
+                    # Convert segmentation RLE to polygon
+                    if "segmentation" in region:
+                        seg = region["segmentation"]
+                        if isinstance(seg, dict) and "counts" in seg:
+                            try:
+                                from pycocotools import mask as mask_utils
+
+                                mask = mask_utils.decode(seg)
+                                contours, _ = cv2.findContours(
+                                    mask.astype(np.uint8),
+                                    cv2.RETR_EXTERNAL,
+                                    cv2.CHAIN_APPROX_SIMPLE,
+                                )
+                                if len(contours) > 0:
+                                    largest_contour = max(contours, key=cv2.contourArea)
+                                    polygon = largest_contour.squeeze()
+                                    if len(polygon.shape) == 2 and len(polygon) > 2:
+                                        obj_entry["polygon"] = (
+                                            polygon.flatten().tolist()
+                                        )
+                            except Exception:
+                                pass
+
+                # Skip objects without bbox
+                if "bbox" not in obj_entry:
+                    continue
+
+                scene_graph["objects"].append(obj_entry)
+
+            # Parse relations
+            sg_relations = scene_graph_json.get("relations", [])
+
+            for rel in sg_relations:
+                if isinstance(rel, list) and len(rel) >= 3:
+                    subj_idx, obj_idx, predicate = rel[0], rel[1], rel[2]
+
+                    if subj_idx < len(scene_graph["objects"]) and obj_idx < len(
+                        scene_graph["objects"]
+                    ):
+                        relationship = {
+                            "subject_id": scene_graph["objects"][subj_idx]["object_id"],
+                            "object_id": scene_graph["objects"][obj_idx]["object_id"],
+                            "predicate": (
+                                predicate
+                                if isinstance(predicate, str)
+                                else str(predicate)
+                            ),
+                            "predicate_category": self._infer_predicate_category(
+                                predicate
+                                if isinstance(predicate, str)
+                                else str(predicate)
+                            ),
+                        }
+                        scene_graph["relationships"].append(relationship)
+
+            # Only return if we have objects
+            if len(scene_graph["objects"]) > 0:
+                return scene_graph
+
+            return None
+
+        except Exception as e:
+            return None
 
     def _load_svg_metadata(self) -> List[Dict]:
         """
@@ -841,50 +941,54 @@ class SVGRelationalDataset:
         Compute all expensive statistics for an image.
         Returns None if image can't be loaded or has critical errors.
         """
-        # Load image to get dimensions
-        img = cv2.imread(str(img_path))
-        if img is None:
+        try:
+            # Load image to get dimensions
+            img = cv2.imread(str(img_path))
+            if img is None:
+                return None
+            img_height, img_width = img.shape[:2]
+
+            # Filter objects by mask area
+            objects = scene_graph.get("objects", [])
+            valid_objects = []
+
+            for obj in objects:
+                area_percent = self._calculate_mask_area(obj, img_width, img_height)
+                if area_percent >= self.min_mask_area_percent:
+                    obj["area_percent"] = area_percent
+                    valid_objects.append(obj)
+
+            # Get relations
+            relations = scene_graph.get("relationships", [])
+
+            # Calculate coverage (can be slow with many polygons)
+            coverage = self._calculate_coverage(valid_objects, img_width, img_height)
+
+            return {
+                "img_width": img_width,
+                "img_height": img_height,
+                "valid_objects": valid_objects,
+                "n_objects": len(valid_objects),
+                "relations": relations,
+                "n_relations": len(relations),
+                "coverage_percent": coverage,
+            }
+        except Exception as e:
+            print(f"\n⚠️  Error computing stats for {img_id}: {e}")
             return None
-        img_height, img_width = img.shape[:2]
-
-        # Filter objects by mask area
-        objects = scene_graph.get("objects", [])
-        valid_objects = []
-
-        for obj in objects:
-            area_percent = self._calculate_mask_area(obj, img_width, img_height)
-            if area_percent >= self.min_mask_area_percent:
-                obj["area_percent"] = area_percent
-                valid_objects.append(obj)
-
-        # Get relations
-        relations = scene_graph.get("relationships", [])
-
-        # Calculate coverage
-        coverage = self._calculate_coverage(valid_objects, img_width, img_height)
-
-        return {
-            "img_width": img_width,
-            "img_height": img_height,
-            "valid_objects": valid_objects,
-            "n_objects": len(valid_objects),
-            "relations": relations,
-            "n_relations": len(relations),
-            "coverage_percent": coverage,
-        }
 
     def filter_images(self) -> List[Dict]:
         """
         Filter SVG images based on config criteria.
-        OPTIMIZED with comprehensive caching:
-        1. Check precomputed stats cache (memorability, coverage, object counts)
-        2. If missing, compute and cache expensive stats
-        3. Apply threshold filters (cheap - just comparisons)
-        4. Batch memorability computation for uncached images
+        MEMORY-OPTIMIZED with LAZY LOADING:
+        1. Load only precomputed_stats_cache (~3-4 GB in RAM)
+        2. Filter based on cached stats (no scene graphs needed)
+        3. Load scene graphs ONLY for passing candidates (~1.5K)
+        4. Saves ~2-3 GB RAM by not loading all 40K scene graphs!
 
-        This allows changing thresholds without recomputing everything!
+        This allows changing thresholds without recomputing AND without high memory usage!
         """
-        print("Filtering SVG images (OPTIMIZED with comprehensive caching)...")
+        print("Filtering SVG images (MEMORY-OPTIMIZED with LAZY LOADING)...")
         print(f"Criteria:")
         print(f"  - Source: {self.source_filter}")
         print(f"  - Memorability: >= {self.min_memorability}")
@@ -894,10 +998,8 @@ class SVGRelationalDataset:
         print(f"  - Relations: >= {self.min_relations}")
         print(f"  - Coverage: >= {self.min_coverage_percent}%")
 
-        scene_graphs = self._load_svg_metadata()
-
         stats = {
-            "total": len(scene_graphs),
+            "total": 0,
             "wrong_source": 0,
             "missing_image": 0,
             "too_few_objects": 0,
@@ -909,190 +1011,121 @@ class SVGRelationalDataset:
             "computed_stats": 0,
         }
 
-        # ========== PHASE 1: LOAD OR COMPUTE IMAGE STATS ==========
-        print("[Phase 1/3] Loading/computing image statistics...")
+        # ========== PHASE 1: FILTER USING CACHE ONLY (NO SCENE GRAPHS) ==========
+        print(
+            "\n[Phase 1/2] Filtering based on cached stats (no scene graphs loaded)..."
+        )
+        print("  Memory savings: NOT loading 700 MB svg_sg_cache (~2-3 GB in RAM)")
 
-        images_needing_memorability = []
-        all_image_data = []
+        passing_image_ids = []
 
-        for scene_graph in tqdm(
-            scene_graphs, desc="Processing image stats", mininterval=0.5
+        # Iterate through precomputed cache keys (just image IDs + stats)
+        cache_items = list(self.precomputed_stats_cache.cache.items())
+        stats["total"] = len(cache_items)
+
+        from tqdm import tqdm
+
+        for cache_key, cached_stats in tqdm(
+            cache_items, desc="Filtering by stats", mininterval=0.5
         ):
-            # Source filter
+            # Parse cache key: "image_id_min_mask_area"
+            img_id = cache_key.rsplit("_", 1)[0]  # Split from right, take first part
+
+            # Source filter - skip non-VG images
             if self.source_filter:
-                source = scene_graph.get("source", "").lower()
-                if source and self.source_filter.lower() not in source:
+                # VG images have numeric filenames
+                filename_without_ext = img_id.replace(".jpg", "")
+                if not filename_without_ext.isdigit():
                     stats["wrong_source"] += 1
                     continue
 
-            # Get image path
-            img_filename = scene_graph.get("image", "")
-            img_id = scene_graph.get("image_id", img_filename)
-            img_path = self.vg_image_root / img_filename
+            # Get stats from cache
+            stats["cached_stats"] += 1
+            n_objects = cached_stats.get("n_objects", 0)
+            n_relations = cached_stats.get("n_relations", 0)
+            coverage_percent = cached_stats.get("coverage_percent", 0)
+            memorability = cached_stats.get("memorability", 0.0)
 
-            # Check precomputed stats cache FIRST (avoid filesystem calls)
-            cached_stats = self.precomputed_stats_cache.get(
-                img_id, self.min_mask_area_percent
-            )
-
-            if cached_stats is not None:
-                # Use cached stats (skip filesystem check - already validated when cached)
-                stats["cached_stats"] += 1
-                # OPTIMIZED: Build dict once with unpacking (faster than copy + assignments)
-                image_stats = {
-                    **cached_stats,
-                    "scene_graph": scene_graph,
-                    "image_path": img_path,
-                    "img_id": img_id,
-                }
-            else:
-                # Need to compute - check if image exists first
-                if not img_path.exists():
-                    stats["missing_image"] += 1
-                    continue
-
-                # Compute stats
-                stats["computed_stats"] += 1
-                image_stats = self._compute_image_stats(scene_graph, img_path, img_id)
-
-                if image_stats is None:
-                    stats["missing_image"] += 1
-                    continue
-
-                # Mark for caching (will add memorability later)
-                image_stats["needs_caching"] = True
-
-                # Add scene graph and path info
-                image_stats["scene_graph"] = scene_graph
-                image_stats["image_path"] = img_path
-                image_stats["img_id"] = img_id
-
-            # Check if we need memorability
-            if "memorability" not in image_stats:
-                images_needing_memorability.append(image_stats)
-
-            all_image_data.append(image_stats)
-
-        print(
-            f"Phase 1 complete: {len(all_image_data)} images with stats loaded/computed"
-        )
-        print(f"  → Used cached stats: {stats['cached_stats']}")
-        print(f"  → Computed new stats: {stats['computed_stats']}")
-        print(
-            f"  → Cache hit rate: {stats['cached_stats'] / max(1, len(all_image_data)) * 100:.1f}%"
-        )
-
-        # ========== PHASE 2: BATCH MEMORABILITY COMPUTATION ==========
-        if images_needing_memorability:
-            print(
-                f"[Phase 2/3] Computing memorability for {len(images_needing_memorability)} images..."
-            )
-            print(f"  Batch size: {config.MEMORABILITY_BATCH_SIZE}")
-
-            batch_size = config.MEMORABILITY_BATCH_SIZE
-
-            for i in tqdm(
-                range(0, len(images_needing_memorability), batch_size),
-                desc="Memorability batches",
-            ):
-                batch = images_needing_memorability[i : i + batch_size]
-
-                # Prepare batch data
-                image_data_list = [
-                    (img_data["image_path"], img_data["img_id"]) for img_data in batch
-                ]
-
-                # Compute memorability for batch
-                memorability_scores = self.get_memorability_batch(image_data_list)
-
-                # Add memorability to stats
-                for img_data, memorability in zip(batch, memorability_scores):
-                    img_data["memorability"] = memorability
-
-            # Save memorability cache
-            self.memorability_cache.save()
-
-            # Now cache all the new precomputed stats (with memorability)
-            print("Caching precomputed stats...")
-            for img_data in all_image_data:
-                if img_data.get("needs_caching", False):
-                    cache_data = {
-                        "img_width": img_data["img_width"],
-                        "img_height": img_data["img_height"],
-                        "valid_objects": img_data["valid_objects"],
-                        "n_objects": img_data["n_objects"],
-                        "relations": img_data["relations"],
-                        "n_relations": img_data["n_relations"],
-                        "coverage_percent": img_data["coverage_percent"],
-                        "memorability": img_data["memorability"],
-                    }
-                    self.precomputed_stats_cache.set(
-                        img_data["img_id"], self.min_mask_area_percent, cache_data
-                    )
-
-            self.precomputed_stats_cache.save()
-        else:
-            print(
-                "[Phase 2/3] All images have cached memorability - skipping computation!"
-            )
-
-        # ========== PHASE 3: APPLY THRESHOLD FILTERS ==========
-        print(
-            f"[Phase 3/3] Applying threshold filters to {len(all_image_data)} images..."
-        )
-
-        candidate_images = []
-
-        for img_data in tqdm(all_image_data, desc="Applying filters"):
-            # Check object count
-            if img_data["n_objects"] < self.min_objects:
+            # Apply filters
+            if n_objects < self.min_objects:
                 stats["too_few_objects"] += 1
                 continue
-            if img_data["n_objects"] > self.max_objects:
+            if n_objects > self.max_objects:
                 stats["too_many_objects"] += 1
                 continue
-
-            # Check relation count
-            if img_data["n_relations"] < self.min_relations:
+            if n_relations < self.min_relations:
                 stats["too_few_relations"] += 1
                 continue
-
-            # Check coverage
-            if img_data["coverage_percent"] < self.min_coverage_percent:
+            if coverage_percent < self.min_coverage_percent:
                 stats["low_coverage"] += 1
                 continue
-
-            # Check memorability
-            if img_data["memorability"] < self.min_memorability:
+            if memorability < self.min_memorability:
                 stats["low_memorability"] += 1
                 continue
 
-            # Compute relational graph (relatively fast, not worth caching)
+            # Passed all filters!
+            passing_image_ids.append((img_id, cached_stats))
+
+        print(f"\nPhase 1 complete:")
+        print(f"  ✓ Filtered {stats['total']} images using cache only")
+        print(f"  ✓ {len(passing_image_ids)} images passed filters")
+        print(f"  ✓ Memory saved: ~2-3 GB (didn't load svg_sg_cache)")
+
+        # ========== PHASE 2: LOAD SCENE GRAPHS ONLY FOR PASSING IMAGES ==========
+        print(
+            f"\n[Phase 2/2] Loading scene graphs for {len(passing_image_ids)} passing images..."
+        )
+        print("  (This is fast - only loading ~4% of scene graphs)")
+
+        # Build scene graph lookup
+        scene_graph_lookup = self._build_scene_graph_lookup(passing_image_ids)
+
+        # Build final candidates
+        candidate_images = []
+
+        for img_id, cached_stats in tqdm(
+            passing_image_ids, desc="Building candidates", mininterval=0.5
+        ):
+            # Get scene graph (lazy loaded)
+            scene_graph = scene_graph_lookup.get(img_id)
+            if scene_graph is None:
+                stats["missing_image"] += 1
+                continue
+
+            # Get image path
+            img_filename = scene_graph.get("image", img_id)
+            img_path = self.vg_image_root / img_filename
+
+            if not img_path.exists():
+                stats["missing_image"] += 1
+                continue
+
+            # Compute relational graph
             adjacency, object_id_map = self._compute_relational_graph(
-                img_data["valid_objects"], img_data["relations"]
+                cached_stats["valid_objects"], cached_stats["relations"]
             )
 
-            # Passed all filters
+            # Build candidate
             candidate_images.append(
                 {
-                    "scene_graph": img_data["scene_graph"],
-                    "image_path": img_data["image_path"],
-                    "img_width": img_data["img_width"],
-                    "img_height": img_data["img_height"],
-                    "objects": img_data["valid_objects"],
-                    "relations": img_data["relations"],
+                    "scene_graph": scene_graph,
+                    "image_path": img_path,
+                    "img_width": cached_stats["img_width"],
+                    "img_height": cached_stats["img_height"],
+                    "objects": cached_stats["valid_objects"],
+                    "relations": cached_stats["relations"],
                     "adjacency_matrix": adjacency,
                     "object_id_map": object_id_map,
-                    "memorability": img_data["memorability"],
-                    "coverage_percent": img_data["coverage_percent"],
-                    "n_objects": img_data["n_objects"],
-                    "n_relations": img_data["n_relations"],
+                    "memorability": cached_stats["memorability"],
+                    "coverage_percent": cached_stats["coverage_percent"],
+                    "n_objects": cached_stats["n_objects"],
+                    "n_relations": cached_stats["n_relations"],
                 }
             )
 
         # Print statistics
-        print(f"{'='*60}")
-        print("FILTERING STATISTICS (OPTIMIZED)")
+        print(f"\n{'='*60}")
+        print("FILTERING STATISTICS (LAZY-LOADED)")
         print(f"{'='*60}")
         print(f"  Total images: {stats['total']}")
         print(f"  Cache performance:")
@@ -1107,6 +1140,9 @@ class SVGRelationalDataset:
         print(f"    ✗ Low coverage: {stats['low_coverage']}")
         print(f"    ✗ Low memorability: {stats['low_memorability']}")
         print(f"  ✓ Final selected: {len(candidate_images)}")
+        print(
+            f"  ✓ Memory savings: Loaded {len(candidate_images)} scene graphs instead of {stats['total']}"
+        )
         print(f"{'='*60}")
 
         return candidate_images

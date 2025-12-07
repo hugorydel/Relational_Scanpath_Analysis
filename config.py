@@ -17,7 +17,7 @@ MIN_MASK_AREA_PERCENT = 0.5  # Minimum area percent to count mask in coverage pe
 MIN_OBJECTS = 10
 MAX_OBJECTS = 30
 MIN_RELATIONS = 10
-MIN_COVERAGE_PERCENT = 85.0
+MIN_COVERAGE_PERCENT = 80.0
 
 # Image parameters
 TARGET_SIZE = (1024, 768)

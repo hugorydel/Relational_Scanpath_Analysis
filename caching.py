@@ -11,9 +11,7 @@ matplotlib.use("Agg")
 import json
 import pickle
 from pathlib import Path
-from typing import Dict, List, Optional, Set, Tuple
-
-import config
+from typing import Dict, List, Optional
 
 
 class MemorabilityCache:

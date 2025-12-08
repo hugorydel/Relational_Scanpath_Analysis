@@ -2,6 +2,7 @@
 .conda/
 .env
 /coco_naturalistic_stimuli/
-data/
+data/processed/
+data/precomputed_stats_cache.pkl
 __pycache__/
 .ipynb_checkpoints/

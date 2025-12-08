@@ -12,7 +12,7 @@ SVG_CACHE_PATH = "data/svg_sg_cache.pkl"
 PRECOMPUTED_STATS_CACHE_PATH = "data/precomputed_stats_cache.pkl"
 
 # Filtering thresholds
-MIN_MEMORABILITY = 0.8
+MIN_MEMORABILITY = 0.9
 MIN_MASK_AREA_PERCENT = 0.5  # Minimum area percent to count mask in coverage percentage
 MIN_OBJECTS = 10
 MAX_OBJECTS = 30

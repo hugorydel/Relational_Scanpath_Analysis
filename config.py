@@ -12,8 +12,8 @@ SVG_CACHE_PATH = "data/svg_sg_cache.pkl"
 PRECOMPUTED_STATS_CACHE_PATH = "data/precomputed_stats_cache.pkl"
 
 # Filtering thresholds
-MIN_MEMORABILITY = 0.9
-MIN_MASK_AREA_PERCENT = 0.5  # Minimum area percent to count mask in coverage percentage
+MIN_MEMORABILITY = 0.75
+MIN_MASK_AREA_PERCENT = 1.0  # Minimum area percent to count mask in coverage percentage
 MIN_OBJECTS = 10
 MAX_OBJECTS = 30
 MIN_RELATIONS = 10
@@ -45,14 +45,17 @@ VISUALIZE_SAMPLES = 20
 # Performance optimization
 MEMORABILITY_BATCH_SIZE = 32  # Process this many images at once
 NUM_WORKERS = None  # None = auto-detect CPU cores, or set to specific number (e.g., 8)
+MIN_INTERACTIONAL_RELATIONS = 1
 
 # Diversity selection
 EMBEDDING_CACHE_PATH = "data/embedding_cache.pkl"
-N_FINAL_IMAGES = 120  # Target number of diverse images for final stimulus set
-EMBEDDING_TYPE = "text"  # "image" or "text" - text is better for semantic diversity
-SELECTION_METHOD = "clustering"  # "clustering" or "greedy"
-SIMILARITY_THRESHOLD = (
-    0.85  # For greedy method: max cosine similarity to already selected
+N_FINAL_IMAGES = (
+    150  # Target number of diverse images for diversity filtered stimulus set
 )
-N_CLUSTERS = None  # For clustering method: None = same as N_FINAL_IMAGES
+EMBEDDING_TYPE = "text"  # "image" or "text" - text is better for semantic diversity
+SELECTION_METHOD = "greedy"  # "clustering" or "greedy"
+SIMILARITY_THRESHOLD = (
+    0.75  # For greedy method: max cosine similarity to already selected
+)
+N_CLUSTERS = None  # For "clustering" method: None = same as N_FINAL_IMAGES
 EMBEDDING_BATCH_SIZE = 32  # Batch size for CLIP processing

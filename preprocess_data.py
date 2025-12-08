@@ -41,6 +41,7 @@ class SVGRelationalDataset:
         self.max_objects = config.MAX_OBJECTS
         self.min_relations = config.MIN_RELATIONS
         self.min_coverage_percent = config.MIN_COVERAGE_PERCENT
+        self.min_interactional_relations = config.MIN_INTERACTIONAL_RELATIONS
         self.predicate_weights = config.PREDICATE_WEIGHTS
 
         # Setup output directories
@@ -88,6 +89,7 @@ class SVGRelationalDataset:
         print(f"  Objects: {self.min_objects}-{self.max_objects}")
         print(f"  Relations: ≥ {self.min_relations}")
         print(f"  Coverage: ≥ {self.min_coverage_percent}%")
+        print(f"  Interactional rels: ≥ {self.min_interactional_relations}")
         print("=" * 60 + "\n")
 
         stats = {
@@ -164,11 +166,18 @@ class SVGRelationalDataset:
 
     def _passes_filters(self, stats: Dict) -> bool:
         """Check if image passes all filter criteria."""
+
+        relations = stats.get("relations", [])
+        n_interactional = sum(
+            1 for rel in relations if rel.get("predicate_category") == "interactional"
+        )
+
         return (
             self.min_objects <= stats.get("n_objects", 0) <= self.max_objects
             and stats.get("n_relations", 0) >= self.min_relations
             and stats.get("coverage_percent", 0) >= self.min_coverage_percent
             and stats.get("memorability", 0) >= self.min_memorability
+            and n_interactional >= self.min_interactional_relations
         )
 
     def process_dataset(self) -> None:

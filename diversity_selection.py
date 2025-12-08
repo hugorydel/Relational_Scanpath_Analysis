@@ -8,15 +8,15 @@ import os
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
-import json
 import pickle
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List
 
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
+from sentence_transformers import SentenceTransformer
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
@@ -37,7 +37,7 @@ class DiversitySelector:
 
         Args:
             embedding_cache_path: Path to cache embeddings
-            device: Device for CLIP model (None = auto-detect)
+            device: Device for models (None = auto-detect)
         """
         self.embedding_cache_path = embedding_cache_path
         self.embeddings_cache = self._load_embedding_cache()
@@ -51,14 +51,22 @@ class DiversitySelector:
 
         print(f"Using device: {self.device}")
 
-        # Load CLIP model
+        # Load CLIP model (for image embeddings only)
         print("Loading CLIP model...")
-        self.model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(
+        self.clip_model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(
             self.device
         )
-        self.processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
-        self.model.eval()
-        print("✓ CLIP loaded\n")
+        self.clip_processor = CLIPProcessor.from_pretrained(
+            "openai/clip-vit-base-patch32"
+        )
+        self.clip_model.eval()
+        print("✓ CLIP loaded")
+
+        # Load SentenceTransformer (for text embeddings)
+        print("Loading SentenceTransformer model...")
+        self.text_model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
+        self.text_model.to(self.device)
+        print("✓ SentenceTransformer loaded\n")
 
     def _load_embedding_cache(self) -> Dict:
         """Load embedding cache from disk."""
@@ -209,10 +217,10 @@ class DiversitySelector:
                     images.append(img)
 
                 # Process batch
-                inputs = self.processor(
+                inputs = self.clip_processor(
                     images=images, return_tensors="pt", padding=True
                 ).to(self.device)
-                image_features = self.model.get_image_features(**inputs)
+                image_features = self.clip_model.get_image_features(**inputs)
                 image_features = image_features / image_features.norm(
                     dim=-1, keepdim=True
                 )
@@ -224,34 +232,28 @@ class DiversitySelector:
     def _compute_text_embeddings(
         self, images_data: List[Dict], batch_size: int
     ) -> List[np.ndarray]:
-        """Compute CLIP text embeddings from scene descriptions."""
-        embeddings = []
+        """Compute SentenceTransformer text embeddings from full scene descriptions."""
 
-        # Generate descriptions
+        # Generate full descriptions (no summarization)
         descriptions = [
             self._generate_scene_description(img_data) for img_data in images_data
         ]
 
-        with torch.no_grad():
-            for i in tqdm(
-                range(0, len(descriptions), batch_size),
-                desc="Text embeddings",
-                mininterval=1.0,
-            ):
-                batch_texts = descriptions[i : i + batch_size]
-
-                # Process batch
-                inputs = self.processor(
-                    text=batch_texts,
-                    return_tensors="pt",
-                    padding=True,
-                    truncation=True,
-                    max_length=77,
-                ).to(self.device)
-                text_features = self.model.get_text_features(**inputs)
-                text_features = text_features / text_features.norm(dim=-1, keepdim=True)
-
-                embeddings.extend(text_features.cpu().numpy())
+        # Compute embeddings in batches
+        embeddings = []
+        for i in tqdm(
+            range(0, len(descriptions), batch_size),
+            desc="Text embeddings",
+            mininterval=1.0,
+        ):
+            batch_texts = descriptions[i : i + batch_size]
+            batch_embeddings = self.text_model.encode(
+                batch_texts,
+                convert_to_numpy=True,
+                show_progress_bar=False,
+                normalize_embeddings=True,  # L2 normalize for cosine similarity
+            )
+            embeddings.extend(batch_embeddings)
 
         return embeddings
 

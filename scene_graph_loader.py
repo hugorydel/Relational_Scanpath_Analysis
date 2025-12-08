@@ -1,10 +1,11 @@
 """
 Scene graph loading utilities for SVG dataset
+Uses predicate→category mapping from SVG-Relations dataset
 """
 
 import json
 from pathlib import Path
-from typing import Dict, List, Optional, Set, Tuple
+from typing import Dict, List, Optional, Tuple
 
 import cv2
 import numpy as np
@@ -12,14 +13,26 @@ from datasets import load_dataset
 from pycocotools import mask as mask_utils
 from tqdm import tqdm
 
-from utils import infer_predicate_category
-
 
 class SceneGraphLoader:
     """Handles loading scene graphs from HuggingFace SVG dataset."""
 
-    def __init__(self, vg_image_root: Path):
+    def __init__(self, vg_image_root: Path, predicate_map_path: Path = None):
         self.vg_image_root = vg_image_root
+
+        # Load predicate→category mapping
+        if predicate_map_path is None:
+            predicate_map_path = Path("data/predicate_to_category.json")
+
+        if predicate_map_path.exists():
+            with open(predicate_map_path, "r") as f:
+                self.predicate_map = json.load(f)
+            print(f"✓ Loaded {len(self.predicate_map)} predicate mappings")
+        else:
+            print(
+                f"⚠️  Warning: {predicate_map_path} not found, using default 'spatial' category"
+            )
+            self.predicate_map = {}
 
     def build_scene_graph_lookup(
         self, passing_image_ids: List[Tuple[str, Dict]]
@@ -68,6 +81,18 @@ class SceneGraphLoader:
             return False
         filename_without_ext = img_id.replace(".jpg", "")
         return filename_without_ext.isdigit()
+
+    def _get_predicate_category(self, predicate: str) -> str:
+        """
+        Get category for a predicate using SVG-Relations mapping.
+
+        Args:
+            predicate: Predicate string (e.g., "wearing", "on", "near")
+
+        Returns:
+            Category from SVG-Relations taxonomy (defaults to 'spatial')
+        """
+        return self.predicate_map.get(predicate, "spatial")
 
     def _parse_scene_graph_row(self, row: Dict) -> Optional[Dict]:
         """Parse a HuggingFace row into scene graph format."""
@@ -176,7 +201,7 @@ class SceneGraphLoader:
 
                 scene_graph["objects"].append(obj_entry)
 
-            # Parse relations
+            # Parse relations using predicate mapping
             sg_relations = scene_graph_json.get("relations", [])
 
             for rel in sg_relations:
@@ -186,18 +211,16 @@ class SceneGraphLoader:
                     if subj_idx < len(scene_graph["objects"]) and obj_idx < len(
                         scene_graph["objects"]
                     ):
+                        predicate_str = (
+                            predicate if isinstance(predicate, str) else str(predicate)
+                        )
+
                         relationship = {
                             "subject_id": scene_graph["objects"][subj_idx]["object_id"],
                             "object_id": scene_graph["objects"][obj_idx]["object_id"],
-                            "predicate": (
-                                predicate
-                                if isinstance(predicate, str)
-                                else str(predicate)
-                            ),
-                            "predicate_category": infer_predicate_category(
-                                predicate
-                                if isinstance(predicate, str)
-                                else str(predicate)
+                            "predicate": predicate_str,
+                            "predicate_category": self._get_predicate_category(
+                                predicate_str
                             ),
                         }
                         scene_graph["relationships"].append(relationship)

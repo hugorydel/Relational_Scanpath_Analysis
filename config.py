@@ -45,3 +45,14 @@ VISUALIZE_SAMPLES = 20
 # Performance optimization
 MEMORABILITY_BATCH_SIZE = 32  # Process this many images at once
 NUM_WORKERS = None  # None = auto-detect CPU cores, or set to specific number (e.g., 8)
+
+# Diversity selection
+EMBEDDING_CACHE_PATH = "data/embedding_cache.pkl"
+N_FINAL_IMAGES = 120  # Target number of diverse images for final stimulus set
+EMBEDDING_TYPE = "text"  # "image" or "text" - text is better for semantic diversity
+SELECTION_METHOD = "clustering"  # "clustering" or "greedy"
+SIMILARITY_THRESHOLD = (
+    0.85  # For greedy method: max cosine similarity to already selected
+)
+N_CLUSTERS = None  # For clustering method: None = same as N_FINAL_IMAGES
+EMBEDDING_BATCH_SIZE = 32  # Batch size for CLIP processing

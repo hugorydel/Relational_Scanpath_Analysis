@@ -192,10 +192,31 @@ def build_predicate_category_map(min_dominance: float = 0.7) -> Dict[str, str]:
         else:
             mapping[predicate] = "ambiguous"
 
-    print("\nExample mappings (first 25):")
-    for pred, cat in list(mapping.items())[:25]:
-        print(f"  {pred!r} → {cat}")
-    if len(mapping) > 25:
+    # Sort predicates by total frequency for display
+    pred_frequencies = [
+        (pred, sum(counts.values())) for pred, counts in pred_counts.items()
+    ]
+    pred_frequencies.sort(key=lambda x: x[1], reverse=True)
+
+    print("\nTop 25 most common predicates:")
+    total_all_relations = sum(freq for _, freq in pred_frequencies)
+    for i, (pred, freq) in enumerate(pred_frequencies[:25], 1):
+        category = mapping.get(pred, "unknown")
+        pct = 100 * freq / total_all_relations
+
+        # Show category distribution if multi-category
+        counts = pred_counts[pred]
+        if len(counts) > 1:
+            cat_dist = ", ".join([f"{cat}:{cnt}" for cat, cnt in counts.most_common()])
+            print(
+                f"  {i:2d}. {pred!r:20s} → {category:15s} | {freq:7,d} uses ({pct:5.2f}%) | [{cat_dist}]"
+            )
+        else:
+            print(
+                f"  {i:2d}. {pred!r:20s} → {category:15s} | {freq:7,d} uses ({pct:5.2f}%)"
+            )
+
+    if len(pred_frequencies) > 25:
         print("  ...")
 
     return mapping

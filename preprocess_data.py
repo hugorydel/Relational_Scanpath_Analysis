@@ -21,7 +21,7 @@ from tqdm import tqdm
 import config
 from caching import MemorabilityCache, PrecomputedStatsCache
 from scene_graph_loader import SceneGraphLoader
-from utils import compute_relational_graph
+from utils import compute_relational_graph, validate_paths
 from visualization import ImageVisualizer
 
 
@@ -317,6 +317,15 @@ class SVGRelationalDataset:
 
 def main():
     """Main entry point."""
+    # Validate paths before expensive initialization
+    print("=" * 60)
+    print("SVG RELATIONAL DATASET CREATOR")
+    print("=" * 60)
+    print("Validating paths...\n")
+    validate_paths(required_for_processing=True, required_for_diversity=False)
+    print("✓ Path validation passed\n")
+
+    # Proceed with dataset creation
     creator = SVGRelationalDataset()
     creator.process_dataset()
 

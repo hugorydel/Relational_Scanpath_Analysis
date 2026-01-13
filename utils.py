@@ -6,6 +6,8 @@ from typing import Dict, List, Tuple
 
 import numpy as np
 
+from config import OUTPUT_DIR, PRECOMPUTED_STATS_CACHE_PATH, VG_IMAGE_ROOT
+
 
 def compute_relational_graph(
     valid_objects: List[Dict],
@@ -57,3 +59,77 @@ def compute_relational_graph(
         adjacency = adjacency / max_weight
 
     return adjacency, object_id_map
+
+
+import sys
+from pathlib import Path
+
+
+def validate_paths(required_for_processing=True, required_for_diversity=False):
+    """
+    Validate that required paths exist before processing.
+
+    Args:
+        required_for_processing: Check paths needed for preprocessing
+        required_for_diversity: Check paths needed for diversity selection
+
+    Returns:
+        True if all paths exist, False otherwise (exits with error message)
+    """
+    errors = []
+    warnings = []
+
+    # Always check VG_IMAGE_ROOT - critical for all operations
+    vg_path = Path(VG_IMAGE_ROOT)
+    if not vg_path.exists():
+        errors.append(
+            f"❌ VG_IMAGE_ROOT not found: {VG_IMAGE_ROOT}\n"
+            f"   This directory contains the Visual Genome images.\n"
+            f"   Please ensure your D: drive is connected or update the path in config.py"
+        )
+    elif not any(vg_path.iterdir()):
+        errors.append(
+            f"❌ VG_IMAGE_ROOT is empty: {VG_IMAGE_ROOT}\n"
+            f"   Please ensure the Visual Genome images are downloaded to this location."
+        )
+
+    # Check cache paths for preprocessing
+    if required_for_processing:
+        cache_path = Path(PRECOMPUTED_STATS_CACHE_PATH)
+        if not cache_path.exists():
+            warnings.append(
+                f"⚠️  Precomputed stats cache not found: {PRECOMPUTED_STATS_CACHE_PATH}\n"
+                f"   This is expected on first run. Cache will be created during processing."
+            )
+
+    # Check processed data for diversity selection
+    if required_for_diversity:
+        dataset_path = Path(OUTPUT_DIR) / "annotations" / "dataset.json"
+        if not dataset_path.exists():
+            errors.append(
+                f"❌ Processed dataset not found: {dataset_path}\n"
+                f"   Please run preprocess_data.py first to generate filtered images."
+            )
+
+    # Print warnings
+    if warnings:
+        print("\n" + "=" * 60)
+        print("WARNINGS")
+        print("=" * 60)
+        for warning in warnings:
+            print(warning)
+        print("=" * 60 + "\n")
+
+    # Print errors and exit if any
+    if errors:
+        print("\n" + "=" * 60)
+        print("❌ PATH VALIDATION FAILED")
+        print("=" * 60)
+        for error in errors:
+            print(error)
+        print("=" * 60)
+        print("\nPlease fix the above issues and try again.")
+        print("=" * 60 + "\n")
+        sys.exit(1)
+
+    return True

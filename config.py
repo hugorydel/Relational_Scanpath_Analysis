@@ -31,7 +31,7 @@ SOURCE_FILTER = ""  # Filtering done by filename pattern in preprocessing
 # Predicate category weights
 PREDICATE_WEIGHTS = {
     "spatial": 0.20,  # layout only – faint
-    "functional": 0.65,  # affordances / “used for”
+    "functional": 0.65,  # affordances / "used for"
     "social": 0.80,  # people–people relations
     "emotional": 0.85,  # people–people with affect
     "interactional": 1.00,  # direct, physical/attentional actions

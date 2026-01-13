@@ -3,6 +3,7 @@
 .env
 /coco_naturalistic_stimuli/
 data/processed/
+data/diverse_selection/
 data/precomputed_stats_cache.pkl
 data/embedding_cache.pkl
 __pycache__/

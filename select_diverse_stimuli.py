@@ -5,7 +5,11 @@ select_diverse_stimuli.py - Select diverse subset from filtered SVG images
 
 import os
 
+from utils import validate_paths
+
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["LOKY_MAX_CPU_COUNT"] = "8"
 
 import json
 import shutil
@@ -91,9 +95,14 @@ def save_selected_dataset(
 
 def main():
     """Main diversity selection pipeline."""
+    # Validate paths before processing
     print("=" * 60)
     print("DIVERSITY SELECTION")
     print("=" * 60)
+    print("Validating paths...\n")
+    validate_paths(required_for_processing=False, required_for_diversity=True)
+    print("✓ Path validation passed\n")
+
     print(f"  Method: {config.SELECTION_METHOD}")
     print(f"  Embedding: {config.EMBEDDING_TYPE}")
     print(f"  Target images: {config.N_FINAL_IMAGES}")
@@ -101,10 +110,6 @@ def main():
 
     # Load filtered images
     dataset_path = Path(config.OUTPUT_DIR) / "annotations" / "dataset.json"
-    if not dataset_path.exists():
-        print(f"Error: {dataset_path} not found!")
-        print("Please run preprocess_data.py first to generate filtered images.")
-        return
 
     print("Loading filtered images...")
     filtered_images = load_filtered_images(dataset_path)
@@ -174,7 +179,7 @@ def main():
     print("=" * 60 + "\n")
 
     # Create output directory
-    output_dir = create_diversity_output_dir(Path(config.OUTPUT_DIR))
+    output_dir = create_diversity_output_dir(Path(config.OUTPUT_DIR).parent)
 
     # Visualize embedding space
     labels = [img["metadata"]["image_id"] for img in images_data]

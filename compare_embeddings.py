@@ -6,6 +6,8 @@ Helps you decide which embedding type best suits your needs.
 
 import os
 
+from utils import validate_paths
+
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 import json
@@ -183,12 +185,16 @@ def compare_embedding_types(images_data, n_compare=50):
 
 def main():
     """Run embedding comparison."""
+    # Validate paths before processing
+    print("=" * 60)
+    print("EMBEDDING TYPE COMPARISON")
+    print("=" * 60)
+    print("Validating paths...\n")
+    validate_paths(required_for_processing=False, required_for_diversity=True)
+    print("✓ Path validation passed\n")
+
     # Load filtered images
     dataset_path = Path(config.OUTPUT_DIR) / "annotations" / "dataset.json"
-    if not dataset_path.exists():
-        print(f"Error: {dataset_path} not found!")
-        print("Please run preprocess_data.py first.")
-        return
 
     with open(dataset_path, "r") as f:
         data = json.load(f)

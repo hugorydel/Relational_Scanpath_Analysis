@@ -50,7 +50,7 @@ MIN_INTERACTIONAL_RELATIONS = 1
 # Diversity selection
 EMBEDDING_CACHE_PATH = "data/embedding_cache.pkl"
 N_FINAL_IMAGES = (
-    150  # Target number of diverse images for diversity filtered stimulus set
+    200  # Target number of diverse images for diversity filtered stimulus set
 )
 EMBEDDING_TYPE = "text"  # "image" or "text" - text is better for semantic diversity
 SELECTION_METHOD = "greedy"  # "clustering" or "greedy"

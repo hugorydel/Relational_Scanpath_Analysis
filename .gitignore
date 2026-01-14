@@ -6,5 +6,7 @@ data/processed/
 data/diverse_selection/
 data/precomputed_stats_cache.pkl
 data/embedding_cache.pkl
+data/stimuli/
+visual_genome_annotations/
 __pycache__/
 .ipynb_checkpoints/

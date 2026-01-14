@@ -7,9 +7,12 @@ config.py - Configuration file for SVG Relational Dataset Creator
 SVG_ROOT = "data/svg_sg"
 VG_IMAGE_ROOT = r"D:\Relational Scanpath Research\synthetic_visual_genome_data"
 OUTPUT_DIR = "data/processed"
-MEMORABILITY_CACHE_PATH = "data/memorability_cache.json"
-SVG_CACHE_PATH = "data/svg_sg_cache.pkl"
-PRECOMPUTED_STATS_CACHE_PATH = "data/precomputed_stats_cache.pkl"
+
+# Reference data (replaces old cache system)
+PRECOMPUTED_STATS_PATH = (
+    "data/precomputed_stats.json"  # Pre-computed filtering statistics
+)
+PREDICATE_MAP_PATH = "data/predicate_to_category.json"  # Predicate→category mapping
 
 # Filtering thresholds
 MIN_MEMORABILITY = 0.75
@@ -18,6 +21,7 @@ MIN_OBJECTS = 10
 MAX_OBJECTS = 30
 MIN_RELATIONS = 10
 MIN_COVERAGE_PERCENT = 80.0
+MIN_INTERACTIONAL_RELATIONS = 1
 
 # Image parameters
 TARGET_SIZE = (1024, 768)
@@ -43,9 +47,7 @@ RANDOM_SEED = 42
 VISUALIZE_SAMPLES = 20
 
 # Performance optimization
-MEMORABILITY_BATCH_SIZE = 32  # Process this many images at once
 NUM_WORKERS = None  # None = auto-detect CPU cores, or set to specific number (e.g., 8)
-MIN_INTERACTIONAL_RELATIONS = 1
 
 # Diversity selection
 EMBEDDING_CACHE_PATH = "data/embedding_cache.pkl"
@@ -55,7 +57,7 @@ N_FINAL_IMAGES = (
 EMBEDDING_TYPE = "text"  # "image" or "text" - text is better for semantic diversity
 SELECTION_METHOD = "greedy"  # "clustering" or "greedy"
 SIMILARITY_THRESHOLD = (
-    0.75  # For greedy method: max cosine similarity to already selected
+    0.7  # For greedy method: max cosine similarity to already selected
 )
 N_CLUSTERS = None  # For "clustering" method: None = same as N_FINAL_IMAGES
 EMBEDDING_BATCH_SIZE = 32  # Batch size for CLIP processing

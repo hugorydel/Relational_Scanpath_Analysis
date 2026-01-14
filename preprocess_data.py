@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-SVG Relational Dataset Creator - Memory-Optimized with Lazy Loading
+SVG Relational Dataset Creator - Memory-Optimized with Reference Data
 Filters SVG images for gaze-based relational memory experiments
+
+Uses pre-computed reference data (precomputed_stats.json) for efficient filtering.
 """
 
 import os
@@ -11,15 +13,15 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 import json
 import shutil
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 import cv2
 import numpy as np
-from resmem import ResMem
+from pycocotools import mask as mask_utils
 from tqdm import tqdm
 
 import config
-from caching import MemorabilityCache, PrecomputedStatsCache
+from reference_data_loader import ReferenceDataLoader
 from scene_graph_loader import SceneGraphLoader
 from utils import compute_relational_graph, validate_paths
 from visualization import ImageVisualizer
@@ -52,13 +54,9 @@ class SVGRelationalDataset:
         (self.output_dir / "visualizations").mkdir(exist_ok=True)
         (self.output_dir / "annotations").mkdir(exist_ok=True)
 
-        # Initialize caches
-        self.memorability_cache = MemorabilityCache(
-            Path(config.MEMORABILITY_CACHE_PATH)
-        )
-        self.precomputed_stats_cache = PrecomputedStatsCache(
-            Path(config.PRECOMPUTED_STATS_CACHE_PATH)
-        )
+        # Load reference data
+        print("Loading reference data...")
+        self.reference_data = ReferenceDataLoader(Path(config.PRECOMPUTED_STATS_PATH))
 
         # Initialize scene graph loader
         self.scene_graph_loader = SceneGraphLoader(self.vg_image_root)
@@ -70,16 +68,11 @@ class SVGRelationalDataset:
             predicate_weights=self.predicate_weights,
         )
 
-        # Load ResMem
-        print("Loading ResMem...")
-        self.resmem = ResMem(pretrained=True)
-        self.resmem.eval()
-        print("✓ ResMem loaded\n")
-
     def filter_images(self) -> List[Dict]:
         """
-        Filter images using lazy loading for memory efficiency.
-        Phase 1: Filter using cached stats only
+        Two-phase filtering using lazy loading for memory efficiency.
+
+        Phase 1: Filter using pre-computed statistics only
         Phase 2: Load scene graphs for passing images only
         """
         print("=" * 60)
@@ -93,92 +86,155 @@ class SVGRelationalDataset:
         print("=" * 60 + "\n")
 
         stats = {
-            "total": 0,
-            "rejected": 0,
-            "passed": 0,
+            "total": len(self.reference_data),
+            "rejected_phase1": 0,
+            "passed_phase1": 0,
+            "rejected_phase2": 0,
+            "passed_phase2": 0,
         }
 
-        # Phase 1: Filter using cache only
-        print("[1/2] Filtering using cached stats...")
+        # PHASE 1: Filter using pre-computed statistics only
+        print("[Phase 1/2] Filtering using pre-computed statistics...")
         passing_image_ids = []
-        cache_items = list(self.precomputed_stats_cache.cache.items())
-        stats["total"] = len(cache_items)
 
-        for cache_key, cached_stats in tqdm(
-            cache_items, desc="Filtering", mininterval=1.0
+        for img_id, ref_stats in tqdm(
+            self.reference_data.items(), desc="Phase 1", mininterval=1.0
         ):
-            img_id = cache_key.rsplit("_", 1)[0]
-
-            # Apply filters
-            if not self._passes_filters(cached_stats):
-                stats["rejected"] += 1
+            # Validate entry has all required fields
+            if not self.reference_data.validate_entry(img_id, ref_stats):
+                stats["rejected_phase1"] += 1
                 continue
 
-            passing_image_ids.append((img_id, cached_stats))
-            stats["passed"] += 1
+            # Apply filter thresholds
+            if not self._passes_phase1_filters(ref_stats):
+                stats["rejected_phase1"] += 1
+                continue
 
-        print(f"✓ {stats['passed']}/{stats['total']} images passed filters\n")
+            passing_image_ids.append(img_id)
+            stats["passed_phase1"] += 1
 
-        # Phase 2: Load scene graphs for passing images
-        print("[2/2] Loading scene graphs...")
-        scene_graph_lookup = self.scene_graph_loader.build_scene_graph_lookup(
+        print(
+            f"✓ Phase 1: {stats['passed_phase1']}/{len(self.reference_data)} images passed\n"
+        )
+
+        if stats["passed_phase1"] == 0:
+            print("No images passed Phase 1 filtering!")
+            return []
+
+        # PHASE 2: Load scene graphs and build final candidates
+        print("[Phase 2/2] Loading scene graphs for passing images...")
+        scene_graphs = self.scene_graph_loader.load_scene_graphs_for_images(
             passing_image_ids
         )
 
-        # Build final candidates
         candidate_images = []
-        for img_id, cached_stats in tqdm(
-            passing_image_ids, desc="Building candidates", mininterval=1.0
-        ):
-            scene_graph = scene_graph_lookup.get(img_id)
+
+        for img_id in tqdm(passing_image_ids, desc="Phase 2", mininterval=1.0):
+            ref_stats = self.reference_data.get(img_id)
+            scene_graph = scene_graphs.get(img_id)
+
             if scene_graph is None:
+                stats["rejected_phase2"] += 1
                 continue
 
+            # Verify image file exists
             img_path = self.vg_image_root / scene_graph.get("image", img_id)
             if not img_path.exists():
+                stats["rejected_phase2"] += 1
                 continue
 
+            # Filter objects by mask area (on-the-fly from scene graph)
+            valid_objects = self._filter_objects_by_area(scene_graph["objects"])
+
+            # Filter relations to only those between valid objects
+            valid_object_ids = set(obj["object_id"] for obj in valid_objects)
+            filtered_relations = [
+                rel
+                for rel in scene_graph["relationships"]
+                if rel["subject_id"] in valid_object_ids
+                and rel["object_id"] in valid_object_ids
+            ]
+
+            # Compute relational graph
             adjacency, object_id_map = compute_relational_graph(
-                cached_stats["valid_objects"],
-                cached_stats["relations"],
-                self.predicate_weights,
+                valid_objects, filtered_relations, self.predicate_weights
             )
 
+            # Build candidate data structure
             candidate_images.append(
                 {
                     "scene_graph": scene_graph,
                     "image_path": img_path,
-                    "img_width": cached_stats["img_width"],
-                    "img_height": cached_stats["img_height"],
-                    "objects": cached_stats["valid_objects"],
-                    "relations": cached_stats["relations"],
+                    "img_width": ref_stats["img_width"],
+                    "img_height": ref_stats["img_height"],
+                    "objects": valid_objects,
+                    "relations": filtered_relations,
                     "adjacency_matrix": adjacency,
                     "object_id_map": object_id_map,
-                    "memorability": cached_stats["memorability"],
-                    "coverage_percent": cached_stats["coverage_percent"],
-                    "n_objects": cached_stats["n_objects"],
-                    "n_relations": cached_stats["n_relations"],
+                    "memorability": ref_stats["memorability"],
+                    "coverage_percent": ref_stats["coverage_percent"],
+                    "n_objects": ref_stats["n_objects"],
+                    "n_relations": ref_stats["n_relations"],
                 }
             )
+            stats["passed_phase2"] += 1
 
-        print(f"✓ {len(candidate_images)} final candidates\n")
+        print(f"✓ Phase 2: {stats['passed_phase2']} final candidates\n")
+
+        # Print filtering summary
+        print("=" * 60)
+        print("FILTERING SUMMARY")
+        print("=" * 60)
+        print(f"Total images in reference data: {len(self.reference_data)}")
+        print(f"Passed Phase 1 (statistics): {stats['passed_phase1']}")
+        print(f"Passed Phase 2 (scene graphs): {stats['passed_phase2']}")
+        print(f"Final candidates: {len(candidate_images)}")
+        print("=" * 60 + "\n")
+
         return candidate_images
 
-    def _passes_filters(self, stats: Dict) -> bool:
-        """Check if image passes all filter criteria."""
+    def _passes_phase1_filters(self, stats: Dict) -> bool:
+        """
+        Check if image passes Phase 1 filter criteria using pre-computed stats.
 
-        relations = stats.get("relations", [])
-        n_interactional = sum(
-            1 for rel in relations if rel.get("predicate_category") == "interactional"
-        )
-
+        All required data is in the reference data, so this is fast.
+        """
         return (
-            self.min_objects <= stats.get("n_objects", 0) <= self.max_objects
-            and stats.get("n_relations", 0) >= self.min_relations
-            and stats.get("coverage_percent", 0) >= self.min_coverage_percent
-            and stats.get("memorability", 0) >= self.min_memorability
-            and n_interactional >= self.min_interactional_relations
+            self.min_objects <= stats["n_objects"] <= self.max_objects
+            and stats["n_relations"] >= self.min_relations
+            and stats["coverage_percent"] >= self.min_coverage_percent
+            and stats["memorability"] >= self.min_memorability
+            and stats["n_interactional_relations"] >= self.min_interactional_relations
         )
+
+    def _filter_objects_by_area(self, objects: List[Dict]) -> List[Dict]:
+        """
+        Filter objects by minimum mask area.
+
+        This recreates the filtering that was done when building reference data,
+        ensuring consistency with the pre-computed counts.
+        """
+        valid_objects = []
+
+        for obj in objects:
+            # Must have bbox
+            if "bbox" not in obj:
+                continue
+
+            bbox = obj["bbox"]
+            if len(bbox) != 4:
+                continue
+
+            x, y, w, h = bbox
+            area_percent = (
+                (w * h) / (obj.get("img_width", 800) * obj.get("img_height", 600)) * 100
+            )
+
+            # Apply area threshold
+            if area_percent >= self.min_mask_area_percent:
+                valid_objects.append(obj)
+
+        return valid_objects
 
     def process_dataset(self) -> None:
         """Main processing pipeline."""

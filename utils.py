@@ -2,11 +2,13 @@
 Utility functions for SVG relational dataset processing
 """
 
+import sys
+from pathlib import Path
 from typing import Dict, List, Tuple
 
 import numpy as np
 
-from config import OUTPUT_DIR, PRECOMPUTED_STATS_CACHE_PATH, VG_IMAGE_ROOT
+from config import OUTPUT_DIR, PRECOMPUTED_STATS_PATH, VG_IMAGE_ROOT
 
 
 def compute_relational_graph(
@@ -61,10 +63,6 @@ def compute_relational_graph(
     return adjacency, object_id_map
 
 
-import sys
-from pathlib import Path
-
-
 def validate_paths(required_for_processing=True, required_for_diversity=False):
     """
     Validate that required paths exist before processing.
@@ -93,13 +91,15 @@ def validate_paths(required_for_processing=True, required_for_diversity=False):
             f"   Please ensure the Visual Genome images are downloaded to this location."
         )
 
-    # Check cache paths for preprocessing
+    # Check reference data for preprocessing
     if required_for_processing:
-        cache_path = Path(PRECOMPUTED_STATS_CACHE_PATH)
-        if not cache_path.exists():
-            warnings.append(
-                f"⚠️  Precomputed stats cache not found: {PRECOMPUTED_STATS_CACHE_PATH}\n"
-                f"   This is expected on first run. Cache will be created during processing."
+        stats_path = Path(PRECOMPUTED_STATS_PATH)
+        if not stats_path.exists():
+            errors.append(
+                f"❌ Precomputed stats not found: {PRECOMPUTED_STATS_PATH}\n"
+                f"   This file contains pre-computed filtering statistics.\n"
+                f"   Please ensure precomputed_stats.json exists in the data/ directory.\n"
+                f"   You can download it from the project repository or build it using build_reference_data.py"
             )
 
     # Check processed data for diversity selection

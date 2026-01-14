@@ -5,7 +5,7 @@ Uses predicate→category mapping from SVG-Relations dataset
 
 import json
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Set
 
 import cv2
 import numpy as np
@@ -34,45 +34,46 @@ class SceneGraphLoader:
             )
             self.predicate_map = {}
 
-    def build_scene_graph_lookup(
-        self, passing_image_ids: List[Tuple[str, Dict]]
-    ) -> Dict[str, Dict]:
+    def load_scene_graphs_for_images(self, image_ids: List[str]) -> Dict[str, Dict]:
         """
-        Build lookup for scene graphs of ONLY passing images.
+        Load scene graphs for specific images only.
         Memory-efficient: Only loads needed scene graphs.
 
         Args:
-            passing_image_ids: List of (img_id, cached_stats) tuples
+            image_ids: List of image IDs (e.g., ["2345678.jpg", "1.jpg"])
 
         Returns:
             Dict mapping img_id to scene_graph
         """
-        needed_ids = set(img_id for img_id, _ in passing_image_ids)
+        needed_ids = set(image_ids)
 
-        print(f"\nLoading {len(needed_ids)} scene graphs from HuggingFace...")
+        print(f"Loading {len(needed_ids)} scene graphs from HuggingFace...")
 
         # Load and filter dataset
         dataset = load_dataset("jamepark3922/svg", split="train")
         dataset = dataset.filter(self._is_vg_image)
 
         # Extract only needed scene graphs
-        lookup = {}
+        scene_graphs = {}
         for row in tqdm(dataset, desc="Loading scene graphs", mininterval=1.0):
             img_id = row.get("image_id", "")
 
             if img_id in needed_ids:
                 scene_graph = self._parse_scene_graph_row(row)
                 if scene_graph:
-                    lookup[img_id] = scene_graph
+                    scene_graphs[img_id] = scene_graph
 
                 # Early exit when all found
-                if len(lookup) >= len(needed_ids):
+                if len(scene_graphs) >= len(needed_ids):
                     break
 
-        if len(lookup) < len(needed_ids):
-            print(f"Warning: Found {len(lookup)}/{len(needed_ids)} scene graphs")
+        if len(scene_graphs) < len(needed_ids):
+            missing = len(needed_ids) - len(scene_graphs)
+            print(
+                f"⚠️  Warning: Found {len(scene_graphs)}/{len(needed_ids)} scene graphs ({missing} missing)"
+            )
 
-        return lookup
+        return scene_graphs
 
     def _is_vg_image(self, example: Dict) -> bool:
         """Check if image is from Visual Genome (numeric filename)."""
@@ -155,6 +156,8 @@ class SceneGraphLoader:
                         if isinstance(obj_description, str)
                         else str(obj_description)
                     ),
+                    "img_width": img_width,  # Add dimensions for area calculation
+                    "img_height": img_height,
                 }
 
                 # Get bbox and segmentation from regions
@@ -230,5 +233,6 @@ class SceneGraphLoader:
 
             return None
 
-        except Exception:
+        except Exception as e:
+            # Silently skip corrupted entries
             return None

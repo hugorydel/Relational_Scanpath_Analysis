@@ -23,7 +23,7 @@ from tqdm import tqdm
 import config
 from reference_data_loader import ReferenceDataLoader
 from scene_graph_loader import SceneGraphLoader
-from utils import compute_relational_graph, validate_paths
+from utils import compute_relational_graph, ensure_jpg, validate_paths
 from visualization import ImageVisualizer
 
 
@@ -264,6 +264,7 @@ class SVGRelationalDataset:
         for img_data in tqdm(selected_images, desc="Processing", mininterval=1.0):
             scene_graph = img_data["scene_graph"]
             img_id = scene_graph.get("image_id", "unknown")
+            file_name = ensure_jpg(img_id)
 
             # Load and letterbox image
             img = cv2.imread(str(img_data["image_path"]))
@@ -273,13 +274,13 @@ class SVGRelationalDataset:
             )
 
             # Save image
-            output_img_path = self.output_dir / "images" / f"{img_id}.jpg"
+            output_img_path = self.output_dir / "images" / file_name
             cv2.imwrite(str(output_img_path), letterboxed)
 
             # Build metadata
             metadata = {
                 "image_id": img_id,
-                "file_name": f"{img_id}.jpg",
+                "file_name": file_name,
                 "width": self.target_size[0],
                 "height": self.target_size[1],
                 "original_width": img_data["img_width"],

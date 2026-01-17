@@ -26,6 +26,7 @@ import seaborn as sns
 from tqdm import tqdm
 
 import config
+from utils import ensure_jpg
 
 
 class IndividualVisualizer:
@@ -53,7 +54,7 @@ class IndividualVisualizer:
         img_id = img_data["image_id"]
 
         # Load from processed images (already letterboxed/transformed)
-        processed_img_path = processed_images_dir / f"{img_id}.jpg"
+        processed_img_path = processed_images_dir / ensure_jpg(img_id)
         if not processed_img_path.exists():
             raise FileNotFoundError(f"Processed image not found: {processed_img_path}")
 

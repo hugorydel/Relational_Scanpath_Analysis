@@ -5,7 +5,7 @@ select_diverse_stimuli.py - Select diverse subset from filtered SVG images
 
 import os
 
-from utils import validate_paths
+from utils import ensure_jpg, validate_paths
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 os.environ["OMP_NUM_THREADS"] = "1"
@@ -79,9 +79,9 @@ def save_selected_dataset(
         img_id = img_data["image_id"]
 
         # Copy image
-        src_img = processed_dir / "images" / f"{img_id}.jpg"
+        src_img = processed_dir / "images" / ensure_jpg(img_id)
         if src_img.exists():
-            dst_img = output_dir / "images" / f"{img_id}.jpg"
+            dst_img = output_dir / "images" / ensure_jpg(img_id)
             shutil.copy(src_img, dst_img)
 
         # Copy visualization if exists

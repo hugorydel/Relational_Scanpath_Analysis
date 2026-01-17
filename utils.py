@@ -11,6 +11,29 @@ import numpy as np
 from config import OUTPUT_DIR, PRECOMPUTED_STATS_PATH, VG_IMAGE_ROOT
 
 
+def ensure_jpg(name: str) -> str:
+    """
+    Ensure filename has .jpg extension (prevents double extensions).
+
+    Args:
+        name: Filename or image ID
+
+    Returns:
+        Filename with .jpg extension
+
+    Examples:
+        >>> ensure_jpg("2345678")
+        "2345678.jpg"
+        >>> ensure_jpg("2345678.jpg")
+        "2345678.jpg"
+        >>> ensure_jpg("2345678.JPG")
+        "2345678.JPG"
+    """
+    if not name:
+        return name
+    return name if Path(name).suffix.lower() in {".jpg", ".jpeg"} else f"{name}.jpg"
+
+
 def compute_relational_graph(
     valid_objects: List[Dict],
     relations: List[Dict],

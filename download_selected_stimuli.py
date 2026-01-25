@@ -11,6 +11,8 @@ import shutil
 from pathlib import Path
 from typing import Dict, List
 
+from utils import ensure_jpg
+
 
 class StimuliDownloader:
     """Downloads selected raw stimuli images."""
@@ -18,6 +20,7 @@ class StimuliDownloader:
     def __init__(
         self,
         dataset_dir: str = "data/diverse_selection",
+        stimuli_dir: str = "data/stimuli",
         annotations_file: str = "manual_annotations.json",
         output_dir: str = "data/selected_stimuli_raw",
     ):
@@ -25,13 +28,15 @@ class StimuliDownloader:
         Initialize the downloader.
 
         Args:
-            dataset_dir: Path to diverse selection dataset directory
+            dataset_dir: Path to diverse selection dataset directory (for images)
+            stimuli_dir: Path to stimuli directory (for manual_annotations.json)
             annotations_file: Name of manual annotations file
             output_dir: Path to output directory for raw selected images
         """
         self.dataset_dir = Path(dataset_dir)
+        self.stimuli_dir = Path(stimuli_dir)
         self.images_dir = self.dataset_dir / "images"
-        self.annotations_path = self.dataset_dir / "annotations" / annotations_file
+        self.annotations_path = self.stimuli_dir / "annotations" / annotations_file
         self.output_dir = Path(output_dir)
 
         # Validate paths
@@ -91,7 +96,7 @@ class StimuliDownloader:
         print("Copying images...")
         for img_meta in selected_images:
             img_id = img_meta["image_id"]
-            file_name = img_meta.get("file_name", f"{img_id}.jpg")
+            file_name = img_meta.get("file_name", ensure_jpg(img_id))
 
             src_path = self.images_dir / file_name
             dst_path = self.output_dir / file_name
@@ -145,6 +150,7 @@ def main():
     """Main entry point."""
     # Configuration
     DATASET_DIR = "data/diverse_selection"
+    STIMULI_DIR = "data/stimuli"
     ANNOTATIONS_FILE = "manual_annotations.json"
     OUTPUT_DIR = "data/selected_stimuli_raw"
 
@@ -155,6 +161,7 @@ def main():
     try:
         downloader = StimuliDownloader(
             dataset_dir=DATASET_DIR,
+            stimuli_dir=STIMULI_DIR,
             annotations_file=ANNOTATIONS_FILE,
             output_dir=OUTPUT_DIR,
         )

@@ -20,7 +20,7 @@ Options:
     --dry-run                Print plan without making API calls
     --max-dimension N        Max image dimension in pixels (default: 1024)
     --jpeg-quality N         JPEG compression quality 1-100 (default: 85)
-    --model NAME             OpenAI model to use (default: gpt-5.2)
+    --model NAME             OpenAI model to use
     --force-reprocess        Reprocess all images, ignoring existing results
 
 Requirements:
@@ -40,6 +40,7 @@ from typing import Any, Dict, List, Set
 import aiofiles
 from PIL import Image
 
+import config
 from openai import AsyncOpenAI
 from openAI.response_schema import response_schema
 from openAI.scoring_prompt import scoring_prompt
@@ -226,7 +227,7 @@ class ImageScorer:
     def __init__(
         self,
         api_key: str,
-        model: str = "gpt-5.2",
+        model: str,
         max_retries: int = 5,
         initial_retry_delay: float = 1.0,
     ):
@@ -275,7 +276,7 @@ class ImageScorer:
                             ],  # <-- reuse your existing schema
                         }
                     },
-                    max_output_tokens=500,
+                    max_output_tokens=1500,
                 )
 
                 # Extract JSON from response
@@ -283,10 +284,12 @@ class ImageScorer:
 
                 # Validate and sanitize
                 result["image_id"] = image_id
+                result["story"] = str(result.get("story", "")).strip()
                 result["core_interactions"] = result.get("core_interactions", [])[:3]
-                result["CIC"] = max(0, min(3, result.get("CIC", 0)))
-                result["SEP"] = max(0, min(2, result.get("SEP", 0)))
-                result["CHN"] = max(0, min(2, result.get("CHN", 0)))
+                result["CIC"] = max(0, min(3, int(result.get("CIC", 0))))
+                result["SEP"] = max(0, min(2, int(result.get("SEP", 0))))
+                result["CLR"] = max(0, min(2, int(result.get("CLR", 0))))
+                result["PRM"] = max(0, min(2, int(result.get("PRM", 0))))
 
                 return result
 
@@ -376,7 +379,7 @@ class BatchProcessor:
                 self.processed += 1
                 print(
                     f"✓ [{self.processed}] {image_id}: "
-                    f"CIC={result['CIC']} SEP={result['SEP']} CHN={result['CHN']}"
+                    f"CIC={result['CIC']} SEP={result['SEP']} CLR={result['CLR']} PRM={result['PRM']}"
                 )
 
             except Exception as e:
@@ -625,8 +628,8 @@ def main():
     parser.add_argument(
         "--model",
         type=str,
-        default="gpt-5.2",
-        help="OpenAI model to use (default: gpt-5.2)",
+        default=config.OPENAI_MODEL,
+        help="OpenAI model to use",
     )
     parser.add_argument(
         "--force-reprocess",

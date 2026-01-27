@@ -1,0 +1,462 @@
+[
+  {
+    "image_id": "150472",
+    "core_interactions": [
+      {
+        "agent": "woman on left",
+        "verb": "bite",
+        "patient": "pizza slice"
+      },
+      {
+        "agent": "woman on right",
+        "verb": "bite",
+        "patient": "pizza slice"
+      }
+    ],
+    "story": "Two women lean in with open mouths toward a large slice of pizza on a paper plate, each taking a bite from it.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 2,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 9,
+    "final_score": 9
+  },
+  {
+    "image_id": "2345035",
+    "core_interactions": [
+      {
+        "agent": "soccer player in blue",
+        "verb": "dribbles",
+        "patient": "soccer ball"
+      },
+      {
+        "agent": "soccer player in white",
+        "verb": "challenges",
+        "patient": "soccer player in blue"
+      }
+    ],
+    "story": "A player in a blue jersey dribbles the soccer ball while a player in a white jersey runs alongside and challenges her for it.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 2,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 9,
+    "final_score": 9
+  },
+  {
+    "image_id": "2347128",
+    "core_interactions": [
+      {
+        "agent": "tennis player",
+        "verb": "hits",
+        "patient": "tennis ball"
+      },
+      {
+        "agent": "tennis player",
+        "verb": "returns",
+        "patient": "tennis ball"
+      }
+    ],
+    "story": "One tennis player swings to hit a tennis ball over the net. Another tennis player stands ready near the net to return the ball.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 2,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 9,
+    "final_score": 9
+  },
+  {
+    "image_id": "2349475",
+    "core_interactions": [
+      {
+        "agent": "man",
+        "verb": "turns",
+        "patient": "crank"
+      },
+      {
+        "agent": "woman",
+        "verb": "holds",
+        "patient": "blender lid"
+      }
+    ],
+    "story": "A man turns a crank on a machine while a woman holds the lid on a blender filled with liquid.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 2,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 9,
+    "final_score": 9
+  },
+  {
+    "image_id": "2352216",
+    "core_interactions": [
+      {
+        "agent": "batter",
+        "verb": "swings",
+        "patient": "bat"
+      },
+      {
+        "agent": "catcher",
+        "verb": "catches",
+        "patient": "ball"
+      }
+    ],
+    "story": "A baseball batter is swinging a bat at home plate while the catcher behind him receives the pitch.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 2,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 9,
+    "final_score": 9
+  },
+  {
+    "image_id": "107989",
+    "core_interactions": [
+      {
+        "agent": "man",
+        "verb": "touches",
+        "patient": "baby elephant"
+      },
+      {
+        "agent": "baby elephant",
+        "verb": "touches",
+        "patient": "adult elephant"
+      }
+    ],
+    "story": "A man has his hand on a baby elephant standing beside him. The baby elephant reaches its trunk toward an adult elephant nearby.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 8,
+    "final_score": 8
+  },
+  {
+    "image_id": "1592543",
+    "core_interactions": [
+      {
+        "agent": "man",
+        "verb": "carry",
+        "patient": "surfboard"
+      },
+      {
+        "agent": "woman",
+        "verb": "carry",
+        "patient": "surfboard"
+      }
+    ],
+    "story": "A man and a woman on the beach carry surfboards near the shoreline while other people swim in the water.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 8,
+    "final_score": 8
+  },
+  {
+    "image_id": "2344622",
+    "core_interactions": [
+      {
+        "agent": "person",
+        "verb": "types on",
+        "patient": "keyboard"
+      },
+      {
+        "agent": "cat",
+        "verb": "rests on",
+        "patient": "arm"
+      }
+    ],
+    "story": "A person is typing on a keyboard. A cat is resting its head on the person\u2019s arm near the keyboard.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 8,
+    "final_score": 8
+  },
+  {
+    "image_id": "2345258",
+    "core_interactions": [
+      {
+        "agent": "rider",
+        "verb": "ride",
+        "patient": "horse"
+      },
+      {
+        "agent": "rider",
+        "verb": "ride",
+        "patient": "horse"
+      }
+    ],
+    "story": "Two riders are riding their horses along the sandy beach near the ocean.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 8,
+    "final_score": 8
+  },
+  {
+    "image_id": "2346926",
+    "core_interactions": [
+      {
+        "agent": "man",
+        "verb": "brushes",
+        "patient": "teeth"
+      },
+      {
+        "agent": "man",
+        "verb": "uses",
+        "patient": "phone"
+      }
+    ],
+    "story": "A man lies on a bed while brushing his teeth. He is using a phone in his other hand.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 8,
+    "final_score": 8
+  },
+  {
+    "image_id": "2347025",
+    "core_interactions": [
+      {
+        "agent": "woman",
+        "verb": "carry",
+        "patient": "baby"
+      },
+      {
+        "agent": "baby",
+        "verb": "hold",
+        "patient": "umbrella"
+      }
+    ],
+    "story": "A woman carries a baby on her back. The baby holds up a pink umbrella above them.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 8,
+    "final_score": 8
+  },
+  {
+    "image_id": "2347024",
+    "core_interactions": [
+      {
+        "agent": "people",
+        "verb": "ride",
+        "patient": "elephant"
+      },
+      {
+        "agent": "elephant",
+        "verb": "wade",
+        "patient": "water"
+      }
+    ],
+    "story": "Several people are riding on elephants in a grassy area. One elephant is wading into shallow water while another stands nearby with riders on its back.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 8,
+    "final_score": 8
+  },
+  {
+    "image_id": "2347400",
+    "core_interactions": [
+      {
+        "agent": "man",
+        "verb": "smell",
+        "patient": "wine glass"
+      },
+      {
+        "agent": "man",
+        "verb": "smell",
+        "patient": "wine glass"
+      }
+    ],
+    "story": "Two men sit on a couch, each holding a wine glass near his face and smelling the wine.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 8,
+    "final_score": 8
+  },
+  {
+    "image_id": "2348899",
+    "core_interactions": [
+      {
+        "agent": "woman",
+        "verb": "points at",
+        "patient": "man's tie"
+      },
+      {
+        "agent": "man in suit",
+        "verb": "gestures at",
+        "patient": "seated man"
+      }
+    ],
+    "story": "A woman points at the seated man's tie while he smiles. A man in a suit leans in and gestures toward the seated man during their conversation.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 8,
+    "final_score": 8
+  },
+  {
+    "image_id": "2350974",
+    "core_interactions": [
+      {
+        "agent": "child",
+        "verb": "drink",
+        "patient": "bottle"
+      },
+      {
+        "agent": "child",
+        "verb": "touch",
+        "patient": "car door"
+      }
+    ],
+    "story": "A child drinks from a bottle while standing next to a red car. The child rests a hand on the car door.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 8,
+    "final_score": 8
+  },
+  {
+    "image_id": "2353035",
+    "core_interactions": [
+      {
+        "agent": "girl",
+        "verb": "using",
+        "patient": "laptop"
+      },
+      {
+        "agent": "man",
+        "verb": "reading",
+        "patient": "book"
+      }
+    ],
+    "story": "A girl sits holding and using a laptop while a man sits beside her reading a book.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 8,
+    "final_score": 8
+  },
+  {
+    "image_id": "2354569",
+    "core_interactions": [
+      {
+        "agent": "surfer",
+        "verb": "carry",
+        "patient": "surfboard"
+      },
+      {
+        "agent": "dog",
+        "verb": "sniff",
+        "patient": "sand"
+      }
+    ],
+    "story": "A surfer walks along the beach carrying a surfboard. A dog sniffs the sand nearby.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 8,
+    "final_score": 8
+  },
+  {
+    "image_id": "285684",
+    "core_interactions": [
+      {
+        "agent": "woman",
+        "verb": "holds",
+        "patient": "cake"
+      },
+      {
+        "agent": "man",
+        "verb": "holds",
+        "patient": "bouquet"
+      }
+    ],
+    "story": "A woman holds a cake while standing beside a man who holds a bouquet of flowers.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 0,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 7,
+    "final_score": 7
+  },
+  {
+    "image_id": "2343730",
+    "core_interactions": [
+      {
+        "agent": "boy",
+        "verb": "uses",
+        "patient": "phone"
+      },
+      {
+        "agent": "boy",
+        "verb": "uses",
+        "patient": "phone"
+      }
+    ],
+    "story": "Two boys sit on a ledge, each looking at and using a phone.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 0,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 7,
+    "final_score": 7
+  },
+  {
+    "image_id": "2346225",
+    "core_interactions": [
+      {
+        "agent": "man",
+        "verb": "hold",
+        "patient": "phone"
+      },
+      {
+        "agent": "man",
+        "verb": "hold",
+        "patient": "cigarette"
+      }
+    ],
+    "story": "A man holds a phone to his ear while holding a cigarette in his other hand.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 0,
+    "QLT": 1,
+    "eligible": 1,
+    "score": 7,
+    "final_score": 7
+  }
+]

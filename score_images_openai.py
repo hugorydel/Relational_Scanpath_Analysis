@@ -266,16 +266,7 @@ class ImageScorer:
                             ],
                         }
                     ],
-                    text={
-                        "format": {
-                            "type": "json_schema",
-                            "name": "interaction_scoring",
-                            "strict": True,
-                            "schema": RESPONSE_SCHEMA["json_schema"][
-                                "schema"
-                            ],  # <-- reuse your existing schema
-                        }
-                    },
+                    text={"format": RESPONSE_SCHEMA},
                     max_output_tokens=1500,
                 )
 
@@ -288,8 +279,8 @@ class ImageScorer:
                 result["core_interactions"] = result.get("core_interactions", [])[:3]
                 result["CIC"] = max(0, min(3, int(result.get("CIC", 0))))
                 result["SEP"] = max(0, min(2, int(result.get("SEP", 0))))
-                result["CLR"] = max(0, min(2, int(result.get("CLR", 0))))
-                result["PRM"] = max(0, min(2, int(result.get("PRM", 0))))
+                result["DYN"] = max(0, min(2, int(result.get("DYN", 0))))
+                result["QLT"] = max(0, min(1, int(result.get("QLT", 0))))
 
                 return result
 
@@ -379,7 +370,7 @@ class BatchProcessor:
                 self.processed += 1
                 print(
                     f"✓ [{self.processed}] {image_id}: "
-                    f"CIC={result['CIC']} SEP={result['SEP']} CLR={result['CLR']} PRM={result['PRM']}"
+                    f"CIC={result['CIC']} SEP={result['SEP']} DYN={result['DYN']} QLT={result['QLT']}"
                 )
 
             except Exception as e:
@@ -487,18 +478,6 @@ async def main_async(args):
     if len(image_ids) == 0:
         print("\n✓ All images already processed! Nothing to do.")
         print("Use --force-reprocess to reprocess all images.")
-        return
-
-    if args.dry_run:
-        print("\nDRY RUN - Would process:")
-        for i, img_id in enumerate(image_ids[:10], 1):
-            status = " (retry)" if img_id in errored_images else ""
-            # Extract numeric ID from filename
-            id_num = img_id.replace(".jpg", "").replace(".JPG", "")
-            print(f"  {i}. {img_id} (ID: {id_num}){status}")
-        if len(image_ids) > 10:
-            print(f"  ... and {len(image_ids) - 10} more")
-        print("\nNo API calls made (--dry-run enabled)")
         return
 
     # Get API key securely (no echo to terminal or logs)
@@ -609,9 +588,6 @@ def main():
         type=int,
         default=5,
         help="Max concurrent API requests (default: 5)",
-    )
-    parser.add_argument(
-        "--dry-run", action="store_true", help="Print plan without making API calls"
     )
     parser.add_argument(
         "--max-dimension",

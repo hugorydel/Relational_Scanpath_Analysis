@@ -5,16 +5,16 @@ analyze_results.py - Analyze image scoring results
 Quick analysis and filtering of scored images from results.jsonl
 
 Usage:
-    python analyze_results.py results.jsonl [--image-dir PATH]
+    python analyze_results.py --results_file results.jsonl [--image-dir PATH]
 
 Requirements:
     pip install numpy
 
 Outputs:
-    - Correlation matrix between CIC, SEP, and CHN
-    - Top 10 high-scoring images by FinalScore
-    - Copies top 10 images to ./top_images/ folder (if --image-dir provided)
-    - Saves top 10 results to ./top_images/top_images_results.json
+    - Correlation matrix between CIC, SEP, DYN, QLT
+    - Top N high-scoring images by Score
+    - Copies top N images to ./top_images/ folder (if --image-dir exists)
+    - Saves top N results to ./top_images/top_images_results.json
 """
 
 import argparse
@@ -39,79 +39,100 @@ def load_results(jsonl_path: str) -> List[Dict]:
 
 def calculate_scores(results: List[Dict]) -> List[Dict]:
     """
-    Calculate eligibility and final score for each image.
+    Calculate eligibility and score for each image.
 
-    Eligible = 1 if CIC ≥ 2 AND SEP ≥ 1, otherwise 0
-    FinalScore = Eligible × (2·CIC + SEP + CHN)
+    Eligible = 1 if CIC ≥ 2 AND SEP ≥ 1 AND QLT ≥ 1, otherwise 0
+    Score = Eligible × (2·CIC + SEP + DYN + QLT)
 
     Returns:
-        Results with added 'eligible' and 'final_score' fields
+        Results with added 'eligible' and 'score' fields
     """
     for r in results:
-        cic = r["CIC"]
-        sep = r["SEP"]
-        chn = r["CHN"]
+        # Gracefully handle missing keys (treat as 0)
+        cic = int(r.get("CIC", 0))
+        sep = int(r.get("SEP", 0))
+        dyn = int(r.get("DYN", 0))
+        qlt = int(r.get("QLT", 0))
 
-        # Calculate eligibility
-        eligible = 1 if (cic >= 2 and sep >= 1) else 0
-
-        # Calculate final score
-        final_score = eligible * (2 * cic + sep + chn)
+        eligible = 1 if (cic >= 2 and sep >= 1 and qlt >= 1) else 0
+        score = eligible * (2 * cic + sep + dyn + qlt)
 
         r["eligible"] = eligible
-        r["final_score"] = final_score
+        r["score"] = score
+        # Backward-compatible alias
+        r["final_score"] = score
 
     return results
 
 
 def calculate_correlation_matrix(results: List[Dict]) -> Dict:
     """
-    Calculate correlation matrix between CIC, SEP, and CHN.
+    Calculate correlation matrix between CIC, SEP, DYN, QLT.
 
     Returns:
-        Dictionary with correlation coefficients
+        Dictionary with:
+          - labels: list[str]
+          - matrix: 2D numpy array (Pearson's r)
     """
-    # Extract scores
-    cic_scores = np.array([r["CIC"] for r in results])
-    sep_scores = np.array([r["SEP"] for r in results])
-    chn_scores = np.array([r["CHN"] for r in results])
+    labels = ["CIC", "SEP", "DYN", "QLT"]
 
-    # Calculate correlations
-    corr_cic_sep = np.corrcoef(cic_scores, sep_scores)[0, 1]
-    corr_cic_chn = np.corrcoef(cic_scores, chn_scores)[0, 1]
-    corr_sep_chn = np.corrcoef(sep_scores, chn_scores)[0, 1]
+    data = np.array(
+        [
+            [
+                int(r.get("CIC", 0)),
+                int(r.get("SEP", 0)),
+                int(r.get("DYN", 0)),
+                int(r.get("QLT", 0)),
+            ]
+            for r in results
+        ],
+        dtype=float,
+    )
 
-    return {"CIC_SEP": corr_cic_sep, "CIC_CHN": corr_cic_chn, "SEP_CHN": corr_sep_chn}
+    # If there's only one row, correlation is undefined; return identity for safe printing.
+    if data.shape[0] < 2:
+        matrix = np.eye(len(labels), dtype=float)
+    else:
+        matrix = np.corrcoef(data, rowvar=False)
+
+        # Replace NaNs (e.g., constant columns) with 0 off-diagonal, 1 on diagonal.
+        if np.isnan(matrix).any():
+            fixed = np.nan_to_num(matrix, nan=0.0)
+            np.fill_diagonal(fixed, 1.0)
+            matrix = fixed
+
+    return {"labels": labels, "matrix": matrix}
 
 
 def print_correlation_matrix(correlations: Dict) -> None:
     """Print correlation matrix."""
+    labels = correlations["labels"]
+    mat = correlations["matrix"]
+
     print("=" * 70)
     print("CORRELATION MATRIX (Pearson's r)")
     print("=" * 70)
-    print("          CIC       SEP       CHN")
+
+    header = " " * 10 + "".join([f"{lab:>9}" for lab in labels])
+    print(header)
     print("-" * 70)
-    print(
-        f"CIC     1.000     {correlations['CIC_SEP']:6.3f}    {correlations['CIC_CHN']:6.3f}"
-    )
-    print(
-        f"SEP     {correlations['CIC_SEP']:6.3f}    1.000     {correlations['SEP_CHN']:6.3f}"
-    )
-    print(
-        f"CHN     {correlations['CIC_CHN']:6.3f}    {correlations['SEP_CHN']:6.3f}    1.000"
-    )
+
+    for i, row_lab in enumerate(labels):
+        row_vals = "".join([f"{mat[i, j]:9.3f}" for j in range(len(labels))])
+        print(f"{row_lab:<10}{row_vals}")
+
     print("=" * 70)
 
 
-def print_top_images(results: List[Dict], n: int = 10) -> List[Dict]:
+def print_top_images(results: List[Dict], n: int = 20) -> List[Dict]:
     """
-    Print top N images by final score.
+    Print top N images by score.
 
     Returns:
         List of top N results
     """
-    # Sort by final score (descending)
-    sorted_results = sorted(results, key=lambda r: r["final_score"], reverse=True)
+    # Sort by score (descending)
+    sorted_results = sorted(results, key=lambda r: r.get("score", 0), reverse=True)
 
     # Get top N
     top_n = sorted_results[:n]
@@ -119,24 +140,24 @@ def print_top_images(results: List[Dict], n: int = 10) -> List[Dict]:
     print("\n" + "=" * 70)
     print(f"TOP {n} HIGH-SCORING IMAGES")
     print("=" * 70)
-    print("Eligible = 1 if CIC ≥ 2 AND SEP ≥ 1, otherwise 0")
-    print("FinalScore = Eligible × (2·CIC + SEP + CHN)")
+    print("Eligible = 1 if CIC ≥ 2 AND SEP ≥ 1 AND QLT ≥ 1, otherwise 0")
+    print("Score = Eligible × (2·CIC + SEP + DYN + QLT)")
     print("=" * 70)
     print(
-        f"{'Image ID':<15} {'CIC':<5} {'SEP':<5} {'CHN':<5} {'Eligible':<10} {'FinalScore':<12}"
+        f"{'Image ID':<15} {'CIC':<5} {'SEP':<5} {'DYN':<5} {'QLT':<5} {'Eligible':<10} {'Score':<8}"
     )
     print("-" * 70)
 
     for r in top_n:
         print(
-            f"{r['image_id']:<15} {r['CIC']:<5} {r['SEP']:<5} {r['CHN']:<5} "
-            f"{r['eligible']:<10} {r['final_score']:<12}"
+            f"{r.get('image_id',''):<15} {int(r.get('CIC',0)):<5} {int(r.get('SEP',0)):<5} "
+            f"{int(r.get('DYN',0)):<5} {int(r.get('QLT',0)):<5} {int(r.get('eligible',0)):<10} {int(r.get('score',0)):<8}"
         )
 
     print("=" * 70)
 
     # Summary statistics
-    total_eligible = sum(1 for r in results if r["eligible"] == 1)
+    total_eligible = sum(1 for r in results if int(r.get("eligible", 0)) == 1)
     total_images = len(results)
     pct_eligible = 100 * total_eligible / total_images if total_images > 0 else 0
 

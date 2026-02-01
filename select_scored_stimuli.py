@@ -29,10 +29,11 @@ from pathlib import Path
 from typing import Dict, List
 
 import numpy as np
-from embedding.diversity_selection import DiversitySelector
 from tqdm import tqdm
 
 import config
+from config import calculate_image_score
+from embedding.diversity_selection import DiversitySelector
 
 
 def load_scored_images(jsonl_path: Path) -> List[Dict]:
@@ -49,21 +50,6 @@ def load_scored_images(jsonl_path: Path) -> List[Dict]:
         for line in f:
             if line.strip():
                 results.append(json.loads(line))
-
-    # Calculate scores using centralized function
-    try:
-        from config import calculate_image_score
-    except ImportError:
-        print("Warning: Could not import scoring function, using fallback")
-
-        def calculate_image_score(cic, sep, dyn, qlt):
-            cic = int(cic) if cic is not None else 0
-            sep = int(sep) if sep is not None else 0
-            dyn = int(dyn) if dyn is not None else 0
-            qlt = int(qlt) if qlt is not None else 0
-            eligible = 1 if (cic >= 2 and sep >= 1 and dyn >= 1 and qlt >= 1) else 0
-            score = eligible * (cic * 2.5 + sep + dyn * 1.5 + qlt)
-            return {"eligible": eligible, "score": score}
 
     for r in results:
         scoring = calculate_image_score(

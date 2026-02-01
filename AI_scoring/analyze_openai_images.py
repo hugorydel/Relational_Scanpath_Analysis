@@ -24,6 +24,8 @@ from typing import Dict, List
 
 import numpy as np
 
+from config import calculate_image_score
+
 
 def load_results(jsonl_path: str) -> List[Dict]:
     """Load results from JSONL file."""
@@ -42,22 +44,6 @@ def calculate_scores(results: List[Dict]) -> List[Dict]:
     Returns:
         Results with added 'eligible' and 'score' fields
     """
-    # Import scoring function from config
-    try:
-        from config import calculate_image_score
-    except ImportError:
-        print("Warning: Could not import from config.py, using inline scoring")
-
-        # Fallback inline version
-        def calculate_image_score(cic, sep, dyn, qlt):
-            cic = int(cic) if cic is not None else 0
-            sep = int(sep) if sep is not None else 0
-            dyn = int(dyn) if dyn is not None else 0
-            qlt = int(qlt) if qlt is not None else 0
-            eligible = 1 if (cic >= 2 and sep >= 1 and dyn >= 1 and qlt >= 1) else 0
-            score = eligible * (cic * 2.5 + sep + dyn * 1.5 + qlt)
-            return {"eligible": eligible, "score": score}
-
     for r in results:
         # Get scores using centralized function
         scoring = calculate_image_score(

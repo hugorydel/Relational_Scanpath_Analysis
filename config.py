@@ -15,13 +15,12 @@ PRECOMPUTED_STATS_PATH = (
 PREDICATE_MAP_PATH = "data/predicate_to_category.json"  # Predicate→category mapping
 
 # Filtering thresholds
-MIN_MEMORABILITY = 0.75
+MIN_MEMORABILITY = 0.75  # (mean memorability score from 0 to 1)
 MIN_MASK_AREA_PERCENT = 1.0  # Minimum area percent to count mask in coverage percentage
 MIN_OBJECTS = 10
 MAX_OBJECTS = 30
 MIN_RELATIONS = 10
-MIN_COVERAGE_PERCENT = 80.0
-MIN_INTERACTIONAL_RELATIONS = 1
+MIN_COVERAGE_PERCENT = 75.0
 
 # Image parameters
 TARGET_SIZE = (1024, 768)

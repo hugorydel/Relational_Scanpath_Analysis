@@ -43,7 +43,6 @@ class SVGRelationalDataset:
         self.max_objects = config.MAX_OBJECTS
         self.min_relations = config.MIN_RELATIONS
         self.min_coverage_percent = config.MIN_COVERAGE_PERCENT
-        self.min_interactional_relations = config.MIN_INTERACTIONAL_RELATIONS
         self.predicate_weights = config.PREDICATE_WEIGHTS
 
         # Setup output directories
@@ -82,7 +81,6 @@ class SVGRelationalDataset:
         print(f"  Objects: {self.min_objects}-{self.max_objects}")
         print(f"  Relations: ≥ {self.min_relations}")
         print(f"  Coverage: ≥ {self.min_coverage_percent}%")
-        print(f"  Interactional rels: ≥ {self.min_interactional_relations}")
         print("=" * 60 + "\n")
 
         stats = {
@@ -204,7 +202,6 @@ class SVGRelationalDataset:
             and stats["n_relations"] >= self.min_relations
             and stats["coverage_percent"] >= self.min_coverage_percent
             and stats["memorability"] >= self.min_memorability
-            and stats["n_interactional_relations"] >= self.min_interactional_relations
         )
 
     def _filter_objects_by_area(self, objects: List[Dict]) -> List[Dict]:

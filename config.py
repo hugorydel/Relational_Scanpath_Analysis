@@ -140,4 +140,4 @@ TEXT_EMBEDDING_CACHE_PATH = "./data/text_embedding_cache.pkl"
 
 # Diversity selection parameters
 N_FINAL_SCORED_IMAGES = 60  # Target number of final images
-SCORED_SIMILARITY_THRESHOLD = 0.7  # Cosine similarity threshold (0-1)
+SCORED_SIMILARITY_THRESHOLD = 0.5  # Cosine similarity threshold (0-1)

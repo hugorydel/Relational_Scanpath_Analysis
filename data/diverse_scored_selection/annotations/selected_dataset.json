@@ -3,15 +3,15 @@
     "description": "Diverse High-Scoring Stimuli Dataset",
     "num_images": 60,
     "selection_method": "score_weighted_greedy",
-    "diversity_threshold": 0.7,
+    "diversity_threshold": 0.5,
     "text_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
     "diversity_metrics": {
       "n_selected": 60,
-      "mean_pairwise_similarity": 0.12391060590744019,
-      "std_pairwise_similarity": 0.11805671453475952,
-      "min_pairwise_similarity": -0.1702670305967331,
-      "max_pairwise_similarity": 0.699468731880188,
-      "median_pairwise_similarity": 0.10809454321861267
+      "mean_pairwise_similarity": 0.11766684055328369,
+      "std_pairwise_similarity": 0.1086021140217781,
+      "min_pairwise_similarity": -0.236528217792511,
+      "max_pairwise_similarity": 0.49678313732147217,
+      "median_pairwise_similarity": 0.10416890680789948
     },
     "scoring_criteria": {
       "CIC_threshold": 1,
@@ -347,28 +347,6 @@
       "score": 11.0
     },
     {
-      "image_id": "2356991",
-      "core_interactions": [
-        {
-          "agent": "baseball player",
-          "verb": "slides toward",
-          "patient": "base"
-        },
-        {
-          "agent": "fielder",
-          "verb": "catches",
-          "patient": "baseball"
-        }
-      ],
-      "story": "One player is sliding headfirst toward the base. A fielder stands by the base and catches the incoming ball.",
-      "CIC": 2,
-      "SEP": 2,
-      "DYN": 2,
-      "QLT": 1,
-      "eligible": 1,
-      "score": 11.0
-    },
-    {
       "image_id": "2362277",
       "core_interactions": [
         {
@@ -405,28 +383,6 @@
         }
       ],
       "story": "Two bears are eating pieces of a pumpkin on the ground. One bear has its face in the hollow pumpkin while the other eats a chunk nearby.",
-      "CIC": 2,
-      "SEP": 2,
-      "DYN": 2,
-      "QLT": 1,
-      "eligible": 1,
-      "score": 11.0
-    },
-    {
-      "image_id": "2368759",
-      "core_interactions": [
-        {
-          "agent": "man",
-          "verb": "throws",
-          "patient": "frisbee"
-        },
-        {
-          "agent": "man",
-          "verb": "catches",
-          "patient": "frisbee"
-        }
-      ],
-      "story": "One man in a yellow shirt throws a frisbee across the field while another man jumps with his arms up to catch it.",
       "CIC": 2,
       "SEP": 2,
       "DYN": 2,
@@ -567,20 +523,20 @@
       "score": 11.0
     },
     {
-      "image_id": "2386594",
+      "image_id": "2382422",
       "core_interactions": [
         {
-          "agent": "player",
+          "agent": "man in yellow",
           "verb": "catches",
-          "patient": "flying disc"
+          "patient": "frisbee"
         },
         {
-          "agent": "player in black",
+          "agent": "man in red",
           "verb": "blocks",
-          "patient": "player"
+          "patient": "man in yellow"
         }
       ],
-      "story": "One player jumps and catches a flying disc overhead while another player reaches up to block him.",
+      "story": "A man in a yellow shirt reaches out to catch a flying frisbee while a man in a red shirt moves in front of him to block his attempt.",
       "CIC": 2,
       "SEP": 2,
       "DYN": 2,
@@ -633,28 +589,6 @@
       "score": 11.0
     },
     {
-      "image_id": "2407132",
-      "core_interactions": [
-        {
-          "agent": "man",
-          "verb": "throw",
-          "patient": "frisbee"
-        },
-        {
-          "agent": "dog",
-          "verb": "chase",
-          "patient": "frisbee"
-        }
-      ],
-      "story": "A man throws a frisbee across a grassy area. A dog runs after the frisbee.",
-      "CIC": 2,
-      "SEP": 2,
-      "DYN": 2,
-      "QLT": 1,
-      "eligible": 1,
-      "score": 11.0
-    },
-    {
       "image_id": "2408060",
       "core_interactions": [
         {
@@ -677,28 +611,6 @@
       "score": 11.0
     },
     {
-      "image_id": "150345",
-      "core_interactions": [
-        {
-          "agent": "people",
-          "verb": "ride",
-          "patient": "boat"
-        },
-        {
-          "agent": "man",
-          "verb": "paddle",
-          "patient": "boat"
-        }
-      ],
-      "story": "Several people ride in a long boat on a river while holding umbrellas. A man at the front paddles the boat through the water.",
-      "CIC": 2,
-      "SEP": 2,
-      "DYN": 2,
-      "QLT": 1,
-      "eligible": 1,
-      "score": 11.0
-    },
-    {
       "image_id": "2350616",
       "core_interactions": [
         {
@@ -713,72 +625,6 @@
         }
       ],
       "story": "A black dog jumps up to catch a flying disc in a grassy field. A tan dog stands nearby watching the black dog.",
-      "CIC": 2,
-      "SEP": 2,
-      "DYN": 2,
-      "QLT": 1,
-      "eligible": 1,
-      "score": 11.0
-    },
-    {
-      "image_id": "2359952",
-      "core_interactions": [
-        {
-          "agent": "skateboarder",
-          "verb": "rides",
-          "patient": "skateboard"
-        },
-        {
-          "agent": "skateboard",
-          "verb": "grinds",
-          "patient": "ledge"
-        }
-      ],
-      "story": "A skateboarder rides a skateboard as it grinds along the edge of a concrete skate bowl.",
-      "CIC": 2,
-      "SEP": 2,
-      "DYN": 2,
-      "QLT": 1,
-      "eligible": 1,
-      "score": 11.0
-    },
-    {
-      "image_id": "2381423",
-      "core_interactions": [
-        {
-          "agent": "soccer player",
-          "verb": "heads",
-          "patient": "soccer ball"
-        },
-        {
-          "agent": "soccer player",
-          "verb": "jumps over",
-          "patient": "soccer player"
-        }
-      ],
-      "story": "Two soccer players leap as one heads the ball while another jumps over an opponent. Other players watch nearby on the court.",
-      "CIC": 2,
-      "SEP": 2,
-      "DYN": 2,
-      "QLT": 1,
-      "eligible": 1,
-      "score": 11.0
-    },
-    {
-      "image_id": "2410588",
-      "core_interactions": [
-        {
-          "agent": "soccer player",
-          "verb": "dribbles",
-          "patient": "ball"
-        },
-        {
-          "agent": "soccer players",
-          "verb": "chase",
-          "patient": "soccer player"
-        }
-      ],
-      "story": "A soccer player in a white-and-red uniform dribbles the ball across the field. Several players in dark uniforms chase after him while another white-and-red player runs nearby.",
       "CIC": 2,
       "SEP": 2,
       "DYN": 2,
@@ -875,28 +721,6 @@
       "score": 9.5
     },
     {
-      "image_id": "2345258",
-      "core_interactions": [
-        {
-          "agent": "rider",
-          "verb": "ride",
-          "patient": "horse"
-        },
-        {
-          "agent": "rider",
-          "verb": "ride",
-          "patient": "horse"
-        }
-      ],
-      "story": "Two riders are riding their horses along the sandy beach near the ocean.",
-      "CIC": 2,
-      "SEP": 2,
-      "DYN": 1,
-      "QLT": 1,
-      "eligible": 1,
-      "score": 9.5
-    },
-    {
       "image_id": "2346926",
       "core_interactions": [
         {
@@ -933,28 +757,6 @@
         }
       ],
       "story": "A woman carries a baby on her back. The baby holds up a pink umbrella above them.",
-      "CIC": 2,
-      "SEP": 2,
-      "DYN": 1,
-      "QLT": 1,
-      "eligible": 1,
-      "score": 9.5
-    },
-    {
-      "image_id": "2347024",
-      "core_interactions": [
-        {
-          "agent": "people",
-          "verb": "ride",
-          "patient": "elephant"
-        },
-        {
-          "agent": "elephant",
-          "verb": "wade",
-          "patient": "water"
-        }
-      ],
-      "story": "Several people are riding on elephants in a grassy area. One elephant is wading into shallow water while another stands nearby with riders on its back.",
       "CIC": 2,
       "SEP": 2,
       "DYN": 1,
@@ -1095,28 +897,6 @@
       "score": 9.5
     },
     {
-      "image_id": "2357807",
-      "core_interactions": [
-        {
-          "agent": "surfer",
-          "verb": "carry",
-          "patient": "surfboard"
-        },
-        {
-          "agent": "surfer",
-          "verb": "carry",
-          "patient": "surfboard"
-        }
-      ],
-      "story": "Two surfers walk toward the ocean while each carries a surfboard.",
-      "CIC": 2,
-      "SEP": 2,
-      "DYN": 1,
-      "QLT": 1,
-      "eligible": 1,
-      "score": 9.5
-    },
-    {
       "image_id": "2360001",
       "core_interactions": [
         {
@@ -1131,28 +911,6 @@
         }
       ],
       "story": "Two workers are positioning a large round sign on a building facade, with one of them steadying it while the other attaches it to the bracket.",
-      "CIC": 2,
-      "SEP": 2,
-      "DYN": 1,
-      "QLT": 1,
-      "eligible": 1,
-      "score": 9.5
-    },
-    {
-      "image_id": "2362170",
-      "core_interactions": [
-        {
-          "agent": "adult elephant",
-          "verb": "eat",
-          "patient": "hay"
-        },
-        {
-          "agent": "baby elephant",
-          "verb": "touch",
-          "patient": "adult elephant"
-        }
-      ],
-      "story": "An adult elephant is eating a pile of hay. A baby elephant stands close and touches the adult with its trunk.",
       "CIC": 2,
       "SEP": 2,
       "DYN": 1,
@@ -1197,28 +955,6 @@
         }
       ],
       "story": "A person bends down and grooms a horse's lower leg with a tool. The horse eats hay from a hanging net.",
-      "CIC": 2,
-      "SEP": 2,
-      "DYN": 1,
-      "QLT": 1,
-      "eligible": 1,
-      "score": 9.5
-    },
-    {
-      "image_id": "2367455",
-      "core_interactions": [
-        {
-          "agent": "boy",
-          "verb": "brushes",
-          "patient": "teeth"
-        },
-        {
-          "agent": "toddler",
-          "verb": "brushes",
-          "patient": "teeth"
-        }
-      ],
-      "story": "Two children sit on a toilet and each brushes their teeth with a toothbrush.",
       "CIC": 2,
       "SEP": 2,
       "DYN": 1,
@@ -1293,20 +1029,328 @@
       "score": 9.5
     },
     {
-      "image_id": "2381007",
+      "image_id": "2386579",
       "core_interactions": [
         {
-          "agent": "cyclist",
-          "verb": "ride",
-          "patient": "bicycle"
+          "agent": "woman",
+          "verb": "talks on",
+          "patient": "phone"
         },
+        {
+          "agent": "man",
+          "verb": "handles",
+          "patient": "camera strap"
+        }
+      ],
+      "story": "A woman sits on a couch talking on a phone. Next to her, a man handles a camera strap attached to a camera around his neck.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2397929",
+      "core_interactions": [
+        {
+          "agent": "woman",
+          "verb": "shows",
+          "patient": "phone"
+        },
+        {
+          "agent": "woman",
+          "verb": "looks at",
+          "patient": "phone"
+        }
+      ],
+      "story": "One woman holds up her phone to show the screen to the woman beside her. The other woman looks down at a phone in her hands.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2401075",
+      "core_interactions": [
+        {
+          "agent": "bus",
+          "verb": "drives past",
+          "patient": "buildings"
+        },
+        {
+          "agent": "man",
+          "verb": "walks along",
+          "patient": "sidewalk"
+        }
+      ],
+      "story": "A double-decker bus drives along a city street past buildings. A man walks on the sidewalk near storefronts.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2401636",
+      "core_interactions": [
+        {
+          "agent": "cat",
+          "verb": "sniff",
+          "patient": "baby"
+        },
+        {
+          "agent": "woman",
+          "verb": "hold",
+          "patient": "cat"
+        }
+      ],
+      "story": "A cat leans toward and sniffs a baby sitting beside it. A woman holds the cat close while watching them.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2404464",
+      "core_interactions": [
+        {
+          "agent": "man",
+          "verb": "uses",
+          "patient": "phone"
+        },
+        {
+          "agent": "woman",
+          "verb": "uses",
+          "patient": "phone"
+        }
+      ],
+      "story": "A man and a woman stand in a hallway while each uses a phone. Other people are visible farther down the corridor.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2404751",
+      "core_interactions": [
+        {
+          "agent": "woman",
+          "verb": "ride",
+          "patient": "elephant"
+        },
+        {
+          "agent": "elephant",
+          "verb": "stand on",
+          "patient": "stools"
+        }
+      ],
+      "story": "In a circus ring, a woman sits on an elephant as it balances with its front feet on a set of stools.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2407083",
+      "core_interactions": [
+        {
+          "agent": "rider",
+          "verb": "ride",
+          "patient": "horse"
+        },
+        {
+          "agent": "rider",
+          "verb": "swing",
+          "patient": "lasso"
+        }
+      ],
+      "story": "A rider sits on a horse at the shoreline while swinging a lasso in the air.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2409102",
+      "core_interactions": [
+        {
+          "agent": "woman",
+          "verb": "hold",
+          "patient": "baby"
+        },
+        {
+          "agent": "woman",
+          "verb": "use",
+          "patient": "laptop"
+        }
+      ],
+      "story": "A woman holds a baby on her lap while using a laptop at a table.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2411268",
+      "core_interactions": [
+        {
+          "agent": "child",
+          "verb": "pick",
+          "patient": "apple"
+        },
+        {
+          "agent": "child",
+          "verb": "hold",
+          "patient": "bag"
+        }
+      ],
+      "story": "A child reaches up to pick an apple from a tree while holding a bag for collecting fruit.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "411",
+      "core_interactions": [
+        {
+          "agent": "man",
+          "verb": "play",
+          "patient": "piano"
+        },
+        {
+          "agent": "woman",
+          "verb": "touch",
+          "patient": "man"
+        }
+      ],
+      "story": "A man plays a piano while a woman stands behind him with her hands on his shoulders.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2345524",
+      "core_interactions": [
+        {
+          "agent": "woman",
+          "verb": "stands on",
+          "patient": "man's feet"
+        },
+        {
+          "agent": "man",
+          "verb": "uses",
+          "patient": "laptop"
+        }
+      ],
+      "story": "A woman stands on a man's feet while he lies on a bed using a laptop.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2355094",
+      "core_interactions": [
+        {
+          "agent": "boy",
+          "verb": "plays",
+          "patient": "video game controller"
+        },
+        {
+          "agent": "baby",
+          "verb": "holds",
+          "patient": "remote control"
+        }
+      ],
+      "story": "A boy sits on the floor playing with a wired game controller while a baby sits beside him holding a remote control.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2356125",
+      "core_interactions": [
+        {
+          "agent": "woman",
+          "verb": "pushes",
+          "patient": "luggage"
+        },
+        {
+          "agent": "woman",
+          "verb": "pushes",
+          "patient": "luggage"
+        }
+      ],
+      "story": "Two uniformed women push large bags along a conveyor belt, while two other uniformed staff stand nearby.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2357644",
+      "core_interactions": [
+        {
+          "agent": "giraffe",
+          "verb": "eat",
+          "patient": "tree leaves"
+        },
+        {
+          "agent": "giraffe",
+          "verb": "eat",
+          "patient": "tree leaves"
+        }
+      ],
+      "story": "Two giraffes stand beside a tree and eat leaves from its branches.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2369501",
+      "core_interactions": [
         {
           "agent": "police officer",
-          "verb": "ride",
-          "patient": "motorcycle"
+          "verb": "talks on",
+          "patient": "phone"
+        },
+        {
+          "agent": "protesters",
+          "verb": "hold",
+          "patient": "signs"
         }
       ],
-      "story": "A cyclist rides a bicycle through an intersection while a police officer rides a motorcycle nearby.",
+      "story": "A police officer stands on the grass talking on a phone while a crowd of protesters in the background holds signs.",
       "CIC": 2,
       "SEP": 2,
       "DYN": 1,
@@ -1315,64 +1359,20 @@
       "score": 9.5
     },
     {
-      "image_id": "2382660",
+      "image_id": "2385550",
       "core_interactions": [
         {
-          "agent": "man",
-          "verb": "carry",
-          "patient": "suitcase"
+          "agent": "boy",
+          "verb": "eat",
+          "patient": "cracker"
         },
         {
-          "agent": "man",
-          "verb": "carry",
-          "patient": "instrument case"
+          "agent": "girl",
+          "verb": "eat",
+          "patient": "cracker"
         }
       ],
-      "story": "A man walks across a cobblestone area carrying a suitcase and a large instrument case on his back. Other people are on the steps in the background.",
-      "CIC": 2,
-      "SEP": 2,
-      "DYN": 1,
-      "QLT": 1,
-      "eligible": 1,
-      "score": 9.5
-    },
-    {
-      "image_id": "2384616",
-      "core_interactions": [
-        {
-          "agent": "boy in blue shirt",
-          "verb": "play",
-          "patient": "video game"
-        },
-        {
-          "agent": "boy in orange shirt",
-          "verb": "play",
-          "patient": "video game"
-        }
-      ],
-      "story": "Two boys sit by a bed holding game controllers and playing a video game.",
-      "CIC": 2,
-      "SEP": 2,
-      "DYN": 1,
-      "QLT": 1,
-      "eligible": 1,
-      "score": 9.5
-    },
-    {
-      "image_id": "2385851",
-      "core_interactions": [
-        {
-          "agent": "person",
-          "verb": "carry",
-          "patient": "suitcase"
-        },
-        {
-          "agent": "person",
-          "verb": "carry",
-          "patient": "suitcase"
-        }
-      ],
-      "story": "Two people walk along a covered walkway while each carries a large red suitcase.",
+      "story": "A boy and a girl each have a cracker in their mouth and are eating it while facing the camera.",
       "CIC": 2,
       "SEP": 2,
       "DYN": 1,

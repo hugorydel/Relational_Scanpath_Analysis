@@ -44,7 +44,7 @@ class ManualAnnotationUI:
 
     def __init__(
         self,
-        dataset_dir: str = "data/diverse_selection",
+        dataset_dir: str = "data/diverse_scored_selection",
         output_dir: str = "data/stimuli",
         annotations_file: str = "manual_annotations.json",
     ):
@@ -60,13 +60,13 @@ class ManualAnnotationUI:
         self.output_dir = Path(output_dir)
         self.images_dir = self.dataset_dir / "images"
         self.annotations_path = self.dataset_dir / "annotations" / annotations_file
-        self.dataset_json = self.dataset_dir / "annotations" / "diverse_dataset.json"
+        self.dataset_json = self.dataset_dir / "annotations" / "selected_dataset.json"
 
         # Load dataset metadata
         if not self.dataset_json.exists():
             raise FileNotFoundError(
                 f"Dataset metadata not found: {self.dataset_json}\n"
-                f"Please run select_diverse_stimuli.py first."
+                f"Please run select_diverse_scored_stimuli.py first."
             )
 
         with open(self.dataset_json, "r") as f:
@@ -159,14 +159,21 @@ class ManualAnnotationUI:
         current_img = self.images_to_annotate[self.current_index]
         img_id = str(current_img["image_id"])
 
-        # Store annotation
+        # Store annotation (use .get() for fields that might not exist)
         self.manual_annotations[img_id] = {
             "status": status,
-            "file_name": current_img["file_name"],
-            "n_objects": current_img["n_objects"],
-            "n_relations": current_img["n_relations"],
-            "coverage_percent": current_img["coverage_percent"],
-            "memorability": current_img["memorability"],
+            "file_name": current_img.get("file_name", f"{img_id}.jpg"),
+            "story": current_img.get("story", ""),
+            "CIC": current_img.get("CIC", 0),
+            "SEP": current_img.get("SEP", 0),
+            "DYN": current_img.get("DYN", 0),
+            "QLT": current_img.get("QLT", 0),
+            "score": current_img.get("score", 0),
+            # Legacy fields (may not be present in scored dataset)
+            "n_objects": current_img.get("n_objects", None),
+            "n_relations": current_img.get("n_relations", None),
+            "coverage_percent": current_img.get("coverage_percent", None),
+            "memorability": current_img.get("memorability", None),
         }
 
         # Save immediately
@@ -637,7 +644,7 @@ class ManualAnnotationUI:
 def main():
     """Main entry point."""
     # Configuration
-    DATASET_DIR = "data/diverse_selection"
+    DATASET_DIR = "data/diverse_scored_selection"
     OUTPUT_DIR = "data/stimuli"
     ANNOTATIONS_FILE = "manual_annotations.json"
 

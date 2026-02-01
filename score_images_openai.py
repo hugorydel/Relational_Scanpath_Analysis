@@ -16,7 +16,7 @@ Options:
     --output PATH            Output JSONL file
     --errors PATH            Error log JSONL file
     --max-images N           Max number of new images to process (default: 200, 0 = all)
-    --max-concurrency N      Max concurrent API requests (default: 5)
+    --max-concurrency N      Max concurrent API requests
     --dry-run                Print plan without making API calls
     --max-dimension N        Max image dimension in pixels (default: 1024)
     --jpeg-quality N         JPEG compression quality 1-100 (default: 85)
@@ -319,7 +319,7 @@ class BatchProcessor:
         image_dir: Path,
         output_path: Path,
         errors_path: Path,
-        max_concurrency: int = 5,
+        max_concurrency: int = 20,
         max_dimension: int = 2048,
         jpeg_quality: int = 85,
     ):
@@ -586,8 +586,8 @@ def main():
     parser.add_argument(
         "--max-concurrency",
         type=int,
-        default=5,
-        help="Max concurrent API requests (default: 5)",
+        default=20,
+        help="Max concurrent API requests (default: 20)",
     )
     parser.add_argument(
         "--max-dimension",

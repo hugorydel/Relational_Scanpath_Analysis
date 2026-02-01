@@ -54,8 +54,8 @@ def calculate_scores(results: List[Dict]) -> List[Dict]:
         dyn = int(r.get("DYN", 0))
         qlt = int(r.get("QLT", 0))
 
-        eligible = 1 if (cic >= 2 and sep >= 1 and qlt >= 1) else 0
-        score = eligible * (2 * cic + sep + dyn + qlt)
+        eligible = 1 if (cic >= 1 and sep >= 1 and dyn >= 1 and qlt >= 1) else 0
+        score = eligible * (cic * 2 + sep + dyn * 1.5 + qlt)
 
         r["eligible"] = eligible
         r["score"] = score

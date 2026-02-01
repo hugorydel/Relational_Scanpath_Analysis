@@ -386,6 +386,121 @@ class DiversitySelector:
         print(f"✓ Selected {len(selected_indices)} diverse images via greedy sampling")
         return np.array(selected_indices)
 
+    def select_diverse_score_weighted(
+        self,
+        embeddings: np.ndarray,
+        scores: np.ndarray,
+        n_select: int,
+        similarity_threshold: float = 0.75,
+        random_state: int = 42,
+    ) -> np.ndarray:
+        """
+        Score-weighted greedy diversity selection.
+        Balances diversity (similarity threshold) with quality (scores).
+
+        Algorithm:
+        1. Start with highest-scoring image
+        2. Iteratively add highest-scoring image that is sufficiently
+           different from ALL already-selected images
+        3. Continue until n_select images or no viable candidates
+
+        Args:
+            embeddings: (N, D) embedding array
+            scores: (N,) array of image scores
+            n_select: Number of images to select
+            similarity_threshold: Maximum cosine similarity to already selected
+            random_state: Random seed for tie-breaking
+
+        Returns:
+            selected_indices: Indices of selected images
+        """
+        print(
+            f"\nScore-weighted greedy selection (threshold: {similarity_threshold})..."
+        )
+
+        np.random.seed(random_state)
+        n_images = len(embeddings)
+
+        if len(scores) != n_images:
+            raise ValueError(
+                f"Scores length ({len(scores)}) != embeddings ({n_images})"
+            )
+
+        # Normalize embeddings
+        embeddings_norm = embeddings / np.linalg.norm(embeddings, axis=1, keepdims=True)
+
+        # Start with highest-scoring image
+        seed_idx = int(np.argmax(scores))
+        selected_indices = [seed_idx]
+        candidates = set(range(n_images)) - {seed_idx}
+
+        print(f"  Seed: image {seed_idx} (score: {scores[seed_idx]:.2f})")
+
+        # Greedy selection
+        pbar = tqdm(total=n_select, desc="Score-weighted selection", mininterval=0.5)
+        pbar.update(1)
+
+        while len(selected_indices) < n_select and candidates:
+            selected_embeddings = embeddings_norm[selected_indices]
+
+            # Find viable candidates (pass similarity threshold)
+            viable_candidates = []
+            candidate_scores = []
+
+            for idx in candidates:
+                # Compute max similarity to any selected image
+                similarities = embeddings_norm[idx] @ selected_embeddings.T
+                max_sim = similarities.max()
+
+                # Check if passes threshold
+                if max_sim <= similarity_threshold:
+                    viable_candidates.append(idx)
+                    candidate_scores.append(scores[idx])
+
+            if not viable_candidates:
+                # No candidates pass threshold - warn and take best remaining
+                print(
+                    f"\n  Warning: No candidates below threshold {similarity_threshold:.3f}"
+                )
+                print(
+                    f"  Taking highest-scoring from remaining {len(candidates)} candidates"
+                )
+
+                # Get all remaining candidate scores
+                remaining_scores = [(idx, scores[idx]) for idx in candidates]
+                best_idx = max(remaining_scores, key=lambda x: x[1])[0]
+
+                selected_indices.append(best_idx)
+                candidates.remove(best_idx)
+            else:
+                # Select highest-scoring viable candidate
+                best_idx = viable_candidates[np.argmax(candidate_scores)]
+                selected_indices.append(best_idx)
+                candidates.remove(best_idx)
+
+            pbar.update(1)
+
+        pbar.close()
+
+        if len(selected_indices) < n_select:
+            print(
+                f"  Warning: Only selected {len(selected_indices)}/{n_select} images "
+                f"(ran out of viable candidates)"
+            )
+
+        print(
+            f"✓ Selected {len(selected_indices)} diverse images via score-weighted greedy"
+        )
+
+        # Print selection statistics
+        selected_scores = scores[selected_indices]
+        print(
+            f"  Score range: [{selected_scores.min():.2f}, {selected_scores.max():.2f}]"
+        )
+        print(f"  Mean score: {selected_scores.mean():.2f}")
+
+        return np.array(selected_indices)
+
     def visualize_embedding_space(
         self,
         embeddings: np.ndarray,

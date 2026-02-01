@@ -11,7 +11,7 @@ import shutil
 from pathlib import Path
 from typing import Dict, List
 
-from utils import ensure_jpg
+from utils.misc import ensure_jpg
 
 
 class StimuliDownloader:

@@ -63,3 +63,81 @@ EMBEDDING_BATCH_SIZE = 32  # Batch size for CLIP processing
 
 # OpenAI API
 OPENAI_MODEL = "gpt-5.2"
+
+#  ============================================================================
+# OPENAI SCORING CONFIGURATION
+# ============================================================================
+
+# Eligibility thresholds
+CIC_THRESHOLD = 2  # Character Interaction Complexity; i.e. # of interacting characters.
+SEP_THRESHOLD = 1  # Spatial Separation
+DYN_THRESHOLD = 1  # Dynamic Action
+QLT_THRESHOLD = 1  # Image Quality
+
+# Score weights
+CIC_WEIGHT = 2.5
+SEP_WEIGHT = 1.0
+DYN_WEIGHT = 1.5
+QLT_WEIGHT = 1.0
+
+
+def calculate_image_score(cic: int, sep: int, dyn: int, qlt: int) -> dict:
+    """
+    Calculate eligibility and score for an image based on OpenAI ratings.
+
+    Eligibility: Image must meet all threshold requirements
+    Score: Weighted sum of dimensions, zeroed if not eligible
+
+    Args:
+        cic: Character Interaction Complexity (0-3)
+        sep: Spatial Separation (0-2)
+        dyn: Dynamic Action (0-2)
+        qlt: Image Quality (0-1)
+
+    Returns:
+        Dictionary with 'eligible' (0 or 1) and 'score' (float)
+    """
+    # Handle missing values - treat as 0
+    cic = int(cic) if cic is not None else 0
+    sep = int(sep) if sep is not None else 0
+    dyn = int(dyn) if dyn is not None else 0
+    qlt = int(qlt) if qlt is not None else 0
+
+    # Calculate eligibility
+    eligible = (
+        1
+        if (
+            cic >= CIC_THRESHOLD
+            and sep >= SEP_THRESHOLD
+            and dyn >= DYN_THRESHOLD
+            and qlt >= QLT_THRESHOLD
+        )
+        else 0
+    )
+
+    # Calculate score (zeroed if not eligible)
+    score = eligible * (
+        cic * CIC_WEIGHT + sep * SEP_WEIGHT + dyn * DYN_WEIGHT + qlt * QLT_WEIGHT
+    )
+
+    return {"eligible": eligible, "score": score}
+
+
+# ============================================================================
+# SCORED DIVERSITY SELECTION CONFIGURATION
+# ============================================================================
+
+# Path to OpenAI scored images
+SCORED_IMAGES_PATH = "./data/scored_images/results.jsonl"
+
+# Text embedding configuration
+TEXT_EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"  # Fast, good quality
+# Alternative models:
+# "sentence-transformers/all-mpnet-base-v2"  # Slower, higher quality
+# "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"  # Multilingual
+
+TEXT_EMBEDDING_CACHE_PATH = "./data/text_embedding_cache.pkl"
+
+# Diversity selection parameters
+N_FINAL_SCORED_IMAGES = 50  # Target number of final images
+SCORED_SIMILARITY_THRESHOLD = 0.75  # Cosine similarity threshold (0-1)

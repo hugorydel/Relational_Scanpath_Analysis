@@ -21,10 +21,14 @@ from pycocotools import mask as mask_utils
 from tqdm import tqdm
 
 import config
-from reference_data_loader import ReferenceDataLoader
-from scene_graph_loader import SceneGraphLoader
-from utils import compute_relational_graph, ensure_jpg, validate_paths
-from visualization import ImageVisualizer
+from preprocessing.output_visualization import ImageVisualizer
+from preprocessing.preprocess_functions import (
+    compute_relational_graph,
+    ensure_jpg,
+    validate_paths,
+)
+from preprocessing.reference_data_loader import ReferenceDataLoader
+from preprocessing.scene_graph_loader import SceneGraphLoader
 
 
 class SVGRelationalDataset:

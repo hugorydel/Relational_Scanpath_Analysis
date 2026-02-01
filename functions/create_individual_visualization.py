@@ -26,7 +26,7 @@ import seaborn as sns
 from tqdm import tqdm
 
 import config
-from utils import ensure_jpg
+from utils.misc import ensure_jpg
 
 
 class IndividualVisualizer:

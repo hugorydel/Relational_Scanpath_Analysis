@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 """
-analyze_results.py - Analyze image scoring results
+analyze_openai_images.py - Analyze image scoring results (UPDATED VERSION)
 
 Quick analysis and filtering of scored images from results.jsonl
+Now uses centralized scoring function from config.py
 
 Usage:
-    python analyze_results.py --results_file results.jsonl [--image-dir PATH]
-
-Requirements:
-    pip install numpy
+    python analyze_openai_images_updated.py --results_file results.jsonl [--image-dir PATH]
 
 Outputs:
     - Correlation matrix between CIC, SEP, DYN, QLT
@@ -39,28 +37,37 @@ def load_results(jsonl_path: str) -> List[Dict]:
 
 def calculate_scores(results: List[Dict]) -> List[Dict]:
     """
-    Calculate eligibility and score for each image.
-
-    Eligible = 1 if CIC ≥ 2 AND SEP ≥ 1 AND QLT ≥ 1, otherwise 0
-    Score = Eligible × (2·CIC + SEP + DYN + QLT)
+    Calculate eligibility and score for each image using centralized config.
 
     Returns:
         Results with added 'eligible' and 'score' fields
     """
+    # Import scoring function from config
+    try:
+        from config import calculate_image_score
+    except ImportError:
+        print("Warning: Could not import from config.py, using inline scoring")
+
+        # Fallback inline version
+        def calculate_image_score(cic, sep, dyn, qlt):
+            cic = int(cic) if cic is not None else 0
+            sep = int(sep) if sep is not None else 0
+            dyn = int(dyn) if dyn is not None else 0
+            qlt = int(qlt) if qlt is not None else 0
+            eligible = 1 if (cic >= 2 and sep >= 1 and dyn >= 1 and qlt >= 1) else 0
+            score = eligible * (cic * 2.5 + sep + dyn * 1.5 + qlt)
+            return {"eligible": eligible, "score": score}
+
     for r in results:
-        # Gracefully handle missing keys (treat as 0)
-        cic = int(r.get("CIC", 0))
-        sep = int(r.get("SEP", 0))
-        dyn = int(r.get("DYN", 0))
-        qlt = int(r.get("QLT", 0))
+        # Get scores using centralized function
+        scoring = calculate_image_score(
+            r.get("CIC", 0), r.get("SEP", 0), r.get("DYN", 0), r.get("QLT", 0)
+        )
 
-        eligible = 1 if (cic >= 2 and sep >= 1 and dyn >= 1 and qlt >= 1) else 0
-        score = eligible * (cic * 2.5 + sep + dyn * 1.5 + qlt)
-
-        r["eligible"] = eligible
-        r["score"] = score
+        r["eligible"] = scoring["eligible"]
+        r["score"] = scoring["score"]
         # Backward-compatible alias
-        r["final_score"] = score
+        r["final_score"] = scoring["score"]
 
     return results
 
@@ -140,8 +147,8 @@ def print_top_images(results: List[Dict], n: int = 20) -> List[Dict]:
     print("\n" + "=" * 70)
     print(f"TOP {n} HIGH-SCORING IMAGES")
     print("=" * 70)
-    print("Eligible = 1 if CIC ≥ 2 AND SEP ≥ 1 AND QLT ≥ 1, otherwise 0")
-    print("Score = Eligible × (2·CIC + SEP + DYN + QLT)")
+    print("Eligible = 1 if CIC >= 2 AND SEP >= 1 AND DYN >= 1 AND QLT >= 1")
+    print("Score = Eligible × (2.5·CIC + SEP + 1.5·DYN + QLT)")
     print("=" * 70)
     print(
         f"{'Image ID':<15} {'CIC':<5} {'SEP':<5} {'DYN':<5} {'QLT':<5} {'Eligible':<10} {'Score':<8}"

@@ -272,24 +272,12 @@ class ManualAnnotationUI:
         objects = img_meta.get("objects", [])
 
         if not objects:
-            # No segmentation data available - just show the image with story
-            story = img_meta.get("story", "")
-            if story:
-                # Wrap story text
-                wrapped_story = "\n".join(
-                    [story[i : i + 60] for i in range(0, len(story), 60)]
-                )
-                ax.text(
-                    0.02,
-                    0.98,
-                    f"Story: {wrapped_story[:150]}...",
-                    transform=ax.transAxes,
-                    verticalalignment="top",
-                    bbox=dict(boxstyle="round", facecolor="wheat", alpha=0.8),
-                    fontsize=8,
-                )
+            # No segmentation data available - just show the image
             ax.set_title(
-                "Image (No segmentation data)", fontsize=12, fontweight="bold", pad=10
+                "Image with Annotations (No segmentation data)",
+                fontsize=12,
+                fontweight="bold",
+                pad=10,
             )
             ax.axis("off")
             return
@@ -320,13 +308,23 @@ class ManualAnnotationUI:
                 )
                 ax.add_patch(rect)
 
-        # Title with metadata
+        # Title with metadata (handle missing fields)
+        title_parts = [
+            f"Image with Annotations - ID: {img_meta.get('image_id', 'unknown')}"
+        ]
+
+        # Add metadata if available
+        if img_meta.get("n_objects") is not None:
+            title_parts.append(f"Objects: {img_meta['n_objects']}")
+        if img_meta.get("n_relations") is not None:
+            title_parts.append(f"Relations: {img_meta['n_relations']}")
+        if img_meta.get("coverage_percent") is not None:
+            title_parts.append(f"Coverage: {img_meta['coverage_percent']:.1f}%")
+        if img_meta.get("memorability") is not None:
+            title_parts.append(f"Memo: {img_meta['memorability']:.3f}")
+
         ax.set_title(
-            f"Segmentations Overlay\n"
-            f"Image {img_meta['image_id']} | "
-            f"Objects: {img_meta['n_objects']} | Relations: {img_meta['n_relations']} | "
-            f"Coverage: {img_meta['coverage_percent']:.1f}% | "
-            f"Memorability: {img_meta['memorability']:.3f}",
+            " | ".join(title_parts),
             fontsize=11,
             fontweight="bold",
             pad=10,
@@ -546,6 +544,17 @@ class ManualAnnotationUI:
                 # Main layout
                 layout = QVBoxLayout()
 
+                # Story/description label (above images)
+                self.story_label = QLabel()
+                self.story_label.setAlignment(Qt.AlignCenter)
+                self.story_label.setFont(QFont("Arial", 10))
+                self.story_label.setStyleSheet(
+                    "background-color: #fff3cd; padding: 8px; border-radius: 4px; "
+                    "border: 1px solid #ffc107; color: #856404;"
+                )
+                self.story_label.setWordWrap(True)
+                layout.addWidget(self.story_label)
+
                 # Matplotlib canvas with 2 subplots
                 self.figure = Figure(figsize=(18, 9))
                 self.canvas = FigureCanvasQTAgg(self.figure)
@@ -620,6 +629,13 @@ class ManualAnnotationUI:
                 self.ax_right.clear()
 
                 if self.ui.current_index >= len(self.ui.images_to_annotate):
+                    # Clear story label
+                    self.story_label.setText("✅ All images have been annotated!")
+                    self.story_label.setStyleSheet(
+                        "background-color: #d4edda; padding: 8px; border-radius: 4px; "
+                        "border: 1px solid #c3e6cb; color: #155724;"
+                    )
+
                     self.ax_left.text(
                         0.5,
                         0.5,
@@ -644,6 +660,20 @@ class ManualAnnotationUI:
                     return
 
                 current_img = self.ui.images_to_annotate[self.ui.current_index]
+
+                # Update story label
+                story = current_img.get("story", "No story available")
+                score = current_img.get("score", 0)
+                cic = current_img.get("CIC", 0)
+                sep = current_img.get("SEP", 0)
+                dyn = current_img.get("DYN", 0)
+                qlt = current_img.get("QLT", 0)
+
+                story_text = f"📖 Story: {story}"
+                if score > 0:
+                    story_text += f" | Score: {score:.1f} (CIC:{cic}, SEP:{sep}, DYN:{dyn}, QLT:{qlt})"
+
+                self.story_label.setText(story_text)
 
                 # LEFT: Image with segmentations
                 self.ui._draw_image_with_segmentations(current_img, self.ax_left)

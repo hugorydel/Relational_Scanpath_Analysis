@@ -145,6 +145,20 @@ class ManualAnnotationUI:
             if ann.get("status") == "selected"
         ]
 
+    def _get_image_filename(self, img_meta: Dict) -> str:
+        """
+        Get image filename from metadata.
+
+        Handles both old format (has 'file_name') and new format (only 'image_id').
+        """
+        # Try file_name field first (old format)
+        if "file_name" in img_meta:
+            return img_meta["file_name"]
+
+        # Construct from image_id (new format)
+        img_id = str(img_meta.get("image_id", "unknown"))
+        return f"{img_id}.jpg"
+
     def _annotate_image(self, status: str) -> None:
         """
         Annotate current image with given status.
@@ -169,11 +183,6 @@ class ManualAnnotationUI:
             "DYN": current_img.get("DYN", 0),
             "QLT": current_img.get("QLT", 0),
             "score": current_img.get("score", 0),
-            # Legacy fields (may not be present in scored dataset)
-            "n_objects": current_img.get("n_objects", None),
-            "n_relations": current_img.get("n_relations", None),
-            "coverage_percent": current_img.get("coverage_percent", None),
-            "memorability": current_img.get("memorability", None),
         }
 
         # Save immediately
@@ -206,9 +215,21 @@ class ManualAnnotationUI:
     def _draw_raw_image(self, img_meta: Dict, ax: plt.Axes) -> None:
         """Draw raw image without any annotations."""
         # Load image
-        img_path = self.images_dir / img_meta["file_name"]
+        filename = self._get_image_filename(img_meta)
+        img_path = self.images_dir / filename
         if not img_path.exists():
             print(f"Warning: Image not found: {img_path}")
+            # Show placeholder
+            ax.text(
+                0.5,
+                0.5,
+                f"Image not found:\n{filename}",
+                ha="center",
+                va="center",
+                fontsize=12,
+            )
+            ax.set_title("Raw Image", fontsize=12, fontweight="bold", pad=10)
+            ax.axis("off")
             return
 
         img = cv2.imread(str(img_path))
@@ -222,9 +243,23 @@ class ManualAnnotationUI:
     def _draw_image_with_segmentations(self, img_meta: Dict, ax: plt.Axes) -> None:
         """Draw image with segmentations overlay (no relational graph)."""
         # Load image
-        img_path = self.images_dir / img_meta["file_name"]
+        filename = self._get_image_filename(img_meta)
+        img_path = self.images_dir / filename
         if not img_path.exists():
             print(f"Warning: Image not found: {img_path}")
+            # Show placeholder
+            ax.text(
+                0.5,
+                0.5,
+                f"Image not found:\n{filename}",
+                ha="center",
+                va="center",
+                fontsize=12,
+            )
+            ax.set_title(
+                "Image with Annotations", fontsize=12, fontweight="bold", pad=10
+            )
+            ax.axis("off")
             return
 
         img = cv2.imread(str(img_path))
@@ -233,8 +268,31 @@ class ManualAnnotationUI:
         # Display image
         ax.imshow(img_rgb)
 
-        # Get objects
-        objects = img_meta["objects"]
+        # Get objects (may not exist in scored dataset)
+        objects = img_meta.get("objects", [])
+
+        if not objects:
+            # No segmentation data available - just show the image with story
+            story = img_meta.get("story", "")
+            if story:
+                # Wrap story text
+                wrapped_story = "\n".join(
+                    [story[i : i + 60] for i in range(0, len(story), 60)]
+                )
+                ax.text(
+                    0.02,
+                    0.98,
+                    f"Story: {wrapped_story[:150]}...",
+                    transform=ax.transAxes,
+                    verticalalignment="top",
+                    bbox=dict(boxstyle="round", facecolor="wheat", alpha=0.8),
+                    fontsize=8,
+                )
+            ax.set_title(
+                "Image (No segmentation data)", fontsize=12, fontweight="bold", pad=10
+            )
+            ax.axis("off")
+            return
 
         # Draw segmentations/bboxes only
         for idx, obj in enumerate(objects):

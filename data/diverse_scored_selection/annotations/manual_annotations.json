@@ -7,67 +7,47 @@
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 13.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 13.5
   },
   "2404976": {
-    "status": "return_to",
+    "status": "eliminated",
     "file_name": "2404976.jpg",
     "story": "Multiple motorcyclists ride along a road, some carrying passengers on the same bike. A driver drives a tuk-tuk in the traffic.",
     "CIC": 3,
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 13.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 13.5
   },
   "2386442": {
-    "status": "return_to",
+    "status": "selected",
     "file_name": "2386442.jpg",
     "story": "A woman, a child, and a man are each brushing their teeth with toothbrushes. They are facing the camera while brushing.",
     "CIC": 3,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 12.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 12.0
   },
   "2390192": {
-    "status": "return_to",
+    "status": "selected",
     "file_name": "2390192.jpg",
     "story": "A boy hugs a girl while talking on a phone. The girl holds another phone in her hand.",
     "CIC": 3,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 12.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 12.0
   },
   "2396563": {
-    "status": "return_to",
+    "status": "eliminated",
     "file_name": "2396563.jpg",
     "story": "Three girls sit at a table and eat cake with forks.",
     "CIC": 3,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 12.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 12.0
   },
   "2369330": {
     "status": "eliminated",
@@ -77,39 +57,27 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 12.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 12.0
   },
   "2392870": {
-    "status": "return_to",
+    "status": "eliminated",
     "file_name": "2392870.jpg",
     "story": "A grill is cooking pizza slices on foil while hot dogs and zucchini cook on the grates beside them.",
     "CIC": 3,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 12.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 12.0
   },
   "150472": {
-    "status": "return_to",
+    "status": "selected",
     "file_name": "150472.jpg",
     "story": "Two women lean in with open mouths toward a large slice of pizza on a paper plate, each taking a bite from it.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2345035": {
     "status": "selected",
@@ -119,25 +87,17 @@
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2347128": {
-    "status": "return_to",
+    "status": "eliminated",
     "file_name": "2347128.jpg",
     "story": "One tennis player swings to hit a tennis ball over the net. Another tennis player stands ready near the net to return the ball.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2349475": {
     "status": "selected",
@@ -147,25 +107,17 @@
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2352216": {
-    "status": "return_to",
+    "status": "selected",
     "file_name": "2352216.jpg",
     "story": "A baseball batter is swinging a bat at home plate while the catcher behind him receives the pitch.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2356267": {
     "status": "eliminated",
@@ -175,25 +127,17 @@
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2362277": {
-    "status": "return_to",
+    "status": "selected",
     "file_name": "2362277.jpg",
     "story": "A player in white runs while carrying a frisbee. A player in red closely guards him from behind on the field.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2362704": {
     "status": "selected",
@@ -203,39 +147,27 @@
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2366915": {
-    "status": "return_to",
+    "status": "selected",
     "file_name": "2366915.jpg",
     "story": "Two surfers ride along the same breaking wave as water sprays behind them.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2370664": {
-    "status": "return_to",
+    "status": "selected",
     "file_name": "2370664.jpg",
     "story": "Two men and a woman are taking bites of donuts. They are close together outdoors, holding the donuts up to their mouths.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2371471": {
     "status": "selected",
@@ -245,25 +177,17 @@
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2374670": {
-    "status": "return_to",
+    "status": "selected",
     "file_name": "2374670.jpg",
     "story": "A red truck sprays water onto a dirt track through nozzles at the back. A man is climbing on the back of the truck while it operates.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2374648": {
     "status": "selected",
@@ -273,11 +197,7 @@
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2379478": {
     "status": "selected",
@@ -287,39 +207,27 @@
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2382422": {
-    "status": "return_to",
+    "status": "eliminated",
     "file_name": "2382422.jpg",
     "story": "A man in a yellow shirt reaches out to catch a flying frisbee while a man in a red shirt moves in front of him to block his attempt.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2389266": {
-    "status": "return_to",
+    "status": "eliminated",
     "file_name": "2389266.jpg",
     "story": "Two skateboarders ride longboards side by side on a paved road, crouching low as they move forward.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2397102": {
     "status": "selected",
@@ -329,11 +237,7 @@
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2408060": {
     "status": "eliminated",
@@ -343,25 +247,17 @@
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2350616": {
-    "status": "return_to",
+    "status": "eliminated",
     "file_name": "2350616.jpg",
     "story": "A black dog jumps up to catch a flying disc in a grassy field. A tan dog stands nearby watching the black dog.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 2,
     "QLT": 1,
-    "score": 11.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 11.0
   },
   "2377592": {
     "status": "eliminated",
@@ -371,11 +267,7 @@
     "SEP": 1,
     "DYN": 2,
     "QLT": 1,
-    "score": 10.0,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 10.0
   },
   "107989": {
     "status": "selected",
@@ -385,53 +277,37 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "1592543": {
-    "status": "return_to",
+    "status": "selected",
     "file_name": "1592543.jpg",
     "story": "A man and a woman on the beach carry surfboards near the shoreline while other people swim in the water.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2344622": {
-    "status": "return_to",
+    "status": "selected",
     "file_name": "2344622.jpg",
     "story": "A person is typing on a keyboard. A cat is resting its head on the person\u2019s arm near the keyboard.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2346926": {
-    "status": "return_to",
+    "status": "eliminated",
     "file_name": "2346926.jpg",
     "story": "A man lies on a bed while brushing his teeth. He is using a phone in his other hand.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2347025": {
     "status": "selected",
@@ -441,11 +317,7 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2347400": {
     "status": "selected",
@@ -455,11 +327,7 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2348899": {
     "status": "selected",
@@ -469,11 +337,7 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2350974": {
     "status": "selected",
@@ -483,11 +347,7 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2353035": {
     "status": "selected",
@@ -497,11 +357,7 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2354569": {
     "status": "selected",
@@ -511,11 +367,7 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2356013": {
     "status": "selected",
@@ -525,11 +377,7 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2360001": {
     "status": "selected",
@@ -539,25 +387,17 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2363971": {
-    "status": "return_to",
+    "status": "selected",
     "file_name": "2363971.jpg",
     "story": "A woman pets a large dog in the foreground while another woman in a chair holds a child upside down on her lap.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2365101": {
     "status": "selected",
@@ -567,25 +407,17 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2367132": {
-    "status": "return_to",
+    "status": "selected",
     "file_name": "2367132.jpg",
     "story": "Two men are playing a video game while holding motion controllers and moving their arms.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2369373": {
     "status": "selected",
@@ -595,11 +427,7 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2371985": {
     "status": "eliminated",
@@ -609,25 +437,17 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2386579": {
-    "status": "return_to",
+    "status": "eliminated",
     "file_name": "2386579.jpg",
     "story": "A woman sits on a couch talking on a phone. Next to her, a man handles a camera strap attached to a camera around his neck.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2397929": {
     "status": "eliminated",
@@ -637,11 +457,7 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2401075": {
     "status": "eliminated",
@@ -651,11 +467,7 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2401636": {
     "status": "selected",
@@ -665,67 +477,47 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2404464": {
-    "status": "return_to",
+    "status": "eliminated",
     "file_name": "2404464.jpg",
     "story": "A man and a woman stand in a hallway while each uses a phone. Other people are visible farther down the corridor.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2404751": {
-    "status": "return_to",
+    "status": "eliminated",
     "file_name": "2404751.jpg",
     "story": "In a circus ring, a woman sits on an elephant as it balances with its front feet on a set of stools.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2407083": {
-    "status": "return_to",
+    "status": "selected",
     "file_name": "2407083.jpg",
     "story": "A rider sits on a horse at the shoreline while swinging a lasso in the air.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2409102": {
-    "status": "return_to",
+    "status": "selected",
     "file_name": "2409102.jpg",
     "story": "A woman holds a baby on her lap while using a laptop at a table.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2411268": {
     "status": "selected",
@@ -735,39 +527,27 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "411": {
-    "status": "selected",
+    "status": "eliminated",
     "file_name": "411.jpg",
     "story": "A man plays a piano while a woman stands behind him with her hands on his shoulders.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2345524": {
-    "status": "return_to",
+    "status": "eliminated",
     "file_name": "2345524.jpg",
     "story": "A woman stands on a man's feet while he lies on a bed using a laptop.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2355094": {
     "status": "eliminated",
@@ -777,11 +557,7 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2356125": {
     "status": "selected",
@@ -791,39 +567,27 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2357644": {
-    "status": "return_to",
+    "status": "eliminated",
     "file_name": "2357644.jpg",
     "story": "Two giraffes stand beside a tree and eat leaves from its branches.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2369501": {
-    "status": "return_to",
+    "status": "eliminated",
     "file_name": "2369501.jpg",
     "story": "A police officer stands on the grass talking on a phone while a crowd of protesters in the background holds signs.",
     "CIC": 2,
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
   },
   "2385550": {
     "status": "selected",
@@ -833,10 +597,106 @@
     "SEP": 2,
     "DYN": 1,
     "QLT": 1,
-    "score": 9.5,
-    "n_objects": null,
-    "n_relations": null,
-    "coverage_percent": null,
-    "memorability": null
+    "score": 9.5
+  },
+  "2387122": {
+    "status": "selected",
+    "file_name": "2387122.jpg",
+    "story": "A polar bear presses against the glass while a person on the other side takes a photo of it.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "score": 9.5
+  },
+  "2391450": {
+    "status": "eliminated",
+    "file_name": "2391450.jpg",
+    "story": "Several sheep are eating from a feed trough in a fenced field. A dog lies on the grass watching two lambs standing nearby.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "score": 9.5
+  },
+  "2398905": {
+    "status": "eliminated",
+    "file_name": "2398905.jpg",
+    "story": "A woman sits at a table talking on a phone while dipping a chip into salsa on her plate.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "score": 9.5
+  },
+  "2412687": {
+    "status": "selected",
+    "file_name": "2412687.jpg",
+    "story": "A person holds out a red frisbee toward a dog. The dog reaches its mouth toward the frisbee.",
+    "CIC": 2,
+    "SEP": 2,
+    "DYN": 1,
+    "QLT": 1,
+    "score": 9.5
+  },
+  "1056": {
+    "status": "eliminated",
+    "file_name": "1056.jpg",
+    "story": "A person leans forward and pushes a large barn door to move it open.",
+    "CIC": 1,
+    "SEP": 2,
+    "DYN": 2,
+    "QLT": 1,
+    "score": 8.5
+  },
+  "107925": {
+    "status": "eliminated",
+    "file_name": "107925.jpg",
+    "story": "A woman juggles a ball while holding another ball, with people standing nearby watching her.",
+    "CIC": 1,
+    "SEP": 2,
+    "DYN": 2,
+    "QLT": 1,
+    "score": 8.5
+  },
+  "2343917": {
+    "status": "eliminated",
+    "file_name": "2343917.jpg",
+    "story": "A person uses scissors to cut another person's hair near the back of the head.",
+    "CIC": 1,
+    "SEP": 2,
+    "DYN": 2,
+    "QLT": 1,
+    "score": 8.5
+  },
+  "2344100": {
+    "status": "selected",
+    "file_name": "2344100.jpg",
+    "story": "A skier is skiing downhill on a snowy slope using ski poles.",
+    "CIC": 1,
+    "SEP": 2,
+    "DYN": 2,
+    "QLT": 1,
+    "score": 8.5
+  },
+  "2345117": {
+    "status": "eliminated",
+    "file_name": "2345117.jpg",
+    "story": "A baby is eating a piece of bread while sitting at a table.",
+    "CIC": 1,
+    "SEP": 2,
+    "DYN": 2,
+    "QLT": 1,
+    "score": 8.5
+  },
+  "2345570": {
+    "status": "eliminated",
+    "file_name": "2345570.jpg",
+    "story": "A baseball pitcher is throwing a baseball from the mound.",
+    "CIC": 1,
+    "SEP": 2,
+    "DYN": 2,
+    "QLT": 1,
+    "score": 8.5
   }
 }

@@ -1,17 +1,17 @@
 {
   "info": {
     "description": "Diverse High-Scoring Stimuli Dataset",
-    "num_images": 60,
+    "num_images": 70,
     "selection_method": "score_weighted_greedy",
     "diversity_threshold": 0.5,
     "text_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
     "diversity_metrics": {
-      "n_selected": 60,
-      "mean_pairwise_similarity": 0.11766684055328369,
-      "std_pairwise_similarity": 0.1086021140217781,
+      "n_selected": 70,
+      "mean_pairwise_similarity": 0.11535365134477615,
+      "std_pairwise_similarity": 0.10701072216033936,
       "min_pairwise_similarity": -0.236528217792511,
       "max_pairwise_similarity": 0.49678313732147217,
-      "median_pairwise_similarity": 0.10416890680789948
+      "median_pairwise_similarity": 0.10323718190193176
     },
     "scoring_criteria": {
       "CIC_threshold": 1,
@@ -1379,6 +1379,196 @@
       "QLT": 1,
       "eligible": 1,
       "score": 9.5
+    },
+    {
+      "image_id": "2387122",
+      "core_interactions": [
+        {
+          "agent": "polar bear",
+          "verb": "presses",
+          "patient": "glass"
+        },
+        {
+          "agent": "person",
+          "verb": "photographs",
+          "patient": "polar bear"
+        }
+      ],
+      "story": "A polar bear presses against the glass while a person on the other side takes a photo of it.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2391450",
+      "core_interactions": [
+        {
+          "agent": "sheep",
+          "verb": "eat",
+          "patient": "feed trough"
+        },
+        {
+          "agent": "dog",
+          "verb": "watch",
+          "patient": "lambs"
+        }
+      ],
+      "story": "Several sheep are eating from a feed trough in a fenced field. A dog lies on the grass watching two lambs standing nearby.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2398905",
+      "core_interactions": [
+        {
+          "agent": "woman",
+          "verb": "talks on",
+          "patient": "phone"
+        },
+        {
+          "agent": "woman",
+          "verb": "dips",
+          "patient": "chip into salsa"
+        }
+      ],
+      "story": "A woman sits at a table talking on a phone while dipping a chip into salsa on her plate.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "2412687",
+      "core_interactions": [
+        {
+          "agent": "person",
+          "verb": "holds out",
+          "patient": "frisbee"
+        },
+        {
+          "agent": "dog",
+          "verb": "reaches toward",
+          "patient": "frisbee"
+        }
+      ],
+      "story": "A person holds out a red frisbee toward a dog. The dog reaches its mouth toward the frisbee.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 1,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 9.5
+    },
+    {
+      "image_id": "1056",
+      "core_interactions": [
+        {
+          "agent": "person",
+          "verb": "pushes",
+          "patient": "barn door"
+        }
+      ],
+      "story": "A person leans forward and pushes a large barn door to move it open.",
+      "CIC": 1,
+      "SEP": 2,
+      "DYN": 2,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 8.5
+    },
+    {
+      "image_id": "107925",
+      "core_interactions": [
+        {
+          "agent": "woman",
+          "verb": "juggle",
+          "patient": "ball"
+        }
+      ],
+      "story": "A woman juggles a ball while holding another ball, with people standing nearby watching her.",
+      "CIC": 1,
+      "SEP": 2,
+      "DYN": 2,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 8.5
+    },
+    {
+      "image_id": "2343917",
+      "core_interactions": [
+        {
+          "agent": "person",
+          "verb": "cut",
+          "patient": "hair"
+        }
+      ],
+      "story": "A person uses scissors to cut another person's hair near the back of the head.",
+      "CIC": 1,
+      "SEP": 2,
+      "DYN": 2,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 8.5
+    },
+    {
+      "image_id": "2344100",
+      "core_interactions": [
+        {
+          "agent": "skier",
+          "verb": "skiing on",
+          "patient": "snow"
+        }
+      ],
+      "story": "A skier is skiing downhill on a snowy slope using ski poles.",
+      "CIC": 1,
+      "SEP": 2,
+      "DYN": 2,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 8.5
+    },
+    {
+      "image_id": "2345117",
+      "core_interactions": [
+        {
+          "agent": "baby",
+          "verb": "eating",
+          "patient": "bread"
+        }
+      ],
+      "story": "A baby is eating a piece of bread while sitting at a table.",
+      "CIC": 1,
+      "SEP": 2,
+      "DYN": 2,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 8.5
+    },
+    {
+      "image_id": "2345570",
+      "core_interactions": [
+        {
+          "agent": "baseball pitcher",
+          "verb": "throw",
+          "patient": "baseball"
+        }
+      ],
+      "story": "A baseball pitcher is throwing a baseball from the mound.",
+      "CIC": 1,
+      "SEP": 2,
+      "DYN": 2,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 8.5
     }
   ]
 }

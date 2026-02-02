@@ -2,6 +2,8 @@
 """
 Manual Image Annotation UI for SVG Relational Dataset Curation
 Allows manual review and categorization of diversity-filtered images.
+
+Enhanced version that loads segmentation data from preprocessing output.
 """
 
 import json
@@ -45,6 +47,7 @@ class ManualAnnotationUI:
     def __init__(
         self,
         dataset_dir: str = "data/diverse_scored_selection",
+        preprocessing_dir: str = "data/processed",
         output_dir: str = "data/stimuli",
         annotations_file: str = "manual_annotations.json",
     ):
@@ -52,11 +55,13 @@ class ManualAnnotationUI:
         Initialize the annotation UI.
 
         Args:
-            dataset_dir: Path to diverse selection dataset directory
+            dataset_dir: Path to diverse scored selection dataset directory
+            preprocessing_dir: Path to preprocessing output (has segmentation data)
             output_dir: Path to output directory for final selected stimuli
             annotations_file: Name of file to store manual annotations
         """
         self.dataset_dir = Path(dataset_dir)
+        self.preprocessing_dir = Path(preprocessing_dir)
         self.output_dir = Path(output_dir)
         self.images_dir = self.dataset_dir / "images"
         self.annotations_path = self.dataset_dir / "annotations" / annotations_file
@@ -74,6 +79,12 @@ class ManualAnnotationUI:
 
         self.images_metadata = self.dataset["images"]
 
+        # Load segmentation data from preprocessing output
+        self.segmentation_data = self._load_segmentation_data()
+
+        # Merge segmentation data with scored metadata
+        self._merge_segmentation_data()
+
         # Load or initialize manual annotations
         self.manual_annotations = self._load_annotations()
 
@@ -90,6 +101,9 @@ class ManualAnnotationUI:
 
         print(f"\nManual Annotation UI Initialized")
         print(f"Total images in diverse selection: {len(self.images_metadata)}")
+        print(
+            f"Images with segmentation data: {sum(1 for img in self.images_metadata if img.get('objects'))}"
+        )
         print(f"Already annotated: {len(self.manual_annotations)}")
         print(
             f"Images to review: {len(self.images_to_annotate)} (including 'return to' items)"
@@ -98,6 +112,68 @@ class ManualAnnotationUI:
         print(f"  - Selected: {self._count_status('selected')}")
         print(f"  - Eliminated: {self._count_status('eliminated')}")
         print(f"  - Return to: {self._count_status('return_to')}")
+
+    def _normalize_image_id(self, img_id) -> str:
+        """
+        Normalize image ID by removing file extensions and converting to string.
+
+        Handles cases where image_id might be:
+        - Integer: 2383555
+        - String: "2383555"
+        - Filename: "2383555.jpg"
+
+        Returns normalized string without extension: "2383555"
+        """
+        img_id_str = str(img_id)
+        # Use Path to remove extension if present
+        return Path(img_id_str).stem
+
+    def _load_segmentation_data(self) -> Dict[str, Dict]:
+        """Load segmentation data from preprocessing output."""
+        preprocessing_json = self.preprocessing_dir / "annotations" / "dataset.json"
+
+        if not preprocessing_json.exists():
+            print(f"Warning: Preprocessing dataset not found: {preprocessing_json}")
+            print("Segmentation overlays will not be available.")
+            return {}
+
+        print(f"Loading segmentation data from {preprocessing_json}...")
+        with open(preprocessing_json, "r") as f:
+            preprocessing_data = json.load(f)
+
+        # Index by normalized image_id for fast lookup
+        segmentation_index = {}
+        for img in preprocessing_data.get("images", []):
+            img_id = self._normalize_image_id(img.get("image_id"))
+            segmentation_index[img_id] = img
+
+        print(f"✓ Loaded segmentation data for {len(segmentation_index)} images")
+        return segmentation_index
+
+    def _merge_segmentation_data(self):
+        """Merge segmentation data into scored metadata."""
+        merged_count = 0
+
+        for img_meta in self.images_metadata:
+            img_id = self._normalize_image_id(img_meta.get("image_id"))
+
+            if img_id in self.segmentation_data:
+                seg_data = self.segmentation_data[img_id]
+
+                # Add segmentation fields to scored metadata
+                img_meta["objects"] = seg_data.get("objects", [])
+                img_meta["relations"] = seg_data.get("relations", [])
+                img_meta["adjacency_matrix"] = seg_data.get("adjacency_matrix", [])
+                img_meta["n_objects"] = seg_data.get("n_objects", 0)
+                img_meta["n_relations"] = seg_data.get("n_relations", 0)
+                img_meta["coverage_percent"] = seg_data.get("coverage_percent", 0.0)
+                img_meta["memorability"] = seg_data.get("memorability", 0.0)
+
+                merged_count += 1
+
+        print(
+            f"✓ Merged segmentation data for {merged_count}/{len(self.images_metadata)} images"
+        )
 
     def _load_annotations(self) -> Dict[str, Dict]:
         """Load existing manual annotations."""
@@ -176,7 +252,7 @@ class ManualAnnotationUI:
         # Store annotation (use .get() for fields that might not exist)
         self.manual_annotations[img_id] = {
             "status": status,
-            "file_name": current_img.get("file_name", f"{img_id}.jpg"),
+            "file_name": self._get_image_filename(current_img),
             "story": current_img.get("story", ""),
             "CIC": current_img.get("CIC", 0),
             "SEP": current_img.get("SEP", 0),
@@ -286,31 +362,31 @@ class ManualAnnotationUI:
         for idx, obj in enumerate(objects):
             color = self.colors[idx % len(self.colors)]
 
-            if "polygon" in obj:
+            if "polygon" in obj and obj["polygon"]:
                 polygon = np.array(obj["polygon"]).reshape(-1, 2)
                 patch = mpatches.Polygon(
                     polygon,
                     closed=True,
-                    linewidth=1.5,
+                    linewidth=2.0,
                     edgecolor=color,
-                    facecolor=(*color, 0.2),
+                    facecolor=(*color, 0.25),
                 )
                 ax.add_patch(patch)
-            elif "bbox" in obj:
+            elif "bbox" in obj and obj["bbox"]:
                 x, y, w, h = obj["bbox"]
                 rect = mpatches.Rectangle(
                     (x, y),
                     w,
                     h,
-                    linewidth=1.5,
+                    linewidth=2.0,
                     edgecolor=color,
-                    facecolor=(*color, 0.2),
+                    facecolor=(*color, 0.25),
                 )
                 ax.add_patch(rect)
 
         # Title with metadata (handle missing fields)
         title_parts = [
-            f"Image with Annotations - ID: {img_meta.get('image_id', 'unknown')}"
+            f"Image with Segmentations - ID: {img_meta.get('image_id', 'unknown')}"
         ]
 
         # Add metadata if available
@@ -325,7 +401,7 @@ class ManualAnnotationUI:
 
         ax.set_title(
             " | ".join(title_parts),
-            fontsize=11,
+            fontsize=10,
             fontweight="bold",
             pad=10,
         )
@@ -474,10 +550,11 @@ class ManualAnnotationUI:
 
         for img_meta in selected_images:
             img_id = img_meta["image_id"]
+            filename = self._get_image_filename(img_meta)
 
             # Copy image
-            src_img = self.images_dir / img_meta["file_name"]
-            dst_img = self.output_dir / "images" / img_meta["file_name"]
+            src_img = self.images_dir / filename
+            dst_img = self.output_dir / "images" / filename
             if src_img.exists():
                 shutil.copy(src_img, dst_img)
 
@@ -492,10 +569,10 @@ class ManualAnnotationUI:
             "info": {
                 "description": "Final Curated Stimuli for Relational Gaze Experiment",
                 "num_images": len(selected_images),
-                "source": "Manual curation from diverse selection",
+                "source": "Manual curation from diverse scored selection",
                 "diversity_metrics": self.dataset["info"].get("diversity_metrics", {}),
-                "filtering_criteria": self.dataset["info"].get(
-                    "filtering_criteria", {}
+                "selection_criteria": self.dataset["info"].get(
+                    "selection_criteria", {}
                 ),
             },
             "images": selected_images,
@@ -733,12 +810,14 @@ def main():
     """Main entry point."""
     # Configuration
     DATASET_DIR = "data/diverse_scored_selection"
+    PREPROCESSING_DIR = "data/processed"  # NEW: Path to preprocessing output
     OUTPUT_DIR = "data/stimuli"
     ANNOTATIONS_FILE = "manual_annotations.json"
 
     # Create UI
     ui = ManualAnnotationUI(
         dataset_dir=DATASET_DIR,
+        preprocessing_dir=PREPROCESSING_DIR,  # NEW parameter
         output_dir=OUTPUT_DIR,
         annotations_file=ANNOTATIONS_FILE,
     )

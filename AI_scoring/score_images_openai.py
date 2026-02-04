@@ -38,12 +38,12 @@ from pathlib import Path
 from typing import Any, Dict, List, Set
 
 import aiofiles
+from openai import AsyncOpenAI
 from PIL import Image
 
 import config
-from openai import AsyncOpenAI
-from openAI.response_schema import response_schema
-from openAI.scoring_prompt import scoring_prompt
+from AI_scoring.response_schema import response_schema
+from AI_scoring.scoring_prompt import scoring_prompt
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="backslashreplace")

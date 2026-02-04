@@ -31,7 +31,7 @@ TARGET_SIZE = (1024, 768)
 # Set to empty string "" to disable filtering and process all sources
 SOURCE_FILTER = ""  # Filtering done by filename pattern in preprocessing
 
-# Predicate category weights
+# Predicate category weights (demo only)
 PREDICATE_WEIGHTS = {
     "spatial": 0.20,  # layout only – faint
     "functional": 0.65,  # affordances / "used for"
@@ -69,7 +69,7 @@ OPENAI_MODEL = "gpt-5.2"
 # ============================================================================
 
 # Eligibility thresholds
-CIC_THRESHOLD = 1  # Character Interaction Complexity; i.e. # of interacting characters.
+CIC_THRESHOLD = 1  # Core Interaction Counts; i.e. # of interacting characters.
 SEP_THRESHOLD = 1  # Spatial Separation
 DYN_THRESHOLD = 1  # Dynamic Action
 QLT_THRESHOLD = 1  # Image Quality
@@ -89,7 +89,7 @@ def calculate_image_score(cic: int, sep: int, dyn: int, qlt: int) -> dict:
     Score: Weighted sum of dimensions, zeroed if not eligible
 
     Args:
-        cic: Character Interaction Complexity (0-3)
+        cic: Core Interaction Counts (0-3)
         sep: Spatial Separation (0-2)
         dyn: Dynamic Action (0-2)
         qlt: Image Quality (0-1)
@@ -116,9 +116,7 @@ def calculate_image_score(cic: int, sep: int, dyn: int, qlt: int) -> dict:
     )
 
     # Calculate score (zeroed if not eligible)
-    score = eligible * (
-        cic * CIC_WEIGHT + sep * SEP_WEIGHT + dyn * DYN_WEIGHT + qlt * QLT_WEIGHT
-    )
+    score = eligible * (cic * CIC_WEIGHT + sep * SEP_WEIGHT + dyn * DYN_WEIGHT)
 
     return {"eligible": eligible, "score": score}
 

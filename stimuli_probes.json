@@ -9,16 +9,6 @@
 			"women carry pizza box"
 		]
 	},
-	"2344100": {
-		"main_action": "skier skis downhill",
-		"cue": "skier",
-		"story": "A skier is skiing downhill on a snowy slope using ski poles.",
-		"distractors": [
-			"skier adjusts skis",
-			"skier falls onto snow",
-			"skier waits at rope lift"
-		]
-	},
 	"2344622": {
 		"main_action": "cat lies near keyboard",
 		"cue": "keyboard",
@@ -139,23 +129,14 @@
 			"child pets dog indoors"
 		]
 	},
-	"2365101": {
-		"main_action": "person grooms horse hoof",
-		"cue": "hoof",
-		"story": "A person bends down and grooms a horse's lower leg with a tool. The horse eats hay from a hanging net.",
-		"distractors": [
-			"person washes muddy hoof",
-			"person wraps hoof with bandage",
-			"person checks cracked hoof"
-		]
-	},
+
 	"2366915": {
-		"main_action": "surfers ride same wave",
+		"main_action": "surfers ride a wave",
 		"cue": "surfer",
 		"story": "Two surfers ride along the same breaking wave as water sprays behind and around them.",
 		"distractors": [
 			"surfers paddle toward wave",
-			"surfers sit on boards",
+			"surfers stand on boards",
 			"surfers walk with boards"
 		]
 	},
@@ -170,7 +151,7 @@
 		]
 	},
 	"2369373": {
-		"main_action": "pizza into oven",
+		"main_action": "chef loads pizza into oven",
 		"cue": "oven",
 		"story": "A chef opens the wood-fired oven and holds the oven door while looking into the flames.",
 		"distractors": [
@@ -195,18 +176,8 @@
 		"story": "Two motorcyclists are airborne on dirt bikes inside a building, performing jumps above a ramp.",
 		"distractors": [
 			"motorcyclists race on track",
-			"motorcyclists rev bikes indoors",
+			"motorcyclists sit on bikes",
 			"motorcyclists jump single ramp"
-		]
-	},
-	"2374648": {
-		"main_action": "skateboarder jumps ledge",
-		"cue": "skateboard",
-		"story": "A skateboarder is airborne, jumping over a ledge while kicking his skateboard during the trick.",
-		"distractors": [
-			"skateboarder grinds metal rail",
-			"skateboarder falls off board",
-			"skateboarder rolls past ledge"
 		]
 	},
 	"2374670": {
@@ -347,16 +318,6 @@
 			"riders gallop through surf",
 			"riders stop by water",
 			"single rider walks horse"
-		]
-	},
-	"2403399": {
-		"main_action": "child pets sheep",
-		"cue": "sheep",
-		"story": "A child pets a sheep while a man looks down at him, and woman holds onto the sheep.",
-		"distractors": [
-			"child feeds sheep grass",
-			"child hugs sheep tightly",
-			"sheep pulls away from child"
 		]
 	},
 	"2406346": {

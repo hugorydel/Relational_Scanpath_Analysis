@@ -13,7 +13,7 @@
 	"2362277": { "main_action": "person throws frisbee", "cue": "frisbee" },
 	"2362704": { "main_action": "bears eat pumpkin", "cue": "bear" },
 	"2363971": { "main_action": "people pet dog", "cue": "pet" },
-	"2365101": { "main_action": "person grooms horse", "cue": "horse" },
+	"2365101": { "main_action": "person grooms horse", "cue": "hooves" },
 	"2366915": { "main_action": "surfers ride wave", "cue": "surfer" },
 	"2367132": { "main_action": "men play video game", "cue": "game" },
 	"2369373": { "main_action": "pizza into oven", "cue": "oven" },
@@ -30,5 +30,13 @@
 	"2397102": { "main_action": "couple cuts wedding cake", "cue": "cake" },
 	"2401636": { "main_action": "baby looks at cat", "cue": "cat" },
 	"2411268": { "main_action": "child picks apples", "cue": "apples" },
-	"2412687": { "main_action": "dog plays frisbee", "cue": "dog" }
+	"2412687": { "main_action": "dog plays frisbee", "cue": "dog" },
+	"2356991": { "main_action": "baseball player reaches base", "cue": "baseball" },
+	"2385851": { "main_action": "men carry suitcases", "cue": "suitcase" },
+	"2394020": { "main_action": "men ride horses", "cue": "horserider" },
+	"2403399": { "main_action": "child pets sheep", "cue": "sheep" },
+	"2406346": { "main_action": "circus elephants on street", "cue": "circus" },
+	"2408717": { "main_action": "surfers walk to ocean", "cue": "surfboard" },
+	"2409918": { "main_action": "elephants swim in water", "cue": "elephant riders" },
+	"2410309": { "main_action": "people using laptops", "cue": "laptops" }
 }

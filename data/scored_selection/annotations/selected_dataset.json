@@ -1,7 +1,7 @@
 {
   "info": {
     "description": "High-Scoring Stimuli Dataset (Score-only Selection)",
-    "num_images": 114,
+    "num_images": 115,
     "selection_method": "top_by_score",
     "scoring_criteria": {
       "CIC_threshold": 2,
@@ -80,6 +80,28 @@
       "QLT": 1,
       "eligible": 1,
       "score": 8.5
+    },
+    {
+      "image_id": "2344100",
+      "core_interactions": [
+        {
+          "agent": "skier",
+          "verb": "skiing on",
+          "patient": "snow"
+        },
+        {
+          "agent": "skier",
+          "verb": "uses",
+          "patient": "ski poles"
+        }
+      ],
+      "story": "A skier is skiing downhill on a snowy slope using ski poles.",
+      "CIC": 2,
+      "SEP": 2,
+      "DYN": 2,
+      "QLT": 1,
+      "eligible": 1,
+      "score": 10.0
     },
     {
       "image_id": "2344622",

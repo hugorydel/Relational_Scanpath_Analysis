@@ -70,27 +70,27 @@
 		]
 	},
 	"2350974": {
-		"main_action": "child drinks beside car",
+		"main_action": "child stands next to car",
 		"cue": "drink",
 		"story": "A child drinks from a bottle while standing next to a red car. The child rests a hand on the car door.",
 		"distractors": [
-			"child drinks on the curb",
-			"child drinks beside bus",
-			"child drinks beside stroller"
+			"child stands next to train",
+			"child stands next to bus",
+			"child stands next to stroller"
 		]
 	},
 	"2356125": {
-		"main_action": "staff move luggage",
+		"main_action": "staff load luggage onto conveyor-belt",
 		"cue": "luggage",
 		"story": "Two uniformed women push large bags along an airport conveyor belt, while two other uniformed staff stand nearby.",
 		"distractors": [
-			"staff load luggage onto cart",
-			"staff scan luggage at xray",
-			"staff watch luggage carousel"
+			"staff scan luggage in an xray",
+			"staff load luggage onto a cart",
+			"staff tag luggage at a counter"
 		]
 	},
 	"2360001": {
-		"main_action": "workers move clock",
+		"main_action": "workers move large clock",
 		"cue": "clock",
 		"story": "Two workers are positioning a large round sign on a building facade, with one of them steadying it while the other attaches it to the bracket.",
 		"distractors": [
@@ -100,24 +100,20 @@
 		]
 	},
 	"2362277": {
-		"main_action": "person throws frisbee",
+		"main_action": "person throws a frisbee",
 		"cue": "frisbee",
 		"story": "A player in white runs while attempting to throw a frisbee. A player in red closely blocks him from throwing the frisbee.",
 		"distractors": [
-			"player holds frisbee up",
+			"player picks up a frisbee",
 			"player catches frisbee overhead",
-			"frisbee flies past player"
+			"player catches frisbee at waist"
 		]
 	},
 	"2362704": {
-		"main_action": "bears eat pumpkin",
-		"cue": "bear",
+		"main_action": "bears eat pumpkins",
+		"cue": "bears",
 		"story": "Two bears are eating pieces of a pumpkin on the ground. One bear has its face in the hollow pumpkin while the other eats a chunk nearby.",
-		"distractors": [
-			"bears sniff pumpkins",
-			"bears paw at pumpkins",
-			"bears play with pumpkin"
-		]
+		"distractors": ["bears sniff pumpkins", "bears paw at ", "bears play with ball"]
 	},
 	"2363971": {
 		"main_action": "woman pets dog indoors",
@@ -129,15 +125,14 @@
 			"child pets dog indoors"
 		]
 	},
-
 	"2366915": {
 		"main_action": "surfers ride a wave",
 		"cue": "surfer",
 		"story": "Two surfers ride along the same breaking wave as water sprays behind and around them.",
 		"distractors": [
 			"surfers paddle toward wave",
-			"surfers stand on boards",
-			"surfers walk with boards"
+			"surfers stand on surfboards",
+			"surfers walk with surfboards"
 		]
 	},
 	"2367132": {
@@ -145,9 +140,9 @@
 		"cue": "video game",
 		"story": "Two men are playing a video game while holding motion controllers and moving their arms.",
 		"distractors": [
-			"men watch game trailer",
-			"men argue over controller",
-			"men set up game console"
+			"men watch video game on TV",
+			"men play game with xbox controllers",
+			"men turn on video game console"
 		]
 	},
 	"2369373": {
@@ -161,23 +156,23 @@
 		]
 	},
 	"2370664": {
-		"main_action": "people eat donuts",
+		"main_action": "people bite into donuts",
 		"cue": "donuts",
 		"story": "Two men and a woman are taking bites of donuts. They are close together outdoors, holding the donuts up to their mouths.",
 		"distractors": [
-			"friends share donuts laughing",
-			"man offers donut bite",
-			"people hold donuts posing"
+			"people dip donuts in coffee",
+			"man offers donut to woman",
+			"people hold donuts over eyes"
 		]
 	},
 	"2371471": {
-		"main_action": "motorcyclists perform stunts",
+		"main_action": "motorcyclists jump over ramp",
 		"cue": "motorcycle",
 		"story": "Two motorcyclists are airborne on dirt bikes inside a building, performing jumps above a ramp.",
 		"distractors": [
-			"motorcyclists race on track",
-			"motorcyclists sit on bikes",
-			"motorcyclists jump single ramp"
+			"motorcyclists wait by ramp",
+			"motorcyclists land after jump",
+			"motorcyclists ride up ramp"
 		]
 	},
 	"2374670": {
@@ -185,79 +180,69 @@
 		"cue": "truck",
 		"story": "A red truck sprays water onto a dirt track through nozzles at the back. A man is climbing on the back of the truck while it operates.",
 		"distractors": [
-			"truck dumps gravel load",
+			"truck dumps gravel onto road",
 			"truck pulls broken car",
 			"truck fills water tank"
 		]
 	},
 	"2379478": {
-		"main_action": "children drink milk bottles",
+		"main_action": "two babies drink from milk bottles",
 		"cue": "milk",
-		"story": "A baby and a toddler are lying on a bed, each drinking from a bottle.",
+		"story": "Two babies are lying on a bed, each drinking from a milk bottle.",
 		"distractors": [
-			"baby drinks bottle alone",
-			"toddler holds empty bottle",
-			"children spill milk on bed"
+			"one baby drinks from a milk bottle",
+			"one baby reaches for milk bottle",
+			"two babies reach for milk bottle"
 		]
 	},
 	"2383555": {
-		"main_action": "people row boat",
+		"main_action": "woman holds child on boat",
 		"cue": "boat",
-		"story": "A woman sits in a small boat holding a child on her lap while rowing with a paddle. A man behind her also rows the boat through the water.",
+		"story": "A woman sits in a small boat holding a child on her lap. A woman behind her rows the boat through the water.",
 		"distractors": [
-			"man rows boat alone",
-			"woman paddles with child",
-			"family sits boat drifting"
+			"two women row a boat",
+			"child sits alone in boat",
+			"man steps onto a boat"
 		]
 	},
 	"2385550": {
-		"main_action": "children bite tangerines",
+		"main_action": "children have tangerines in mouths",
 		"cue": "tangerines",
 		"story": "A boy and a girl each have a tangerine in their mouth and are eating it while facing the camera.",
 		"distractors": [
-			"children peel tangerines smiling",
-			"children hold tangerines cheeks",
-			"children eat orange slices"
+			"children peel tangerines",
+			"children hold tangerines in hands",
+			"children pick tangerines from tree"
 		]
 	},
 	"2386442": {
-		"main_action": "people brush teeth",
+		"main_action": "family brushes teeth together",
 		"cue": "teeth",
 		"story": "A woman, a child, and a man are each brushing their teeth with toothbrushes. They are facing the camera while brushing.",
 		"distractors": [
-			"family shows teeth smiling",
 			"child flosses teeth carefully",
-			"man rinses mouth water"
+			"family checks teeth in mirror",
+			"woman brushes a child's teeth"
 		]
 	},
 	"2387122": {
-		"main_action": "polar bear in water",
+		"main_action": "polar bear swims up to glass",
 		"cue": "polar bear",
-		"story": "A polar bear presses against the glass while a person on the other side takes a photo of it.",
+		"story": "A polar bear swims in the water and presses against the enclosure glass while a person on the other side takes a photo of it.",
 		"distractors": [
-			"polar bear paces on ice",
-			"polar bear eats at shore",
-			"person watches bear behind glass"
-		]
-	},
-	"2390192": {
-		"main_action": "teens use phones",
-		"cue": "teens",
-		"story": "A teen boy hugs a girl while talking on a phone. The teen girl holds another phone in her hand.",
-		"distractors": [
-			"teens text side by side",
-			"boy calls phone alone",
-			"teens hold phones arguing"
+			"polar bear sits by a woman",
+			"polar bear swims away",
+			"polar bear dives underwater"
 		]
 	},
 	"2397102": {
-		"main_action": "couple cuts wedding cake",
+		"main_action": "couple cuts cake together",
 		"cue": "cake",
 		"story": "A woman and a man are cutting a decorated wedding cake together while the man holds a bottle in his other hand.",
 		"distractors": [
-			"couple feeds cake bite",
-			"couple poses beside cake",
-			"man carries cake knife"
+			"couple feeds each other cake",
+			"couple poses with wedding cake",
+			"couple kisses beside cake"
 		]
 	},
 	"2401636": {
@@ -266,18 +251,18 @@
 		"story": "A cat leans toward and sniffs a baby sitting beside it. A woman holds the cat close while watching them.",
 		"distractors": [
 			"cat sleeps beside baby",
-			"cat licks baby's hand",
-			"woman lifts cat away"
+			"cat licks woman's hand",
+			"woman lifts up a cat"
 		]
 	},
 	"2411268": {
-		"main_action": "child picks apples",
-		"cue": "apples",
+		"main_action": "child picks apple from tree",
+		"cue": "apple",
 		"story": "A child reaches up to pick an apple from a tree while holding a bag for collecting fruit.",
 		"distractors": [
-			"child bites apple from tree",
-			"child shakes apples down",
-			"child holds apples basket"
+			"child bites into apple",
+			"child picks apple up from the ground",
+			"child puts apple in bag"
 		]
 	},
 	"2412687": {

@@ -1,27 +1,18 @@
 #!/usr/bin/env python3
 """
-select_scored_stimuli.py - Select diverse, high-scoring subset from OpenAI-scored images
+select_scored_stimuli.py - Select high-scoring subset from OpenAI-scored images
 
-Selects final stimuli from OpenAI-scored images by balancing:
-1. Quality: Prioritizes highest-scoring images
-2. Diversity: Ensures selected images are semantically distinct (via story embeddings)
+Selects final stimuli from OpenAI-scored images based purely on score.
+No diversity filtering at this stage - that's done as post-hoc analysis.
 
 Usage:
-    python select_diverse_scored_stimuli.py
+    python select_scored_stimuli.py
 
 Configuration:
     Edit config.py to adjust:
     - SCORED_IMAGES_PATH: Path to results.jsonl
     - N_FINAL_SCORED_IMAGES: Target number of images
-    - SCORED_SIMILARITY_THRESHOLD: Diversity threshold (0-1)
-    - TEXT_EMBEDDING_MODEL: SentenceTransformer model
 """
-
-import os
-
-os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
-os.environ["OMP_NUM_THREADS"] = "1"
-os.environ["LOKY_MAX_CPU_COUNT"] = "8"
 
 import json
 import shutil
@@ -33,7 +24,6 @@ from tqdm import tqdm
 
 import config
 from config import calculate_image_score
-from embedding.diversity_selection import DiversitySelector
 
 
 def load_scored_images(jsonl_path: Path) -> List[Dict]:
@@ -80,38 +70,28 @@ def filter_eligible_images(scored_images: List[Dict]) -> List[Dict]:
     return eligible
 
 
-def compute_story_embeddings(
-    eligible_images: List[Dict], selector: DiversitySelector
-) -> np.ndarray:
+def select_top_by_score(eligible_images: List[Dict], n_select: int) -> List[Dict]:
     """
-    Compute text embeddings from image stories.
+    Select top N images by score.
 
     Args:
-        eligible_images: List of eligible image dicts with 'story' field
-        selector: DiversitySelector instance
+        eligible_images: List of eligible image dicts
+        n_select: Number of images to select
 
     Returns:
-        embeddings: (N, D) numpy array
+        selected_images: List of selected image dicts
     """
-    print("\nComputing story embeddings...")
+    print(f"\nSelecting top {n_select} images by score...")
 
-    stories = [img.get("story", "") for img in eligible_images]
+    # Sort by score (descending)
+    sorted_images = sorted(eligible_images, key=lambda x: x["score"], reverse=True)
 
-    # Check for missing stories
-    missing_count = sum(1 for s in stories if not s)
-    if missing_count > 0:
-        print(
-            f"  Warning: {missing_count} images missing stories (will use empty string)"
-        )
+    # Take top N
+    selected_images = sorted_images[:n_select]
 
-    # Use SentenceTransformer from selector
-    embeddings = selector.text_model.encode(
-        stories, batch_size=32, show_progress_bar=True, convert_to_numpy=True
-    )
+    print(f"✓ Selected {len(selected_images)} images")
 
-    print(f"✓ Computed embeddings: shape {embeddings.shape}")
-
-    return embeddings
+    return selected_images
 
 
 def create_output_directory(base_dir: Path = None) -> Path:
@@ -119,7 +99,7 @@ def create_output_directory(base_dir: Path = None) -> Path:
     if base_dir is None:
         base_dir = Path("./data")
 
-    output_dir = base_dir / "diverse_scored_selection"
+    output_dir = base_dir / "scored_selection"
 
     if output_dir.exists():
         shutil.rmtree(output_dir)
@@ -127,16 +107,12 @@ def create_output_directory(base_dir: Path = None) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
     (output_dir / "images").mkdir(exist_ok=True)
     (output_dir / "annotations").mkdir(exist_ok=True)
-    (output_dir / "visualizations").mkdir(exist_ok=True)
 
     return output_dir
 
 
 def save_selected_images(
-    selected_indices: np.ndarray,
-    eligible_images: List[Dict],
-    embeddings: np.ndarray,
-    diversity_metrics: Dict,
+    selected_images: List[Dict],
     output_dir: Path,
     image_source_dir: Path,
 ):
@@ -144,16 +120,10 @@ def save_selected_images(
     Save selected images and metadata.
 
     Args:
-        selected_indices: Indices of selected images
-        eligible_images: Full list of eligible images
-        embeddings: Story embeddings
-        diversity_metrics: Diversity statistics
+        selected_images: List of selected image dicts
         output_dir: Where to save outputs
         image_source_dir: Where to find source images
     """
-    selected_images = [eligible_images[idx] for idx in selected_indices]
-    selected_embeddings = embeddings[selected_indices]
-
     # Copy images
     print("\nCopying selected images...")
     copied = 0
@@ -178,12 +148,9 @@ def save_selected_images(
     # Save metadata
     metadata = {
         "info": {
-            "description": "Diverse High-Scoring Stimuli Dataset",
+            "description": "High-Scoring Stimuli Dataset (Score-only Selection)",
             "num_images": len(selected_images),
-            "selection_method": "score_weighted_greedy",
-            "diversity_threshold": config.SCORED_SIMILARITY_THRESHOLD,
-            "text_embedding_model": config.TEXT_EMBEDDING_MODEL,
-            "diversity_metrics": diversity_metrics,
+            "selection_method": "top_by_score",
             "scoring_criteria": {
                 "CIC_threshold": config.CIC_THRESHOLD,
                 "SEP_threshold": config.SEP_THRESHOLD,
@@ -204,19 +171,9 @@ def save_selected_images(
 
     print(f"✓ Saved metadata to {metadata_path}")
 
-    # Save embeddings for future use
-    embeddings_path = output_dir / "annotations" / "story_embeddings.npy"
-    np.save(embeddings_path, selected_embeddings)
-    print(f"✓ Saved embeddings to {embeddings_path}")
 
-
-def print_selection_summary(
-    selected_indices: np.ndarray,
-    eligible_images: List[Dict],
-):
+def print_selection_summary(selected_images: List[Dict]):
     """Print summary statistics of selected images."""
-    selected_images = [eligible_images[idx] for idx in selected_indices]
-
     scores = [img["score"] for img in selected_images]
     cic_vals = [img.get("CIC", 0) for img in selected_images]
     sep_vals = [img.get("SEP", 0) for img in selected_images]
@@ -240,13 +197,12 @@ def print_selection_summary(
 
 
 def main():
-    """Main diversity selection pipeline for scored images."""
+    """Main selection pipeline for scored images."""
     print("=" * 70)
-    print("DIVERSE SCORED STIMULI SELECTION")
+    print("HIGH-SCORING STIMULI SELECTION")
     print("=" * 70)
     print(f"  Target images: {config.N_FINAL_SCORED_IMAGES}")
-    print(f"  Similarity threshold: {config.SCORED_SIMILARITY_THRESHOLD}")
-    print(f"  Text model: {config.TEXT_EMBEDDING_MODEL}")
+    print(f"  Selection method: Top N by score (no diversity filtering)")
     print("=" * 70 + "\n")
 
     # Validate paths
@@ -264,64 +220,15 @@ def main():
             f"requested {config.N_FINAL_SCORED_IMAGES}"
         )
         print("All eligible images will be included in final set.")
-        # Just copy all images - no selection needed
-        return
-
-    # Initialize selector
-    print("\nInitializing diversity selector...")
-    selector = DiversitySelector(
-        embedding_cache_path=Path(config.TEXT_EMBEDDING_CACHE_PATH),
-    )
-
-    # Compute story embeddings
-    embeddings = compute_story_embeddings(eligible_images, selector)
-
-    # Extract scores
-    scores = np.array([img["score"] for img in eligible_images])
-
-    # Select diverse, high-scoring subset
-    selected_indices = selector.select_diverse_score_weighted(
-        embeddings=embeddings,
-        scores=scores,
-        n_select=config.N_FINAL_SCORED_IMAGES,
-        similarity_threshold=config.SCORED_SIMILARITY_THRESHOLD,
-        random_state=config.RANDOM_SEED,
-    )
-
-    # Compute diversity metrics
-    diversity_metrics = selector.compute_diversity_metrics(embeddings, selected_indices)
-
-    print("\n" + "=" * 70)
-    print("DIVERSITY METRICS")
-    print("=" * 70)
-    for key, value in diversity_metrics.items():
-        print(
-            f"  {key}: {value:.4f}" if isinstance(value, float) else f"  {key}: {value}"
+        selected_images = eligible_images
+    else:
+        # Select top N by score
+        selected_images = select_top_by_score(
+            eligible_images, config.N_FINAL_SCORED_IMAGES
         )
-    print("=" * 70)
 
     # Create output directory
     output_dir = create_output_directory()
-
-    # Visualize embedding space
-    print("\nGenerating visualizations...")
-    labels = [img["image_id"] for img in eligible_images]
-
-    selector.visualize_embedding_space(
-        embeddings,
-        selected_indices,
-        output_path=output_dir / "visualizations" / "embedding_space_tsne.png",
-        labels=labels,
-        method="tsne",
-    )
-
-    selector.visualize_embedding_space(
-        embeddings,
-        selected_indices,
-        output_path=output_dir / "visualizations" / "embedding_space_pca.png",
-        labels=labels,
-        method="pca",
-    )
 
     # Save selected images
     image_source_dir = Path(config.OUTPUT_DIR) / "images"
@@ -330,27 +237,22 @@ def main():
         print("Metadata will be saved but images won't be copied.")
         image_source_dir = Path(".")  # Dummy path
 
-    save_selected_images(
-        selected_indices,
-        eligible_images,
-        embeddings,
-        diversity_metrics,
-        output_dir,
-        image_source_dir,
-    )
+    save_selected_images(selected_images, output_dir, image_source_dir)
 
     # Print summary
-    print_selection_summary(selected_indices, eligible_images)
+    print_selection_summary(selected_images)
 
     # Final output
     print("\n" + "=" * 70)
     print("SELECTION COMPLETE")
     print("=" * 70)
-    print(f"✓ Selected {len(selected_indices)} diverse, high-scoring images")
+    print(f"✓ Selected {len(selected_images)} high-scoring images")
     print(f"✓ Output directory: {output_dir}")
     print(f"✓ Images: {output_dir / 'images'}")
     print(f"✓ Metadata: {output_dir / 'annotations' / 'selected_dataset.json'}")
-    print(f"✓ Visualizations: {output_dir / 'visualizations'}")
+    print("\nNext steps:")
+    print("  1. Run manual_image_annotation.py for manual review")
+    print("  2. Run diversity_analysis.py for diversity metrics")
     print("=" * 70)
 
 

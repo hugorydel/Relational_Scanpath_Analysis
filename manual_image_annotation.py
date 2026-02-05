@@ -46,16 +46,16 @@ class ManualAnnotationUI:
 
     def __init__(
         self,
-        dataset_dir: str = "data/diverse_scored_selection",
+        dataset_dir: str = "data/scored_selection",
         preprocessing_dir: str = "data/processed",
-        output_dir: str = "data/stimuli",
+        output_dir: str = "stimuli",
         annotations_file: str = "manual_annotations.json",
     ):
         """
         Initialize the annotation UI.
 
         Args:
-            dataset_dir: Path to diverse scored selection dataset directory
+            dataset_dir: Path to scored selection dataset directory
             preprocessing_dir: Path to preprocessing output (has segmentation data)
             output_dir: Path to output directory for final selected stimuli
             annotations_file: Name of file to store manual annotations
@@ -64,14 +64,14 @@ class ManualAnnotationUI:
         self.preprocessing_dir = Path(preprocessing_dir)
         self.output_dir = Path(output_dir)
         self.images_dir = self.dataset_dir / "images"
-        self.annotations_path = self.dataset_dir / "annotations" / annotations_file
+        self.annotations_path = self.output_dir / "annotations" / annotations_file
         self.dataset_json = self.dataset_dir / "annotations" / "selected_dataset.json"
 
         # Load dataset metadata
         if not self.dataset_json.exists():
             raise FileNotFoundError(
                 f"Dataset metadata not found: {self.dataset_json}\n"
-                f"Please run select_diverse_scored_stimuli.py first."
+                f"Please run select_scored_stimuli.py first."
             )
 
         with open(self.dataset_json, "r") as f:
@@ -95,12 +95,12 @@ class ManualAnnotationUI:
         # Track selected images for display
         self.selected_images_list = self._get_selected_images_list()
 
-        # Generate color palette for visualization
+        # Generate color palette
         np.random.seed(42)
         self.colors = np.array(sns.color_palette("husl", 100))
 
         print(f"\nManual Annotation UI Initialized")
-        print(f"Total images in diverse selection: {len(self.images_metadata)}")
+        print(f"Total images in scored selection: {len(self.images_metadata)}")
         print(
             f"Images with segmentation data: {sum(1 for img in self.images_metadata if img.get('objects'))}"
         )
@@ -503,7 +503,7 @@ class ManualAnnotationUI:
         print("\n" + "=" * 60)
         print("ANNOTATION SUMMARY")
         print("=" * 60)
-        print(f"Total images in diverse selection: {len(self.images_metadata)}")
+        print(f"Total images in scored selection: {len(self.images_metadata)}")
         print(f"Total annotated: {len(self.manual_annotations)}")
         print(f"  - Selected: {self._count_status('selected')}")
         print(f"  - Eliminated: {self._count_status('eliminated')}")
@@ -524,7 +524,6 @@ class ManualAnnotationUI:
         # Create output directories
         self.output_dir.mkdir(parents=True, exist_ok=True)
         (self.output_dir / "images").mkdir(exist_ok=True)
-        (self.output_dir / "visualizations").mkdir(exist_ok=True)
         (self.output_dir / "annotations").mkdir(exist_ok=True)
 
         # Collect selected images
@@ -543,7 +542,7 @@ class ManualAnnotationUI:
                 if img_meta:
                     selected_images.append(img_meta)
 
-        # Copy images and visualizations
+        # Copy images
         print(
             f"\nExporting {len(selected_images)} selected images to {self.output_dir}..."
         )
@@ -557,12 +556,6 @@ class ManualAnnotationUI:
             dst_img = self.output_dir / "images" / filename
             if src_img.exists():
                 shutil.copy(src_img, dst_img)
-
-            # Copy visualization if exists
-            src_viz = self.dataset_dir / "visualizations" / f"{img_id}_viz.png"
-            dst_viz = self.output_dir / "visualizations" / f"{img_id}_viz.png"
-            if src_viz.exists():
-                shutil.copy(src_viz, dst_viz)
 
         # Save metadata
         stimuli_metadata = {
@@ -584,7 +577,6 @@ class ManualAnnotationUI:
 
         print(f"✓ Exported {len(selected_images)} images")
         print(f"✓ Images: {self.output_dir / 'images'}")
-        print(f"✓ Visualizations: {self.output_dir / 'visualizations'}")
         print(f"✓ Metadata: {metadata_path}")
         print("=" * 60)
 
@@ -646,7 +638,7 @@ class ManualAnnotationUI:
                 self.status_label.setFont(QFont("Arial", 11, QFont.Bold))
                 layout.addWidget(self.status_label)
 
-                # Selected images list label
+                # Selected images list labelW
                 self.selected_list_label = QLabel()
                 self.selected_list_label.setAlignment(Qt.AlignLeft)
                 self.selected_list_label.setFont(QFont("Arial", 9))
@@ -809,15 +801,15 @@ class ManualAnnotationUI:
 def main():
     """Main entry point."""
     # Configuration
-    DATASET_DIR = "data/diverse_scored_selection"
-    PREPROCESSING_DIR = "data/processed"  # NEW: Path to preprocessing output
+    DATASET_DIR = "data/scored_selection"
+    PREPROCESSING_DIR = "data/processed"
     OUTPUT_DIR = "data/stimuli"
     ANNOTATIONS_FILE = "manual_annotations.json"
 
     # Create UI
     ui = ManualAnnotationUI(
         dataset_dir=DATASET_DIR,
-        preprocessing_dir=PREPROCESSING_DIR,  # NEW parameter
+        preprocessing_dir=PREPROCESSING_DIR,
         output_dir=OUTPUT_DIR,
         annotations_file=ANNOTATIONS_FILE,
     )

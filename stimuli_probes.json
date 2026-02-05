@@ -1,5 +1,4 @@
 {
-	"107989": { "main_action": "elephant holds tail", "cue": "elephant" },
 	"150472": { "main_action": "women bite pizza", "cue": "pizza" },
 	"2344100": { "main_action": "skier skis downhill", "cue": "ski" },
 	"2344622": { "main_action": "cat next to hand", "cue": "cat" },
@@ -9,9 +8,6 @@
 	"2348899": { "main_action": "woman touches striped tie", "cue": "tie" },
 	"2349475": { "main_action": "people power blender", "cue": "blender" },
 	"2350974": { "main_action": "children drink bottled milk", "cue": "milk" },
-	"2352216": { "main_action": "batter swings baseball bat", "cue": "bat" },
-	"2354569": { "main_action": "surfer carries surfboard", "cue": "surfboard" },
-	"2356013": { "main_action": "people pull suitcases", "cue": "suitcases" },
 	"2356125": { "main_action": "airport staff push suitcases", "cue": "airport" },
 	"2360001": { "main_action": "workers mount clock", "cue": "clock" },
 	"2362277": { "main_action": "person throws frisbee", "cue": "frisbee" },
@@ -33,7 +29,6 @@
 	"2390192": { "main_action": "teens use phones", "cue": "teens" },
 	"2397102": { "main_action": "couple cuts wedding cake", "cue": "cake" },
 	"2401636": { "main_action": "baby looks at cat", "cue": "cat" },
-	"2407083": { "main_action": "cowboy on beach", "cue": "cowboy" },
 	"2411268": { "main_action": "child picks apples", "cue": "apples" },
 	"2412687": { "main_action": "dog plays frisbee", "cue": "dog" }
 }

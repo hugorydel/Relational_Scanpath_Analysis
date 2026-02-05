@@ -1,42 +1,42 @@
 {
 	"150472": {
-		"main_action": "women bite pizza",
+		"main_action": "women share pizza slice",
 		"cue": "pizza",
 		"story": "Two women lean in with open mouths toward a large slice of pizza on a paper plate, each taking a bite from it.",
 		"distractors": [
-			"chef slices hot pizza",
-			"pizza delivery at door",
-			"pizza boxes stacked high"
+			"women photograph pizza slice",
+			"woman cuts large pizza",
+			"women carry pizza box"
 		]
 	},
 	"2344100": {
 		"main_action": "skier skis downhill",
-		"cue": "ski",
+		"cue": "skier",
 		"story": "A skier is skiing downhill on a snowy slope using ski poles.",
 		"distractors": [
-			"skier rides ski lift",
-			"ski instructor teaches beginner",
-			"ski boots drying indoors"
+			"skier adjusts skis",
+			"skier falls onto snow",
+			"skier waits at rope lift"
 		]
 	},
 	"2344622": {
-		"main_action": "cat next to keyboard",
-		"cue": "typing",
+		"main_action": "cat lies near keyboard",
+		"cue": "keyboard",
 		"story": "A person is typing on a keyboard. A cat is resting its head next to the person's arm, near the keyboard.",
 		"distractors": [
-			"cat blocks typing hands",
-			"typing on laptop outdoors",
-			"typing while cat sleeps"
+			"cat sits on keyboard",
+			"cat paws at keyboard",
+			"cat stands behind keyboard"
 		]
 	},
 	"2345035": {
-		"main_action": "girls play football",
+		"main_action": "girls run toward football",
 		"cue": "football",
-		"story": "A player in a blue jersey runs towards a soccer ball while a player in a white jersey runs alongside and challenges her for it.",
+		"story": "A girl in a blue jersey runs towards a football while a girl in a white jersey runs alongside and challenges her for it.",
 		"distractors": [
-			"football goalie dives save",
-			"football referee shows card",
-			"football fans wave scarves"
+			"girl kicks football into goal",
+			"girl slides for football",
+			"girl catches football"
 		]
 	},
 	"2347025": {
@@ -44,9 +44,9 @@
 		"cue": "umbrella",
 		"story": "A woman carries a baby on her back. The baby holds up a pink umbrella above them.",
 		"distractors": [
-			"umbrella opens in rain",
-			"umbrella flips in wind",
-			"umbrella shades beach chair"
+			"woman holds umbrella over baby",
+			"baby drags pink umbrella",
+			"baby sits under umbrella"
 		]
 	},
 	"2347400": {
@@ -54,59 +54,59 @@
 		"cue": "wine",
 		"story": "Two men sit on a couch, each holding a wine glass near their faces and smelling the wine.",
 		"distractors": [
-			"wine poured into glasses",
-			"wine bottle uncorked slowly",
-			"wine spills on couch"
+			"men clink wine glasses",
+			"men sip wine together",
+			"men hold wine bottles"
 		]
 	},
 	"2348899": {
-		"main_action": "woman touches striped tie",
+		"main_action": "woman adjusts man's tie",
 		"cue": "tie",
-		"story": "A woman points at the seated man's striped tie while he smiles. A man in a suit leans in and gestures toward the seated man during their conversation.",
+		"story": "A woman touches the seated man's striped tie while he smiles. A man in a suit leans in and gestures toward the seated man during their conversation.",
 		"distractors": [
-			"man knots tie mirror",
-			"child tugs dad tie",
-			"tie clip shines bright"
+			"man points at striped tie",
+			"man loosens his tie",
+			"woman gives man tie"
 		]
 	},
 	"2349475": {
-		"main_action": "people power blender",
+		"main_action": "woman holds onto blender",
 		"cue": "blender",
 		"story": "A man uses a bike to power a blender while a woman holds the lid of the blender filled with liquid.",
 		"distractors": [
-			"blender mixes green smoothie",
-			"blender lid pops off",
-			"blender sits on counter"
+			"woman presses blender button",
+			"woman opens blender lid",
+			"woman cranks blender handle"
 		]
 	},
 	"2350974": {
-		"main_action": "child drinks water",
+		"main_action": "child drinks beside car",
 		"cue": "drink",
 		"story": "A child drinks from a bottle while standing next to a red car. The child rests a hand on the car door.",
 		"distractors": [
-			"tourist drink from fountain",
-			"athlete drink sports bottle",
-			"dog drink from bowl"
+			"child drinks on the curb",
+			"child drinks beside bus",
+			"child drinks beside stroller"
 		]
 	},
 	"2356125": {
-		"main_action": "airport staff move suitcases",
-		"cue": "airport",
+		"main_action": "staff move luggage",
+		"cue": "luggage",
 		"story": "Two uniformed women push large bags along an airport conveyor belt, while two other uniformed staff stand nearby.",
 		"distractors": [
-			"airport security scans luggage",
-			"airport passengers board plane",
-			"airport gate closes early"
+			"staff load luggage onto cart",
+			"staff scan luggage at xray",
+			"staff watch luggage carousel"
 		]
 	},
 	"2360001": {
-		"main_action": "workers mount clock",
+		"main_action": "workers move clock",
 		"cue": "clock",
 		"story": "Two workers are positioning a large round sign on a building facade, with one of them steadying it while the other attaches it to the bracket.",
 		"distractors": [
-			"child sets alarm clock",
-			"clock tower rings noon",
-			"clock hands spin fast"
+			"workers wipe clock face",
+			"workers paint old clock",
+			"workers lift ladder to clock"
 		]
 	},
 	"2362277": {
@@ -114,9 +114,9 @@
 		"cue": "frisbee",
 		"story": "A player in white runs while attempting to throw a frisbee. A player in red closely blocks him from throwing the frisbee.",
 		"distractors": [
-			"kids toss frisbee beach",
-			"frisbee stuck in tree",
-			"dog catches frisbee midair"
+			"player holds frisbee up",
+			"player catches frisbee overhead",
+			"frisbee flies past player"
 		]
 	},
 	"2362704": {
@@ -124,39 +124,39 @@
 		"cue": "bear",
 		"story": "Two bears are eating pieces of a pumpkin on the ground. One bear has its face in the hollow pumpkin while the other eats a chunk nearby.",
 		"distractors": [
-			"bear swims across river",
-			"bear sniffs picnic basket",
-			"bear stands on rock"
+			"bears sniff pumpkins",
+			"bears paw at pumpkins",
+			"bears play with pumpkin"
 		]
 	},
 	"2363971": {
-		"main_action": "people pet dog",
+		"main_action": "woman pets dog indoors",
 		"cue": "petting",
 		"story": "A woman pets a large dog in the foreground while another woman in a chair holds a child upside down on her lap.",
 		"distractors": [
-			"petting cat on sofa",
-			"petting horse over fence",
-			"petting zoo goats nibble"
+			"woman pets dog outside",
+			"child pets dog outside",
+			"child pets dog indoors"
 		]
 	},
 	"2365101": {
-		"main_action": "person grooms horse",
+		"main_action": "person grooms horse hoof",
 		"cue": "hoof",
 		"story": "A person bends down and grooms a horse's lower leg with a tool. The horse eats hay from a hanging net.",
 		"distractors": [
-			"farrier trims horse hoof",
-			"hoof stuck in mud",
-			"hoof prints in sand"
+			"person washes muddy hoof",
+			"person wraps hoof with bandage",
+			"person checks cracked hoof"
 		]
 	},
 	"2366915": {
-		"main_action": "surfers ride wave",
+		"main_action": "surfers ride same wave",
 		"cue": "surfer",
 		"story": "Two surfers ride along the same breaking wave as water sprays behind and around them.",
 		"distractors": [
-			"surfer paddles beyond break",
-			"surfer wipes out hard",
-			"surfer waxes board"
+			"surfers paddle toward wave",
+			"surfers sit on boards",
+			"surfers walk with boards"
 		]
 	},
 	"2367132": {
@@ -164,9 +164,9 @@
 		"cue": "video game",
 		"story": "Two men are playing a video game while holding motion controllers and moving their arms.",
 		"distractors": [
-			"video game pauses on screen",
-			"video game tournament crowd",
-			"friends watch video game"
+			"men watch game trailer",
+			"men argue over controller",
+			"men set up game console"
 		]
 	},
 	"2369373": {
@@ -174,9 +174,9 @@
 		"cue": "oven",
 		"story": "A chef opens the wood-fired oven and holds the oven door while looking into the flames.",
 		"distractors": [
-			"cookies bake in oven",
-			"oven timer rings loudly",
-			"woman cleans oven rack"
+			"chef loads bread into oven",
+			"chef pulls tray from oven",
+			"chef stokes oven flames"
 		]
 	},
 	"2370664": {
@@ -184,9 +184,9 @@
 		"cue": "donuts",
 		"story": "Two men and a woman are taking bites of donuts. They are close together outdoors, holding the donuts up to their mouths.",
 		"distractors": [
-			"donuts stacked in box",
-			"chef glazes fresh donuts",
-			"donuts fall on floor"
+			"friends share donuts laughing",
+			"man offers donut bite",
+			"people hold donuts posing"
 		]
 	},
 	"2371471": {
@@ -194,9 +194,9 @@
 		"cue": "motorcycle",
 		"story": "Two motorcyclists are airborne on dirt bikes inside a building, performing jumps above a ramp.",
 		"distractors": [
-			"motorcycle idles at stoplight",
-			"motorcycle parked beside road",
-			"motorcycle splashes through puddle"
+			"motorcyclists race on track",
+			"motorcyclists rev bikes indoors",
+			"motorcyclists jump single ramp"
 		]
 	},
 	"2374648": {
@@ -204,9 +204,9 @@
 		"cue": "skateboard",
 		"story": "A skateboarder is airborne, jumping over a ledge while kicking his skateboard during the trick.",
 		"distractors": [
-			"skateboard rolls down ramp",
-			"child carries skateboard home",
-			"skateboard rests by bench"
+			"skateboarder grinds metal rail",
+			"skateboarder falls off board",
+			"skateboarder rolls past ledge"
 		]
 	},
 	"2374670": {
@@ -214,9 +214,9 @@
 		"cue": "truck",
 		"story": "A red truck sprays water onto a dirt track through nozzles at the back. A man is climbing on the back of the truck while it operates.",
 		"distractors": [
-			"truck hauls gravel uphill",
-			"truck driver checks tires",
-			"truck stuck in snow"
+			"truck dumps gravel load",
+			"truck pulls broken car",
+			"truck fills water tank"
 		]
 	},
 	"2379478": {
@@ -224,9 +224,9 @@
 		"cue": "milk",
 		"story": "A baby and a toddler are lying on a bed, each drinking from a bottle.",
 		"distractors": [
-			"milk spills on table",
-			"milk carton in fridge",
-			"milk poured into cereal"
+			"baby drinks bottle alone",
+			"toddler holds empty bottle",
+			"children spill milk on bed"
 		]
 	},
 	"2383555": {
@@ -234,9 +234,9 @@
 		"cue": "boat",
 		"story": "A woman sits in a small boat holding a child on her lap while rowing with a paddle. A man behind her also rows the boat through the water.",
 		"distractors": [
-			"boat anchored near pier",
-			"boat rocks in storm",
-			"boat race starts horn"
+			"man rows boat alone",
+			"woman paddles with child",
+			"family sits boat drifting"
 		]
 	},
 	"2385550": {
@@ -244,9 +244,9 @@
 		"cue": "tangerines",
 		"story": "A boy and a girl each have a tangerine in their mouth and are eating it while facing the camera.",
 		"distractors": [
-			"tangerines peeled on plate",
-			"tangerines sold at market",
-			"tangerines roll across floor"
+			"children peel tangerines smiling",
+			"children hold tangerines cheeks",
+			"children eat orange slices"
 		]
 	},
 	"2386442": {
@@ -254,9 +254,9 @@
 		"cue": "teeth",
 		"story": "A woman, a child, and a man are each brushing their teeth with toothbrushes. They are facing the camera while brushing.",
 		"distractors": [
-			"dentist examines teeth closely",
-			"teeth whitening strips applied",
-			"teeth shown in smile"
+			"family shows teeth smiling",
+			"child flosses teeth carefully",
+			"man rinses mouth water"
 		]
 	},
 	"2387122": {
@@ -264,9 +264,9 @@
 		"cue": "polar bear",
 		"story": "A polar bear presses against the glass while a person on the other side takes a photo of it.",
 		"distractors": [
-			"polar bear swims underwater",
-			"polar bear stands on ice",
-			"polar bear eats fish"
+			"polar bear paces on ice",
+			"polar bear eats at shore",
+			"person watches bear behind glass"
 		]
 	},
 	"2390192": {
@@ -274,9 +274,9 @@
 		"cue": "teens",
 		"story": "A teen boy hugs a girl while talking on a phone. The teen girl holds another phone in her hand.",
 		"distractors": [
-			"teens pose for selfie",
-			"teens dance at party",
-			"teens sit on stairs"
+			"teens text side by side",
+			"boy calls phone alone",
+			"teens hold phones arguing"
 		]
 	},
 	"2397102": {
@@ -284,41 +284,49 @@
 		"cue": "cake",
 		"story": "A woman and a man are cutting a decorated wedding cake together while the man holds a bottle in his other hand.",
 		"distractors": [
-			"cake candles blown out",
-			"chef decorates cake flowers",
-			"cake smashed on face"
+			"couple feeds cake bite",
+			"couple poses beside cake",
+			"man carries cake knife"
 		]
 	},
 	"2401636": {
 		"main_action": "baby looks at cat",
 		"cue": "cat",
 		"story": "A cat leans toward and sniffs a baby sitting beside it. A woman holds the cat close while watching them.",
-		"distractors": ["cat curls in basket", "cat chases laser dot", "cat drinks from bowl"]
+		"distractors": [
+			"cat sleeps beside baby",
+			"cat licks baby's hand",
+			"woman lifts cat away"
+		]
 	},
 	"2411268": {
 		"main_action": "child picks apples",
 		"cue": "apples",
 		"story": "A child reaches up to pick an apple from a tree while holding a bag for collecting fruit.",
 		"distractors": [
-			"apples piled in crate",
-			"woman slices apples thin",
-			"apples simmer in pot"
+			"child bites apple from tree",
+			"child shakes apples down",
+			"child holds apples basket"
 		]
 	},
 	"2412687": {
 		"main_action": "dog plays frisbee",
 		"cue": "dog",
 		"story": "A person holds out a red frisbee toward a dog. The dog reaches its mouth toward the frisbee.",
-		"distractors": ["dog sleeps on couch", "dog shakes wet fur", "dog digs in sand"]
+		"distractors": [
+			"dog catches frisbee midair",
+			"dog chews red frisbee",
+			"dog ignores offered frisbee"
+		]
 	},
 	"2356991": {
 		"main_action": "baseball player reaches base",
 		"cue": "baseball",
 		"story": "One player is sliding headfirst toward the base. A fielder stands by the base and catches the incoming ball.",
 		"distractors": [
-			"baseball pitcher winds up",
-			"baseball bat hits homer",
-			"baseball fans cheer loudly"
+			"runner slides feet first",
+			"fielder tags runner out",
+			"catcher blocks home plate"
 		]
 	},
 	"2385851": {
@@ -326,9 +334,9 @@
 		"cue": "suitcase",
 		"story": "Two people walk along a covered walkway while each carries a large red suitcase.",
 		"distractors": [
-			"suitcase spins on carousel",
-			"suitcase packed with clothes",
-			"suitcase dragged through snow"
+			"people drag suitcases rolling",
+			"people stack suitcases tall",
+			"man opens suitcase outside"
 		]
 	},
 	"2394020": {
@@ -336,9 +344,9 @@
 		"cue": "horserider",
 		"story": "Two riders are riding horses along the sandy shore beside the water.",
 		"distractors": [
-			"horserider jumps over fence",
-			"horserider trots through field",
-			"horserider waits at stable"
+			"riders gallop through surf",
+			"riders stop by water",
+			"single rider walks horse"
 		]
 	},
 	"2403399": {
@@ -346,9 +354,9 @@
 		"cue": "sheep",
 		"story": "A child pets a sheep while a man looks down at him, and woman holds onto the sheep.",
 		"distractors": [
-			"sheep graze on hillside",
-			"sheep runs through gate",
-			"sheep sleeps in barn"
+			"child feeds sheep grass",
+			"child hugs sheep tightly",
+			"sheep pulls away from child"
 		]
 	},
 	"2406346": {
@@ -356,9 +364,9 @@
 		"cue": "circus",
 		"story": "One elephant reaches its trunk toward the tail/back area of another elephant walking ahead. A handler walks beside the elephants holding a stick and leading the elephants forward.",
 		"distractors": [
-			"circus clown juggles rings",
-			"circus acrobat swings high",
-			"circus tent lights glow"
+			"elephants walk single file",
+			"handler washes elephant trunk",
+			"elephants stop for crowd"
 		]
 	},
 	"2408717": {
@@ -366,9 +374,9 @@
 		"cue": "surfboard",
 		"story": "Several surfers walk along the shoreline while carrying their surfboards. Waves roll in front of them as they head down towards the beach.",
 		"distractors": [
-			"surfboard strapped to car",
-			"surfer waxes surfboard deck",
-			"surfboard leans against wall"
+			"surfers sit on surfboards",
+			"surfers wax boards on sand",
+			"surfers carry boards uphill"
 		]
 	},
 	"2409918": {
@@ -376,9 +384,9 @@
 		"cue": "elephant riders",
 		"story": "Two men are riding elephants while they are standing in moderately deep water. One elephant is eating plants with its trunk.",
 		"distractors": [
-			"elephant riders march in parade",
-			"elephant riders pose for photo",
-			"elephant riders rest at camp"
+			"riders lead elephants ashore",
+			"elephants splash riders playfully",
+			"riders sit elephants on land"
 		]
 	},
 	"2410309": {
@@ -386,9 +394,9 @@
 		"cue": "laptops",
 		"story": "A woman sits on a couch using a laptop on her lap. A baby beside her touches and uses another open laptop.",
 		"distractors": [
-			"laptops open on desk",
-			"students carry laptops class",
-			"laptops charge with cables"
+			"baby closes laptop lid",
+			"baby bangs laptop keys",
+			"woman shows baby laptop"
 		]
 	}
 }

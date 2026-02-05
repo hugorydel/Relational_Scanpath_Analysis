@@ -110,14 +110,14 @@
 		"score": 11.0
 	},
 	"2352216": {
-		"status": "selected",
+		"status": "eliminated",
 		"file_name": "2352216.jpg",
 		"story": "A baseball batter is swinging a bat at home plate while the catcher behind him receives the pitch.",
 		"CIC": 2,
 		"SEP": 2,
 		"DYN": 2,
 		"QLT": 1,
-		"score": 11.0
+		"score": 10.0
 	},
 	"2356267": {
 		"status": "eliminated",
@@ -270,24 +270,24 @@
 		"score": 10.0
 	},
 	"107989": {
-		"status": "selected",
+		"status": "eliminated",
 		"file_name": "107989.jpg",
 		"story": "A man has his hand on a baby elephant standing beside him. The baby elephant reaches its trunk toward an adult elephant nearby.",
 		"CIC": 2,
 		"SEP": 2,
 		"DYN": 1,
 		"QLT": 1,
-		"score": 9.5
+		"score": 8.5
 	},
 	"1592543": {
-		"status": "return_to",
+		"status": "eliminated",
 		"file_name": "1592543.jpg",
 		"story": "A man and a woman on the beach carry surfboards near the shoreline while other people swim in the water.",
 		"CIC": 2,
 		"SEP": 2,
 		"DYN": 1,
 		"QLT": 1,
-		"score": 9.5
+		"score": 8.5
 	},
 	"2344622": {
 		"status": "selected",
@@ -317,7 +317,7 @@
 		"SEP": 2,
 		"DYN": 1,
 		"QLT": 1,
-		"score": 9.5
+		"score": 8.5
 	},
 	"2347400": {
 		"status": "selected",
@@ -350,34 +350,34 @@
 		"score": 9.5
 	},
 	"2353035": {
-		"status": "return_to",
+		"status": "eliminated",
 		"file_name": "2353035.jpg",
 		"story": "A girl sits holding and using a laptop while a man sits beside her reading a book.",
 		"CIC": 2,
 		"SEP": 2,
 		"DYN": 1,
 		"QLT": 1,
-		"score": 9.5
+		"score": 8.5
 	},
 	"2354569": {
-		"status": "selected",
+		"status": "eliminated",
 		"file_name": "2354569.jpg",
 		"story": "A surfer walks along the beach carrying a surfboard. A dog sniffs the sand nearby.",
 		"CIC": 2,
 		"SEP": 2,
 		"DYN": 1,
 		"QLT": 1,
-		"score": 9.5
+		"score": 8.5
 	},
 	"2356013": {
-		"status": "selected",
+		"status": "eliminated",
 		"file_name": "2356013.jpg",
 		"story": "A man walks along the sidewalk pulling a rolling suitcase. Behind him, a woman walks while pulling a small shopping cart.",
 		"CIC": 2,
 		"SEP": 2,
 		"DYN": 1,
 		"QLT": 1,
-		"score": 9.5
+		"score": 8.5
 	},
 	"2360001": {
 		"status": "selected",
@@ -500,24 +500,24 @@
 		"score": 9.5
 	},
 	"2407083": {
-		"status": "selected",
+		"status": "eliminated",
 		"file_name": "2407083.jpg",
 		"story": "A rider sits on a horse at the shoreline while swinging a lasso in the air.",
 		"CIC": 2,
 		"SEP": 2,
 		"DYN": 1,
 		"QLT": 1,
-		"score": 9.5
+		"score": 8.5
 	},
 	"2409102": {
-		"status": "return_to",
+		"status": "eliminated",
 		"file_name": "2409102.jpg",
 		"story": "A woman holds a baby on her lap while using a laptop at a table.",
 		"CIC": 2,
 		"SEP": 2,
 		"DYN": 1,
 		"QLT": 1,
-		"score": 9.5
+		"score": 8.5
 	},
 	"2411268": {
 		"status": "selected",
@@ -696,6 +696,466 @@
 		"CIC": 1,
 		"SEP": 2,
 		"DYN": 2,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2410100": {
+		"status": "eliminated",
+		"file_name": "2410100.jpg",
+		"story": "Two men in a small boat are rowing on the river. Several buffalo stand partially submerged near the shore.",
+		"CIC": 2,
+		"SEP": 1,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 7.5
+	},
+	"2396254": {
+		"status": "eliminated",
+		"file_name": "2396254.jpg",
+		"story": "Two motorcyclists are riding their motorcycles on a road while a car drives ahead in the same direction.",
+		"CIC": 3,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 11.0
+	},
+	"2356991": {
+		"status": "selected",
+		"file_name": "2356991.jpg",
+		"story": "One player is sliding headfirst toward the base. A fielder stands by the base and catches the incoming ball.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 2,
+		"QLT": 1,
+		"score": 10.0
+	},
+	"2368759": {
+		"status": "eliminated",
+		"file_name": "2368759.jpg",
+		"story": "One man in a yellow shirt throws a frisbee across the field while another man jumps with his arms up to catch it.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 2,
+		"QLT": 1,
+		"score": 10.0
+	},
+	"2386594": {
+		"status": "eliminated",
+		"file_name": "2386594.jpg",
+		"story": "One player jumps and catches a flying disc overhead while another player reaches up to block him.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 2,
+		"QLT": 1,
+		"score": 10.0
+	},
+	"2398726": {
+		"status": "eliminated",
+		"file_name": "2398726.jpg",
+		"story": "A surfer rides inside a breaking wave while nearby two people ride a jet ski on the water.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 2,
+		"QLT": 1,
+		"score": 10.0
+	},
+	"2403498": {
+		"status": "eliminated",
+		"file_name": "2403498.jpg",
+		"story": "A pitcher has thrown a baseball toward home plate where a batter is ready to hit. The ball is in midair approaching the batter.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 2,
+		"QLT": 1,
+		"score": 10.0
+	},
+	"2407132": {
+		"status": "eliminated",
+		"file_name": "2407132.jpg",
+		"story": "A man throws a frisbee across a grassy area. A dog runs after the frisbee.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 2,
+		"QLT": 1,
+		"score": 10.0
+	},
+	"150345": {
+		"status": "eliminated",
+		"file_name": "150345.jpg",
+		"story": "Several people ride in a long boat on a river while holding umbrellas. A man at the front paddles the boat through the water.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 2,
+		"QLT": 1,
+		"score": 10.0
+	},
+	"2359952": {
+		"status": "eliminated",
+		"file_name": "2359952.jpg",
+		"story": "A skateboarder rides a skateboard as it grinds along the edge of a concrete skate bowl.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 2,
+		"QLT": 1,
+		"score": 10.0
+	},
+	"2371231": {
+		"status": "eliminated",
+		"file_name": "2371231.jpg",
+		"story": "A motorcyclist rides a motorcycle along the road while a yellow bus drives on the same roadway.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 2,
+		"QLT": 1,
+		"score": 10.0
+	},
+	"2379687": {
+		"status": "eliminated",
+		"file_name": "2379687.jpg",
+		"story": "A soccer player in a striped jersey dribbles the ball across the field while a player in a yellow jersey runs after him.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 2,
+		"QLT": 1,
+		"score": 10.0
+	},
+	"2381423": {
+		"status": "eliminated",
+		"file_name": "2381423.jpg",
+		"story": "Two soccer players leap as one heads the ball while another jumps over an opponent. Other players watch nearby on the court.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 2,
+		"QLT": 1,
+		"score": 10.0
+	},
+	"2389650": {
+		"status": "eliminated",
+		"file_name": "2389650.jpg",
+		"story": "A skateboarder is riding a skateboard while grinding along the edge of a concrete structure.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 2,
+		"QLT": 1,
+		"score": 10.0
+	},
+	"2396653": {
+		"status": "eliminated",
+		"file_name": "2396653.jpg",
+		"story": "A skateboarder is airborne with a skateboard while performing a trick above a ramp. The board and rider are moving together along the ramp structure.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 2,
+		"QLT": 1,
+		"score": 10.0
+	},
+	"2410588": {
+		"status": "eliminated",
+		"file_name": "2410588.jpg",
+		"story": "A soccer player in a white-and-red uniform dribbles the ball across the field. Several players in dark uniforms chase after him while another white-and-red player runs nearby.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 2,
+		"QLT": 1,
+		"score": 10.0
+	},
+	"2345258": {
+		"status": "eliminated",
+		"file_name": "2345258.jpg",
+		"story": "Two riders are riding their horses along the sandy beach near the ocean.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2347024": {
+		"status": "eliminated",
+		"file_name": "2347024.jpg",
+		"story": "Several people are riding on elephants in a grassy area. One elephant is wading into shallow water while another stands nearby with riders on its back.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2357807": {
+		"status": "eliminated",
+		"file_name": "2357807.jpg",
+		"story": "Two surfers walk toward the ocean while each carries a surfboard.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2362170": {
+		"status": "eliminated",
+		"file_name": "2362170.jpg",
+		"story": "An adult elephant is eating a pile of hay. A baby elephant stands close and touches the adult with its trunk.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2367455": {
+		"status": "eliminated",
+		"file_name": "2367455.jpg",
+		"story": "Two children sit on a toilet and each brushes their teeth with a toothbrush.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2378886": {
+		"status": "eliminated",
+		"file_name": "2378886.jpg",
+		"story": "Two children are brushing their teeth with toothbrushes, and one of them holds a cup while brushing.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2381007": {
+		"status": "eliminated",
+		"file_name": "2381007.jpg",
+		"story": "A cyclist rides a bicycle through an intersection while a police officer rides a motorcycle nearby.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2382142": {
+		"status": "eliminated",
+		"file_name": "2382142.jpg",
+		"story": "Two women stand in a bedroom holding game controllers and playing a video game together.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2382660": {
+		"status": "eliminated",
+		"file_name": "2382660.jpg",
+		"story": "A man walks across a cobblestone area carrying a suitcase and a large instrument case on his back. Other people are on the steps in the background.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2384616": {
+		"status": "eliminated",
+		"file_name": "2384616.jpg",
+		"story": "Two boys sit by a bed holding game controllers and playing a video game.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2385851": {
+		"status": "selected",
+		"file_name": "2385851.jpg",
+		"story": "Two people walk along a covered walkway while each carries a large red suitcase.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2394020": {
+		"status": "selected",
+		"file_name": "2394020.jpg",
+		"story": "Two riders are riding horses along the sandy shore beside the water.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2395846": {
+		"status": "eliminated",
+		"file_name": "2395846.jpg",
+		"story": "A woman and a man are brushing their teeth in front of a bathroom mirror. The man also holds a camera while brushing.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2398576": {
+		"status": "eliminated",
+		"file_name": "2398576.jpg",
+		"story": "A boy holds an open striped umbrella while a girl leans in close and touches him.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2397912": {
+		"status": "eliminated",
+		"file_name": "2397912.jpg",
+		"story": "A man drinks from a wine glass while a woman also drinks from her own wine glass nearby.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2403037": {
+		"status": "eliminated",
+		"file_name": "2403037.jpg",
+		"story": "A woman sits on the grass and pets a black-and-white dog beside her while her other hand rests on a brown dog lying next to her.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2406346": {
+		"status": "selected",
+		"file_name": "2406346.jpg",
+		"story": "One elephant reaches its trunk toward the tail/back area of another elephant walking ahead. A handler walks beside the elephants holding a stick and leading one elephant forward.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2408717": {
+		"status": "selected",
+		"file_name": "2408717.jpg",
+		"story": "Several surfers walk along the shoreline while carrying their surfboards. Waves roll in behind them as they head down the beach.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2409918": {
+		"status": "selected",
+		"file_name": "2409918.jpg",
+		"story": "Two men are riding elephants while the animals stand in shallow water. One elephant is eating plants with its trunk.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2410309": {
+		"status": "selected",
+		"file_name": "2410309.jpg",
+		"story": "A woman sits on a couch using a laptop on her lap. A baby beside her touches and uses another open laptop.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"1159264": {
+		"status": "eliminated",
+		"file_name": "1159264.jpg",
+		"story": "Two surfers walk on the sand carrying surfboards toward the ocean.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2356111": {
+		"status": "eliminated",
+		"file_name": "2356111.jpg",
+		"story": "A man in the foreground points at a keyboard on the desk. In the background, another man talks on a phone.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2367876": {
+		"status": "eliminated",
+		"file_name": "2367876.jpg",
+		"story": "A woman and a man sit on a couch holding game controllers and playing a video game.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2373699": {
+		"status": "eliminated",
+		"file_name": "2373699.jpg",
+		"story": "One woman shows a phone while the other woman looks down at the phone as they stand together holding containers.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2377086": {
+		"status": "eliminated",
+		"file_name": "2377086.jpg",
+		"story": "A woman talks on a phone while using a laptop computer on a table.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2379055": {
+		"status": "eliminated",
+		"file_name": "2379055.jpg",
+		"story": "A man writes notes in a notebook while a woman speaks to him across a table with a laptop.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2380676": {
+		"status": "eliminated",
+		"file_name": "2380676.jpg",
+		"story": "A red double-decker bus and a modern coach are traveling along a city street in two separate views.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2382123": {
+		"status": "eliminated",
+		"file_name": "2382123.jpg",
+		"story": "Two riders are riding horses through shallow water at the beach during sunset.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2385940": {
+		"status": "eliminated",
+		"file_name": "2385940.jpg",
+		"story": "Two people are working on laptops, with hands typing on the keyboards and one hand using the touchpad.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
+		"QLT": 1,
+		"score": 8.5
+	},
+	"2387205": {
+		"status": "eliminated",
+		"file_name": "2387205.jpg",
+		"story": "A woman on the right hands a blender pitcher to a woman on the left, who holds it with both hands.",
+		"CIC": 2,
+		"SEP": 2,
+		"DYN": 1,
 		"QLT": 1,
 		"score": 8.5
 	}

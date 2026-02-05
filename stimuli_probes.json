@@ -1,7 +1,6 @@
 {
 	"107989": { "main_action": "elephant holds tail", "cue": "elephant" },
 	"150472": { "main_action": "women bite pizza", "cue": "pizza" },
-	X"1592543": { "main_action": "people stand on surfboards", "cue": "surboard" },
 	"2344100": { "main_action": "skier skis downhill", "cue": "ski" },
 	"2344622": { "main_action": "cat next to hand", "cue": "cat" },
 	"2345035": { "main_action": "girls play football", "cue": "football" },
@@ -11,7 +10,6 @@
 	"2349475": { "main_action": "people power blender", "cue": "blender" },
 	"2350974": { "main_action": "children drink bottled milk", "cue": "milk" },
 	"2352216": { "main_action": "batter swings baseball bat", "cue": "bat" },
-	X"2353035": { "main_action": "girl uses tablet/laptop", "cue": "tablet" },
 	"2354569": { "main_action": "surfer carries surfboard", "cue": "surfboard" },
 	"2356013": { "main_action": "people pull suitcases", "cue": "suitcases" },
 	"2356125": { "main_action": "airport staff push suitcases", "cue": "airport" },
@@ -36,7 +34,6 @@
 	"2397102": { "main_action": "couple cuts wedding cake", "cue": "cake" },
 	"2401636": { "main_action": "baby looks at cat", "cue": "cat" },
 	"2407083": { "main_action": "cowboy on beach", "cue": "cowboy" },
-	X"2409102": { "main_action": "mother with baby uses laptop", "cue": "mother" },
 	"2411268": { "main_action": "child picks apples", "cue": "apples" },
 	"2412687": { "main_action": "dog plays frisbee", "cue": "dog" }
 }

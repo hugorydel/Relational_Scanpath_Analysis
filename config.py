@@ -69,7 +69,7 @@ OPENAI_MODEL = "gpt-5.2"
 # ============================================================================
 
 # Eligibility thresholds
-CIC_THRESHOLD = 1  # Core Interaction Counts; i.e. # of interacting characters.
+CIC_THRESHOLD = 2  # Core Interaction Counts; i.e. # of interacting characters.
 SEP_THRESHOLD = 1  # Spatial Separation
 DYN_THRESHOLD = 1  # Dynamic Action
 QLT_THRESHOLD = 1  # Image Quality
@@ -137,5 +137,5 @@ TEXT_EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"  # Fast, good qu
 TEXT_EMBEDDING_CACHE_PATH = "./data/text_embedding_cache.pkl"
 
 # Diversity selection parameters
-N_FINAL_SCORED_IMAGES = 70  # Target number of final images
+N_FINAL_SCORED_IMAGES = 110  # Target number of final images
 SCORED_SIMILARITY_THRESHOLD = 0.5  # Cosine similarity threshold (0-1)

@@ -14,11 +14,17 @@ Reads from:
     - data/scored_selection/annotations/selected_dataset.json (for story text)
 
 Outputs to data/embedding/:
+    - similarity_analysis.json: Per-image similarity details and encoding interference analysis
     - diversity_metrics.json: Similarity statistics
     - story_embeddings.npy: Embedding vectors
     - embedding_space_tsne.png: t-SNE visualization
     - embedding_space_pca.png: PCA visualization
     - similarity_matrix.npy: Full pairwise similarity matrix
+
+Encoding Interference Analysis:
+    Measures "neighborhood density" in semantic space - how crowded the area around
+    each image is. Images in crowded neighborhoods have higher potential for memory
+    encoding interference, while isolated images should encode more distinctly.
 """
 
 import json
@@ -183,6 +189,129 @@ def compute_diversity_metrics(similarity_matrix: np.ndarray) -> Dict:
     return metrics
 
 
+def analyze_image_similarities(
+    similarity_matrix: np.ndarray,
+    image_ids: List[str],
+    top_k: int = 5,
+    similarity_threshold: float = 0.5,
+) -> Dict:
+    """
+    Analyze which specific images are most similar to each other.
+
+    Args:
+        similarity_matrix: (N, N) pairwise similarity matrix
+        image_ids: List of image IDs
+        top_k: Number of top similar images to report per image
+        similarity_threshold: Threshold for flagging high similarity
+
+    Returns:
+        Dictionary with detailed similarity analysis
+    """
+    print("\nAnalyzing image-specific similarities...")
+
+    n = len(image_ids)
+    analysis = {}
+
+    # For each image, find its most similar neighbors
+    image_similarities = {}
+    for i, img_id in enumerate(image_ids):
+        # Get similarities to all other images (excluding self)
+        sims = similarity_matrix[i].copy()
+        sims[i] = -1  # Exclude self
+
+        # Get top K most similar
+        top_indices = np.argsort(sims)[::-1][:top_k]
+        top_similar = [
+            {"image_id": image_ids[idx], "similarity": float(sims[idx])}
+            for idx in top_indices
+        ]
+
+        # Average similarity to all others
+        avg_sim = float(similarity_matrix[i, [j for j in range(n) if j != i]].mean())
+
+        # Count high similarity neighbors
+        high_sim_count = int((sims > similarity_threshold).sum())
+
+        image_similarities[img_id] = {
+            "top_similar_images": top_similar,
+            "avg_similarity_to_others": avg_sim,
+            "num_highly_similar": high_sim_count,  # Above threshold
+        }
+
+    analysis["per_image_similarities"] = image_similarities
+
+    # Find most similar pairs overall
+    pairs = []
+    for i in range(n):
+        for j in range(i + 1, n):
+            pairs.append(
+                {
+                    "image_1": image_ids[i],
+                    "image_2": image_ids[j],
+                    "similarity": float(similarity_matrix[i, j]),
+                }
+            )
+
+    # Sort by similarity
+    pairs.sort(key=lambda x: x["similarity"], reverse=True)
+    analysis["most_similar_pairs"] = pairs[:20]  # Top 20 pairs
+
+    # Encoding interference analysis: neighborhood density
+    # Measure how "crowded" the semantic space is around each image
+    k_neighbors = min(10, n - 1)  # Use top 10 neighbors (or all if less than 10)
+
+    interference_scores = []
+    for i, img_id in enumerate(image_ids):
+        # Get similarities to all other images (excluding self)
+        sims = similarity_matrix[i].copy()
+        sims[i] = -1  # Exclude self
+
+        # Get top K nearest neighbors
+        top_k_sims = np.sort(sims)[::-1][:k_neighbors]
+
+        # Cumulative similarity to K nearest neighbors (higher = more crowded)
+        cumulative_neighbor_sim = float(top_k_sims.sum())
+
+        # Average similarity to K nearest neighbors
+        avg_neighbor_sim = float(top_k_sims.mean())
+
+        # Count neighbors in similarity bands (for context)
+        neighbors_0_3_to_0_4 = int(((top_k_sims >= 0.3) & (top_k_sims < 0.4)).sum())
+        neighbors_0_4_to_0_5 = int(((top_k_sims >= 0.4) & (top_k_sims < 0.5)).sum())
+        neighbors_0_5_plus = int((top_k_sims >= 0.5).sum())
+
+        interference_scores.append(
+            {
+                "image_id": img_id,
+                "cumulative_neighbor_similarity": cumulative_neighbor_sim,
+                "avg_neighbor_similarity": avg_neighbor_sim,
+                "k_neighbors_used": k_neighbors,
+                "neighbors_0.3_0.4": neighbors_0_3_to_0_4,
+                "neighbors_0.4_0.5": neighbors_0_4_to_0_5,
+                "neighbors_0.5_plus": neighbors_0_5_plus,
+                "top_neighbor_ids": [
+                    image_ids[idx] for idx in np.argsort(sims)[::-1][:5]
+                ],  # Top 5 for reference
+            }
+        )
+
+    # Sort by cumulative similarity (highest interference potential first)
+    interference_scores.sort(
+        key=lambda x: x["cumulative_neighbor_similarity"], reverse=True
+    )
+    analysis["encoding_interference_ranking"] = interference_scores
+
+    # Also provide top 10 highest and lowest interference
+    analysis["highest_interference_potential"] = interference_scores[:10]
+    analysis["lowest_interference_potential"] = interference_scores[-10:][
+        ::-1
+    ]  # Reverse to show lowest first
+
+    print(f"✓ Analyzed similarities for {n} images")
+
+    return analysis
+
+
 def visualize_embedding_space(
     embeddings: np.ndarray, image_ids: List[str], output_dir: Path, method: str = "tsne"
 ):
@@ -248,6 +377,7 @@ def save_results(
     embeddings: np.ndarray,
     similarity_matrix: np.ndarray,
     metrics: Dict,
+    similarity_analysis: Dict,
     image_ids: List[str],
     output_dir: Path,
 ):
@@ -269,6 +399,11 @@ def save_results(
     with open(output_dir / "diversity_metrics.json", "w") as f:
         json.dump(metrics, f, indent=2)
     print(f"  ✓ diversity_metrics.json")
+
+    # Save similarity analysis
+    with open(output_dir / "similarity_analysis.json", "w") as f:
+        json.dump(similarity_analysis, f, indent=2)
+    print(f"  ✓ similarity_analysis.json")
 
 
 def print_report(metrics: Dict):
@@ -308,6 +443,58 @@ def print_report(metrics: Dict):
     else:
         print("  → LOW DIVERSITY: Images share many semantic similarities")
 
+    print("=" * 70)
+
+
+def print_similarity_analysis(analysis: Dict):
+    """Print formatted similarity analysis report."""
+    print("\n" + "=" * 70)
+    print("IMAGE SIMILARITY ANALYSIS")
+    print("=" * 70)
+
+    # Most similar pairs
+    print("\nTop 10 Most Similar Image Pairs:")
+    print("-" * 70)
+    for i, pair in enumerate(analysis["most_similar_pairs"][:10], 1):
+        print(
+            f"{i:2d}. {pair['image_1']} ↔ {pair['image_2']}: {pair['similarity']:.4f}"
+        )
+
+    # Encoding interference: images in crowded neighborhoods
+    print("\n" + "=" * 70)
+    print("ENCODING INTERFERENCE POTENTIAL")
+    print("(Images in crowded semantic neighborhoods)")
+    print("=" * 70)
+    print("\nHighest Interference (most similar neighbors):")
+    print("-" * 70)
+    for i, img in enumerate(analysis["highest_interference_potential"], 1):
+        print(f"{i:2d}. Image {img['image_id']}")
+        print(
+            f"    Cumulative similarity to {img['k_neighbors_used']} nearest neighbors: {img['cumulative_neighbor_similarity']:.4f}"
+        )
+        print(f"    Average neighbor similarity: {img['avg_neighbor_similarity']:.4f}")
+        neighbors_dist = f"[0.3-0.4]: {img['neighbors_0.3_0.4']}, [0.4-0.5]: {img['neighbors_0.4_0.5']}, [0.5+]: {img['neighbors_0.5_plus']}"
+        print(f"    Neighbor distribution: {neighbors_dist}")
+
+    # Lowest interference: isolated images
+    print("\n" + "=" * 70)
+    print("Lowest Interference (most isolated in semantic space):")
+    print("-" * 70)
+    for i, img in enumerate(analysis["lowest_interference_potential"], 1):
+        print(f"{i:2d}. Image {img['image_id']}")
+        print(
+            f"    Cumulative similarity to {img['k_neighbors_used']} nearest neighbors: {img['cumulative_neighbor_similarity']:.4f}"
+        )
+        print(f"    Average neighbor similarity: {img['avg_neighbor_similarity']:.4f}")
+
+    print("=" * 70)
+    print("\nInterpretation:")
+    print(
+        "  • High cumulative similarity = crowded neighborhood = high encoding interference"
+    )
+    print("  • Low cumulative similarity = isolated image = low encoding interference")
+    print("\nNote: Full per-image details saved to similarity_analysis.json")
+    print("      Includes top 5 most similar neighbors for each image")
     print("=" * 70)
 
 
@@ -353,21 +540,36 @@ def main():
     # Compute metrics
     metrics = compute_diversity_metrics(similarity_matrix)
 
+    # Analyze image-specific similarities
+    similarity_analysis = analyze_image_similarities(
+        similarity_matrix, image_ids, top_k=5, similarity_threshold=0.5
+    )
+
     # Save results
-    save_results(embeddings, similarity_matrix, metrics, image_ids, OUTPUT_DIR)
+    save_results(
+        embeddings,
+        similarity_matrix,
+        metrics,
+        similarity_analysis,
+        image_ids,
+        OUTPUT_DIR,
+    )
 
     # Generate visualizations
     visualize_embedding_space(embeddings, image_ids, OUTPUT_DIR, method="tsne")
     visualize_embedding_space(embeddings, image_ids, OUTPUT_DIR, method="pca")
 
-    # Print report
+    # Print reports
     print_report(metrics)
+    print_similarity_analysis(similarity_analysis)
 
     print("\n" + "=" * 70)
     print("ANALYSIS COMPLETE")
     print("=" * 70)
     print(f"✓ Analyzed {len(image_ids)} manually selected images")
     print(f"✓ Results saved to: {OUTPUT_DIR}")
+    print(f"✓ Diversity metrics: {OUTPUT_DIR / 'diversity_metrics.json'}")
+    print(f"✓ Similarity analysis: {OUTPUT_DIR / 'similarity_analysis.json'}")
     print("=" * 70)
 
 

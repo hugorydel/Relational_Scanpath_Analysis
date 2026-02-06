@@ -1,12 +1,12 @@
 {
 	"150472": {
-		"main_action": "women share pizza slice",
+		"main_action": "women bite pizza slice",
 		"cue": "pizza",
 		"story": "Two women lean in with open mouths toward a large slice of pizza on a paper plate, each taking a bite from it.",
 		"distractors": [
 			"women photograph pizza slice",
-			"woman cuts large pizza",
-			"women carry pizza box"
+			"women cut large pizza",
+			"woman carries pizza box"
 		]
 	},
 	"2344622": {
@@ -24,9 +24,9 @@
 		"cue": "football",
 		"story": "A girl in a blue jersey runs towards a football while a girl in a white jersey runs alongside and challenges her for it.",
 		"distractors": [
-			"girl kicks football into goal",
-			"girl slides for football",
-			"girl catches football"
+			"man kicks football into goal",
+			"boy slides for football",
+			"goalkeeper catches football"
 		]
 	},
 	"2347025": {
@@ -46,7 +46,7 @@
 		"distractors": [
 			"men clink wine glasses",
 			"men sip wine together",
-			"men hold wine bottles"
+			"men grab wine bottles"
 		]
 	},
 	"2348899": {
@@ -70,19 +70,19 @@
 		]
 	},
 	"2350974": {
-		"main_action": "child stands next to car",
+		"main_action": "child drinks beside car",
 		"cue": "drink",
 		"story": "A child drinks from a bottle while standing next to a red car. The child rests a hand on the car door.",
 		"distractors": [
-			"child stands next to train",
-			"child stands next to bus",
-			"child stands next to stroller"
+			"adult drinks beside bus",
+			"child drinks beside stroller",
+			"adult drinks beside train"
 		]
 	},
 	"2356125": {
 		"main_action": "staff load luggage onto conveyor-belt",
 		"cue": "luggage",
-		"story": "Two uniformed women push large bags along an airport conveyor belt, while two other uniformed staff stand nearby.",
+		"story": "Two uniformed women push/move large bags along an airport conveyor belt, while two other uniformed staff stand nearby.",
 		"distractors": [
 			"staff scan luggage in an xray",
 			"staff load luggage onto a cart",
@@ -110,10 +110,14 @@
 		]
 	},
 	"2362704": {
-		"main_action": "bears eat pumpkins",
+		"main_action": "bears eat pumpkin",
 		"cue": "bears",
 		"story": "Two bears are eating pieces of a pumpkin on the ground. One bear has its face in the hollow pumpkin while the other eats a chunk nearby.",
-		"distractors": ["bears sniff pumpkins", "bears paw at ", "bears play with ball"]
+		"distractors": [
+			"bears sniff pumpkin",
+			"bears paw at pumpkin",
+			"bears fight over pumpkin"
+		]
 	},
 	"2363971": {
 		"main_action": "woman pets dog indoors",
@@ -147,7 +151,7 @@
 	},
 	"2369373": {
 		"main_action": "chef loads pizza into oven",
-		"cue": "oven",
+		"cue": "chef",
 		"story": "A chef opens the wood-fired oven and holds the oven door while looking into the flames.",
 		"distractors": [
 			"chef loads bread into oven",
@@ -226,12 +230,12 @@
 		]
 	},
 	"2387122": {
-		"main_action": "polar bear swims up to glass",
+		"main_action": "polar bear presses on glass",
 		"cue": "polar bear",
-		"story": "A polar bear swims in the water and presses against the enclosure glass while a person on the other side takes a photo of it.",
+		"story": "A polar bear swims in the water and presses against the enclosure glass while a woman on the other side takes a photo of it.",
 		"distractors": [
-			"polar bear sits by a woman",
-			"polar bear swims away",
+			"polar bear swims away from glass",
+			"polar bear sits on snowy ground",
 			"polar bear dives underwater"
 		]
 	},
@@ -252,7 +256,7 @@
 		"distractors": [
 			"cat sleeps beside baby",
 			"cat licks woman's hand",
-			"woman lifts up a cat"
+			"woman lifts up cat"
 		]
 	},
 	"2411268": {
@@ -262,27 +266,27 @@
 		"distractors": [
 			"child bites into apple",
 			"child picks apple up from the ground",
-			"child puts apple in bag"
+			"child puts apple into bag"
 		]
 	},
 	"2412687": {
-		"main_action": "dog plays frisbee",
+		"main_action": "dog bites onto frisbee",
 		"cue": "dog",
-		"story": "A person holds out a red frisbee toward a dog. The dog reaches its mouth toward the frisbee.",
+		"story": "A person holds out a red frisbee toward a dog. The dog bites onto the frisbee with its mouth.",
 		"distractors": [
 			"dog catches frisbee midair",
-			"dog chews red frisbee",
-			"dog ignores offered frisbee"
+			"dog ignores offered frisbee",
+			"man throws frisbee towards dog"
 		]
 	},
 	"2356991": {
-		"main_action": "baseball player reaches base",
+		"main_action": "player slides headfirst to base",
 		"cue": "baseball",
-		"story": "One player is sliding headfirst toward the base. A fielder stands by the base and catches the incoming ball.",
+		"story": "A player slides headfirst toward a base while another player in a glove catches a thrown ball beside the base.",
 		"distractors": [
-			"runner slides feet first",
-			"fielder tags runner out",
-			"catcher blocks home plate"
+			"player runs towards base",
+			"player slides feetfirst to base",
+			"gloved player misses the ball"
 		]
 	},
 	"2385851": {
@@ -290,59 +294,59 @@
 		"cue": "suitcase",
 		"story": "Two people walk along a covered walkway while each carries a large red suitcase.",
 		"distractors": [
-			"people drag suitcases rolling",
-			"people stack suitcases tall",
+			"men drag suitcases behind them",
+			"men stack suitcases on cart",
 			"man opens suitcase outside"
 		]
 	},
 	"2394020": {
-		"main_action": "men ride horses",
+		"main_action": "horseriders ride along shoreline",
 		"cue": "horserider",
 		"story": "Two riders are riding horses along the sandy shore beside the water.",
 		"distractors": [
-			"riders gallop through surf",
+			"horseriders gallop through water",
 			"riders stop by water",
-			"single rider walks horse"
+			"horserider walks horse"
 		]
 	},
 	"2406346": {
-		"main_action": "circus elephants on street",
+		"main_action": "circus elephants walk on street",
 		"cue": "circus",
 		"story": "One elephant reaches its trunk toward the tail/back area of another elephant walking ahead. A handler walks beside the elephants holding a stick and leading the elephants forward.",
 		"distractors": [
-			"elephants walk single file",
-			"handler washes elephant trunk",
-			"elephants stop for crowd"
+			"circus elephants perform tricks",
+			"circus elephants washed by handler",
+			"circus elephants stand on pedestals"
 		]
 	},
 	"2408717": {
-		"main_action": "surfers walk to ocean",
+		"main_action": "surfers walk towards water with surfboards",
 		"cue": "surfboard",
 		"story": "Several surfers walk along the shoreline while carrying their surfboards. Waves roll in front of them as they head down towards the beach.",
 		"distractors": [
-			"surfers sit on surfboards",
-			"surfers wax boards on sand",
-			"surfers carry boards uphill"
+			"surfers lie on surfboards",
+			"surfers wax surfboards on beach",
+			"surfers place surfboards into water"
 		]
 	},
 	"2409918": {
 		"main_action": "elephants swim in water",
-		"cue": "elephant riders",
-		"story": "Two men are riding elephants while they are standing in moderately deep water. One elephant is eating plants with its trunk.",
+		"cue": "elephant",
+		"story": "Two men are riding elephants while they are swimming in moderately deep water. One elephant is eating plants with its trunk.",
 		"distractors": [
-			"riders lead elephants ashore",
+			"elephants drink water with trunks",
 			"elephants splash riders playfully",
-			"riders sit elephants on land"
+			"elephants walk across the savannah"
 		]
 	},
 	"2410309": {
-		"main_action": "people using laptops",
-		"cue": "laptops",
+		"main_action": "woman and baby use laptops",
+		"cue": "laptop",
 		"story": "A woman sits on a couch using a laptop on her lap. A baby beside her touches and uses another open laptop.",
 		"distractors": [
-			"baby closes laptop lid",
-			"baby bangs laptop keys",
-			"woman shows baby laptop"
+			"woman closes laptop lid",
+			"baby plays with laptop charger",
+			"man types on laptop keyboard"
 		]
 	}
 }

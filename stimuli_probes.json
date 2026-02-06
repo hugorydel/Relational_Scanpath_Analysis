@@ -1,352 +1,1187 @@
 {
 	"150472": {
-		"main_action": "women bite pizza slice",
 		"cue": "pizza",
 		"story": "Two women lean in with open mouths toward a large slice of pizza on a paper plate, each taking a bite from it.",
-		"distractors": [
-			"women photograph pizza slice",
-			"women cut large pizza",
-			"woman carries pizza box"
+		"encoding_questions": [
+			{
+				"question": "How many women are in the scene?",
+				"options": ["one", "two", "three", "four"],
+				"answer": "two"
+			},
+			{
+				"question": "What are the women doing with the pizza?",
+				"options": ["biting", "cutting", "holding", "photographing"],
+				"answer": "biting"
+			},
+			{
+				"question": "Where is the pizza slice placed?",
+				"options": ["paper plate", "pizza box", "metal tray", "table"],
+				"answer": "paper plate"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"women bite pizza slice",
+					"women photograph pizza slice",
+					"women cut large pizza",
+					"woman carries pizza box"
+				],
+				"answer": "women bite pizza slice"
+			}
 		]
 	},
 	"2344622": {
-		"main_action": "cat lies near keyboard",
-		"cue": "keyboard",
-		"story": "A person is typing on a keyboard. A cat is resting its head next to the person's arm, near the keyboard.",
-		"distractors": [
-			"cat sits on keyboard",
-			"cat paws at keyboard",
-			"cat stands behind keyboard"
+		"cue": "cat",
+		"story": "A person is typing on a keyboard. A cat is resting its head next to the person's arm on top of a blue blanket, near the keyboard.",
+		"encoding_questions": [
+			{
+				"question": "Where is the cat positioned relative to other scene elements?",
+				"options": [
+					"next to keyboard",
+					"on keyboard",
+					"under blanket",
+					"on person's arm"
+				],
+				"answer": "next to keyboard"
+			},
+			{
+				"question": "What is the person doing at the keyboard?",
+				"options": ["typing on it", "cleaning it", "fixing it", "unplugging it"],
+				"answer": "typing on it"
+			},
+			{
+				"question": "What is the cat resting its head on?",
+				"options": ["person's arm", "keyboard edge", "plush toy", "blue blanket"],
+				"answer": "blue blanket"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"cat lies on blanket",
+					"cat lies on person's arm",
+					"cat paws at keyboard",
+					"cat paws at blanket"
+				],
+				"answer": "cat lies on blanket"
+			}
 		]
 	},
 	"2345035": {
-		"main_action": "girls run toward football",
 		"cue": "football",
 		"story": "A girl in a blue jersey runs towards a football while a girl in a white jersey runs alongside and challenges her for it.",
-		"distractors": [
-			"man kicks football into goal",
-			"boy slides for football",
-			"goalkeeper catches football"
+		"encoding_questions": [
+			{
+				"question": "Who runs toward the football in the scene?",
+				"options": ["girls", "boys", "men", "girl and boy"],
+				"answer": "girls"
+			},
+			{
+				"question": "What are the girls doing with the football?",
+				"options": ["chasing", "kicking", "catching", "holding"],
+				"answer": "chasing"
+			},
+			{
+				"question": "What color jersey is the leading girl wearing in the football chase?",
+				"options": ["blue", "white", "red", "black"],
+				"answer": "blue"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"girls run toward football",
+					"man kicks football into goal",
+					"boy slides for football",
+					"goalkeeper catches football"
+				],
+				"answer": "girls run toward football"
+			}
 		]
 	},
 	"2347025": {
-		"main_action": "baby holds umbrella",
 		"cue": "umbrella",
 		"story": "A woman carries a baby on her back. The baby holds up a pink umbrella above them.",
-		"distractors": [
-			"woman holds umbrella over baby",
-			"baby drags pink umbrella",
-			"baby sits under umbrella"
+		"encoding_questions": [
+			{
+				"question": "Who is holding the umbrella in the scene?",
+				"options": ["baby", "woman", "man", "girl"],
+				"answer": "baby"
+			},
+			{
+				"question": "What color is the umbrella in the scene?",
+				"options": ["pink", "blue", "yellow", "black"],
+				"answer": "pink"
+			},
+			{
+				"question": "Where is the baby being carried?",
+				"options": ["on back", "in arms", "in stroller", "on shoulders"],
+				"answer": "on back"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"baby holds onto umbrella",
+					"woman holds umbrella over baby",
+					"baby drags pink umbrella",
+					"baby lies under umbrella"
+				],
+				"answer": "baby holds onto umbrella"
+			}
 		]
 	},
 	"2347400": {
-		"main_action": "men smell wine",
 		"cue": "wine",
 		"story": "Two men sit on a couch, each holding a wine glass near their faces and smelling the wine.",
-		"distractors": [
-			"men clink wine glasses",
-			"men sip wine together",
-			"men grab wine bottles"
+		"encoding_questions": [
+			{
+				"question": "How many men are in the scene?",
+				"options": ["one", "two", "three", "four"],
+				"answer": "two"
+			},
+			{
+				"question": "What are the men doing with the wine?",
+				"options": ["smelling", "sipping", "pouring", "clinking"],
+				"answer": "smelling"
+			},
+			{
+				"question": "What are the men sitting on in the scene?",
+				"options": ["couch", "bench", "table", "chairs"],
+				"answer": "couch"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"men smell wine glasses",
+					"men clink wine glasses",
+					"men sip from wine glasses",
+					"men grab wine bottles"
+				],
+				"answer": "men smell wine glasses"
+			}
 		]
 	},
 	"2348899": {
-		"main_action": "woman adjusts man's tie",
 		"cue": "tie",
-		"story": "A woman touches the seated man's striped tie while he smiles. A man in a suit leans in and gestures toward the seated man during their conversation.",
-		"distractors": [
-			"man points at striped tie",
-			"man loosens his tie",
-			"woman gives man tie"
+		"story": "A woman touches/holds the seated man's striped tie while he smiles. A man in a suit leans in and gestures toward the seated man during their conversation.",
+		"encoding_questions": [
+			{
+				"question": "What is the woman doing to the man's tie?",
+				"options": ["holding", "removing", "tying", "putting on"],
+				"answer": "holding"
+			},
+			{
+				"question": "What pattern is on the man's tie?",
+				"options": ["striped", "polka-dot", "plain", "checkered"],
+				"answer": "striped"
+			},
+			{
+				"question": "Who gestures toward the seated man?",
+				"options": ["suited man", "woman", "seated man", "child"],
+				"answer": "suited man"
+			},
+			{
+				"question": "What is the hair color of the woman in the scene?",
+				"options": ["black", "brown", "blonde", "ginger"],
+				"answer": "blonde"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"woman holds man's tie",
+					"man holds his striped tie",
+					"man loosens his tie",
+					"woman gives man tie"
+				],
+				"answer": "woman holds man's tie"
+			}
 		]
 	},
 	"2349475": {
-		"main_action": "woman holds onto blender",
 		"cue": "blender",
 		"story": "A man uses a bike to power a blender while a woman holds the lid of the blender filled with liquid.",
-		"distractors": [
-			"woman presses blender button",
-			"woman opens blender lid",
-			"woman cranks blender handle"
+		"encoding_questions": [
+			{
+				"question": "Who holds the blender lid in the scene?",
+				"options": ["woman", "man", "child", "worker"],
+				"answer": "woman"
+			},
+			{
+				"question": "How is the blender powered in the scene?",
+				"options": ["bicycle", "battery", "outlet", "hand-crank"],
+				"answer": "bicycle"
+			},
+			{
+				"question": "What is the color of the blender's contents?",
+				"options": ["yellow", "red", "purple", "pink"],
+				"answer": "light yellow"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"woman holds onto blender",
+					"woman presses blender button",
+					"woman opens blender lid",
+					"woman cranks blender handle"
+				],
+				"answer": "woman holds onto blender"
+			}
 		]
 	},
 	"2350974": {
-		"main_action": "child drinks beside car",
 		"cue": "drink",
 		"story": "A child drinks from a bottle while standing next to a red car. The child rests a hand on the car door.",
-		"distractors": [
-			"adult drinks beside bus",
-			"child drinks beside stroller",
-			"adult drinks beside train"
+		"encoding_questions": [
+			{
+				"question": "Who is drinking from a bottle in the scene?",
+				"options": ["child", "adult", "teen", "baby"],
+				"answer": "child"
+			},
+			{
+				"question": "What is the child standing beside?",
+				"options": ["red car", "red bus", "grey train", "grey stroller"],
+				"answer": "red car"
+			},
+			{
+				"question": "Where is the child's hand against?",
+				"options": ["car door", "car roof", "car window", "side mirror"],
+				"answer": "car door"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"child drinks beside car",
+					"adult drinks beside bus",
+					"child drinks beside stroller",
+					"adult drinks beside train"
+				],
+				"answer": "child drinks beside car"
+			}
 		]
 	},
 	"2356125": {
-		"main_action": "staff load luggage onto conveyor-belt",
 		"cue": "luggage",
 		"story": "Two uniformed women push/move large bags along an airport conveyor belt, while two other uniformed staff stand nearby.",
-		"distractors": [
-			"staff scan luggage in an xray",
-			"staff load luggage onto a cart",
-			"staff tag luggage at a counter"
+		"encoding_questions": [
+			{
+				"question": "What are staff moving along the conveyor belt?",
+				"options": ["luggage", "boxes", "mail", "crates"],
+				"answer": "luggage"
+			},
+			{
+				"question": "Where is the luggage being moved?",
+				"options": ["conveyor belt", "baggage cart", "xray belt", "counter"],
+				"answer": "conveyor belt"
+			},
+			{
+				"question": "How many uniformed staff are visible in the scene?",
+				"options": ["two", "three", "four", "five"],
+				"answer": "four"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"staff load luggage onto conveyor belt",
+					"staff scan luggage in an xray",
+					"staff load luggage onto a cart",
+					"staff tag luggage at a counter"
+				],
+				"answer": "staff load luggage onto conveyor belt"
+			}
 		]
 	},
 	"2360001": {
-		"main_action": "workers move large clock",
 		"cue": "clock",
-		"story": "Two workers are positioning a large round sign on a building facade, with one of them steadying it while the other attaches it to the bracket.",
-		"distractors": [
-			"workers wipe clock face",
-			"workers paint old clock",
-			"workers lift ladder to clock"
+		"story": "Two workers are lifting a large round clock onto a building facade, with one of them steadying it while the other attaches it to the bracket and weaves through a cable.",
+		"encoding_questions": [
+			{
+				"question": "What object are the workers holding?",
+				"options": ["large clock", "round sign", "wall light", "street sign"],
+				"answer": "large clock"
+			},
+			{
+				"question": "Which part of the building is the clock positioned onto?",
+				"options": ["facade", "doorway", "balcony", "roof edge"],
+				"answer": "facade"
+			},
+			{
+				"question": "What are the workers doing to the clock?",
+				"options": ["lifting", "wiping", "painting", "measuring"],
+				"answer": "lifting"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"workers lift large clock",
+					"workers wipe large clock face",
+					"workers paint old clock",
+					"workers raise ladder up to clock"
+				],
+				"answer": "workers lift large clock"
+			}
 		]
 	},
 	"2362277": {
-		"main_action": "person throws a frisbee",
 		"cue": "frisbee",
 		"story": "A player in white runs while attempting to throw a frisbee. A player in red closely blocks him from throwing the frisbee.",
-		"distractors": [
-			"player picks up a frisbee",
-			"player catches frisbee overhead",
-			"player catches frisbee at waist"
+		"encoding_questions": [
+			{
+				"question": "What is the player in white doing to the frisbee?",
+				"options": ["throwing", "catching", "picking up", "blocking"],
+				"answer": "throwing"
+			},
+			{
+				"question": "What colored shirt is the blocking player wearing?",
+				"options": ["red", "blue", "black", "green"],
+				"answer": "red"
+			},
+			{
+				"question": "How is the defender positioned relative to the thrower?",
+				"options": [
+					"closely blocking",
+					"running ahead",
+					"running towards",
+					"standing in front"
+				],
+				"answer": "closely blocking"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"player throws a frisbee",
+					"player runs towards frisbee",
+					"player catches frisbee overhead",
+					"player catches frisbee at waist"
+				],
+				"answer": "player throws a frisbee"
+			}
 		]
 	},
 	"2362704": {
-		"main_action": "bears eat pumpkin",
 		"cue": "bears",
 		"story": "Two bears are eating pieces of a pumpkin on the ground. One bear has its face in the hollow pumpkin while the other eats a chunk nearby.",
-		"distractors": [
-			"bears sniff pumpkin",
-			"bears paw at pumpkin",
-			"bears fight over pumpkin"
+		"encoding_questions": [
+			{
+				"question": "How many bears are in the scene?",
+				"options": ["one", "two", "three", "four"],
+				"answer": "two"
+			},
+			{
+				"question": "What are the bears doing with the pumpkin?",
+				"options": ["eating", "sniffing", "pawing", "fighting over"],
+				"answer": "eating"
+			},
+			{
+				"question": "Where is the pumpkin located in the scene?",
+				"options": ["ground", "tree", "water", "rock"],
+				"answer": "ground"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"bears eat pumpkin",
+					"bears sniff pumpkin",
+					"bears paw at pumpkin",
+					"bears fight over pumpkin"
+				],
+				"answer": "bears eat pumpkin"
+			}
 		]
 	},
 	"2363971": {
-		"main_action": "woman pets dog indoors",
 		"cue": "petting",
 		"story": "A woman pets a large dog in the foreground while another woman in a chair holds a child upside down on her lap.",
-		"distractors": [
-			"woman pets dog outside",
-			"child pets dog outside",
-			"child pets dog indoors"
+		"encoding_questions": [
+			{
+				"question": "What animal is the woman petting in the scene?",
+				"options": ["dog", "cat", "horse", "rabbit"],
+				"answer": "dog"
+			},
+			{
+				"question": "Where does the petting occur in the scene?",
+				"options": ["indoors", "outdoors", "street", "park"],
+				"answer": "indoors"
+			},
+			{
+				"question": "What is the seated woman (in background) doing with the child?",
+				"options": [
+					"holding it upside down",
+					"feeding it",
+					"hugging it",
+					"reading to it"
+				],
+				"answer": "holding it upside down"
+			},
+			{
+				"question": "How many people are in the scene?",
+				"options": ["two", "three", "four", "five"],
+				"answer": "four"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"woman pets dog indoors",
+					"woman pets cat outside",
+					"child pets horse outside",
+					"child pets dog indoors"
+				],
+				"answer": "woman pets dog indoors"
+			}
 		]
 	},
 	"2366915": {
-		"main_action": "surfers ride a wave",
 		"cue": "surfer",
 		"story": "Two surfers ride along the same breaking wave as water sprays behind and around them.",
-		"distractors": [
-			"surfers paddle toward wave",
-			"surfers stand on surfboards",
-			"surfers walk with surfboards"
+		"encoding_questions": [
+			{
+				"question": "How many surfers are riding the wave?",
+				"options": ["one", "two", "three", "four"],
+				"answer": "two"
+			},
+			{
+				"question": "What are the surfers doing on the wave?",
+				"options": ["riding", "paddling", "walking", "waxing"],
+				"answer": "riding"
+			},
+			{
+				"question": "What is spraying behind the surfers?",
+				"options": ["water", "sand", "foam", "mist"],
+				"answer": "water"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"surfers ride a wave",
+					"surfers paddle toward wave",
+					"surfers stand on surfboards",
+					"surfers walk with surfboards"
+				],
+				"answer": "surfers ride a wave"
+			}
 		]
 	},
 	"2367132": {
-		"main_action": "men play video game",
 		"cue": "video game",
 		"story": "Two men are playing a video game while holding motion controllers and moving their arms.",
-		"distractors": [
-			"men watch video game on TV",
-			"men play game with xbox controllers",
-			"men turn on video game console"
+		"encoding_questions": [
+			{
+				"question": "How many men are playing in the scene?",
+				"options": ["one", "two", "three", "four"],
+				"answer": "two"
+			},
+			{
+				"question": "What are the men playing in the scene?",
+				"options": ["video game", "card game", "board game", "ball game"],
+				"answer": "video game"
+			},
+			{
+				"question": "What are the men holding while playing?",
+				"options": [
+					"motion controllers",
+					"xbox controllers",
+					"remote controls",
+					"game cards"
+				],
+				"answer": "motion controllers"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"men play video game",
+					"men watch video game on TV",
+					"men play game with xbox controllers",
+					"men turn on video game console"
+				],
+				"answer": "men play video game"
+			}
 		]
 	},
 	"2369373": {
-		"main_action": "chef loads pizza into oven",
 		"cue": "chef",
 		"story": "A chef opens the wood-fired oven and holds the oven door while looking into the flames.",
-		"distractors": [
-			"chef loads bread into oven",
-			"chef pulls tray from oven",
-			"chef stokes oven flames"
+		"encoding_questions": [
+			{
+				"question": "What is the chef doing with the oven?",
+				"options": ["opening", "closing", "cleaning", "stoking"],
+				"answer": "opening"
+			},
+			{
+				"question": "What type of oven is shown in the scene?",
+				"options": ["wood-fired", "electric", "microwave", "gas"],
+				"answer": "wood-fired"
+			},
+			{
+				"question": "What is visible inside the oven?",
+				"options": ["flames", "smoke", "tray", "bread"],
+				"answer": "flames"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"chef loads pizza into oven",
+					"chef loads bread into oven",
+					"chef pulls tray from oven",
+					"chef stokes oven flames"
+				],
+				"answer": "chef loads pizza into oven"
+			}
 		]
 	},
 	"2370664": {
-		"main_action": "people bite into donuts",
 		"cue": "donuts",
 		"story": "Two men and a woman are taking bites of donuts. They are close together outdoors, holding the donuts up to their mouths.",
-		"distractors": [
-			"people dip donuts in coffee",
-			"man offers donut to woman",
-			"people hold donuts over eyes"
+		"encoding_questions": [
+			{
+				"question": "How many people are biting donuts in the scene?",
+				"options": ["two", "three", "four", "five"],
+				"answer": "three"
+			},
+			{
+				"question": "What are the people doing with the donuts?",
+				"options": ["biting", "dipping", "offering", "balancing"],
+				"answer": "biting"
+			},
+			{
+				"question": "Where are the people located in the scene?",
+				"options": ["outdoors", "indoors", "car", "kitchen"],
+				"answer": "outdoors"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"people bite into donuts",
+					"people dip donuts in coffee",
+					"man offers donut to woman",
+					"people hold donuts over eyes"
+				],
+				"answer": "people bite into donuts"
+			}
 		]
 	},
 	"2371471": {
-		"main_action": "motorcyclists jump over ramp",
 		"cue": "motorcycle",
 		"story": "Two motorcyclists are airborne on dirt bikes inside a building, performing jumps above a ramp.",
-		"distractors": [
-			"motorcyclists wait by ramp",
-			"motorcyclists land after jump",
-			"motorcyclists ride up ramp"
+		"encoding_questions": [
+			{
+				"question": "How many motorcyclists are airborne in the scene?",
+				"options": ["one", "two", "three", "four"],
+				"answer": "two"
+			},
+			{
+				"question": "What are the motorcyclists doing over the ramp?",
+				"options": ["jumping", "parking", "turning", "stopping"],
+				"answer": "jumping"
+			},
+			{
+				"question": "Where are the motorcyclists performing the jump?",
+				"options": ["indoors", "outdoors", "tunnel", "street"],
+				"answer": "indoors"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"motorcyclists jump over ramp",
+					"motorcyclists wait by ramp",
+					"motorcyclists land after jump",
+					"motorcyclists ride up ramp"
+				],
+				"answer": "motorcyclists jump over ramp"
+			}
 		]
 	},
 	"2374670": {
-		"main_action": "truck sprays water",
 		"cue": "truck",
 		"story": "A red truck sprays water onto a dirt track through nozzles at the back. A man is climbing on the back of the truck while it operates.",
-		"distractors": [
-			"truck dumps gravel onto road",
-			"truck pulls broken car",
-			"truck fills water tank"
+		"encoding_questions": [
+			{
+				"question": "What vehicle sprays water in the scene?",
+				"options": ["red truck", "bus", "tractor", "van"],
+				"answer": "red truck"
+			},
+			{
+				"question": "What is being sprayed onto the track?",
+				"options": ["water", "sand", "foam", "mud"],
+				"answer": "water"
+			},
+			{
+				"question": "Where is the man positioned on the truck?",
+				"options": ["back", "roof", "cab", "front"],
+				"answer": "back"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"truck sprays water",
+					"truck dumps gravel onto road",
+					"truck pulls broken car",
+					"truck fills water tank"
+				],
+				"answer": "truck sprays water"
+			}
 		]
 	},
 	"2379478": {
-		"main_action": "two babies drink from milk bottles",
 		"cue": "milk",
 		"story": "Two babies are lying on a bed, each drinking from a milk bottle.",
-		"distractors": [
-			"one baby drinks from a milk bottle",
-			"one baby reaches for milk bottle",
-			"two babies reach for milk bottle"
+		"encoding_questions": [
+			{
+				"question": "How many babies are in the scene?",
+				"options": ["one", "two", "three", "four"],
+				"answer": "two"
+			},
+			{
+				"question": "What are the babies drinking from?",
+				"options": ["milk bottles", "juice boxes", "sippy cups", "water bottles"],
+				"answer": "milk bottles"
+			},
+			{
+				"question": "Where are the babies lying in the scene?",
+				"options": ["bed", "floor", "crib", "couch"],
+				"answer": "bed"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"two babies drink from milk bottles",
+					"one baby drinks from a milk bottle",
+					"one baby reaches for milk bottle",
+					"two babies reach for milk bottle"
+				],
+				"answer": "two babies drink from milk bottles"
+			}
 		]
 	},
 	"2383555": {
-		"main_action": "woman holds child on boat",
 		"cue": "boat",
 		"story": "A woman sits in a small boat holding a child on her lap. A woman behind her rows the boat through the water.",
-		"distractors": [
-			"two women row a boat",
-			"child sits alone in boat",
-			"man steps onto a boat"
+		"encoding_questions": [
+			{
+				"question": "Who is holding the child in the boat?",
+				"options": ["woman", "man", "girl", "boy"],
+				"answer": "woman"
+			},
+			{
+				"question": "What is the woman behind doing in the boat?",
+				"options": ["rowing", "standing", "sleeping", "waving"],
+				"answer": "rowing"
+			},
+			{
+				"question": "What type of boat is shown in the scene?",
+				"options": ["small boat", "speedboat", "canoe", "ferry"],
+				"answer": "small boat"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"woman holds child on boat",
+					"two women row a boat",
+					"child sits alone in boat",
+					"man steps onto a boat"
+				],
+				"answer": "woman holds child on boat"
+			}
 		]
 	},
 	"2385550": {
-		"main_action": "children have tangerines in mouths",
 		"cue": "tangerines",
 		"story": "A boy and a girl each have a tangerine in their mouth and are eating it while facing the camera.",
-		"distractors": [
-			"children peel tangerines",
-			"children hold tangerines in hands",
-			"children pick tangerines from tree"
+		"encoding_questions": [
+			{
+				"question": "How many children have tangerines in their mouths?",
+				"options": ["one", "two", "three", "four"],
+				"answer": "two"
+			},
+			{
+				"question": "Where are the tangerines placed in the scene?",
+				"options": ["in mouths", "in hands", "on table", "in bowl"],
+				"answer": "in mouths"
+			},
+			{
+				"question": "How are the children oriented in the scene?",
+				"options": ["facing camera", "facing away", "looking down", "looking sideways"],
+				"answer": "facing camera"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"children have tangerines in mouths",
+					"children peel tangerines",
+					"children hold tangerines in hands",
+					"children pick tangerines from tree"
+				],
+				"answer": "children have tangerines in mouths"
+			}
 		]
 	},
 	"2386442": {
-		"main_action": "family brushes teeth together",
 		"cue": "teeth",
 		"story": "A woman, a child, and a man are each brushing their teeth with toothbrushes. They are facing the camera while brushing.",
-		"distractors": [
-			"child flosses teeth carefully",
-			"family checks teeth in mirror",
-			"woman brushes a child's teeth"
+		"encoding_questions": [
+			{
+				"question": "How many people are brushing their teeth?",
+				"options": ["two", "three", "four", "five"],
+				"answer": "three"
+			},
+			{
+				"question": "What are they using to brush their teeth?",
+				"options": ["toothbrushes", "floss", "towels", "cups"],
+				"answer": "toothbrushes"
+			},
+			{
+				"question": "Who is included in the toothbrushing group?",
+				"options": ["woman", "man", "child", "all three"],
+				"answer": "all three"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"family brushes teeth together",
+					"child flosses teeth carefully",
+					"family checks teeth in mirror",
+					"woman brushes a child's teeth"
+				],
+				"answer": "family brushes teeth together"
+			}
 		]
 	},
 	"2387122": {
-		"main_action": "polar bear presses on glass",
 		"cue": "polar bear",
 		"story": "A polar bear swims in the water and presses against the enclosure glass while a woman on the other side takes a photo of it.",
-		"distractors": [
-			"polar bear swims away from glass",
-			"polar bear sits on snowy ground",
-			"polar bear dives underwater"
+		"encoding_questions": [
+			{
+				"question": "What animal presses against the glass?",
+				"options": ["polar bear", "seal", "dolphin", "shark"],
+				"answer": "polar bear"
+			},
+			{
+				"question": "Where is the polar bear located in the scene?",
+				"options": ["in water", "on ice", "on rocks", "on sand"],
+				"answer": "in water"
+			},
+			{
+				"question": "What is the woman doing on the other side?",
+				"options": ["taking photo", "feeding bear", "wiping glass", "pointing"],
+				"answer": "taking photo"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"polar bear presses on glass",
+					"polar bear swims away from glass",
+					"polar bear sits on snowy ground",
+					"polar bear dives underwater"
+				],
+				"answer": "polar bear presses on glass"
+			}
 		]
 	},
 	"2397102": {
-		"main_action": "couple cuts cake together",
 		"cue": "cake",
 		"story": "A woman and a man are cutting a decorated wedding cake together while the man holds a bottle in his other hand.",
-		"distractors": [
-			"couple feeds each other cake",
-			"couple poses with wedding cake",
-			"couple kisses beside cake"
+		"encoding_questions": [
+			{
+				"question": "What are the couple doing with the cake?",
+				"options": ["cutting", "feeding", "kissing", "posing"],
+				"answer": "cutting"
+			},
+			{
+				"question": "What type of cake is being cut?",
+				"options": ["wedding cake", "birthday cake", "cupcake tower", "fruit cake"],
+				"answer": "wedding cake"
+			},
+			{
+				"question": "What is the man holding besides the cake?",
+				"options": ["bottle", "plate", "knife", "glass"],
+				"answer": "bottle"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"couple cuts cake together",
+					"couple feeds each other cake",
+					"couple poses with wedding cake",
+					"couple kisses beside cake"
+				],
+				"answer": "couple cuts cake together"
+			}
 		]
 	},
 	"2401636": {
-		"main_action": "baby looks at cat",
-		"cue": "cat",
+		"cue": "baby",
 		"story": "A cat leans toward and sniffs a baby sitting beside it. A woman holds the cat close while watching them.",
-		"distractors": [
-			"cat sleeps beside baby",
-			"cat licks woman's hand",
-			"woman lifts up cat"
+		"encoding_questions": [
+			{
+				"question": "Who is looking at the cat in the scene?",
+				"options": ["baby", "woman", "man", "girl"],
+				"answer": "baby"
+			},
+			{
+				"question": "What is the cat doing toward the baby?",
+				"options": ["sniffing", "sleeping", "scratching", "hiding"],
+				"answer": "sniffing"
+			},
+			{
+				"question": "Who holds the cat close in the scene?",
+				"options": ["woman", "man", "child", "nurse"],
+				"answer": "woman"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"baby looks at cat",
+					"cat sleeps beside baby",
+					"cat licks woman's hand",
+					"woman lifts up cat"
+				],
+				"answer": "baby looks at cat"
+			}
 		]
 	},
 	"2411268": {
-		"main_action": "child picks apple from tree",
 		"cue": "apple",
 		"story": "A child reaches up to pick an apple from a tree while holding a bag for collecting fruit.",
-		"distractors": [
-			"child bites into apple",
-			"child picks apple up from the ground",
-			"child puts apple into bag"
+		"encoding_questions": [
+			{
+				"question": "What fruit is the child picking from the tree?",
+				"options": ["apple", "orange", "pear", "peach"],
+				"answer": "apple"
+			},
+			{
+				"question": "Where is the apple located in the scene?",
+				"options": ["on tree", "on ground", "in basket", "in hand"],
+				"answer": "on tree"
+			},
+			{
+				"question": "What is the child holding while picking fruit?",
+				"options": ["bag", "bucket", "box", "basket"],
+				"answer": "bag"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"child picks apple from tree",
+					"child bites into apple",
+					"child picks apple up from the ground",
+					"child puts apple into bag"
+				],
+				"answer": "child picks apple from tree"
+			}
 		]
 	},
 	"2412687": {
-		"main_action": "dog bites onto frisbee",
 		"cue": "dog",
 		"story": "A person holds out a red frisbee toward a dog. The dog bites onto the frisbee with its mouth.",
-		"distractors": [
-			"dog catches frisbee midair",
-			"dog ignores offered frisbee",
-			"man throws frisbee towards dog"
+		"encoding_questions": [
+			{
+				"question": "What is the dog biting in the scene?",
+				"options": ["frisbee", "stick", "ball", "rope"],
+				"answer": "frisbee"
+			},
+			{
+				"question": "What color is the frisbee in the scene?",
+				"options": ["red", "blue", "green", "yellow"],
+				"answer": "red"
+			},
+			{
+				"question": "What is the person doing with the frisbee?",
+				"options": ["holding out", "throwing", "kicking", "dropping"],
+				"answer": "holding out"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"dog bites onto frisbee",
+					"dog catches frisbee midair",
+					"dog ignores offered frisbee",
+					"man throws frisbee towards dog"
+				],
+				"answer": "dog bites onto frisbee"
+			}
 		]
 	},
 	"2356991": {
-		"main_action": "player slides headfirst to base",
 		"cue": "baseball",
 		"story": "A player slides headfirst toward a base while another player in a glove catches a thrown ball beside the base.",
-		"distractors": [
-			"player runs towards base",
-			"player slides feetfirst to base",
-			"gloved player misses the ball"
+		"encoding_questions": [
+			{
+				"question": "How is the player sliding toward the base?",
+				"options": ["headfirst", "feetfirst", "standing", "kneeling"],
+				"answer": "headfirst"
+			},
+			{
+				"question": "What is the other player doing near the base?",
+				"options": ["catching ball", "dropping ball", "throwing bat", "tagging runner"],
+				"answer": "catching ball"
+			},
+			{
+				"question": "What item is the nearby player wearing?",
+				"options": ["glove", "helmet", "mask", "cap"],
+				"answer": "glove"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"player slides headfirst to base",
+					"player runs towards base",
+					"player slides feetfirst to base",
+					"gloved player misses the ball"
+				],
+				"answer": "player slides headfirst to base"
+			}
 		]
 	},
 	"2385851": {
-		"main_action": "men carry suitcases",
 		"cue": "suitcase",
 		"story": "Two people walk along a covered walkway while each carries a large red suitcase.",
-		"distractors": [
-			"men drag suitcases behind them",
-			"men stack suitcases on cart",
-			"man opens suitcase outside"
+		"encoding_questions": [
+			{
+				"question": "What are the men carrying in the scene?",
+				"options": ["red suitcases", "black backpacks", "blue boxes", "brown bags"],
+				"answer": "red suitcases"
+			},
+			{
+				"question": "How many suitcases are being carried?",
+				"options": ["one", "two", "three", "four"],
+				"answer": "two"
+			},
+			{
+				"question": "Where are they walking in the scene?",
+				"options": ["covered walkway", "train platform", "airport runway", "hotel lobby"],
+				"answer": "covered walkway"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"men carry suitcases",
+					"men drag suitcases behind them",
+					"men stack suitcases on cart",
+					"man opens suitcase outside"
+				],
+				"answer": "men carry suitcases"
+			}
 		]
 	},
 	"2394020": {
-		"main_action": "horseriders ride along shoreline",
 		"cue": "horserider",
 		"story": "Two riders are riding horses along the sandy shore beside the water.",
-		"distractors": [
-			"horseriders gallop through water",
-			"riders stop by water",
-			"horserider walks horse"
+		"encoding_questions": [
+			{
+				"question": "What are the riders doing along the shore?",
+				"options": ["riding", "walking", "jumping", "resting"],
+				"answer": "riding"
+			},
+			{
+				"question": "How many riders are visible in the scene?",
+				"options": ["one", "two", "three", "four"],
+				"answer": "two"
+			},
+			{
+				"question": "Where are the horses being ridden?",
+				"options": ["shoreline", "forest", "road", "field"],
+				"answer": "shoreline"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"horseriders ride along shoreline",
+					"horseriders gallop through water",
+					"riders stop by water",
+					"horserider walks horse"
+				],
+				"answer": "horseriders ride along shoreline"
+			}
 		]
 	},
 	"2406346": {
-		"main_action": "circus elephants walk on street",
 		"cue": "circus",
 		"story": "One elephant reaches its trunk toward the tail/back area of another elephant walking ahead. A handler walks beside the elephants holding a stick and leading the elephants forward.",
-		"distractors": [
-			"circus elephants perform tricks",
-			"circus elephants washed by handler",
-			"circus elephants stand on pedestals"
+		"encoding_questions": [
+			{
+				"question": "What animals are walking on the street?",
+				"options": ["elephants", "horses", "camels", "cows"],
+				"answer": "elephants"
+			},
+			{
+				"question": "What body part reaches toward the other elephant?",
+				"options": ["trunk", "tail", "leg", "ear"],
+				"answer": "trunk"
+			},
+			{
+				"question": "Who leads the elephants forward in the scene?",
+				"options": ["handler", "clown", "child", "rider"],
+				"answer": "handler"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"circus elephants walk on street",
+					"circus elephants perform tricks",
+					"circus elephants washed by handler",
+					"circus elephants stand on pedestals"
+				],
+				"answer": "circus elephants walk on street"
+			}
 		]
 	},
 	"2408717": {
-		"main_action": "surfers walk towards water with surfboards",
 		"cue": "surfboard",
 		"story": "Several surfers walk along the shoreline while carrying their surfboards. Waves roll in front of them as they head down towards the beach.",
-		"distractors": [
-			"surfers lie on surfboards",
-			"surfers wax surfboards on beach",
-			"surfers place surfboards into water"
+		"encoding_questions": [
+			{
+				"question": "What are the surfers carrying in the scene?",
+				"options": ["surfboards", "paddles", "lifejackets", "helmets"],
+				"answer": "surfboards"
+			},
+			{
+				"question": "Where are the surfers walking toward?",
+				"options": ["water", "parking", "cliffs", "boats"],
+				"answer": "water"
+			},
+			{
+				"question": "Where are the surfers walking in the scene?",
+				"options": ["shoreline", "street", "forest", "riverbank"],
+				"answer": "shoreline"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"surfers walk towards water with surfboards",
+					"surfers lie on surfboards",
+					"surfers wax surfboards on beach",
+					"surfers place surfboards into water"
+				],
+				"answer": "surfers walk towards water with surfboards"
+			}
 		]
 	},
 	"2409918": {
-		"main_action": "elephants swim in water",
 		"cue": "elephant",
 		"story": "Two men are riding elephants while they are swimming in moderately deep water. One elephant is eating plants with its trunk.",
-		"distractors": [
-			"elephants drink water with trunks",
-			"elephants splash riders playfully",
-			"elephants walk across the savannah"
+		"encoding_questions": [
+			{
+				"question": "What animals are swimming in the water?",
+				"options": ["elephants", "hippos", "horses", "buffalo"],
+				"answer": "elephants"
+			},
+			{
+				"question": "Who is riding the elephants in the scene?",
+				"options": ["two men", "two women", "one man", "children"],
+				"answer": "two men"
+			},
+			{
+				"question": "What is one elephant doing with its trunk?",
+				"options": ["eating plants", "spraying water", "holding rider", "lifting log"],
+				"answer": "eating plants"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"elephants swim in water",
+					"elephants drink water with trunks",
+					"elephants splash riders playfully",
+					"elephants walk across the savannah"
+				],
+				"answer": "elephants swim in water"
+			}
 		]
 	},
 	"2410309": {
-		"main_action": "woman and baby use laptops",
 		"cue": "laptop",
 		"story": "A woman sits on a couch using a laptop on her lap. A baby beside her touches and uses another open laptop.",
-		"distractors": [
-			"woman closes laptop lid",
-			"baby plays with laptop charger",
-			"man types on laptop keyboard"
+		"encoding_questions": [
+			{
+				"question": "What device is the woman using on the couch?",
+				"options": ["laptop", "tablet", "phone", "book"],
+				"answer": "laptop"
+			},
+			{
+				"question": "What is the baby doing with the other laptop?",
+				"options": ["touching", "closing", "carrying", "cleaning"],
+				"answer": "touching"
+			},
+			{
+				"question": "How many open laptops are in the scene?",
+				"options": ["one", "two", "three", "four"],
+				"answer": "two"
+			}
+		],
+		"decoding_questions": [
+			{
+				"question": "Which scene matches the image?",
+				"options": [
+					"woman and baby use laptops",
+					"woman closes laptop lid",
+					"baby plays with laptop charger",
+					"man types on laptop keyboard"
+				],
+				"answer": "woman and baby use laptops"
+			}
 		]
 	}
 }

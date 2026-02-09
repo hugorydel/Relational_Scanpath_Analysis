@@ -10,16 +10,16 @@
 			},
 			{
 				"question": "What are the women doing with the pizza?",
-				"options": ["biting", "cutting", "holding", "photographing"],
-				"answer": "biting"
+				"options": ["biting it", "cutting it", "holding it", "photographing it"],
+				"answer": "biting it"
 			},
 			{
-				"question": "Where is the pizza slice placed?",
-				"options": ["paper plate", "pizza box", "metal tray", "table"],
-				"answer": "paper plate"
+				"question": "Where is the pizza slice?",
+				"options": ["on paper plate", "in pizza box", "on metal tray", "on table"],
+				"answer": "on paper plate"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -57,7 +57,7 @@
 				"answer": "blue blanket"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -90,7 +90,7 @@
 				"answer": "blue"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -123,7 +123,7 @@
 				"answer": "on back"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -156,7 +156,7 @@
 				"answer": "couch"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -175,30 +175,25 @@
 		"encoding_questions": [
 			{
 				"question": "What is the woman doing to the man's tie?",
-				"options": ["holding", "removing", "tying", "putting on"],
-				"answer": "holding"
+				"options": ["touching it", "removing it", "tying it", "folding it"],
+				"answer": "touching it"
 			},
 			{
-				"question": "What pattern is on the man's tie?",
-				"options": ["striped", "polka-dot", "plain", "checkered"],
-				"answer": "striped"
-			},
-			{
-				"question": "What is the hair color of the woman in the scene?",
-				"options": ["black", "brown", "blonde", "ginger"],
-				"answer": "blonde"
+				"question": "From your point of view, where is the standing man in relation to the seated man?",
+				"options": ["right of", "left of", "behind", "in front of"],
+				"answer": "left of"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
-					"woman holds man's tie",
+					"woman touches man's tie",
 					"man holds his striped tie",
 					"man loosens his tie",
 					"woman gives man tie"
 				],
-				"answer": "woman holds man's tie"
+				"answer": "woman touches man's tie"
 			}
 		]
 	},
@@ -212,8 +207,8 @@
 				"answer": "woman"
 			},
 			{
-				"question": "How is the blender powered in the scene?",
-				"options": ["bicycle", "battery", "outlet", "hand-crank"],
+				"question": "What is the power source of the blender in the scene?",
+				"options": ["bicycle", "", "outlet", "hand-crank"],
 				"answer": "bicycle"
 			},
 			{
@@ -222,7 +217,7 @@
 				"answer": "yellow"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -255,7 +250,7 @@
 				"answer": "car door"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -288,7 +283,7 @@
 				"answer": "four"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -321,7 +316,7 @@
 				"answer": "lifting"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -359,7 +354,7 @@
 				"answer": "closely blocking"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -392,7 +387,7 @@
 				"answer": "ground"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -435,7 +430,7 @@
 				"answer": "four"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -473,7 +468,7 @@
 				"answer": "as tall as them"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -511,7 +506,7 @@
 				"answer": "motion controllers"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -544,7 +539,7 @@
 				"answer": "pizza"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -577,7 +572,7 @@
 				"answer": "outdoors"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -610,7 +605,7 @@
 				"answer": "inside building"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -643,7 +638,7 @@
 				"answer": "back"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -681,7 +676,7 @@
 				"answer": "bed"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -714,7 +709,7 @@
 				"answer": "conical hat"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -747,7 +742,7 @@
 				"answer": "on the left"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -780,7 +775,7 @@
 				"answer": "purple"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -818,7 +813,7 @@
 				"answer": "pressing on glass"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -856,7 +851,7 @@
 				"answer": "beer bottle"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -880,7 +875,7 @@
 			},
 			{
 				"question": "What is the mom holding in her arms?",
-				"options": ["baby", "dog and cat", "baby and cat", "dog"],
+				"options": ["baby", "dog and cat", "baby and cat", "cat"],
 				"answer": "baby and cat"
 			},
 			{
@@ -889,14 +884,14 @@
 				"answer": "mother"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
 					"baby looks at cat",
 					"cat sleeps beside baby",
 					"cat licks woman's hand",
-					"woman lifts up cat"
+					"woman raises up cat"
 				],
 				"answer": "baby looks at cat"
 			}
@@ -906,11 +901,6 @@
 		"cue": "apple",
 		"story": "A child reaches up to pick a green apple from a tree while holding a red bag for collecting fruit.",
 		"encoding_questions": [
-			{
-				"question": "What fruit is the child picking from the tree?",
-				"options": ["apple", "orange", "pear", "peach"],
-				"answer": "apple"
-			},
 			{
 				"question": "What color are the apples in the scene?",
 				"options": ["red", "green", "yellow", "multicolored"],
@@ -922,7 +912,7 @@
 				"answer": "bag"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -960,7 +950,7 @@
 				"answer": "holding frisbee"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -978,7 +968,7 @@
 		"story": "A player slides headfirst toward a base while another player in a glove catches a thrown ball beside the base.",
 		"encoding_questions": [
 			{
-				"question": "How is the player reaching the base?",
+				"question": "How is the player on the left reaching the base?",
 				"options": [
 					"sliding headfirst",
 					"sliding feetfirst",
@@ -998,13 +988,13 @@
 				"answer": "white"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
 					"player slides headfirst to base",
 					"player runs towards base",
-					"player slides feetfirst to base",
+					"player slides feetfirst toward base",
 					"gloved player holds a ball"
 				],
 				"answer": "player slides headfirst to base"
@@ -1022,7 +1012,7 @@
 			},
 			{
 				"question": "What are the men doing with the suitcases?",
-				"options": ["carrying them", "pushing them", "stacking them", "pulling them"],
+				"options": ["carrying them", "opening them", "stacking them", "pulling them"],
 				"answer": "carrying them"
 			},
 			{
@@ -1036,12 +1026,12 @@
 				"answer": "along covered walkway"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
 					"men carry suitcases",
-					"men drag suitcases behind them",
+					"men pull suitcases behind them",
 					"men stack suitcases on cart",
 					"man opens suitcase outside"
 				],
@@ -1069,14 +1059,14 @@
 				"answer": "cowboy hats"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
 					"people ride horses along shoreline",
-					"people gallop horses through forest",
+					"people ride horses through forest",
 					"people ride horses on road",
-					"people walk horses through field"
+					"people ride horses through field"
 				],
 				"answer": "people ride horses along shoreline"
 			}
@@ -1102,7 +1092,7 @@
 				"answer": "star"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -1140,7 +1130,7 @@
 				"answer": "white and yellow"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -1159,7 +1149,7 @@
 		"encoding_questions": [
 			{
 				"question": "Who is riding the elephants in the scene?",
-				"options": ["two men", "two women", "one man", "one man, one woman"],
+				"options": ["two men", "two women", "one man, one child", "one man, one woman"],
 				"answer": "two men"
 			},
 			{
@@ -1178,7 +1168,7 @@
 				"answer": "swimming in water"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [
@@ -1211,7 +1201,7 @@
 				"answer": "two"
 			}
 		],
-		"recognition_question": [
+		"decoding_questions": [
 			{
 				"question": "Which scene matches the image?",
 				"options": [

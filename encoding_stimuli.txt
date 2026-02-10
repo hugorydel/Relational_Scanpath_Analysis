@@ -1,0 +1,71 @@
+cue, StimID, question, opt1, opt2, opt3, opt4, correct
+pizza, 150472, How many women are in the scene?, one, two, three, four, two
+pizza, 150472, Where is the pizza slice located?, in pizza box, on table, on metal tray, on paper plate, on paper plate
+cat, 2344622, Where is the cat positioned relative to other scene elements?, next to keyboard, under blanket, on person's arm, on keyboard, next to keyboard
+cat, 2344622, What is the cat resting its head on?, plush toy, keyboard edge, blue blanket, person's arm, blue blanket
+football, 2345035, Who runs toward the football in the scene?, girl and boy, girls, men, boys, girls
+football, 2345035, What are the girls doing with the ball?, kicking, bouncing, catching, chasing, chasing
+umbrella, 2347025, Who is holding the umbrella in the scene?, man, woman, baby, girl, baby
+umbrella, 2347025, Where is the baby in relation to the mother?, next to her, on back, sitting on shoulders, in arms, on back
+wine, 2347400, What are the men doing with the wine?, clinking, smelling, pouring, sipping, smelling
+wine, 2347400, What are the men sitting on in the scene?, chairs, table, couch, bench, couch
+tie, 2348899, What is the woman doing?, touching the man's tie, folding a tie, presenting a gift, pointing at a man, touching the man's tie
+tie, 2348899, Where is the woman located relative to the man?, at the back, up front, on the left, on the right, on the right
+blender, 2349475, Which part of the blender is the woman holding?, base, handle, glass, lid, lid
+blender, 2349475, Where is the man positioned relative to the blender?, behind it, to the left of it, to the right of it, in front of it, to the left of it
+drink, 2350974, What is the child's hand touching?, red car, grey motorcycle, grey car, red motorcycle, red car
+drink, 2350974, What is the child in between?, blue car and red car, red car and blue motorcycle, grey car and red motorcycle, blue motorcycle and red motorcycle, red car and blue motorcycle
+luggage, 2356125, Where is the luggage being moved to?, onto xray, onto baggage cart, onto conveyor belt, off of xray, onto conveyor belt
+luggage, 2356125, How many uniformed staff are moving the luggage?, one, two, three, four, two
+clock, 2360001, Where are the men?, on balcony, on roof edge, on scaffold, on ground, on scaffold
+clock, 2360001, What are the workers doing to the clock?, measuring it, painting it, wiping it, raising it, raising it
+frisbee, 2362277, How are the frisbee defender's arms positioned?, both below waist, one above ahead; the other below waist, both out to the side, both high above head, both out to the side
+frisbee, 2362277, On which side of the defender is the thrower located?, behind defender, on the left, in front of defender, on the right, on the left
+bears, 2362704, How many bears are in the scene?, one, two, three, four, two
+bears, 2362704, What are the bears doing with the pumpkin?, eating, fighting over, pawing, sniffing, eating
+petting, 2363971, Where does the petting occur in the scene?, outdoors (park), outdoors (street), living room, outdoors (unclear), living room
+petting, 2363971, What is the seated woman (in background) doing with the child?, reading a book to it, hugging it, feeding it from plate, holding it upside down, holding it upside down
+surfer, 2366915, How many surfers are riding the wave?, one, two, three, four, two
+surfer, 2366915, How large is the wave relative to the surfers?, twice as tall, half as tall, three times as tall, as tall as them, as tall as them
+video game, 2367132, How many men are playing in the scene?, one, two, three, four, two
+video game, 2367132, From THEIR point of view, in which hand(s) do the men hold the motion controllers?, in left hand, in both hands, neither hand (on wrists), in right hand, in both hands
+chef, 2369373, What is the appearance of the oven?, brick dome, stone arch, metal box, open mouth, open mouth
+chef, 2369373, What is the chef placing into the oven?, pizza, steak, bread, vegetable tray, pizza
+donuts, 2370664, How many donuts are in the scene?, two, three, four, five, three
+donuts, 2370664, Where are the people located in the scene?, kitchen, restaurant, living room, street, street
+motorcycle, 2371471, Which of the motorcyclists is performing a handstand?, both, neither, one up front, one at the back, one up front
+motorcycle, 2371471, What is nearest to the motorcyclists?, concrete ramp, dirt ramp, grassy ground, asphalt road, dirt ramp
+truck, 2374670, What vehicle sprays water in the scene?, grey tractor, red truck, grey van, red tractor, red truck
+truck, 2374670, What is the truck spraying?, fertilizer, asphalt, sand, water, water
+milk, 2379478, What is the position of the babies?, lying on bed, lying on couch, sitting on bed, lying in crib, lying on bed
+milk, 2379478, In what position are the babies drinking milk?, sitting up, lying on back, lying on side, lying on stomach, lying on back
+boat, 2383555, Who is holding the child in the boat?, boy, woman, man, girl, woman
+boat, 2383555, What is the woman at the back doing in the boat?, waving, rowing, sitting, standing, rowing
+tangerines, 2385550, Where are the tangerines in the scene?, in front of eyes, in hands, on head, in mouths, in mouths
+tangerines, 2385550, Which side of the frame is the boy on?, on the left, in the front, on the right, in the back, on the left
+teeth, 2386442, Who is brushing their teeth in the scene?, child and two women, man, woman, and child, man and woman, man and two children, man, woman, and child
+teeth, 2386442, Which position is the child in?, on the right, in the middle, at the back, on the left, in the middle
+polar bear, 2387122, Where is the polar bear located in the scene?, on sand, on rocks, on ice, in water, in water
+polar bear, 2387122, What is the polar bear doing next to the enclosure edge?, diving underwater, swimming away from glass enclosure, pressing on glass enclosure, sitting on snowy ground, pressing on glass enclosure
+cake, 2397102, What are the couple doing with the cake?, serving it, cutting it, posing next to it, feeding each other, cutting it
+cake, 2397102, What is the man holding besides the cake knife?, beer bottle, present, wine glass, paper plate, beer bottle
+baby, 2401636, Who is looking at the cat in the scene?, baby, girl, woman, man, baby
+baby, 2401636, What is the mom holding in her arms?, dog and cat, baby and dog, baby and cat, baby, baby and cat
+apple, 2411268, What is the child holding while picking fruit?, basket, bucket, bag, box, bag
+apple, 2411268, Where is the fruit branch relative to the child?, near ground, above head, below head, at head level, above head
+dog, 2412687, What is the dog biting onto in the scene?, red bone, red frisbee, red boomerang, red ball, red frisbee
+dog, 2412687, What is the main action of the human in the scene?, picking up frisbee, catching frisbee, holding frisbee, throwing frisbee, holding frisbee
+baseball, 2356991, How is the player on the left reaching the base?, running towards it, sliding on knees, sliding feetfirst, sliding headfirst, sliding headfirst
+baseball, 2356991, What is the current action of the gloved player on the base?, catching the ball, tagging the runner, throwing the ball, dropping the ball, catching the ball
+suitcase, 2385851, What are the men doing with the suitcases?, pulling them, stacking them, opening them, carrying them, carrying them
+suitcase, 2385851, Where are the men?, walking in an airport terminal, walking under a covered walkway, walking into a hotel lobby, walking along a train platform, walking under a covered walkway
+horse ride, 2394020, Where is the scene taking place?, along beach, along open field, along ocean, along stream, along beach
+horse ride, 2394020, What are the riders wearing on their heads?, sun hats, helmets, baseball caps, cowboy hats, cowboy hats
+circus, 2406346, Which elephant is the man/handler closest to?, both elephants, back elephant, front elephant, neither elephant, back elephant
+circus, 2406346, What is one elephant doing to the other?, spraying it with water, touching its trunks, nothing; its trunk is extended above its head without interaction, holding its tail, holding its tail
+surfboard, 2408717, How many surfers are in the scene?, two, three, four, five, four
+surfboard, 2408717, What are the colors of the surfboards in the scene?, blue and yellow, white and yellow, red and green, white and red, white and yellow
+elephant, 2409918, What is the elephant on the right doing with its trunk?, grabbing log, reaching forward, spraying water, eating plants, eating plants
+elephant, 2409918, Where are the elephants in the scene?, walking on land, swimming in water, splashing in puddle, standing in mud, swimming in water
+laptop, 2410309, What is the woman using while sitting on the couch?, tablet, book, phone, laptop, laptop
+laptop, 2410309, How many of these electronic devices are visible in the scene?, one, two, three, four, two

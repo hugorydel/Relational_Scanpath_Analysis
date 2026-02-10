@@ -9,24 +9,19 @@
 				"answer": "two"
 			},
 			{
-				"question": "What are the women doing with the pizza?",
-				"options": ["biting it", "cutting it", "holding it", "photographing it"],
-				"answer": "biting it"
-			},
-			{
-				"question": "Where is the pizza slice?",
+				"question": "Where is the pizza slice located?",
 				"options": ["on paper plate", "in pizza box", "on metal tray", "on table"],
 				"answer": "on paper plate"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"women bite pizza slice",
 					"women photograph pizza slice",
 					"women cut large pizza",
-					"woman carries pizza box"
+					"women carry pizza boxes"
 				],
 				"answer": "women bite pizza slice"
 			}
@@ -54,7 +49,7 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"cat lies on blanket",
 					"cat lies on person's arm",
@@ -78,16 +73,11 @@
 				"question": "What are the girls doing with the ball?",
 				"options": ["chasing", "kicking", "catching", "bouncing"],
 				"answer": "chasing"
-			},
-			{
-				"question": "What color jersey is the leading girl wearing in the football chase?",
-				"options": ["blue", "white", "red", "black"],
-				"answer": "blue"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"girls run toward football",
 					"man kicks football into goal",
@@ -108,19 +98,14 @@
 				"answer": "baby"
 			},
 			{
-				"question": "What color is the umbrella in the scene?",
-				"options": ["pink", "blue", "yellow", "black"],
-				"answer": "pink"
-			},
-			{
-				"question": "Where is the baby being carried?",
-				"options": ["on back", "in arms", "in stroller", "on shoulders"],
+				"question": "Where is the baby in relation to the mother?",
+				"options": ["on back", "in arms", "sitting on shoulders", "next to her"],
 				"answer": "on back"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"baby holds onto umbrella",
 					"woman holds umbrella over baby",
@@ -136,11 +121,6 @@
 		"story": "Two men sit on a couch, each holding a wine glass near their faces and smelling the wine.",
 		"encoding_questions": [
 			{
-				"question": "How many men are in the scene?",
-				"options": ["one", "two", "three", "four"],
-				"answer": "two"
-			},
-			{
 				"question": "What are the men doing with the wine?",
 				"options": ["smelling", "sipping", "pouring", "clinking"],
 				"answer": "smelling"
@@ -153,7 +133,7 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"men smell wine glasses",
 					"men clink wine glasses",
@@ -169,24 +149,14 @@
 		"story": "A woman touches/holds the seated man's striped tie while he smiles. A man in a suit leans in and gestures toward the seated man during their conversation.",
 		"encoding_questions": [
 			{
-				"question": "What is the woman doing to the man's tie?",
-				"options": ["holding it", "crumpling it", "tying it", "folding it"],
-				"answer": "holding it"
-			},
-			{
-				"question": "From your point of view, where is the standing man in relation to the seated man?",
-				"options": ["right of", "left of", "behind", "in front of"],
-				"answer": "left of"
-			},
-			{
-				"question": "What is the standing man doing?",
+				"question": "What is the woman doing in the scene?",
 				"options": [
-					"gesturing toward seated man",
-					"looking at standing woman",
-					"looking at tie",
-					"looking away from the sitting man"
+					"touching striped tie",
+					"showing striped tie to man",
+					"presenting striped tie as a gift",
+					"folding a striped tie"
 				],
-				"answer": "gesturing toward seated man"
+				"answer": "touching striped tie"
 			},
 			{
 				"question": "From your point of view, where is the woman in the scene?",
@@ -196,14 +166,14 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
-					"woman touches man's tie",
+					"woman touches man's striped tie",
 					"man holds his striped tie",
-					"man ties another man's tie",
-					"woman gives man a tie"
+					"man ties another man's striped tie",
+					"woman gives man a striped tie"
 				],
-				"answer": "woman touches man's tie"
+				"answer": "woman touches man's striped tie"
 			}
 		]
 	},
@@ -212,12 +182,17 @@
 		"story": "A man uses a bike to power a blender while a woman holds the lid of the blender filled with liquid.",
 		"encoding_questions": [
 			{
-				"question": "Who holds the blender lid in the scene?",
-				"options": ["woman", "man", "child", "worker"],
-				"answer": "woman"
+				"question": "How is the woman securing the blender?",
+				"options": [
+					"holding the blender lid",
+					"holding the blender base",
+					"holding the blender glass",
+					"holding the blender cord"
+				],
+				"answer": "holding the blender lid"
 			},
 			{
-				"question": "From your point of view, where is the man powering the blender relative to it?",
+				"question": "From your point of view, where is the man who's powering the blender?",
 				"options": [
 					"behind it",
 					"in front of it",
@@ -225,16 +200,11 @@
 					"to the right of it"
 				],
 				"answer": "to the left of it"
-			},
-			{
-				"question": "What is the color of the blender's contents?",
-				"options": ["yellow", "red", "purple", "pink"],
-				"answer": "yellow"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"woman holds onto blender",
 					"woman presses blender button",
@@ -250,19 +220,24 @@
 		"story": "A child drinks from a bottle while standing next to a red car. The child rests a hand on the car door.",
 		"encoding_questions": [
 			{
-				"question": "What is the child standing beside?",
+				"question": "What is the child's hand touching?",
 				"options": ["red car", "red motorcycle", "grey car", "grey motorcycle"],
 				"answer": "red car"
 			},
 			{
-				"question": "What is the child's hand against?",
-				"options": ["car door", "car roof", "car window", "side mirror"],
-				"answer": "car door"
+				"question": "What is the child in between?",
+				"options": [
+					"grey car and red motorcycle",
+					"blue motorcycle and red motorcycle",
+					"red car and blue motorcycle",
+					"blue car and red car"
+				],
+				"answer": "red car and blue motorcycle"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"child drinks beside car",
 					"adult drinks beside bus",
@@ -288,17 +263,17 @@
 				"answer": "onto conveyor belt"
 			},
 			{
-				"question": "How many uniformed staff are visible in the scene?",
-				"options": ["two", "three", "four", "five"],
-				"answer": "four"
+				"question": "How many uniformed staff are moving the luggage?",
+				"options": ["one", "two", "three", "four"],
+				"answer": "two"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
-					"staff load luggage onto conveyor belt",
-					"staff scan luggage in an xray",
+					"staff load luggage onto a conveyor belt",
+					"staff load luggage into an xray",
 					"staff load luggage onto a cart",
 					"staff tag luggage at a counter"
 				],
@@ -311,19 +286,19 @@
 		"story": "Two workers are lifting a large round clock onto a building facade, with one of them steadying it while the other attaches it to the bracket and weaves through a cable.",
 		"encoding_questions": [
 			{
-				"question": "Which part of the building is the clock positioned onto?",
-				"options": ["pole", "doorway", "balcony", "roof edge"],
-				"answer": "pole"
+				"question": "Where are the men?",
+				"options": ["on scaffold", "on ground", "on balcony", "on roof edge"],
+				"answer": "on scaffold"
 			},
 			{
 				"question": "What are the workers doing to the clock?",
-				"options": ["raising", "wiping", "painting", "measuring"],
-				"answer": "raising"
+				"options": ["raising it", "wiping it", "painting it", "measuring it"],
+				"answer": "raising it"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"workers lift large clock",
 					"workers wipe large clock face",
@@ -339,24 +314,29 @@
 		"story": "A player in white runs while attempting to throw a frisbee. A player in red closely blocks him from throwing the frisbee.",
 		"encoding_questions": [
 			{
-				"question": "What is the player wearing white doing to the frisbee?",
-				"options": ["throwing", "catching", "picking up", "blocking"],
-				"answer": "throwing"
+				"question": "How are the frisbee defender's arms positioned?",
+				"options": [
+					"both high above head",
+					"both below waist",
+					"both out to the side",
+					"one above ahead; the other below waist"
+				],
+				"answer": "both out to the side"
 			},
 			{
-				"question": "From your position, how is the frisbee defender positioned relative to the thrower?",
+				"question": "From your point of view, on which side is the frisbee thrower in the scene?",
 				"options": [
-					"standing to the right of",
-					"running ahead to the left",
-					"running towards to the right",
-					"standing in front of"
+					"on the left",
+					"on the right",
+					"behind defender",
+					"in front of defender"
 				],
-				"answer": "standing to the right of"
+				"answer": "on the left"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"player throws a frisbee",
 					"player runs towards frisbee",
@@ -384,7 +364,7 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"bears eat pumpkin",
 					"bears sniff pumpkin",
@@ -401,8 +381,13 @@
 		"encoding_questions": [
 			{
 				"question": "Where does the petting occur in the scene?",
-				"options": ["indoors", "outdoors", "street", "park"],
-				"answer": "indoors"
+				"options": [
+					"indoors (living room)",
+					"outdoors (unclear)",
+					"outdoors (street)",
+					"outdoors (park)"
+				],
+				"answer": "indoors (living room)"
 			},
 			{
 				"question": "What is the seated woman (in background) doing with the child?",
@@ -413,16 +398,11 @@
 					"reading a book to it"
 				],
 				"answer": "holding it upside down"
-			},
-			{
-				"question": "How many people are in the scene?",
-				"options": ["two", "three", "four", "five"],
-				"answer": "four"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"woman pets dog indoors",
 					"woman pets cat outside",
@@ -443,11 +423,6 @@
 				"answer": "two"
 			},
 			{
-				"question": "What is the main action in the scene?",
-				"options": ["surfing", "paddling", "walking", "standing"],
-				"answer": "surfing"
-			},
-			{
 				"question": "How large is the wave relative to the surfers?",
 				"options": [
 					"half as tall",
@@ -460,7 +435,7 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"two surfers ride a wave",
 					"two surfers paddle toward wave",
@@ -481,19 +456,19 @@
 				"answer": "two"
 			},
 			{
-				"question": "From your point of view, in which hand do the men hold the controllers?",
+				"question": "From THEIR point of view, in which hand(s) do the men hold the controllers?",
 				"options": [
 					"in right hand",
 					"in left hand",
 					"in both hands",
-					"neither hand; on wrists"
+					"neither hand (on wrists)"
 				],
 				"answer": "in both hands"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"men play video game with motion controllers",
 					"men watch video game on TV",
@@ -521,7 +496,7 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"chef loads pizza into oven",
 					"chef loads bread into oven",
@@ -537,7 +512,7 @@
 		"story": "Two men and a woman are taking bites of donuts. They are close together outdoors, holding the donuts up to their mouths.",
 		"encoding_questions": [
 			{
-				"question": "How many people are biting donuts in the scene?",
+				"question": "How many donuts are in the scene?",
 				"options": ["two", "three", "four", "five"],
 				"answer": "three"
 			},
@@ -549,7 +524,7 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"people bite into donuts",
 					"people dip donuts in coffee",
@@ -571,13 +546,13 @@
 			},
 			{
 				"question": "What is nearest to the motorcyclists?",
-				"options": ["dirt ramp", "asphalt road", "grass patch", "concrete ground"],
+				"options": ["dirt ramp", "asphalt road", "grassy ground", "concrete ramp"],
 				"answer": "dirt ramp"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"motorcyclists jump over ramp",
 					"motorcyclists drive on road",
@@ -610,7 +585,7 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"truck sprays water",
 					"truck dumps gravel onto road",
@@ -631,19 +606,19 @@
 				"answer": "lying on bed"
 			},
 			{
-				"question": "What is the position of the babies?",
+				"question": "In what position are the babies drinking milk?",
 				"options": ["lying on stomach", "lying on back", "lying on side", "sitting up"],
 				"answer": "lying on back"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"two babies drink from milk bottles",
 					"one baby drinks from a milk bottle",
 					"one baby reaches for milk bottle",
-					"two babies reach for milk bottle"
+					"two babies reach for one milk bottle"
 				],
 				"answer": "two babies drink from milk bottles"
 			}
@@ -660,13 +635,13 @@
 			},
 			{
 				"question": "What is the woman at the back doing in the boat?",
-				"options": ["rowing", "standing", "sleeping", "waving"],
+				"options": ["rowing", "standing", "sitting", "waving"],
 				"answer": "rowing"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"woman holds child on boat",
 					"two women row a boat",
@@ -682,12 +657,7 @@
 		"story": "A boy and a girl each have a tangerine in their mouth and are eating it while facing the camera.",
 		"encoding_questions": [
 			{
-				"question": "Which child has a tangerine in their mouth?",
-				"options": ["boy", "girl", "both", "neither"],
-				"answer": "both"
-			},
-			{
-				"question": "Where are the tangerines placed in the scene?",
+				"question": "Where are the tangerines in the scene?",
 				"options": ["in mouths", "in hands", "on head", "in front of eyes"],
 				"answer": "in mouths"
 			},
@@ -699,7 +669,7 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"children have tangerines in mouths",
 					"children peel tangerines",
@@ -728,16 +698,11 @@
 				"question": "From your point of view, where is the child in the scene?",
 				"options": ["in the middle", "on the left", "on the right", "at the back"],
 				"answer": "in the middle"
-			},
-			{
-				"question": "What colored shirt is the man wearing?",
-				"options": ["purple", "striped", "pink checkered", "green"],
-				"answer": "purple"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"family brushes teeth together",
 					"child flosses teeth carefully",
@@ -758,16 +723,6 @@
 				"answer": "in water"
 			},
 			{
-				"question": "What is the woman doing?",
-				"options": [
-					"taking a photo",
-					"feeding the bear",
-					"wiping her glasses",
-					"pointing to bear"
-				],
-				"answer": "taking a photo"
-			},
-			{
 				"question": "What is the polar bear doing next to the enclosure edge?",
 				"options": [
 					"pressing on glass enclosure",
@@ -780,7 +735,7 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"polar bear presses on glass",
 					"polar bear swims away from glass",
@@ -806,11 +761,6 @@
 				"answer": "cutting it"
 			},
 			{
-				"question": "What type of cake is being cut?",
-				"options": ["wedding cake", "birthday cake", "cupcake tower", "fruit cake"],
-				"answer": "wedding cake"
-			},
-			{
 				"question": "What is the man holding besides the cake knife?",
 				"options": ["beer bottle", "paper plate", "present", "wine glass"],
 				"answer": "beer bottle"
@@ -818,7 +768,7 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"couple cuts cake together",
 					"couple feeds each other cake",
@@ -840,18 +790,13 @@
 			},
 			{
 				"question": "What is the mom holding in her arms?",
-				"options": ["baby", "dog and cat", "baby and cat", "cat"],
+				"options": ["baby", "dog and cat", "baby and cat", "baby and dog"],
 				"answer": "baby and cat"
-			},
-			{
-				"question": "Who holds the cat close to the baby?",
-				"options": ["mother", "father", "nurse", "doctor"],
-				"answer": "mother"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"baby looks at cat",
 					"cat sleeps beside baby",
@@ -867,11 +812,6 @@
 		"story": "A child reaches up to pick a green apple from a tree while holding a red bag for collecting fruit.",
 		"encoding_questions": [
 			{
-				"question": "What color are the apples in the scene?",
-				"options": ["red", "green", "yellow", "multicolored"],
-				"answer": "green"
-			},
-			{
 				"question": "What is the child holding while picking fruit?",
 				"options": ["bag", "bucket", "box", "basket"],
 				"answer": "bag"
@@ -884,7 +824,7 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"child picks apple from tree",
 					"child bites into apple",
@@ -917,7 +857,7 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"dog bites onto frisbee",
 					"dog catches frisbee midair",
@@ -943,14 +883,19 @@
 				"answer": "sliding headfirst"
 			},
 			{
-				"question": "What is the gloved player doing next to the base?",
-				"options": ["catching ball", "dropping ball", "throwing ball", "tagging runner"],
+				"question": "What is the current action of the gloved player on the base?",
+				"options": [
+					"catching the ball",
+					"dropping the ball",
+					"throwing the ball",
+					"tagging the runner"
+				],
 				"answer": "catching ball"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"player slides headfirst to base",
 					"player runs towards base",
@@ -966,34 +911,24 @@
 		"story": "Two men walk along a covered walkway while each carries a large red suitcase.",
 		"encoding_questions": [
 			{
-				"question": "What are the men moving in the scene?",
-				"options": [
-					"red suitcases",
-					"black suitcases",
-					"blue suitcases",
-					"brown suitcases"
-				],
-				"answer": "red suitcases"
-			},
-			{
 				"question": "What are the men doing with the suitcases?",
 				"options": ["carrying them", "opening them", "stacking them", "pulling them"],
 				"answer": "carrying them"
 			},
 			{
-				"question": "Where are the men walking?",
+				"question": "Where are the men?",
 				"options": [
-					"along covered walkway",
-					"along train platform",
-					"along airport terminal",
-					"along hotel lobby"
+					"walking under a covered walkway",
+					"walking along a train platform",
+					"walking in an airport terminal",
+					"walking into a hotel lobby"
 				],
-				"answer": "along covered walkway"
+				"answer": "walking under a covered walkway"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"men carry suitcases on shoulders",
 					"men pull suitcases behind them",
@@ -1009,14 +944,9 @@
 		"story": "Two horseriders are riding horses along the sandy shore beside the water. Both horses are patchy while the riders are wearing cowboy hats. The weather is sunny and the water is calm.",
 		"encoding_questions": [
 			{
-				"question": "What do the horses look like?",
-				"options": ["patchy", "black", "white", "brown"],
-				"answer": "patchy"
-			},
-			{
 				"question": "Where is the scene taking place?",
-				"options": ["shore", "forest", "sunny road", "sunny field"],
-				"answer": "shore"
+				"options": ["along beach", "along stream", "along ocean", "along open field"],
+				"answer": "along beach"
 			},
 			{
 				"question": "What are the riders wearing on their heads?",
@@ -1026,14 +956,14 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
-					"people ride horses along shoreline",
+					"people ride horses along beach",
 					"people ride horses through forest",
 					"people ride horses on road",
 					"people ride horses through field"
 				],
-				"answer": "people ride horses along shoreline"
+				"answer": "people ride horses along beach"
 			}
 		]
 	},
@@ -1042,17 +972,7 @@
 		"story": "One elephant holds the tail of another elephant, ahead of it, with its trunk. The elephant up front has a star on its back. A handler walks beside the elephants holding a stick and leading the elephants forward.",
 		"encoding_questions": [
 			{
-				"question": "Who leads the elephants forward in the scene?",
-				"options": ["handler", "clown", "child", "rider"],
-				"answer": "handler"
-			},
-			{
-				"question": "What is the elephant up front tattooed with?",
-				"options": ["star", "heart", "circle", "square"],
-				"answer": "star"
-			},
-			{
-				"question": "Which elephant is the handler closest to?",
+				"question": "Which elephant is the man/handler closest to?",
 				"options": [
 					"front elephant",
 					"back elephant",
@@ -1060,11 +980,21 @@
 					"neither elephant"
 				],
 				"answer": "back elephant"
+			},
+			{
+				"question": "What is one elephant doing to the other?",
+				"options": [
+					"holding its tail",
+					"touching its trunks",
+					"spraying it with water",
+					"nothing; its trunk is extended above its head without interaction"
+				],
+				"answer": "holding its tail"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"circus elephants walk on street",
 					"circus elephants perform tricks",
@@ -1093,15 +1023,25 @@
 					"red and green"
 				],
 				"answer": "white and yellow"
+			},
+			{
+				"question": "What is the current state of the surfers? They're...",
+				"options": [
+					"walking towards water",
+					"paddling in water",
+					"surfing on a wave",
+					"standing on surfboards"
+				],
+				"answer": "walking towards water"
 			}
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"surfers walk towards water with surfboards",
 					"surfers lie on surfboards",
-					"surfers wax surfboards on beach",
+					"surfers stand on surfboards on the beach",
 					"surfers place surfboards into water"
 				],
 				"answer": "surfers walk towards water with surfboards"
@@ -1112,11 +1052,6 @@
 		"cue": "elephant",
 		"story": "Two men are riding elephants while they are swimming in moderately deep water. One elephant is eating plants with its trunk.",
 		"encoding_questions": [
-			{
-				"question": "Who is riding the elephants in the scene?",
-				"options": ["two men", "two women", "one man, one child", "one man, one woman"],
-				"answer": "two men"
-			},
 			{
 				"question": "What is the elephant on the right doing with its trunk?",
 				"options": [
@@ -1140,7 +1075,7 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"elephants swim in water",
 					"elephants drink water",
@@ -1168,7 +1103,7 @@
 		],
 		"decoding_questions": [
 			{
-				"question": "Which scene matches the image?",
+				"question": "Which description best matches the image?",
 				"options": [
 					"woman and baby use laptops",
 					"woman closes laptop lid",

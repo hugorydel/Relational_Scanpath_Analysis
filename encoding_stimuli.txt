@@ -1,7 +1,7 @@
 cue, StimID, question, opt1, opt2, opt3, opt4, correct, ImageFile
 pizza, 150472, How many women are in the scene?, one, two, three, four, two, .\stimuli\150472.jpg
 pizza, 150472, Where is the pizza slice located?, in pizza box, on table, on metal tray, on paper plate, on paper plate, .\stimuli\150472.jpg
-cat, 2344622, Where is the cat positioned relative to other scene elements?, next to keyboard, under blanket, on person's arm, on keyboard, next to keyboard, .\stimuli\2344622.jpg
+cat, 2344622, Where is the cat located?, next to keyboard, under blanket, on person's arm, on keyboard, next to keyboard, .\stimuli\2344622.jpg
 cat, 2344622, What is the cat resting its head on?, plush toy, keyboard edge, blue blanket, person's arm, blue blanket, .\stimuli\2344622.jpg
 football, 2345035, Who runs toward the football in the scene?, girl and boy, girls, men, boys, girls, .\stimuli\2345035.jpg
 football, 2345035, What are the girls doing with the ball?, kicking, bouncing, catching, chasing, chasing, .\stimuli\2345035.jpg
@@ -14,21 +14,21 @@ tie, 2348899, Where is the woman located relative to the man?, at the back, up f
 blender, 2349475, Which part of the blender is the woman holding?, base, handle, glass, lid, lid, .\stimuli\2349475.jpg
 blender, 2349475, Where is the man positioned relative to the blender?, behind it, to the left of it, to the right of it, in front of it, to the left of it, .\stimuli\2349475.jpg
 drink, 2350974, What is the child's hand touching?, red car, grey motorcycle, grey car, red motorcycle, red car, .\stimuli\2350974.jpg
-drink, 2350974, What is the child in between?, blue car and red car, red car and blue motorcycle, grey car and red motorcycle, blue motorcycle and red motorcycle, red car and blue motorcycle, .\stimuli\2350974.jpg
+drink, 2350974, Between which two vehicles is the child standing?, blue car and red car, red car and blue motorcycle, grey car and red motorcycle, blue motorcycle and red motorcycle, red car and blue motorcycle, .\stimuli\2350974.jpg
 luggage, 2356125, Where is the luggage being moved to?, onto xray, onto baggage cart, onto conveyor belt, off of xray, onto conveyor belt, .\stimuli\2356125.jpg
 luggage, 2356125, How many uniformed staff are moving the luggage?, one, two, three, four, two, .\stimuli\2356125.jpg
 clock, 2360001, Where are the men?, on balcony, on roof edge, on scaffold, on ground, on scaffold, .\stimuli\2360001.jpg
 clock, 2360001, What are the workers doing to the clock?, measuring it, painting it, wiping it, raising it, raising it, .\stimuli\2360001.jpg
-frisbee, 2362277, How are the frisbee defender's arms positioned?, both below waist, one above ahead; the other below waist, both out to the side, both high above head, both out to the side, .\stimuli\2362277.jpg
+frisbee, 2362277, How are the frisbee defender's arms positioned?, both below waist, one above head; one below waist, both out to the side, both high above head, both out to the side, .\stimuli\2362277.jpg
 frisbee, 2362277, On which side of the defender is the thrower located?, behind defender, on the left, in front of defender, on the right, on the left, .\stimuli\2362277.jpg
 bears, 2362704, How many bears are in the scene?, one, two, three, four, two, .\stimuli\2362704.jpg
 bears, 2362704, What are the bears doing with the pumpkin?, eating, fighting over, pawing, sniffing, eating, .\stimuli\2362704.jpg
 petting, 2363971, Where does the petting occur in the scene?, outdoors (park), outdoors (street), living room, outdoors (unclear), living room, .\stimuli\2363971.jpg
-petting, 2363971, What is the seated woman (in background) doing with the child?, reading a book to it, hugging it, feeding it from plate, holding it upside down, holding it upside down, .\stimuli\2363971.jpg
+petting, 2363971, What is the woman in the background doing with the child?, reading a book to it, hugging it, feeding it from plate, holding it upside down, holding it upside down, .\stimuli\2363971.jpg
 surfer, 2366915, How many surfers are riding the wave?, one, two, three, four, two, .\stimuli\2366915.jpg
 surfer, 2366915, How large is the wave relative to the surfers?, twice as tall, half as tall, three times as tall, as tall as them, as tall as them, .\stimuli\2366915.jpg
 video game, 2367132, How many men are playing in the scene?, one, two, three, four, two, .\stimuli\2367132.jpg
-video game, 2367132, From THEIR point of view, in which hand(s) do the men hold the motion controllers?, in left hand, in both hands, neither hand (on wrists), in right hand, in both hands, .\stimuli\2367132.jpg
+video game, 2367132, In which hand(s) are the men holding the controllers?, in left hand, in both hands, neither hand (on wrists), in right hand, in both hands, .\stimuli\2367132.jpg
 chef, 2369373, What is the appearance of the oven?, brick dome, stone arch, metal box, open mouth, open mouth, .\stimuli\2369373.jpg
 chef, 2369373, What is the chef placing into the oven?, pizza, steak, bread, vegetable tray, pizza, .\stimuli\2369373.jpg
 donuts, 2370664, How many donuts are in the scene?, two, three, four, five, three, .\stimuli\2370664.jpg
@@ -62,10 +62,10 @@ suitcase, 2385851, Where are the men?, walking in an airport terminal, walking u
 horse ride, 2394020, Where is the scene taking place?, along beach, along open field, along ocean, along stream, along beach, .\stimuli\2394020.jpg
 horse ride, 2394020, What are the riders wearing on their heads?, sun hats, helmets, baseball caps, cowboy hats, cowboy hats, .\stimuli\2394020.jpg
 circus, 2406346, Which elephant is the man/handler closest to?, both elephants, back elephant, front elephant, neither elephant, back elephant, .\stimuli\2406346.jpg
-circus, 2406346, What is one elephant doing to the other?, spraying it with water, touching its trunks, nothing, holding its tail, holding its tail, .\stimuli\2406346.jpg
+circus, 2406346, What is one elephant doing to the other?, spraying it with water, touching its trunks, nothing; trunk is raised, holding its tail, holding its tail, .\stimuli\2406346.jpg
 surfboard, 2408717, How many surfers are in the scene?, two, three, four, five, four, .\stimuli\2408717.jpg
 surfboard, 2408717, What are the colors of the surfboards in the scene?, blue and yellow, white and yellow, red and green, white and red, white and yellow, .\stimuli\2408717.jpg
 elephant, 2409918, What is the elephant on the right doing with its trunk?, grabbing log, reaching forward, spraying water, eating plants, eating plants, .\stimuli\2409918.jpg
 elephant, 2409918, Where are the elephants in the scene?, walking on land, swimming in water, splashing in puddle, standing in mud, swimming in water, .\stimuli\2409918.jpg
 laptop, 2410309, What is the woman using while sitting on the couch?, tablet, book, phone, laptop, laptop, .\stimuli\2410309.jpg
-laptop, 2410309, How many of these electronic devices are visible in the scene?, one, two, three, four, two, .\stimuli\2410309.jpg
+laptop, 2410309, How many laptops or electronic devices are visible?, one, two, three, four, two, .\stimuli\2410309.jpg

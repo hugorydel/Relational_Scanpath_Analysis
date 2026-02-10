@@ -277,7 +277,7 @@
 					"staff load luggage onto a cart",
 					"staff tag luggage at a counter"
 				],
-				"answer": "staff load luggage onto conveyor belt"
+				"answer": "staff load luggage onto a conveyor belt"
 			}
 		]
 	},
@@ -890,7 +890,7 @@
 					"throwing the ball",
 					"tagging the runner"
 				],
-				"answer": "catching ball"
+				"answer": "catching the ball"
 			}
 		],
 		"decoding_questions": [

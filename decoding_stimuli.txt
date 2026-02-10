@@ -1,36 +1,36 @@
 cue, StimID, question, opt1, opt2, opt3, opt4, correct
 pizza, 150472, Which description best matches the image?, women photograph pizza slice, women bite pizza slice, women carry pizza boxes, women cut large pizza, women bite pizza slice
 cat, 2344622, Which description best matches the image?, cat paws at blanket, cat lies on blanket, cat paws at keyboard, cat lies on person's arm, cat lies on blanket
-football, 2345035, Which description best matches the image?, girls run toward football, goalkeeper catches football, boy slides for football, man kicks football into goal, girls run toward football
+football, 2345035, Which description best matches the image?, girls run toward football, girls kick the football, girls stand over the football, girls walk away from the football, girls run toward football
 umbrella, 2347025, Which description best matches the image?, baby lies under umbrella, woman holds umbrella over baby, baby holds onto umbrella, baby drags pink umbrella, baby holds onto umbrella
 wine, 2347400, Which description best matches the image?, men clink wine glasses, men grab wine bottles, men sip from wine glasses, men smell wine glasses, men smell wine glasses
 tie, 2348899, Which description best matches the image?, woman touches man's striped tie, woman gives man a striped tie, man ties another man's striped tie, man holds his striped tie, woman touches man's striped tie
-blender, 2349475, Which description best matches the image?, woman opens blender lid, woman holds onto blender, woman cranks blender handle, woman presses blender button, woman holds onto blender
-drink, 2350974, Which description best matches the image?, child drinks beside car, adult drinks beside bus, child drinks beside stroller, adult drinks beside train, child drinks beside car
+blender, 2349475, Which description best matches the image?, woman touches the blender base, woman holds the blender lid, woman grasps the blender handle, woman reaches for the blender cord, woman holds the blender lid
+drink, 2350974, Which description best matches the image?, child drinks beside car, child drinks sitting on the car, child drinks while inside the car, child drinks on the far side of the car, child drinks beside car
 luggage, 2356125, Which description best matches the image?, staff tag luggage at a counter, staff load luggage onto a cart, staff load luggage onto a conveyor belt, staff load luggage into an xray, staff load luggage onto a conveyor belt
 clock, 2360001, Which description best matches the image?, workers wipe large clock face, workers lift large clock, workers paint old clock, workers raise ladder up to clock, workers lift large clock
-frisbee, 2362277, Which description best matches the image?, player catches frisbee at waist, player runs towards frisbee, player catches frisbee overhead, player throws a frisbee, player throws a frisbee
+frisbee, 2362277, Which description best matches the image?, player winds up for a throw, player throws a frisbee, player fakes a throw, player drops the frisbee, player throws a frisbee
 bears, 2362704, Which description best matches the image?, bears eat pumpkin, bears paw at pumpkin, bears sniff pumpkin, bears fight over pumpkin, bears eat pumpkin
-petting, 2363971, Which description best matches the image?, child pets dog indoors, woman pets cat outside, woman pets dog indoors, child pets horse outside, woman pets dog indoors
+petting, 2363971, Which description best matches the image?, woman pets dog indoors, woman hugs the dog indoors, woman feeds the dog indoors, woman brushes the dog indoors, woman pets dog indoors
 surfer, 2366915, Which description best matches the image?, two surfers paddle toward wave, two surfers ride a wave, two surfers walk toward wave, one surfer rides a wave, two surfers ride a wave
-video game, 2367132, Which description best matches the image?, Watching a gameplay video, Standing with motion controllers, Sitting with Xbox controllers, Playing on laptops, Standing with motion controllers
+video game, 2367132, Which description best matches the image?, sitting with motion controllers, leaning against a wall with motion controllers, standing with motion controllers, kneeling with motion controllers, standing with motion controllers
 chef, 2369373, Which description best matches the image?, chef pulls tray from oven, chef loads pizza into oven, chef stokes oven flames, chef loads bread into oven, chef loads pizza into oven
-donuts, 2370664, Which description best matches the image?, people bite into donuts, man offers donut to woman, people hold donuts over eyes, people dip donuts in coffee, people bite into donuts
+donuts, 2370664, Which description best matches the image?, people bite into donuts, people hold up donuts, people stack the donuts, people pass around the donuts, people bite into donuts
 motorcycle, 2371471, Which description best matches the image?, motorcyclists drive on dirt track, motorcyclists pop a wheelie, motorcyclists jump over ramp, motorcyclists speed across road, motorcyclists jump over ramp
-truck, 2374670, Which description best matches the image?, truck sprays water, truck pulls broken car, truck fills water tank, truck dumps gravel onto road, truck sprays water
+truck, 2374670, Which description best matches the image?, truck sprays water, truck leaks water from the side, truck is filled with water, truck drives through a puddle of water, truck sprays water
 milk, 2379478, Which description best matches the image?, one baby reaches for milk bottle, two babies drink from milk bottles, two babies reach for one milk bottle, one baby drinks from a milk bottle, two babies drink from milk bottles
 boat, 2383555, Which description best matches the image?, child sits alone in boat, man steps onto a boat, woman holds child on boat, two women row a boat, woman holds child on boat
-tangerines, 2385550, Which description best matches the image?, children pick tangerines from tree, children have tangerines in mouths, children hold tangerines in hands, children peel tangerines, children have tangerines in mouths
-teeth, 2386442, Which description best matches the image?, child flosses teeth carefully, woman brushes a child's teeth, family checks teeth in mirror, family brushes teeth together, family brushes teeth together
+tangerines, 2385550, Which description best matches the image?, children hold them to their eyes, children balance them on heads, children hide them in their palms, children have them in mouths, children have them in mouths
+teeth, 2386442, Which description best matches the image?, family rinses their mouths together, family applies toothpaste together, family examines their teeth together, family brushes teeth together, family brushes teeth together
 polar bear, 2387122, Which description best matches the image?, polar bear swims away from glass, polar bear presses on glass, polar bear dives underwater, polar bear sits on snowy ground, polar bear presses on glass
 cake, 2397102, Which description best matches the image?, couple poses with wedding cake, couple feeds each other cake, couple cuts cake together, couple kisses beside cake, couple cuts cake together
-baby, 2401636, Which description best matches the image?, baby looks at cat, cat licks woman's hand, woman raises up cat, cat sleeps beside baby, baby looks at cat
+baby, 2401636, Which description best matches the image?, baby looks at cat, baby reaches for the cat, baby crawls away from the cat, baby points at the cat, baby looks at cat
 apple, 2411268, Which description best matches the image?, child picks apple up from the ground, child bites into apple, child puts apple into bag, child picks apple from tree, child picks apple from tree
 dog, 2412687, Which description best matches the image?, man throws frisbee towards dog, dog catches frisbee midair, dog bites onto frisbee, dog ignores offered frisbee, dog bites onto frisbee
 baseball, 2356991, Which description best matches the image?, player runs towards base, player slides headfirst to base, player slides feetfirst toward base, gloved player holds a ball, player slides headfirst to base
-suitcase, 2385851, Which description best matches the image?, men carry suitcases on shoulders, men pull suitcases behind them, men stack suitcases on cart, man opens suitcases outside, men carry suitcases on shoulders
-horse ride, 2394020, Which description best matches the image?, people ride horses on road, people ride horses along beach, people ride horses through field, people ride horses through forest, people ride horses along beach
-circus, 2406346, Which description best matches the image?, circus elephants washed by handler, circus elephants walk on street, circus elephants stand on pedestals, circus elephants perform tricks, circus elephants walk on street
-surfboard, 2408717, Which description best matches the image?, surfers place surfboards into water, surfers lie on surfboards, surfers walk towards water with surfboards, surfers stand on surfboards on the beach, surfers walk towards water with surfboards
+suitcase, 2385851, Which description best matches the image?, men carry suitcases on shoulders, men carry suitcases by hand, men pull suitcases on wheels, men lift suitcases into a trunk, men carry suitcases on shoulders
+horse ride, 2394020, Which description best matches the image?, riders side-by-side on beach, riders following one another on beach, riders facing each other on beach, riders walking away from the beach, riders side-by-side on beach
+circus, 2406346, Which description best matches the image?, elephants walk in line, elephants stand in a circle, elephants face the handler, elephants raise their trunks, elephants walk in line
+surfboard, 2408717, Which description best matches the image?, surfers run toward the water, surfers sit by the water, surfers turn away from the water, surfers walk toward water, surfers walk toward water
 elephant, 2409918, Which description best matches the image?, elephants swim in water, elephants walk across savannah, elephants drink water, elephants splash riders, elephants swim in water
 laptop, 2410309, Which description best matches the image?, man types on laptop keyboard, woman and baby use laptops, baby touches laptop mouse, woman closes laptop lid, woman and baby use laptops

@@ -1,12 +1,12 @@
 Weight	Nested	Procedure	CueText	StimID	Question	Opt1	Opt2	Opt3	Opt4	CorrectKey	ImageFile
-1		TestProc	pizza	150472	Which description best matches the image?	women photograph pizza slice	women bite pizza slice	women carry pizza boxes	women cut large pizza	2	.\stimuli\150472.jpg
-1		TestProc	cat	2344622	Which description best matches the image?	cat paws at blanket	cat lies on blanket	cat paws at keyboard	cat lies on person's arm	2	.\stimuli\2344622.jpg
-1		TestProc	football	2345035	Which description best matches the image?	girls run toward football	girls kick the football	girls stand over the football	girls walk away from the football	1	.\stimuli\2345035.jpg
+1		TestProc	pizza	150472	Which description best matches the image?	women photograph pizza slice	women carry pizza boxes	women bite pizza slice	women cut large pizza	3	.\stimuli\150472.jpg
+1		TestProc	cat	2344622	Which description best matches the image?	cat paws at blanket	cat paws at keyboard	cat lies on blanket	cat lies on person's arm	3	.\stimuli\2344622.jpg
+1		TestProc	football	2345035	Which description best matches the image?	girls walk away from the football	girls kick the football	girls stand over the football	girls run toward football	4	.\stimuli\2345035.jpg
 1		TestProc	umbrella	2347025	Which description best matches the image?	baby lies under umbrella	woman holds umbrella over baby	baby holds onto umbrella	baby drags pink umbrella	3	.\stimuli\2347025.jpg
 1		TestProc	wine	2347400	Which description best matches the image?	men clink wine glasses	men grab wine bottles	men sip from wine glasses	men smell wine glasses	4	.\stimuli\2347400.jpg
-1		TestProc	tie	2348899	Which description best matches the image?	woman touches man's striped tie	woman gives man a striped tie	man ties another man's striped tie	man holds his striped tie	1	.\stimuli\2348899.jpg
-1		TestProc	blender	2349475	Which description best matches the image?	woman holds blender while man pedals bike	woman pedals bike while man opens blender	man pedals bike while woman pours liquid	woman pedals bike while man drinks liquid	1	.\stimuli\2349475.jpg
-1		TestProc	drink	2350974	Which description best matches the image?	child drinks next to car hood	child drinks while sitting on a car	child drinks while inside the car	child drinks next to car trunk	1	.\stimuli\2350974.jpg
+1		TestProc	tie	2348899	Which description best matches the image?	man holds his striped tie	woman gives man a striped tie	man ties another man's striped tie	woman touches man's striped tie	4	.\stimuli\2348899.jpg
+1		TestProc	blender	2349475	Which description best matches the image?	woman pedals bike while man drinks liquid	woman pedals bike while man opens blender	man pedals bike while woman pours liquid	woman holds blender while man pedals bike	4	.\stimuli\2349475.jpg
+1		TestProc	drink	2350974	Which description best matches the image?	child drinks next to car trunk	child drinks while sitting on a car	child drinks while inside the car	child drinks next to car hood	4	.\stimuli\2350974.jpg
 1		TestProc	luggage	2356125	Which description best matches the image?	staff tag luggage at a counter	staff load luggage onto a cart	staff load luggage onto a conveyor belt	staff load luggage into an xray	3	.\stimuli\2356125.jpg
 1		TestProc	clock	2360001	Which description best matches the image?	workers wipe large clock face	workers lift large clock	workers paint old clock	workers raise ladder up to clock	2	.\stimuli\2360001.jpg
 1		TestProc	frisbee	2362277	Which description best matches the image?	player holds frisbee with both hands	player holds frisbee with one hand only	player holds frisbee against chest	player holds frisbee above head	2	.\stimuli\2362277.jpg

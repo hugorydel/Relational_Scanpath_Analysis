@@ -30,6 +30,70 @@ import pandas as pd
 
 logger = logging.getLogger(__name__)
 
+# Screen dimensions — used for invalid fixation filtering
+SCREEN_W = 1920
+SCREEN_H = 1080
+
+# ---------------------------------------------------------------------------
+# Step 1a: Filter invalid events
+# ---------------------------------------------------------------------------
+
+
+def filter_invalid_events(
+    fixations: pd.DataFrame,
+    saccades: pd.DataFrame,
+    subject_id: str,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """
+    Remove fixations and saccades with invalid gaze coordinates.
+
+    Invalid events include:
+      - Out-of-bounds gaze (outside screen dimensions)
+      - EyeLink blink/tracker-loss artifacts, which are reported as
+        extreme coordinate values (e.g. 1e8) and always fall outside
+        screen bounds, so the same filter catches both.
+
+    Fixations are filtered on average gaze position (axp, ayp).
+    Saccades are filtered on start position (sxp, syp).
+    """
+
+    def _valid_mask(df: pd.DataFrame, x_col: str, y_col: str) -> pd.Series:
+        return (
+            df[x_col].notna()
+            & df[y_col].notna()
+            & (df[x_col] >= 0)
+            & (df[x_col] <= SCREEN_W)
+            & (df[y_col] >= 0)
+            & (df[y_col] <= SCREEN_H)
+        )
+
+    n_fix_before = len(fixations)
+    n_sacc_before = len(saccades)
+
+    if len(fixations) > 0 and {"axp", "ayp"}.issubset(fixations.columns):
+        fix_mask = _valid_mask(fixations, "axp", "ayp")
+        fixations = fixations[fix_mask].copy()
+
+    if len(saccades) > 0 and {"sxp", "syp"}.issubset(saccades.columns):
+        sacc_mask = _valid_mask(saccades, "sxp", "syp")
+        saccades = saccades[sacc_mask].copy()
+
+    n_fix_removed = n_fix_before - len(fixations)
+    n_sacc_removed = n_sacc_before - len(saccades)
+
+    if n_fix_removed > 0 or n_sacc_removed > 0:
+        logger.info(
+            f"  [{subject_id}] Filtered invalid events: "
+            f"{n_fix_removed} fixations, {n_sacc_removed} saccades removed "
+            f"(out-of-bounds / blink artifacts)."
+        )
+    else:
+        logger.info(
+            f"  [{subject_id}] No invalid events found — all coordinates within screen bounds."
+        )
+
+    return fixations, saccades
+
 
 # ---------------------------------------------------------------------------
 # Step 1: Load EDF
@@ -266,6 +330,46 @@ def join_stim_ids(
 
 
 # ---------------------------------------------------------------------------
+# Step 3a: Add ViewingNumber to encoding trials
+# ---------------------------------------------------------------------------
+
+
+def add_viewing_number(trial_table: pd.DataFrame) -> pd.DataFrame:
+    """
+    Add a ViewingNumber column to the trial table.
+
+    For encoding trials: ViewingNumber = 1 for the first appearance of
+    each StimID (by TrialID order), 2 for the second appearance.
+    For decoding trials: ViewingNumber = None (single retrieval event).
+
+    Assumes each StimID appears at most twice in encoding, which matches
+    the experiment design. Logs a warning if any StimID appears more than
+    twice (future-proofing for design changes).
+    """
+    trial_table = trial_table.copy()
+    trial_table["ViewingNumber"] = None
+
+    enc_mask = trial_table["Phase"] == "encoding"
+    enc = trial_table[enc_mask].sort_values("TrialID")
+
+    # Rank each StimID's appearances in TrialID order
+    viewing_nums = enc.groupby("StimID").cumcount() + 1  # 1-indexed
+
+    # Warn if any StimID appears more than twice
+    max_views = viewing_nums.max()
+    if max_views > 2:
+        over = enc.groupby("StimID").size()
+        over = over[over > 2]
+        logger.warning(
+            f"  Some StimIDs appear more than twice in encoding: "
+            f"{over.to_dict()} — ViewingNumber will exceed 2."
+        )
+
+    trial_table.loc[enc_mask, "ViewingNumber"] = viewing_nums.values
+    return trial_table
+
+
+# ---------------------------------------------------------------------------
 # Step 4: Segment fixations and saccades
 # ---------------------------------------------------------------------------
 
@@ -302,7 +406,7 @@ def segment_events(
     matched_positions = trial_positions[in_trial_mask]
 
     # Attach trial metadata
-    meta_cols = ["TrialID", "TrialIndex", "Phase", "StimID", "CueText"]
+    meta_cols = ["TrialID", "TrialIndex", "Phase", "ViewingNumber", "StimID", "CueText"]
     for col in meta_cols:
         matched_events[col] = trial_table[col].iloc[matched_positions].values
 
@@ -401,6 +505,7 @@ def write_outputs(
                 "StimID": fixations["StimID"],
                 "CueText": fixations["CueText"],
                 "Phase": fixations["Phase"],
+                "ViewingNumber": fixations["ViewingNumber"],
                 "TrialIndex": fixations["TrialIndex"],
                 "TrialID": fixations["TrialID"],
                 "FixStart_ms": fixations["stime"],
@@ -424,6 +529,7 @@ def write_outputs(
                 "StimID": saccades["StimID"],
                 "CueText": saccades["CueText"],
                 "Phase": saccades["Phase"],
+                "ViewingNumber": saccades["ViewingNumber"],
                 "TrialIndex": saccades["TrialIndex"],
                 "TrialID": saccades["TrialID"],
                 "SaccStart_ms": saccades["stime"],
@@ -486,6 +592,11 @@ def process_subject(
     # Step 1: Load EDF
     edf_data = load_edf(edf_path)
 
+    # Step 1a: Filter invalid / out-of-bounds / blink-artifact events
+    edf_data["fixations"], edf_data["saccades"] = filter_invalid_events(
+        edf_data["fixations"], edf_data["saccades"], subject_id
+    )
+
     # Step 2: Build trial table
     trial_table = build_trial_table(edf_data["messages"], subject_id)
     if len(trial_table) == 0:
@@ -494,6 +605,9 @@ def process_subject(
 
     # Step 3: Join StimIDs from behavioral CSVs
     trial_table = join_stim_ids(trial_table, beh_dir, subject_id)
+
+    # Step 3a: Add ViewingNumber to encoding trials
+    trial_table = add_viewing_number(trial_table)
 
     # Step 4: Segment fixations and saccades
     fixations = segment_events(

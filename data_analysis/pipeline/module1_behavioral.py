@@ -82,6 +82,27 @@ DISTRACTOR_COUNT_RANGE = (40, 60)  # time-terminated loop
 # ---------------------------------------------------------------------------
 
 
+def _read_file(filepath: Path) -> str:
+    """
+    Read an E-Prime .txt file, trying encodings in order of likelihood.
+    E-Prime exports as UTF-16 LE with BOM by default. If the file was
+    manually re-saved it may be UTF-8. We try UTF-16 first, then UTF-8,
+    then fall back to latin-1 (which never fails but may mis-read characters).
+    """
+    for encoding in ("utf-16", "utf-8", "latin-1"):
+        try:
+            text = filepath.read_text(encoding=encoding)
+            if "LogFrame" in text:
+                logger.debug(f"  Read {filepath.name} as {encoding}")
+                return text
+        except (UnicodeDecodeError, UnicodeError):
+            continue
+    logger.warning(
+        f"  Could not detect encoding for {filepath.name}, using utf-8 with replacement."
+    )
+    return filepath.read_text(encoding="utf-8", errors="replace")
+
+
 def read_logframes(filepath: Path) -> list[dict]:
     """
     Read the full E-Prime .txt file and parse every LogFrame block into a
@@ -92,7 +113,7 @@ def read_logframes(filepath: Path) -> list[dict]:
     - Within each block, split on first ':' only (handles colons in values)
     - Skip blank lines and the LogFrame End marker
     """
-    text = filepath.read_text(encoding="utf-8", errors="replace")
+    text = _read_file(filepath)
 
     # Split on LogFrame Start; first chunk is file header — discard it
     raw_blocks = text.split("*** LogFrame Start ***")[1:]
@@ -264,24 +285,32 @@ def validate_tables(tables: dict[str, pd.DataFrame], subject_id: str) -> bool:
                 )
                 passed = False
 
-    # --- All decoding StimIDs appear in encoding ---
-    enc_ids = set(tables["encoding"]["StimID"].dropna())
-    dec_ids = set(tables["decoding"]["StimID"].dropna())
-    missing_in_enc = dec_ids - enc_ids
-    if missing_in_enc:
-        logger.warning(
-            f"  [{subject_id}] Decoding StimIDs not found in encoding: {missing_in_enc}"
-        )
-        passed = False
+    # --- Cross-table StimID checks (only if tables are non-empty) ---
+    def _stim_ids(block_type: str) -> set:
+        df = tables[block_type]
+        if df.empty or "StimID" not in df.columns:
+            return set()
+        return set(df["StimID"].dropna())
 
-    # --- All exploratory StimIDs appear in decoding ---
-    exp_ids = set(tables["exploratory"]["StimID"].dropna())
-    missing_in_dec = exp_ids - dec_ids
-    if missing_in_dec:
-        logger.warning(
-            f"  [{subject_id}] Exploratory StimIDs not found in decoding: {missing_in_dec}"
-        )
-        passed = False
+    enc_ids = _stim_ids("encoding")
+    dec_ids = _stim_ids("decoding")
+    exp_ids = _stim_ids("exploratory")
+
+    if enc_ids and dec_ids:
+        missing_in_enc = dec_ids - enc_ids
+        if missing_in_enc:
+            logger.warning(
+                f"  [{subject_id}] Decoding StimIDs not found in encoding: {missing_in_enc}"
+            )
+            passed = False
+
+    if dec_ids and exp_ids:
+        missing_in_dec = exp_ids - dec_ids
+        if missing_in_dec:
+            logger.warning(
+                f"  [{subject_id}] Exploratory StimIDs not found in decoding: {missing_in_dec}"
+            )
+            passed = False
 
     if passed:
         logger.info(f"  [{subject_id}] All validation checks passed.")

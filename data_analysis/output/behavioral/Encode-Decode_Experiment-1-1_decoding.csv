@@ -1,0 +1,31 @@
+SubjectID,StimID,CueText,Accuracy,RT_ms,Response,CorrectKey,Confidence,TrialIndex
+Encode-Decode_Experiment-1-1,2386442,teeth,1,3215,1,1,4,1
+Encode-Decode_Experiment-1-1,2379478,baby-milk,1,3279,2,2,4,2
+Encode-Decode_Experiment-1-1,2408717,surfboard,0,4293,1,4,4,3
+Encode-Decode_Experiment-1-1,2374670,spray-vehicle,1,6319,1,1,4,4
+Encode-Decode_Experiment-1-1,2367132,video game,1,6612,3,3,4,5
+Encode-Decode_Experiment-1-1,2362704,bears,1,3480,1,1,4,6
+Encode-Decode_Experiment-1-1,2385851,suitcase,1,10554,1,1,4,7
+Encode-Decode_Experiment-1-1,2385550,tangerines,1,7346,4,4,4,8
+Encode-Decode_Experiment-1-1,2360001,clock,1,7925,2,2,4,9
+Encode-Decode_Experiment-1-1,2348899,tie,1,16808,4,4,4,10
+Encode-Decode_Experiment-1-1,2356991,baseball,1,2858,2,2,2,11
+Encode-Decode_Experiment-1-1,2356125,airport,1,4923,3,3,4,12
+Encode-Decode_Experiment-1-1,2409918,elephant,1,5571,1,1,4,13
+Encode-Decode_Experiment-1-1,2397102,cake,1,6904,3,3,4,14
+Encode-Decode_Experiment-1-1,150472,pizza,1,11463,3,3,4,15
+Encode-Decode_Experiment-1-1,2412687,dog,1,7844,3,3,4,16
+Encode-Decode_Experiment-1-1,2344622,cat,1,12607,3,3,4,17
+Encode-Decode_Experiment-1-1,2370664,donuts,1,7548,1,1,4,18
+Encode-Decode_Experiment-1-1,2394020,horse ride,0,8839,3,1,4,19
+Encode-Decode_Experiment-1-1,2347400,wine,0,9824,1,4,3,20
+Encode-Decode_Experiment-1-1,2383555,boat,1,6345,3,3,4,21
+Encode-Decode_Experiment-1-1,2371471,motorcycle,1,13810,3,3,4,22
+Encode-Decode_Experiment-1-1,2345035,football,1,5276,4,4,4,23
+Encode-Decode_Experiment-1-1,2369373,chef,1,9185,2,2,4,24
+Encode-Decode_Experiment-1-1,2387122,polar bear,1,6595,2,2,4,25
+Encode-Decode_Experiment-1-1,2350974,drink,0,22796,3,4,1,26
+Encode-Decode_Experiment-1-1,2411268,apple,1,8115,4,4,4,27
+Encode-Decode_Experiment-1-1,2349475,blender,1,8781,4,4,4,28
+Encode-Decode_Experiment-1-1,2347025,umbrella,1,7388,3,3,4,29
+Encode-Decode_Experiment-1-1,2410309,laptop,1,8992,2,2,4,30

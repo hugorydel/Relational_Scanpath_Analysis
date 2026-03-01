@@ -1,0 +1,76 @@
+10:52:10  INFO      Pipeline starting — 1 participant(s), modules [1, 2, 3, 4]
+10:52:10  INFO      Subjects: ['Encode-Decode_Experiment-1-1']
+10:52:10  INFO      --- Encode-Decode_Experiment-1-1 ---
+10:52:10  INFO      [Encode-Decode_Experiment-1-1] Processing Encode-Decode_Experiment-1-1.txt ...
+10:52:10  WARNING     [Encode-Decode_Experiment-1-1] encoding: expected 60 rows, got 0.
+10:52:10  WARNING     [Encode-Decode_Experiment-1-1] decoding: expected 30 rows, got 0.
+10:52:10  WARNING     [Encode-Decode_Experiment-1-1] exploratory: expected 10 rows, got 0.
+10:52:10  WARNING     [Encode-Decode_Experiment-1-1] distractor: row count 0 outside expected range 40–60.
+10:52:10  ERROR     [Encode-Decode_Experiment-1-1] Module 1 crashed: 'StimID'
+Traceback (most recent call last):
+  File "C:\Users\hugos\miniconda3\envs\relational_scanpath\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'StimID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\hugos\Desktop\Relational_Scanpath_Paper\Relational_Scanpath_Analysis\data_analysis\run_pipeline.py", line 63, in process_participant
+    ok = run_module1(
+        subject_id,
+        input_dir=config.DATA_BEHAVIORAL_DIR,
+        output_dir=config.OUTPUT_BEHAVIORAL_DIR,
+    )
+  File "c:\Users\hugos\Desktop\Relational_Scanpath_Paper\Relational_Scanpath_Analysis\data_analysis\pipeline\module1_behavioral.py", line 363, in process_subject
+    validate_tables(tables, subject_id)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hugos\Desktop\Relational_Scanpath_Paper\Relational_Scanpath_Analysis\data_analysis\pipeline\module1_behavioral.py", line 268, in validate_tables
+    enc_ids = set(tables["encoding"]["StimID"].dropna())
+                  ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\hugos\miniconda3\envs\relational_scanpath\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\hugos\miniconda3\envs\relational_scanpath\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'StimID'
+10:52:10  WARNING   [Encode-Decode_Experiment-1-1] Module 2 not yet implemented — skipping.
+10:52:10  WARNING   [Encode-Decode_Experiment-1-1] Module 3 not yet implemented — skipping.
+10:52:10  INFO      --- Module 4: Final Merge ---
+10:52:10  WARNING   Module 4 not yet implemented — skipping.
+10:52:10  INFO      
+=======================================================
+10:52:10  INFO      PIPELINE SUMMARY
+10:52:10  INFO      =======================================================
+10:52:10  INFO        Module 1: 0/1 passed | Failed: ['Encode-Decode_Experiment-1-1']
+10:52:10  INFO        Module 2: 0/1 passed | Failed: ['Encode-Decode_Experiment-1-1']
+10:52:10  INFO        Module 3: 0/1 passed | Failed: ['Encode-Decode_Experiment-1-1']
+10:52:10  INFO      =======================================================
+10:55:03  INFO      Pipeline starting — 1 participant(s), modules [1, 2, 3, 4]
+10:55:03  INFO      Subjects: ['Encode-Decode_Experiment-1-1']
+10:55:03  INFO      --- Encode-Decode_Experiment-1-1 ---
+10:55:03  INFO      [Encode-Decode_Experiment-1-1] Processing Encode-Decode_Experiment-1-1.txt ...
+10:55:03  WARNING     [Encode-Decode_Experiment-1-1] Unrecognised Procedure 'BlocProc' — block skipped. Keys present: ['BlockList', 'Procedure', 'BlockList.Cycle', 'BlockList.Sample', 'Running']
+10:55:03  WARNING     [Encode-Decode_Experiment-1-1] Unrecognised Procedure '' — block skipped. Keys present: ['Experiment', 'SessionDate', 'SessionTime', 'SessionStartDateTimeUtc', 'Subject']
+10:55:03  WARNING     [Encode-Decode_Experiment-1-1] 2 block(s) skipped due to unknown Procedure.
+10:55:03  WARNING     [Encode-Decode_Experiment-1-1] encoding: 30 duplicate StimID(s) found.
+10:55:03  INFO        [Encode-Decode_Experiment-1-1] Written: Encode-Decode_Experiment-1-1_encoding.csv (60 rows)
+10:55:03  INFO        [Encode-Decode_Experiment-1-1] Written: Encode-Decode_Experiment-1-1_distractor.csv (46 rows)
+10:55:03  INFO        [Encode-Decode_Experiment-1-1] Written: Encode-Decode_Experiment-1-1_decoding.csv (30 rows)
+10:55:03  INFO        [Encode-Decode_Experiment-1-1] Written: Encode-Decode_Experiment-1-1_exploratory.csv (10 rows)
+10:55:03  INFO      [Encode-Decode_Experiment-1-1] Module 1 complete.
+10:55:03  WARNING   [Encode-Decode_Experiment-1-1] Module 2 not yet implemented — skipping.
+10:55:03  WARNING   [Encode-Decode_Experiment-1-1] Module 3 not yet implemented — skipping.
+10:55:03  INFO      --- Module 4: Final Merge ---
+10:55:03  WARNING   Module 4 not yet implemented — skipping.
+10:55:03  INFO      
+=======================================================
+10:55:03  INFO      PIPELINE SUMMARY
+10:55:03  INFO      =======================================================
+10:55:03  INFO        Module 1: 1/1 passed
+10:55:03  INFO        Module 2: 0/1 passed | Failed: ['Encode-Decode_Experiment-1-1']
+10:55:03  INFO        Module 3: 0/1 passed | Failed: ['Encode-Decode_Experiment-1-1']
+10:55:03  INFO      =======================================================

@@ -1,0 +1,9 @@
+.conda/
+.env
+data/processed/
+data/diverse_selection/
+data/precomputed_stats_cache.pkl
+data/embedding_cache.pkl
+/data/selected_stimuli_raw/
+__pycache__/
+.ipynb_checkpoints/

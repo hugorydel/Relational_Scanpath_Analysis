@@ -74,3 +74,67 @@ KeyError: 'StimID'
 10:55:03  INFO        Module 2: 0/1 passed | Failed: ['Encode-Decode_Experiment-1-1']
 10:55:03  INFO        Module 3: 0/1 passed | Failed: ['Encode-Decode_Experiment-1-1']
 10:55:03  INFO      =======================================================
+13:58:08  INFO      Pipeline starting — 1 participant(s), modules [1, 2, 3, 4]
+13:58:08  INFO      Subjects: ['Encode-Decode_Experiment-1-1']
+13:58:08  INFO      --- Encode-Decode_Experiment-1-1 ---
+13:58:08  INFO      [Encode-Decode_Experiment-1-1] Processing Encode-Decode_Experiment-1-1.txt ...
+13:58:08  WARNING     [Encode-Decode_Experiment-1-1] Unrecognised Procedure 'BlocProc' — block skipped. Keys present: ['BlockList', 'Procedure', 'BlockList.Cycle', 'BlockList.Sample', 'Running']
+13:58:08  WARNING     [Encode-Decode_Experiment-1-1] Unrecognised Procedure '' — block skipped. Keys present: ['Experiment', 'SessionDate', 'SessionTime', 'SessionStartDateTimeUtc', 'Subject']
+13:58:08  WARNING     [Encode-Decode_Experiment-1-1] 2 block(s) skipped due to unknown Procedure.
+13:58:08  WARNING     [Encode-Decode_Experiment-1-1] encoding: 30 duplicate StimID(s) found.
+13:58:08  INFO        [Encode-Decode_Experiment-1-1] Written: Encode-Decode_Experiment-1-1_encoding.csv (60 rows)
+13:58:08  INFO        [Encode-Decode_Experiment-1-1] Written: Encode-Decode_Experiment-1-1_distractor.csv (46 rows)
+13:58:08  INFO        [Encode-Decode_Experiment-1-1] Written: Encode-Decode_Experiment-1-1_decoding.csv (30 rows)
+13:58:08  INFO        [Encode-Decode_Experiment-1-1] Written: Encode-Decode_Experiment-1-1_exploratory.csv (10 rows)
+13:58:08  INFO      [Encode-Decode_Experiment-1-1] Module 1 complete.
+13:58:08  WARNING   [Encode-Decode_Experiment-1-1] Module 2 not yet implemented — skipping.
+13:58:08  WARNING   [Encode-Decode_Experiment-1-1] Module 3 not yet implemented — skipping.
+13:58:08  INFO      --- Module 4: Final Merge ---
+13:58:08  WARNING   Module 4 not yet implemented — skipping.
+13:58:08  INFO      
+=======================================================
+13:58:08  INFO      PIPELINE SUMMARY
+13:58:08  INFO      =======================================================
+13:58:08  INFO        Module 1: 1/1 passed
+13:58:08  INFO        Module 2: 0/1 passed | Failed: ['Encode-Decode_Experiment-1-1']
+13:58:08  INFO        Module 3: 0/1 passed | Failed: ['Encode-Decode_Experiment-1-1']
+13:58:08  INFO      =======================================================
+14:00:25  INFO      Pipeline starting — 1 participant(s), modules [1, 2, 3, 4]
+14:00:25  INFO      Subjects: ['Encode-Decode_Experiment-1-1']
+14:00:25  INFO      --- Encode-Decode_Experiment-1-1 ---
+14:00:25  INFO      [Encode-Decode_Experiment-1-1] Processing Encode-Decode_Experiment-1-1.txt ...
+14:00:25  WARNING     [Encode-Decode_Experiment-1-1] Unrecognised Procedure 'BlocProc' — block skipped. Keys present: ['BlockList', 'Procedure', 'BlockList.Cycle', 'BlockList.Sample', 'Running']
+14:00:25  WARNING     [Encode-Decode_Experiment-1-1] Unrecognised Procedure '' — block skipped. Keys present: ['Experiment', 'SessionDate', 'SessionTime', 'SessionStartDateTimeUtc', 'Subject']
+14:00:25  WARNING     [Encode-Decode_Experiment-1-1] 2 block(s) skipped due to unknown Procedure.
+14:00:25  WARNING     [Encode-Decode_Experiment-1-1] encoding: 30 duplicate StimID(s) found.
+14:00:25  INFO        [Encode-Decode_Experiment-1-1] Written: Encode-Decode_Experiment-1-1_encoding.csv (60 rows)
+14:00:25  INFO        [Encode-Decode_Experiment-1-1] Written: Encode-Decode_Experiment-1-1_distractor.csv (46 rows)
+14:00:25  INFO        [Encode-Decode_Experiment-1-1] Written: Encode-Decode_Experiment-1-1_decoding.csv (30 rows)
+14:00:25  INFO        [Encode-Decode_Experiment-1-1] Written: Encode-Decode_Experiment-1-1_exploratory.csv (10 rows)
+14:00:25  INFO      [Encode-Decode_Experiment-1-1] Module 1 complete.
+14:00:25  INFO      [Encode-Decode_Experiment-1-1] Module 2 starting ...
+14:00:25  INFO        Loading EDF: Encode-Decode_Experiment-1-1.edf ...
+14:00:27  INFO        edf.discrete keys: ['messages', 'buttons', 'inputs', 'fixations', 'saccades', 'blinks']
+14:00:27  INFO        Loaded: 2657 messages, 1321 fixations, 1250 saccades.
+14:00:27  INFO        [Encode-Decode_Experiment-1-1] Found 90 TRIALID markers.
+14:00:27  INFO        [Encode-Decode_Experiment-1-1] Trial table built: 60 encoding trials, 30 decoding trials.
+14:00:27  INFO        [Encode-Decode_Experiment-1-1] StimID join complete. 90 trials with StimID.
+14:00:27  INFO        [Encode-Decode_Experiment-1-1] Segmented 1321/1321 fixations into trial windows.
+14:00:27  INFO        [Encode-Decode_Experiment-1-1] Segmented 1250/1250 saccades into trial windows.
+14:00:27  INFO        [Encode-Decode_Experiment-1-1] Encoding trials in EDF : 60
+14:00:27  INFO        [Encode-Decode_Experiment-1-1] Decoding trials in EDF : 30
+14:00:27  INFO        [Encode-Decode_Experiment-1-1] All Module 2 validation checks passed.
+14:00:27  INFO        [Encode-Decode_Experiment-1-1] Written: Encode-Decode_Experiment-1-1_fixations.csv (1321 rows)
+14:00:27  INFO        [Encode-Decode_Experiment-1-1] Written: Encode-Decode_Experiment-1-1_saccades.csv (1250 rows)
+14:00:27  INFO      [Encode-Decode_Experiment-1-1] Module 2 complete.
+14:00:27  WARNING   [Encode-Decode_Experiment-1-1] Module 3 not yet implemented — skipping.
+14:00:27  INFO      --- Module 4: Final Merge ---
+14:00:27  WARNING   Module 4 not yet implemented — skipping.
+14:00:27  INFO      
+=======================================================
+14:00:27  INFO      PIPELINE SUMMARY
+14:00:27  INFO      =======================================================
+14:00:27  INFO        Module 1: 1/1 passed
+14:00:27  INFO        Module 2: 1/1 passed
+14:00:27  INFO        Module 3: 0/1 passed | Failed: ['Encode-Decode_Experiment-1-1']
+14:00:27  INFO      =======================================================

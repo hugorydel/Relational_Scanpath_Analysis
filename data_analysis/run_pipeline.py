@@ -35,12 +35,12 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import config
 from pipeline.module1_behavioral import process_subject as run_module1
+from pipeline.module2_eyetracking import process_subject as run_module2
 from pipeline.utils import get_subject_ids, init_output_dirs, setup_logging
 
 # Placeholders — uncomment as each module is implemented
-# from pipeline.module2_eyetracking import process_subject as run_module2
-# from pipeline.module3_features    import process_subject as run_module3
-# from pipeline.module4_merge       import run_merge        as run_module4
+# from pipeline.module3_features import process_subject as run_module3
+# from pipeline.module4_merge    import run_merge        as run_module4
 
 logger = logging.getLogger(__name__)
 
@@ -71,8 +71,17 @@ def process_participant(subject_id: str, modules: list[int]) -> dict[int, bool]:
             results[1] = False
 
     if 2 in modules:
-        logger.warning(f"[{subject_id}] Module 2 not yet implemented — skipping.")
-        results[2] = False
+        try:
+            ok = run_module2(
+                subject_id,
+                edf_dir=config.DATA_EYETRACKING_DIR,
+                beh_dir=config.OUTPUT_BEHAVIORAL_DIR,
+                output_dir=config.OUTPUT_EYETRACKING_DIR,
+            )
+            results[2] = ok
+        except Exception as e:
+            logger.error(f"[{subject_id}] Module 2 crashed: {e}", exc_info=True)
+            results[2] = False
 
     if 3 in modules:
         logger.warning(f"[{subject_id}] Module 3 not yet implemented — skipping.")

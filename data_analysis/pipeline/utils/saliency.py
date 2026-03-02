@@ -12,7 +12,7 @@ Algorithm:
     and inverse FFT reconstruction.
 
     The resulting map is resized to IMAGE_W x IMAGE_H and normalized
-    to a probability map (sum = 1.0) for regression comparability.
+    to a probability map for regression comparability.
 
 Usage (standalone):
     # All stimuli in stimuli_dataset.json
@@ -40,12 +40,6 @@ import numpy as np
 from pipeline.utils.scene_graph import load_stimulus_metadata
 
 logger = logging.getLogger(__name__)
-
-# Output image dimensions (all stimuli standardised to this)
-IMAGE_W = 1024
-IMAGE_H = 768
-
-
 # ---------------------------------------------------------------------------
 # Core algorithm
 # ---------------------------------------------------------------------------
@@ -83,7 +77,7 @@ def compute_saliency_map(image_path: Path) -> np.ndarray:
 
     # 4. Resize to standard experimental dimensions
     sal_map_resized = cv2.resize(
-        saliency_map, (IMAGE_W, IMAGE_H), interpolation=cv2.INTER_LINEAR
+        saliency_map, (config.IMAGE_W, config.IMAGE_H), interpolation=cv2.INTER_LINEAR
     )
 
     # 5. Min-Max Normalization (Scales from 0.0 to 1.0)

@@ -9,6 +9,13 @@ scene_graph  — AOI polygon index and relational graph index (Step 1, Module 3)
 saliency     — Spectral residual saliency maps (Hou & Zhang, 2007)
 """
 
+from .aoi import assign_aoi, run_aoi_assignment
+from .metrics import (
+    build_object_sequence,
+    kendall_tau_shared,
+    svg_alignment,
+    symbolic_lcs,
+)
 from .saliency import compute_all_saliency_maps, get_saliency_map
 from .scene_graph import build_graph_index, build_polygon_index, load_stimulus_metadata
 
@@ -18,4 +25,10 @@ __all__ = [
     "build_graph_index",
     "get_saliency_map",
     "compute_all_saliency_maps",
+    "assign_aoi",
+    "run_aoi_assignment",
+    "build_object_sequence",
+    "kendall_tau_shared",
+    "svg_alignment",
+    "symbolic_lcs",
 ]

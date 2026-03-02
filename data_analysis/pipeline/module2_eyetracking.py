@@ -28,11 +28,9 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-logger = logging.getLogger(__name__)
+from data_analysis.config import DISPLAY_HEIGHT_PX, DISPLAY_WIDTH_PX
 
-# Screen dimensions — used for invalid fixation filtering
-SCREEN_W = 1920
-SCREEN_H = 1080
+logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
 # Step 1a: Filter invalid events
@@ -62,9 +60,9 @@ def filter_invalid_events(
             df[x_col].notna()
             & df[y_col].notna()
             & (df[x_col] >= 0)
-            & (df[x_col] <= SCREEN_W)
+            & (df[x_col] <= DISPLAY_WIDTH_PX)
             & (df[y_col] >= 0)
-            & (df[y_col] <= SCREEN_H)
+            & (df[y_col] <= DISPLAY_HEIGHT_PX)
         )
 
     n_fix_before = len(fixations)

@@ -1,6 +1,8 @@
 """
 utils/visualize_saliency.py
 ===========================
+Step 2 of Module 3: Visualize the Spectral Residual saliency map for a given StimID.
+
 Generates and visualizes the Spectral Residual saliency map for a given StimID,
 utilizing the cached .npy files if available.
 

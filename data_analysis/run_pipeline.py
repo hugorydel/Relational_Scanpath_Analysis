@@ -30,6 +30,8 @@ import logging
 import sys
 from pathlib import Path
 
+import numpy as np
+
 # Ensure project root is on path so 'import config' works from anywhere
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -37,9 +39,9 @@ import config
 from pipeline.misc import get_subject_ids, init_output_dirs, setup_logging
 from pipeline.module1_behavioral import process_subject as run_module1
 from pipeline.module2_eyetracking import process_subject as run_module2
+from pipeline.module3_features import process_subject as run_module3
 
 # Placeholders — uncomment as each module is implemented
-# from pipeline.module3_features import process_subject as run_module3
 # from pipeline.module4_merge    import run_merge        as run_module4
 
 logger = logging.getLogger(__name__)
@@ -50,7 +52,9 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 
-def process_participant(subject_id: str, modules: list[int]) -> dict[int, bool]:
+def process_participant(
+    subject_id: str, modules: list[int], rng: np.random.Generator = None
+) -> dict[int, bool]:
     """
     Run the requested modules for a single participant.
 
@@ -84,8 +88,12 @@ def process_participant(subject_id: str, modules: list[int]) -> dict[int, bool]:
             results[2] = False
 
     if 3 in modules:
-        logger.warning(f"[{subject_id}] Module 3 not yet implemented — skipping.")
-        results[3] = False
+        try:
+            ok = run_module3(subject_id, force_aoi=False, rng=rng)
+            results[3] = ok is not None and not ok.empty
+        except Exception as e:
+            logger.error(f"[{subject_id}] Module 3 crashed: {e}", exc_info=True)
+            results[3] = False
 
     return results
 
@@ -137,11 +145,12 @@ def main():
 
     # Per-participant modules (1–3)
     per_subject_modules = [m for m in args.modules if m in (1, 2, 3)]
+    rng = np.random.default_rng(seed=42)  # For reproducibility in any random steps
     all_results = {}
 
     for sid in subject_ids:
         logger.info(f"--- {sid} ---")
-        all_results[sid] = process_participant(sid, per_subject_modules)
+        all_results[sid] = process_participant(sid, per_subject_modules, rng=rng)
 
     # Module 4: merge across all participants
     if 4 in args.modules:

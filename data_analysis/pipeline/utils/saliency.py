@@ -1,33 +1,32 @@
 """
 utils/saliency.py
 =================
-Spectral Residual saliency maps (Hou & Zhang, CVPR 2007).
+Spectral Residual saliency maps (Hou & Zhang, CVPR 2007) via OpenCV.
 
 Computes one saliency map per stimulus image and caches the result to
 output/features/saliency_maps/{StimID}.npy so it is only computed once.
 
-Algorithm (equations from the paper):
-    1. Downsample image to 64×64
-    2. Per RGB channel:
-       a. Compute log amplitude spectrum:  L(f) = log|FFT(channel)|
-       b. Smooth with 3×3 average filter:  A(f) = h₃ * L(f)
-       c. Spectral residual:               R(f) = L(f) - A(f)
-       d. Reconstruct:  S_c(x) = |IFFT(exp(R(f) + i·P(f)))|²
-          where P(f) is the preserved phase spectrum
-    3. Average S_c across channels
-    4. Smooth with Gaussian σ=8 (config.SALIENCE_SMOOTHING_SIGMA)
-    5. Upsample back to IMAGE_W × IMAGE_H (1024×768)
-    6. Normalise to [0, 1]
+Algorithm:
+    Utilizes cv2.saliency.StaticSaliencySpectralResidual_create() which
+    natively handles the FFT, log-amplitude smoothing, residual subtraction,
+    and inverse FFT reconstruction.
+
+    The resulting map is resized to IMAGE_W x IMAGE_H and normalized
+    to a probability map (sum = 1.0) for regression comparability.
 
 Usage (standalone):
-    python -m pipeline.utils.saliency \\
-        --image-dir  data_metadata/images/ \\
-        --output-dir output/features/saliency_maps/ \\
-        --stim-ids   2383555 2386442        # optional: subset
+    # All stimuli in stimuli_dataset.json
+    python -m pipeline.utils.saliency
+
+    # Specific subset
+    python -m pipeline.utils.saliency --stim-ids 2383555 2386442
+
+    # Force recompute even if cache exists
+    python -m pipeline.utils.saliency --force
 
 Usage (from Module 3):
     from pipeline.utils.saliency import get_saliency_map
-    sal_map = get_saliency_map("2383555")   # np.ndarray (768, 1024), float32, [0,1]
+    sal_map = get_saliency_map("2383555")   # np.ndarray (768, 1024), float32, sums to 1
 """
 
 import argparse
@@ -36,10 +35,9 @@ from pathlib import Path
 from typing import Optional
 
 import config
+import cv2
 import numpy as np
-from PIL import Image
 from pipeline.utils.scene_graph import load_stimulus_metadata
-from scipy.ndimage import gaussian_filter
 
 logger = logging.getLogger(__name__)
 
@@ -47,60 +45,20 @@ logger = logging.getLogger(__name__)
 IMAGE_W = 1024
 IMAGE_H = 768
 
-# FFT computation size (paper recommendation)
-FFT_SIZE = 64
-
-# Average filter size for spectral residual (paper uses 3×3)
-AVG_FILTER_SIZE = 3
-
 
 # ---------------------------------------------------------------------------
 # Core algorithm
 # ---------------------------------------------------------------------------
 
 
-def _spectral_residual_channel(channel: np.ndarray) -> np.ndarray:
-    """
-    Compute saliency map for a single grayscale channel (H×W, float).
-
-    Returns a saliency map of the same spatial size, unnormalised.
-    """
-    # Downsample to FFT_SIZE × FFT_SIZE
-    img_pil = Image.fromarray((channel * 255).astype(np.uint8))
-    img_small = img_pil.resize((FFT_SIZE, FFT_SIZE), Image.BILINEAR)
-    arr = np.array(img_small, dtype=np.float64) / 255.0
-
-    # FFT
-    fft = np.fft.fft2(arr)
-    amp = np.abs(fft)
-    phase = np.angle(fft)  # P(f) — preserved throughout
-
-    # Log amplitude spectrum — add small epsilon to avoid log(0)
-    log_amp = np.log(amp + 1e-12)  # L(f)
-
-    # Smooth with AVG_FILTER_SIZE × AVG_FILTER_SIZE mean filter
-    from scipy.ndimage import uniform_filter
-
-    avg_amp = uniform_filter(log_amp, size=AVG_FILTER_SIZE)  # A(f)
-
-    # Spectral residual
-    residual = log_amp - avg_amp  # R(f)
-
-    # Reconstruct in spatial domain: exp(R(f) + i·P(f))
-    reconstructed = np.exp(residual) * np.exp(1j * phase)
-    saliency_small = np.abs(np.fft.ifft2(reconstructed)) ** 2  # squared as per paper
-
-    return saliency_small
-
-
 def compute_saliency_map(image_path: Path) -> np.ndarray:
     """
-    Compute a spectral residual saliency map for one image.
+    Compute a spectral residual saliency map using OpenCV.
 
     Parameters
     ----------
     image_path : Path
-        Path to the stimulus image (any PIL-readable format).
+        Path to the stimulus image.
 
     Returns
     -------
@@ -108,38 +66,38 @@ def compute_saliency_map(image_path: Path) -> np.ndarray:
         Float32 array of shape (IMAGE_H, IMAGE_W) = (768, 1024), values in [0, 1].
         Row-major: index as [y, x].
     """
-    # Load and convert to RGB float [0, 1]
-    img = Image.open(image_path).convert("RGB")
-    img_arr = np.array(img, dtype=np.float32) / 255.0  # (H, W, 3)
+    # 1. Read image via OpenCV
+    img = cv2.imread(str(image_path))
+    if img is None:
+        raise ValueError(
+            f"OpenCV could not read image at {image_path}. Check file format."
+        )
 
-    # Per-channel spectral residual
-    channels = []
-    for c in range(3):
-        sal_c = _spectral_residual_channel(img_arr[:, :, c])
-        channels.append(sal_c)
+    # 2. Initialize the Spectral Residual algorithm
+    saliency_algorithm = cv2.saliency.StaticSaliencySpectralResidual_create()
 
-    # Average across channels → (FFT_SIZE, FFT_SIZE)
-    sal_map = np.mean(channels, axis=0).astype(np.float32)
+    # 3. Compute the map
+    success, saliency_map = saliency_algorithm.computeSaliency(img)
+    if not success:
+        raise RuntimeError(f"Saliency computation failed for {image_path}")
 
-    # Smooth with Gaussian σ=8 at the 64×64 FFT scale.
-    # The paper applies σ=8 at the 64px stage before upsampling — no scaling needed.
-    sal_map = gaussian_filter(sal_map, sigma=config.SALIENCE_SMOOTHING_SIGMA).astype(
-        np.float32
+    # 4. Resize to standard experimental dimensions
+    sal_map_resized = cv2.resize(
+        saliency_map, (IMAGE_W, IMAGE_H), interpolation=cv2.INTER_LINEAR
     )
 
-    # Upsample to IMAGE_H × IMAGE_W
-    sal_pil = Image.fromarray(sal_map)
-    sal_up = sal_pil.resize((IMAGE_W, IMAGE_H), Image.BILINEAR)
-    sal_map = np.array(sal_up, dtype=np.float32)
+    # 5. Min-Max Normalization (Scales from 0.0 to 1.0)
+    sal_map_float = sal_map_resized.astype(np.float32)
+    sal_min = sal_map_float.min()
+    sal_max = sal_map_float.max()
 
-    # Normalise to [0, 1]
-    sal_min, sal_max = sal_map.min(), sal_map.max()
-    if sal_max > sal_min:
-        sal_map = (sal_map - sal_min) / (sal_max - sal_min)
+    if sal_max - sal_min > 0:
+        sal_map_float = (sal_map_float - sal_min) / (sal_max - sal_min)
     else:
-        sal_map[:] = 0.0
+        # Fallback if the map is completely uniform/blank
+        sal_map_float[:] = 0.0
 
-    return sal_map
+    return sal_map_float
 
 
 # ---------------------------------------------------------------------------
@@ -159,29 +117,6 @@ def get_saliency_map(
 ) -> np.ndarray:
     """
     Return the saliency map for a stimulus, loading from cache if available.
-
-    Parameters
-    ----------
-    stim_id : str
-        Image ID (e.g. "2383555").
-    image_dir : Path, optional
-        Directory containing stimulus images. Defaults to
-        config.DATA_METADATA_DIR / "images".
-    cache_dir : Path, optional
-        Directory for cached .npy files. Defaults to
-        config.OUTPUT_FEATURES_DIR / "saliency_maps".
-    force_recompute : bool
-        If True, recompute even if a cached file exists.
-
-    Returns
-    -------
-    np.ndarray
-        Float32 (768, 1024) saliency map, values in [0, 1].
-
-    Raises
-    ------
-    FileNotFoundError
-        If no image file with a supported extension is found for stim_id.
     """
     image_dir = Path(image_dir) if image_dir else config.DATA_METADATA_DIR / "images"
     cache_dir = (
@@ -227,19 +162,6 @@ def compute_all_saliency_maps(
 ) -> dict[str, np.ndarray]:
     """
     Compute and cache saliency maps for all (or a subset of) stimuli.
-
-    Parameters
-    ----------
-    image_dir : Path, optional
-    cache_dir : Path, optional
-    stim_ids : list of str, optional
-        If None, uses all StimIDs found in stimuli_dataset.json.
-    force_recompute : bool
-        Recompute even if cached files already exist.
-
-    Returns
-    -------
-    dict : {stim_id: np.ndarray}
     """
     image_dir = Path(image_dir) if image_dir else config.DATA_METADATA_DIR / "images"
     cache_dir = (
@@ -274,8 +196,8 @@ def compute_all_saliency_maps(
             )
             results[stim_id] = sal_map
             n_new += 1
-        except FileNotFoundError as e:
-            logger.warning(f"  {e}")
+        except Exception as e:
+            logger.warning(f"  Failed on {stim_id}: {e}")
             errors.append(stim_id)
 
     logger.info(

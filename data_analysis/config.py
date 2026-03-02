@@ -85,7 +85,7 @@ RELATION_DIRECTIONALITY = "undirected"
 MIN_VALID_TRANSITIONS = 2
 
 # Salience map parameters (spectral residual, Hou & Zhang 2007)
-SALIENCE_SMOOTHING_SIGMA = 8  # Gaussian smoothing sigma applied after IFFT
+SALIENCE_SMOOTHING_SIGMA = 3  # Gaussian smoothing sigma applied after IFFT
 
 # ---------------------------------------------------------------------------
 # Logging

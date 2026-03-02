@@ -1,22 +1,21 @@
 """
-utils.py
-========
-Shared utilities used across pipeline modules.
+misc.py
+=======
+Miscellaneous shared utilities used across pipeline modules.
 
 Contents:
   - Logging setup
   - Subject ID discovery
-  - Stimulus metadata loader (cached — loads stimuli_dataset.json once)
   - Output directory initialisation
+  - Safe CSV reader (StimID preserved as string)
 """
 
-import functools
-import json
 import logging
 from pathlib import Path
 from typing import Optional
 
 import config
+import pandas as pd
 
 # ---------------------------------------------------------------------------
 # Logging
@@ -46,7 +45,7 @@ def setup_logging(level: Optional[str] = None, logfile: Optional[Path] = None):
         format=config.LOG_FORMAT,
         datefmt=config.LOG_DATEFMT,
         handlers=handlers,
-        force=True,  # re-apply if called more than once (e.g. in tests)
+        force=True,
     )
 
 
@@ -62,63 +61,10 @@ def get_subject_ids(
     """
     Return a sorted list of subject IDs found in input_dir by scanning for
     files with the given extension. Subject ID = filename stem.
-
-    Parameters
-    ----------
-    input_dir : Path, optional
-        Defaults to config.DATA_BEHAVIORAL_DIR.
-    extension : str
-        File extension to scan for (default '.txt').
     """
     input_dir = input_dir or config.DATA_BEHAVIORAL_DIR
     ids = sorted(p.stem for p in Path(input_dir).glob(f"*{extension}"))
     return ids
-
-
-# ---------------------------------------------------------------------------
-# Stimulus metadata loader
-# ---------------------------------------------------------------------------
-
-
-@functools.lru_cache(maxsize=1)
-def load_stimulus_metadata(metadata_file: Optional[Path] = None) -> dict:
-    """
-    Load stimuli_dataset.json and return a dict keyed by image_id (string).
-
-    The result is cached after the first call so all modules share one copy
-    in memory rather than each loading the file independently.
-
-    Returns
-    -------
-    dict
-        {
-            "2383555": {
-                "image_id": "2383555",
-                "objects": [...],
-                "relations": [...],
-                ...
-            },
-            ...
-        }
-    """
-    metadata_file = metadata_file or config.METADATA_FILE
-    metadata_file = Path(metadata_file)
-
-    if not metadata_file.exists():
-        raise FileNotFoundError(f"Metadata file not found: {metadata_file}")
-
-    logger = logging.getLogger(__name__)
-    logger.info(f"Loading stimulus metadata from {metadata_file.name} ...")
-
-    with metadata_file.open(encoding="utf-8") as f:
-        raw = json.load(f)
-
-    # Re-key by image_id for O(1) lookups downstream
-    images = raw.get("images", [])
-    keyed = {str(img["image_id"]): img for img in images}
-
-    logger.info(f"  Loaded metadata for {len(keyed)} stimuli.")
-    return keyed
 
 
 # ---------------------------------------------------------------------------
@@ -143,8 +89,6 @@ def init_output_dirs():
 # ---------------------------------------------------------------------------
 # Convenience: safe CSV read with StimID preserved as string
 # ---------------------------------------------------------------------------
-
-import pandas as pd
 
 
 def read_csv_with_stim_id(filepath: Path, **kwargs) -> pd.DataFrame:

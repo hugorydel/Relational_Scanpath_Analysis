@@ -34,9 +34,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 import config
+from pipeline.misc import get_subject_ids, init_output_dirs, setup_logging
 from pipeline.module1_behavioral import process_subject as run_module1
 from pipeline.module2_eyetracking import process_subject as run_module2
-from pipeline.utils import get_subject_ids, init_output_dirs, setup_logging
 
 # Placeholders — uncomment as each module is implemented
 # from pipeline.module3_features import process_subject as run_module3

@@ -57,8 +57,10 @@ def visualize_saliency(stim_id: str, image_dir: Path, cache_dir: Path, force: bo
     img_bgr = cv2.imread(str(img_path))
     img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
 
-    # Ensure the image matches the standard 1024x768 output of our saliency map
-    img_rgb = cv2.resize(img_rgb, (1024, 768), interpolation=cv2.INTER_LINEAR)
+    # Ensure the image matches the standard W x H output of our saliency map
+    img_rgb = cv2.resize(
+        img_rgb, (config.IMAGE_W, config.IMAGE_H), interpolation=cv2.INTER_LINEAR
+    )
 
     # 4. Create the plot
     fig, axes = plt.subplots(1, 3, figsize=(18, 6))

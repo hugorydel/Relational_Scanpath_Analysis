@@ -161,19 +161,19 @@ def _compute_pairwise_metrics(trial_df: pd.DataFrame) -> pd.DataFrame:
     """
     logger.info(f"  Step 6: Pairwise LCS / Kendall's tau ...")
 
-    # Pre-index sequences by (StimID, Phase, ViewingNumber)
+    # Normalise ViewingNumber key: decoding rows have NaN (which can't be used
+    # as a dict key since NaN != NaN), so we use the sentinel "decoding" instead.
+    def _vn_key(phase, vn):
+        return "decoding" if pd.isna(vn) else vn
+
     seq_index = {
-        (str(row["StimID"]), row["Phase"], row["ViewingNumber"]): row["_sequence"]
+        (
+            str(row["StimID"]),
+            row["Phase"],
+            _vn_key(row["Phase"], row["ViewingNumber"]),
+        ): row["_sequence"]
         for _, row in trial_df.iterrows()
     }
-
-    pairs = [
-        # (seq_a_key, seq_b_key, column_prefix, target_row_key)
-        # target_row_key: the row in trial_df where the result is stored
-        ("enc2_vs_dec", "encoding", 2.0, "decoding", None, "decoding", None),
-        ("enc1_vs_enc2", "encoding", 1.0, "encoding", 2.0, "encoding", 2.0),
-        ("enc1_vs_dec", "encoding", 1.0, "decoding", None, "decoding", None),
-    ]
 
     # Initialise new columns with NaN
     pairwise_cols = [
@@ -203,7 +203,7 @@ def _compute_pairwise_metrics(trial_df: pd.DataFrame) -> pd.DataFrame:
 
         seq_enc1 = seq_index.get((stim_id, "encoding", 1.0), [])
         seq_enc2 = seq_index.get((stim_id, "encoding", 2.0), [])
-        seq_dec = seq_index.get((stim_id, "decoding", None), [])
+        seq_dec = seq_index.get((stim_id, "decoding", "decoding"), [])
 
         # Enc2 vs Dec → stored on decoding row
         if seq_enc2 and seq_dec:
@@ -417,7 +417,7 @@ def _validate(subject_id: str, trial_df: pd.DataFrame) -> bool:
     ok = True
 
     # Row count
-    expected_rows = 90  # 30 images × 3 trials (enc1, enc2, dec)
+    expected_rows = config.N_ENCODING_TRIALS + config.N_DECODING_TRIALS
     if len(trial_df) != expected_rows:
         logger.warning(f"    Row count: {len(trial_df)} (expected {expected_rows})")
         ok = False

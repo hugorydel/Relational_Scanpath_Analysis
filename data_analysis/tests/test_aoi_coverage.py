@@ -22,22 +22,25 @@ Usage:
 import argparse
 import json
 import math
+import sys
 from collections import defaultdict
 from pathlib import Path
 
+import config
 import numpy as np
 import pandas as pd
 
+sys.path.insert(0, str(Path(__file__).parent.parent))
 # ---------------------------------------------------------------------------
 # Coordinate transform
 # ---------------------------------------------------------------------------
 
-SCREEN_W, SCREEN_H = 1920, 1080
-IMAGE_W, IMAGE_H = 1024, 768
-
 
 def screen_to_image(gaze_x, gaze_y):
-    return gaze_x * (IMAGE_W / SCREEN_W), gaze_y * (IMAGE_H / SCREEN_H)
+    return (
+        gaze_x * (config.IMAGE_W / config.DISPLAY_WIDTH_PX),
+        gaze_y * (config.IMAGE_H / config.DISPLAY_HEIGHT_PX),
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -267,17 +270,17 @@ def run_diagnostic(fixations_path, metadata_path):
     print("=" * 60)
     print(
         f"  img_x : [{df['img_x'].min():.1f}, {df['img_x'].max():.1f}]  "
-        f"(expected 0–1024)"
+        f"(expected 0–{config.IMAGE_W})"
     )
     print(
         f"  img_y : [{df['img_y'].min():.1f}, {df['img_y'].max():.1f}]  "
-        f"(expected 0–768)"
+        f"(expected 0–{config.IMAGE_H})"
     )
     out_of_bounds = df[
         (df["img_x"] < 0)
-        | (df["img_x"] > IMAGE_W)
+        | (df["img_x"] > config.IMAGE_W)
         | (df["img_y"] < 0)
-        | (df["img_y"] > IMAGE_H)
+        | (df["img_y"] > config.IMAGE_H)
     ]
     print(
         f"  Out-of-bounds fixations: {len(out_of_bounds)} "

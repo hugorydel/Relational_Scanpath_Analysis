@@ -67,15 +67,14 @@ EXPLORATORY_COLS = {
     "ExploratoryList.Sample": "TrialIndex",
 }
 
-# Expected trial counts for validation
+import config
+
 EXPECTED_COUNTS = {
-    "encoding": 60,
-    "decoding": 30,
-    "exploratory": 10,
+    "encoding": config.N_ENCODING_TRIALS,
+    "decoding": config.N_DECODING_TRIALS,
+    "exploratory": config.N_EXPLORATORY_TRIALS,
 }
-
-DISTRACTOR_COUNT_RANGE = (40, 60)  # time-terminated loop
-
+lo, hi = config.N_DISTRACTOR_RANGE
 
 # ---------------------------------------------------------------------------
 # Step 1 & 2: File reading and block parsing
@@ -267,7 +266,6 @@ def validate_tables(tables: dict[str, pd.DataFrame], subject_id: str) -> bool:
             passed = False
 
     dist_count = len(tables["distractor"])
-    lo, hi = DISTRACTOR_COUNT_RANGE
     if not (lo <= dist_count <= hi):
         logger.warning(
             f"  [{subject_id}] distractor: row count {dist_count} outside expected range {lo}–{hi}."

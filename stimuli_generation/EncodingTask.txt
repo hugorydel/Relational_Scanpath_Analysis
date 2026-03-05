@@ -1,61 +1,31 @@
 Weight	Nested	Procedure	CueText	StimID	Question	Opt1	Opt2	Opt3	Opt4	CorrectKey	ImageFile
-1		PracticeProc	pizza	150472	How many women are in the scene?	four	one	three	two	4	.\stimuli\150472.jpg
-1		PracticeProc	pizza	150472	Where is the pizza slice located?	on table	on paper plate	on metal tray	in pizza box	2	.\stimuli\150472.jpg
-1		PracticeProc	cat	2344622	Where is the cat located?	on keyboard	next to keyboard	under blanket	on person's arm	2	.\stimuli\2344622.jpg
-1		PracticeProc	cat	2344622	What is the cat resting its head on?	person's arm	keyboard edge	plush toy	blue blanket	4	.\stimuli\2344622.jpg
-1		PracticeProc	football	2345035	Who runs toward the football in the scene?	girl and boy	girls	boys	men	2	.\stimuli\2345035.jpg
-1		PracticeProc	football	2345035	What are the girls doing with the ball?	catching	kicking	chasing	bouncing	3	.\stimuli\2345035.jpg
-1		PracticeProc	umbrella	2347025	Who is holding the umbrella in the scene?	girl	baby	woman	man	2	.\stimuli\2347025.jpg
-1		PracticeProc	umbrella	2347025	Where is the baby in relation to the mother?	on back	sitting on shoulders	walking beside her	held in arms	1	.\stimuli\2347025.jpg
-1		PracticeProc	wine	2347400	What are the men doing with the wine?	clinking	pouring	smelling	sipping	1	.\stimuli\2347400.jpg
-1		PracticeProc	wine	2347400	What are the men sitting on in the scene?	couch	chairs	bench	table	1	.\stimuli\2347400.jpg
-1		PracticeProc	tie	2348899	What is the woman doing?	pointing at a man	presenting a gift	folding a tie	touching the man's tie	4	.\stimuli\2348899.jpg
-1		PracticeProc	tie	2348899	Where is the woman located relative to the man?	on the right	at the back	on the left	up front	1	.\stimuli\2348899.jpg
-1		PracticeProc	blender	2349475	Which part of the blender is the woman holding?	glass	handle	lid	base	3	.\stimuli\2349475.jpg
-1		PracticeProc	blender	2349475	Where is the man (powering the blender) positioned relative to the blender?	to the left of it	behind it	in front of it	to the right of it	1	.\stimuli\2349475.jpg
-1		PracticeProc	drink	2350974	What is the child's hand touching?	red car door	grey car door	red motorcycle	grey motorcycle	1	.\stimuli\2350974.jpg
-1		PracticeProc	drink	2350974	Between which two vehicles is the child standing?	blue motorcycle and red motorcycle	blue car and red car	grey car and red motorcycle	red car and blue motorcycle	4	.\stimuli\2350974.jpg
-1		PracticeProc	airport	2356125	Where is the luggage being moved to?	onto conveyor belt	off of xray	onto xray	onto baggage cart	1	.\stimuli\2356125.jpg
-1		PracticeProc	airport	2356125	How many uniformed staff are moving the luggage?	three	two	one	four	2	.\stimuli\2356125.jpg
-1		PracticeProc	clock	2360001	Where are the men standing?	on balcony	on roof edge	on ground	on scaffold	4	.\stimuli\2360001.jpg
-1		PracticeProc	clock	2360001	What are the workers doing to the clock?	measuring it	wiping it	painting it	raising it	4	.\stimuli\2360001.jpg
-1		PracticeProc	bears	2362704	How many bears are in the scene?	one	two	three	four	2	.\stimuli\2362704.jpg
-1		PracticeProc	bears	2362704	What are the bears doing with the pumpkin?	pawing	sniffing	fighting over	eating	4	.\stimuli\2362704.jpg
-1		PracticeProc	video game	2367132	How many men are playing in the scene?	four	two	one	three	2	.\stimuli\2367132.jpg
-1		PracticeProc	video game	2367132	In which hand(s) are the men holding the controllers?	in right hand	in left hand	neither hand (on wrists)	in both hands	4	.\stimuli\2367132.jpg
-1		PracticeProc	chef	2369373	What is the appearance of the oven?	stone arch	brick dome	open mouth	metal box	3	.\stimuli\2369373.jpg
-1		PracticeProc	chef	2369373	What is the chef placing into the oven?	bread	steak	pizza	vegetable tray	3	.\stimuli\2369373.jpg
-1		PracticeProc	donuts	2370664	How many donuts are in the scene?	two	four	five	three	4	.\stimuli\2370664.jpg
-1		PracticeProc	donuts	2370664	Where are the people located in the scene?	street	kitchen	living room	restaurant	1	.\stimuli\2370664.jpg
-1		PracticeProc	motorcycle	2371471	Which of the motorcyclists is performing a handstand?	neither	one up front	both	one at the back	2	.\stimuli\2371471.jpg
-1		PracticeProc	motorcycle	2371471	What is nearest to the motorcyclists?	concrete ramp	grassy ground	dirt ramp	asphalt road	3	.\stimuli\2371471.jpg
-1		PracticeProc	spray-vehicle	2374670	What vehicle sprays water in the scene?	red truck	grey van	grey tractor	red tractor	1	.\stimuli\2374670.jpg
-1		PracticeProc	spray-vehicle	2374670	What is the truck spraying?	asphalt	fertilizer	water	sand	3	.\stimuli\2374670.jpg
-1		PracticeProc	baby-milk	2379478	What is the position of the babies?	lying on couch	sitting on bed	lying in crib	lying on bed	4	.\stimuli\2379478.jpg
-1		PracticeProc	baby-milk	2379478	In what position are the babies drinking milk?	lying on side	lying on back	lying on stomach	sitting up	2	.\stimuli\2379478.jpg
-1		PracticeProc	boat	2383555	Who is holding the child in the boat?	man	woman	girl	boy	2	.\stimuli\2383555.jpg
-1		PracticeProc	boat	2383555	What is the woman at the back doing in the boat?	standing	waving	sitting	rowing	4	.\stimuli\2383555.jpg
-1		PracticeProc	tangerines	2385550	Where are the tangerines in the scene?	in hands	in front of eyes	on head	in mouths	4	.\stimuli\2385550.jpg
-1		PracticeProc	tangerines	2385550	Which side of the frame is the boy on?	in the back	in the front	on the left	on the right	3	.\stimuli\2385550.jpg
-1		PracticeProc	teeth	2386442	Who is brushing their teeth in the scene?	man, woman, and child	child and two women	man	woman and child	1	.\stimuli\2386442.jpg
-1		PracticeProc	teeth	2386442	Where is the child in the scene?	behind parents	on the left	on the right	in the middle	4	.\stimuli\2386442.jpg
-1		PracticeProc	polar bear	2387122	Where is the polar bear located in the scene?	on rocks	on ice	in water	on grass	3	.\stimuli\2387122.jpg
-1		PracticeProc	polar bear	2387122	What is the polar bear doing next to the enclosure edge?	pressing on glass enclosure	swimming away from glass enclosure	diving underwater	sitting on snowy ground	1	.\stimuli\2387122.jpg
-1		PracticeProc	cake	2397102	What are the couple doing with the cake?	cutting it	feeding each other	posing next to it	serving it	1	.\stimuli\2397102.jpg
-1		PracticeProc	cake	2397102	What is the man holding besides the cake knife?	paper plate	wedding gift	beer bottle	wine glass	3	.\stimuli\2397102.jpg
-1		PracticeProc	apple	2411268	What is the child holding while picking fruit?	brown basket	red bag	brown box	white bucket	2	.\stimuli\2411268.jpg
-1		PracticeProc	apple	2411268	Where is the fruit branch relative to the child?	below head	near ground	at head height	above head	4	.\stimuli\2411268.jpg
-1		PracticeProc	dog	2412687	What is the dog biting onto in the scene?	red ball	red boomerang	red bone	red frisbee	4	.\stimuli\2412687.jpg
-1		PracticeProc	dog	2412687	What is the main action of the human in the scene?	picking up frisbee	catching frisbee	offering frisbee	throwing frisbee	3	.\stimuli\2412687.jpg
-1		PracticeProc	baseball	2356991	How is the player on the left reaching the base?	sliding headfirst	running towards it	sliding feetfirst	sliding on knees	1	.\stimuli\2356991.jpg
-1		PracticeProc	baseball	2356991	What is the current action of the gloved player on the base?	caught the ball already	is catching the ball	is throwing the ball	is dropping the ball	2	.\stimuli\2356991.jpg
-1		PracticeProc	suitcase	2385851	What are the men doing with the suitcases?	stacking them	carrying them	pulling them	opening them	2	.\stimuli\2385851.jpg
-1		PracticeProc	suitcase	2385851	Where are the men?	walking along a train platform	walking into a hotel lobby	walking under a covered walkway	walking in an airport terminal	3	.\stimuli\2385851.jpg
-1		PracticeProc	horse ride	2394020	Where is the scene taking place?	along beach	along ocean	along open field	along stream	1	.\stimuli\2394020.jpg
-1		PracticeProc	horse ride	2394020	What are the riders wearing on their heads?	sun hats	cowboy hats	baseball caps	helmets	2	.\stimuli\2394020.jpg
-1		PracticeProc	surfboard	2408717	How many surfers are in the scene?	five	four	three	two	2	.\stimuli\2408717.jpg
-1		PracticeProc	surfboard	2408717	What are the colors of the surfboards in the scene?	red and green	black and yellow	white and yellow	white and red	3	.\stimuli\2408717.jpg
-1		PracticeProc	elephant	2409918	What is the elephant on the right doing with its trunk?	spraying water	eating plants	grabbing log	reaching forward	2	.\stimuli\2409918.jpg
-1		PracticeProc	elephant	2409918	Where are the elephants in the scene?	walking on land	splashing in puddle	standing in mud	swimming in water	4	.\stimuli\2409918.jpg
-1		PracticeProc	laptop	2410309	How many laptops or electronic devices are visible?	four	three	one	two	4	.\stimuli\2410309.jpg
-1		PracticeProc	laptop	2410309	What is the baby touching?	screen	keyboard	bottle	mouse	2	.\stimuli\2410309.jpg
+1		PracticeProc	pizza	150472	Which description best matches the image?	women photograph pizza slice	women carry pizza boxes	women bite pizza slice	women cut large pizza	3	.\stimuli\150472.jpg
+1		PracticeProc	cat	2344622	Which description best matches the image?	cat paws at blanket	cat paws at keyboard	cat lies on blanket	cat lies on person's arm	3	.\stimuli\2344622.jpg
+1		PracticeProc	football	2345035	Which description best matches the image?	girls walk away from the football	girls kick the football	girls stand over the football	girls run toward football	4	.\stimuli\2345035.jpg
+1		PracticeProc	umbrella	2347025	Which description best matches the image?	baby lies under umbrella	woman holds umbrella over baby	baby holds onto umbrella	baby drags pink umbrella	3	.\stimuli\2347025.jpg
+1		PracticeProc	wine	2347400	Which description best matches the image?	men clink wine glasses	men grab wine bottles	men sip from wine glasses	men smell wine glasses	4	.\stimuli\2347400.jpg
+1		PracticeProc	tie	2348899	Which description best matches the image?	man holds his striped tie	woman gives man a striped tie	man ties another man's striped tie	woman touches man's striped tie	4	.\stimuli\2348899.jpg
+1		PracticeProc	blender	2349475	Which description best matches the image?	woman pedals bike while man drinks liquid	woman pedals bike while man opens blender	man pedals bike while woman pours liquid	woman holds blender while man pedals bike	4	.\stimuli\2349475.jpg
+1		PracticeProc	drink	2350974	Which description best matches the image?	child drinks next to car trunk	child drinks while sitting on a car	child drinks while inside the car	child drinks next to car hood	4	.\stimuli\2350974.jpg
+1		PracticeProc	airport	2356125	Which description best matches the image?	staff tag luggage at a counter	staff load luggage onto a cart	staff load luggage onto a conveyor belt	staff load luggage into an xray	3	.\stimuli\2356125.jpg
+1		PracticeProc	clock	2360001	Which description best matches the image?	workers wash large clock face	workers lift large clock	workers paint old clock	workers raise ladder up to clock	2	.\stimuli\2360001.jpg
+1		PracticeProc	bears	2362704	Which description best matches the image?	bears eat pumpkin	bears paw at pumpkin	bears sniff pumpkin	bears fight over pumpkin	1	.\stimuli\2362704.jpg
+1		PracticeProc	video game	2367132	Which description best matches the image?	sitting on couch with video game controllers	sitting on ground with video game controllers	standing with video game controllers	squatting with video game controllers	3	.\stimuli\2367132.jpg
+1		PracticeProc	chef	2369373	Which description best matches the image?	chef pulls tray from oven	chef loads pizza into oven	chef stokes oven flames	chef loads bread into oven	2	.\stimuli\2369373.jpg
+1		PracticeProc	donuts	2370664	Which description best matches the image?	people bite into donuts	people grab onto donuts	people stack donuts	people pass around donuts	1	.\stimuli\2370664.jpg
+1		PracticeProc	motorcycle	2371471	Which description best matches the image?	motorcyclists drive on dirt track	motorcyclists pop a wheelie	motorcyclists jump over ramp	motorcyclists speed across road	3	.\stimuli\2371471.jpg
+1		PracticeProc	spray-vehicle	2374670	Which description best matches the image?	man holds onto back of spraying truck	man stands in front of spraying truck	man drives the spraying truck	man walks beside the spraying truck	1	.\stimuli\2374670.jpg
+1		PracticeProc	baby-milk	2379478	Which description best matches the image?	one baby reaches for milk bottle	two babies drink from milk bottles	two babies reach for one milk bottle	one baby drinks from a milk bottle	2	.\stimuli\2379478.jpg
+1		PracticeProc	boat	2383555	Which description best matches the image?	child sits alone in boat	man steps onto a boat	woman holds child on boat	two women row a boat	3	.\stimuli\2383555.jpg
+1		PracticeProc	tangerines	2385550	Which description best matches the image?	children hold tangerines to their eyes	children balance tangerines on heads	children hold tangerines in their hands	children have tangerines in mouths	4	.\stimuli\2385550.jpg
+1		PracticeProc	teeth	2386442	Which description best matches the image?	man woman and child brush their teeth	woman brushes the child's teeth	man brushes the child's teeth	man and woman brush their teeth	1	.\stimuli\2386442.jpg
+1		PracticeProc	polar bear	2387122	Which description best matches the image?	polar bear swims away from glass	polar bear presses on glass	polar bear dives underwater	polar bear sits on snowy ground	2	.\stimuli\2387122.jpg
+1		PracticeProc	cake	2397102	Which description best matches the image?	couple poses with wedding cake	couple feeds each other cake	couple cuts cake together	couple kisses beside cake	3	.\stimuli\2397102.jpg
+1		PracticeProc	apple	2411268	Which description best matches the image?	child picks apple up from the ground	child bites into apple	child puts apple into bag	child picks apple from tree	4	.\stimuli\2411268.jpg
+1		PracticeProc	dog	2412687	Which description best matches the image?	man throws frisbee towards dog	dog catches frisbee midair	dog bites onto offered frisbee	dog ignores offered frisbee	3	.\stimuli\2412687.jpg
+1		PracticeProc	baseball	2356991	Which description best matches the image?	player runs towards base	player slides headfirst to base	player slides feetfirst toward base	gloved player holds a ball	2	.\stimuli\2356991.jpg
+1		PracticeProc	suitcase	2385851	Which description best matches the image?	men carry suitcases on shoulders	men push suitcases in cart	men pull suitcases on wheels	men lift suitcases into a trunk	1	.\stimuli\2385851.jpg
+1		PracticeProc	horse ride	2394020	Which description best matches the image?	horses ride side-by-side on beach	horses follow one another through river	horses face each other on beach	horses walk away from the beach	1	.\stimuli\2394020.jpg
+1		PracticeProc	surfboard	2408717	Which description best matches the image?	surfers run toward the water	surfers sit by the water	surfers turn away from the water	surfers walk toward water	4	.\stimuli\2408717.jpg
+1		PracticeProc	elephant	2409918	Which description best matches the image?	elephants swim in water	elephants walk across savannah	elephants drink water	elephants splash riders	1	.\stimuli\2409918.jpg
+1		PracticeProc	laptop	2410309	Which description best matches the image?	man types on laptop keyboard	woman and baby use laptops	baby touches laptop mouse	woman closes laptop lid	2	.\stimuli\2410309.jpg

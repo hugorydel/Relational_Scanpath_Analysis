@@ -1,7 +1,7 @@
 Weight	Nested	Procedure	CueText	StimID	Question	Opt1	Opt2	Opt3	Opt4	CorrectKey	ImageFile
 1		PracticeProc	pizza	150472	Which description best matches the image?	women photograph pizza slice	women carry pizza boxes	women bite pizza slice	women cut large pizza	3	.\stimuli\150472.jpg
 1		PracticeProc	cat	2344622	Which description best matches the image?	cat paws at blanket	cat paws at keyboard	cat lies on blanket	cat lies on person's arm	3	.\stimuli\2344622.jpg
-1		PracticeProc	football	2345035	Which description best matches the image?	girls walk away from the football	girls kick the football	girls stand over the football	girls run toward football	4	.\stimuli\2345035.jpg
+1		PracticeProc	football	2345035	Which description best matches the image?	girls walk away from the football	girls kick off the football	girls stand over the football	girls run toward football	4	.\stimuli\2345035.jpg
 1		PracticeProc	umbrella	2347025	Which description best matches the image?	baby lies under umbrella	woman holds umbrella over baby	baby holds onto umbrella	baby drags pink umbrella	3	.\stimuli\2347025.jpg
 1		PracticeProc	wine	2347400	Which description best matches the image?	men clink wine glasses	men grab wine bottles	men sip from wine glasses	men smell wine glasses	4	.\stimuli\2347400.jpg
 1		PracticeProc	tie	2348899	Which description best matches the image?	man holds his striped tie	woman gives man a striped tie	man ties another man's striped tie	woman touches man's striped tie	4	.\stimuli\2348899.jpg

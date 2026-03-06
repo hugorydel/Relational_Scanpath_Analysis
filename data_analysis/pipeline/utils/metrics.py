@@ -22,10 +22,10 @@ side effects — they can be called independently for testing.
 import logging
 from typing import Optional
 
-import numpy as np
-from scipy.stats import kendalltau
-
 import config
+import numpy as np
+import pandas as pd
+from scipy.stats import kendalltau
 
 logger = logging.getLogger(__name__)
 
@@ -33,6 +33,7 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 # Step 4: Build object sequence
 # ---------------------------------------------------------------------------
+
 
 def build_object_sequence(
     trial_fixations: "pd.DataFrame",
@@ -66,7 +67,7 @@ def build_object_sequence(
 
     # Sort by fixation onset
     assigned = assigned.sort_values("FixStart_ms")
-    obj_ids  = assigned["ObjectID"].astype(int).tolist()
+    obj_ids = assigned["ObjectID"].astype(int).tolist()
 
     # Collapse consecutive duplicates
     sequence = [obj_ids[0]]
@@ -81,6 +82,7 @@ def build_object_sequence(
 # Step 5: SVG alignment
 # ---------------------------------------------------------------------------
 
+
 def _count_relational_transitions(
     sequence: list[int],
     edges: set,
@@ -90,8 +92,7 @@ def _count_relational_transitions(
     Self-transitions are already removed by build_object_sequence.
     """
     return sum(
-        1 for a, b in zip(sequence[:-1], sequence[1:])
-        if frozenset({a, b}) in edges
+        1 for a, b in zip(sequence[:-1], sequence[1:]) if frozenset({a, b}) in edges
     )
 
 
@@ -142,28 +143,28 @@ def svg_alignment(
       permutation) but A→A was already excluded upstream.
     """
     n_permutations = n_permutations or config.SVG_N_PERMUTATIONS
-    rng            = rng or np.random.default_rng()
+    rng = rng or np.random.default_rng()
 
-    n_transitions  = max(len(sequence) - 1, 0)
-    low_n          = n_transitions < config.MIN_VALID_TRANSITIONS
+    n_transitions = max(len(sequence) - 1, 0)
+    low_n = n_transitions < config.MIN_VALID_TRANSITIONS
 
     null_result = {
-        "svg_z":         np.nan,
-        "svg_obs":       np.nan,
+        "svg_z": np.nan,
+        "svg_obs": np.nan,
         "svg_null_mean": np.nan,
-        "svg_null_std":  np.nan,
+        "svg_null_std": np.nan,
         "n_transitions": n_transitions,
-        "n_relational":  0,
-        "low_n":         low_n,
+        "n_relational": 0,
+        "low_n": low_n,
     }
 
     if n_transitions < 1:
         return null_result
 
     n_relational = _count_relational_transitions(sequence, edges)
-    svg_obs      = n_relational / n_transitions
+    svg_obs = n_relational / n_transitions
 
-    null_result["svg_obs"]      = svg_obs
+    null_result["svg_obs"] = svg_obs
     null_result["n_relational"] = n_relational
 
     # Permutation null: shuffle the visited object set
@@ -172,32 +173,32 @@ def svg_alignment(
     if len(visited) < 2:
         # Only one unique object — all permutations identical, std=0
         null_result["svg_null_mean"] = svg_obs
-        null_result["svg_null_std"]  = 0.0
+        null_result["svg_null_std"] = 0.0
         return null_result
 
     null_scores = np.empty(n_permutations, dtype=np.float32)
-    seq_len     = len(sequence)
+    seq_len = len(sequence)
 
     for i in range(n_permutations):
         # Sample sequence of same length from visited objects (with replacement
         # to respect the original repeat structure, but never A→A consecutive)
         perm = _sample_permutation(visited, seq_len, rng)
-        n_rel_perm        = _count_relational_transitions(perm, edges)
-        null_scores[i]    = n_rel_perm / (seq_len - 1)
+        n_rel_perm = _count_relational_transitions(perm, edges)
+        null_scores[i] = n_rel_perm / (seq_len - 1)
 
     null_mean = float(null_scores.mean())
-    null_std  = float(null_scores.std())
+    null_std = float(null_scores.std())
 
     svg_z = (svg_obs - null_mean) / null_std if null_std > 0 else np.nan
 
     return {
-        "svg_z":         svg_z,
-        "svg_obs":       svg_obs,
+        "svg_z": svg_z,
+        "svg_obs": svg_obs,
         "svg_null_mean": null_mean,
-        "svg_null_std":  null_std,
+        "svg_null_std": null_std,
         "n_transitions": n_transitions,
-        "n_relational":  n_relational,
-        "low_n":         low_n,
+        "n_relational": n_relational,
+        "low_n": low_n,
     }
 
 
@@ -231,6 +232,7 @@ def _sample_permutation(
 # Step 6: Symbolic LCS and Kendall's tau
 # ---------------------------------------------------------------------------
 
+
 def _first_occurrence_sequence(sequence: list[int]) -> list[int]:
     """
     Compress sequence to first-occurrence-only ordering.
@@ -258,9 +260,9 @@ def _lcs_length(seq_a: list, seq_b: list) -> int:
     if len(seq_a) < len(seq_b):
         seq_a, seq_b = seq_b, seq_a  # ensure seq_b is shorter for space efficiency
 
-    m, n   = len(seq_a), len(seq_b)
-    prev   = [0] * (n + 1)
-    curr   = [0] * (n + 1)
+    m, n = len(seq_a), len(seq_b)
+    prev = [0] * (n + 1)
+    curr = [0] * (n + 1)
 
     for i in range(1, m + 1):
         for j in range(1, n + 1):
@@ -301,16 +303,21 @@ def symbolic_lcs(
     fb = _first_occurrence_sequence(seq_b)
 
     if not fa or not fb:
-        return {"lcs_score": np.nan, "lcs_length": 0, "len_a": len(fa), "len_b": len(fb)}
+        return {
+            "lcs_score": np.nan,
+            "lcs_length": 0,
+            "len_a": len(fa),
+            "len_b": len(fb),
+        }
 
-    lcs_len   = _lcs_length(fa, fb)
+    lcs_len = _lcs_length(fa, fb)
     lcs_score = lcs_len / min(len(fa), len(fb))
 
     return {
-        "lcs_score":  lcs_score,
+        "lcs_score": lcs_score,
         "lcs_length": lcs_len,
-        "len_a":      len(fa),
-        "len_b":      len(fb),
+        "len_a": len(fa),
+        "len_b": len(fb),
     }
 
 
@@ -354,7 +361,7 @@ def kendall_tau_shared(
     tau, p = kendalltau(ranks_a, ranks_b)
 
     return {
-        "tau":      float(tau),
-        "tau_p":    float(p),
+        "tau": float(tau),
+        "tau_p": float(p),
         "n_shared": len(shared),
     }

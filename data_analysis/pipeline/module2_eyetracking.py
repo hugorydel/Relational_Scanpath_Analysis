@@ -25,7 +25,6 @@ import logging
 import re
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 from config import DISPLAY_HEIGHT_PX, DISPLAY_WIDTH_PX
 
@@ -300,9 +299,11 @@ def join_stim_ids(
     enc_beh = pd.read_csv(enc_path, dtype={"StimID": str})[
         ["TrialIndex", "StimID", "CueText"]
     ]
+    # Decoding CSV is long-format (2 rows per image) — deduplicate to one row
+    # per TrialIndex so the merge onto the EDF trial table (1 row per image) is 1:1
     dec_beh = pd.read_csv(dec_path, dtype={"StimID": str})[
         ["TrialIndex", "StimID", "CueText"]
-    ]
+    ].drop_duplicates(subset="TrialIndex")
 
     enc_trials = trial_table[trial_table["Phase"] == "encoding"].copy()
     dec_trials = trial_table[trial_table["Phase"] == "decoding"].copy()
@@ -324,46 +325,6 @@ def join_stim_ids(
         f"  [{subject_id}] StimID join complete. {len(joined)} trials with StimID."
     )
     return joined
-
-
-# ---------------------------------------------------------------------------
-# Step 3a: Add ViewingNumber to encoding trials
-# ---------------------------------------------------------------------------
-
-
-def add_viewing_number(trial_table: pd.DataFrame) -> pd.DataFrame:
-    """
-    Add a ViewingNumber column to the trial table.
-
-    For encoding trials: ViewingNumber = 1 for the first appearance of
-    each StimID (by TrialID order), 2 for the second appearance.
-    For decoding trials: ViewingNumber = None (single retrieval event).
-
-    Assumes each StimID appears at most twice in encoding, which matches
-    the experiment design. Logs a warning if any StimID appears more than
-    twice (future-proofing for design changes).
-    """
-    trial_table = trial_table.copy()
-    trial_table["ViewingNumber"] = None
-
-    enc_mask = trial_table["Phase"] == "encoding"
-    enc = trial_table[enc_mask].sort_values("TrialID")
-
-    # Rank each StimID's appearances in TrialID order
-    viewing_nums = enc.groupby("StimID").cumcount() + 1  # 1-indexed
-
-    # Warn if any StimID appears more than twice
-    max_views = viewing_nums.max()
-    if max_views > 2:
-        over = enc.groupby("StimID").size()
-        over = over[over > 2]
-        logger.warning(
-            f"  Some StimIDs appear more than twice in encoding: "
-            f"{over.to_dict()} — ViewingNumber will exceed 2."
-        )
-
-    trial_table.loc[enc_mask, "ViewingNumber"] = viewing_nums.values
-    return trial_table
 
 
 # ---------------------------------------------------------------------------
@@ -403,7 +364,7 @@ def segment_events(
     matched_positions = trial_positions[in_trial_mask]
 
     # Attach trial metadata
-    meta_cols = ["TrialID", "TrialIndex", "Phase", "ViewingNumber", "StimID", "CueText"]
+    meta_cols = ["TrialID", "TrialIndex", "Phase", "StimID", "CueText"]
     for col in meta_cols:
         matched_events[col] = trial_table[col].iloc[matched_positions].values
 
@@ -502,7 +463,6 @@ def write_outputs(
                 "StimID": fixations["StimID"],
                 "CueText": fixations["CueText"],
                 "Phase": fixations["Phase"],
-                "ViewingNumber": fixations["ViewingNumber"],
                 "TrialIndex": fixations["TrialIndex"],
                 "TrialID": fixations["TrialID"],
                 "FixStart_ms": fixations["stime"],
@@ -526,7 +486,6 @@ def write_outputs(
                 "StimID": saccades["StimID"],
                 "CueText": saccades["CueText"],
                 "Phase": saccades["Phase"],
-                "ViewingNumber": saccades["ViewingNumber"],
                 "TrialIndex": saccades["TrialIndex"],
                 "TrialID": saccades["TrialID"],
                 "SaccStart_ms": saccades["stime"],
@@ -602,9 +561,6 @@ def process_subject(
 
     # Step 3: Join StimIDs from behavioral CSVs
     trial_table = join_stim_ids(trial_table, beh_dir, subject_id)
-
-    # Step 3a: Add ViewingNumber to encoding trials
-    trial_table = add_viewing_number(trial_table)
 
     # Step 4: Segment fixations and saccades
     fixations = segment_events(

@@ -8,13 +8,12 @@ Runs per-participant, in sequence:
                proximity fallback, saliency sampling)
     Step 4  — Build object sequences per trial
     Step 5  — SVG alignment z-scores (all relations + interactional only)
-    Step 6  — Symbolic LCS and Kendall's tau (enc2 vs dec, enc1 vs enc2,
-               enc1 vs dec)
+    Step 6  — Symbolic LCS and Kendall's tau (enc vs dec)
     Step 7  — Per-trial covariates (fixation count, AOI proportion,
                mean saliency)
     Step 8  — Join behavioral data (encoding + decoding accuracy,
-               confidence, RT)
-    Step 9  — Assemble trial_features.csv (90 rows per participant)
+               confidence, RT per question)
+    Step 9  — Assemble trial_features.csv (60 rows per participant)
     Step 10 — Validate outputs
 
 Outputs (per participant):
@@ -92,7 +91,7 @@ def _build_sequences_and_svg(
     rng: np.random.Generator,
 ) -> pd.DataFrame:
     """
-    For each trial (StimID × Phase × ViewingNumber), build the object sequence
+    For each trial (StimID × Phase), build the object sequence
     and compute SVG alignment scores.
 
     Returns a DataFrame with one row per trial containing sequence and SVG columns.
@@ -101,11 +100,9 @@ def _build_sequences_and_svg(
 
     records = []
 
-    groups = fixations_aoi.groupby(
-        ["StimID", "Phase", "ViewingNumber"], dropna=False, sort=False
-    )
+    groups = fixations_aoi.groupby(["StimID", "Phase"], dropna=False, sort=False)
 
-    for (stim_id, phase, vn), group in groups:
+    for (stim_id, phase), group in groups:
         stim_id = str(stim_id)
         seq = build_object_sequence(group)
 
@@ -123,7 +120,6 @@ def _build_sequences_and_svg(
             {
                 "StimID": stim_id,
                 "Phase": phase,
-                "ViewingNumber": vn,
                 "_sequence": seq,  # temporary — dropped before output
                 "svg_z_all": svg_all["svg_z"],
                 "svg_obs_all": svg_all["svg_obs"],
@@ -151,96 +147,43 @@ def _build_sequences_and_svg(
 def _compute_pairwise_metrics(trial_df: pd.DataFrame) -> pd.DataFrame:
     """
     For each StimID, compute LCS and Kendall's tau between:
-        enc2 vs dec  (primary — most consolidated encoding vs retrieval)
-        enc1 vs enc2 (exploratory — bottom-up vs top-down shift)
-        enc1 vs dec  (exploratory)
+        enc vs dec  (primary — encoding scanpath vs retrieval scanpath)
 
-    Results are joined onto the trial_df rows they belong to.
-    Metrics always live on the *second* sequence's row (dec for enc2-dec,
-    enc2 for enc1-enc2, dec for enc1-dec).
+    Results are stored on the decoding row for each StimID.
     """
     logger.info(f"  Step 6: Pairwise LCS / Kendall's tau ...")
 
-    # Normalise ViewingNumber key: decoding rows have NaN (which can't be used
-    # as a dict key since NaN != NaN), so we use the sentinel "decoding" instead.
-    def _vn_key(phase, vn):
-        return "decoding" if pd.isna(vn) else vn
-
+    # Index sequences by (StimID, Phase) — no ViewingNumber needed
     seq_index = {
-        (
-            str(row["StimID"]),
-            row["Phase"],
-            _vn_key(row["Phase"], row["ViewingNumber"]),
-        ): row["_sequence"]
+        (str(row["StimID"]), row["Phase"]): row["_sequence"]
         for _, row in trial_df.iterrows()
     }
 
-    # Initialise new columns with NaN
     pairwise_cols = [
-        "lcs_enc2_dec",
-        "lcs_len_enc2_dec",
-        "tau_enc2_dec",
-        "tau_p_enc2_dec",
-        "n_shared_enc2_dec",
-        "lcs_enc1_enc2",
-        "lcs_len_enc1_enc2",
-        "tau_enc1_enc2",
-        "tau_p_enc1_enc2",
-        "n_shared_enc1_enc2",
-        "lcs_enc1_dec",
-        "lcs_len_enc1_dec",
-        "tau_enc1_dec",
-        "tau_p_enc1_dec",
-        "n_shared_enc1_dec",
+        "lcs_enc_dec",
+        "lcs_len_enc_dec",
+        "tau_enc_dec",
+        "tau_p_enc_dec",
+        "n_shared_enc_dec",
     ]
     for col in pairwise_cols:
         trial_df[col] = np.nan
 
-    stim_ids = trial_df["StimID"].unique()
-
-    for stim_id in stim_ids:
+    for stim_id in trial_df["StimID"].unique():
         stim_id = str(stim_id)
 
-        seq_enc1 = seq_index.get((stim_id, "encoding", 1.0), [])
-        seq_enc2 = seq_index.get((stim_id, "encoding", 2.0), [])
-        seq_dec = seq_index.get((stim_id, "decoding", "decoding"), [])
+        seq_enc = seq_index.get((stim_id, "encoding"), [])
+        seq_dec = seq_index.get((stim_id, "decoding"), [])
 
-        # Enc2 vs Dec → stored on decoding row
-        if seq_enc2 and seq_dec:
-            lcs = symbolic_lcs(seq_enc2, seq_dec)
-            tau = kendall_tau_shared(seq_enc2, seq_dec)
+        if seq_enc and seq_dec:
+            lcs = symbolic_lcs(seq_enc, seq_dec)
+            tau = kendall_tau_shared(seq_enc, seq_dec)
             mask = (trial_df["StimID"] == stim_id) & (trial_df["Phase"] == "decoding")
-            trial_df.loc[mask, "lcs_enc2_dec"] = lcs["lcs_score"]
-            trial_df.loc[mask, "lcs_len_enc2_dec"] = lcs["lcs_length"]
-            trial_df.loc[mask, "tau_enc2_dec"] = tau["tau"]
-            trial_df.loc[mask, "tau_p_enc2_dec"] = tau["tau_p"]
-            trial_df.loc[mask, "n_shared_enc2_dec"] = tau["n_shared"]
-
-        # Enc1 vs Enc2 → stored on encoding viewingnumber=2 row
-        if seq_enc1 and seq_enc2:
-            lcs = symbolic_lcs(seq_enc1, seq_enc2)
-            tau = kendall_tau_shared(seq_enc1, seq_enc2)
-            mask = (
-                (trial_df["StimID"] == stim_id)
-                & (trial_df["Phase"] == "encoding")
-                & (trial_df["ViewingNumber"] == 2.0)
-            )
-            trial_df.loc[mask, "lcs_enc1_enc2"] = lcs["lcs_score"]
-            trial_df.loc[mask, "lcs_len_enc1_enc2"] = lcs["lcs_length"]
-            trial_df.loc[mask, "tau_enc1_enc2"] = tau["tau"]
-            trial_df.loc[mask, "tau_p_enc1_enc2"] = tau["tau_p"]
-            trial_df.loc[mask, "n_shared_enc1_enc2"] = tau["n_shared"]
-
-        # Enc1 vs Dec → stored on decoding row
-        if seq_enc1 and seq_dec:
-            lcs = symbolic_lcs(seq_enc1, seq_dec)
-            tau = kendall_tau_shared(seq_enc1, seq_dec)
-            mask = (trial_df["StimID"] == stim_id) & (trial_df["Phase"] == "decoding")
-            trial_df.loc[mask, "lcs_enc1_dec"] = lcs["lcs_score"]
-            trial_df.loc[mask, "lcs_len_enc1_dec"] = lcs["lcs_length"]
-            trial_df.loc[mask, "tau_enc1_dec"] = tau["tau"]
-            trial_df.loc[mask, "tau_p_enc1_dec"] = tau["tau_p"]
-            trial_df.loc[mask, "n_shared_enc1_dec"] = tau["n_shared"]
+            trial_df.loc[mask, "lcs_enc_dec"] = lcs["lcs_score"]
+            trial_df.loc[mask, "lcs_len_enc_dec"] = lcs["lcs_length"]
+            trial_df.loc[mask, "tau_enc_dec"] = tau["tau"]
+            trial_df.loc[mask, "tau_p_enc_dec"] = tau["tau_p"]
+            trial_df.loc[mask, "n_shared_enc_dec"] = tau["n_shared"]
 
     return trial_df
 
@@ -256,27 +199,24 @@ def _compute_covariates(
 ) -> pd.DataFrame:
     """
     Compute fixation count, AOI proportion, and mean saliency per trial.
-    Joined onto trial_df by StimID × Phase × ViewingNumber.
+    Joined onto trial_df by StimID × Phase.
     """
     logger.info(f"  Step 7: Computing covariates ...")
 
     covariate_rows = []
 
-    groups = fixations_aoi.groupby(
-        ["StimID", "Phase", "ViewingNumber"], dropna=False, sort=False
-    )
+    groups = fixations_aoi.groupby(["StimID", "Phase"], dropna=False, sort=False)
 
-    for (stim_id, phase, vn), group in groups:
+    for (stim_id, phase), group in groups:
         n_fixations = len(group)
         n_aoi = (group["AssignmentMethod"] != "none").sum()
         aoi_prop = n_aoi / n_fixations if n_fixations > 0 else np.nan
-        mean_salience = group["SalienceAtFixation"].mean()  # NaN-safe
+        mean_salience = group["SalienceAtFixation"].mean()
 
         covariate_rows.append(
             {
                 "StimID": str(stim_id),
                 "Phase": phase,
-                "ViewingNumber": vn,
                 "n_fixations": n_fixations,
                 "n_aoi": n_aoi,
                 "aoi_prop": round(aoi_prop, 4) if not np.isnan(aoi_prop) else np.nan,
@@ -290,7 +230,7 @@ def _compute_covariates(
     cov_df["StimID"] = cov_df["StimID"].astype(str)
     trial_df["StimID"] = trial_df["StimID"].astype(str)
 
-    return trial_df.merge(cov_df, on=["StimID", "Phase", "ViewingNumber"], how="left")
+    return trial_df.merge(cov_df, on=["StimID", "Phase"], how="left")
 
 
 # ---------------------------------------------------------------------------
@@ -316,24 +256,11 @@ def _join_behavioral(
         "CorrectKey",
         "TrialIndex",
     ]
-    dec_cols = [
-        "StimID",
-        "CueText",
-        "Accuracy",
-        "RT_ms",
-        "Response",
-        "CorrectKey",
-        "Confidence",
-        "TrialIndex",
-    ]
 
     # Encoding behavioral
     if enc_path.exists():
         enc_beh = pd.read_csv(enc_path, dtype={"StimID": str})
         enc_beh = enc_beh[[c for c in enc_cols if c in enc_beh.columns]].copy()
-        # Each StimID appears twice (two viewings) — deduplicate before joining
-        # since enc_accuracy is image-level, not viewing-level
-        enc_beh = enc_beh.drop_duplicates(subset="StimID", keep="first")
         enc_beh = enc_beh.rename(
             columns={
                 "Accuracy": "enc_accuracy",
@@ -357,31 +284,49 @@ def _join_behavioral(
         ]:
             trial_df[col] = np.nan
 
-    # Decoding behavioral
+    # Decoding behavioral — long format (2 rows per image, one per question)
+    # Pivot to wide format keyed by StimID so we can join onto the trial table
     if dec_path.exists():
         dec_beh = pd.read_csv(dec_path, dtype={"StimID": str})
-        dec_beh = dec_beh[[c for c in dec_cols if c in dec_beh.columns]].copy()
-        dec_beh = dec_beh.rename(
-            columns={
-                "Accuracy": "dec_accuracy",
-                "RT_ms": "dec_rt_ms",
-                "Response": "dec_response",
-                "CorrectKey": "dec_correct_key",
-                "Confidence": "dec_confidence",
-                "TrialIndex": "dec_trial_index",
-                "CueText": "CueText",
-            }
+
+        # Separate Q1 and Q2 rows and rename columns with question prefix
+        wide_rows = []
+        for stim_id, grp in dec_beh.groupby("StimID"):
+            row = {"StimID": stim_id}
+            for _, qrow in grp.iterrows():
+                qid = qrow["QuestionID"].lower()  # "q1" or "q2"
+                row[f"{qid}_accuracy"] = qrow.get("Accuracy", np.nan)
+                row[f"{qid}_rt_ms"] = qrow.get("RT_ms", np.nan)
+                row[f"{qid}_confidence"] = qrow.get("Confidence", np.nan)
+                row[f"{qid}_present_order"] = qrow.get("PresentOrder", np.nan)
+            wide_rows.append(row)
+
+        dec_wide = pd.DataFrame(wide_rows)
+
+        # Aggregate convenience columns
+        acc_cols = [c for c in dec_wide.columns if c.endswith("_accuracy")]
+        dec_wide["dec_total_correct"] = dec_wide[acc_cols].sum(axis=1, skipna=True)
+
+        dec_wide["dec_trial_index"] = (
+            dec_beh.drop_duplicates(subset="StimID")
+            .set_index("StimID")["TrialIndex"]
+            .reindex(dec_wide["StimID"])
+            .values
         )
-        dec_merge_cols = [c for c in dec_beh.columns if c != "CueText"]
-        trial_df = trial_df.merge(dec_beh[dec_merge_cols], on="StimID", how="left")
+
+        trial_df = trial_df.merge(dec_wide, on="StimID", how="left")
     else:
         logger.warning(f"  Decoding behavioral not found: {dec_path.name}")
         for col in [
-            "dec_accuracy",
-            "dec_rt_ms",
-            "dec_response",
-            "dec_correct_key",
-            "dec_confidence",
+            "q1_accuracy",
+            "q1_rt_ms",
+            "q1_confidence",
+            "q1_present_order",
+            "q2_accuracy",
+            "q2_rt_ms",
+            "q2_confidence",
+            "q2_present_order",
+            "dec_total_correct",
             "dec_trial_index",
         ]:
             trial_df[col] = np.nan
@@ -400,6 +345,16 @@ def _assemble(subject_id: str, trial_df: pd.DataFrame) -> pd.DataFrame:
     trial_df = trial_df.drop(columns=["_sequence"], errors="ignore")
     trial_df.insert(0, "SubjectID", subject_id)
 
+    # Nullify phase-specific behavioral columns on the wrong phase rows.
+    # The StimID-level merge in Step 8 propagates dec columns onto encoding
+    # rows and enc columns onto decoding rows — correct values, wrong rows.
+    dec_only_cols = [
+        c for c in trial_df.columns if c.startswith(("q1_", "q2_", "dec_"))
+    ]
+    enc_only_cols = [c for c in trial_df.columns if c.startswith("enc_")]
+    trial_df.loc[trial_df["Phase"] == "encoding", dec_only_cols] = np.nan
+    trial_df.loc[trial_df["Phase"] == "decoding", enc_only_cols] = np.nan
+
     # Round floats for readability
     float_cols = trial_df.select_dtypes(include=[np.floating]).columns
     trial_df[float_cols] = trial_df[float_cols].round(6)
@@ -416,7 +371,7 @@ def _validate(subject_id: str, trial_df: pd.DataFrame) -> bool:
     logger.info(f"  Step 10: Validating ...")
     ok = True
 
-    # Row count
+    # Row count — 30 encoding + 30 decoding = 60
     expected_rows = config.N_ENCODING_TRIALS + config.N_DECODING_TRIALS
     if len(trial_df) != expected_rows:
         logger.warning(f"    Row count: {len(trial_df)} (expected {expected_rows})")
@@ -442,11 +397,17 @@ def _validate(subject_id: str, trial_df: pd.DataFrame) -> bool:
 
     # Decoding accuracy present
     dec_rows = trial_df[trial_df["Phase"] == "decoding"]
-    n_missing_acc = dec_rows["dec_accuracy"].isna().sum()
-    if n_missing_acc > 0:
-        logger.warning(f"    dec_accuracy: {n_missing_acc} missing on decoding rows")
-    else:
-        logger.info(f"    dec_accuracy: complete ✓")
+    if "dec_total_correct" in trial_df.columns:
+        n_missing = dec_rows["dec_total_correct"].isna().sum()
+        if n_missing > 0:
+            logger.warning(
+                f"    dec_total_correct: {n_missing} missing on decoding rows"
+            )
+        else:
+            logger.info(
+                f"    dec_total_correct: complete ✓  "
+                f"(mean={dec_rows['dec_total_correct'].mean():.2f}/2)"
+            )
 
     return ok
 

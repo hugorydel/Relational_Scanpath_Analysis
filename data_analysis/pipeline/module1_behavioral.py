@@ -1,11 +1,18 @@
 """
 Module 1: Behavioral Processor
-===============================
+================================
 Parses E-Prime .txt log files into four clean, typed CSVs per participant:
-    - {SubjectID}_encoding.csv
+    - {SubjectID}_encoding.csv       (30 rows — one per image)
     - {SubjectID}_distractor.csv
-    - {SubjectID}_decoding.csv
+    - {SubjectID}_decoding.csv       (60 rows — two questions per image, long format)
     - {SubjectID}_exploratory.csv
+
+Decoding format (long):
+    One row per question response. Each image yields 2 rows (Q1 and Q2).
+    QuestionID   : "Q1" or "Q2" — question identity (not presentation order)
+    PresentOrder : 1 or 2 — whether this question was shown first or second
+    Columns: SubjectID, StimID, CueText, TrialIndex, QuestionID, QuestionText,
+             CorrectKey, PresentOrder, Accuracy, RT_ms, Response, Confidence, ConfRT_ms
 
 Usage (standalone):
     python module1_behavioral.py --input data_behavioral/ --output output/behavioral/
@@ -17,7 +24,6 @@ Usage (from orchestrator):
 
 import argparse
 import logging
-import re
 from pathlib import Path
 
 import pandas as pd
@@ -25,7 +31,7 @@ import pandas as pd
 logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
-# Column selection and renaming maps per block type
+# Column maps
 # ---------------------------------------------------------------------------
 
 ENCODING_COLS = {
@@ -48,17 +54,6 @@ DISTRACTOR_COLS = {
     "DistractorList.Sample": "TrialIndex",
 }
 
-DECODING_COLS = {
-    "StimID": "StimID",
-    "CueText": "CueText",
-    "Test4AFC.ACC": "Accuracy",
-    "Test4AFC.RT": "RT_ms",
-    "Test4AFC.RESP": "Response",
-    "Test4AFC.CRESP": "CorrectKey",
-    "RateConf.RESP": "Confidence",
-    "TestList.Sample": "TrialIndex",
-}
-
 EXPLORATORY_COLS = {
     "StimID": "StimID",
     "CueText": "CueText",
@@ -71,10 +66,12 @@ import config
 
 EXPECTED_COUNTS = {
     "encoding": config.N_ENCODING_TRIALS,
-    "decoding": config.N_DECODING_TRIALS,
-    "exploratory": config.N_EXPLORATORY_TRIALS,
+    "decoding": config.N_DECODING_TRIALS
+    * config.N_DECODING_QUESTIONS,  # 60 rows (long)
 }
 lo, hi = config.N_DISTRACTOR_RANGE
+exp_lo, exp_hi = config.N_EXPLORATORY_RANGE
+
 
 # ---------------------------------------------------------------------------
 # Step 1 & 2: File reading and block parsing
@@ -82,12 +79,6 @@ lo, hi = config.N_DISTRACTOR_RANGE
 
 
 def _read_file(filepath: Path) -> str:
-    """
-    Read an E-Prime .txt file, trying encodings in order of likelihood.
-    E-Prime exports as UTF-16 LE with BOM by default. If the file was
-    manually re-saved it may be UTF-8. We try UTF-16 first, then UTF-8,
-    then fall back to latin-1 (which never fails but may mis-read characters).
-    """
     for encoding in ("utf-16", "utf-8", "latin-1"):
         try:
             text = filepath.read_text(encoding=encoding)
@@ -103,18 +94,7 @@ def _read_file(filepath: Path) -> str:
 
 
 def read_logframes(filepath: Path) -> list[dict]:
-    """
-    Read the full E-Prime .txt file and parse every LogFrame block into a
-    list of dicts. Each dict maps raw key strings to raw value strings.
-
-    Strategy:
-    - Split on '*** LogFrame Start ***' to isolate blocks
-    - Within each block, split on first ':' only (handles colons in values)
-    - Skip blank lines and the LogFrame End marker
-    """
     text = _read_file(filepath)
-
-    # Split on LogFrame Start; first chunk is file header — discard it
     raw_blocks = text.split("*** LogFrame Start ***")[1:]
 
     blocks = []
@@ -130,7 +110,6 @@ def read_logframes(filepath: Path) -> list[dict]:
                 continue
             key, _, value = line.partition(":")
             block[key.strip()] = value.strip()
-
         if block:
             blocks.append(block)
 
@@ -151,10 +130,6 @@ PROCEDURE_MAP = {
 
 
 def route_blocks(blocks: list[dict], subject_id: str) -> dict[str, list[dict]]:
-    """
-    Sort parsed blocks into four lists keyed by block type.
-    Blocks with a missing or unrecognised Procedure are logged and skipped.
-    """
     routed = {"encoding": [], "distractor": [], "decoding": [], "exploratory": []}
     skipped = 0
 
@@ -174,57 +149,130 @@ def route_blocks(blocks: list[dict], subject_id: str) -> dict[str, list[dict]]:
         logger.warning(
             f"  [{subject_id}] {skipped} block(s) skipped due to unknown Procedure."
         )
-
     return routed
 
 
 # ---------------------------------------------------------------------------
-# Step 4 & 5: Column extraction, renaming, and type casting
+# Step 4 & 5: Column extraction and type casting
 # ---------------------------------------------------------------------------
 
 
 def extract_columns(blocks: list[dict], col_map: dict, subject_id: str) -> pd.DataFrame:
-    """
-    From a list of raw block dicts, extract only the keys in col_map,
-    rename them, and return a DataFrame.
-
-    Missing keys in a block produce NaN for that cell (not a crash).
-    """
+    """Generic extractor for encoding, distractor, and exploratory blocks."""
     rows = []
     for block in blocks:
         row = {}
         for raw_key, new_key in col_map.items():
             value = block.get(raw_key, pd.NA)
-            # Treat empty string as NA
             if value == "":
                 value = pd.NA
             row[new_key] = value
         rows.append(row)
+    return pd.DataFrame(rows)
+
+
+def extract_decoding(blocks: list[dict], subject_id: str) -> pd.DataFrame:
+    """
+    Extract decoding blocks into long format: 2 rows per image (one per question).
+
+    Each block contains two question responses keyed by QShown_1/QShown_2.
+    We route each response back to its QuestionID (Q1 or Q2) regardless of
+    presentation order, and record PresentOrder (1 or 2) as a covariate.
+
+    Output columns:
+        StimID, CueText, TrialIndex,
+        QuestionID      : "Q1" or "Q2"
+        QuestionText    : the question stem
+        CorrectKey      : correct response key (1-4)
+        PresentOrder    : 1 = shown first, 2 = shown second
+        Accuracy        : 0 or 1
+        RT_ms           : response time in ms
+        Response        : key pressed (1-4)
+        Confidence      : confidence rating (1-4)
+        ConfRT_ms       : confidence RT in ms
+    """
+    rows = []
+
+    for block in blocks:
+        stim_id = block.get("StimID", pd.NA)
+        cue_text = block.get("CueText", pd.NA)
+        trial_index = block.get("TestList.Sample", pd.NA)
+
+        # Question definitions
+        q_defs = {
+            "Q1": {
+                "text": block.get("Q1", pd.NA),
+                "correct_key": block.get("Q1_CorrectKey", pd.NA),
+            },
+            "Q2": {
+                "text": block.get("Q2", pd.NA),
+                "correct_key": block.get("Q2_CorrectKey", pd.NA),
+            },
+        }
+
+        # Two presentation slots
+        for present_order, slot in enumerate(["1", "2"], start=1):
+            q_shown = block.get(f"QShown_{slot}", pd.NA)  # "Q1" or "Q2"
+            response = block.get(f"Resp_{slot}", pd.NA)
+            rt = block.get(f"RT_{slot}", pd.NA)
+            accuracy = block.get(f"Acc_{slot}", pd.NA)
+            conf = block.get(f"Conf_{slot}", pd.NA)
+            conf_rt = block.get(f"ConfRT_{slot}", pd.NA)
+
+            if q_shown not in ("Q1", "Q2"):
+                logger.warning(
+                    f"  [{subject_id}] StimID={stim_id}: unexpected QShown_{slot}='{q_shown}' — row skipped."
+                )
+                continue
+
+            q_def = q_defs[q_shown]
+
+            rows.append(
+                {
+                    "StimID": stim_id,
+                    "CueText": cue_text,
+                    "TrialIndex": trial_index,
+                    "QuestionID": q_shown,
+                    "QuestionText": q_def["text"],
+                    "CorrectKey": q_def["correct_key"],
+                    "PresentOrder": present_order,
+                    "Accuracy": accuracy,
+                    "RT_ms": rt,
+                    "Response": response,
+                    "Confidence": conf,
+                    "ConfRT_ms": conf_rt,
+                }
+            )
 
     return pd.DataFrame(rows)
 
 
 def cast_types(df: pd.DataFrame, block_type: str) -> pd.DataFrame:
-    """
-    Apply appropriate dtypes per block type.
-    Errors in casting are coerced to NaN and logged rather than raised.
-    """
     df = df.copy()
 
-    # StimID: always string (image ID, not arithmetic)
     if "StimID" in df.columns:
         df["StimID"] = df["StimID"].astype(str)
 
-    # Integer columns — coerce so bad values become NaN not crashes
-    int_cols = ["Accuracy", "RT_ms", "TrialIndex", "Response", "CorrectKey"]
     if block_type == "decoding":
-        int_cols.append("Confidence")
+        int_cols = [
+            "TrialIndex",
+            "CorrectKey",
+            "PresentOrder",
+            "Accuracy",
+            "RT_ms",
+            "Response",
+            "Confidence",
+            "ConfRT_ms",
+        ]
+    elif block_type == "exploratory":
+        int_cols = ["TrialIndex", "RT_ms"]
+    else:
+        int_cols = ["Accuracy", "RT_ms", "TrialIndex", "Response", "CorrectKey"]
 
     for col in int_cols:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors="coerce").astype("Int64")
 
-    # FreeResponse: string, strip whitespace
     if "FreeResponse" in df.columns:
         df["FreeResponse"] = df["FreeResponse"].apply(
             lambda x: x.strip() if isinstance(x, str) else pd.NA
@@ -249,14 +297,9 @@ def add_subject_id(df: pd.DataFrame, subject_id: str) -> pd.DataFrame:
 
 
 def validate_tables(tables: dict[str, pd.DataFrame], subject_id: str) -> bool:
-    """
-    Run sanity checks on all four tables.
-    Returns True if all pass, False if any fail.
-    Logs warnings rather than raising exceptions so pipeline can continue.
-    """
     passed = True
 
-    # --- Row counts ---
+    # Row counts — exact for encoding and decoding
     for block_type, expected in EXPECTED_COUNTS.items():
         actual = len(tables[block_type])
         if actual != expected:
@@ -265,6 +308,7 @@ def validate_tables(tables: dict[str, pd.DataFrame], subject_id: str) -> bool:
             )
             passed = False
 
+    # Range checks — distractor and exploratory are variable
     dist_count = len(tables["distractor"])
     if not (lo <= dist_count <= hi):
         logger.warning(
@@ -272,41 +316,65 @@ def validate_tables(tables: dict[str, pd.DataFrame], subject_id: str) -> bool:
         )
         passed = False
 
-    # --- No duplicate StimIDs within encoding or decoding ---
-    for block_type in ("encoding", "decoding"):
-        df = tables[block_type]
-        if "StimID" in df.columns:
-            dupes = df["StimID"].duplicated().sum()
-            if dupes > 0:
-                logger.warning(
-                    f"  [{subject_id}] {block_type}: {dupes} duplicate StimID(s) found."
-                )
-                passed = False
+    exp_count = len(tables["exploratory"])
+    if not (exp_lo <= exp_count <= exp_hi):
+        logger.warning(
+            f"  [{subject_id}] exploratory: row count {exp_count} outside expected range {exp_lo}–{exp_hi}."
+        )
+        passed = False
 
-    # --- Cross-table StimID checks (only if tables are non-empty) ---
-    def _stim_ids(block_type: str) -> set:
-        df = tables[block_type]
-        if df.empty or "StimID" not in df.columns:
+    # Encoding: no duplicate StimIDs
+    enc_df = tables["encoding"]
+    if "StimID" in enc_df.columns:
+        dupes = enc_df["StimID"].duplicated().sum()
+        if dupes > 0:
+            logger.warning(f"  [{subject_id}] encoding: {dupes} duplicate StimID(s).")
+            passed = False
+
+    # Decoding: each StimID should appear exactly N_DECODING_QUESTIONS times
+    dec_df = tables["decoding"]
+    if "StimID" in dec_df.columns:
+        counts = dec_df["StimID"].value_counts()
+        bad = counts[counts != config.N_DECODING_QUESTIONS]
+        if len(bad) > 0:
+            logger.warning(
+                f"  [{subject_id}] decoding: {len(bad)} StimID(s) without exactly "
+                f"{config.N_DECODING_QUESTIONS} question rows: {bad.index.tolist()}"
+            )
+            passed = False
+        # Also check QuestionID balance (each StimID should have one Q1 and one Q2)
+        q_counts = dec_df.groupby("StimID")["QuestionID"].nunique()
+        bad_q = q_counts[q_counts != config.N_DECODING_QUESTIONS]
+        if len(bad_q) > 0:
+            logger.warning(
+                f"  [{subject_id}] decoding: {len(bad_q)} StimID(s) missing Q1 or Q2."
+            )
+            passed = False
+
+    # Cross-table StimID checks
+    def _stim_ids(bt: str) -> set:
+        d = tables[bt]
+        if d.empty or "StimID" not in d.columns:
             return set()
-        return set(df["StimID"].dropna())
+        return set(d["StimID"].dropna().unique())
 
     enc_ids = _stim_ids("encoding")
     dec_ids = _stim_ids("decoding")
     exp_ids = _stim_ids("exploratory")
 
     if enc_ids and dec_ids:
-        missing_in_enc = dec_ids - enc_ids
-        if missing_in_enc:
+        missing = dec_ids - enc_ids
+        if missing:
             logger.warning(
-                f"  [{subject_id}] Decoding StimIDs not found in encoding: {missing_in_enc}"
+                f"  [{subject_id}] Decoding StimIDs not in encoding: {missing}"
             )
             passed = False
 
     if dec_ids and exp_ids:
-        missing_in_dec = exp_ids - dec_ids
-        if missing_in_dec:
+        missing = exp_ids - dec_ids
+        if missing:
             logger.warning(
-                f"  [{subject_id}] Exploratory StimIDs not found in decoding: {missing_in_dec}"
+                f"  [{subject_id}] Exploratory StimIDs not in decoding: {missing}"
             )
             passed = False
 
@@ -333,34 +401,10 @@ def write_tables(tables: dict[str, pd.DataFrame], subject_id: str, output_dir: P
 # Main entry point
 # ---------------------------------------------------------------------------
 
-COL_MAPS = {
-    "encoding": ENCODING_COLS,
-    "distractor": DISTRACTOR_COLS,
-    "decoding": DECODING_COLS,
-    "exploratory": EXPLORATORY_COLS,
-}
-
 
 def process_subject(
     subject_id: str, input_dir: str | Path, output_dir: str | Path
 ) -> bool:
-    """
-    Full Module 1 pipeline for a single participant.
-
-    Parameters
-    ----------
-    subject_id : str
-        e.g. 'sub01'
-    input_dir : path-like
-        Directory containing {subject_id}.txt
-    output_dir : path-like
-        Directory where CSVs will be written
-
-    Returns
-    -------
-    bool
-        True if completed without errors (validation warnings don't block completion).
-    """
     input_dir = Path(input_dir)
     output_dir = Path(output_dir)
 
@@ -371,25 +415,29 @@ def process_subject(
 
     logger.info(f"[{subject_id}] Processing {filepath.name} ...")
 
-    # Steps 1–2: Parse all blocks from file
     blocks = read_logframes(filepath)
-
-    # Step 3: Route by Procedure
     routed = route_blocks(blocks, subject_id)
 
-    # Steps 4–5: Extract columns and cast types
     tables = {}
-    for block_type, block_list in routed.items():
-        df = extract_columns(block_list, COL_MAPS[block_type], subject_id)
+    col_maps = {
+        "encoding": ENCODING_COLS,
+        "distractor": DISTRACTOR_COLS,
+        "exploratory": EXPLORATORY_COLS,
+    }
+
+    for block_type, col_map in col_maps.items():
+        df = extract_columns(routed[block_type], col_map, subject_id)
         df = cast_types(df, block_type)
-        # Step 6: Add SubjectID
         df = add_subject_id(df, subject_id)
         tables[block_type] = df
 
-    # Step 7: Validate
-    validate_tables(tables, subject_id)
+    # Decoding uses dedicated extractor
+    dec_df = extract_decoding(routed["decoding"], subject_id)
+    dec_df = cast_types(dec_df, "decoding")
+    dec_df = add_subject_id(dec_df, subject_id)
+    tables["decoding"] = dec_df
 
-    # Step 8: Write
+    validate_tables(tables, subject_id)
     write_tables(tables, subject_id, output_dir)
 
     logger.info(f"[{subject_id}] Module 1 complete.")
@@ -397,7 +445,7 @@ def process_subject(
 
 
 # ---------------------------------------------------------------------------
-# CLI entry point (run a batch directly)
+# CLI
 # ---------------------------------------------------------------------------
 
 
@@ -407,7 +455,6 @@ def main():
         format="%(asctime)s  %(levelname)-8s  %(message)s",
         datefmt="%H:%M:%S",
     )
-
     parser = argparse.ArgumentParser(description="Module 1: Behavioral Processor")
     parser.add_argument(
         "--input", default="data_behavioral/", help="Directory of .txt files"
@@ -415,36 +462,25 @@ def main():
     parser.add_argument(
         "--output", default="output/behavioral/", help="Output directory"
     )
-    parser.add_argument(
-        "--subjects", nargs="*", help="Specific subject IDs to process (default: all)"
-    )
+    parser.add_argument("--subjects", nargs="*", help="Subject IDs (default: all)")
     args = parser.parse_args()
 
     input_dir = Path(args.input)
     output_dir = Path(args.output)
 
-    if args.subjects:
-        subject_ids = args.subjects
-    else:
-        subject_ids = sorted(p.stem for p in input_dir.glob("*.txt"))
-
+    subject_ids = args.subjects or sorted(p.stem for p in input_dir.glob("*.txt"))
     if not subject_ids:
         logger.error(f"No .txt files found in {input_dir}")
         return
 
     logger.info(f"Found {len(subject_ids)} participant(s): {subject_ids}")
+    results = {sid: process_subject(sid, input_dir, output_dir) for sid in subject_ids}
 
-    results = {}
-    for sid in subject_ids:
-        results[sid] = process_subject(sid, input_dir, output_dir)
-
-    # Summary
     passed = [s for s, ok in results.items() if ok]
     failed = [s for s, ok in results.items() if not ok]
-    logger.info(f"\n{'='*50}")
-    logger.info(f"Completed: {len(passed)}/{len(subject_ids)}")
+    logger.info(f"\n{'='*50}\nCompleted: {len(passed)}/{len(subject_ids)}")
     if failed:
-        logger.warning(f"Failed:    {failed}")
+        logger.warning(f"Failed: {failed}")
 
 
 if __name__ == "__main__":

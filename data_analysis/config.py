@@ -28,9 +28,10 @@ METADATA_FILE = DATA_METADATA_DIR / "stimuli_dataset.json"
 # Experiment design
 # ---------------------------------------------------------------------------
 
-N_ENCODING_TRIALS = 60
+N_ENCODING_TRIALS = 30
 N_DECODING_TRIALS = 30
-N_EXPLORATORY_TRIALS = 10
+N_DECODING_QUESTIONS = 2
+N_EXPLORATORY_RANGE = (0, 30)
 N_DISTRACTOR_RANGE = (1, 148)  # time-terminated loop, count not fixed
 
 ENCODING_WINDOW_MS = 5000  # image viewing phase duration

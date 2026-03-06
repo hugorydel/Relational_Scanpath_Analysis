@@ -27,8 +27,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-
-from data_analysis.config import DISPLAY_HEIGHT_PX, DISPLAY_WIDTH_PX
+from config import DISPLAY_HEIGHT_PX, DISPLAY_WIDTH_PX
 
 logger = logging.getLogger(__name__)
 

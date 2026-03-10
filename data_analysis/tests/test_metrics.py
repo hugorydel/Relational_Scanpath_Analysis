@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import config
 import numpy as np
 import pandas as pd
-from pipeline.misc import setup_logging
+from pipeline.misc import get_subject_ids, setup_logging
 from pipeline.utils.metrics import (
     build_object_sequence,
     kendall_tau_shared,
@@ -33,7 +33,6 @@ from pipeline.utils.scene_graph import build_graph_index
 setup_logging(level="INFO")
 logger = logging.getLogger(__name__)
 
-SUBJECT_ID = "Encode-Decode_Experiment-1-1"
 PASS = "  PASS"
 FAIL = "  FAIL"
 
@@ -199,125 +198,182 @@ def test_kendall_tau_shared():
 
 
 def test_live():
-    print("\n--- live test on real participant data ---")
+    print("\n--- live test on real participant data (all participants) ---")
 
-    aoi_path = config.OUTPUT_FEATURES_DIR / f"{SUBJECT_ID}_fixations_aoi.csv"
-    if not aoi_path.exists():
-        print(f"  SKIP — {aoi_path.name} not found. Run test_aoi.py first.")
-        return
-
-    df = pd.read_csv(aoi_path, dtype={"StimID": str})
     graph_index = build_graph_index()
     rng = np.random.default_rng(42)
 
-    print(f"  Loaded {len(df)} fixations for {SUBJECT_ID}")
+    subject_ids = get_subject_ids()
+    if not subject_ids:
+        print("  SKIP — no subjects found. Run Module 3 first.")
+        return
 
-    # Compute metrics for every trial
-    records = []
+    all_records = []
+    all_lcs = []
+    all_tau = []
+    found = []
 
-    for (stim_id, phase, vn), group in df.groupby(
-        ["StimID", "Phase", "ViewingNumber"], dropna=False
-    ):
-        seq = build_object_sequence(group)
-
-        edges_all = graph_index["all"].get(stim_id, set())
-        edges_inter = graph_index["interactional"].get(stim_id, set())
-
-        svg_all = svg_alignment(seq, edges_all, n_permutations=200, rng=rng)
-        svg_inter = svg_alignment(seq, edges_inter, n_permutations=200, rng=rng)
-
-        records.append(
-            {
-                "StimID": stim_id,
-                "Phase": phase,
-                "ViewingNumber": vn,
-                "seq_length": len(seq),
-                "n_transitions": svg_all["n_transitions"],
-                "n_relational": svg_all["n_relational"],
-                "svg_obs_all": (
-                    round(svg_all["svg_obs"], 3)
-                    if not np.isnan(svg_all["svg_obs"] or np.nan)
-                    else np.nan
-                ),
-                "svg_z_all": (
-                    round(svg_all["svg_z"], 3)
-                    if not np.isnan(svg_all["svg_z"] or np.nan)
-                    else np.nan
-                ),
-                "svg_z_inter": (
-                    round(svg_inter["svg_z"], 3)
-                    if not np.isnan(svg_inter["svg_z"] or np.nan)
-                    else np.nan
-                ),
-                "low_n": svg_all["low_n"],
-            }
-        )
-
-    results_df = pd.DataFrame(records)
-
-    print(f"\n  Trials processed: {len(results_df)}")
-    print(f"  low_n trials    : {results_df['low_n'].sum()}")
-
-    for phase in ["encoding", "decoding"]:
-        sub = results_df[results_df["Phase"] == phase]
-        print(f"\n  {phase.upper()} (n={len(sub)} trials)")
-        print(
-            f"    seq_length    : mean={sub['seq_length'].mean():.1f}  min={sub['seq_length'].min()}  max={sub['seq_length'].max()}"
-        )
-        print(
-            f"    svg_obs_all   : mean={sub['svg_obs_all'].mean():.3f}  std={sub['svg_obs_all'].std():.3f}"
-        )
-        print(
-            f"    svg_z_all     : mean={sub['svg_z_all'].mean():.3f}  std={sub['svg_z_all'].std():.3f}"
-        )
-        print(
-            f"    svg_z_inter   : mean={sub['svg_z_inter'].mean():.3f}  std={sub['svg_z_inter'].std():.3f}"
-        )
-
-    # LCS and Kendall between encoding 2 and decoding
-    print("\n  LCS / Kendall (Encoding 2 vs Decoding):")
-    lcs_scores = []
-    tau_scores = []
-
-    stim_ids = results_df["StimID"].unique()
-    for stim_id in stim_ids:
-        enc2_fix = df[
-            (df["StimID"] == stim_id)
-            & (df["Phase"] == "encoding")
-            & (df["ViewingNumber"] == 2.0)
-        ]
-        dec_fix = df[(df["StimID"] == stim_id) & (df["Phase"] == "decoding")]
-
-        seq_enc2 = build_object_sequence(enc2_fix)
-        seq_dec = build_object_sequence(dec_fix)
-
-        if not seq_enc2 or not seq_dec:
+    for subject_id in subject_ids:
+        aoi_path = config.OUTPUT_FEATURES_DIR / f"{subject_id}_fixations_aoi.csv"
+        if not aoi_path.exists():
+            print(f"  SKIP {subject_id} — fixations_aoi.csv not found.")
             continue
 
-        lcs = symbolic_lcs(seq_enc2, seq_dec)
-        tau = kendall_tau_shared(seq_enc2, seq_dec)
+        df = pd.read_csv(aoi_path, dtype={"StimID": str})
+        found.append(subject_id)
 
-        lcs_scores.append(lcs["lcs_score"])
-        if not np.isnan(tau["tau"]):
-            tau_scores.append(tau["tau"])
+        for (stim_id, phase, trial_idx), group in df.groupby(
+            ["StimID", "Phase", "TrialIndex"], dropna=False
+        ):
+            stim_id = str(stim_id)
+            seq = build_object_sequence(group)
 
-    lcs_arr = np.array(lcs_scores)
-    tau_arr = np.array(tau_scores)
+            edges_all = graph_index["all"].get(stim_id, set())
+            edges_inter = graph_index["interactional"].get(stim_id, set())
+
+            svg_all = svg_alignment(seq, edges_all, n_permutations=200, rng=rng)
+            svg_inter = svg_alignment(seq, edges_inter, n_permutations=200, rng=rng)
+
+            all_records.append(
+                {
+                    "SubjectID": subject_id,
+                    "StimID": stim_id,
+                    "Phase": phase,
+                    "TrialIndex": trial_idx,
+                    "seq_length": len(seq),
+                    "n_transitions": svg_all["n_transitions"],
+                    "n_relational": svg_all["n_relational"],
+                    "svg_obs_all": (
+                        round(svg_all["svg_obs"], 3)
+                        if not np.isnan(svg_all["svg_obs"] or np.nan)
+                        else np.nan
+                    ),
+                    "svg_z_all": (
+                        round(svg_all["svg_z"], 3)
+                        if not np.isnan(svg_all["svg_z"] or np.nan)
+                        else np.nan
+                    ),
+                    "svg_z_inter": (
+                        round(svg_inter["svg_z"], 3)
+                        if not np.isnan(svg_inter["svg_z"] or np.nan)
+                        else np.nan
+                    ),
+                    "low_n": svg_all["low_n"],
+                }
+            )
+
+        # LCS / Kendall: merge all encoding fixations per image vs decoding
+        for stim_id in df["StimID"].unique():
+            enc_fix = df[(df["StimID"] == stim_id) & (df["Phase"] == "encoding")]
+            dec_fix = df[(df["StimID"] == stim_id) & (df["Phase"] == "decoding")]
+
+            seq_enc = build_object_sequence(enc_fix)
+            seq_dec = build_object_sequence(dec_fix)
+
+            if not seq_enc or not seq_dec:
+                continue
+
+            lcs = symbolic_lcs(seq_enc, seq_dec)
+            tau = kendall_tau_shared(seq_enc, seq_dec)
+
+            all_lcs.append(lcs["lcs_score"])
+            if not np.isnan(tau["tau"]):
+                all_tau.append(tau["tau"])
+
+    if not found:
+        print("  No participants with fixations_aoi.csv found.")
+        return
+
+    results_df = pd.DataFrame(all_records)
+    print(f"\n  Participants : {len(found)}")
+    print(f"  Total trials : {len(results_df)}")
+    print(f"  low_n trials : {results_df['low_n'].sum()}")
+
+    # ---- Group-level phase summaries ----
+    for phase in ["encoding", "decoding"]:
+        sub = results_df[results_df["Phase"] == phase]
+        print(
+            f"\n  {phase.upper()} (n={len(sub)} trials across {len(found)} participants)"
+        )
+        print(
+            f"    seq_length  : mean={sub['seq_length'].mean():.1f}  "
+            f"min={sub['seq_length'].min()}  max={sub['seq_length'].max()}"
+        )
+        print(
+            f"    svg_obs_all : mean={sub['svg_obs_all'].mean():.3f}  std={sub['svg_obs_all'].std():.3f}"
+        )
+        print(
+            f"    svg_z_all   : mean={sub['svg_z_all'].mean():.3f}  std={sub['svg_z_all'].std():.3f}"
+        )
+        print(
+            f"    svg_z_inter : mean={sub['svg_z_inter'].mean():.3f}  std={sub['svg_z_inter'].std():.3f}"
+        )
+
+    # ---- Per-participant breakdown ----
+    # svg_z is a permutation z-score: observed SVG vs null distribution from
+    # random shuffles of the same sequence. z > 0 = more relational transitions
+    # than expected by chance; z = 1.0 = 1 SD above the permutation mean.
+    # Flush stdout first to avoid \r overwrite from the logging system on Windows.
+    import sys
+
+    sys.stdout.flush()
+
+    print()
+    print("  Per-participant SVG z-scores")
+    print("  (permutation z-score: z=1.0 means 1 SD above random-shuffle baseline)")
+    print()
+    rows = []
+    for subject_id in found:
+        short_id = subject_id.replace("Encode-Decode_Experiment-", "P")
+        for phase in ["encoding", "decoding"]:
+            sub = results_df[
+                (results_df["SubjectID"] == subject_id) & (results_df["Phase"] == phase)
+            ]
+            if sub.empty:
+                continue
+            z_all = sub["svg_z_all"].mean()
+            z_inter = sub["svg_z_inter"].mean()
+            rows.append((short_id, phase, len(sub), z_all, z_inter))
+
+    col_w = max(len(r[0]) for r in rows) + 2
     print(
-        f"    LCS  : mean={lcs_arr.mean():.3f}  std={lcs_arr.std():.3f}  "
+        f"  {'':>{col_w}}  {'phase':<10}  {'n':>4}  {'svg_z_all':>10}  {'svg_z_inter':>12}"
+    )
+    print("  " + "-" * (col_w + 44))
+    prev_id = None
+    for short_id, phase, n, z_all, z_inter in rows:
+        if prev_id and short_id != prev_id:
+            print()
+        print(
+            f"  {short_id:>{col_w}}  {phase:<10}  {n:>4}  {z_all:>+10.3f}  {z_inter:>+12.3f}"
+        )
+        prev_id = short_id
+    print()
+
+    # ---- LCS / Tau summary ----
+    lcs_arr = np.array(all_lcs)
+    tau_arr = np.array(all_tau)
+    print(
+        f"\n  LCS / Kendall (all encoding merged vs decoding, across all participants):"
+    )
+    print(
+        f"    LCS : mean={lcs_arr.mean():.3f}  std={lcs_arr.std():.3f}  "
         f"min={lcs_arr.min():.3f}  max={lcs_arr.max():.3f}  n={len(lcs_arr)}"
     )
     print(
-        f"    Tau  : mean={tau_arr.mean():.3f}  std={tau_arr.std():.3f}  "
+        f"    Tau : mean={tau_arr.mean():.3f}  std={tau_arr.std():.3f}  "
         f"min={tau_arr.min():.3f}  max={tau_arr.max():.3f}  n={len(tau_arr)}"
     )
 
-    # Sample trial detail
-    print("\n  Sample trial details (first 5 encoding trials):")
-    sample = results_df[results_df["Phase"] == "encoding"].head(5)[
+    # ---- Sample rows ----
+    print("\n  Sample trial details (first 5 encoding trials, participant 1):")
+    first_sub = found[0]
+    sample = results_df[
+        (results_df["SubjectID"] == first_sub) & (results_df["Phase"] == "encoding")
+    ].head(5)[
         [
             "StimID",
-            "ViewingNumber",
+            "TrialIndex",
             "seq_length",
             "n_transitions",
             "n_relational",

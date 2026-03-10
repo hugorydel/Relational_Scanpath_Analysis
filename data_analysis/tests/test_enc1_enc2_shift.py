@@ -1,28 +1,47 @@
 """
 analyse_enc1_enc2_shift.py
 ==========================
-Per-participant analysis of the encoding viewingNumber 1 → 2 shift in
+Group-level analysis of the first → second encoding trial shift in
 relational scanpath alignment (SVG z-scores).
 
-Tests whether participants show higher relational structure in their
-second encoding viewing than their first — consistent with top-down
-relational processing emerging after initial gist extraction.
+With the current experiment design, each image is shown twice at encoding
+in separate trials, each with a different relational question. This script
+tests whether SVG alignment differs between the first and second encoding
+trial per image — the two trials are distinguished by TrialIndex (lower
+TrialIndex = shown first, higher = shown second).
+
+Note: because the two encoding trials present different questions, any
+shift is confounded with question content and should be interpreted
+cautiously.
+
+Group-level test (two-stage):
+    Stage 1 — per participant: compute mean(enc_second - enc_first) SVG diff
+              across all valid image pairs. This gives one value per participant.
+    Stage 2 — across participants: one-sample Wilcoxon signed-rank test
+              of those mean diffs against 0.
+    This respects the nested structure (images within participants) and avoids
+    pseudo-replication from pooling raw image-level diffs.
+
+Per-participant descriptives are also printed for inspection.
 
 Metrics tested:
     svg_z_inter  — interactional edges only (primary)
     svg_z_all    — all relation types (comparison)
 
-Statistical test:
-    Paired Wilcoxon signed-rank test (non-parametric; robust to non-normality
-    in small per-participant samples). Falls back to reporting descriptives
-    only if too few valid pairs exist.
+Source data:
+    Loads {SubjectID}_fixations_aoi.csv from output/features/ and computes
+    SVG alignment per encoding trial (by TrialIndex) on the fly, since
+    module 3 merges both encoding trials per image into one sequence.
 
 Usage:
-    # Single participant
+    # All participants (default)
+    python analyse_enc1_enc2_shift.py
+
+    # Single participant (descriptives only — group test needs ≥2)
     python analyse_enc1_enc2_shift.py --subject Encode-Decode_Experiment-1-1
 
-    # All participants (runs per-participant, no group aggregation)
-    python analyse_enc1_enc2_shift.py
+    # Custom random seed
+    python analyse_enc1_enc2_shift.py --seed 99
 """
 
 import argparse
@@ -37,97 +56,184 @@ from scipy import stats
 sys.path.insert(0, str(Path(__file__).parent.parent))
 import config
 from pipeline.misc import get_subject_ids, setup_logging
+from pipeline.utils.metrics import build_object_sequence, svg_alignment
+from pipeline.utils.scene_graph import build_graph_index
 
 logger = logging.getLogger(__name__)
 
-# Minimum valid (non-NaN, non-low_n) pairs required to run the test
-MIN_PAIRS = 5
+# Minimum valid (non-NaN, non-low_n) image pairs per participant
+MIN_PAIRS_PER_SUBJECT = 5
+# Minimum participants required to run the group-level test
+MIN_PARTICIPANTS = 3
 
 
 # ---------------------------------------------------------------------------
-# Core analysis
+# Per-trial SVG computation
 # ---------------------------------------------------------------------------
 
 
-def analyse_shift(subject_id: str) -> dict | None:
+def _compute_svg_per_trial(
+    fixations_aoi: pd.DataFrame,
+    graph_index: dict,
+    rng: np.random.Generator,
+) -> pd.DataFrame:
     """
-    Load trial_features.csv for one participant and test the enc1 -> enc2
-    SVG z-score shift.
+    Compute SVG alignment scores separately for every (StimID, TrialIndex)
+    combination in the encoding phase.
 
-    Returns a results dict, or None if the file is missing.
+    Returns a DataFrame with columns:
+        StimID, TrialIndex, svg_z_inter, svg_z_all, low_n
     """
-    features_path = config.OUTPUT_FEATURES_DIR / f"{subject_id}_trial_features.csv"
-    if not features_path.exists():
+    enc = fixations_aoi[fixations_aoi["Phase"] == "encoding"].copy()
+    records = []
+
+    for (stim_id, trial_idx), group in enc.groupby(["StimID", "TrialIndex"], sort=True):
+        stim_id = str(stim_id)
+        seq = build_object_sequence(group)
+
+        edges_all = graph_index["all"].get(stim_id, set())
+        edges_inter = graph_index["interactional"].get(stim_id, set())
+
+        svg_all = svg_alignment(
+            seq, edges_all, n_permutations=config.SVG_N_PERMUTATIONS, rng=rng
+        )
+        svg_inter = svg_alignment(
+            seq, edges_inter, n_permutations=config.SVG_N_PERMUTATIONS, rng=rng
+        )
+
+        records.append(
+            {
+                "StimID": stim_id,
+                "TrialIndex": int(trial_idx),
+                "svg_z_all": svg_all["svg_z"],
+                "svg_z_inter": svg_inter["svg_z"],
+                "low_n": svg_all["low_n"],
+            }
+        )
+
+    return pd.DataFrame(records)
+
+
+# ---------------------------------------------------------------------------
+# Per-participant analysis
+# ---------------------------------------------------------------------------
+
+
+def analyse_shift_subject(
+    subject_id: str, graph_index: dict, rng: np.random.Generator
+) -> dict | None:
+    """
+    Load fixations_aoi.csv for one participant, compute per-trial SVG scores,
+    and compute the enc_first → enc_second diff for each image.
+
+    Returns a dict with per-image diffs and per-participant summary stats,
+    or None if the file is missing.
+    """
+    aoi_path = config.OUTPUT_FEATURES_DIR / f"{subject_id}_fixations_aoi.csv"
+    if not aoi_path.exists():
         logger.error(
-            f"  [{subject_id}] trial_features.csv not found -- run Module 3 first."
+            f"  [{subject_id}] fixations_aoi.csv not found — run Module 3 first."
         )
         return None
 
-    df = pd.read_csv(features_path, dtype={"StimID": str})
+    fixations_aoi = pd.read_csv(aoi_path, dtype={"StimID": str})
+    trial_svg = _compute_svg_per_trial(fixations_aoi, graph_index, rng)
 
-    enc = df[df["Phase"] == "encoding"].copy()
-    enc1 = enc[enc["ViewingNumber"] == 1.0].set_index("StimID")
-    enc2 = enc[enc["ViewingNumber"] == 2.0].set_index("StimID")
+    # Rank the two TrialIndex values per StimID: rank 1 = first shown
+    trial_svg = trial_svg.sort_values(["StimID", "TrialIndex"])
+    trial_svg["enc_order"] = trial_svg.groupby("StimID").cumcount() + 1  # 1 or 2
 
-    # Align on shared StimIDs
-    shared = enc1.index.intersection(enc2.index)
-    enc1 = enc1.loc[shared]
-    enc2 = enc2.loc[shared]
+    enc_first = trial_svg[trial_svg["enc_order"] == 1].set_index("StimID")
+    enc_second = trial_svg[trial_svg["enc_order"] == 2].set_index("StimID")
 
-    results = {"subject_id": subject_id, "n_images": len(shared)}
+    shared = enc_first.index.intersection(enc_second.index)
+    enc_first = enc_first.loc[shared]
+    enc_second = enc_second.loc[shared]
+
+    result = {"subject_id": subject_id, "n_images": len(shared)}
 
     for metric in ["svg_z_inter", "svg_z_all"]:
-        v1 = enc1[metric]
-        v2 = enc2[metric]
-
-        # Drop pairs where either viewing is NaN or low_n
-        low_n1 = enc1["low_n"].fillna(True)
-        low_n2 = enc2["low_n"].fillna(True)
+        v1 = enc_first[metric]
+        v2 = enc_second[metric]
+        low_n1 = enc_first["low_n"].fillna(True)
+        low_n2 = enc_second["low_n"].fillna(True)
         valid = v1.notna() & v2.notna() & ~low_n1 & ~low_n2
 
         d1 = v1[valid].values
         d2 = v2[valid].values
-        diff = d2 - d1  # positive = enc2 > enc1
+        diff = d2 - d1
 
         n_valid = int(valid.sum())
-        n_dropped = int((~valid).sum())
-        mean_enc1 = float(np.mean(d1)) if n_valid > 0 else np.nan
-        mean_enc2 = float(np.mean(d2)) if n_valid > 0 else np.nan
-        mean_diff = float(np.mean(diff)) if n_valid > 0 else np.nan
-        std_diff = float(np.std(diff, ddof=1)) if n_valid > 1 else np.nan
+        result[metric] = {
+            "n_valid": n_valid,
+            "n_dropped": int((~valid).sum()),
+            "mean_enc_first": float(np.mean(d1)) if n_valid > 0 else np.nan,
+            "mean_enc_second": float(np.mean(d2)) if n_valid > 0 else np.nan,
+            "mean_diff": float(np.mean(diff)) if n_valid > 0 else np.nan,
+            "std_diff": float(np.std(diff, ddof=1)) if n_valid > 1 else np.nan,
+            "n_pos": int((diff > 0).sum()),
+            "n_neg": int((diff < 0).sum()),
+            "n_tie": int((diff == 0).sum()),
+        }
 
-        # Wilcoxon signed-rank test
+    return result
+
+
+# ---------------------------------------------------------------------------
+# Group-level test
+# ---------------------------------------------------------------------------
+
+
+def run_group_test(all_results: list[dict]) -> dict:
+    """
+    Stage 2: one mean diff per participant → one-sample test against 0.
+
+    Uses a one-sample Wilcoxon signed-rank test when n_participants >= 3,
+    otherwise reports descriptives only.
+    """
+    group = {}
+
+    for metric in ["svg_z_inter", "svg_z_all"]:
+        # Collect mean diffs from participants with enough valid pairs
+        mean_diffs = []
+        for r in all_results:
+            m = r[metric]
+            if m["n_valid"] >= MIN_PAIRS_PER_SUBJECT and not np.isnan(m["mean_diff"]):
+                mean_diffs.append(m["mean_diff"])
+
+        n_contrib = len(mean_diffs)
+        arr = np.array(mean_diffs)
+
         stat, p = np.nan, np.nan
         test_note = ""
-        if n_valid >= MIN_PAIRS:
-            nonzero = diff[diff != 0]
+
+        if n_contrib >= MIN_PARTICIPANTS:
+            nonzero = arr[arr != 0]
             if len(nonzero) >= 1:
                 try:
-                    stat, p = stats.wilcoxon(diff, alternative="greater")
-                    test_note = "Wilcoxon signed-rank (one-tailed: enc2 > enc1)"
+                    stat, p = stats.wilcoxon(arr, alternative="greater")
+                    test_note = "One-sample Wilcoxon (one-tailed: mean diff > 0)"
                 except Exception as e:
                     test_note = f"Test failed: {e}"
             else:
-                test_note = "All differences zero -- test not applicable"
+                test_note = "All participant mean diffs are zero — test not applicable"
         else:
             test_note = (
-                f"Too few valid pairs (n={n_valid} < {MIN_PAIRS}) -- descriptives only"
+                f"Only {n_contrib}/{len(all_results)} participants contributed "
+                f"(need ≥{MIN_PARTICIPANTS} with ≥{MIN_PAIRS_PER_SUBJECT} valid pairs) — descriptives only"
             )
 
-        results[metric] = {
-            "n_valid": n_valid,
-            "n_dropped": n_dropped,
-            "mean_enc1": mean_enc1,
-            "mean_enc2": mean_enc2,
-            "mean_diff": mean_diff,
-            "std_diff": std_diff,
+        group[metric] = {
+            "n_contributing": n_contrib,
+            "mean_diffs": arr.tolist(),
+            "grand_mean_diff": float(np.mean(arr)) if n_contrib > 0 else np.nan,
+            "grand_sd_diff": float(np.std(arr, ddof=1)) if n_contrib > 1 else np.nan,
             "stat": stat,
             "p": p,
             "test_note": test_note,
-            "diffs": diff.tolist(),
         }
 
-    return results
+    return group
 
 
 # ---------------------------------------------------------------------------
@@ -135,47 +241,59 @@ def analyse_shift(subject_id: str) -> dict | None:
 # ---------------------------------------------------------------------------
 
 
-def print_report(results: dict):
-    sid = results["subject_id"]
-    n = results["n_images"]
-
-    print(f"\n{'='*65}")
-    print(f"ENC1 -> ENC2 SVG ALIGNMENT SHIFT  |  {sid}")
-    print(f"{'='*65}")
-    print(f"Images: {n}")
-
+def print_per_subject_report(result: dict):
+    sid = result["subject_id"]
+    print(f"\n  {sid}  (n_images={result['n_images']})")
     for metric in ["svg_z_inter", "svg_z_all"]:
-        r = results[metric]
-        label = (
-            "SVG z (interactional)"
-            if metric == "svg_z_inter"
-            else "SVG z (all relations)"
+        r = result[metric]
+        label = "inter" if "inter" in metric else "all"
+        if r["n_valid"] == 0:
+            print(f"    [{label}]  no valid pairs")
+            continue
+        print(
+            f"    [{label}]  n_valid={r['n_valid']}  "
+            f"enc_first={r['mean_enc_first']:+.3f}  "
+            f"enc_second={r['mean_enc_second']:+.3f}  "
+            f"mean_diff={r['mean_diff']:+.3f}  "
+            f"({r['n_pos']}↑ {r['n_neg']}↓ {r['n_tie']}=)"
         )
 
-        print(f"\n--- {label} ---")
-        print(f"  Valid pairs   : {r['n_valid']}  (dropped: {r['n_dropped']})")
 
-        if r["n_valid"] == 0:
-            print("  No valid data.")
+def print_group_report(group: dict, n_total: int):
+    print(f"\n{'='*65}")
+    print(f"GROUP-LEVEL ENC_FIRST → ENC_SECOND SHIFT  ({n_total} participants)")
+    print(f"{'='*65}")
+    print("(Test: one-sample Wilcoxon on per-participant mean diffs vs 0)\n")
+
+    for metric in ["svg_z_inter", "svg_z_all"]:
+        g = group[metric]
+        label = (
+            "SVG z (interactional)" if "inter" in metric else "SVG z (all relations)"
+        )
+        print(f"--- {label} ---")
+        print(f"  Contributing participants: {g['n_contributing']}")
+
+        if g["n_contributing"] == 0:
+            print("  No data.")
             continue
 
-        print(f"  Mean enc1     : {r['mean_enc1']:+.3f}")
-        print(f"  Mean enc2     : {r['mean_enc2']:+.3f}")
-        print(f"  Mean diff     : {r['mean_diff']:+.3f}  (enc2 - enc1)")
-        print(f"  SD diff       : {r['std_diff']:.3f}")
+        per_p = "  " + "  ".join(f"{d:+.3f}" for d in g["mean_diffs"])
+        print(f"  Per-participant mean diffs:{per_p}")
+        print(f"  Grand mean diff : {g['grand_mean_diff']:+.3f}")
+        print(
+            f"  Grand SD diff   : {g['grand_sd_diff']:.3f}"
+            if not np.isnan(g["grand_sd_diff"])
+            else "  Grand SD diff   : —"
+        )
 
-        n_pos = sum(d > 0 for d in r["diffs"])
-        n_neg = sum(d < 0 for d in r["diffs"])
-        n_zer = sum(d == 0 for d in r["diffs"])
-        print(f"  Direction     : {n_pos} images up  {n_neg} images down  {n_zer} ties")
+        if not np.isnan(g["stat"]):
+            sig = "  *" if g["p"] < 0.05 else ""
+            print(f"  Wilcoxon W      : {g['stat']:.1f}")
+            print(f"  p (one-tail)    : {g['p']:.4f}{sig}")
+        print(f"  Note            : {g['test_note']}")
+        print()
 
-        if not np.isnan(r["stat"]):
-            sig = "  *" if r["p"] < 0.05 else ""
-            print(f"  Wilcoxon W    : {r['stat']:.1f}")
-            print(f"  p (one-tail)  : {r['p']:.4f}{sig}")
-        print(f"  Note          : {r['test_note']}")
-
-    print(f"\n{'='*65}\n")
+    print(f"{'='*65}\n")
 
 
 # ---------------------------------------------------------------------------
@@ -187,25 +305,47 @@ def main():
     setup_logging(level=config.LOG_LEVEL)
 
     parser = argparse.ArgumentParser(
-        description="Per-participant enc1 -> enc2 SVG alignment shift analysis."
+        description="Group-level enc_first → enc_second SVG alignment shift analysis."
     )
     parser.add_argument(
         "--subject",
         default=None,
-        help="Single subject ID (default: all discovered subjects)",
+        help="Single subject ID (descriptives only; group test skipped)",
+    )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=42,
+        help="Random seed for SVG permutation null (default: 42)",
     )
     args = parser.parse_args()
 
-    if args.subject:
-        subject_ids = [args.subject]
-    else:
-        subject_ids = get_subject_ids()
+    rng = np.random.default_rng(args.seed)
+
+    subject_ids = [args.subject] if args.subject else get_subject_ids()
+    if not args.subject:
         logger.info(f"Discovered {len(subject_ids)} subjects.")
 
+    # Load graph index once
+    graph_index = build_graph_index()
+
+    all_results = []
+    print(f"\n{'='*65}")
+    print("PER-PARTICIPANT DESCRIPTIVES")
+    print(f"{'='*65}")
+
     for subject_id in subject_ids:
-        results = analyse_shift(subject_id)
-        if results:
-            print_report(results)
+        logger.info(f"  [{subject_id}] Computing per-trial SVG scores ...")
+        result = analyse_shift_subject(subject_id, graph_index, rng)
+        if result:
+            all_results.append(result)
+            print_per_subject_report(result)
+
+    if len(all_results) >= 2:
+        group = run_group_test(all_results)
+        print_group_report(group, len(all_results))
+    else:
+        print("\n(Need ≥2 participants for group report.)")
 
 
 if __name__ == "__main__":

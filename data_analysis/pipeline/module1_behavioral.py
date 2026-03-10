@@ -2,17 +2,21 @@
 Module 1: Behavioral Processor
 ================================
 Parses E-Prime .txt log files into four clean, typed CSVs per participant:
-    - {SubjectID}_encoding.csv       (30 rows — one per image)
+    - {SubjectID}_encoding.csv       (60 rows — two questions per image, one row each)
     - {SubjectID}_distractor.csv
-    - {SubjectID}_decoding.csv       (60 rows — two questions per image, long format)
-    - {SubjectID}_exploratory.csv
+    - {SubjectID}_decoding.csv       (30 rows — one free-recall response per image)
+    - {SubjectID}_exploratory.csv    (variable — subset of images, free recall)
 
-Decoding format (long):
-    One row per question response. Each image yields 2 rows (Q1 and Q2).
-    QuestionID   : "Q1" or "Q2" — question identity (not presentation order)
-    PresentOrder : 1 or 2 — whether this question was shown first or second
-    Columns: SubjectID, StimID, CueText, TrialIndex, QuestionID, QuestionText,
-             CorrectKey, PresentOrder, Accuracy, RT_ms, Response, Confidence, ConfRT_ms
+Encoding format:
+    One row per encoding trial (60 total: 30 images × 2 questions each).
+    Columns: SubjectID, StimID, CueText, Question, Accuracy, RT_ms, Response,
+             CorrectKey, TrialIndex
+
+Decoding format:
+    One row per image (30 total). Participant typed a free-recall response
+    after seeing the MCQ cue (no forced-choice response was logged).
+    FreeResponse is decoded from E-Prime keystroke syntax ({SPACE}, {.}, etc.).
+    Columns: SubjectID, StimID, CueText, CueQuestion, FreeResponse, RT_ms, TrialIndex
 
 Usage (standalone):
     python module1_behavioral.py --input data_behavioral/ --output output/behavioral/
@@ -37,6 +41,7 @@ logger = logging.getLogger(__name__)
 ENCODING_COLS = {
     "StimID": "StimID",
     "CueText": "CueText",
+    "Question": "Question",
     "Practice4AFC.ACC": "Accuracy",
     "Practice4AFC.RT": "RT_ms",
     "Practice4AFC.RESP": "Response",
@@ -62,12 +67,20 @@ EXPLORATORY_COLS = {
     "ExploratoryList.Sample": "TrialIndex",
 }
 
+DECODING_COLS = {
+    "StimID": "StimID",
+    "CueText": "CueText",
+    "Question": "CueQuestion",
+    "FreeResponseSlide.RESP": "FreeResponse",
+    "FreeResponseSlide.RT": "RT_ms",
+    "TestList.Sample": "TrialIndex",
+}
+
 import config
 
 EXPECTED_COUNTS = {
-    "encoding": config.N_ENCODING_TRIALS,
-    "decoding": config.N_DECODING_TRIALS
-    * config.N_DECODING_QUESTIONS,  # 60 rows (long)
+    "encoding": config.N_ENCODING_TRIALS * config.N_ENCODING_QUESTIONS,  # 60 rows (2 per image)
+    "decoding": config.N_DECODING_TRIALS,   # 30 rows (1 free-recall per image)
 }
 lo, hi = config.N_DISTRACTOR_RANGE
 exp_lo, exp_hi = config.N_EXPLORATORY_RANGE
@@ -156,6 +169,47 @@ def route_blocks(blocks: list[dict], subject_id: str) -> dict[str, list[dict]]:
 # Step 4 & 5: Column extraction and type casting
 # ---------------------------------------------------------------------------
 
+# E-Prime keystroke tokens → plain text.
+# Covers tokens observed in pilot data; unknown {TOKEN} forms are stripped.
+_EPRIME_TOKENS = {
+    "{SPACE}": " ",
+    "{ENTER}": "",
+    "{BACKSPACE}": "",
+    "{DELETE}": "",
+    "{TAB}": "	",
+    "{LEFTARROW}": "",
+    "{RIGHTARROW}": "",
+    "{UPARROW}": "",
+    "{DOWNARROW}": "",
+    "{.}": ".",
+    "{,}": ",",
+    "{'}": "'",
+    '{"}': '"',
+    "{!}": "!",
+    "{?}": "?",
+    "{-}": "-",
+    "{;}": ";",
+    "{:}": ":",
+    "{(}": "(",
+    "{)}": ")",
+    "{/}": "/",
+}
+
+
+def _decode_eprime(raw: str) -> str:
+    """Convert E-Prime keystroke-encoded string to plain text."""
+    if not isinstance(raw, str):
+        return raw
+    text = raw
+    for token, replacement in _EPRIME_TOKENS.items():
+        text = text.replace(token, replacement)
+    # Strip any remaining {TOKEN} forms not in the lookup
+    import re as _re
+    text = _re.sub(r"\{[^}]+\}", "", text)
+    return text.strip()
+
+
+
 
 def extract_columns(blocks: list[dict], col_map: dict, subject_id: str) -> pd.DataFrame:
     """Generic extractor for encoding, distractor, and exploratory blocks."""
@@ -173,77 +227,29 @@ def extract_columns(blocks: list[dict], col_map: dict, subject_id: str) -> pd.Da
 
 def extract_decoding(blocks: list[dict], subject_id: str) -> pd.DataFrame:
     """
-    Extract decoding blocks into long format: 2 rows per image (one per question).
+    Extract decoding (TestProc) blocks into flat format: 1 row per image.
 
-    Each block contains two question responses keyed by QShown_1/QShown_2.
-    We route each response back to its QuestionID (Q1 or Q2) regardless of
-    presentation order, and record PresentOrder (1 or 2) as a covariate.
+    Decoding is now a free-recall task. The MCQ is shown as a retrieval cue
+    but no forced-choice response is logged — only the typed free-recall
+    response (FreeResponseSlide.RESP) and its RT.
+
+    The E-Prime keystroke-encoded response (e.g. "two{SPACE}bears{ENTER}")
+    is decoded to plain text via _decode_eprime().
 
     Output columns:
-        StimID, CueText, TrialIndex,
-        QuestionID      : "Q1" or "Q2"
-        QuestionText    : the question stem
-        CorrectKey      : correct response key (1-4)
-        PresentOrder    : 1 = shown first, 2 = shown second
-        Accuracy        : 0 or 1
-        RT_ms           : response time in ms
-        Response        : key pressed (1-4)
-        Confidence      : confidence rating (1-4)
-        ConfRT_ms       : confidence RT in ms
+        StimID, CueText, CueQuestion, FreeResponse, RT_ms, TrialIndex
     """
     rows = []
-
     for block in blocks:
-        stim_id = block.get("StimID", pd.NA)
-        cue_text = block.get("CueText", pd.NA)
-        trial_index = block.get("TestList.Sample", pd.NA)
-
-        # Question definitions
-        q_defs = {
-            "Q1": {
-                "text": block.get("Q1", pd.NA),
-                "correct_key": block.get("Q1_CorrectKey", pd.NA),
-            },
-            "Q2": {
-                "text": block.get("Q2", pd.NA),
-                "correct_key": block.get("Q2_CorrectKey", pd.NA),
-            },
-        }
-
-        # Two presentation slots
-        for present_order, slot in enumerate(["1", "2"], start=1):
-            q_shown = block.get(f"QShown_{slot}", pd.NA)  # "Q1" or "Q2"
-            response = block.get(f"Resp_{slot}", pd.NA)
-            rt = block.get(f"RT_{slot}", pd.NA)
-            accuracy = block.get(f"Acc_{slot}", pd.NA)
-            conf = block.get(f"Conf_{slot}", pd.NA)
-            conf_rt = block.get(f"ConfRT_{slot}", pd.NA)
-
-            if q_shown not in ("Q1", "Q2"):
-                logger.warning(
-                    f"  [{subject_id}] StimID={stim_id}: unexpected QShown_{slot}='{q_shown}' — row skipped."
-                )
-                continue
-
-            q_def = q_defs[q_shown]
-
-            rows.append(
-                {
-                    "StimID": stim_id,
-                    "CueText": cue_text,
-                    "TrialIndex": trial_index,
-                    "QuestionID": q_shown,
-                    "QuestionText": q_def["text"],
-                    "CorrectKey": q_def["correct_key"],
-                    "PresentOrder": present_order,
-                    "Accuracy": accuracy,
-                    "RT_ms": rt,
-                    "Response": response,
-                    "Confidence": conf,
-                    "ConfRT_ms": conf_rt,
-                }
-            )
-
+        raw_resp = block.get("FreeResponseSlide.RESP", pd.NA)
+        rows.append({
+            "StimID":       block.get("StimID",           pd.NA),
+            "CueText":      block.get("CueText",          pd.NA),
+            "CueQuestion":  block.get("Question",         pd.NA),
+            "FreeResponse": _decode_eprime(raw_resp) if pd.notna(raw_resp) else pd.NA,
+            "RT_ms":        block.get("FreeResponseSlide.RT", pd.NA),
+            "TrialIndex":   block.get("TestList.Sample",  pd.NA),
+        })
     return pd.DataFrame(rows)
 
 
@@ -254,16 +260,7 @@ def cast_types(df: pd.DataFrame, block_type: str) -> pd.DataFrame:
         df["StimID"] = df["StimID"].astype(str)
 
     if block_type == "decoding":
-        int_cols = [
-            "TrialIndex",
-            "CorrectKey",
-            "PresentOrder",
-            "Accuracy",
-            "RT_ms",
-            "Response",
-            "Confidence",
-            "ConfRT_ms",
-        ]
+        int_cols = ["TrialIndex", "RT_ms"]
     elif block_type == "exploratory":
         int_cols = ["TrialIndex", "RT_ms"]
     else:
@@ -323,32 +320,33 @@ def validate_tables(tables: dict[str, pd.DataFrame], subject_id: str) -> bool:
         )
         passed = False
 
-    # Encoding: no duplicate StimIDs
+    # Encoding: each StimID should appear exactly N_ENCODING_QUESTIONS times (2)
     enc_df = tables["encoding"]
     if "StimID" in enc_df.columns:
-        dupes = enc_df["StimID"].duplicated().sum()
-        if dupes > 0:
-            logger.warning(f"  [{subject_id}] encoding: {dupes} duplicate StimID(s).")
+        counts = enc_df["StimID"].value_counts()
+        bad = counts[counts != config.N_ENCODING_QUESTIONS]
+        if len(bad) > 0:
+            logger.warning(
+                f"  [{subject_id}] encoding: {len(bad)} StimID(s) without exactly "
+                f"{config.N_ENCODING_QUESTIONS} question rows: {bad.index.tolist()}"
+            )
             passed = False
 
     # Decoding: each StimID should appear exactly N_DECODING_QUESTIONS times
     dec_df = tables["decoding"]
     if "StimID" in dec_df.columns:
         counts = dec_df["StimID"].value_counts()
-        bad = counts[counts != config.N_DECODING_QUESTIONS]
+        bad = counts[counts != 1]
         if len(bad) > 0:
             logger.warning(
-                f"  [{subject_id}] decoding: {len(bad)} StimID(s) without exactly "
-                f"{config.N_DECODING_QUESTIONS} question rows: {bad.index.tolist()}"
+                f"  [{subject_id}] decoding: {len(bad)} StimID(s) with unexpected row count: "
+                f"{bad.index.tolist()}"
             )
             passed = False
-        # Also check QuestionID balance (each StimID should have one Q1 and one Q2)
-        q_counts = dec_df.groupby("StimID")["QuestionID"].nunique()
-        bad_q = q_counts[q_counts != config.N_DECODING_QUESTIONS]
-        if len(bad_q) > 0:
-            logger.warning(
-                f"  [{subject_id}] decoding: {len(bad_q)} StimID(s) missing Q1 or Q2."
-            )
+        # Each StimID should appear exactly once (one free-recall row per image)
+        dupes = dec_df["StimID"].duplicated().sum()
+        if dupes > 0:
+            logger.warning(f"  [{subject_id}] decoding: {dupes} duplicate StimID(s).")
             passed = False
 
     # Cross-table StimID checks

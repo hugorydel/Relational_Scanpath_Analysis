@@ -1,61 +1,31 @@
-SubjectID,StimID,CueText,TrialIndex,QuestionID,QuestionText,CorrectKey,PresentOrder,Accuracy,RT_ms,Response,Confidence,ConfRT_ms
-Encode-Decode_Experiment-1-1,2356125,airport,1,Q1,Where is the luggage being moved to?,1,1,1,3702,1,4,2328
-Encode-Decode_Experiment-1-1,2356125,airport,1,Q2,How many uniformed staff are moving the luggage?,2,2,1,3802,2,2,2448
-Encode-Decode_Experiment-1-1,2347400,wine,2,Q2,What are the men sitting on in the scene?,1,1,1,3607,1,2,1637
-Encode-Decode_Experiment-1-1,2347400,wine,2,Q1,What are the men doing with the wine?,3,2,1,2954,3,4,483
-Encode-Decode_Experiment-1-1,2367132,video game,3,Q1,How many men are playing in the scene?,2,1,1,2274,2,1,1461
-Encode-Decode_Experiment-1-1,2367132,video game,3,Q2,In which hand(s) are the men holding the controllers?,4,2,0,2633,1,1,646
-Encode-Decode_Experiment-1-1,2371471,motorcycle,4,Q1,What stunt is one motorcyclist performing?,2,1,0,3950,1,4,863
-Encode-Decode_Experiment-1-1,2371471,motorcycle,4,Q2,What is nearest to the motorcyclists?,3,2,1,5619,3,2,825
-Encode-Decode_Experiment-1-1,2411268,apple,5,Q2,Where is the fruit branch relative to the child?,4,1,1,6793,4,4,368
-Encode-Decode_Experiment-1-1,2411268,apple,5,Q1,What is the child holding while picking fruit?,2,2,0,5760,3,4,392
-Encode-Decode_Experiment-1-1,2385550,tangerines,6,Q2,Which side of the frame is the boy on? (from your perspective),3,1,0,10753,2,2,1018
-Encode-Decode_Experiment-1-1,2385550,tangerines,6,Q1,Where are the tangerines in the scene?,4,2,1,3136,4,4,329
-Encode-Decode_Experiment-1-1,2397102,cake,7,Q2,What is the man holding besides the cake knife?,3,1,1,7414,3,4,492
-Encode-Decode_Experiment-1-1,2397102,cake,7,Q1,What are the couple doing with the cake?,1,2,1,2062,1,4,362
-Encode-Decode_Experiment-1-1,2386442,teeth,8,Q2,What is the person on the right wearing?,3,1,0,8797,1,1,867
-Encode-Decode_Experiment-1-1,2386442,teeth,8,Q1,Who is brushing their teeth in the scene?,1,2,0,8431,3,3,2132
-Encode-Decode_Experiment-1-1,2350974,drink,9,Q1,What is the child up against?,1,1,1,5185,1,1,536
-Encode-Decode_Experiment-1-1,2350974,drink,9,Q2,Between which two objects is the child standing?,4,2,0,3457,2,1,381
-Encode-Decode_Experiment-1-1,2383555,boat,10,Q1,Who is holding the child in the boat?,2,1,0,4472,1,1,452
-Encode-Decode_Experiment-1-1,2383555,boat,10,Q2,What is the woman at the back doing in the boat?,4,2,0,7568,1,1,576
-Encode-Decode_Experiment-1-1,2356991,baseball,11,Q2,What is the current action of the gloved player on the base?,2,1,1,7491,2,4,989
-Encode-Decode_Experiment-1-1,2356991,baseball,11,Q1,How is the player on the left (from your perspective) reaching the base?,1,2,1,4085,1,4,432
-Encode-Decode_Experiment-1-1,2387122,polar bear,12,Q2,What is the polar bear doing next to the enclosure edge?,1,1,1,4136,1,4,473
-Encode-Decode_Experiment-1-1,2387122,polar bear,12,Q1,Where is the polar bear located in the scene?,3,2,1,3053,3,4,394
-Encode-Decode_Experiment-1-1,2344622,cat,13,Q1,Where is the cat located?,2,1,1,4268,2,4,384
-Encode-Decode_Experiment-1-1,2344622,cat,13,Q2,What is the cat resting its head on?,4,2,1,2688,4,4,307
-Encode-Decode_Experiment-1-1,2360001,clock,14,Q2,What are the workers doing to the clock?,4,1,1,2144,4,4,288
-Encode-Decode_Experiment-1-1,2360001,clock,14,Q1,Where are the men standing?,4,2,1,10428,4,2,865
-Encode-Decode_Experiment-1-1,2349475,blender,15,Q1,Which part of the blender is the woman holding?,3,1,1,6142,3,2,1943
-Encode-Decode_Experiment-1-1,2349475,blender,15,Q2,What is the man doing to power the blender?,1,2,1,4647,1,4,1020
-Encode-Decode_Experiment-1-1,2374670,spray-vehicle,16,Q1,What vehicle sprays water in the scene?,1,1,0,5901,3,4,536
-Encode-Decode_Experiment-1-1,2374670,spray-vehicle,16,Q2,Where is the man standing relative to the vehicle?,3,2,1,3305,3,4,508
-Encode-Decode_Experiment-1-1,150472,pizza,17,Q2,Where is the pizza slice located?,2,1,1,3010,2,4,424
-Encode-Decode_Experiment-1-1,150472,pizza,17,Q1,How many women are in the scene?,4,2,1,3485,4,4,280
-Encode-Decode_Experiment-1-1,2412687,dog,18,Q2,What is the human's body position?,3,1,1,12087,3,4,722
-Encode-Decode_Experiment-1-1,2412687,dog,18,Q1,What is the dog biting onto in the scene?,4,2,1,2412,4,4,410
-Encode-Decode_Experiment-1-1,2369373,chef,19,Q2,What tool is the chef using?,3,1,0,4787,4,1,491
-Encode-Decode_Experiment-1-1,2369373,chef,19,Q1,What is the appearance of the oven?,3,2,0,14437,2,3,1635
-Encode-Decode_Experiment-1-1,2347025,umbrella,20,Q2,Where is the baby in relation to the mother?,1,1,1,3580,1,4,379
-Encode-Decode_Experiment-1-1,2347025,umbrella,20,Q1,Who is holding the umbrella in the scene?,2,2,1,3050,2,4,271
-Encode-Decode_Experiment-1-1,2370664,donuts,21,Q1,How many donuts are in the scene?,4,1,0,5174,2,1,325
-Encode-Decode_Experiment-1-1,2370664,donuts,21,Q2,Where are the people located in the scene?,1,2,0,3334,3,2,423
-Encode-Decode_Experiment-1-1,2410309,laptop,22,Q2,What is the baby touching?,2,1,1,3168,2,4,608
-Encode-Decode_Experiment-1-1,2410309,laptop,22,Q1,How many laptops or electronic devices are visible?,4,2,1,3822,4,4,404
-Encode-Decode_Experiment-1-1,2394020,horse ride,23,Q1,Where is the scene taking place?,1,1,1,6284,1,4,320
-Encode-Decode_Experiment-1-1,2394020,horse ride,23,Q2,What are the riders wearing on their heads?,2,2,1,3002,2,4,480
-Encode-Decode_Experiment-1-1,2348899,tie,24,Q2,Where is the woman located relative to the man? (from your perspective),1,1,1,5598,1,4,644
-Encode-Decode_Experiment-1-1,2348899,tie,24,Q1,What is the woman doing?,4,2,1,3065,4,4,389
-Encode-Decode_Experiment-1-1,2362704,bears,25,Q1,How many bears are in the scene?,2,1,1,2183,2,4,295
-Encode-Decode_Experiment-1-1,2362704,bears,25,Q2,What are the bears doing with the pumpkins?,4,2,1,3153,4,4,378
-Encode-Decode_Experiment-1-1,2409918,elephant,26,Q2,Where are the elephants in the scene?,4,1,1,2724,4,4,229
-Encode-Decode_Experiment-1-1,2409918,elephant,26,Q1,What is the elephant on the right (from your perspective) doing with its trunk?,2,2,1,7427,2,3,1368
-Encode-Decode_Experiment-1-1,2408717,surfboard,27,Q1,How many surfers are in the scene?,2,1,0,3251,3,4,432
-Encode-Decode_Experiment-1-1,2408717,surfboard,27,Q2,What are the surfers doing with the surfboards?,3,2,1,3669,3,4,225
-Encode-Decode_Experiment-1-1,2385851,suitcase,28,Q2,Where are the men?,3,1,0,7410,1,2,959
-Encode-Decode_Experiment-1-1,2385851,suitcase,28,Q1,What are the men doing with the suitcases?,2,2,1,2839,2,4,756
-Encode-Decode_Experiment-1-1,2379478,baby-milk,29,Q1,What is the position of the babies?,4,1,0,7423,1,1,1165
-Encode-Decode_Experiment-1-1,2379478,baby-milk,29,Q2,How many babies are visible in the scene?,2,2,1,3829,2,1,402
-Encode-Decode_Experiment-1-1,2345035,football,30,Q2,What are the people doing with the football?,3,1,1,7172,3,4,196
-Encode-Decode_Experiment-1-1,2345035,football,30,Q1,Who runs toward the football in the scene?,2,2,1,3050,2,4,215
+SubjectID,StimID,CueText,CueQuestion,FreeResponse,RT_ms,TrialIndex
+Encode-Decode_Experiment-1-1,2362704,bears,Which description best matches the image?,two bears eating a pumpkin. two black bears.half eaten pumpkin,55163,1
+Encode-Decode_Experiment-1-1,2367132,video game,Which description best matches the image?,"two men playing v'deo games, a small child sitting on a sofa in the background. two blonde men with wii controllers",63967,2
+Encode-Decode_Experiment-1-1,2412687,dog,Which description best matches the image?,a man playing with a dog' the dog is trying to grab the red frisbee' at night,35594,3
+Encode-Decode_Experiment-1-1,2371471,motorcycle,Which description best matches the image?,a child rinking something in between a car and a motorcycle. the car was red amd the motorcycle was blue.,67237,4
+Encode-Decode_Experiment-1-1,2344622,cat,Which description best matches the image?,"a cat next to a keyboard, lounging on a blue blanket.",32372,5
+Encode-Decode_Experiment-1-1,2408717,surfboard,Which description best matches the image?,"four women on a beach with surfboards, the ones closer to the photographer had neon green surfboards",51079,6
+Encode-Decode_Experiment-1-1,2370664,donuts,Which description best matches the image?,"two men and one woman eating donut in the street, the woman was standing in the middle of the two men, she had a red shirt on.",54622,7
+Encode-Decode_Experiment-1-1,2356991,baseball,Which description best matches the image?,"two baseball player in the middle of a game, the player on the left is diving head first to grab the ball, the player on the right is trying to catch the ball with a focused face",79990,8
+Encode-Decode_Experiment-1-1,2409918,elephant,Which description best matches the image?,"two men sitting on top of two elephants, the elephants are in water the elephant on the right is eating plants.",58745,9
+Encode-Decode_Experiment-1-1,2374670,spray-vehicle,Which description best matches the image?,"a red spray vehicle, a man on the back of a spray vehicle",38925,10
+Encode-Decode_Experiment-1-1,2394020,horse ride,Which description best matches the image?,"two men wearing cowboy hats are on horses, the horses are walking alongside a shore",37777,11
+Encode-Decode_Experiment-1-1,2387122,polar bear,Which description best matches the image?,a big polar bear in a zoo enclosure pawing at the glass that is seperating the photograper from the bear.the photographer had gray hair,61612,12
+Encode-Decode_Experiment-1-1,2369373,chef,Which description best matches the image?,,47037,13
+Encode-Decode_Experiment-1-1,2385550,tangerines,Which description best matches the image?,one boy and one girl is eating tangerines next to each other. the boy is on the left of the screne and the girl is on the right of the screen. both children has brown eyes,64294,14
+Encode-Decode_Experiment-1-1,2356125,airport,Which description best matches the image?,"four airport personnel (three woemn, one man) is standign next to a converyor belt, the two woman are putting the baggade on to converyor belt manually.",61707,15
+Encode-Decode_Experiment-1-1,2350974,drink,Which description best matches the image?,a child in between a red and blue car drinking something.,29496,16
+Encode-Decode_Experiment-1-1,2385851,suitcase,Which description best matches the image?,"two men carrying suitcases, both suitcases are red.",31718,17
+Encode-Decode_Experiment-1-1,2347400,wine,Which description best matches the image?,two men smelling red wine sitting on a couch. there is a pokemon ball in the background,31252,18
+Encode-Decode_Experiment-1-1,2347025,umbrella,Which description best matches the image?,one woamn and a child posing for a picture. the child is on the womans back holding a umbrella.,44220,19
+Encode-Decode_Experiment-1-1,2410309,laptop,Which description best matches the image?,a woman and a child sitting together on a couch. both of them have a laptop on their laps.,36405,20
+Encode-Decode_Experiment-1-1,150472,pizza,Which description best matches the image?,two women eating pizza from a paper plate in the middle of the street. the woman on the right wears glasses,38149,21
+Encode-Decode_Experiment-1-1,2386442,teeth,Which description best matches the image?,a woman a child and a man are brushing their teeth. the man on the r'ght is wearing a purple shirt.,66095,22
+Encode-Decode_Experiment-1-1,2397102,cake,Which description best matches the image?,"one man and one woman is cutting a cake, the man on the right is holding a beer bottle in his other hand whilst cutting hte cake.",67717,23
+Encode-Decode_Experiment-1-1,2345035,football,Which description best matches the image?,two girls chasing a football. one has a jersey that has the number 20 on it.,28746,24
+Encode-Decode_Experiment-1-1,2411268,apple,Which description best matches the image?,a girl with pink boots picking apples form the tree above her head.,23197,25
+Encode-Decode_Experiment-1-1,2348899,tie,Which description best matches the image?,"a man at the center of the photograph, there is two toher men on the left side of the man with the pink tie. a woman is on thr roght of the man at the center. the woman is touching the pink tie on the mans neck.",71566,26
+Encode-Decode_Experiment-1-1,2360001,clock,Which description best matches the image?,four people fixing a clock standing on a scaffold.,24145,27
+Encode-Decode_Experiment-1-1,2349475,blender,Which description best matches the image?,"there is a blender at the center of the oicture, the man on the left pf the blender is riding a bike, there is a woman on the left of the belnder holding the lid of the belnder, and there is a person in the background.",77043,28
+Encode-Decode_Experiment-1-1,2379478,baby-milk,Which description best matches the image?,two baby gitls lying in a bed drinking milk form bottles.,22883,29
+Encode-Decode_Experiment-1-1,2383555,boat,Which description best matches the image?,two women and one child on a wooden boat. the woman at the front of the boat is holding a childe and the woman at the back of the boat is rowing the boat.,57145,30

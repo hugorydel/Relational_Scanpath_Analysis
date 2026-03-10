@@ -11,45 +11,48 @@ H1 — Decoding relational alignment exists
     Test: svg_z_inter_dec reliably > 0 (raw H1a, then covariate-adjusted H1b).
 
 H2 — Decoding relational alignment scaffolds episodic memory
-    Higher relational alignment during retrieval predicts better performance
-    on subsequent episodic detail questions.
-    Primary  : svg_z_inter_dec → question-level accuracy (LPM, long format)
-    Secondary: svg_z_inter_dec → dec_total_correct (trial-level)
+    Higher relational alignment during retrieval predicts better free-recall
+    of relational details (primary) and object details (secondary).
+    Primary  : svg_z_inter_dec → n_relational_correct
+    Secondary: svg_z_inter_dec → n_objects_correct
 
 Exploratory
 -----------
-    Encoding relational alignment → memory (enc SVG, LCS, tau).
+    Confabulation : dec SVG → n_relational_incorrect
+    Writing length: dec SVG → writing_length
+    Encoding SVG + LCS/tau → n_relational_correct
+
+Memory scoring
+--------------
+    Manually scored per trial in data_scoring/memory_scores.csv.
+    Columns: SubjectID, StimID,
+             n_relational_correct, n_relational_incorrect,
+             n_objects_correct, n_objects_incorrect, empty_response (0/1).
+    Derived at load time: n_relational_total, any_relational_correct.
+    writing_length is derived from the free-response text in module 3
+    and carried through trial_features_all.csv.
 
 Pipeline
 --------
-Step 1  — Load trial_features_all.csv
+Step 1  — Load trial_features_all.csv + memory_scores.csv
 Step 2  — Build analysis tables
-            dec      : decoding rows, SVG columns renamed *_dec
+            dec      : decoding rows, SVG columns renamed *_dec, memory scores joined
             enc      : encoding rows, SVG/covariate columns renamed *_enc
             wide     : enc + dec joined for exploratory models
-            question : long-format Q1/Q2 rows from dec table
 Step 3  — Hypothesis-specific exclusions
-            H1/H2      : filter on low_n_dec
-            Exploratory: filter on low_n_enc
-            Replay     : additionally filter n_shared_enc_dec >= MIN_N_SHARED_REPLAY
 Step 4  — Standardise predictors within each filtered table
-Step 5  — Fit models (14 models across H1 / H2 / Exploratory)
+Step 5  — Fit models
 Step 6  — Summarise and write outputs
             output/analysis/analysis_*.csv
             output/analysis/model_coefficients.csv
             output/analysis/model_summaries.txt
             output/analysis/forest_plot.png
 
-Note on LPM
------------
-H2 question-level models use a linear probability model (LPM) on binary
-accuracy because statsmodels has no frequentist logistic crossed mixed model.
-Final-analysis recommendation: switch to R/lme4 glmer(..., family=binomial).
-
 Usage
 -----
     python module4_analysis.py
     python module4_analysis.py --input path/to/trial_features_all.csv
+    python module4_analysis.py --scores path/to/memory_scores.csv
     python module4_analysis.py --no-plot
 """
 
@@ -85,10 +88,16 @@ DEC_COVARIATES = ["n_fixations_dec", "aoi_prop_dec", "mean_salience_dec"]
 ENC_COVARIATES = ["n_fixations_enc", "aoi_prop_enc", "mean_salience_enc"]
 COVARIATES = DEC_COVARIATES  # backwards-compatible alias for run_pipeline.py
 
-DV_TRIAL = "dec_total_correct"
-DV_QUESTION = "q_accuracy"
+# Memory DVs — from manual scoring joined at load time
+DV_RELATIONAL = "n_relational_correct"
+DV_OBJECTS = "n_objects_correct"
+DV_CONFAB = "n_relational_incorrect"
+DV_LENGTH = "writing_length"
 
-# (name, primary_predictor_z, description, table_key, hypothesis_group)
+# Default path for manual memory scores
+DEFAULT_SCORES_PATH = config.ROOT_DIR / "data_scoring" / "memory_scores.csv"
+
+# (name, primary_predictor, description, table_key, hypothesis_group)
 MODEL_SPECS = [
     # H1 — decoding SVG as outcome
     (
@@ -119,77 +128,107 @@ MODEL_SPECS = [
         "dec_all",
         "H1",
     ),
-    # H2 — question-level LPM (primary)
+    # H2 primary — dec SVG → relational recall
     (
-        "H2_question_inter",
+        "H2_relational_inter",
         "svg_z_inter_dec_z",
-        "H2 primary: Decoding interactional SVG → question accuracy (LPM)",
-        "question_inter",
-        "H2",
-    ),
-    (
-        "H2_question_all",
-        "svg_z_all_dec_z",
-        "H2 robustness: Decoding all-edges SVG → question accuracy (LPM)",
-        "question_all",
-        "H2",
-    ),
-    # H2 — trial-level (secondary)
-    (
-        "H2_trial_inter",
-        "svg_z_inter_dec_z",
-        "H2 secondary: Decoding interactional SVG → dec_total_correct",
+        "H2 primary: Decoding interactional SVG → relational recall",
         "dec_inter",
         "H2",
     ),
     (
-        "H2_trial_all",
+        "H2_relational_all",
         "svg_z_all_dec_z",
-        "H2 secondary: Decoding all-edges SVG → dec_total_correct",
+        "H2 primary (all): Decoding all-edges SVG → relational recall",
         "dec_all",
         "H2",
     ),
-    # Exploratory — encoding → memory
+    # H2 secondary — dec SVG → object recall (dissociation)
+    (
+        "H2_objects_inter",
+        "svg_z_inter_dec_z",
+        "H2 secondary: Decoding interactional SVG → object recall",
+        "dec_inter",
+        "H2",
+    ),
+    (
+        "H2_objects_all",
+        "svg_z_all_dec_z",
+        "H2 secondary (all): Decoding all-edges SVG → object recall",
+        "dec_all",
+        "H2",
+    ),
+    # Exploratory — confabulation (does SVG predict wrong relational details?)
+    (
+        "EXP_confab_inter",
+        "svg_z_inter_dec_z",
+        "Exploratory: Decoding interactional SVG → relational confabulation",
+        "dec_inter",
+        "Exploratory",
+    ),
+    (
+        "EXP_confab_all",
+        "svg_z_all_dec_z",
+        "Exploratory: Decoding all-edges SVG → relational confabulation",
+        "dec_all",
+        "Exploratory",
+    ),
+    # Exploratory — writing length (overall recall fluency)
+    (
+        "EXP_length_inter",
+        "svg_z_inter_dec_z",
+        "Exploratory: Decoding interactional SVG → writing length",
+        "dec_inter",
+        "Exploratory",
+    ),
+    (
+        "EXP_length_all",
+        "svg_z_all_dec_z",
+        "Exploratory: Decoding all-edges SVG → writing length",
+        "dec_all",
+        "Exploratory",
+    ),
+    # Exploratory — encoding → relational recall
     (
         "EXP_enc_svg_inter",
         "svg_z_inter_enc_z",
-        "Exploratory: Encoding interactional SVG → memory",
+        "Exploratory: Encoding interactional SVG → relational recall",
         "enc_inter",
         "Exploratory",
     ),
     (
         "EXP_enc_svg_all",
         "svg_z_all_enc_z",
-        "Exploratory: Encoding all-edges SVG → memory",
+        "Exploratory: Encoding all-edges SVG → relational recall",
         "enc_all",
         "Exploratory",
     ),
     (
         "EXP_enc_lcs",
         "lcs_enc_dec_z",
-        "Exploratory: LCS sequence overlap → memory",
+        "Exploratory: LCS sequence overlap → relational recall",
         "enc_all",
         "Exploratory",
     ),
     (
         "EXP_enc_combined",
         "svg_z_inter_enc_z + lcs_enc_dec_z",
-        "Exploratory: Encoding SVG + LCS jointly → memory",
+        "Exploratory: Encoding SVG + LCS jointly → relational recall",
         "enc_inter",
         "Exploratory",
     ),
-    # Exploratory — replay quality → memory
+    # Exploratory — replay quality → relational recall
     (
         "EXP_replay_lcs",
         "lcs_enc_dec_z",
-        "Exploratory: LCS (replay-quality filtered) → memory",
+        "Exploratory: LCS (replay-quality filtered) → relational recall",
         "replay",
         "Exploratory",
     ),
     (
         "EXP_replay_tau",
         "tau_enc_dec_z",
-        "Exploratory: Tau (replay-quality filtered) → memory",
+        "Exploratory: Tau (replay-quality filtered) → relational recall",
         "replay",
         "Exploratory",
     ),
@@ -213,12 +252,60 @@ def load_data(input_path: Path) -> pd.DataFrame:
     return df
 
 
+def load_memory_scores(scores_path: Path) -> pd.DataFrame:
+    """
+    Load manually scored memory data and compute derived columns.
+
+    Input columns (from scorer):
+        SubjectID, StimID,
+        n_relational_correct, n_relational_incorrect,
+        n_objects_correct, n_objects_incorrect,
+        empty_response  (0/1)
+
+    Derived columns added here:
+        n_relational_total      = n_relational_correct + n_relational_incorrect
+        any_relational_correct  = 1 if n_relational_correct >= 1 else 0
+    """
+    logger.info(f"  Loading memory scores from {scores_path.name} ...")
+    if not scores_path.exists():
+        raise FileNotFoundError(
+            f"Memory scores file not found: {scores_path}\n"
+            f"Score responses and save to {scores_path} before running Module 4."
+        )
+
+    scores = pd.read_csv(scores_path, dtype={"StimID": str, "SubjectID": str})
+
+    required = [
+        "SubjectID",
+        "StimID",
+        "n_relational_correct",
+        "n_relational_incorrect",
+        "n_objects_correct",
+        "n_objects_incorrect",
+        "empty_response",
+    ]
+    missing = [c for c in required if c not in scores.columns]
+    if missing:
+        raise ValueError(f"Memory scores file missing columns: {missing}")
+
+    scores["n_relational_total"] = (
+        scores["n_relational_correct"] + scores["n_relational_incorrect"]
+    )
+    scores["any_relational_correct"] = (scores["n_relational_correct"] >= 1).astype(int)
+
+    logger.info(
+        f"  Loaded {len(scores)} scored trials, "
+        f"{scores['SubjectID'].nunique()} participants."
+    )
+    return scores
+
+
 # ---------------------------------------------------------------------------
 # Step 2: Build analysis tables
 # ---------------------------------------------------------------------------
 
 
-def build_analysis_tables(df: pd.DataFrame) -> dict:
+def build_analysis_tables(df: pd.DataFrame, memory_scores: pd.DataFrame) -> dict:
     logger.info("Step 2: Building analysis tables ...")
 
     enc_raw = df[df["Phase"] == "encoding"].copy()
@@ -237,6 +324,15 @@ def build_analysis_tables(df: pd.DataFrame) -> dict:
         }
     ).reset_index(drop=True)
 
+    # Join manual memory scores onto decoding rows
+    dec = dec.merge(memory_scores, on=["SubjectID", "StimID"], how="left")
+    n_unscored = dec[DV_RELATIONAL].isna().sum()
+    if n_unscored > 0:
+        logger.warning(
+            f"  {n_unscored} decoding row(s) have no memory score — "
+            f"check that memory_scores.csv covers all participants/stimuli."
+        )
+
     # Encoding table — rename with _enc suffix
     enc = enc_raw.rename(
         columns={
@@ -251,6 +347,16 @@ def build_analysis_tables(df: pd.DataFrame) -> dict:
     ).reset_index(drop=True)
 
     # Wide table for exploratory enc → memory models
+    MEMORY_COLS = [
+        DV_RELATIONAL,
+        DV_OBJECTS,
+        DV_CONFAB,
+        "n_objects_incorrect",
+        "n_relational_total",
+        "any_relational_correct",
+        "empty_response",
+        DV_LENGTH,
+    ]
     enc_keep = [
         "SubjectID",
         "StimID",
@@ -260,8 +366,6 @@ def build_analysis_tables(df: pd.DataFrame) -> dict:
         "aoi_prop_enc",
         "mean_salience_enc",
         "low_n_enc",
-        "enc_accuracy",
-        "enc_rt_ms",
     ]
     dec_keep = [
         "SubjectID",
@@ -275,49 +379,17 @@ def build_analysis_tables(df: pd.DataFrame) -> dict:
         "n_shared_enc_dec",
         "lcs_enc_dec",
         "tau_enc_dec",
-        DV_TRIAL,
-        "q1_accuracy",
-        "q2_accuracy",
-    ]
+    ] + [c for c in MEMORY_COLS if c in dec.columns]
 
     enc_sub = enc[[c for c in enc_keep if c in enc.columns]]
     dec_sub = dec[[c for c in dec_keep if c in dec.columns]]
     wide = enc_sub.merge(dec_sub, on=["SubjectID", "StimID"], how="inner")
 
-    # Long-format question table (2 rows per trial)
-    # TrialID is used as a 3rd random intercept to handle within-trial
-    # clustering of Q1 and Q2 (both share the same decoding scanpath).
-    q_rows = []
-    for _, row in dec.iterrows():
-        trial_id = f"{row['SubjectID']}_{row['StimID']}"
-        for q_num, acc_col in [(1, "q1_accuracy"), (2, "q2_accuracy")]:
-            if acc_col not in dec.columns:
-                continue
-            q_rows.append(
-                {
-                    "SubjectID": row["SubjectID"],
-                    "StimID": row["StimID"],
-                    "TrialID": trial_id,
-                    "QuestionNumber": float(q_num),
-                    DV_QUESTION: row[acc_col],
-                    "svg_z_inter_dec": row.get("svg_z_inter_dec", np.nan),
-                    "svg_z_all_dec": row.get("svg_z_all_dec", np.nan),
-                    "n_fixations_dec": row.get("n_fixations_dec", np.nan),
-                    "aoi_prop_dec": row.get("aoi_prop_dec", np.nan),
-                    "mean_salience_dec": row.get("mean_salience_dec", np.nan),
-                    "low_n_dec": row.get("low_n_dec", True),
-                    "n_shared_enc_dec": row.get("n_shared_enc_dec", np.nan),
-                    "PresentOrder": row.get(f"q{q_num}_present_order", np.nan),
-                }
-            )
-    question = pd.DataFrame(q_rows)
+    logger.info(f"  dec table:  {len(dec)} rows  ({n_unscored} unscored)")
+    logger.info(f"  enc table:  {len(enc)} rows")
+    logger.info(f"  wide table: {len(wide)} rows")
 
-    logger.info(f"  dec table:      {len(dec)} rows")
-    logger.info(f"  enc table:      {len(enc)} rows")
-    logger.info(f"  wide table:     {len(wide)} rows")
-    logger.info(f"  question table: {len(question)} rows")
-
-    return {"dec": dec, "enc": enc, "wide": wide, "question": question}
+    return {"dec": dec, "enc": enc, "wide": wide}
 
 
 # ---------------------------------------------------------------------------
@@ -330,26 +402,17 @@ def apply_exclusions(tables: dict) -> dict:
 
     dec = tables["dec"]
     wide = tables["wide"]
-    question = tables["question"]
 
     def _log(name, before, after, reason):
         logger.info(
             f"  {name}: {before} → {after} " f"(removed {before - after}: {reason})"
         )
 
-    # H1 / H2 trial-level: filter decoding low_n only
-    # NaN svg_z_inter (images with no interactional edges) is NOT a global
-    # exclusion — it is handled per-model via dropna().
+    # H1 / H2 trial-level: filter on decoding low_n only
     n = len(dec)
     dec_inter = dec[~dec["low_n_dec"]].copy()
     dec_all = dec[~dec["low_n_dec"]].copy()
     _log("dec_inter / dec_all", n, len(dec_inter), "low_n_dec=True")
-
-    # H2 question-level: same decoding filter, applied to question table
-    n_q = len(question)
-    q_inter = question[~question["low_n_dec"]].copy()
-    q_all = question[~question["low_n_dec"]].copy()
-    _log("question_inter / question_all", n_q, len(q_inter), "low_n_dec=True")
 
     # Exploratory enc → memory: filter wide table on encoding low_n only
     n_w = len(wide)
@@ -381,8 +444,6 @@ def apply_exclusions(tables: dict) -> dict:
     return {
         "dec_inter": dec_inter,
         "dec_all": dec_all,
-        "question_inter": q_inter,
-        "question_all": q_all,
         "enc_inter": enc_inter,
         "enc_all": enc_all,
         "replay": replay,
@@ -406,8 +467,6 @@ def standardise_tables(filtered: dict) -> dict:
     cols_by_table = {
         "dec_inter": ["svg_z_inter_dec"] + DEC_COVARIATES,
         "dec_all": ["svg_z_all_dec"] + DEC_COVARIATES,
-        "question_inter": ["svg_z_inter_dec"] + DEC_COVARIATES,
-        "question_all": ["svg_z_all_dec"] + DEC_COVARIATES,
         "enc_inter": ["svg_z_inter_enc", "lcs_enc_dec"] + ENC_COVARIATES,
         "enc_all": ["svg_z_all_enc", "lcs_enc_dec"] + ENC_COVARIATES,
         "replay": ["lcs_enc_dec", "tau_enc_dec"] + DEC_COVARIATES,
@@ -514,39 +573,35 @@ def _formula_for(name: str, primary_pred: str) -> tuple[str, str, bool]:
     """
     Return (formula_string, dv_column, use_trial_re).
 
-    Builds the right-hand-side formula and determines the DV and whether
-    TrialID random intercept is needed.
+    All H2 and Exploratory models are trial-level (no question table),
+    so use_trial_re is always False.
     """
     cov_dec_z = " + ".join(f"{c}_z" for c in DEC_COVARIATES)
     cov_enc_z = " + ".join(f"{c}_z" for c in ENC_COVARIATES)
 
     # H1 models: DV is the SVG score itself
     if name.startswith("H1"):
-        if "inter" in name:
-            dv = "svg_z_inter_dec"
-        else:
-            dv = "svg_z_all_dec"
-        if primary_pred == "1":
-            formula = "1"
-        else:  # H1b — covariate-adjusted intercept
-            formula = cov_dec_z
+        dv = "svg_z_inter_dec" if "inter" in name else "svg_z_all_dec"
+        formula = "1" if primary_pred == "1" else cov_dec_z
         return formula, dv, False
 
-    # H2 question-level LPM
-    if "question" in name:
-        pred_z = primary_pred  # already the _z column name
-        # QuestionNumber: which question (1/2) — controls for difficulty differences
-        # PresentOrder: which appeared first on screen — controls for recency/primacy
-        formula = f"{pred_z} + QuestionNumber + PresentOrder + {cov_dec_z}"
-        return formula, DV_QUESTION, True  # needs TrialID RE
+    # H2 — relational recall (primary)
+    if name.startswith("H2_relational"):
+        return f"{primary_pred} + {cov_dec_z}", DV_RELATIONAL, False
 
-    # H2 trial-level
-    if name.startswith("H2_trial"):
-        pred_z = primary_pred
-        formula = f"{pred_z} + {cov_dec_z}"
-        return formula, DV_TRIAL, False
+    # H2 — object recall (secondary / dissociation)
+    if name.startswith("H2_objects"):
+        return f"{primary_pred} + {cov_dec_z}", DV_OBJECTS, False
 
-    # Exploratory enc → memory
+    # Exploratory — confabulation
+    if "confab" in name:
+        return f"{primary_pred} + {cov_dec_z}", DV_CONFAB, False
+
+    # Exploratory — writing length
+    if "length" in name:
+        return f"{primary_pred} + {cov_dec_z}", DV_LENGTH, False
+
+    # Exploratory — encoding → relational recall
     if "enc" in name:
         if "combined" in name:
             formula = f"svg_z_inter_enc_z + lcs_enc_dec_z + {cov_enc_z}"
@@ -556,15 +611,12 @@ def _formula_for(name: str, primary_pred: str) -> tuple[str, str, bool]:
             formula = f"svg_z_inter_enc_z + {cov_enc_z}"
         else:
             formula = f"svg_z_all_enc_z + {cov_enc_z}"
-        return formula, DV_TRIAL, False
+        return formula, DV_RELATIONAL, False
 
-    # Exploratory replay
+    # Exploratory — replay quality → relational recall
     if "replay" in name:
-        if "tau" in name:
-            formula = f"tau_enc_dec_z + {cov_dec_z}"
-        else:
-            formula = f"lcs_enc_dec_z + {cov_dec_z}"
-        return formula, DV_TRIAL, False
+        pred_z = "tau_enc_dec_z" if "tau" in name else "lcs_enc_dec_z"
+        return f"{pred_z} + {cov_dec_z}", DV_RELATIONAL, False
 
     raise ValueError(f"Cannot determine formula for model: {name}")
 
@@ -641,7 +693,7 @@ def summarise(
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Save analysis tables
-    for key in ("dec_inter", "question_inter", "enc_all", "replay"):
+    for key in ("dec_inter", "enc_all", "replay"):
         df = filtered.get(key, pd.DataFrame())
         if not df.empty:
             df.to_csv(output_dir / f"analysis_{key}.csv", index=False)
@@ -668,7 +720,6 @@ def summarise(
             summary_lines.append(f"\nLog-likelihood: {result.llf:.4f}")
             summary_lines.append(f"Converged: {result.converged}")
 
-            # Console logging for key terms
             focus = (
                 ["Intercept"]
                 if group == "H1"
@@ -699,7 +750,7 @@ def summarise(
         coef_all.to_csv(output_dir / "model_coefficients.csv", index=False)
         logger.info("  Written → model_coefficients.csv")
 
-    with open(output_dir / "model_summaries.txt", "w") as f:
+    with open(output_dir / "model_summaries.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(summary_lines))
     logger.info("  Written → model_summaries.txt")
 
@@ -716,8 +767,6 @@ def _forest_plot(
     skip_terms = {f"{c}_z" for c in DEC_COVARIATES + ENC_COVARIATES} | {
         "Group Var",
         "StimID Var",
-        "TrialID Var",
-        "QuestionNumber",
     }
 
     palette = {
@@ -725,10 +774,10 @@ def _forest_plot(
         "H1b_svg_inter": "#4292c6",
         "H1a_svg_all": "#084594",
         "H1b_svg_all": "#4292c6",
-        "H2_question_inter": "#99000d",
-        "H2_question_all": "#ef3b2c",
-        "H2_trial_inter": "#99000d",
-        "H2_trial_all": "#ef3b2c",
+        "H2_relational_inter": "#99000d",
+        "H2_relational_all": "#ef3b2c",
+        "H2_objects_inter": "#a63603",
+        "H2_objects_all": "#fd8d3c",
     }
 
     groups = ["H1", "H2", "Exploratory"]
@@ -800,16 +849,8 @@ def _forest_plot(
         ax.set_title(group, fontsize=11, fontweight="bold", pad=8)
         ax.spines[["top", "right"]].set_visible(False)
 
-    h2q_names = [n for n, *_ in MODEL_SPECS if "question" in n]
-    trial_re_note = ""
-    if results:
-        for n in h2q_names:
-            entry = results.get(n)
-            if entry and entry[1]:
-                trial_re_note = " + (1|TrialID) for H2_question"
-                break
     plt.suptitle(
-        f"Module 4 results \u2014 (1|SubjectID) + (1|StimID){trial_re_note}",
+        "Module 4 results \u2014 (1|SubjectID) + (1|StimID)",
         fontsize=9,
         y=1.01,
     )
@@ -838,6 +879,11 @@ def main():
         default=str(config.OUTPUT_FEATURES_DIR / "trial_features_all.csv"),
     )
     parser.add_argument(
+        "--scores",
+        default=str(DEFAULT_SCORES_PATH),
+        help="Path to manually scored memory_scores.csv",
+    )
+    parser.add_argument(
         "--output-dir",
         default=str(config.OUTPUT_DIR / "analysis"),
     )
@@ -849,7 +895,8 @@ def main():
     logger.info("=" * 60)
 
     raw_df = load_data(Path(args.input))
-    tables = build_analysis_tables(raw_df)
+    memory_scores = load_memory_scores(Path(args.scores))
+    tables = build_analysis_tables(raw_df, memory_scores)
     filtered = apply_exclusions(tables)
     filtered = standardise_tables(filtered)
     results = fit_all_models(filtered)

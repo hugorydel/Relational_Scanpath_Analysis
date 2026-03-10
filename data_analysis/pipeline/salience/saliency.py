@@ -37,7 +37,7 @@ from typing import Optional
 import config
 import cv2
 import numpy as np
-from pipeline.utils.scene_graph import load_stimulus_metadata
+from pipeline.module_3.scene_graph import load_stimulus_metadata
 
 logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------

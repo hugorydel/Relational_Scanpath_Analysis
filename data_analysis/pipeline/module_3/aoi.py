@@ -45,8 +45,9 @@ from typing import Optional
 import config
 import numpy as np
 import pandas as pd
-from pipeline.utils.saliency import get_saliency_map
-from pipeline.utils.scene_graph import build_polygon_index
+from pipeline.module_3.scene_graph import build_polygon_index
+
+from data_analysis.pipeline.salience.saliency import get_saliency_map
 
 logger = logging.getLogger(__name__)
 

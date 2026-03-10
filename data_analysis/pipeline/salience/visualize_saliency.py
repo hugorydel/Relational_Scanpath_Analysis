@@ -22,7 +22,8 @@ import config
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
-from pipeline.utils.saliency import get_saliency_map
+
+from data_analysis.pipeline.salience.saliency import get_saliency_map
 
 logger = logging.getLogger(__name__)
 

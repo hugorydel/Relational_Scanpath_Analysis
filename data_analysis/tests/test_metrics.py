@@ -22,13 +22,13 @@ import config
 import numpy as np
 import pandas as pd
 from pipeline.misc import get_subject_ids, setup_logging
-from pipeline.utils.metrics import (
+from pipeline.module_3.metrics import (
     build_object_sequence,
     kendall_tau_shared,
     svg_alignment,
     symbolic_lcs,
 )
-from pipeline.utils.scene_graph import build_graph_index
+from pipeline.module_3.scene_graph import build_graph_index
 
 setup_logging(level="INFO")
 logger = logging.getLogger(__name__)

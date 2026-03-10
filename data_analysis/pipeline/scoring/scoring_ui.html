@@ -8,7 +8,6 @@
 			href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
 			rel="stylesheet" />
 		<style>
-			/* ── Reset & base ─────────────────────────────────────────────────────── */
 			*,
 			*::before,
 			*::after {
@@ -27,22 +26,27 @@
 				--text-dim: #6b789a;
 				--text-bright: #eef2ff;
 
-				/* mode colours */
-				--rel-correct: #3b82f6; /* blue */
-				--rel-incorrect: #ef4444; /* red */
-				--obj-correct: #22c55e; /* green */
-				--obj-incorrect: #f97316; /* orange */
+				--ct-obj-id: #3b82f6;
+				--ct-obj-attr: #a855f7;
+				--ct-action: #22c55e;
+				--ct-spatial: #f59e0b;
+				--ct-gist: #06b6d4;
 
-				--rel-correct-bg: rgba(59, 130, 246, 0.18);
-				--rel-incorrect-bg: rgba(239, 68, 68, 0.18);
-				--obj-correct-bg: rgba(34, 197, 94, 0.18);
-				--obj-incorrect-bg: rgba(249, 115, 22, 0.18);
+				--ct-obj-id-bg: rgba(59, 130, 246, 0.15);
+				--ct-obj-attr-bg: rgba(168, 85, 247, 0.15);
+				--ct-action-bg: rgba(34, 197, 94, 0.15);
+				--ct-spatial-bg: rgba(245, 158, 11, 0.15);
+				--ct-gist-bg: rgba(6, 182, 212, 0.15);
+
+				--st-correct: #22c55e;
+				--st-incorrect: #ef4444;
+				--st-inference: #94a3b8;
+				--st-repeat: #64748b;
 
 				--font-mono: 'IBM Plex Mono', monospace;
 				--font-sans: 'IBM Plex Sans', sans-serif;
-
 				--radius: 6px;
-				--transition: 150ms ease;
+				--transition: 140ms ease;
 			}
 
 			html,
@@ -56,10 +60,9 @@
 				overflow: hidden;
 			}
 
-			/* ── Layout ───────────────────────────────────────────────────────────── */
 			#app {
 				display: grid;
-				grid-template-rows: 48px 1fr;
+				grid-template-rows: 44px 1fr;
 				height: 100vh;
 			}
 
@@ -73,7 +76,6 @@
 				border-bottom: 1px solid var(--border);
 				flex-shrink: 0;
 			}
-
 			#header .title {
 				font-family: var(--font-mono);
 				font-size: 12px;
@@ -82,48 +84,29 @@
 				text-transform: uppercase;
 				color: var(--text-bright);
 			}
-
-			#progress {
-				font-family: var(--font-mono);
-				font-size: 11px;
-				color: var(--text-dim);
-			}
-
+			#progress,
 			#stim-label {
 				font-family: var(--font-mono);
 				font-size: 11px;
 				color: var(--text-dim);
 			}
 
-			/* Main split */
+			/* Main */
 			#main {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
 				overflow: hidden;
-				gap: 0;
 			}
 
-			/* ── Left panel — image ───────────────────────────────────────────────── */
+			/* Left */
 			#left-panel {
 				display: flex;
-				flex-direction: column;
 				align-items: center;
 				justify-content: center;
-				padding: 24px;
+				padding: 20px;
 				border-right: 1px solid var(--border);
-				background: var(--bg);
 				overflow: hidden;
 			}
-
-			#img-wrap {
-				width: 100%;
-				flex: 1;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				overflow: hidden;
-			}
-
 			#stim-img {
 				max-width: 100%;
 				max-height: 100%;
@@ -133,99 +116,159 @@
 				display: block;
 			}
 
-			/* ── Right panel — controls + responses ─────────────────────────────── */
+			/* Right */
 			#right-panel {
 				display: flex;
 				flex-direction: column;
 				overflow: hidden;
-				background: var(--bg);
 			}
 
 			/* Mode bar */
 			#mode-bar {
-				display: flex;
-				gap: 8px;
-				padding: 12px 16px;
 				background: var(--surface);
 				border-bottom: 1px solid var(--border);
 				flex-shrink: 0;
-				align-items: center;
+				padding: 8px 14px;
+				display: flex;
+				flex-direction: column;
+				gap: 6px;
 			}
-
-			#mode-bar .mode-label {
-				font-family: var(--font-mono);
-				font-size: 10px;
-				letter-spacing: 0.1em;
-				color: var(--text-dim);
-				text-transform: uppercase;
-				margin-right: 4px;
-			}
-
-			.mode-btn {
+			.mode-row {
 				display: flex;
 				align-items: center;
 				gap: 6px;
-				padding: 5px 12px;
+			}
+			.row-label {
+				font-family: var(--font-mono);
+				font-size: 9px;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: var(--text-dim);
+				width: 52px;
+				flex-shrink: 0;
+			}
+
+			.ct-btn,
+			.st-btn {
+				display: flex;
+				align-items: center;
+				gap: 5px;
+				padding: 4px 10px;
 				border-radius: var(--radius);
 				border: 1.5px solid transparent;
 				background: var(--surface2);
 				color: var(--text-dim);
 				font-family: var(--font-mono);
-				font-size: 11px;
+				font-size: 10px;
 				font-weight: 500;
 				cursor: pointer;
 				transition: all var(--transition);
 				user-select: none;
 				white-space: nowrap;
 			}
-
-			.mode-btn .dot {
-				width: 8px;
-				height: 8px;
-				border-radius: 50%;
-				flex-shrink: 0;
-			}
-
-			.mode-btn[data-mode='relational_correct'] .dot {
-				background: var(--rel-correct);
-			}
-			.mode-btn[data-mode='relational_incorrect'] .dot {
-				background: var(--rel-incorrect);
-			}
-			.mode-btn[data-mode='object_correct'] .dot {
-				background: var(--obj-correct);
-			}
-			.mode-btn[data-mode='object_incorrect'] .dot {
-				background: var(--obj-incorrect);
-			}
-
-			.mode-btn:hover {
+			.ct-btn:hover,
+			.st-btn:hover {
 				color: var(--text);
 				border-color: var(--border-light);
 			}
 
-			.mode-btn.active[data-mode='relational_correct'] {
-				background: var(--rel-correct-bg);
-				border-color: var(--rel-correct);
+			.ct-btn .dot {
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				flex-shrink: 0;
+			}
+			.ct-btn[data-ct='object_identity'] .dot {
+				background: var(--ct-obj-id);
+			}
+			.ct-btn[data-ct='object_attribute'] .dot {
+				background: var(--ct-obj-attr);
+			}
+			.ct-btn[data-ct='action_relation'] .dot {
+				background: var(--ct-action);
+			}
+			.ct-btn[data-ct='spatial_relation'] .dot {
+				background: var(--ct-spatial);
+			}
+			.ct-btn[data-ct='scene_gist'] .dot {
+				background: var(--ct-gist);
+			}
+
+			.ct-btn.active[data-ct='object_identity'] {
+				background: var(--ct-obj-id-bg);
+				border-color: var(--ct-obj-id);
 				color: var(--text-bright);
 			}
-			.mode-btn.active[data-mode='relational_incorrect'] {
-				background: var(--rel-incorrect-bg);
-				border-color: var(--rel-incorrect);
+			.ct-btn.active[data-ct='object_attribute'] {
+				background: var(--ct-obj-attr-bg);
+				border-color: var(--ct-obj-attr);
 				color: var(--text-bright);
 			}
-			.mode-btn.active[data-mode='object_correct'] {
-				background: var(--obj-correct-bg);
-				border-color: var(--obj-correct);
+			.ct-btn.active[data-ct='action_relation'] {
+				background: var(--ct-action-bg);
+				border-color: var(--ct-action);
 				color: var(--text-bright);
 			}
-			.mode-btn.active[data-mode='object_incorrect'] {
-				background: var(--obj-incorrect-bg);
-				border-color: var(--obj-incorrect);
+			.ct-btn.active[data-ct='spatial_relation'] {
+				background: var(--ct-spatial-bg);
+				border-color: var(--ct-spatial);
+				color: var(--text-bright);
+			}
+			.ct-btn.active[data-ct='scene_gist'] {
+				background: var(--ct-gist-bg);
+				border-color: var(--ct-gist);
 				color: var(--text-bright);
 			}
 
-			.mode-btn .kbd {
+			.st-btn .st-pip {
+				width: 20px;
+				height: 3px;
+				border-radius: 2px;
+				flex-shrink: 0;
+			}
+			.st-btn[data-st='correct'] .st-pip {
+				background: var(--st-correct);
+			}
+			.st-btn[data-st='incorrect'] .st-pip {
+				background: var(--st-incorrect);
+			}
+			.st-btn[data-st='inference'] .st-pip {
+				background: repeating-linear-gradient(
+					90deg,
+					var(--st-inference) 0 4px,
+					transparent 4px 7px
+				);
+			}
+			.st-btn[data-st='repeat'] .st-pip {
+				background: repeating-linear-gradient(
+					90deg,
+					var(--st-repeat) 0 2px,
+					transparent 2px 5px
+				);
+			}
+
+			.st-btn.active[data-st='correct'] {
+				background: rgba(34, 197, 94, 0.12);
+				border-color: var(--st-correct);
+				color: var(--text-bright);
+			}
+			.st-btn.active[data-st='incorrect'] {
+				background: rgba(239, 68, 68, 0.12);
+				border-color: var(--st-incorrect);
+				color: var(--text-bright);
+			}
+			.st-btn.active[data-st='inference'] {
+				background: rgba(148, 163, 184, 0.1);
+				border-color: var(--st-inference);
+				color: var(--text-bright);
+			}
+			.st-btn.active[data-st='repeat'] {
+				background: rgba(100, 116, 139, 0.1);
+				border-color: var(--st-repeat);
+				color: var(--text-bright);
+			}
+
+			.kbd {
 				font-size: 9px;
 				padding: 1px 4px;
 				border-radius: 3px;
@@ -233,18 +276,34 @@
 				color: var(--text-dim);
 			}
 
-			/* Responses scroll area */
+			#mode-indicator {
+				margin-left: auto;
+				font-family: var(--font-mono);
+				font-size: 10px;
+				padding: 3px 9px;
+				border-radius: var(--radius);
+				background: var(--surface2);
+				border: 1px solid var(--border);
+				color: var(--text-dim);
+				white-space: nowrap;
+				align-self: center;
+			}
+			#mode-indicator.ready {
+				color: var(--text-bright);
+				border-color: var(--border-light);
+			}
+
+			/* Responses */
 			#responses {
 				flex: 1;
 				overflow-y: auto;
-				padding: 12px 16px;
+				padding: 10px 14px;
 				display: flex;
 				flex-direction: column;
-				gap: 10px;
+				gap: 9px;
 			}
-
 			#responses::-webkit-scrollbar {
-				width: 6px;
+				width: 5px;
 			}
 			#responses::-webkit-scrollbar-track {
 				background: transparent;
@@ -254,7 +313,6 @@
 				border-radius: 3px;
 			}
 
-			/* Response card */
 			.response-card {
 				background: var(--surface);
 				border: 1px solid var(--border);
@@ -262,133 +320,175 @@
 				overflow: hidden;
 				transition: border-color var(--transition);
 			}
-
 			.response-card:hover {
 				border-color: var(--border-light);
 			}
 
 			.card-header {
 				display: flex;
-				align-items: center;
+				align-items: flex-start;
 				justify-content: space-between;
-				padding: 6px 12px;
+				gap: 8px;
+				padding: 5px 10px;
 				background: var(--surface2);
 				border-bottom: 1px solid var(--border);
 			}
-
 			.card-pid {
 				font-family: var(--font-mono);
 				font-size: 10px;
 				color: var(--text-dim);
-				letter-spacing: 0.05em;
+				flex-shrink: 0;
+				padding-top: 2px;
 			}
 
-			/* Count badges */
-			.count-badges {
+			.badge-grid {
 				display: flex;
-				gap: 5px;
+				flex-direction: column;
+				gap: 2px;
+				align-items: flex-end;
 			}
-
-			.badge {
+			.badge-row {
 				display: flex;
 				align-items: center;
-				gap: 3px;
-				font-family: var(--font-mono);
-				font-size: 10px;
-				padding: 2px 6px;
-				border-radius: 3px;
-				background: var(--surface);
-				border: 1px solid var(--border);
-				color: var(--text-dim);
-				transition: all var(--transition);
-				white-space: nowrap;
+				gap: 4px;
 			}
-
-			.badge.has-value {
-				color: var(--text);
-				border-color: var(--border-light);
-			}
-
-			.badge[data-cat='relational_correct'] .badge-dot {
-				background: var(--rel-correct);
-			}
-			.badge[data-cat='relational_incorrect'] .badge-dot {
-				background: var(--rel-incorrect);
-			}
-			.badge[data-cat='object_correct'] .badge-dot {
-				background: var(--obj-correct);
-			}
-			.badge[data-cat='object_incorrect'] .badge-dot {
-				background: var(--obj-incorrect);
-			}
-
-			.badge-dot {
+			.badge-ct-dot {
 				width: 6px;
 				height: 6px;
 				border-radius: 50%;
 				flex-shrink: 0;
-				opacity: 0.7;
+			}
+			.badge-ct-label {
+				font-family: var(--font-mono);
+				font-size: 9px;
+				color: var(--text-dim);
+				width: 58px;
+				text-align: right;
 			}
 
-			/* Response text */
+			.st-chip {
+				font-family: var(--font-mono);
+				font-size: 9px;
+				padding: 1px 5px;
+				border-radius: 3px;
+				border: 1px solid transparent;
+				color: var(--text-dim);
+				display: none;
+			}
+			.st-chip.has-value {
+				display: inline-block;
+				color: var(--text);
+			}
+			.st-chip[data-st='correct'] {
+				border-color: var(--st-correct);
+				background: rgba(34, 197, 94, 0.1);
+			}
+			.st-chip[data-st='incorrect'] {
+				border-color: var(--st-incorrect);
+				background: rgba(239, 68, 68, 0.1);
+			}
+			.st-chip[data-st='inference'] {
+				border-color: var(--st-inference);
+				background: rgba(148, 163, 184, 0.08);
+			}
+			.st-chip[data-st='repeat'] {
+				border-color: var(--st-repeat);
+				background: rgba(100, 116, 139, 0.08);
+			}
+
 			.response-text {
-				padding: 10px 12px;
+				padding: 9px 10px;
 				font-family: var(--font-sans);
 				font-size: 13px;
-				line-height: 1.7;
+				line-height: 1.75;
 				color: var(--text);
-				cursor: text;
-				user-select: text;
 				word-break: break-word;
+				user-select: text;
 			}
-
-			/* active-mode cursor hint */
-			body.mode-active .response-text {
+			body.mode-ready .response-text {
 				cursor: crosshair;
 			}
 
-			/* Highlights */
+			/* Highlights: background = content type, underline = status */
 			.hl {
 				position: relative;
 				border-radius: 3px;
 				padding: 1px 2px;
 				cursor: pointer;
+				color: var(--text-bright);
 				transition: filter var(--transition);
 			}
-
 			.hl:hover {
-				filter: brightness(1.3);
+				filter: brightness(1.35);
 			}
 
-			.hl[data-cat='relational_correct'] {
-				background: var(--rel-correct-bg);
-				border-bottom: 2px solid var(--rel-correct);
-				color: var(--text-bright);
+			.hl[data-ct='object_identity'] {
+				background: var(--ct-obj-id-bg);
 			}
-			.hl[data-cat='relational_incorrect'] {
-				background: var(--rel-incorrect-bg);
-				border-bottom: 2px solid var(--rel-incorrect);
-				color: var(--text-bright);
+			.hl[data-ct='object_attribute'] {
+				background: var(--ct-obj-attr-bg);
 			}
-			.hl[data-cat='object_correct'] {
-				background: var(--obj-correct-bg);
-				border-bottom: 2px solid var(--obj-correct);
-				color: var(--text-bright);
+			.hl[data-ct='action_relation'] {
+				background: var(--ct-action-bg);
 			}
-			.hl[data-cat='object_incorrect'] {
-				background: var(--obj-incorrect-bg);
-				border-bottom: 2px solid var(--obj-incorrect);
-				color: var(--text-bright);
+			.hl[data-ct='spatial_relation'] {
+				background: var(--ct-spatial-bg);
+			}
+			.hl[data-ct='scene_gist'] {
+				background: var(--ct-gist-bg);
 			}
 
-			/* Remove button that appears on highlight hover */
+			/* Wrong-image toggle in card header */
+			.wrong-img-toggle {
+				display: flex;
+				align-items: center;
+				gap: 4px;
+				padding: 2px 8px;
+				border-radius: var(--radius);
+				border: 1.5px solid var(--border);
+				background: var(--surface);
+				color: var(--text-dim);
+				font-family: var(--font-mono);
+				font-size: 9px;
+				cursor: pointer;
+				transition: all var(--transition);
+				user-select: none;
+				white-space: nowrap;
+				flex-shrink: 0;
+			}
+			.wrong-img-toggle:hover {
+				border-color: var(--border-light);
+				color: var(--text);
+			}
+			.wrong-img-toggle.active {
+				background: rgba(244, 63, 94, 0.15);
+				border-color: #f43f5e;
+				color: #f43f5e;
+			}
+
+			.hl[data-st='correct'] {
+				border-bottom: 2.5px solid var(--st-correct);
+			}
+			.hl[data-st='incorrect'] {
+				border-bottom: 2.5px solid var(--st-incorrect);
+				text-decoration: underline wavy var(--st-incorrect);
+				text-decoration-skip-ink: none;
+			}
+			.hl[data-st='inference'] {
+				border-bottom: 2px dashed var(--st-inference);
+			}
+			.hl[data-st='repeat'] {
+				border-bottom: 2px dotted var(--st-repeat);
+				opacity: 0.7;
+			}
+
 			.hl-remove {
 				display: none;
 				position: absolute;
 				top: -8px;
 				right: -6px;
-				width: 16px;
-				height: 16px;
+				width: 15px;
+				height: 15px;
 				border-radius: 50%;
 				background: #ef4444;
 				color: #fff;
@@ -398,29 +498,43 @@
 				justify-content: center;
 				cursor: pointer;
 				z-index: 10;
-				line-height: 1;
 				border: none;
+				line-height: 1;
 			}
-
 			.hl:hover .hl-remove {
 				display: flex;
 			}
 
-			/* Footer bar */
+			/* Footer */
 			#footer {
-				padding: 10px 16px;
+				padding: 9px 14px;
 				background: var(--surface);
 				border-top: 1px solid var(--border);
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
 				flex-shrink: 0;
+				gap: 12px;
 			}
 
-			#hint {
+			#legend {
+				display: flex;
+				gap: 10px;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+			.legend-item {
+				display: flex;
+				align-items: center;
+				gap: 4px;
 				font-family: var(--font-mono);
-				font-size: 10px;
+				font-size: 9px;
 				color: var(--text-dim);
+			}
+			.legend-swatch {
+				width: 22px;
+				height: 3px;
+				border-radius: 2px;
 			}
 
 			#btn-save {
@@ -436,109 +550,123 @@
 				font-size: 12px;
 				font-weight: 600;
 				cursor: pointer;
-				letter-spacing: 0.05em;
 				transition: background var(--transition);
+				flex-shrink: 0;
 			}
-
 			#btn-save:hover {
 				background: #2563eb;
 			}
 			#btn-save:active {
 				background: #1d4ed8;
 			}
-			#btn-save .kbd {
-				font-size: 9px;
-				padding: 1px 5px;
-				background: rgba(255, 255, 255, 0.15);
-				border-radius: 3px;
-			}
 
-			/* Empty / done states */
-			#empty-state,
 			#done-state {
+				grid-column: 1/-1;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
 				height: 100%;
 				gap: 12px;
-				color: var(--text-dim);
 				font-family: var(--font-mono);
 				font-size: 13px;
-				text-align: center;
 			}
-
 			#done-state .big {
-				font-size: 32px;
+				font-size: 36px;
 				margin-bottom: 8px;
-			}
-
-			/* Tooltip for mode shortcut */
-			#active-mode-indicator {
-				font-family: var(--font-mono);
-				font-size: 10px;
-				color: var(--text-dim);
-				padding: 3px 8px;
-				background: var(--surface2);
-				border-radius: var(--radius);
-				border: 1px solid var(--border);
-				margin-left: auto;
-				margin-right: 0;
-				display: none;
-			}
-
-			#active-mode-indicator.visible {
-				display: inline-block;
 			}
 		</style>
 	</head>
 	<body>
 		<div id="app">
-			<!-- Header -->
 			<div id="header">
 				<span class="title">Memory Scoring</span>
 				<span id="stim-label">—</span>
 				<span id="progress">Loading…</span>
 			</div>
 
-			<!-- Main -->
 			<div id="main">
-				<!-- Left: image -->
 				<div id="left-panel">
-					<div id="img-wrap">
-						<img id="stim-img" src="" alt="Stimulus image" draggable="false" />
-					</div>
+					<img id="stim-img" src="" alt="Stimulus" draggable="false" />
 				</div>
 
-				<!-- Right: mode + responses -->
 				<div id="right-panel">
-					<!-- Mode buttons -->
 					<div id="mode-bar">
-						<span class="mode-label">Mode</span>
-						<button class="mode-btn" data-mode="relational_correct" tabindex="0">
-							<span class="dot"></span> Correct relation <span class="kbd">1</span>
-						</button>
-						<button class="mode-btn" data-mode="relational_incorrect" tabindex="0">
-							<span class="dot"></span> Incorrect relation <span class="kbd">2</span>
-						</button>
-						<button class="mode-btn" data-mode="object_correct" tabindex="0">
-							<span class="dot"></span> Correct object <span class="kbd">3</span>
-						</button>
-						<button class="mode-btn" data-mode="object_incorrect" tabindex="0">
-							<span class="dot"></span> Incorrect object <span class="kbd">4</span>
-						</button>
-						<span id="active-mode-indicator">— no mode —</span>
+						<div class="mode-row">
+							<span class="row-label">Content</span>
+							<button class="ct-btn" data-ct="object_identity">
+								<span class="dot"></span> Obj. identity <span class="kbd">1</span>
+							</button>
+							<button class="ct-btn" data-ct="object_attribute">
+								<span class="dot"></span> Obj. attribute <span class="kbd">2</span>
+							</button>
+							<button class="ct-btn" data-ct="action_relation">
+								<span class="dot"></span> Action rel. <span class="kbd">3</span>
+							</button>
+							<button class="ct-btn" data-ct="spatial_relation">
+								<span class="dot"></span> Spatial rel. <span class="kbd">4</span>
+							</button>
+							<button class="ct-btn" data-ct="scene_gist">
+								<span class="dot"></span> Scene gist <span class="kbd">5</span>
+							</button>
+							<span id="mode-indicator">— select both —</span>
+						</div>
+						<div class="mode-row">
+							<span class="row-label">Status</span>
+							<button class="st-btn" data-st="correct">
+								<span class="st-pip"></span> Correct <span class="kbd">Q</span>
+							</button>
+							<button class="st-btn" data-st="incorrect">
+								<span class="st-pip"></span> Incorrect <span class="kbd">W</span>
+							</button>
+							<button class="st-btn" data-st="inference">
+								<span class="st-pip"></span> Inference <span class="kbd">E</span>
+							</button>
+							<button class="st-btn" data-st="repeat">
+								<span class="st-pip"></span> Repeat <span class="kbd">R</span>
+							</button>
+						</div>
 					</div>
 
-					<!-- Response cards -->
 					<div id="responses"></div>
 
-					<!-- Footer -->
 					<div id="footer">
-						<span id="hint"
-							>Select text while a mode is active to annotate. <b>Esc</b> deactivates
-							mode.</span
-						>
+						<div id="legend">
+							<span class="legend-item"
+								><span class="legend-swatch" style="background: var(--st-correct)"></span
+								>correct</span
+							>
+							<span class="legend-item"
+								><span
+									class="legend-swatch"
+									style="background: var(--st-incorrect)"></span
+								>incorrect</span
+							>
+							<span class="legend-item"
+								><span
+									class="legend-swatch"
+									style="
+										background: repeating-linear-gradient(
+											90deg,
+											var(--st-inference) 0 4px,
+											transparent 4px 7px
+										);
+									"></span
+								>inference</span
+							>
+							<span class="legend-item"
+								><span
+									class="legend-swatch"
+									style="
+										background: repeating-linear-gradient(
+											90deg,
+											var(--st-repeat) 0 2px,
+											transparent 2px 5px
+										);
+									"></span
+								>repeat</span
+							>
+						</div>
 						<button id="btn-save">Save &amp; Next <span class="kbd">↵</span></button>
 					</div>
 				</div>
@@ -546,145 +674,142 @@
 		</div>
 
 		<script>
-			// ─────────────────────────────────────────────────────────────────────────────
-			// State
-			// ─────────────────────────────────────────────────────────────────────────────
-			let queue = []; // full queue from /api/queue
-			let queuePos = 0; // current index into queue
-			let activeMode = null; // one of the 4 category strings, or null
+			const CONTENT_TYPES = [
+				'object_identity',
+				'object_attribute',
+				'action_relation',
+				'spatial_relation',
+				'scene_gist',
+			];
+			const STATUSES = ['correct', 'incorrect', 'inference', 'repeat'];
+			const CT_LABELS = {
+				object_identity: 'obj.id',
+				object_attribute: 'obj.attr',
+				action_relation: 'action',
+				spatial_relation: 'spatial',
+				scene_gist: 'gist',
+			};
+			const CT_COLORS = {
+				object_identity: '#3b82f6',
+				object_attribute: '#a855f7',
+				action_relation: '#22c55e',
+				spatial_relation: '#f59e0b',
+				scene_gist: '#06b6d4',
+			};
 
-			// Per-response annotation state:
-			// { [subjectId]: { spans: [{id, category, char_start, char_end, text}] } }
-			let annotations = {};
+			let queue = [];
+			let queuePos = 0;
+			let activeContentType = null;
+			let activeStatus = null;
+			let annotations = {}; // { subjectId: { spans: [], wrongImage: false } }
 
-			// ─────────────────────────────────────────────────────────────────────────────
-			// Boot
-			// ─────────────────────────────────────────────────────────────────────────────
+			// ── Boot ──────────────────────────────────────────────────────────────────────
 			async function boot() {
-				const res = await fetch('/api/queue');
-				const data = await res.json();
+				const data = await fetch('/api/queue').then(r => r.json());
 				queue = data.items || [];
-				queuePos = 0;
-				if (queue.length === 0) {
+				if (!queue.length) {
 					showDone();
-				} else {
-					loadImage(queuePos);
+					return;
 				}
-				updateProgress();
+				loadImage(0);
 			}
 
-			// ─────────────────────────────────────────────────────────────────────────────
-			// Navigation
-			// ─────────────────────────────────────────────────────────────────────────────
+			// ── Navigation ────────────────────────────────────────────────────────────────
 			function loadImage(idx) {
 				if (idx >= queue.length) {
 					showDone();
 					return;
 				}
-
 				const item = queue[idx];
 				annotations = {};
-
-				// Image
-				const img = document.getElementById('stim-img');
-				img.src = `/api/image/${item.stim_id}`;
-				img.alt = item.stim_id;
-
+				document.getElementById('stim-img').src = `/api/image/${item.stim_id}`;
 				document.getElementById('stim-label').textContent = `StimID: ${item.stim_id}`;
-
-				// Build annotation state
 				item.responses.forEach(r => {
-					annotations[r.subject_id] = { spans: [] };
+					annotations[r.subject_id] = { spans: [], wrongImage: false };
 				});
-
 				renderResponses(item);
 				updateProgress();
-				setMode(null); // deactivate mode on image change
+				setContentType(null);
+				setStatus(null);
 			}
 
 			function updateProgress() {
-				const remaining = queue.length - queuePos;
 				document.getElementById('progress').textContent =
-					`Image ${queuePos + 1} / ${queue.length}  (${remaining} remaining)`;
+					`Image ${queuePos + 1} / ${queue.length}  (${queue.length - queuePos} remaining)`;
 			}
 
-			// ─────────────────────────────────────────────────────────────────────────────
-			// Mode
-			// ─────────────────────────────────────────────────────────────────────────────
-			function setMode(mode) {
-				activeMode = mode;
-
-				document.querySelectorAll('.mode-btn').forEach(btn => {
-					btn.classList.toggle('active', btn.dataset.mode === mode);
-				});
-
-				const ind = document.getElementById('active-mode-indicator');
-				if (mode) {
-					const labels = {
-						relational_correct: 'Correct relation',
-						relational_incorrect: 'Incorrect relation',
-						object_correct: 'Correct object',
-						object_incorrect: 'Incorrect object',
-					};
-					ind.textContent = `● ${labels[mode]}`;
-					ind.className = 'visible';
-					document.body.classList.add('mode-active');
-				} else {
-					ind.textContent = '— no mode —';
-					ind.className = '';
-					document.body.classList.remove('mode-active');
-				}
+			// ── Mode ──────────────────────────────────────────────────────────────────────
+			function setContentType(ct) {
+				activeContentType = ct;
+				document
+					.querySelectorAll('.ct-btn')
+					.forEach(b => b.classList.toggle('active', b.dataset.ct === ct));
+				updateModeIndicator();
+			}
+			function setStatus(st) {
+				activeStatus = st;
+				document
+					.querySelectorAll('.st-btn')
+					.forEach(b => b.classList.toggle('active', b.dataset.st === st));
+				updateModeIndicator();
+			}
+			function updateModeIndicator() {
+				const ind = document.getElementById('mode-indicator');
+				const ready = activeContentType && activeStatus;
+				ind.textContent = ready
+					? `${CT_LABELS[activeContentType]} · ${activeStatus}`
+					: `— pick ${[!activeContentType && 'content', !activeStatus && 'status'].filter(Boolean).join(' + ')} —`;
+				ind.className = ready ? 'ready' : '';
+				document.body.classList.toggle('mode-ready', !!ready);
 			}
 
-			document.querySelectorAll('.mode-btn').forEach(btn => {
-				btn.addEventListener('click', () => {
-					const m = btn.dataset.mode;
-					setMode(activeMode === m ? null : m);
-				});
-			});
+			document
+				.querySelectorAll('.ct-btn')
+				.forEach(b =>
+					b.addEventListener('click', () =>
+						setContentType(activeContentType === b.dataset.ct ? null : b.dataset.ct)
+					)
+				);
+			document
+				.querySelectorAll('.st-btn')
+				.forEach(b =>
+					b.addEventListener('click', () =>
+						setStatus(activeStatus === b.dataset.st ? null : b.dataset.st)
+					)
+				);
 
-			// ─────────────────────────────────────────────────────────────────────────────
-			// Render responses
-			// ─────────────────────────────────────────────────────────────────────────────
+			// ── Render responses ──────────────────────────────────────────────────────────
 			function renderResponses(item) {
 				const container = document.getElementById('responses');
 				container.innerHTML = '';
-
 				item.responses.forEach(r => {
 					const card = document.createElement('div');
 					card.className = 'response-card';
-					card.dataset.subjectId = r.subject_id;
 
-					// Header
 					const header = document.createElement('div');
 					header.className = 'card-header';
-
 					const pid = document.createElement('span');
 					pid.className = 'card-pid';
 					pid.textContent = r.subject_id.replace('Encode-Decode_Experiment-', 'P');
 
-					const badges = document.createElement('div');
-					badges.className = 'count-badges';
-
-					const catDefs = [
-						{ cat: 'relational_correct', label: 'R✓' },
-						{ cat: 'relational_incorrect', label: 'R✗' },
-						{ cat: 'object_correct', label: 'O✓' },
-						{ cat: 'object_incorrect', label: 'O✗' },
-					];
-					catDefs.forEach(({ cat, label }) => {
-						const b = document.createElement('span');
-						b.className = 'badge';
-						b.dataset.cat = cat;
-						b.dataset.subjectId = r.subject_id;
-						b.innerHTML = `<span class="badge-dot"></span>${label} <span class="badge-count">0</span>`;
-						badges.appendChild(b);
+					const wrongBtn = document.createElement('button');
+					wrongBtn.className = 'wrong-img-toggle';
+					wrongBtn.dataset.subjectId = r.subject_id;
+					wrongBtn.title =
+						'Toggle: participant appears to have recalled a different image';
+					wrongBtn.textContent = '⚠ Wrong image';
+					wrongBtn.addEventListener('click', () => {
+						annotations[r.subject_id].wrongImage = !annotations[r.subject_id].wrongImage;
+						wrongBtn.classList.toggle('active', annotations[r.subject_id].wrongImage);
 					});
 
+					const badgeGrid = document.createElement('div');
+					badgeGrid.className = 'badge-grid';
+					badgeGrid.dataset.subjectId = r.subject_id;
 					header.appendChild(pid);
-					header.appendChild(badges);
+					header.appendChild(wrongBtn);
+					header.appendChild(badgeGrid);
 
-					// Text
 					const textDiv = document.createElement('div');
 					textDiv.className = 'response-text';
 					textDiv.dataset.subjectId = r.subject_id;
@@ -694,53 +819,38 @@
 					card.appendChild(textDiv);
 					container.appendChild(card);
 
-					// Render text with any existing highlights
 					renderText(r.subject_id, r.free_response);
 					updateBadges(r.subject_id);
 
-					// Mouseup handler for text selection
-					textDiv.addEventListener('mouseup', e => {
-						if (!activeMode) return;
+					textDiv.addEventListener('mouseup', () => {
+						if (!activeContentType || !activeStatus) return;
 						handleSelection(r.subject_id, r.free_response, textDiv);
 					});
 				});
 			}
 
-			// ─────────────────────────────────────────────────────────────────────────────
-			// Text rendering with highlights
-			// ─────────────────────────────────────────────────────────────────────────────
+			// ── Render text ───────────────────────────────────────────────────────────────
 			function renderText(subjectId, rawText) {
 				const textDiv = document.querySelector(
 					`.response-text[data-subject-id="${subjectId}"]`
 				);
 				if (!textDiv) return;
-
-				const spans = annotations[subjectId]?.spans || [];
-				// Sort spans by start position
-				const sorted = [...spans].sort((a, b) => a.char_start - b.char_start);
-
-				// Build HTML by inserting mark elements at span boundaries
-				let html = '';
-				let cursor = 0;
-
-				sorted.forEach(span => {
-					if (span.char_start < cursor) return; // overlapping — skip
-					// Plain text before this span
-					html += escapeHtml(rawText.slice(cursor, span.char_start));
-					// Highlighted span
+				const spans = [...(annotations[subjectId]?.spans || [])].sort(
+					(a, b) => a.char_start - b.char_start
+				);
+				let html = '',
+					cursor = 0;
+				spans.forEach(s => {
+					if (s.char_start < cursor) return;
+					html += escapeHtml(rawText.slice(cursor, s.char_start));
 					html +=
-						`<span class="hl" data-cat="${span.category}" data-span-id="${span.id}">` +
-						escapeHtml(rawText.slice(span.char_start, span.char_end)) +
-						`<button class="hl-remove" title="Remove annotation">×</button>` +
-						`</span>`;
-					cursor = span.char_end;
+						`<span class="hl" data-ct="${s.content_type}" data-st="${s.status}" data-span-id="${s.id}">` +
+						escapeHtml(rawText.slice(s.char_start, s.char_end)) +
+						`<button class="hl-remove" title="Remove">×</button></span>`;
+					cursor = s.char_end;
 				});
-
-				// Remaining text
 				html += escapeHtml(rawText.slice(cursor));
 				textDiv.innerHTML = html;
-
-				// Attach remove listeners
 				textDiv.querySelectorAll('.hl-remove').forEach(btn => {
 					btn.addEventListener('mousedown', e => {
 						e.preventDefault();
@@ -749,85 +859,74 @@
 					btn.addEventListener('click', e => {
 						e.preventDefault();
 						e.stopPropagation();
-						const spanId = btn.closest('.hl').dataset.spanId;
-						removeSpan(subjectId, spanId, rawText);
+						removeSpan(subjectId, btn.closest('.hl').dataset.spanId, rawText);
 					});
 				});
 			}
 
-			function escapeHtml(str) {
-				return str
+			function escapeHtml(s) {
+				return s
 					.replace(/&/g, '&amp;')
 					.replace(/</g, '&lt;')
 					.replace(/>/g, '&gt;')
 					.replace(/"/g, '&quot;');
 			}
 
-			// ─────────────────────────────────────────────────────────────────────────────
-			// Selection → span
-			// ─────────────────────────────────────────────────────────────────────────────
+			// ── Selection handling ────────────────────────────────────────────────────────
 			function handleSelection(subjectId, rawText, textDiv) {
 				const sel = window.getSelection();
-				if (!sel || sel.isCollapsed || sel.rangeCount === 0) return;
-
+				if (!sel || sel.isCollapsed || !sel.rangeCount) return;
 				const range = sel.getRangeAt(0);
-
-				// Make sure selection is within this textDiv
 				if (!textDiv.contains(range.commonAncestorContainer)) return;
 
-				// Compute char offsets in the raw text by using a TreeWalker
-				// that only walks text nodes within textDiv
 				const charStart = getCharOffset(textDiv, range.startContainer, range.startOffset);
 				const charEnd = getCharOffset(textDiv, range.endContainer, range.endOffset);
-
 				if (charStart === null || charEnd === null || charStart >= charEnd) return;
 
-				// Check for overlap with existing spans
-				const existing = annotations[subjectId]?.spans || [];
-				const overlaps = existing.some(
-					s => charStart < s.char_end && charEnd > s.char_start
-				);
-				if (overlaps) {
+				if (
+					(annotations[subjectId]?.spans || []).some(
+						s => charStart < s.char_end && charEnd > s.char_start
+					)
+				) {
 					sel.removeAllRanges();
 					return;
 				}
 
-				// Create new span
-				const spanObj = {
+				annotations[subjectId].spans.push({
 					id: `span_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-					category: activeMode,
+					content_type: activeContentType,
+					status: activeStatus,
 					char_start: charStart,
 					char_end: charEnd,
 					text: rawText.slice(charStart, charEnd),
-				};
-
-				annotations[subjectId].spans.push(spanObj);
+				});
 				sel.removeAllRanges();
-
 				renderText(subjectId, rawText);
 				updateBadges(subjectId);
 			}
 
+			// getCharOffset — skips .hl-remove text nodes (the × chrome)
 			function getCharOffset(container, node, nodeOffset) {
-				// Walk all text nodes in container and accumulate their lengths
-				// until we reach the target node, then add nodeOffset.
-				// Returns null if node not found.
-				const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
+				const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, {
+					acceptNode(n) {
+						let p = n.parentElement;
+						while (p && p !== container) {
+							if (p.classList.contains('hl-remove')) return NodeFilter.FILTER_REJECT;
+							p = p.parentElement;
+						}
+						return NodeFilter.FILTER_ACCEPT;
+					},
+				});
 				let offset = 0;
-
 				while (walker.nextNode()) {
-					const current = walker.currentNode;
-					if (current === node) {
-						return offset + nodeOffset;
-					}
-					offset += current.textContent.length;
+					const cur = walker.currentNode;
+					if (cur === node) return offset + nodeOffset;
+					offset += cur.textContent.length;
 				}
 				return null;
 			}
 
-			// ─────────────────────────────────────────────────────────────────────────────
-			// Remove span
-			// ─────────────────────────────────────────────────────────────────────────────
+			// ── Remove span ───────────────────────────────────────────────────────────────
 			function removeSpan(subjectId, spanId, rawText) {
 				if (!annotations[subjectId]) return;
 				annotations[subjectId].spans = annotations[subjectId].spans.filter(
@@ -837,58 +936,80 @@
 				updateBadges(subjectId);
 			}
 
-			// ─────────────────────────────────────────────────────────────────────────────
-			// Badge counts
-			// ─────────────────────────────────────────────────────────────────────────────
+			// ── Badges ────────────────────────────────────────────────────────────────────
 			function updateBadges(subjectId) {
 				const spans = annotations[subjectId]?.spans || [];
-				const counts = {
-					relational_correct: 0,
-					relational_incorrect: 0,
-					object_correct: 0,
-					object_incorrect: 0,
-				};
+				const counts = {};
+				CONTENT_TYPES.forEach(ct => {
+					counts[ct] = {};
+					STATUSES.forEach(st => {
+						counts[ct][st] = 0;
+					});
+				});
 				spans.forEach(s => {
-					if (s.category in counts) counts[s.category]++;
+					if (counts[s.content_type]) counts[s.content_type][s.status]++;
 				});
 
-				document
-					.querySelectorAll(`.badge[data-subject-id="${subjectId}"]`)
-					.forEach(badge => {
-						const cat = badge.dataset.cat;
-						const count = counts[cat];
-						badge.querySelector('.badge-count').textContent = count;
-						badge.classList.toggle('has-value', count > 0);
+				const grid = document.querySelector(
+					`.badge-grid[data-subject-id="${subjectId}"]`
+				);
+				if (!grid) return;
+				grid.innerHTML = '';
+
+				CONTENT_TYPES.forEach(ct => {
+					const total = STATUSES.reduce((sum, st) => sum + counts[ct][st], 0);
+					if (!total) return;
+					const row = document.createElement('div');
+					row.className = 'badge-row';
+
+					const dot = document.createElement('span');
+					dot.className = 'badge-ct-dot';
+					dot.style.background = CT_COLORS[ct];
+
+					const lbl = document.createElement('span');
+					lbl.className = 'badge-ct-label';
+					lbl.textContent = CT_LABELS[ct];
+
+					row.appendChild(dot);
+					row.appendChild(lbl);
+
+					STATUSES.forEach(st => {
+						const n = counts[ct][st];
+						const chip = document.createElement('span');
+						chip.className = `st-chip${n > 0 ? ' has-value' : ''}`;
+						chip.dataset.st = st;
+						chip.textContent = `${st[0].toUpperCase()} ${n}`;
+						row.appendChild(chip);
 					});
+
+					grid.appendChild(row);
+				});
 			}
 
-			// ─────────────────────────────────────────────────────────────────────────────
-			// Save & Next
-			// ─────────────────────────────────────────────────────────────────────────────
+			// ── Save & Next ───────────────────────────────────────────────────────────────
 			async function saveAndNext() {
 				const item = queue[queuePos];
 				if (!item) return;
 
 				const responsePayload = item.responses.map(r => {
 					const spans = annotations[r.subject_id]?.spans || [];
-					const counts = {
-						relational_correct: 0,
-						relational_incorrect: 0,
-						object_correct: 0,
-						object_incorrect: 0,
-					};
+					const counts = {};
+					CONTENT_TYPES.forEach(ct =>
+						STATUSES.forEach(st => {
+							counts[`n_${ct}_${st}`] = 0;
+						})
+					);
 					spans.forEach(s => {
-						if (s.category in counts) counts[s.category]++;
+						counts[`n_${s.content_type}_${s.status}`]++;
 					});
-
 					return {
 						subject_id: r.subject_id,
-						n_relational_correct: counts.relational_correct,
-						n_relational_incorrect: counts.relational_incorrect,
-						n_objects_correct: counts.object_correct,
-						n_objects_incorrect: counts.object_incorrect,
+						empty_response: spans.length === 0 ? 1 : 0,
+						wrong_image: annotations[r.subject_id]?.wrongImage ? 1 : 0,
+						...counts,
 						spans: spans.map(s => ({
-							category: s.category,
+							content_type: s.content_type,
+							status: s.status,
 							char_start: s.char_start,
 							char_end: s.char_end,
 							text: s.text,
@@ -896,29 +1017,22 @@
 					};
 				});
 
-				const payload = { stim_id: item.stim_id, responses: responsePayload };
-
 				const btn = document.getElementById('btn-save');
 				btn.textContent = 'Saving…';
 				btn.disabled = true;
 
 				try {
-					const res = await fetch('/api/save', {
+					const data = await fetch('/api/save', {
 						method: 'POST',
 						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify(payload),
-					});
-					const data = await res.json();
+						body: JSON.stringify({ stim_id: item.stim_id, responses: responsePayload }),
+					}).then(r => r.json());
 
 					if (data.ok) {
 						queuePos++;
-						if (queuePos >= queue.length) {
-							showDone();
-						} else {
-							loadImage(queuePos);
-						}
+						queuePos >= queue.length ? showDone() : loadImage(queuePos);
 					} else {
-						alert('Save failed: ' + (data.error || 'unknown error'));
+						alert('Save failed: ' + (data.error || 'unknown'));
 					}
 				} catch (err) {
 					alert('Network error: ' + err.message);
@@ -927,53 +1041,50 @@
 					btn.disabled = false;
 				}
 			}
-
 			document.getElementById('btn-save').addEventListener('click', saveAndNext);
 
-			// ─────────────────────────────────────────────────────────────────────────────
-			// Done state
-			// ─────────────────────────────────────────────────────────────────────────────
+			// ── Done ──────────────────────────────────────────────────────────────────────
 			function showDone() {
 				document.getElementById('main').innerHTML = `
-    <div id="done-state" style="grid-column: 1/-1">
+    <div id="done-state">
       <div class="big">✓</div>
-      <div style="color: var(--text); font-size: 16px; font-weight: 600;">All images scored</div>
-      <div style="color: var(--text-dim); font-size: 12px;">memory_scores.csv and memory_annotations.json updated.</div>
+      <div style="color:var(--text);font-size:16px;font-weight:600">All images scored</div>
+      <div style="color:var(--text-dim);font-size:12px">memory_scores.csv and memory_annotations.json updated.</div>
     </div>`;
 				document.getElementById('progress').textContent = 'Complete';
 				document.getElementById('stim-label').textContent = '';
 			}
 
-			// ─────────────────────────────────────────────────────────────────────────────
-			// Keyboard shortcuts
-			// ─────────────────────────────────────────────────────────────────────────────
+			// ── Keyboard ──────────────────────────────────────────────────────────────────
 			document.addEventListener('keydown', e => {
-				// Don't fire if typing in an input
 				if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-
-				const modeMap = {
-					1: 'relational_correct',
-					2: 'relational_incorrect',
-					3: 'object_correct',
-					4: 'object_incorrect',
+				const ctMap = {
+					1: 'object_identity',
+					2: 'object_attribute',
+					3: 'action_relation',
+					4: 'spatial_relation',
+					5: 'scene_gist',
 				};
-				if (modeMap[e.key]) {
-					const m = modeMap[e.key];
-					setMode(activeMode === m ? null : m);
+				const stMap = { q: 'correct', w: 'incorrect', e: 'inference', r: 'repeat' };
+				if (ctMap[e.key]) {
+					setContentType(activeContentType === ctMap[e.key] ? null : ctMap[e.key]);
 					e.preventDefault();
-				}
-				if (e.key === 'Escape') {
-					setMode(null);
-				}
-				if (e.key === 'Enter' && !e.shiftKey) {
+				} else if (stMap[e.key.toLowerCase()]) {
+					setStatus(
+						activeStatus === stMap[e.key.toLowerCase()]
+							? null
+							: stMap[e.key.toLowerCase()]
+					);
+					e.preventDefault();
+				} else if (e.key === 'Escape') {
+					setContentType(null);
+					setStatus(null);
+				} else if (e.key === 'Enter' && !e.shiftKey) {
 					saveAndNext();
 					e.preventDefault();
 				}
 			});
 
-			// ─────────────────────────────────────────────────────────────────────────────
-			// Init
-			// ─────────────────────────────────────────────────────────────────────────────
 			boot();
 		</script>
 	</body>

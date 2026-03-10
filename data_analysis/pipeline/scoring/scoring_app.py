@@ -178,27 +178,11 @@ def api_image(stim_id: str):
 @app.route("/api/save", methods=["POST"])
 def api_save():
     """
-    Receive annotation payload for one image, persist to disk, and remove
-    those pairs from the in-memory queue.
+    Receive annotation payload for one image, persist to disk.
 
-    Expected payload:
-    {
-      "stim_id": "2362277",
-      "responses": [
-        {
-          "subject_id": "...",
-          "n_relational_correct": 2,
-          "n_relational_incorrect": 0,
-          "n_objects_correct": 1,
-          "n_objects_incorrect": 0,
-          "spans": [
-            {"category": "relational_correct", "char_start": 4, "char_end": 28, "text": "..."},
-            ...
-          ]
-        },
-        ...
-      ]
-    }
+    Each response now carries 20 count fields (5 content types × 4 statuses):
+      n_{content_type}_{status}  e.g. n_action_relation_correct
+    And spans store content_type + status instead of a single category string.
     """
     global _QUEUE, _SCORED_PAIRS
 
@@ -209,8 +193,22 @@ def api_save():
     if not stim_id or not responses:
         return jsonify({"error": "Missing stim_id or responses"}), 400
 
-    # Ensure output directory exists
     config.OUTPUT_SCORING_DIR.mkdir(parents=True, exist_ok=True)
+
+    # ---- Build fieldnames from taxonomy ---------------------------------
+    content_types = [
+        "object_identity",
+        "object_attribute",
+        "action_relation",
+        "spatial_relation",
+        "scene_gist",
+    ]
+    statuses = ["correct", "incorrect", "inference", "repeat"]
+    count_fields = [f"n_{ct}_{st}" for ct in content_types for st in statuses]
+
+    fieldnames = (
+        ["SubjectID", "StimID"] + count_fields + ["empty_response", "wrong_image"]
+    )
 
     # ---- Write memory_scores.csv ----------------------------------------
     scores_path = config.MEMORY_SCORES_FILE
@@ -218,35 +216,16 @@ def api_save():
     score_rows = []
 
     for resp in responses:
-        subject_id = resp["subject_id"]
-        all_counts = (
-            resp.get("n_relational_correct", 0)
-            + resp.get("n_relational_incorrect", 0)
-            + resp.get("n_objects_correct", 0)
-            + resp.get("n_objects_incorrect", 0)
-        )
-        empty = 1 if all_counts == 0 else 0
-        score_rows.append(
-            {
-                "SubjectID": subject_id,
-                "StimID": stim_id,
-                "n_relational_correct": resp.get("n_relational_correct", 0),
-                "n_relational_incorrect": resp.get("n_relational_incorrect", 0),
-                "n_objects_correct": resp.get("n_objects_correct", 0),
-                "n_objects_incorrect": resp.get("n_objects_incorrect", 0),
-                "empty_response": empty,
-            }
-        )
+        row = {
+            "SubjectID": resp["subject_id"],
+            "StimID": stim_id,
+            "empty_response": resp.get("empty_response", 0),
+            "wrong_image": resp.get("wrong_image", 0),
+        }
+        for field in count_fields:
+            row[field] = resp.get(field, 0)
+        score_rows.append(row)
 
-    fieldnames = [
-        "SubjectID",
-        "StimID",
-        "n_relational_correct",
-        "n_relational_incorrect",
-        "n_objects_correct",
-        "n_objects_incorrect",
-        "empty_response",
-    ]
     with open(scores_path, "a", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         if write_header:
@@ -265,13 +244,13 @@ def api_save():
         annotations = []
 
     for resp in responses:
-        subject_id = resp["subject_id"]
         for span in resp.get("spans", []):
             annotations.append(
                 {
-                    "SubjectID": subject_id,
+                    "SubjectID": resp["subject_id"],
                     "StimID": stim_id,
-                    "category": span["category"],
+                    "content_type": span["content_type"],
+                    "status": span["status"],
                     "char_start": span["char_start"],
                     "char_end": span["char_end"],
                     "text": span["text"],
@@ -284,7 +263,6 @@ def api_save():
     # ---- Update in-memory state -----------------------------------------
     for resp in responses:
         _SCORED_PAIRS.add((resp["subject_id"], stim_id))
-
     _QUEUE = _build_queue(_ALL_RESPONSES, _SCORED_PAIRS)
 
     logger.info(
@@ -299,6 +277,11 @@ def api_save():
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
+    import threading
+    import webbrowser
+
     logger.info(f"Scoring app starting — {len(_QUEUE)} images in queue")
     logger.info(f"Open http://localhost:5000 in your browser")
+    # Open browser after a short delay to let Flask bind the port first
+    threading.Timer(1.2, lambda: webbrowser.open("http://localhost:5000")).start()
     app.run(debug=False, port=5000)

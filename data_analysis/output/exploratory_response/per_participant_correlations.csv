@@ -1,0 +1,7 @@
+SubjectID,svg_variant,n,rho,p,type
+Encode-Decode_Experiment-2-1,interactional,9,-0.35,0.35581957250178897,per_participant
+Encode-Decode_Experiment-2-1,all-edges,11,0.01822328190312821,0.9575888166970637,per_participant
+Encode-Decode_Experiment-9-1,interactional,12,0.04195804195804196,0.8969858708195542,per_participant
+Encode-Decode_Experiment-9-1,all-edges,17,0.37990196078431376,0.13254890262758873,per_participant
+pooled_partial,interactional,21,0.07662337662337662,0.7413113765158403,pooled_partial
+pooled_partial,all-edges,28,0.3103873027561295,0.10793938828641492,pooled_partial

@@ -40,9 +40,14 @@ from pipeline.misc import get_subject_ids, init_output_dirs, setup_logging
 from pipeline.module1_behavioral import process_subject as run_module1
 from pipeline.module2_eyetracking import process_subject as run_module2
 from pipeline.module3_features import process_subject as run_module3
-
-# Placeholders — uncomment as each module is implemented
-# from pipeline.module4_merge    import run_merge        as run_module4
+from pipeline.module4_analysis import (
+    apply_exclusions,
+    build_analysis_tables,
+    fit_all_models,
+    load_data,
+    standardise_tables,
+    summarise,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -99,6 +104,53 @@ def process_participant(
 
 
 # ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+
+def _concat_trial_features(
+    output_path: Path, subject_ids: list[str] | None = None
+) -> None:
+    """
+    Concatenate per-participant _trial_features.csv files into trial_features_all.csv.
+
+    If subject_ids is provided, only files matching those IDs are included.
+    This prevents stale files from previous runs silently entering the analysis.
+    """
+    import pandas as pd
+
+    feature_files = sorted(config.OUTPUT_FEATURES_DIR.glob("*_trial_features.csv"))
+    feature_files = [f for f in feature_files if f.name != "trial_features_all.csv"]
+
+    if subject_ids is not None:
+        # Keep only files whose stem contains one of the requested subject IDs
+        feature_files = [
+            f for f in feature_files if any(sid in f.stem for sid in subject_ids)
+        ]
+        if not feature_files:
+            logger.warning(
+                "  No _trial_features.csv files found matching the requested "
+                f"subjects — trial_features_all.csv not written."
+            )
+            return
+
+    if not feature_files:
+        logger.warning(
+            "  No _trial_features.csv files found — trial_features_all.csv not written."
+        )
+        return
+
+    dfs = [pd.read_csv(f, dtype={"StimID": str}) for f in feature_files]
+    combined = pd.concat(dfs, ignore_index=True)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    combined.to_csv(output_path, index=False)
+    logger.info(
+        f"  trial_features_all.csv written: "
+        f"{len(combined)} rows from {len(feature_files)} participants → {output_path.name}"
+    )
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -152,12 +204,32 @@ def main():
         logger.info(f"--- {sid} ---")
         all_results[sid] = process_participant(sid, per_subject_modules, rng=rng)
 
-    # Module 4: merge across all participants
+    # Concatenate per-participant trial_features CSVs into one file.
+    # This always runs after any module-3 pass so Module 4 has an up-to-date
+    # combined file regardless of whether module 3 was in this invocation.
+    features_path = config.OUTPUT_FEATURES_DIR / "trial_features_all.csv"
+    _concat_trial_features(features_path, subject_ids=subject_ids)
+
+    # Module 4: mixed-effects analysis across all participants
     if 4 in args.modules:
-        logger.info("--- Module 4: Final Merge ---")
-        logger.warning("Module 4 not yet implemented — skipping.")
-        # successful = [s for s, r in all_results.items() if r.get(3, False)]
-        # run_module4(subject_ids=successful, output_dir=config.OUTPUT_DIR)
+        logger.info("--- Module 4: Mixed-effects analysis ---")
+        if not features_path.exists():
+            logger.error(
+                f"  trial_features_all.csv not found at {features_path}. "
+                f"Run Module 3 first to generate it."
+            )
+        else:
+            try:
+                output_dir = config.OUTPUT_DIR / "analysis"
+                raw_df = load_data(features_path)
+                tables = build_analysis_tables(raw_df)
+                filtered = apply_exclusions(tables)
+                filtered = standardise_tables(filtered)
+                model_results = fit_all_models(filtered)
+                summarise(model_results, filtered, output_dir, plot=True)
+                logger.info("  Module 4 complete.")
+            except Exception as e:
+                logger.error(f"  Module 4 crashed: {e}", exc_info=True)
 
     # ---------------------------------------------------------------------------
     # Summary report
@@ -174,6 +246,8 @@ def main():
             f"{len(successes)}/{len(subject_ids)} passed"
             + (f" | Failed: {failures}" if failures else "")
         )
+    if 4 in args.modules:
+        logger.info(f"  Module 4: see output/analysis/ for results")
 
     logger.info("=" * 55)
 

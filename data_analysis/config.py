@@ -38,6 +38,16 @@ N_DISTRACTOR_RANGE = (1, 148)  # time-terminated loop, count not fixed
 ENCODING_WINDOW_MS = 5000  # image viewing phase duration
 DECODING_WINDOW_MS = 7000  # blank screen retrieval phase duration
 
+# ---------------------------------------------------------------------------
+# Scoring (Module 4 / manual annotation tool)
+# ---------------------------------------------------------------------------
+
+DATA_METADATA_IMAGES_DIR = DATA_METADATA_DIR / "images"
+OUTPUT_SCORING_DIR = OUTPUT_DIR / "data_scoring"
+MEMORY_SCORES_FILE = OUTPUT_SCORING_DIR / "memory_scores.csv"
+MEMORY_ANNOTATIONS_FILE = OUTPUT_SCORING_DIR / "memory_annotations.json"
+
+
 N_PARTICIPANTS = 30
 
 # ---------------------------------------------------------------------------

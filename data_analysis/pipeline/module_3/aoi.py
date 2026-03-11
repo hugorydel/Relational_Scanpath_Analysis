@@ -39,15 +39,18 @@ Usage (from Module 3):
 """
 
 import logging
+import sys
 from pathlib import Path
 from typing import Optional
 
 import config
 import numpy as np
 import pandas as pd
-from pipeline.module_3.scene_graph import build_polygon_index
 
-from data_analysis.pipeline.salience.saliency import get_saliency_map
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from pipeline.module_3.scene_graph import build_polygon_index
+from pipeline.salience.saliency import get_saliency_map
 
 logger = logging.getLogger(__name__)
 

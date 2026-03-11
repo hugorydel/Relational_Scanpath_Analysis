@@ -8,10 +8,10 @@ utilizing the cached .npy files if available.
 
 Usage:
     # Use cached map (or compute and cache if missing)
-    python -m pipeline.utils.visualize_saliency 2383555
+    python -m salience.visualize_saliency 2383555
 
     # Force recomputation and overwrite cache
-    python -m pipeline.utils.visualize_saliency 2383555 --force
+    python -m salience.visualize_saliency 2383555 --force
 """
 
 import argparse

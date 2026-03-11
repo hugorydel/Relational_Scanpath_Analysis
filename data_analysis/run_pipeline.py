@@ -45,6 +45,7 @@ from pipeline.module4_analysis import (
     build_analysis_tables,
     fit_all_models,
     load_data,
+    load_memory_scores,
     standardise_tables,
     summarise,
 )
@@ -222,11 +223,12 @@ def main():
             try:
                 output_dir = config.OUTPUT_DIR / "analysis"
                 raw_df = load_data(features_path)
-                tables = build_analysis_tables(raw_df)
+                memory_scores = load_memory_scores(config.MEMORY_SCORES_FILE)
+                tables = build_analysis_tables(raw_df, memory_scores)
                 filtered = apply_exclusions(tables)
                 filtered = standardise_tables(filtered)
-                model_results = fit_all_models(filtered)
-                summarise(model_results, filtered, output_dir, plot=True)
+                results = fit_all_models(filtered)
+                summarise(results, filtered, output_dir, plot=True)
                 logger.info("  Module 4 complete.")
             except Exception as e:
                 logger.error(f"  Module 4 crashed: {e}", exc_info=True)

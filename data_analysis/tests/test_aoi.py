@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import config
 from pipeline.misc import setup_logging
-from pipeline.utils.aoi import run_aoi_assignment
+from pipeline.module_3.aoi import run_aoi_assignment
 
 setup_logging(level="INFO")
 logger = logging.getLogger(__name__)

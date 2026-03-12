@@ -1,5 +1,5 @@
 """
-utils/metrics.py
+module_3/metrics.py
 ================
 Steps 4–6 of Module 3: sequence construction and scanpath metrics.
 

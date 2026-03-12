@@ -1,11 +1,11 @@
 """
-test_aoi.py
+test_aoi_assignment.py
 ===========
 Quick diagnostic for AOI assignment on a single participant.
 
 Usage:
-    python test_aoi.py
-    python test_aoi.py --subject Encode-Decode_Experiment-1-1
+    python test_aoi_assignment.py
+    python test_aoi_assignment.py --subject Encode-Decode_Experiment-1-1
 """
 
 import argparse

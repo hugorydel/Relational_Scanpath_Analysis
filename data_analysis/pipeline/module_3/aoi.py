@@ -1,5 +1,5 @@
 """
-utils/aoi.py
+module_3/aoi.py
 ============
 Step 3 of Module 3: AOI assignment for fixations.
 
@@ -28,7 +28,7 @@ ProximityDist_px  : float or NaN — centroid distance for proximity hits
 SalienceAtFixation: float — saliency map value at (ImgX, ImgY)
 
 Usage (from Module 3):
-    from pipeline.utils.aoi import assign_aoi
+    from pipeline.module_3.aoi import assign_aoi
 
     fixations_aoi = assign_aoi(
         fixations_df,

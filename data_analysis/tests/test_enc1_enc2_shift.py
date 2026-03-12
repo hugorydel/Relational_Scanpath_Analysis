@@ -56,8 +56,8 @@ from scipy import stats
 sys.path.insert(0, str(Path(__file__).parent.parent))
 import config
 from pipeline.misc import get_subject_ids, setup_logging
-from pipeline.utils.metrics import build_object_sequence, svg_alignment
-from pipeline.utils.scene_graph import build_graph_index
+from pipeline.module_3.metrics import build_object_sequence, svg_alignment
+from pipeline.module_3.scene_graph import build_graph_index
 
 logger = logging.getLogger(__name__)
 

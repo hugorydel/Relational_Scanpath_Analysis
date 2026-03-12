@@ -1,5 +1,5 @@
 """
-utils/saliency.py
+salience/saliency.py
 =================
 Spectral Residual saliency maps (Hou & Zhang, CVPR 2007) via OpenCV.
 
@@ -16,16 +16,16 @@ Algorithm:
 
 Usage (standalone):
     # All stimuli in stimuli_dataset.json
-    python -m pipeline.utils.saliency
+    python -m pipeline.salience.saliency
 
     # Specific subset
-    python -m pipeline.utils.saliency --stim-ids 2383555 2386442
+    python -m pipeline.salience.saliency --stim-ids 2383555 2386442
 
     # Force recompute even if cache exists
-    python -m pipeline.utils.saliency --force
+    python -m pipeline.salience.saliency --force
 
 Usage (from Module 3):
-    from pipeline.utils.saliency import get_saliency_map
+    from pipeline.salience.saliency import get_saliency_map
     sal_map = get_saliency_map("2383555")   # np.ndarray (768, 1024), float32, sums to 1
 """
 

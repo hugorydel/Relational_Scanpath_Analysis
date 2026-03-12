@@ -1,5 +1,5 @@
 """
-utils/visualize_saliency.py
+salience/visualize_saliency.py
 ===========================
 Step 2 of Module 3: Visualize the Spectral Residual saliency map for a given StimID.
 

@@ -19,8 +19,7 @@ Produces four figures:
 
 Predictors (decoding phase)
 ---------------------------
-  svg_z_inter_dec  — interactional-edges SVG z-score
-  svg_z_all_dec    — all-edges SVG z-score
+  svg_z_dec  — core SVG z-score (interactional + spatial + functional edges)
 
 Covariates partialled out from both predictor and DV
 -----------------------------------------------------
@@ -71,49 +70,23 @@ except Exception:
 # Constants
 # ---------------------------------------------------------------------------
 PREDICTORS = [
-    ("svg_z_inter_dec", "Decoding SVG (interactional)"),
-    ("svg_z_all_dec", "Decoding SVG (all-edges)"),
+    ("svg_z_dec", "Decoding SVG (core)"),
 ]
 
 COVARIATES = ["n_fixations_dec", "aoi_prop_dec", "mean_salience_dec"]
 
-# Four figure specs: (filename_suffix, [(dv_col, dv_label, colour), ...])
+# Single combined figure: relational + objects side by side
 FIGURES = [
     (
-        "relational_split",
-        "Action vs Spatial relational recall — decoding scanpath",
-        [
-            ("n_action_relation_correct", "Action relation\ncorrect", "#084594"),
-            ("n_spatial_relation_correct", "Spatial relation\ncorrect", "#2171b5"),
-        ],
-    ),
-    (
-        "relational_combined",
-        "Relational recall (combined) — decoding scanpath",
+        "combined",
+        "Decoding scanpath → memory",
         [
             (
                 "n_relational_correct",
                 "Relational correct\n(action + spatial)",
                 "#084594",
             ),
-        ],
-    ),
-    (
-        "objects_combined",
-        "Object recall (identity + features) — decoding scanpath",
-        [
             ("n_objects_correct", "Objects correct\n(identity + attribute)", "#a63603"),
-        ],
-    ),
-    (
-        "objects_identity",
-        "Object identity recall only — decoding scanpath",
-        [
-            (
-                "n_object_identity_correct",
-                "Object identity\ncorrect (no features)",
-                "#d94801",
-            ),
         ],
     ),
 ]
@@ -133,8 +106,7 @@ def _load(features_path: Path, scores_path: Path) -> pd.DataFrame:
     dec = features[features["Phase"] == "decoding"].copy()
     dec = dec.rename(
         columns={
-            "svg_z_inter": "svg_z_inter_dec",
-            "svg_z_all": "svg_z_all_dec",
+            "svg_z": "svg_z_dec",
             "n_fixations": "n_fixations_dec",
             "aoi_prop": "aoi_prop_dec",
             "mean_salience": "mean_salience_dec",

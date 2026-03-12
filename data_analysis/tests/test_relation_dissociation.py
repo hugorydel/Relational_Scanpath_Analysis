@@ -19,7 +19,7 @@ spatial score — the two rows per trial are not independent.
 The focal term is svg_pred:relation_type. A significant positive coefficient
 means the SVG → memory slope is steeper for spatial than action relations.
 
-Run for both svg_z_inter_enc and svg_z_all_enc separately.
+Run for svg_z_enc (core: interactional + spatial + functional edges).
 
 Output
 ------
@@ -72,8 +72,7 @@ except Exception:
 # Constants
 # ---------------------------------------------------------------------------
 SVG_PREDICTORS = [
-    ("svg_z_inter_enc", "Encoding SVG (interactional)"),
-    ("svg_z_all_enc", "Encoding SVG (all-edges)"),
+    ("svg_z_enc", "Encoding SVG (core)"),
 ]
 
 COVARIATES = ["n_fixations_enc", "aoi_prop_enc", "mean_salience_enc"]
@@ -98,8 +97,7 @@ def _load(features_path: Path, scores_path: Path) -> pd.DataFrame:
     enc = features[features["Phase"] == "encoding"].copy()
     enc = enc.rename(
         columns={
-            "svg_z_inter": "svg_z_inter_enc",
-            "svg_z_all": "svg_z_all_enc",
+            "svg_z": "svg_z_enc",
             "n_fixations": "n_fixations_enc",
             "aoi_prop": "aoi_prop_enc",
             "mean_salience": "mean_salience_enc",
@@ -214,7 +212,7 @@ def _fit_interaction(long: pd.DataFrame, svg_col: str) -> dict:
 
     return {
         "result": result,
-        "svg_main": _extract(f"{svg_z}]"),
+        "svg_main": _extract(svg_z),
         "type_main": _extract("relation_type"),
         "interaction": _extract(f"{svg_z}:relation_type"),
         "n_obs": int(result.nobs),

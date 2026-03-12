@@ -58,10 +58,8 @@ except Exception:
 # Constants
 # ---------------------------------------------------------------------------
 CONDITIONS = [
-    ("encoding", "svg_z_inter", "Encoding\nSVG inter", "#2166ac"),
-    ("encoding", "svg_z_all", "Encoding\nSVG all", "#74add1"),
-    ("decoding", "svg_z_inter", "Decoding\nSVG inter", "#d6604d"),
-    ("decoding", "svg_z_all", "Decoding\nSVG all", "#f4a582"),
+    ("encoding", "svg_z", "Encoding\nSVG (core)", "#2166ac"),
+    ("decoding", "svg_z", "Decoding\nSVG (core)", "#d6604d"),
 ]
 
 # ---------------------------------------------------------------------------

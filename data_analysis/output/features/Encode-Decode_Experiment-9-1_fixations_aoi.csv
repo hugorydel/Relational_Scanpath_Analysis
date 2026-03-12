@@ -1,0 +1,1216 @@
+SubjectID,StimID,CueText,Phase,TrialIndex,TrialID,FixStart_ms,FixEnd_ms,Duration_ms,GazeX,GazeY,ImgX,ImgY,ObjectID,ObjectName,AssignmentMethod,ProximityDist_px,SalienceAtFixation
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,4,386,382,762.7,665.9,406.77,473.53,29.0,"destroyed pumpkin with bites taken out, on the ground",polygon,,0.225755
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,406,692,286,698.3,718.6,372.43,511.0,25.0,pumpkin in smashed pieces on the ground.,polygon,,0.23308
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,728,872,144,954.1,664.7,508.85,472.68,2.0,pumpkin in broken halves.,polygon,,0.534129
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,910,1084,174,692.7,590.6,369.44,419.98,3.0,"large black bear on the left, eating a pumpkin",polygon,,0.230403
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,1118,1346,228,729.1,766.9,388.85,545.35,25.0,pumpkin in smashed pieces on the ground.,polygon,,0.369287
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,1368,1872,504,706.4,845.1,376.75,600.96,3.0,"large black bear on the left, eating a pumpkin",polygon,,0.046722
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,1920,2474,554,1052.8,766.8,561.49,545.28,6.0,pumpkin in stemmed halves.,polygon,,0.170573
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,2520,2670,150,675.8,723.4,360.43,514.42,29.0,"destroyed pumpkin with bites taken out, on the ground",polygon,,0.243557
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,2698,2840,142,678.3,848.6,361.76,603.45,3.0,"large black bear on the left, eating a pumpkin",polygon,,0.047076
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,2900,3288,388,601.2,507.9,320.64,361.17,0.0,"two bear heads, one with a black nose and another with a tan snout, near a pumpkin",polygon,,0.025322
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,3338,3506,168,1025.8,621.7,547.09,442.1,15.0,nose in black bear's mouth.,polygon,,0.341383
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,3534,3718,184,1081.8,710.4,576.96,505.17,,,none,,0.143819
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,3736,4030,294,1085.0,758.1,578.67,539.09,,,none,,0.160826
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,4046,4252,206,1027.7,789.4,548.11,561.35,6.0,pumpkin in stemmed halves.,polygon,,0.225534
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,4298,4588,290,674.5,841.1,359.73,598.12,3.0,"large black bear on the left, eating a pumpkin",polygon,,0.049682
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,1,1,4614,4920,306,755.5,919.1,402.93,653.58,3.0,"large black bear on the left, eating a pumpkin",polygon,,0.035794
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,5082,5346,264,804.1,699.3,428.85,497.28,32.0,hand of the man on the left holding a donut,polygon,,0.445794
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,5374,5590,216,876.3,617.8,467.36,439.32,33.0,smiling woman in a red shirt with a donut,polygon,,0.056924
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,5640,5948,308,484.6,770.0,258.45,547.56,20.0,man in a blue shirt eating a donut,polygon,,0.00963
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,5964,6184,220,477.2,801.9,254.51,570.24,20.0,man in a blue shirt eating a donut,polygon,,0.004368
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,6528,6696,168,1338.5,792.6,713.87,563.63,30.0,man in a gray shirt eating a doughnut,polygon,,0.037992
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,6720,7090,370,1319.5,686.0,703.73,487.82,30.0,man in a gray shirt eating a doughnut,polygon,,0.044807
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,7106,7252,146,1277.8,749.1,681.49,532.69,30.0,man in a gray shirt eating a doughnut,polygon,,0.021412
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,7306,7456,150,599.4,793.1,319.68,563.98,20.0,man in a blue shirt eating a donut,polygon,,0.037799
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,7484,7620,136,470.2,781.0,250.77,555.38,20.0,man in a blue shirt eating a donut,polygon,,0.006839
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,7682,8018,336,868.2,594.5,463.04,422.76,33.0,smiling woman in a red shirt with a donut,polygon,,0.05445
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,8046,8330,284,871.6,501.0,464.85,356.27,33.0,smiling woman in a red shirt with a donut,polygon,,0.09325
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,8360,8540,180,906.7,622.6,483.57,442.74,33.0,smiling woman in a red shirt with a donut,polygon,,0.073552
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,8568,8818,250,941.6,505.7,502.19,359.61,33.0,smiling woman in a red shirt with a donut,polygon,,0.258553
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,8864,9050,186,1292.4,569.0,689.28,404.62,4.0,hand of the woman holding a donut,polygon,,0.258205
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,9138,9346,208,355.3,641.6,189.49,456.25,20.0,man in a blue shirt eating a donut,polygon,,0.049217
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,9424,9718,294,832.7,510.9,444.11,363.31,33.0,smiling woman in a red shirt with a donut,polygon,,0.031419
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,9742,10032,290,913.9,478.1,487.41,339.98,33.0,smiling woman in a red shirt with a donut,polygon,,0.1287
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,2,2,10070,10150,80,1038.8,590.0,554.03,419.56,33.0,smiling woman in a red shirt with a donut,polygon,,0.297078
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,10158,10396,238,781.9,678.9,417.01,482.77,12.0,"right elephant with shirtless man on its back, eating grass",polygon,,0.051273
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,10426,10674,248,942.5,591.6,502.67,420.69,12.0,"right elephant with shirtless man on its back, eating grass",polygon,,0.035903
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,10730,10918,188,262.9,773.5,140.21,550.04,10.0,left elephant with man standing on its back,polygon,,0.023502
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,10932,11232,300,222.7,785.1,118.77,558.29,3.0,curled trunk of left elephant,polygon,,0.033957
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,11278,11512,234,3.3,1030.1,1.76,732.52,,,none,,0.017746
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,11622,11800,178,1353.2,799.0,721.71,568.18,12.0,"right elephant with shirtless man on its back, eating grass",polygon,,0.02302
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,11824,12232,408,1476.5,836.0,787.47,594.49,,,none,,0.01704
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,12274,12420,146,1119.1,770.7,596.85,548.05,16.0,green water in river,polygon,,0.011829
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,12470,12604,134,910.2,583.3,485.44,414.79,12.0,"right elephant with shirtless man on its back, eating grass",polygon,,0.037245
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,12624,13150,526,842.5,648.2,449.33,460.94,12.0,"right elephant with shirtless man on its back, eating grass",polygon,,0.015229
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,13174,13352,178,887.4,570.3,473.28,405.55,12.0,"right elephant with shirtless man on its back, eating grass",polygon,,0.073704
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,13390,13506,116,988.6,347.7,527.25,247.25,16.0,green water in river,polygon,,0.036459
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,13518,13666,148,991.6,324.9,528.85,231.04,16.0,green water in river,polygon,,0.024392
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,13728,14014,286,145.8,472.4,77.76,335.93,16.0,green water in river,polygon,,0.029812
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,14050,14226,176,134.4,643.3,71.68,457.46,,,none,,0.13626
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,14270,14472,202,166.1,864.8,88.59,614.97,3.0,curled trunk of left elephant,polygon,,0.193305
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,14940,15142,202,1244.4,811.4,663.68,577.0,16.0,green water in river,polygon,,0.017945
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,3,3,15178,15230,52,1456.0,854.9,776.53,607.93,16.0,green water in river,polygon,,0.008327
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,15238,15466,228,782.0,668.8,417.07,475.59,8.0,"polar bear with soft, white fur, swimming in water",polygon,,0.055148
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,15502,15690,188,583.9,738.4,311.41,525.08,15.0,hair in feathered blonde color on a person's head.,polygon,,0.048045
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,15736,15880,144,864.3,942.6,460.96,670.29,14.0,camera in black color,polygon,,0.175307
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,15916,16042,126,883.4,747.2,471.15,531.34,8.0,"polar bear with soft, white fur, swimming in water",polygon,,0.00765
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,16086,16474,388,997.3,1061.4,531.89,754.77,3.0,"person with blonde hair, photographer, taking pictures",polygon,,0.407067
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,16536,16926,390,874.5,567.8,466.4,403.77,16.0,black rail in front of polar bear,polygon,,0.18847
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,16944,17224,280,849.2,493.5,452.91,350.93,,,none,,0.150786
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,17240,17570,330,864.0,558.0,460.8,396.8,16.0,black rail in front of polar bear,polygon,,0.153436
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,17602,17852,250,929.7,399.4,495.84,284.02,10.0,head of polar bear above water,polygon,,0.269733
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,17874,18032,158,851.2,443.7,453.97,315.52,,,none,,0.125053
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,18078,18242,164,501.8,731.3,267.63,520.04,15.0,hair in feathered blonde color on a person's head.,polygon,,0.07125
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,18324,18496,172,665.5,1064.0,354.93,756.62,14.0,camera in black color,polygon,,0.040585
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,18804,19040,236,488.7,738.4,260.64,525.08,15.0,hair in feathered blonde color on a person's head.,polygon,,0.074627
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,19050,19382,332,526.6,707.9,280.85,503.4,15.0,hair in feathered blonde color on a person's head.,polygon,,0.04828
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,19428,19940,512,875.8,701.7,467.09,498.99,8.0,"polar bear with soft, white fur, swimming in water",polygon,,0.029702
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,4,4,19982,20226,244,941.1,977.9,501.92,695.4,14.0,camera in black color,polygon,,0.171738
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,20322,20604,282,816.9,678.4,435.68,482.42,14.0,man on left sitting on couch,polygon,,0.06252
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,20640,20848,208,1068.9,571.7,570.08,406.54,6.0,right hand of man on right holding a wine glass,polygon,,0.418866
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,20898,21106,208,541.3,651.4,288.69,463.22,5.0,grey shirt worn by man on left,polygon,,0.007516
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,21132,21312,180,457.7,609.2,244.11,433.21,5.0,grey shirt worn by man on left,polygon,,0.010996
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,21360,21498,138,72.1,745.0,38.45,529.78,,,none,,0.070605
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,21514,21628,114,54.5,779.9,29.07,554.6,,,none,,0.056517
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,21670,21808,138,404.8,652.2,215.89,463.79,14.0,man on left sitting on couch,polygon,,0.035839
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,21854,22034,180,50.6,780.7,26.99,555.16,,,none,,0.056339
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,22080,22250,170,443.0,588.9,236.27,418.77,5.0,grey shirt worn by man on left,polygon,,0.012506
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,22270,22484,214,513.0,643.8,273.6,457.81,5.0,grey shirt worn by man on left,polygon,,0.007525
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,22512,22638,126,423.2,544.2,225.71,386.99,5.0,grey shirt worn by man on left,polygon,,0.058054
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,22670,22804,134,238.0,509.4,126.93,362.24,,,none,,0.207271
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,22862,23066,204,1051.6,473.3,560.85,336.57,15.0,white window blinds behind the men,polygon,,0.127924
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,23094,23332,238,1028.4,590.9,548.48,420.2,6.0,right hand of man on right holding a wine glass,polygon,,0.309584
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,23344,23470,126,1016.6,619.9,542.19,440.82,23.0,two men sitting on couch drinking wine,polygon,,0.493137
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,23522,23792,270,494.2,618.7,263.57,439.96,5.0,grey shirt worn by man on left,polygon,,0.009679
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,23850,24088,238,1105.7,793.6,589.71,564.34,19.0,man on right wearing black fleece,polygon,,0.08399
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,24102,24282,180,1133.8,765.6,604.69,544.43,19.0,man on right wearing black fleece,polygon,,0.04179
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,24358,24636,278,1096.1,478.8,584.59,340.48,6.0,right hand of man on right holding a wine glass,polygon,,0.286391
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,24686,24708,22,765.9,987.9,408.48,702.51,9.0,brown couch,polygon,,0.043103
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,24722,24786,64,790.3,929.6,421.49,661.05,9.0,brown couch,polygon,,0.022789
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,24836,24956,120,416.4,881.3,222.08,626.7,1.0,blue jeans worn by man on left,polygon,,0.01219
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,25016,25162,146,476.1,551.7,253.92,392.32,5.0,grey shirt worn by man on left,polygon,,0.017069
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,5,5,25184,25392,208,417.6,504.5,222.72,358.76,5.0,grey shirt worn by man on left,polygon,,0.268231
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,25400,25498,98,759.7,667.7,405.17,474.81,,,none,,0.252683
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,25542,25632,90,491.9,667.3,262.35,474.52,4.0,green and brown grass,polygon,,0.007839
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,25672,25856,184,810.5,701.7,432.27,498.99,10.0,tan dog playing and looking at frisbee,polygon,,0.31192
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,25878,26404,526,749.9,778.7,399.95,553.74,10.0,tan dog playing and looking at frisbee,polygon,,0.224858
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,26430,26600,170,708.3,863.2,377.76,613.83,10.0,tan dog playing and looking at frisbee,polygon,,0.270794
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,26624,26992,368,668.4,988.1,356.48,702.65,10.0,tan dog playing and looking at frisbee,polygon,,0.038751
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,27048,27280,232,1288.1,1075.3,686.99,764.66,5.0,black and white sneakers worn by a person,polygon,,0.161474
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,28020,28162,142,1365.6,375.5,728.32,267.02,,,none,,0.053906
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,28208,28324,116,1544.6,181.8,823.79,129.28,15.0,light gray shirt worn by a person,polygon,,0.169494
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,28334,28496,162,1581.5,160.9,843.47,114.42,15.0,light gray shirt worn by a person,polygon,,0.025611
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,28558,28824,266,890.4,595.2,474.88,423.25,10.0,tan dog playing and looking at frisbee,polygon,,0.117865
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,28854,28994,140,774.4,692.0,413.01,492.09,10.0,tan dog playing and looking at frisbee,polygon,,0.268917
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,29100,29310,210,604.8,237.1,322.56,168.6,0.0,fence in the background,polygon,,0.009021
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,29342,29492,150,407.5,220.0,217.33,156.44,0.0,fence in the background,polygon,,0.003665
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,29546,29566,20,416.4,800.7,222.08,569.39,4.0,green and brown grass,polygon,,0.022742
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,29580,29662,82,408.7,729.0,217.97,518.4,4.0,green and brown grass,polygon,,0.009521
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,29704,29910,206,692.4,759.2,369.28,539.88,4.0,green and brown grass,polygon,,0.150598
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,29920,30218,298,718.5,721.1,383.2,512.78,,,none,,0.195441
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,6,6,30252,30476,224,871.3,617.0,464.69,438.76,10.0,tan dog playing and looking at frisbee,polygon,,0.149437
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,30484,30722,238,826.9,683.3,441.01,485.9,32.0,hand of the man on the left holding a donut,polygon,,0.426496
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,30748,30870,122,713.6,673.3,380.59,478.79,20.0,man in a blue shirt eating a donut,polygon,,0.340598
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,30906,31128,222,487.7,796.2,260.11,566.19,20.0,man in a blue shirt eating a donut,polygon,,0.004862
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,31422,31564,142,1139.2,727.8,607.57,517.55,3.0,red shirt with black writing,polygon,,0.035271
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,31594,32264,670,1342.3,717.1,715.89,509.94,30.0,man in a gray shirt eating a doughnut,polygon,,0.079676
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,32316,32564,248,914.0,565.2,487.47,401.92,33.0,smiling woman in a red shirt with a donut,polygon,,0.208095
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,32578,32728,150,857.2,540.9,457.17,384.64,33.0,smiling woman in a red shirt with a donut,polygon,,0.047115
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,32756,32942,186,822.7,648.3,438.77,461.01,33.0,smiling woman in a red shirt with a donut,polygon,,0.18144
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,32992,33298,306,449.8,789.1,239.89,561.14,20.0,man in a blue shirt eating a donut,polygon,,0.007114
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,33576,33690,114,1365.5,1044.2,728.27,742.54,30.0,man in a gray shirt eating a doughnut,polygon,,0.047795
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,33726,33908,182,1593.5,1063.9,849.87,756.55,0.0,gray shirt with a black cat design,polygon,,0.124225
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,33994,34122,128,1121.9,621.8,598.35,442.17,33.0,smiling woman in a red shirt with a donut,polygon,,0.115103
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,34152,34174,22,923.9,636.6,492.75,452.69,33.0,smiling woman in a red shirt with a donut,polygon,,0.093394
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,34234,34352,118,1531.9,1017.6,817.01,723.63,30.0,man in a gray shirt eating a doughnut,polygon,,0.044334
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,34374,34680,306,1576.1,1068.7,840.59,759.96,0.0,gray shirt with a black cat design,polygon,,0.067363
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,34764,34910,146,1351.5,539.5,720.8,383.64,33.0,smiling woman in a red shirt with a donut,polygon,,0.149978
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,34944,35018,74,1238.5,662.3,660.53,470.97,4.0,hand of the woman holding a donut,polygon,,0.017631
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,35066,35362,296,851.1,519.4,453.92,369.35,33.0,smiling woman in a red shirt with a donut,polygon,,0.041919
+Encode-Decode_Experiment-9-1,2370664,donuts,encoding,7,7,35412,35554,142,396.0,682.2,211.2,485.12,20.0,man in a blue shirt eating a donut,polygon,,0.027594
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,35562,35824,262,828.6,673.0,441.92,478.58,13.0,"large hoop earrings in silvery color, worn by the woman.",polygon,,0.151558
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,35844,35866,22,864.9,676.0,461.28,480.71,14.0,"woman holding a baby, wearing a black hat and hoop earrings, smiling.",polygon,,0.180687
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,35912,36088,176,470.8,746.2,251.09,530.63,14.0,"woman holding a baby, wearing a black hat and hoop earrings, smiling.",polygon,,0.026712
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,36110,36590,480,376.1,756.7,200.59,538.1,7.0,"jacket in blue, dark blue, and pink, worn by the woman.",polygon,,0.04091
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,36648,36882,234,956.6,701.3,510.19,498.7,,,none,,0.065997
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,36894,37370,476,991.8,711.2,528.96,505.74,,,none,,0.033018
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,37402,37542,140,1025.5,557.9,546.93,396.73,16.0,"head of a baby with a hood on, looking towards the camera.",polygon,,0.100107
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,37576,37800,224,1020.0,388.2,544.0,276.05,2.0,"open umbrella with pink, purple, multicolored, and yellow patterns, held above the woman and child.",polygon,,0.138622
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,37826,37966,140,1131.8,337.0,603.63,239.64,3.0,"spokes of the umbrella, part of the umbrella structure, visible in the center.",polygon,,0.259869
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,38002,38210,208,1371.6,384.5,731.52,273.42,2.0,"open umbrella with pink, purple, multicolored, and yellow patterns, held above the woman and child.",polygon,,0.233891
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,38232,38530,298,1396.0,462.5,744.53,328.89,2.0,"open umbrella with pink, purple, multicolored, and yellow patterns, held above the woman and child.",polygon,,0.121118
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,38590,38718,128,1395.4,827.9,744.21,588.73,2.0,"open umbrella with pink, purple, multicolored, and yellow patterns, held above the woman and child.",polygon,,0.107634
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,38774,38932,158,908.0,764.8,484.27,543.86,14.0,"woman holding a baby, wearing a black hat and hoop earrings, smiling.",polygon,,0.04535
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,38988,39172,184,369.7,737.6,197.17,524.52,4.0,"head of a woman with black hair and a black hat, smiling, located on the left side.",polygon,,0.060193
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,39196,39372,176,305.6,821.0,162.99,583.82,7.0,"jacket in blue, dark blue, and pink, worn by the woman.",polygon,,0.01589
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,39386,39760,374,312.2,860.6,166.51,611.98,7.0,"jacket in blue, dark blue, and pink, worn by the woman.",polygon,,0.009601
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,39798,40044,246,581.8,794.9,310.29,565.26,14.0,"woman holding a baby, wearing a black hat and hoop earrings, smiling.",polygon,,0.028594
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,40052,40266,214,610.4,794.1,325.55,564.69,14.0,"woman holding a baby, wearing a black hat and hoop earrings, smiling.",polygon,,0.033109
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,40288,40468,180,579.3,727.3,308.96,517.19,14.0,"woman holding a baby, wearing a black hat and hoop earrings, smiling.",polygon,,0.029164
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,8,8,40512,40632,120,953.7,686.3,508.64,488.04,,,none,,0.078136
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,40640,40664,24,851.6,706.3,454.19,502.26,15.0,building wall.,polygon,,0.107637
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,40684,40914,230,770.8,677.9,411.09,482.06,15.0,building wall.,polygon,,0.075108
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,40958,41134,176,1058.8,586.1,564.69,416.78,15.0,building wall.,polygon,,0.363217
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,41190,41420,230,553.8,483.8,295.36,344.04,13.0,"rod in iron wall, part of the building structure.",polygon,,0.075731
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,41442,41744,302,537.6,419.7,286.72,298.45,13.0,"rod in iron wall, part of the building structure.",polygon,,0.26849
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,41768,42054,286,417.2,497.1,222.51,353.49,15.0,building wall.,polygon,,0.043339
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,42072,42358,286,489.8,496.5,261.23,353.07,15.0,building wall.,polygon,,0.062216
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,42372,42804,432,556.3,487.8,296.69,346.88,13.0,"rod in iron wall, part of the building structure.",polygon,,0.071299
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,42854,43086,232,991.0,450.2,528.53,320.14,15.0,building wall.,polygon,,0.038183
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,43108,43432,324,1062.4,494.1,566.61,351.36,15.0,building wall.,polygon,,0.24143
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,43460,43696,236,1110.3,600.8,592.16,427.24,15.0,building wall.,polygon,,0.301841
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,43722,44134,412,1013.7,538.5,540.64,382.93,15.0,building wall.,polygon,,0.254377
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,44154,44584,430,1081.8,601.4,576.96,427.66,15.0,building wall.,polygon,,0.310101
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,44604,44910,306,1158.4,646.5,617.81,459.73,15.0,building wall.,polygon,,0.074116
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,44938,45166,228,1002.7,639.0,534.77,454.4,15.0,building wall.,polygon,,0.034327
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,45190,45332,142,1138.8,623.5,607.36,443.38,15.0,building wall.,polygon,,0.107208
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,45390,45600,210,516.1,487.7,275.25,346.81,15.0,building wall.,polygon,,0.057379
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,9,9,45622,45712,90,489.0,395.3,260.8,281.1,2.0,"bike in red and black, airborne with rider performing a stunt",polygon,,0.337766
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,45720,45974,254,883.9,677.1,471.41,481.49,11.0,"toddler brushing teeth, wearing a pink shirt in the center",polygon,,0.100121
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,46008,46144,136,770.2,821.3,410.77,584.04,11.0,"toddler brushing teeth, wearing a pink shirt in the center",polygon,,0.102997
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,46164,46252,88,755.2,879.4,402.77,625.35,13.0,"shirt in pink, white, button up style",polygon,,0.021139
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,46310,46458,148,132.1,695.7,70.45,494.72,4.0,"shirt in red black, striped, yellow",polygon,,0.598759
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,46472,46642,170,93.1,706.2,49.65,502.19,0.0,"woman brushing teeth, wearing a striped shirt on the left",polygon,,0.339129
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,46678,46880,202,94.1,500.9,50.19,356.2,0.0,"woman brushing teeth, wearing a striped shirt on the left",polygon,,0.032269
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,46914,47122,208,95.3,690.3,50.83,490.88,0.0,"woman brushing teeth, wearing a striped shirt on the left",polygon,,0.44056
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,47132,47482,350,61.1,704.7,32.59,501.12,0.0,"woman brushing teeth, wearing a striped shirt on the left",polygon,,0.236766
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,47522,47652,130,190.2,439.4,101.44,312.46,0.0,"woman brushing teeth, wearing a striped shirt on the left",polygon,,0.040513
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,47704,47830,126,635.2,781.0,338.77,555.38,11.0,"toddler brushing teeth, wearing a pink shirt in the center",polygon,,0.148033
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,47848,48002,154,711.9,804.4,379.68,572.02,11.0,"toddler brushing teeth, wearing a pink shirt in the center",polygon,,0.174929
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,48024,48130,106,763.0,874.4,406.93,621.8,13.0,"shirt in pink, white, button up style",polygon,,0.019905
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,48180,48396,216,1186.1,628.7,632.59,447.08,20.0,family in brushing their teeth,polygon,,0.075334
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,48428,48874,446,1108.6,461.9,591.25,328.46,22.0,"man brushing teeth, wearing a purple shirt on the right",polygon,,0.245599
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,48900,49098,198,981.9,575.5,523.68,409.24,2.0,hair in dark colored waves on a young boy.,polygon,,0.135087
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,49132,49552,420,1103.7,473.3,588.64,336.57,22.0,"man brushing teeth, wearing a purple shirt on the right",polygon,,0.243184
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,49594,49968,374,1235.2,667.1,658.77,474.38,20.0,family in brushing their teeth,polygon,,0.053756
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,50026,50280,254,700.6,829.5,373.65,589.87,11.0,"toddler brushing teeth, wearing a pink shirt in the center",polygon,,0.133644
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,50298,50484,186,749.8,901.9,399.89,641.35,13.0,"shirt in pink, white, button up style",polygon,,0.031317
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,50504,50676,172,696.1,808.5,371.25,574.93,11.0,"toddler brushing teeth, wearing a pink shirt in the center",polygon,,0.187877
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,10,10,50762,50794,32,123.1,489.9,65.65,348.37,0.0,"woman brushing teeth, wearing a striped shirt on the left",polygon,,0.045514
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,50802,51010,208,827.6,704.4,441.39,500.91,17.0,small wooden boat floating on the water,polygon,,0.204349
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,51038,51192,154,688.0,654.2,366.93,465.21,7.0,blue and white jacket worn by the toddler,polygon,,0.323403
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,51212,51430,218,612.9,700.0,326.88,497.78,2.0,woman wearing a conical hat holding a child,polygon,,0.273152
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,51480,51892,412,1038.2,918.2,553.71,652.94,17.0,small wooden boat floating on the water,polygon,,0.093699
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,51918,52064,146,1189.8,884.6,634.56,629.05,,,none,,0.134929
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,52132,52432,300,298.1,1054.8,158.99,750.08,13.0,murky brown water,polygon,,0.036637
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,52450,52592,142,280.7,966.3,149.71,687.15,13.0,murky brown water,polygon,,0.027291
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,52640,52778,138,550.0,624.3,293.33,443.95,2.0,woman wearing a conical hat holding a child,polygon,,0.230827
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,52790,53038,248,587.0,628.1,313.07,446.65,2.0,woman wearing a conical hat holding a child,polygon,,0.242861
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,53064,53144,80,677.6,474.4,361.39,337.35,3.0,hair of the woman at the back,polygon,,0.117854
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,53196,53430,234,415.0,896.4,221.33,637.44,17.0,small wooden boat floating on the water,polygon,,0.097533
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,53448,53572,124,340.0,922.3,181.33,655.86,13.0,murky brown water,polygon,,0.076438
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,53594,53834,240,393.5,991.2,209.87,704.85,13.0,murky brown water,polygon,,0.016049
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,53862,53978,116,546.4,905.2,291.41,643.7,17.0,small wooden boat floating on the water,polygon,,0.055369
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,54024,54046,22,624.7,462.5,333.17,328.89,3.0,hair of the woman at the back,polygon,,0.141276
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,54056,54158,102,626.0,542.7,333.87,385.92,2.0,woman wearing a conical hat holding a child,polygon,,0.702083
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,54170,54350,180,599.4,574.3,319.68,408.39,2.0,woman wearing a conical hat holding a child,polygon,,0.737878
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,54376,54580,204,484.4,550.7,258.35,391.61,15.0,woman wearing a hat at the front,polygon,,0.278312
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,54618,55016,398,694.3,436.1,370.29,310.12,3.0,hair of the woman at the back,polygon,,0.082369
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,55056,55688,632,930.4,279.6,496.21,198.83,14.0,large cream conical hat,polygon,,0.968978
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,55746,55816,70,352.5,412.3,188.0,293.19,5.0,long green grass in the marsh,polygon,,0.01819
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,11,11,55842,55874,32,517.6,432.3,276.05,307.41,5.0,long green grass in the marsh,polygon,,0.110046
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,55882,56218,336,799.9,698.0,426.61,496.36,,,none,,0.206472
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,56236,56370,134,832.6,740.3,444.05,526.44,11.0,"man in riding gear, including a hat and boots, riding a horse along the beach.",polygon,,0.344539
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,56416,56756,340,1202.4,733.0,641.28,521.24,6.0,two horses walking side by side along the beach.,proximity,13.43,0.410944
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,56798,57064,266,1458.6,806.3,777.92,573.37,,,none,,0.442154
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,57118,57354,236,862.5,817.8,460.0,581.55,,,none,,0.215345
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,57380,57556,176,723.3,874.1,385.76,621.58,,,none,,0.196023
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,57596,57730,134,500.6,780.0,266.99,554.67,14.0,water in the background,polygon,,0.058674
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,57784,57986,202,1088.2,754.4,580.37,536.46,15.0,white and brown horse being ridden by a man.,polygon,,0.552878
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,58030,58366,336,718.6,633.7,383.25,450.63,4.0,"reins held by a man, used to control the horse.",polygon,,0.455706
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,58420,58560,140,1321.3,567.8,704.69,403.77,5.0,dark brown and white horse being ridden by a man.,polygon,,0.504291
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,58570,58892,322,1340.3,580.3,714.83,412.66,5.0,dark brown and white horse being ridden by a man.,polygon,,0.443226
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,58928,59184,256,1237.8,736.7,660.16,523.88,6.0,two horses walking side by side along the beach.,proximity,29.14,0.438802
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,59210,59426,216,1368.8,761.3,730.03,541.37,5.0,dark brown and white horse being ridden by a man.,polygon,,0.327826
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,59446,59636,190,1399.7,818.4,746.51,581.97,5.0,dark brown and white horse being ridden by a man.,polygon,,0.557181
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,59664,59822,158,1584.1,830.0,844.85,590.22,,,none,,0.279929
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,59854,60108,254,1358.8,824.3,724.69,586.17,,,none,,0.720336
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,60168,60376,208,599.5,805.8,319.73,573.01,14.0,water in the background,polygon,,0.076101
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,60404,60624,220,790.9,837.3,421.81,595.41,,,none,,0.200413
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,60664,60820,156,463.7,777.1,247.31,552.6,14.0,water in the background,polygon,,0.055055
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,12,12,60832,60948,116,425.4,794.4,226.88,564.91,14.0,water in the background,polygon,,0.074149
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,60956,61082,126,793.1,712.3,422.99,506.52,6.0,jeans worn by a man.,polygon,,0.033819
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,61102,61272,170,869.2,666.5,463.57,473.96,26.0,"man standing on a ladder, wearing a black jacket and pants.",polygon,,0.054143
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,61308,61502,194,794.7,549.4,423.84,390.68,18.0,men working together to adjust a clock,polygon,,0.365277
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,61516,61770,254,826.0,516.8,440.53,367.5,16.0,"bracket in clock's, for wall mounting.",polygon,,0.390301
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,61812,62054,242,575.2,438.3,306.77,311.68,27.0,jacket worn by a man.,polygon,,0.126279
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,62072,62254,182,527.7,407.2,281.44,289.56,27.0,jacket worn by a man.,polygon,,0.160775
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,62286,62598,312,733.4,408.3,391.15,290.35,27.0,jacket worn by a man.,polygon,,0.091556
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,62650,62968,318,707.8,763.1,377.49,542.65,6.0,jeans worn by a man.,proximity,25.84,0.013986
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,63000,63360,360,900.0,857.9,480.0,610.06,14.0,"legs of a man, visible from the back.",polygon,,0.087193
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,63410,63628,218,777.6,587.4,414.72,417.71,18.0,men working together to adjust a clock,polygon,,0.167402
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,63654,63958,304,730.2,733.0,389.44,521.24,6.0,jeans worn by a man.,proximity,16.93,0.015723
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,63998,64298,300,561.0,922.4,299.2,655.93,2.0,building with a balcony and a clock,polygon,,0.205436
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,64344,64622,278,914.8,970.7,487.89,690.28,26.0,"man standing on a ladder, wearing a black jacket and pants.",polygon,,0.248679
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,64710,64884,174,880.3,517.7,469.49,368.14,1.0,large round analog clock with white and black colors,polygon,,0.176354
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,64908,65172,264,791.4,480.4,422.08,341.62,33.0,"man in a grey jacket and jeans, standing on a ladder, holding a camera",polygon,,0.270343
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,65228,65544,316,1340.3,681.9,714.83,484.91,24.0,building with a balcony and windows.,polygon,,0.177089
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,65600,65864,264,788.7,616.4,420.64,438.33,18.0,men working together to adjust a clock,polygon,,0.046501
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,13,13,65888,66026,138,699.6,534.4,373.12,380.02,3.0,"man in a grey jacket and jeans, standing on a ladder, adjusting the clock",polygon,,0.214703
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,66034,66294,260,725.3,715.5,386.83,508.8,2.0,plain wall behind the conveyor belt,polygon,,0.047223
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,66332,66538,206,938.3,677.8,500.43,481.99,17.0,woman in uniform interacting with luggage,polygon,,0.046293
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,66548,66714,166,957.5,652.2,510.67,463.79,17.0,woman in uniform interacting with luggage,polygon,,0.050532
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,66750,66920,170,1010.6,836.0,538.99,594.49,,,none,,0.219921
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,66950,67246,296,809.5,846.2,431.73,601.74,,,none,,0.033508
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,67264,67514,250,742.9,849.2,396.21,603.88,,,none,,0.039581
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,67558,67680,122,1070.0,827.8,570.67,588.66,4.0,multicolored striped luggage on conveyor belt,polygon,,0.180537
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,67736,67852,116,433.0,543.8,230.93,386.7,2.0,plain wall behind the conveyor belt,polygon,,0.162235
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,67864,68048,184,404.1,566.8,215.52,403.06,2.0,plain wall behind the conveyor belt,polygon,,0.121142
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,68082,68428,346,145.9,596.8,77.81,424.39,,,none,,0.049273
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,68478,69022,544,285.1,897.8,152.05,638.44,8.0,black and silver conveyor belt,polygon,,0.009905
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,69092,69356,264,910.2,676.9,485.44,481.35,17.0,woman in uniform interacting with luggage,polygon,,0.080792
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,69384,69494,110,861.5,793.7,459.47,564.41,17.0,woman in uniform interacting with luggage,polygon,,0.099573
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,69524,69698,174,1069.2,824.5,570.24,586.31,4.0,multicolored striped luggage on conveyor belt,polygon,,0.189128
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,69742,70106,364,1240.9,551.3,661.81,392.04,29.0,"door in plastic covering, part of the conveyor belt system.",polygon,,0.050164
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,70152,70538,386,936.2,575.4,499.31,409.17,6.0,black uniform worn by woman near conveyor belt,polygon,,0.212356
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,70592,70728,136,412.0,565.1,219.73,401.85,2.0,plain wall behind the conveyor belt,polygon,,0.123142
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,70738,70876,138,395.0,556.4,210.67,395.66,2.0,plain wall behind the conveyor belt,polygon,,0.119872
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,14,14,70914,71114,200,133.2,584.5,71.04,415.64,,,none,,0.03697
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,71122,71462,340,835.2,696.0,445.44,494.93,1.0,"two young soccer players in uniforms, actively engaged in a game",polygon,,0.05961
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,71504,71674,170,645.8,878.8,344.43,624.92,3.0,green grass soccer field,polygon,,0.01973
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,71702,71944,242,721.4,994.1,384.75,706.92,3.0,green grass soccer field,polygon,,0.027433
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,71972,72204,232,614.3,902.9,327.63,642.06,3.0,green grass soccer field,polygon,,0.011809
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,72256,72382,126,647.3,391.2,345.23,278.19,15.0,white shirt worn by a soccer player,polygon,,0.842099
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,72400,72534,134,671.4,354.2,358.08,251.88,0.0,black number 20 on a white shirt,polygon,,0.788238
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,72568,72720,152,904.0,381.5,482.13,271.29,5.0,blue jersey worn by a soccer player,polygon,,0.17968
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,72732,72916,184,926.1,382.4,493.92,271.93,12.0,brown and black hair,polygon,,0.176401
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,72950,73222,272,1126.7,273.3,600.91,194.35,,,none,,0.083731
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,73288,73310,22,1101.6,1048.3,587.52,745.46,,,none,,0.0054
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,73320,73454,134,1097.3,987.9,585.23,702.51,3.0,green grass soccer field,polygon,,0.019443
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,73486,73808,322,885.3,1001.9,472.16,712.46,3.0,green grass soccer field,polygon,,0.043635
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,73846,74104,258,659.5,998.1,351.73,709.76,3.0,green grass soccer field,polygon,,0.023588
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,74146,74290,144,899.8,781.4,479.89,555.66,1.0,"two young soccer players in uniforms, actively engaged in a game",polygon,,0.123809
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,74334,74508,174,801.4,489.9,427.41,348.37,1.0,"two young soccer players in uniforms, actively engaged in a game",polygon,,0.180376
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,74552,74790,238,514.9,457.8,274.61,325.55,10.0,"white net, part of the soccer goal",polygon,,0.068577
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,74834,74858,24,626.3,820.8,334.03,583.68,3.0,green grass soccer field,polygon,,0.089262
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,74866,74996,130,619.7,777.2,330.51,552.68,8.0,black and white sneakers worn by a soccer player,proximity,22.56,0.214749
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,75036,75268,232,649.9,1019.1,346.61,724.69,,,none,,0.01024
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,75354,75462,108,808.8,427.3,431.36,303.86,21.0,"girl playing soccer, wearing a white shirt with number 20, black shorts, and black socks",polygon,,0.224593
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,75484,75678,194,902.1,376.4,481.12,267.66,5.0,blue jersey worn by a soccer player,polygon,,0.178022
+Encode-Decode_Experiment-9-1,2345035,football,encoding,15,15,75722,76194,472,642.5,290.0,342.67,206.22,22.0,black hair,polygon,,0.381028
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,76202,76458,256,787.7,712.7,420.11,506.81,10.0,"long-sleeved, cartoon-themed shirt worn by baby",polygon,,0.168246
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,76492,76628,136,954.7,624.8,509.17,444.3,15.0,character on front of baby's shirt,polygon,,0.472127
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,76662,76840,178,863.3,427.2,460.43,303.79,11.0,milk inside bottle,polygon,,0.445902
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,76856,77066,210,808.8,432.5,431.36,307.56,6.0,arm of a baby holding a bottle,polygon,,0.314532
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,77088,77356,268,703.9,442.0,375.41,314.31,17.0,white shirt worn by baby,polygon,,0.105546
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,77396,78116,720,830.9,602.3,443.15,428.3,1.0,"baby lying on bed, wearing cartoon-themed shirt and diaper, holding a bottle",polygon,,0.309355
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,78166,78318,152,613.0,968.9,326.93,689.0,2.0,thigh of a baby in diaper,polygon,,0.00588
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,78342,78690,348,494.0,1005.3,263.47,714.88,2.0,thigh of a baby in diaper,polygon,,0.170526
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,78736,79098,362,810.9,799.9,432.48,568.82,10.0,"long-sleeved, cartoon-themed shirt worn by baby",polygon,,0.187504
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,79140,79272,132,1057.7,638.4,564.11,453.97,1.0,"baby lying on bed, wearing cartoon-themed shirt and diaper, holding a bottle",polygon,,0.301035
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,79288,79530,242,1059.6,579.5,565.12,412.09,1.0,"baby lying on bed, wearing cartoon-themed shirt and diaper, holding a bottle",polygon,,0.552115
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,79572,79738,166,863.5,373.6,460.53,265.67,14.0,"baby lying on bed, wearing white shirt and pants, drinking from bottle",polygon,,0.312582
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,79752,79970,218,824.3,366.6,439.63,260.69,14.0,"baby lying on bed, wearing white shirt and pants, drinking from bottle",polygon,,0.275298
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,80016,80222,206,1049.1,592.1,559.52,421.05,1.0,"baby lying on bed, wearing cartoon-themed shirt and diaper, holding a bottle",polygon,,0.374054
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,80270,80572,302,541.7,522.3,288.91,371.41,4.0,pants in light color worn by baby,polygon,,0.097903
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,16,16,80620,81108,488,804.6,380.8,429.12,270.79,14.0,"baby lying on bed, wearing white shirt and pants, drinking from bottle",polygon,,0.231011
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,17,17,81278,81522,244,748.6,703.1,399.25,499.98,12.0,"right elephant with shirtless man on its back, eating grass",polygon,,0.104548
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,17,17,81564,81784,220,979.7,556.2,522.51,395.52,12.0,"right elephant with shirtless man on its back, eating grass",polygon,,0.070815
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,17,17,81806,82034,228,908.1,635.1,484.32,451.63,12.0,"right elephant with shirtless man on its back, eating grass",polygon,,0.021286
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,17,17,82076,82464,388,1208.6,786.0,644.59,558.93,,,none,,0.010202
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,17,17,82480,82798,318,1221.5,827.6,651.47,588.52,16.0,green water in river,polygon,,0.012367
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,17,17,82830,83190,360,1408.8,745.1,751.36,529.85,12.0,"right elephant with shirtless man on its back, eating grass",polygon,,0.037535
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,17,17,83216,83738,522,1502.5,890.3,801.33,633.1,16.0,green water in river,polygon,,0.00551
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,17,17,83766,83918,152,1339.5,786.0,714.4,558.93,12.0,"right elephant with shirtless man on its back, eating grass",polygon,,0.024436
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,17,17,85056,85086,30,47.6,504.7,25.39,358.9,16.0,green water in river,polygon,,0.03968
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,17,17,85370,85686,316,138.4,596.3,73.81,424.04,16.0,green water in river,polygon,,0.104502
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,17,17,85696,85920,224,144.8,622.5,77.23,442.67,,,none,,0.143799
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,17,17,86048,86224,176,364.0,749.5,194.13,532.98,10.0,left elephant with man standing on its back,polygon,,0.024454
+Encode-Decode_Experiment-9-1,2409918,elephant,encoding,17,17,86308,86348,40,990.4,486.6,528.21,346.03,,,none,,0.19388
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,86356,86580,224,861.4,726.1,459.41,516.34,8.0,"polar bear with soft, white fur, swimming in water",polygon,,0.007336
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,86598,86770,172,778.8,723.3,415.36,514.35,8.0,"polar bear with soft, white fur, swimming in water",polygon,,0.036262
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,87142,87344,202,877.5,640.3,468.0,455.32,,,none,,0.156637
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,87358,87566,208,859.0,602.8,458.13,428.66,,,none,,0.199409
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,87578,87868,290,886.7,638.2,472.91,453.83,,,none,,0.174758
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,87892,88116,224,915.4,510.2,488.21,362.81,16.0,black rail in front of polar bear,polygon,,0.135426
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,88138,88326,188,1009.0,465.3,538.13,330.88,10.0,head of polar bear above water,polygon,,0.082517
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,88338,88546,208,1041.7,461.1,555.57,327.89,1.0,"nose of polar bear, above water",polygon,,0.071349
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,88580,88740,160,815.6,452.7,434.99,321.92,,,none,,0.078635
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,88752,88912,160,786.7,463.4,419.57,329.53,,,none,,0.101375
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,88950,89166,216,577.5,345.6,308.0,245.76,,,none,,0.14627
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,89218,89244,26,445.6,796.2,237.65,566.19,,,none,,0.03739
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,89252,89326,74,456.0,763.9,243.2,543.22,15.0,hair in feathered blonde color on a person's head.,polygon,,0.05998
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,89340,89524,184,509.8,774.1,271.89,550.47,15.0,hair in feathered blonde color on a person's head.,polygon,,0.076928
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,89572,89816,244,855.6,507.3,456.32,360.75,16.0,black rail in front of polar bear,polygon,,0.154038
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,89842,90246,404,872.1,607.3,465.12,431.86,,,none,,0.222579
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,90276,90618,342,842.9,488.2,449.55,347.16,,,none,,0.13836
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,90650,90936,286,1034.2,413.0,551.57,293.69,1.0,"nose of polar bear, above water",polygon,,0.218171
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,91138,91174,36,819.7,941.8,437.17,669.72,14.0,camera in black color,polygon,,0.186675
+Encode-Decode_Experiment-9-1,2387122,polar bear,encoding,18,18,91300,91426,126,907.4,648.1,483.95,460.87,,,none,,0.140228
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,91468,91688,220,752.7,773.3,401.44,549.9,18.0,"woman in a pink dress, smiling and cutting the cake with a man.",polygon,,0.03548
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,91738,91870,132,542.3,488.2,289.23,347.16,18.0,"woman in a pink dress, smiling and cutting the cake with a man.",polygon,,0.025835
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,91886,92272,386,467.0,482.7,249.07,343.25,18.0,"woman in a pink dress, smiling and cutting the cake with a man.",polygon,,0.019283
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,93542,93816,274,684.6,1066.0,365.12,758.04,,,none,,0.0157
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,93828,93952,124,730.3,1075.6,389.49,764.87,,,none,,0.040185
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,94038,94246,208,839.0,412.2,447.47,293.12,11.0,couple smiling and celebrating together.,polygon,,0.037613
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,94276,94434,158,1005.9,476.8,536.48,339.06,11.0,couple smiling and celebrating together.,polygon,,0.031884
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,94492,94716,224,412.7,421.7,220.11,299.88,18.0,"woman in a pink dress, smiling and cutting the cake with a man.",polygon,,0.006453
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,94766,94786,20,485.8,935.2,259.09,665.03,3.0,strapless pink dress worn by the woman.,polygon,,0.009117
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,94802,94898,96,476.3,879.1,254.03,625.14,3.0,strapless pink dress worn by the woman.,polygon,,0.022584
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,94940,95130,190,641.5,1041.3,342.13,740.48,34.0,hand of the woman holding the knife.,polygon,,0.013454
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,95398,95504,106,850.7,1010.1,453.71,718.29,29.0,"decorative cake being cut, frosted with sprinkles and candles.",polygon,,0.180268
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,95588,95744,156,1052.3,594.5,561.23,422.76,21.0,"man in a white shirt, smiling and cutting the cake with a woman.",polygon,,0.02228
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,95756,95862,106,1039.0,562.7,554.13,400.14,11.0,couple smiling and celebrating together.,polygon,,0.014531
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,95906,96146,240,855.3,344.2,456.16,244.76,11.0,couple smiling and celebrating together.,polygon,,0.038008
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,19,19,96194,96424,230,453.5,353.6,241.87,251.45,0.0,"necklace worn by the woman, visible on her neck.",polygon,,0.051032
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,96502,96812,310,795.9,720.3,424.48,512.21,13.0,"surfboard in lime green, green , and yellow colors.",polygon,,0.061577
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,96846,97018,172,586.3,794.3,312.69,564.84,12.0,beach with surfers walking,polygon,,0.052193
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,97064,97302,238,208.2,747.7,111.04,531.7,16.0,surfer in lady 's back,proximity,41.93,0.132136
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,97318,97536,218,167.2,735.1,89.17,522.74,16.0,surfer in lady 's back,polygon,,0.110793
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,97564,97728,164,251.3,617.2,134.03,438.9,16.0,surfer in lady 's back,polygon,,0.353699
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,97770,97932,162,570.4,592.9,304.21,421.62,,,none,,0.511764
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,97994,98312,318,1224.2,572.0,652.91,406.76,6.0,ocean water with waves,polygon,,0.145321
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,98350,98492,142,1226.9,779.7,654.35,554.45,12.0,beach with surfers walking,polygon,,0.149534
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,98528,98722,194,1182.9,550.8,630.88,391.68,6.0,ocean water with waves,polygon,,0.125848
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,98772,98796,24,1190.3,1040.8,634.83,740.12,,,none,,0.004397
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,98808,98882,74,1187.1,998.2,633.12,709.83,,,none,,0.009877
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,98968,99080,112,478.9,612.7,255.41,435.7,,,none,,0.314711
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,99122,99368,246,219.5,559.1,117.07,397.58,21.0,"surfboard in short, white and red color.",polygon,,0.383348
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,99386,99594,208,150.0,579.9,80.0,412.37,10.0,"surfboard with red and white design, being carried by a person.",proximity,27.59,0.360318
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,99630,99820,190,305.6,732.5,162.99,520.89,16.0,surfer in lady 's back,proximity,39.23,0.218697
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,99840,100760,920,358.3,761.7,191.09,541.65,,,none,,0.179808
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,100798,100984,186,586.7,732.7,312.91,521.03,13.0,"surfboard in lime green, green , and yellow colors.",polygon,,0.017126
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,101012,101124,112,543.4,899.3,289.81,639.5,5.0,sand on the beach with surfers walking,polygon,,0.029271
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,20,20,101174,101508,334,114.2,825.1,60.91,586.74,5.0,sand on the beach with surfers walking,polygon,,0.011272
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,101584,101808,224,748.9,706.0,399.41,502.04,,,none,,0.117625
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,101852,101972,120,579.1,535.7,308.85,380.94,,,none,,0.39147
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,101986,102248,262,523.4,522.8,279.15,371.77,,,none,,0.71385
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,102268,102562,294,439.8,506.1,234.56,359.89,14.0,blue motorcycle parked next to car,polygon,,0.465142
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,102590,103010,420,276.6,461.9,147.52,328.46,4.0,metal pole in red and black,polygon,,0.059529
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,103038,103208,170,488.9,470.0,260.75,334.22,14.0,blue motorcycle parked next to car,polygon,,0.366849
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,103260,103438,178,842.4,693.1,449.28,492.87,,,none,,0.091149
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,103450,103600,150,811.2,658.4,432.64,468.2,21.0,leather jacket worn by boy,polygon,,0.101295
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,103650,103812,162,1207.1,630.8,643.79,448.57,0.0,small shiny red car with black roof,polygon,,0.085949
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,103856,104082,226,1528.8,494.0,815.36,351.29,0.0,small shiny red car with black roof,polygon,,0.199888
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,104138,104158,20,853.0,374.6,454.93,266.38,,,none,,0.380268
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,104168,104418,250,930.3,417.7,496.16,297.03,19.0,red car window,polygon,,0.45738
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,104434,104770,336,999.7,418.8,533.17,297.81,19.0,red car window,polygon,,0.362947
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,104822,105224,402,518.9,457.5,276.75,325.33,14.0,blue motorcycle parked next to car,polygon,,0.277101
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,105260,105456,196,265.4,479.3,141.55,340.84,4.0,metal pole in red and black,polygon,,0.04378
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,105506,105530,24,385.3,936.7,205.49,666.1,8.0,motorcycle tire,polygon,,0.093252
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,105544,105742,198,384.5,882.5,205.07,627.56,8.0,motorcycle tire,polygon,,0.228145
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,105778,105916,138,409.6,1026.4,218.45,729.88,,,none,,0.100684
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,106272,106598,326,31.7,1034.2,16.91,735.43,,,none,,0.01405
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,21,21,106608,106662,54,46.8,1059.8,24.96,753.64,,,none,,0.006447
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,106670,106988,318,755.1,706.6,402.72,502.47,,,none,,0.036756
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,107008,107132,124,685.6,702.3,365.65,499.41,,,none,,0.023771
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,107172,107440,268,942.6,742.7,502.72,528.14,16.0,white rag held by chef,polygon,,0.549051
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,107464,107790,326,831.6,748.9,443.52,532.55,17.0,"man wearing white hat and apron, holding a spatula",polygon,,0.300215
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,107848,108006,158,224.2,756.0,119.57,537.6,25.0,"man wearing white chef's hat and shirt, holding a spatula",polygon,,0.167261
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,108060,108374,314,873.7,797.5,465.97,567.11,16.0,white rag held by chef,proximity,39.49,0.341101
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,108402,108838,436,1048.4,775.7,559.15,551.61,0.0,stainless steel oven with silver and black color,polygon,,0.077003
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,108866,109122,256,825.9,803.0,440.48,571.02,,,none,,0.204361
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,109152,109312,160,1038.1,799.9,553.65,568.82,0.0,stainless steel oven with silver and black color,polygon,,0.052363
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,109392,109710,318,673.8,412.6,359.36,293.4,13.0,oven with face shaped like a man's head,polygon,,0.175092
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,109756,109962,206,988.7,711.5,527.31,505.96,16.0,white rag held by chef,polygon,,0.322878
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,110020,110042,22,553.7,311.6,295.31,221.58,13.0,oven with face shaped like a man's head,polygon,,0.061359
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,110050,110288,238,601.0,376.1,320.53,267.45,13.0,oven with face shaped like a man's head,polygon,,0.073962
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,110328,110480,152,714.4,559.2,381.01,397.65,13.0,oven with face shaped like a man's head,polygon,,0.091174
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,110532,110554,22,586.0,1008.6,312.53,717.23,0.0,stainless steel oven with silver and black color,polygon,,0.050614
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,110566,110724,158,596.0,958.4,317.87,681.53,0.0,stainless steel oven with silver and black color,polygon,,0.117262
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,110772,111076,304,913.9,697.5,487.41,496.0,16.0,white rag held by chef,polygon,,0.350454
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,111092,111326,234,985.5,712.1,525.6,506.38,16.0,white rag held by chef,polygon,,0.335425
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,111386,111506,120,292.4,683.3,155.95,485.9,24.0,"man wearing white chef's hat and shirt, holding a spatula",polygon,,0.490773
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,22,22,111524,111718,194,239.2,727.6,127.57,517.4,25.0,"man wearing white chef's hat and shirt, holding a spatula",polygon,,0.38498
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,111752,111792,40,745.5,765.5,397.6,544.36,11.0,"toddler brushing teeth, wearing a pink shirt in the center",polygon,,0.182907
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,111818,111998,180,828.1,697.2,441.65,495.79,11.0,"toddler brushing teeth, wearing a pink shirt in the center",polygon,,0.06018
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,112026,112094,68,739.4,828.6,394.35,589.23,11.0,"toddler brushing teeth, wearing a pink shirt in the center",polygon,,0.105426
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,112140,112270,130,1131.2,558.5,603.31,397.16,,,none,,0.162933
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,112282,112524,242,1118.1,516.4,596.32,367.22,22.0,"man brushing teeth, wearing a purple shirt on the right",polygon,,0.222883
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,112550,112782,232,1013.5,600.6,540.53,427.09,2.0,hair in dark colored waves on a young boy.,polygon,,0.136367
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,112810,112902,92,1104.3,515.4,588.96,366.51,22.0,"man brushing teeth, wearing a purple shirt on the right",polygon,,0.237292
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,112972,113166,194,168.7,518.1,89.97,368.43,0.0,"woman brushing teeth, wearing a striped shirt on the left",polygon,,0.131343
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,113188,113400,212,66.3,483.6,35.36,343.89,0.0,"woman brushing teeth, wearing a striped shirt on the left",polygon,,0.031883
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,113424,113716,292,142.1,570.1,75.79,405.4,17.0,"toothbrush in white, green , and blue colors",polygon,,0.458166
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,113738,114472,734,91.3,667.4,48.69,474.6,0.0,"woman brushing teeth, wearing a striped shirt on the left",polygon,,0.608738
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,114490,114732,242,138.5,627.6,73.87,446.29,0.0,"woman brushing teeth, wearing a striped shirt on the left",polygon,,0.95127
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,114750,114914,164,75.7,606.8,40.37,431.5,17.0,"toothbrush in white, green , and blue colors",polygon,,0.437383
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,114944,115270,326,13.0,484.3,6.93,344.39,0.0,"woman brushing teeth, wearing a striped shirt on the left",polygon,,0.035672
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,115302,115618,316,244.7,484.8,130.51,344.75,0.0,"woman brushing teeth, wearing a striped shirt on the left",polygon,,0.075516
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,115648,115946,298,31.4,444.4,16.75,316.02,0.0,"woman brushing teeth, wearing a striped shirt on the left",polygon,,0.033318
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,116008,116158,150,696.8,763.0,371.63,542.58,11.0,"toddler brushing teeth, wearing a pink shirt in the center",polygon,,0.221711
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,116182,116340,158,767.6,799.6,409.39,568.6,11.0,"toddler brushing teeth, wearing a pink shirt in the center",polygon,,0.122152
+Encode-Decode_Experiment-9-1,2386442,teeth,encoding,23,23,116428,116524,96,43.6,450.7,23.25,320.5,0.0,"woman brushing teeth, wearing a striped shirt on the left",polygon,,0.034022
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,24,24,116830,117060,230,827.5,721.9,441.33,513.35,44.0,grass in green and brown color on the baseball field.,polygon,,0.014326
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,24,24,117106,117376,270,491.2,865.7,261.97,615.61,1.0,dirt in red tinged on the baseball field.,polygon,,0.146644
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,24,24,117436,117628,192,1135.3,692.8,605.49,492.66,8.0,"man in a baseball uniform, standing and ready to catch a ball.",polygon,,0.235526
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,24,24,117672,117950,278,718.4,654.8,383.15,465.64,,,none,,0.087429
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,24,24,117964,118168,204,669.3,649.9,356.96,462.15,10.0,man in a gray jersey sliding into base,polygon,,0.176459
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,24,24,118222,118358,136,1159.1,538.6,618.19,383.0,8.0,"man in a baseball uniform, standing and ready to catch a ball.",polygon,,0.08931
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,24,24,118382,118668,286,1174.3,641.2,626.29,455.96,8.0,"man in a baseball uniform, standing and ready to catch a ball.",polygon,,0.298915
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,24,24,118706,118918,212,1127.7,419.5,601.44,298.31,34.0,tarp in green color,proximity,13.38,0.166135
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,24,24,118930,119092,162,1107.7,400.0,590.77,284.44,34.0,tarp in green color,polygon,,0.116075
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,24,24,119128,119342,214,1173.4,570.3,625.81,405.55,,,none,,0.202566
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,24,24,119358,119512,154,1162.6,618.1,620.05,439.54,,,none,,0.356489
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,24,24,119562,119688,126,1404.4,961.8,749.01,683.95,22.0,dirt on the baseball field where the game is being played.,polygon,,0.027103
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,24,24,119734,120156,422,1018.9,984.4,543.41,700.02,16.0,baseball field with green grass and brown dirt.,proximity,43.08,0.022325
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,24,24,121748,121896,148,756.5,992.8,403.47,705.99,,,none,,0.03002
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,121904,122164,260,786.1,738.1,419.25,524.87,12.0,green grass below the child,polygon,,0.059402
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,122202,122340,138,858.6,544.1,457.92,386.92,8.0,"young girl picking apples, wearing a jacket, jeans, and boots",polygon,,0.069972
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,122364,122554,190,883.0,449.3,470.93,319.5,14.0,tan jacket worn by girl,proximity,37.54,0.101514
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,122578,122884,306,826.9,383.8,441.01,272.92,,,none,,0.052879
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,122924,123298,374,1022.7,470.3,545.44,334.44,14.0,tan jacket worn by girl,polygon,,0.075676
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,123324,123604,280,878.1,445.6,468.32,316.87,14.0,tan jacket worn by girl,proximity,40.2,0.108074
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,123628,123922,294,834.8,351.5,445.23,249.96,,,none,,0.06093
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,123964,124214,250,551.2,352.2,293.97,250.45,,,none,,0.204356
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,124254,124522,268,812.1,362.3,433.12,257.64,,,none,,0.046459
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,124554,124770,216,988.0,419.4,526.93,298.24,14.0,tan jacket worn by girl,polygon,,0.094144
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,124792,125212,420,1030.8,500.9,549.76,356.2,14.0,tan jacket worn by girl,polygon,,0.057238
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,125264,125292,28,729.5,965.7,389.07,686.72,12.0,green grass below the child,polygon,,0.099803
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,125302,125452,150,753.4,929.5,401.81,660.98,12.0,green grass below the child,polygon,,0.152049
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,125540,125754,214,580.8,439.3,309.76,312.39,13.0,metal ladder,proximity,17.14,0.142921
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,125790,126082,292,379.8,354.9,202.56,252.37,,,none,,0.016106
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,126130,126418,288,719.5,363.0,383.73,258.13,,,none,,0.036687
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,25,25,126444,126982,538,847.6,355.8,452.05,253.01,,,none,,0.073955
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,127138,127310,172,767.9,647.5,409.55,460.44,15.0,building wall.,polygon,,0.051397
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,127352,127454,102,1011.0,528.8,539.2,376.04,15.0,building wall.,polygon,,0.223008
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,127530,127720,190,552.6,444.4,294.72,316.02,13.0,"rod in iron wall, part of the building structure.",polygon,,0.146641
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,127772,128064,292,996.6,462.2,531.52,328.68,15.0,building wall.,polygon,,0.038777
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,128084,128546,462,1066.4,438.7,568.75,311.96,15.0,building wall.,polygon,,0.131307
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,128568,128694,126,976.8,535.3,520.96,380.66,15.0,building wall.,polygon,,0.145969
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,128762,129058,296,521.3,464.8,278.03,330.52,15.0,building wall.,polygon,,0.068573
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,129106,129316,210,958.4,510.0,511.15,362.67,15.0,building wall.,polygon,,0.027786
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,129338,129570,232,1009.2,473.7,538.24,336.85,15.0,building wall.,polygon,,0.053471
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,129622,129830,208,497.1,420.5,265.12,299.02,15.0,building wall.,polygon,,0.273286
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,129876,130098,222,949.2,420.5,506.24,299.02,15.0,building wall.,polygon,,0.032338
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,130120,130408,288,1010.5,467.0,538.93,332.09,15.0,building wall.,polygon,,0.051873
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,130420,130726,306,984.6,503.1,525.12,357.76,15.0,building wall.,polygon,,0.034412
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,130802,131022,220,511.2,390.1,272.64,277.4,2.0,"bike in red and black, airborne with rider performing a stunt",polygon,,0.373989
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,131070,131246,176,964.5,444.6,514.4,316.16,15.0,building wall.,polygon,,0.036998
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,131266,131476,210,989.5,398.4,527.73,283.31,15.0,building wall.,polygon,,0.04146
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,131496,131762,266,1013.8,447.6,540.69,318.29,15.0,building wall.,polygon,,0.049115
+Encode-Decode_Experiment-9-1,2371471,bike-stuntmen,encoding,26,26,131776,132046,270,995.4,410.0,530.88,291.56,15.0,building wall.,polygon,,0.038067
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,132054,132270,216,731.6,796.5,390.19,566.4,2.0,plain wall behind the conveyor belt,polygon,,0.041988
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,132316,132554,238,408.9,988.8,218.08,703.15,8.0,black and silver conveyor belt,polygon,,0.024143
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,132574,132710,136,310.8,1000.0,165.76,711.11,,,none,,0.03689
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,133308,133714,406,161.3,654.6,86.03,465.49,21.0,"bag in black, checked , blue color",proximity,49.42,0.264659
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,133728,133858,130,112.4,677.8,59.95,481.99,21.0,"bag in black, checked , blue color",polygon,,0.293656
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,133904,134112,208,335.8,932.1,179.09,662.83,8.0,black and silver conveyor belt,polygon,,0.010901
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,134168,134334,166,909.1,823.0,484.85,585.24,,,none,,0.165977
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,134360,134770,410,1016.4,849.4,542.08,604.02,,,none,,0.096539
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,134814,135106,292,934.4,587.9,498.35,418.06,6.0,black uniform worn by woman near conveyor belt,polygon,,0.18684
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,135150,135472,322,1247.2,589.1,665.17,418.92,29.0,"door in plastic covering, part of the conveyor belt system.",polygon,,0.026209
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,135534,135638,104,554.3,573.2,295.63,407.61,0.0,"man in uniform with hat and tie, standing near the conveyor belt",polygon,,0.045301
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,135664,136032,368,415.1,561.8,221.39,399.5,2.0,plain wall behind the conveyor belt,polygon,,0.126413
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,136108,136214,106,1446.3,580.3,771.36,412.66,10.0,"woman in black uniform and hat, standing near luggage",polygon,,0.00958
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,136236,136606,370,1517.1,580.1,809.12,412.52,10.0,"woman in black uniform and hat, standing near luggage",polygon,,0.092488
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,136648,136824,176,1204.1,553.4,642.19,393.53,29.0,"door in plastic covering, part of the conveyor belt system.",polygon,,0.172561
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,136862,137004,142,940.4,574.7,501.55,408.68,6.0,black uniform worn by woman near conveyor belt,polygon,,0.210788
+Encode-Decode_Experiment-9-1,2356125,airport,encoding,27,27,137014,137126,112,934.4,595.1,498.35,423.18,6.0,black uniform worn by woman near conveyor belt,polygon,,0.159048
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,137134,137404,270,781.5,717.3,416.8,510.08,13.0,"surfboard in lime green, green , and yellow colors.",polygon,,0.037974
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,137444,137588,144,575.8,796.3,307.09,566.26,12.0,beach with surfers walking,polygon,,0.048464
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,137632,137920,288,207.6,724.0,110.72,514.84,16.0,surfer in lady 's back,proximity,29.12,0.229683
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,137942,138168,226,103.4,747.0,55.15,531.2,5.0,sand on the beach with surfers walking,polygon,,0.028318
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,138252,138594,342,1127.7,660.7,601.44,469.83,6.0,ocean water with waves,polygon,,0.141475
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,138648,138838,190,582.9,784.6,310.88,557.94,13.0,"surfboard in lime green, green , and yellow colors.",polygon,,0.049379
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,138886,139414,528,207.1,749.0,110.45,532.62,16.0,surfer in lady 's back,proximity,43.03,0.125677
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,139440,139884,444,215.8,847.6,115.09,602.74,5.0,sand on the beach with surfers walking,polygon,,0.011937
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,139916,140126,210,147.0,764.8,78.4,543.86,5.0,sand on the beach with surfers walking,polygon,,0.037767
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,140140,140520,380,108.3,718.8,57.76,511.15,5.0,sand on the beach with surfers walking,polygon,,0.050705
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,140544,140850,306,160.8,587.0,85.76,417.42,10.0,"surfboard with red and white design, being carried by a person.",proximity,32.61,0.332267
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,140908,141104,196,704.6,586.7,375.79,417.21,18.0,young surfer holding a lime green surfboard,polygon,,0.248381
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,141126,141278,152,547.1,574.1,291.79,408.25,,,none,,0.502549
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,141340,141490,150,1218.3,538.9,649.76,383.22,6.0,ocean water with waves,polygon,,0.233945
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,141552,141700,148,366.6,530.3,195.52,377.1,9.0,surfboard in short woman's arm.,polygon,,0.533369
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,141712,141818,106,349.4,567.3,186.35,403.41,9.0,surfboard in short woman's arm.,polygon,,0.355727
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,141894,142040,146,1308.4,529.4,697.81,376.46,22.0,shirt in blue worn by a woman.,polygon,,0.333303
+Encode-Decode_Experiment-9-1,2408717,surfboard,encoding,28,28,142060,142206,146,1359.2,517.8,724.91,368.21,8.0,"wetsuit in black, blue, red, ladies , worn by a woman.",polygon,,0.436573
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,142214,142472,258,771.3,709.0,411.36,504.18,44.0,grass in green and brown color on the baseball field.,polygon,,0.016959
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,142526,142742,216,1187.6,606.0,633.39,430.93,8.0,"man in a baseball uniform, standing and ready to catch a ball.",polygon,,0.336122
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,142792,143124,332,709.0,626.4,378.13,445.44,,,none,,0.084041
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,143164,143594,430,514.0,830.3,274.13,590.44,10.0,man in a gray jersey sliding into base,polygon,,0.247847
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,143626,143768,142,720.2,800.4,384.11,569.17,10.0,man in a gray jersey sliding into base,polygon,,0.129404
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,143816,144050,234,1117.0,582.7,595.73,414.36,8.0,"man in a baseball uniform, standing and ready to catch a ball.",polygon,,0.279098
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,144068,144268,200,1157.2,654.3,617.17,465.28,8.0,"man in a baseball uniform, standing and ready to catch a ball.",polygon,,0.308169
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,144302,144644,342,1115.0,411.2,594.67,292.41,34.0,tarp in green color,polygon,,0.12589
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,144688,144870,182,861.1,598.2,459.25,425.39,34.0,tarp in green color,polygon,,0.019653
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,144902,145112,210,639.7,651.1,341.17,463.0,10.0,man in a gray jersey sliding into base,polygon,,0.223242
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,145146,145290,144,514.6,852.5,274.45,606.22,1.0,dirt in red tinged on the baseball field.,polygon,,0.21238
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,145338,145614,276,752.4,1001.9,401.28,712.46,16.0,baseball field with green grass and brown dirt.,polygon,,0.025002
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,145632,145866,234,822.3,1014.1,438.56,721.14,16.0,baseball field with green grass and brown dirt.,polygon,,0.013441
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,145948,146142,194,687.1,668.5,366.45,475.38,,,none,,0.112637
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,146192,146464,272,1125.0,620.5,600.0,441.24,,,none,,0.372381
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,146528,146754,226,379.1,783.0,202.19,556.8,10.0,man in a gray jersey sliding into base,polygon,,0.230468
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,146844,146922,78,188.6,838.5,100.59,596.27,10.0,man in a gray jersey sliding into base,polygon,,0.062629
+Encode-Decode_Experiment-9-1,2356991,baseball,encoding,29,29,147074,147286,212,200.1,914.4,106.72,650.24,1.0,dirt in red tinged on the baseball field.,polygon,,0.106152
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,30,30,147294,147550,256,843.9,731.9,450.08,520.46,10.0,tan dog playing and looking at frisbee,polygon,,0.190102
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,30,30,147570,147772,202,766.7,779.7,408.91,554.45,10.0,tan dog playing and looking at frisbee,polygon,,0.232539
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,30,30,147782,148050,268,744.1,801.9,396.85,570.24,10.0,tan dog playing and looking at frisbee,polygon,,0.198686
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,30,30,148064,148322,258,704.3,829.6,375.63,589.94,,,none,,0.189215
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,30,30,148364,148820,456,624.8,1013.3,333.23,720.57,,,none,,0.057394
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,30,30,149756,150208,452,695.3,734.2,370.83,522.1,4.0,green and brown grass,polygon,,0.158483
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,30,30,150268,150392,124,1296.3,861.6,691.36,612.69,,,none,,0.016174
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,30,30,151168,151190,22,1615.4,929.3,861.55,660.84,,,none,,0.038288
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,30,30,151214,151242,28,1590.7,931.8,848.37,662.61,,,none,,0.045548
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,30,30,151402,151550,148,1431.0,445.0,763.2,316.44,7.0,person wearing a light gray shirt and gray shorts,polygon,,0.080082
+Encode-Decode_Experiment-9-1,2412687,dog,encoding,30,30,151594,152368,774,1567.8,202.0,836.16,143.64,15.0,light gray shirt worn by a person,polygon,,0.111539
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,152376,152570,194,793.4,717.1,423.15,509.94,16.0,brown couch in the living room,polygon,,0.035689
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,152618,152848,230,584.1,524.0,311.52,372.62,12.0,brown shirt with yellow logo worn by man playing Wii,polygon,,0.032904
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,152864,153076,212,557.5,476.9,297.33,339.13,12.0,brown shirt with yellow logo worn by man playing Wii,polygon,,0.034868
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,153130,153274,144,1096.4,485.2,584.75,345.03,11.0,man in gray shirt and blue jeans holding a Wii controller,polygon,,0.041532
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,153286,153636,350,1113.4,460.8,593.81,327.68,11.0,man in gray shirt and blue jeans holding a Wii controller,polygon,,0.028521
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,153658,153772,114,1045.9,561.2,557.81,399.08,13.0,man in gray shirt holding a Wii controller,polygon,,0.097007
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,153822,154046,224,1458.7,735.1,777.97,522.74,24.0,wireless controllers being held by two men,proximity,46.99,0.048396
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,154096,154122,26,1086.0,344.2,579.2,244.76,6.0,brown wall behind the men,polygon,,0.00983
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,154132,154220,88,1122.7,399.3,598.77,283.95,11.0,man in gray shirt and blue jeans holding a Wii controller,polygon,,0.013486
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,154230,154462,232,1107.2,426.8,590.51,303.5,11.0,man in gray shirt and blue jeans holding a Wii controller,polygon,,0.018733
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,154474,155010,536,1104.1,465.1,588.85,330.74,11.0,man in gray shirt and blue jeans holding a Wii controller,polygon,,0.029155
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,155028,155444,416,1086.3,422.8,579.36,300.66,11.0,man in gray shirt and blue jeans holding a Wii controller,polygon,,0.015395
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,155454,155626,172,1114.0,441.2,594.13,313.74,11.0,man in gray shirt and blue jeans holding a Wii controller,polygon,,0.021932
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,155682,155876,194,539.3,390.7,287.63,277.83,2.0,man in brown shirt playing Wii with a controller,polygon,,0.155392
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,155886,156088,202,525.2,412.0,280.11,292.98,12.0,brown shirt with yellow logo worn by man playing Wii,polygon,,0.113114
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,156098,156400,302,538.0,449.2,286.93,319.43,12.0,brown shirt with yellow logo worn by man playing Wii,polygon,,0.070856
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,156452,156630,178,211.6,808.8,112.85,575.15,,,none,,0.353967
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,156660,157364,704,9.9,849.6,5.28,604.16,1.0,girl sitting on the couch in the background,polygon,,0.188167
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,31,31,157400,157448,48,262.2,791.4,139.84,562.77,,,none,,0.660185
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,157456,157694,238,620.4,745.1,330.88,529.85,,,none,,0.100415
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,157736,157988,252,905.0,751.2,482.67,534.19,16.0,white rag held by chef,polygon,,0.593788
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,158014,158128,114,1043.3,769.2,556.43,546.99,0.0,stainless steel oven with silver and black color,polygon,,0.104537
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,158186,158372,186,232.7,783.4,124.11,557.08,25.0,"man wearing white chef's hat and shirt, holding a spatula",polygon,,0.052844
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,158384,158504,120,269.2,767.0,143.57,545.42,25.0,"man wearing white chef's hat and shirt, holding a spatula",polygon,,0.134952
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,158564,158760,196,967.2,783.8,515.84,557.37,16.0,white rag held by chef,polygon,,0.331689
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,158782,158912,130,1082.6,782.6,577.39,556.52,0.0,stainless steel oven with silver and black color,polygon,,0.020424
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,159000,159072,72,661.8,409.7,352.96,291.34,13.0,oven with face shaped like a man's head,polygon,,0.163335
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,159154,159356,202,1014.1,740.3,540.85,526.44,0.0,stainless steel oven with silver and black color,polygon,,0.2013
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,159380,159614,234,1091.3,791.6,582.03,562.92,0.0,stainless steel oven with silver and black color,polygon,,0.010897
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,159636,159934,298,1180.4,809.1,629.55,575.36,0.0,stainless steel oven with silver and black color,polygon,,0.005147
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,160016,160140,124,724.7,427.9,386.51,304.28,13.0,oven with face shaped like a man's head,polygon,,0.19746
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,160190,160210,20,869.3,880.7,463.63,626.28,0.0,stainless steel oven with silver and black color,polygon,,0.00937
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,160222,160550,328,862.2,821.4,459.84,584.11,0.0,stainless steel oven with silver and black color,polygon,,0.190021
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,160572,160820,248,945.6,814.5,504.32,579.2,16.0,white rag held by chef,polygon,,0.221322
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,160844,161274,430,1091.0,795.4,581.87,565.62,0.0,stainless steel oven with silver and black color,polygon,,0.009531
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,161292,161518,226,1176.0,771.6,627.2,548.69,0.0,stainless steel oven with silver and black color,polygon,,0.01999
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,161566,161944,378,778.5,869.6,415.2,618.38,0.0,stainless steel oven with silver and black color,polygon,,0.060347
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,162170,162286,116,551.5,388.9,294.13,276.55,13.0,oven with face shaped like a man's head,polygon,,0.135196
+Encode-Decode_Experiment-9-1,2369373,chef,encoding,32,32,162332,162534,202,820.8,385.4,437.76,274.06,13.0,oven with face shaped like a man's head,polygon,,0.098712
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,162542,162568,26,783.2,742.9,417.71,528.28,6.0,"truck with a man in the driver's seat, spraying water",polygon,,0.282552
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,162582,162908,326,835.3,723.7,445.49,514.63,6.0,"truck with a man in the driver's seat, spraying water",polygon,,0.250713
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,162930,163128,198,739.6,678.2,394.45,482.28,6.0,"truck with a man in the driver's seat, spraying water",polygon,,0.145148
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,163154,163304,150,579.3,682.0,308.96,484.98,6.0,"truck with a man in the driver's seat, spraying water",polygon,,0.124559
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,163348,163656,308,416.4,962.5,222.08,684.44,20.0,race track with a red truck on it,polygon,,0.018096
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,163696,163976,280,756.0,952.9,403.2,677.62,20.0,race track with a red truck on it,polygon,,0.037573
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,164012,164314,302,857.7,767.3,457.44,545.64,24.0,watering system in long hose connected to the truck.,polygon,,0.422866
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,164348,164704,356,925.5,665.8,493.6,473.46,28.0,jeans in blue color worn by a man,polygon,,0.184455
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,164716,164970,254,949.2,635.4,506.24,451.84,28.0,jeans in blue color worn by a man,polygon,,0.307196
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,164996,165376,380,981.6,698.3,523.52,496.57,13.0,"man wearing a white shirt and blue jeans, working on the truck",polygon,,0.189817
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,165426,165586,160,1392.7,486.5,742.77,345.96,6.0,"truck with a man in the driver's seat, spraying water",polygon,,0.227217
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,165634,165746,112,1008.8,331.5,538.03,235.73,27.0,"truck with a man in the back, spraying water",polygon,,0.050637
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,165814,166056,242,209.8,595.7,111.89,423.61,33.0,"tire in thick mud, part of the truck",polygon,,0.126782
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,166082,166376,294,140.9,679.4,75.15,483.13,20.0,race track with a red truck on it,polygon,,0.093959
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,166404,166574,170,105.0,523.6,56.0,372.34,20.0,race track with a red truck on it,polygon,,0.169549
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,33,33,167378,167618,240,869.3,845.3,463.63,601.1,27.0,"truck with a man in the back, spraying water",polygon,,0.015108
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,34,34,167626,167856,230,798.6,716.6,425.92,509.58,8.0,"shirt in red, inner part of a hood.",polygon,,0.392755
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,34,34,167898,168014,116,481.3,685.8,256.69,487.68,0.0,young boy with blonde hair and blue jacket,polygon,,0.322456
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,34,34,168040,168344,304,366.7,770.6,195.57,547.98,0.0,young boy with blonde hair and blue jacket,polygon,,0.247714
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,34,34,168414,168700,286,1187.8,699.4,633.49,497.35,5.0,girl's face with brown hair,polygon,,0.149732
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,34,34,168722,169128,406,1072.1,647.1,571.79,460.16,26.0,jacket in blue color,polygon,,0.19892
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,34,34,169256,169372,116,342.2,583.0,182.51,414.58,20.0,"face in boy's hood, part of a child's attire.",polygon,,0.179829
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,34,34,170170,170322,152,1093.6,644.5,583.25,458.31,,,none,,0.179641
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,34,34,170344,170520,176,1155.4,712.8,616.21,506.88,5.0,girl's face with brown hair,polygon,,0.206657
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,34,34,170546,170726,180,1220.2,609.2,650.77,433.21,5.0,girl's face with brown hair,polygon,,0.097577
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,34,34,170754,170902,148,1040.6,593.3,554.99,421.9,26.0,jacket in blue color,polygon,,0.46323
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,34,34,170932,171074,142,1138.3,449.7,607.09,319.79,5.0,girl's face with brown hair,polygon,,0.500496
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,34,34,171472,171554,82,293.2,358.7,156.37,255.08,20.0,"face in boy's hood, part of a child's attire.",polygon,,0.101299
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,34,34,171810,171992,182,317.7,562.7,169.44,400.14,20.0,"face in boy's hood, part of a child's attire.",polygon,,0.165338
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,34,34,172502,172546,44,596.0,546.2,317.87,388.41,0.0,young boy with blonde hair and blue jacket,polygon,,0.137877
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,34,34,172586,172612,26,587.1,548.2,313.12,389.83,0.0,young boy with blonde hair and blue jacket,polygon,,0.148775
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,172716,173046,330,773.0,722.6,412.27,513.85,2.0,blue blanket on desk,polygon,,0.02927
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,173072,173436,364,610.9,721.4,325.81,513.0,35.0,blanket in blue color on the table.,polygon,,0.088573
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,173488,173888,400,936.8,497.1,499.63,353.49,23.0,striped cat's head,polygon,,0.102661
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,173916,174032,116,1062.3,535.4,566.56,380.73,2.0,blue blanket on desk,polygon,,0.053104
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,174076,174180,104,1317.8,757.9,702.83,538.95,9.0,hand typing on black computer keyboard,polygon,,0.021427
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,174236,174256,20,610.4,621.1,325.55,441.67,2.0,blue blanket on desk,polygon,,0.109652
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,174268,174514,246,669.5,649.2,357.07,461.65,2.0,blue blanket on desk,polygon,,0.08284
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,174542,174568,26,593.8,626.4,316.69,445.44,35.0,blanket in blue color on the table.,polygon,,0.091596
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,174714,175022,308,1348.6,801.7,719.25,570.1,9.0,hand typing on black computer keyboard,polygon,,0.012832
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,175072,175274,202,1038.9,725.2,554.08,515.7,0.0,black computer keyboard with keys,polygon,,0.043203
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,175324,175640,316,1460.8,795.7,779.09,565.83,28.0,"hand in person's hand, typing on a keyboard.",polygon,,0.01981
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,175668,175870,202,1587.0,830.4,846.4,590.51,13.0,keyboard in black color,polygon,,0.221831
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,175928,175948,20,951.8,627.1,507.63,445.94,2.0,blue blanket on desk,polygon,,0.091881
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,175960,176174,214,1027.7,692.9,548.11,492.73,0.0,black computer keyboard with keys,polygon,,0.0733
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,176258,176382,124,659.6,593.9,351.79,422.33,23.0,striped cat's head,polygon,,0.180244
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,176404,176658,254,574.8,624.8,306.56,444.3,35.0,blanket in blue color on the table.,polygon,,0.09087
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,177098,177452,354,911.4,364.4,486.08,259.13,26.0,brown and black cat laying head down,polygon,,0.077032
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,177496,177708,212,674.1,568.5,359.52,404.27,23.0,striped cat's head,polygon,,0.185018
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,35,35,177734,177784,50,556.6,609.4,296.85,433.35,35.0,blanket in blue color on the table.,polygon,,0.122471
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,36,36,177792,178010,218,824.2,728.2,439.57,517.83,17.0,small wooden boat floating on the water,polygon,,0.198138
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,36,36,178048,178336,288,633.5,690.5,337.87,491.02,2.0,woman wearing a conical hat holding a child,polygon,,0.276639
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,36,36,178362,178598,236,712.1,590.5,379.79,419.91,23.0,"white, blue, and purple clothing worn by the woman at the front",polygon,,0.498441
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,36,36,178610,178740,130,707.8,552.1,377.49,392.6,26.0,toddler sitting in the woman's lap,polygon,,0.317038
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,36,36,178780,179070,290,944.9,427.6,503.95,304.07,11.0,"white, purple, and red scarf worn by the woman at the front",polygon,,0.069857
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,36,36,179122,179478,356,1240.9,602.5,661.81,428.44,20.0,woman rowing the boat at the back,polygon,,0.136038
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,36,36,179964,180204,240,967.9,802.3,516.21,570.52,17.0,small wooden boat floating on the water,polygon,,0.276067
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,36,36,180236,180256,20,1011.3,746.3,539.36,530.7,17.0,small wooden boat floating on the water,polygon,,0.178641
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,36,36,181832,182166,334,945.7,346.4,504.37,246.33,10.0,people sitting in the boat,polygon,,0.220305
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,36,36,182214,182376,162,642.9,499.2,342.88,354.99,3.0,hair of the woman at the back,polygon,,0.309666
+Encode-Decode_Experiment-9-1,2383555,boat,encoding,36,36,182390,182590,200,665.7,459.3,355.04,326.61,3.0,hair of the woman at the back,polygon,,0.094095
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,37,37,182870,182900,30,772.5,735.3,412.0,522.88,5.0,sidewalk made of concrete tiles,polygon,,0.041074
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,37,37,182916,183142,226,824.1,724.0,439.52,514.84,5.0,sidewalk made of concrete tiles,polygon,,0.058024
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,37,37,183168,183634,466,711.1,627.3,379.25,446.08,5.0,sidewalk made of concrete tiles,polygon,,0.044118
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,37,37,183670,183930,260,888.9,475.7,474.08,338.28,23.0,man on the left carrying a red suitcase on his shoulder,polygon,,0.264911
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,37,37,183950,184190,240,975.8,454.5,520.43,323.2,,,none,,0.283139
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,37,37,184214,184392,178,929.6,544.0,495.79,386.84,5.0,sidewalk made of concrete tiles,polygon,,0.138006
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,37,37,184426,184654,228,698.0,598.8,372.27,425.81,5.0,sidewalk made of concrete tiles,polygon,,0.084619
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,37,37,184680,184956,276,663.8,685.7,354.03,487.61,5.0,sidewalk made of concrete tiles,polygon,,0.03616
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,37,37,185224,185612,388,943.5,738.3,503.2,525.01,5.0,sidewalk made of concrete tiles,polygon,,0.02785
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,37,37,185658,186092,434,899.4,528.5,479.68,375.82,14.0,sweatshirt worn by a person.,proximity,40.35,0.184279
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,37,37,186170,186482,312,636.7,489.6,339.57,348.16,2.0,metal fence on the left side of the walkway,polygon,,0.2218
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,37,37,186496,186760,264,633.6,456.1,337.92,324.34,2.0,metal fence on the left side of the walkway,polygon,,0.345236
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,37,37,186900,187020,120,661.2,503.0,352.64,357.69,,,none,,0.242617
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,37,37,187188,187258,70,875.5,390.3,466.93,277.55,18.0,red suitcases being carried by two people,polygon,,0.203868
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,37,37,187354,187626,272,871.0,404.5,464.53,287.64,18.0,red suitcases being carried by two people,polygon,,0.196333
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,187942,188246,304,792.9,728.8,422.88,518.26,,,none,,0.301392
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,188274,188606,332,616.2,712.7,328.64,506.81,29.0,"person wearing a blue shirt and black shorts, with a yellow hat, smiling and leaning over to operate a blender, pedaling.",polygon,,0.107432
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,188624,189002,378,542.5,703.7,289.33,500.41,29.0,"person wearing a blue shirt and black shorts, with a yellow hat, smiling and leaning over to operate a blender, pedaling.",proximity,32.35,0.104479
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,189044,189202,158,684.0,925.2,364.8,657.92,,,none,,0.080926
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,189224,189420,196,796.0,945.2,424.53,672.14,4.0,green table with scalloped edge stand.,polygon,,0.025615
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,189444,189698,254,764.1,870.5,407.52,619.02,,,none,,0.271041
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,189714,189870,156,801.9,833.0,427.68,592.36,,,none,,0.183063
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,189916,189968,52,680.7,906.3,363.04,644.48,,,none,,0.092507
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,189990,190040,50,682.7,908.9,364.11,646.33,,,none,,0.090924
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,190104,190220,116,624.5,951.0,333.07,676.27,29.0,"person wearing a blue shirt and black shorts, with a yellow hat, smiling and leaning over to operate a blender, pedaling.",polygon,,0.052556
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,190504,190622,118,474.4,640.5,253.01,455.47,29.0,"person wearing a blue shirt and black shorts, with a yellow hat, smiling and leaning over to operate a blender, pedaling.",polygon,,0.022017
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,190686,190864,178,1236.7,471.6,659.57,335.36,,,none,,0.12145
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,190890,191112,222,1333.6,402.1,711.25,285.94,8.0,woman wearing a green shirt and blue jeans,polygon,,0.094649
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,191148,191260,112,1464.4,584.5,781.01,415.64,7.0,"woman wearing a green shirt and jeans, smiling and holding the blender lid.",polygon,,0.026764
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,191304,191508,204,1135.1,706.9,605.39,502.68,,,none,,0.128853
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,191540,191810,270,1069.4,890.5,570.35,633.24,24.0,base in metal stand of blender.,polygon,,0.128576
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,192304,192488,184,1031.1,847.0,549.92,602.31,24.0,base in metal stand of blender.,polygon,,0.100306
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,192500,192676,176,1053.9,862.9,562.08,613.62,24.0,base in metal stand of blender.,polygon,,0.107375
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,192760,192864,104,551.2,536.5,293.97,381.51,29.0,"person wearing a blue shirt and black shorts, with a yellow hat, smiling and leaning over to operate a blender, pedaling.",polygon,,0.026735
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,38,38,192886,193014,128,521.3,607.6,278.03,432.07,29.0,"person wearing a blue shirt and black shorts, with a yellow hat, smiling and leaning over to operate a blender, pedaling.",polygon,,0.019386
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,193022,193308,286,782.3,721.6,417.23,513.14,13.0,lady sitting on a couch using a laptop,polygon,,0.268659
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,193358,193564,206,405.6,563.7,216.32,400.85,11.0,gray Dell laptop,polygon,,0.107951
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,193586,193668,82,330.4,602.1,176.21,428.16,11.0,gray Dell laptop,polygon,,0.013478
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,193694,194014,320,403.4,445.9,215.15,317.08,11.0,gray Dell laptop,polygon,,0.002264
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,194060,194178,118,310.1,686.7,165.39,488.32,11.0,gray Dell laptop,polygon,,0.118582
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,194198,194342,144,277.8,766.2,148.16,544.85,15.0,red dress worn by the woman,polygon,,0.263935
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,194404,194532,128,1028.2,787.6,548.37,560.07,7.0,baby sitting on the couch looking at a laptop,polygon,,0.4529
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,194556,194790,234,1117.0,750.5,595.73,533.69,4.0,white sleeve of baby's shirt,polygon,,0.491423
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,194838,195044,206,1450.8,960.1,773.76,682.74,18.0,gray laptop on the couch,polygon,,0.302712
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,195084,195238,154,1660.4,845.6,885.55,601.32,18.0,gray laptop on the couch,polygon,,0.175992
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,195294,195432,138,939.5,1059.7,501.07,753.56,,,none,,0.01667
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,196062,196134,72,545.8,554.3,291.09,394.17,11.0,gray Dell laptop,polygon,,0.004511
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,196174,196328,154,750.4,624.3,400.21,443.95,11.0,gray Dell laptop,polygon,,0.074316
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,196378,196404,26,342.4,308.0,182.61,219.02,8.0,woman and baby sitting on a couch,polygon,,0.15211
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,196414,196882,468,390.3,379.5,208.16,269.87,8.0,woman and baby sitting on a couch,polygon,,0.233606
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,196894,197260,366,357.2,371.1,190.51,263.89,8.0,woman and baby sitting on a couch,polygon,,0.256539
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,197276,197386,110,411.9,356.6,219.68,253.58,8.0,woman and baby sitting on a couch,polygon,,0.230348
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,197436,197546,110,268.8,708.6,143.36,503.89,11.0,gray Dell laptop,polygon,,0.372244
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,197560,197738,178,255.5,713.0,136.27,507.02,11.0,gray Dell laptop,polygon,,0.409762
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,39,39,198042,198094,52,191.6,311.9,102.19,221.8,8.0,woman and baby sitting on a couch,polygon,,0.147175
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,40,40,198102,198328,226,829.5,728.2,442.4,517.83,14.0,man with gray suit jacket smiling,polygon,,0.337736
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,40,40,198350,198504,154,720.8,765.8,384.43,544.57,11.0,gray jacket worn by man with striped tie,polygon,,0.125922
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,40,40,198544,198676,132,805.4,949.2,429.55,674.99,11.0,gray jacket worn by man with striped tie,polygon,,0.031937
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,40,40,198700,199014,314,822.2,1039.3,438.51,739.06,11.0,gray jacket worn by man with striped tie,polygon,,0.067575
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,40,40,199064,199270,206,1219.5,595.2,650.4,423.25,15.0,orange wall with posters,polygon,,0.070492
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,40,40,199328,199428,100,742.0,670.5,395.73,476.8,9.0,man in black suit pointing,polygon,,0.094479
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,40,40,199454,199594,140,629.9,744.9,335.95,529.71,9.0,man in black suit pointing,polygon,,0.141472
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,40,40,199640,199962,322,304.7,665.3,162.51,473.1,9.0,man in black suit pointing,polygon,,0.019977
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,40,40,200822,200870,48,440.5,381.5,234.93,271.29,0.0,dark hair of man in black suit,polygon,,0.027596
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,40,40,202500,202750,250,1124.6,611.9,599.79,435.13,15.0,orange wall with posters,polygon,,0.025472
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,40,40,202776,202992,216,1188.2,544.9,633.71,387.48,15.0,orange wall with posters,polygon,,0.059738
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,203180,203290,110,865.8,733.4,461.76,521.53,,,none,,0.340368
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,203308,203498,190,807.2,732.3,430.51,520.75,,,none,,0.323275
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,203526,203702,176,695.9,815.5,371.15,579.91,,,none,,0.236169
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,203750,204008,258,1125.6,741.7,600.32,527.43,6.0,two horses walking side by side along the beach.,polygon,,0.651615
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,204038,204398,360,1318.0,724.2,702.93,514.99,5.0,dark brown and white horse being ridden by a man.,polygon,,0.163187
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,204422,204650,228,1356.0,635.0,723.2,451.56,5.0,dark brown and white horse being ridden by a man.,polygon,,0.056928
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,204662,204868,206,1328.4,606.8,708.48,431.5,5.0,dark brown and white horse being ridden by a man.,polygon,,0.231045
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,204898,205104,206,1369.1,732.8,730.19,521.1,5.0,dark brown and white horse being ridden by a man.,polygon,,0.096696
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,205174,205292,118,758.2,616.9,404.37,438.68,4.0,"reins held by a man, used to control the horse.",proximity,39.47,0.35353
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,205304,205486,182,735.5,634.7,392.27,451.34,4.0,"reins held by a man, used to control the horse.",proximity,23.52,0.414014
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,205526,205884,358,660.6,783.5,352.32,557.16,14.0,water in the background,polygon,,0.270659
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,206360,206480,120,931.3,1013.4,496.69,720.64,,,none,,0.020217
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,206770,206930,160,1168.3,832.9,623.09,592.28,,,none,,0.263056
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,206968,207410,442,1374.0,822.4,732.8,584.82,,,none,,0.648755
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,207424,207694,270,1406.9,802.1,750.35,570.38,,,none,,0.595921
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,207730,207888,158,1322.4,991.6,705.28,705.14,,,none,,0.187651
+Encode-Decode_Experiment-9-1,2394020,horse ride,encoding,41,41,207914,208056,142,1459.5,1037.0,778.4,737.42,,,none,,0.010108
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,208252,208458,206,815.1,734.2,434.72,522.1,,,none,,0.204653
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,208486,208590,104,627.6,681.4,334.72,484.55,11.0,gray Dell laptop,polygon,,0.142039
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,208636,208928,292,417.2,431.2,222.51,306.63,11.0,gray Dell laptop,polygon,,0.004926
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,208956,209166,210,289.3,561.6,154.29,399.36,11.0,gray Dell laptop,polygon,,0.002582
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,209190,209320,130,370.6,441.4,197.65,313.88,11.0,gray Dell laptop,polygon,,0.002573
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,209384,209584,200,816.6,1020.1,435.52,725.4,,,none,,0.059401
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,210532,210768,236,920.2,1079.1,490.77,767.36,,,none,,0.01817
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,210822,210998,176,1389.2,935.9,740.91,665.53,18.0,gray laptop on the couch,polygon,,0.114271
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,211044,211066,22,1116.9,664.5,595.68,472.53,4.0,white sleeve of baby's shirt,polygon,,0.520809
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,211082,211266,184,1154.0,724.4,615.47,515.13,7.0,baby sitting on the couch looking at a laptop,polygon,,0.471266
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,211312,211428,116,1594.8,814.0,850.56,578.84,18.0,gray laptop on the couch,proximity,24.15,0.564702
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,211566,211622,56,415.7,504.5,221.71,358.76,11.0,gray Dell laptop,polygon,,0.014767
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,211656,211846,190,338.8,427.2,180.69,303.79,11.0,gray Dell laptop,polygon,,0.008098
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,211898,212094,196,4.2,450.8,2.24,320.57,,,none,,0.033728
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,212140,212478,338,378.8,382.5,202.03,272.0,11.0,gray Dell laptop,polygon,,0.221796
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,212636,212738,102,885.0,702.6,472.0,499.63,3.0,woman's arm resting on the couch,polygon,,0.078008
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,212778,212940,162,1096.9,765.4,585.01,544.28,4.0,white sleeve of baby's shirt,polygon,,0.576207
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,212956,213108,152,1132.3,767.9,603.89,546.06,4.0,white sleeve of baby's shirt,polygon,,0.430416
+Encode-Decode_Experiment-9-1,2410309,laptop,encoding,42,42,213132,213316,184,1112.3,862.1,593.23,613.05,7.0,baby sitting on the couch looking at a laptop,polygon,,0.773601
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,43,43,213976,214094,118,912.7,640.4,486.77,455.4,6.0,"child on the back of the woman, under an umbrella, reaching out with right hand.",polygon,,0.094481
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,43,43,214294,214334,40,982.1,659.0,523.79,468.62,6.0,"child on the back of the woman, under an umbrella, reaching out with right hand.",polygon,,0.067857
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,43,43,214420,214462,42,981.4,661.5,523.41,470.4,6.0,"child on the back of the woman, under an umbrella, reaching out with right hand.",polygon,,0.066982
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,43,43,216928,216986,58,993.6,565.9,529.92,402.42,,,none,,0.118234
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,43,43,217080,217112,32,991.6,574.2,528.85,408.32,,,none,,0.128933
+Encode-Decode_Experiment-9-1,2347025,umbrella,encoding,43,43,217774,217834,60,962.8,636.1,513.49,452.34,6.0,"child on the back of the woman, under an umbrella, reaching out with right hand.",polygon,,0.067097
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,44,44,218964,219250,286,947.8,491.2,505.49,349.3,23.0,striped cat's head,polygon,,0.117746
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,44,44,219266,219288,22,944.6,480.0,503.79,341.33,23.0,striped cat's head,polygon,,0.151676
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,44,44,219298,219320,22,942.3,468.9,502.56,333.44,23.0,striped cat's head,polygon,,0.148044
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,44,44,219348,219368,20,942.0,463.8,502.4,329.81,23.0,striped cat's head,polygon,,0.146161
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,44,44,219790,220024,234,1142.3,700.3,609.23,497.99,0.0,black computer keyboard with keys,polygon,,0.13789
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,44,44,220540,220568,28,1049.4,690.8,559.68,491.24,0.0,black computer keyboard with keys,polygon,,0.068322
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,44,44,221758,221806,48,48.3,391.0,25.76,278.04,26.0,brown and black cat laying head down,polygon,,0.137685
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,44,44,221962,221992,30,78.7,397.7,41.97,282.81,26.0,brown and black cat laying head down,polygon,,0.129198
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,44,44,222618,222904,286,139.2,287.2,74.24,204.23,26.0,brown and black cat laying head down,polygon,,0.040513
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,44,44,223020,223138,118,92.7,166.0,49.44,118.04,26.0,brown and black cat laying head down,polygon,,0.060309
+Encode-Decode_Experiment-9-1,2344622,cat,encoding,44,44,223218,223438,220,1035.9,284.6,552.48,202.38,,,none,,0.226671
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,223672,223708,36,785.4,725.3,418.88,515.77,12.0,green grass below the child,polygon,,0.056745
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,223748,223996,248,876.5,524.0,467.47,372.62,14.0,tan jacket worn by girl,polygon,,0.069807
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,224028,224248,220,736.9,429.1,393.01,305.14,,,none,,0.094
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,224274,224482,208,846.7,355.9,451.57,253.08,,,none,,0.073051
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,224520,224682,162,1024.7,454.2,546.51,322.99,14.0,tan jacket worn by girl,polygon,,0.080145
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,224696,224852,156,999.2,492.0,532.91,349.87,14.0,tan jacket worn by girl,polygon,,0.07345
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,224892,225082,190,825.4,409.9,440.21,291.48,,,none,,0.104993
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,225124,225278,154,529.3,358.3,282.29,254.79,,,none,,0.175974
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,225306,225598,292,382.6,305.8,204.05,217.46,,,none,,0.021271
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,225608,226072,464,391.2,282.0,208.64,200.53,,,none,,0.037138
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,226130,226292,162,792.2,467.1,422.51,332.16,,,none,,0.101309
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,226316,226462,146,876.1,412.9,467.25,293.62,14.0,tan jacket worn by girl,proximity,48.35,0.107341
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,226488,226668,180,1016.0,451.3,541.87,320.92,14.0,tan jacket worn by girl,polygon,,0.072748
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,226688,226822,134,960.9,493.7,512.48,351.08,14.0,tan jacket worn by girl,polygon,,0.092609
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,226846,227020,174,1049.6,551.5,559.79,392.18,8.0,"young girl picking apples, wearing a jacket, jeans, and boots",polygon,,0.060766
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,227486,227740,254,766.5,539.1,408.8,383.36,12.0,green grass below the child,polygon,,0.055124
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,227768,228064,296,595.5,545.2,317.6,387.7,12.0,green grass below the child,polygon,,0.042435
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,228126,228258,132,1176.5,890.9,627.47,633.53,12.0,green grass below the child,polygon,,0.059083
+Encode-Decode_Experiment-9-1,2411268,apple,encoding,45,45,228284,228528,244,1216.9,977.9,649.01,695.4,,,none,,0.059043
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,46,46,228536,228740,204,815.0,719.1,434.67,511.36,9.0,man in black suit pointing,polygon,,0.35972
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,46,46,228790,228912,122,695.9,730.0,371.15,519.11,9.0,man in black suit pointing,polygon,,0.060196
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,46,46,228980,229210,230,781.7,961.8,416.91,683.95,11.0,gray jacket worn by man with striped tie,polygon,,0.042334
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,46,46,229228,229356,128,777.2,1007.4,414.51,716.37,11.0,gray jacket worn by man with striped tie,polygon,,0.089383
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,46,46,231038,231224,186,1157.5,565.6,617.33,402.2,15.0,orange wall with posters,polygon,,0.035517
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,46,46,232408,232592,184,1133.8,627.4,604.69,446.15,15.0,orange wall with posters,polygon,,0.015216
+Encode-Decode_Experiment-9-1,2348899,tie,encoding,46,46,232610,232948,338,1139.7,610.1,607.84,433.85,15.0,orange wall with posters,polygon,,0.021323
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,233598,233838,240,768.6,741.5,409.92,527.29,16.0,brown couch in the living room,polygon,,0.010608
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,233872,233894,22,594.2,592.6,316.91,421.4,2.0,man in brown shirt playing Wii with a controller,polygon,,0.012764
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,233914,234152,238,531.6,488.2,283.52,347.16,12.0,brown shirt with yellow logo worn by man playing Wii,polygon,,0.012451
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,234210,234358,148,97.7,934.2,52.11,664.32,,,none,,0.092566
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,234376,234698,322,22.6,919.7,12.05,654.01,,,none,,0.140439
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,234782,234986,204,1133.3,611.8,604.43,435.06,13.0,man in gray shirt holding a Wii controller,polygon,,0.050189
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,235012,235282,270,1141.7,474.5,608.91,337.42,11.0,man in gray shirt and blue jeans holding a Wii controller,polygon,,0.073032
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,235296,235940,644,1093.2,466.5,583.04,331.73,11.0,man in gray shirt and blue jeans holding a Wii controller,polygon,,0.027849
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,235948,236194,246,1094.3,458.0,583.63,325.69,11.0,man in gray shirt and blue jeans holding a Wii controller,polygon,,0.024867
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,236536,236614,78,598.9,393.5,319.41,279.82,2.0,man in brown shirt playing Wii with a controller,polygon,,0.233511
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,236718,236874,156,1090.5,426.1,581.6,303.0,11.0,man in gray shirt and blue jeans holding a Wii controller,polygon,,0.017398
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,236888,237126,238,1112.4,433.8,593.28,308.48,11.0,man in gray shirt and blue jeans holding a Wii controller,polygon,,0.020629
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,237136,237368,232,1088.6,436.2,580.59,310.19,11.0,man in gray shirt and blue jeans holding a Wii controller,polygon,,0.018748
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,237408,237570,162,1070.1,631.4,570.72,449.0,13.0,man in gray shirt holding a Wii controller,polygon,,0.085914
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,237624,237742,118,1437.1,807.8,766.45,574.44,,,none,,0.022651
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,237798,237896,98,924.7,970.0,493.17,689.78,15.0,table in the living room,polygon,,0.032741
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,238372,238528,156,1417.7,831.5,756.11,591.29,41.0,blue jeans worn by man in gray shirt,polygon,,0.01743
+Encode-Decode_Experiment-9-1,2367132,video game,encoding,47,47,238552,238668,116,1480.4,780.9,789.55,555.31,43.0,brown wall in brown room,polygon,,0.021542
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,238676,238734,58,679.9,736.2,362.61,523.52,5.0,sidewalk made of concrete tiles,polygon,,0.054138
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,238756,238906,150,792.1,718.4,422.45,510.86,5.0,sidewalk made of concrete tiles,polygon,,0.070517
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,238946,239102,156,632.9,591.3,337.55,420.48,,,none,,0.352085
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,239126,239494,368,638.1,490.8,340.32,349.01,2.0,metal fence on the left side of the walkway,polygon,,0.216711
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,239544,239846,302,1073.7,395.4,572.64,281.17,16.0,"two people walking with luggage, one carrying a red suitcase on their shoulders",polygon,,0.188777
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,239886,240204,318,783.2,284.3,417.71,202.17,4.0,black bag on the left person's back,proximity,48.75,0.409369
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,240258,240544,286,422.9,462.3,225.55,328.75,,,none,,0.017597
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,240566,240780,214,487.5,530.8,260.0,377.46,2.0,metal fence on the left side of the walkway,polygon,,0.180096
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,240818,241140,322,638.6,631.3,340.59,448.92,,,none,,0.087263
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,241166,241356,190,671.0,527.2,357.87,374.9,,,none,,0.310675
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,241376,241554,178,653.2,487.7,348.37,346.81,2.0,metal fence on the left side of the walkway,proximity,47.06,0.233937
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,241594,241784,190,924.7,446.3,493.17,317.37,,,none,,0.267361
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,241824,242006,182,949.9,657.7,506.61,467.7,5.0,sidewalk made of concrete tiles,polygon,,0.032623
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,242046,242226,180,1088.7,447.6,580.64,318.29,31.0,grey jacket worn by the right person,polygon,,0.14451
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,242306,242562,256,503.5,507.0,268.53,360.53,2.0,metal fence on the left side of the walkway,polygon,,0.181126
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,242582,242794,212,438.8,562.7,234.03,400.14,,,none,,0.074152
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,242822,243002,180,402.2,455.5,214.51,323.91,,,none,,0.006104
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,243044,243302,258,688.2,381.6,367.04,271.36,4.0,black bag on the left person's back,polygon,,0.381957
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,243336,243558,222,741.5,507.5,395.47,360.89,23.0,man on the left carrying a red suitcase on his shoulder,polygon,,0.14556
+Encode-Decode_Experiment-9-1,2385851,suitcase,encoding,48,48,243584,243754,170,665.8,604.5,355.09,429.87,,,none,,0.134624
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,243762,244014,252,847.9,733.2,452.21,521.39,14.0,"legs of a man, visible from the back.",polygon,,0.041621
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,244056,244202,146,677.2,601.1,361.17,427.45,18.0,men working together to adjust a clock,polygon,,0.084728
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,244230,244500,270,833.6,558.9,444.59,397.44,18.0,men working together to adjust a clock,polygon,,0.260135
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,244538,245036,498,573.9,440.7,306.08,313.39,27.0,jacket worn by a man.,polygon,,0.134687
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,245058,245318,260,725.7,448.7,387.04,319.08,27.0,jacket worn by a man.,polygon,,0.246393
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,245352,245692,340,862.9,519.6,460.21,369.49,16.0,"bracket in clock's, for wall mounting.",polygon,,0.236986
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,245700,245876,176,840.1,533.9,448.05,379.66,16.0,"bracket in clock's, for wall mounting.",polygon,,0.331821
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,245926,246020,94,822.8,815.7,438.83,580.05,6.0,jeans worn by a man.,polygon,,0.051245
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,246134,246488,354,903.1,967.7,481.65,688.14,26.0,"man standing on a ladder, wearing a black jacket and pants.",polygon,,0.265208
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,246508,246668,160,956.0,896.5,509.87,637.51,14.0,"legs of a man, visible from the back.",polygon,,0.099496
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,246756,246828,72,813.4,518.9,433.81,369.0,18.0,men working together to adjust a clock,polygon,,0.398061
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,246914,246976,62,828.1,486.3,441.65,345.81,16.0,"bracket in clock's, for wall mounting.",polygon,,0.264778
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,247826,248020,194,758.1,385.0,404.32,273.78,27.0,jacket worn by a man.,polygon,,0.084487
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,248078,248210,132,774.4,518.4,413.01,368.64,3.0,"man in a grey jacket and jeans, standing on a ladder, adjusting the clock",polygon,,0.412453
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,248266,248366,100,735.0,709.9,392.0,504.82,6.0,jeans worn by a man.,polygon,,0.020818
+Encode-Decode_Experiment-9-1,2360001,clock,encoding,49,49,248804,248836,32,1434.6,658.1,765.12,467.98,24.0,building with a balcony and windows.,polygon,,0.142695
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,248844,248916,72,829.9,742.9,442.61,528.28,27.0,pillow in pillow case on the couch.,polygon,,0.03901
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,248972,249162,190,499.3,546.0,266.29,388.27,5.0,grey shirt worn by man on left,polygon,,0.020733
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,249182,249346,164,454.7,602.2,242.51,428.23,5.0,grey shirt worn by man on left,polygon,,0.010749
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,249390,249586,196,155.8,699.3,83.09,497.28,,,none,,0.081653
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,249612,249914,302,52.0,822.7,27.73,585.03,,,none,,0.06781
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,249958,250164,206,264.0,623.2,140.8,443.16,14.0,man on left sitting on couch,polygon,,0.148834
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,250178,250308,130,324.9,610.7,173.28,434.28,14.0,man on left sitting on couch,polygon,,0.122953
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,250332,250512,180,461.0,650.6,245.87,462.65,14.0,man on left sitting on couch,polygon,,0.007905
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,250532,250856,324,511.8,704.3,272.96,500.84,14.0,man on left sitting on couch,polygon,,0.003634
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,250876,251016,140,460.2,641.6,245.44,456.25,14.0,man on left sitting on couch,polygon,,0.008768
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,251076,251448,372,1088.7,552.7,580.64,393.03,6.0,right hand of man on right holding a wine glass,polygon,,0.586372
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,251460,251650,190,1106.5,566.1,590.13,402.56,6.0,right hand of man on right holding a wine glass,polygon,,0.587617
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,251688,252044,356,1136.4,784.8,606.08,558.08,19.0,man on right wearing black fleece,polygon,,0.038188
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,252078,252242,164,1089.5,525.7,581.07,373.83,6.0,right hand of man on right holding a wine glass,polygon,,0.602587
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,252252,252446,194,1115.0,527.2,594.67,374.9,24.0,wine glass held by man on right,polygon,,0.824371
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,252460,252616,156,1092.3,566.9,582.56,403.13,6.0,right hand of man on right holding a wine glass,polygon,,0.56643
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,252658,252940,282,1161.3,799.6,619.36,568.6,19.0,man on right wearing black fleece,polygon,,0.007657
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,253322,253418,96,1140.9,804.7,608.48,572.23,19.0,man on right wearing black fleece,polygon,,0.027078
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,253510,253726,216,439.6,711.4,234.45,505.88,14.0,man on left sitting on couch,polygon,,0.007711
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,253776,253802,26,365.6,1063.7,194.99,756.41,,,none,,0.030198
+Encode-Decode_Experiment-9-1,2347400,wine,encoding,50,50,253812,253914,102,359.9,1024.7,191.95,728.68,,,none,,0.028025
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,253922,254210,288,796.4,736.4,424.75,523.66,18.0,two women interacting with pizza,polygon,,0.043874
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,254236,254474,238,610.0,735.5,325.33,523.02,23.0,pizza slice with cheese and sauce on a white paper plate,polygon,,0.076985
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,254508,254756,248,386.4,678.2,206.08,482.28,23.0,pizza slice with cheese and sauce on a white paper plate,polygon,,0.133822
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,254782,254956,174,325.3,590.7,173.49,420.05,2.0,woman with dark hair looking at pizza,polygon,,0.182669
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,255004,255608,604,753.8,474.5,402.03,337.42,,,none,,0.140073
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,255622,255800,178,789.8,493.2,421.23,350.72,,,none,,0.137629
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,255820,256008,188,738.2,556.0,393.71,395.38,18.0,two women interacting with pizza,polygon,,0.091168
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,256032,256360,328,823.6,431.0,439.25,306.49,25.0,"face of a woman with glasses, showing an open mouth as if she is about to taste or eat the pizza.",polygon,,0.169392
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,256770,257074,304,351.8,642.6,187.63,456.96,,,none,,0.423846
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,257120,257290,170,457.7,775.7,244.11,551.61,19.0,topping in black on a slice of pizza.,polygon,,0.113877
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,257378,257474,96,662.6,934.5,353.39,664.53,11.0,white paper plate held by a woman,polygon,,0.051854
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,258110,258208,98,1200.2,952.9,640.11,677.62,0.0,hand holding a slice of pizza on a paper plate,polygon,,0.018046
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,258252,258360,108,1446.2,842.1,771.31,598.83,8.0,woman with glasses opening mouth near pizza,polygon,,0.097686
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,258440,258552,112,849.7,500.1,453.17,355.63,7.0,"mouth of a woman with glasses, open to eat pizza",polygon,,0.122651
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,258576,258846,270,763.0,459.6,406.93,326.83,,,none,,0.138634
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,51,51,258864,258992,128,705.8,492.6,376.43,350.29,2.0,woman with dark hair looking at pizza,polygon,,0.100628
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,52,52,259000,259244,244,806.8,742.5,430.29,528.0,8.0,motorcycle tire,polygon,,0.096047
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,52,52,259278,259412,134,633.4,561.3,337.81,399.15,21.0,leather jacket worn by boy,polygon,,0.133413
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,52,52,259432,259756,324,549.0,546.6,292.8,388.69,,,none,,0.569602
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,52,52,259772,260038,266,482.3,532.3,257.23,378.52,14.0,blue motorcycle parked next to car,polygon,,0.805734
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,52,52,260072,260368,296,274.3,431.3,146.29,306.7,4.0,metal pole in red and black,polygon,,0.080867
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,52,52,260392,260686,294,162.8,370.6,86.83,263.54,14.0,blue motorcycle parked next to car,polygon,,0.524353
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,52,52,260736,260974,238,22.4,652.5,11.95,464.0,14.0,blue motorcycle parked next to car,polygon,,0.270233
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,52,52,262444,262472,28,639.5,585.8,341.07,416.57,21.0,leather jacket worn by boy,polygon,,0.150537
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,52,52,262504,262524,20,637.8,588.4,340.16,418.42,21.0,leather jacket worn by boy,polygon,,0.161926
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,52,52,262782,262832,50,497.5,452.4,265.33,321.71,14.0,blue motorcycle parked next to car,polygon,,0.229601
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,52,52,262892,263290,398,247.9,347.6,132.21,247.18,4.0,metal pole in red and black,polygon,,0.260707
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,52,52,263360,263650,290,1023.7,365.7,545.97,260.05,19.0,red car window,polygon,,0.230726
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,52,52,263660,263742,82,1029.5,395.2,549.07,281.03,19.0,red car window,polygon,,0.435997
+Encode-Decode_Experiment-9-1,2350974,drink,encoding,52,52,263796,264070,274,1585.7,381.8,845.71,271.5,18.0,black roof of red car,polygon,,0.144905
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,53,53,264078,264376,298,845.5,750.9,450.93,533.97,13.0,hands of a man and woman holding each other while cutting the cake.,polygon,,0.022662
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,53,53,264418,264536,118,583.7,619.4,311.31,440.46,18.0,"woman in a pink dress, smiling and cutting the cake with a man.",polygon,,0.02343
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,53,53,264588,264836,248,751.5,1067.2,400.8,758.9,,,none,,0.058435
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,53,53,265394,265632,238,759.5,663.8,405.07,472.04,13.0,hands of a man and woman holding each other while cutting the cake.,polygon,,0.028095
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,53,53,266184,266402,218,450.3,473.4,240.16,336.64,18.0,"woman in a pink dress, smiling and cutting the cake with a man.",polygon,,0.016607
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,53,53,266416,266556,140,479.6,439.2,255.79,312.32,18.0,"woman in a pink dress, smiling and cutting the cake with a man.",polygon,,0.005039
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,53,53,266636,266876,240,1004.2,567.9,535.57,403.84,11.0,couple smiling and celebrating together.,polygon,,0.022966
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,53,53,266894,267396,502,1030.5,612.6,549.6,435.63,21.0,"man in a white shirt, smiling and cutting the cake with a woman.",polygon,,0.039557
+Encode-Decode_Experiment-9-1,2397102,cake,encoding,53,53,268602,268866,264,838.7,355.3,447.31,252.66,11.0,couple smiling and celebrating together.,polygon,,0.042428
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,54,54,269156,269302,146,826.6,709.0,440.85,504.18,18.0,two women interacting with pizza,polygon,,0.057081
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,54,54,269318,269360,42,823.4,703.2,439.15,500.05,18.0,two women interacting with pizza,polygon,,0.057693
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,54,54,269368,269450,82,825.3,718.9,440.16,511.22,18.0,two women interacting with pizza,polygon,,0.051602
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,54,54,271438,271534,96,984.9,926.7,525.28,658.99,3.0,finger prints on the paper plate.,polygon,,0.131318
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,54,54,273490,273758,268,1477.2,511.8,787.84,363.95,8.0,woman with glasses opening mouth near pizza,polygon,,0.016799
+Encode-Decode_Experiment-9-1,150472,pizza,encoding,54,54,273790,273920,130,1648.2,552.4,879.04,392.82,8.0,woman with glasses opening mouth near pizza,polygon,,0.026592
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,55,55,274234,274600,366,817.6,724.4,436.05,515.13,,,none,,0.245154
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,55,55,274638,274830,192,590.2,708.6,314.77,503.89,23.0,crank attached to the blender being used by a person.,proximity,45.19,0.103135
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,55,55,274840,275004,164,555.4,719.0,296.21,511.29,23.0,crank attached to the blender being used by a person.,polygon,,0.125061
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,55,55,275048,275212,164,672.0,934.5,358.4,664.53,29.0,"person wearing a blue shirt and black shorts, with a yellow hat, smiling and leaning over to operate a blender, pedaling.",polygon,,0.077132
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,55,55,275230,275512,282,662.8,985.1,353.49,700.52,29.0,"person wearing a blue shirt and black shorts, with a yellow hat, smiling and leaning over to operate a blender, pedaling.",polygon,,0.036519
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,55,55,278494,278662,168,1293.3,412.0,689.76,292.98,8.0,woman wearing a green shirt and blue jeans,polygon,,0.075881
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,55,55,278682,278886,204,1342.0,365.6,715.73,259.98,,,none,,0.145363
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,55,55,278936,279124,188,1079.2,615.0,575.57,437.33,10.0,"blender with a silver base and a black top, containing orange smoothie.",polygon,,0.11733
+Encode-Decode_Experiment-9-1,2349475,blender,encoding,55,55,279158,279302,144,1081.4,836.1,576.75,594.56,24.0,base in metal stand of blender.,polygon,,0.063527
+Encode-Decode_Experiment-9-1,2345035,football,encoding,56,56,279310,279540,230,835.7,749.6,445.71,533.05,1.0,"two young soccer players in uniforms, actively engaged in a game",polygon,,0.048448
+Encode-Decode_Experiment-9-1,2345035,football,encoding,56,56,279576,279796,220,741.8,667.1,395.63,474.38,1.0,"two young soccer players in uniforms, actively engaged in a game",polygon,,0.061295
+Encode-Decode_Experiment-9-1,2345035,football,encoding,56,56,279838,280122,284,559.8,886.2,298.56,630.19,3.0,green grass soccer field,polygon,,0.017883
+Encode-Decode_Experiment-9-1,2345035,football,encoding,56,56,280144,280490,346,663.8,932.4,354.03,663.04,3.0,green grass soccer field,polygon,,0.026874
+Encode-Decode_Experiment-9-1,2345035,football,encoding,56,56,280516,280752,236,837.8,996.4,446.83,708.55,3.0,green grass soccer field,polygon,,0.048516
+Encode-Decode_Experiment-9-1,2345035,football,encoding,56,56,281236,281256,20,1373.0,378.1,732.27,268.87,3.0,green grass soccer field,polygon,,0.045971
+Encode-Decode_Experiment-9-1,2345035,football,encoding,56,56,281272,281386,114,1360.0,456.8,725.33,324.84,3.0,green grass soccer field,polygon,,0.013556
+Encode-Decode_Experiment-9-1,2345035,football,encoding,56,56,281430,281660,230,1161.6,321.8,619.52,228.84,3.0,green grass soccer field,polygon,,0.029131
+Encode-Decode_Experiment-9-1,2345035,football,encoding,56,56,281696,281914,218,877.2,417.1,467.84,296.6,5.0,blue jersey worn by a soccer player,polygon,,0.266132
+Encode-Decode_Experiment-9-1,2345035,football,encoding,56,56,281956,282162,206,582.3,354.8,310.56,252.3,15.0,white shirt worn by a soccer player,polygon,,0.310963
+Encode-Decode_Experiment-9-1,2345035,football,encoding,56,56,282208,282432,224,186.5,386.5,99.47,274.84,,,none,,0.115731
+Encode-Decode_Experiment-9-1,2345035,football,encoding,56,56,282482,282594,112,524.1,596.1,279.52,423.89,3.0,green grass soccer field,polygon,,0.023346
+Encode-Decode_Experiment-9-1,2345035,football,encoding,56,56,284244,284346,102,872.7,500.7,465.44,356.05,1.0,"two young soccer players in uniforms, actively engaged in a game",polygon,,0.331351
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,57,57,284394,284690,296,821.7,761.5,438.24,541.51,25.0,pumpkin in smashed pieces on the ground.,polygon,,0.397671
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,57,57,284710,284992,282,759.9,818.5,405.28,582.04,9.0,pumpkin being eaten by bears.,polygon,,0.17785
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,57,57,285016,285310,294,672.4,691.5,358.61,491.73,29.0,"destroyed pumpkin with bites taken out, on the ground",polygon,,0.31434
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,57,57,285328,285644,316,647.1,623.4,345.12,443.31,29.0,"destroyed pumpkin with bites taken out, on the ground",polygon,,0.533221
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,57,57,285692,285856,164,1055.1,806.3,562.72,573.37,6.0,pumpkin in stemmed halves.,polygon,,0.164446
+Encode-Decode_Experiment-9-1,2362704,bears,encoding,57,57,285880,286092,212,1143.2,871.3,609.71,619.59,,,none,,0.193045
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,289472,289706,234,833.0,745.4,444.27,530.06,26.0,jacket in blue color,polygon,,0.201165
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,289750,289888,138,478.1,708.0,254.99,503.47,0.0,young boy with blonde hair and blue jacket,polygon,,0.264239
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,289914,290132,218,366.5,798.1,195.47,567.54,8.0,"shirt in red, inner part of a hood.",polygon,,0.252571
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,290148,290294,146,341.1,761.3,181.92,541.37,0.0,young boy with blonde hair and blue jacket,polygon,,0.199631
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,290316,290638,322,296.7,663.4,158.24,471.75,0.0,young boy with blonde hair and blue jacket,polygon,,0.301026
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,290666,290866,200,447.2,602.4,238.51,428.37,0.0,young boy with blonde hair and blue jacket,polygon,,0.158007
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,290890,291174,284,380.8,719.7,203.09,511.79,0.0,young boy with blonde hair and blue jacket,polygon,,0.323542
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,291240,291490,250,1201.0,660.3,640.53,469.55,5.0,girl's face with brown hair,polygon,,0.077873
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,291512,291778,266,1109.8,622.1,591.89,442.38,5.0,girl's face with brown hair,polygon,,0.20068
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,291804,291948,144,1277.6,620.1,681.39,440.96,5.0,girl's face with brown hair,polygon,,0.097445
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,291972,292198,226,1187.6,693.4,633.39,493.08,5.0,girl's face with brown hair,polygon,,0.135726
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,292226,292370,144,1093.9,622.0,583.41,442.31,,,none,,0.2592
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,292428,292580,152,410.8,577.5,219.09,410.67,22.0,mouth in boy's face,polygon,,0.141943
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,292604,292846,242,294.6,598.6,157.12,425.67,20.0,"face in boy's hood, part of a child's attire.",polygon,,0.528469
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,292866,293000,134,386.2,650.2,205.97,462.36,0.0,young boy with blonde hair and blue jacket,polygon,,0.41016
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,293060,293214,154,1147.6,696.1,612.05,495.0,5.0,girl's face with brown hair,polygon,,0.163535
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,293236,293466,230,1186.3,721.4,632.69,513.0,5.0,girl's face with brown hair,polygon,,0.216187
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,293524,293644,120,429.9,679.8,229.28,483.41,0.0,young boy with blonde hair and blue jacket,polygon,,0.402906
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,293668,293846,178,347.4,697.9,185.28,496.28,0.0,young boy with blonde hair and blue jacket,polygon,,0.360744
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,293910,294224,314,1147.2,672.4,611.84,478.15,5.0,girl's face with brown hair,polygon,,0.105962
+Encode-Decode_Experiment-9-1,2385550,tangerines,encoding,58,58,294256,294414,158,1180.6,825.7,629.65,587.16,,,none,,0.184159
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,294546,294902,356,747.8,768.9,398.83,546.77,6.0,"truck with a man in the driver's seat, spraying water",polygon,,0.19113
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,294922,295076,154,840.3,755.7,448.16,537.39,24.0,watering system in long hose connected to the truck.,polygon,,0.457402
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,295122,295362,240,550.0,944.0,293.33,671.29,20.0,race track with a red truck on it,polygon,,0.039386
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,295394,295498,104,354.9,1029.2,189.28,731.88,,,none,,0.020778
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,295546,295792,246,723.2,692.6,385.71,492.52,6.0,"truck with a man in the driver's seat, spraying water",polygon,,0.133799
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,295814,295948,134,813.7,676.8,433.97,481.28,6.0,"truck with a man in the driver's seat, spraying water",polygon,,0.063413
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,295988,296302,314,1013.1,797.4,540.32,567.04,20.0,race track with a red truck on it,polygon,,0.115974
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,296454,296516,62,237.1,649.4,126.45,461.8,6.0,"truck with a man in the driver's seat, spraying water",polygon,,0.13356
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,296556,296806,250,348.8,376.7,186.03,267.88,27.0,"truck with a man in the back, spraying water",polygon,,0.432183
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,297394,297600,206,841.0,977.7,448.53,695.25,20.0,race track with a red truck on it,polygon,,0.051678
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,297646,298038,392,1224.6,989.6,653.12,703.72,20.0,race track with a red truck on it,polygon,,0.027871
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,298062,298146,84,1076.4,946.2,574.08,672.85,20.0,race track with a red truck on it,polygon,,0.02552
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,298230,298372,142,1254.6,522.3,669.12,371.41,6.0,"truck with a man in the driver's seat, spraying water",polygon,,0.339784
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,298396,298548,152,1135.1,609.8,605.39,433.64,6.0,"truck with a man in the driver's seat, spraying water",polygon,,0.263897
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,298584,298750,166,973.7,503.3,519.31,357.9,4.0,"shirt in blue, white , and red colors.",polygon,,0.358252
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,298798,299000,202,518.8,565.2,276.69,401.92,27.0,"truck with a man in the back, spraying water",polygon,,0.083737
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,299016,299126,110,502.9,620.1,268.21,440.96,6.0,"truck with a man in the driver's seat, spraying water",polygon,,0.084678
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,299174,299328,154,133.6,629.5,71.25,447.64,20.0,race track with a red truck on it,polygon,,0.096764
+Encode-Decode_Experiment-9-1,2374670,spray-vehicle,encoding,59,59,299350,299544,194,159.8,696.4,85.23,495.22,33.0,"tire in thick mud, part of the truck",polygon,,0.102619
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,60,60,299630,299890,260,831.7,739.7,443.57,526.01,10.0,"long-sleeved, cartoon-themed shirt worn by baby",polygon,,0.112316
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,60,60,299916,300078,162,962.4,670.4,513.28,476.73,15.0,character on front of baby's shirt,polygon,,0.422113
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,60,60,300106,300340,234,859.5,507.8,458.4,361.1,1.0,"baby lying on bed, wearing cartoon-themed shirt and diaper, holding a bottle",polygon,,0.662392
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,60,60,300364,300682,318,713.5,504.0,380.53,358.4,17.0,white shirt worn by baby,polygon,,0.310588
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,60,60,300708,300946,238,865.4,457.2,461.55,325.12,11.0,milk inside bottle,polygon,,0.538087
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,60,60,300990,301148,158,949.9,678.6,506.61,482.56,15.0,character on front of baby's shirt,polygon,,0.383795
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,60,60,301186,301376,190,894.9,874.2,477.28,621.65,10.0,"long-sleeved, cartoon-themed shirt worn by baby",polygon,,0.156904
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,60,60,301400,301472,72,803.5,896.0,428.53,637.16,10.0,"long-sleeved, cartoon-themed shirt worn by baby",polygon,,0.21458
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,60,60,302160,302260,100,629.3,512.3,335.63,364.3,4.0,pants in light color worn by baby,polygon,,0.15323
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,60,60,302326,302938,612,787.3,440.5,419.89,313.24,6.0,arm of a baby holding a bottle,polygon,,0.274119
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,60,60,302970,303256,286,910.0,570.2,485.33,405.48,1.0,"baby lying on bed, wearing cartoon-themed shirt and diaper, holding a bottle",polygon,,0.4807
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,60,60,303272,303540,268,849.8,583.9,453.23,415.22,1.0,"baby lying on bed, wearing cartoon-themed shirt and diaper, holding a bottle",polygon,,0.416172
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,60,60,303568,303740,172,1027.0,564.5,547.73,401.42,1.0,"baby lying on bed, wearing cartoon-themed shirt and diaper, holding a bottle",polygon,,0.633273
+Encode-Decode_Experiment-9-1,2379478,baby-milk,encoding,60,60,303750,303946,196,1058.8,566.5,564.69,402.84,1.0,"baby lying on bed, wearing cartoon-themed shirt and diaper, holding a bottle",polygon,,0.658723
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,311790,311974,184,517.3,500.9,275.89,356.2,15.0,woman wearing a hat at the front,polygon,,0.221373
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,312012,312302,290,284.6,449.9,151.79,319.93,5.0,long green grass in the marsh,polygon,,0.025605
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,312338,312476,138,84.4,345.6,45.01,245.76,5.0,long green grass in the marsh,polygon,,0.174969
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,312526,312776,250,444.5,430.4,237.07,306.06,5.0,long green grass in the marsh,polygon,,0.02555
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,312800,312878,78,577.4,435.8,307.95,309.9,4.0,conical hat worn by the woman at the front,polygon,,0.250847
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,313106,314266,1160,625.2,442.6,333.44,314.74,3.0,hair of the woman at the back,polygon,,0.204361
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,314294,314436,142,776.6,425.9,414.19,302.86,11.0,"white, purple, and red scarf worn by the woman at the front",polygon,,0.069454
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,314482,314940,458,1015.3,435.1,541.49,309.4,20.0,woman rowing the boat at the back,polygon,,0.100643
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,314986,315130,144,783.5,498.3,417.87,354.35,26.0,toddler sitting in the woman's lap,polygon,,0.133088
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,315168,315790,622,651.6,555.0,347.52,394.67,26.0,toddler sitting in the woman's lap,polygon,,0.659617
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,315814,316226,412,533.1,579.7,284.32,412.23,2.0,woman wearing a conical hat holding a child,polygon,,0.474978
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,316246,316646,400,506.4,475.7,270.08,338.28,15.0,woman wearing a hat at the front,polygon,,0.141733
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,316670,317044,374,378.8,449.5,202.03,319.64,5.0,long green grass in the marsh,polygon,,0.026994
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,317072,317300,228,521.3,442.5,278.03,314.67,5.0,long green grass in the marsh,polygon,,0.134747
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,317334,317618,284,336.2,434.3,179.31,308.84,5.0,long green grass in the marsh,polygon,,0.021918
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,317646,317788,142,158.8,463.7,84.69,329.74,5.0,long green grass in the marsh,polygon,,0.037742
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,317832,318058,226,499.4,414.5,266.35,294.76,5.0,long green grass in the marsh,polygon,,0.040502
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,318086,318330,244,666.9,414.5,355.68,294.76,3.0,hair of the woman at the back,polygon,,0.212096
+Encode-Decode_Experiment-9-1,2383555,boat,decoding,2,62,318346,318784,438,598.1,423.9,318.99,301.44,4.0,conical hat worn by the woman at the front,polygon,,0.270325
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,318792,319022,230,680.0,537.6,362.67,382.29,4.0,green and brown grass,polygon,,0.009941
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,319064,319504,440,383.5,468.9,204.53,333.44,4.0,green and brown grass,polygon,,0.003543
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,319530,319698,168,517.0,511.3,275.73,363.59,4.0,green and brown grass,polygon,,0.003959
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,319888,320106,218,539.9,535.7,287.95,380.94,4.0,green and brown grass,polygon,,0.007336
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,320156,320364,208,905.8,506.7,483.09,360.32,4.0,green and brown grass,polygon,,0.07091
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,320410,320670,260,573.8,505.4,306.03,359.4,4.0,green and brown grass,polygon,,0.004926
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,320732,320956,224,1047.6,494.2,558.72,351.43,2.0,red frisbee being held by a person,polygon,,0.272736
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,321008,321170,162,567.2,569.7,302.51,405.12,4.0,green and brown grass,polygon,,0.007637
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,321180,321930,750,533.0,546.0,284.27,388.27,4.0,green and brown grass,polygon,,0.006885
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,321980,322478,498,153.5,542.2,81.87,385.56,4.0,green and brown grass,polygon,,0.004512
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,322526,322714,188,501.6,533.9,267.52,379.66,4.0,green and brown grass,polygon,,0.006839
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,322724,323074,350,541.0,550.6,288.53,391.54,4.0,green and brown grass,polygon,,0.007452
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,323120,323384,264,261.5,487.7,139.47,346.81,4.0,green and brown grass,polygon,,0.004754
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,323428,323582,154,539.1,552.1,287.52,392.6,4.0,green and brown grass,polygon,,0.007238
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,323784,324412,628,532.4,531.9,283.95,378.24,4.0,green and brown grass,polygon,,0.006694
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,324440,324844,404,371.9,544.4,198.35,387.13,4.0,green and brown grass,polygon,,0.00918
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,324886,325252,366,118.6,466.1,63.25,331.45,4.0,green and brown grass,polygon,,0.002851
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,325544,325730,186,527.2,580.5,281.17,412.8,4.0,green and brown grass,polygon,,0.006855
+Encode-Decode_Experiment-9-1,2412687,dog,decoding,3,63,325740,325830,90,549.6,563.4,293.12,400.64,4.0,green and brown grass,polygon,,0.007457
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,325838,325922,84,695.4,555.3,370.88,394.88,18.0,two women interacting with pizza,polygon,,0.094205
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,326404,326544,140,542.6,417.7,289.39,297.03,2.0,woman with dark hair looking at pizza,polygon,,0.046697
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,326590,326842,252,311.0,587.4,165.87,417.71,2.0,woman with dark hair looking at pizza,polygon,,0.130634
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,326876,327154,278,461.2,454.6,245.97,323.27,2.0,woman with dark hair looking at pizza,polygon,,0.060883
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,327178,327460,282,537.9,491.1,286.88,349.23,2.0,woman with dark hair looking at pizza,polygon,,0.176406
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,327490,327714,224,687.3,440.2,366.56,313.03,2.0,woman with dark hair looking at pizza,polygon,,0.065866
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,327782,327922,140,1077.7,391.4,574.77,278.33,25.0,"face of a woman with glasses, showing an open mouth as if she is about to taste or eat the pizza.",polygon,,0.039731
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,327990,328360,370,634.0,435.9,338.13,309.97,2.0,woman with dark hair looking at pizza,polygon,,0.046625
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,328410,328710,300,402.1,482.9,214.45,343.4,2.0,woman with dark hair looking at pizza,polygon,,0.02175
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,328754,328800,46,659.6,496.5,351.79,353.07,2.0,woman with dark hair looking at pizza,polygon,,0.124409
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,328918,329246,328,673.3,477.8,359.09,339.77,2.0,woman with dark hair looking at pizza,polygon,,0.125498
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,329286,329520,234,448.8,537.6,239.36,382.29,2.0,woman with dark hair looking at pizza,polygon,,0.113217
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,329556,329794,238,642.9,517.6,342.88,368.07,18.0,two women interacting with pizza,polygon,,0.158732
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,329820,330138,318,516.9,537.8,275.68,382.44,23.0,pizza slice with cheese and sauce on a white paper plate,polygon,,0.180181
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,330178,330366,188,741.8,437.7,395.63,311.25,,,none,,0.141756
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,330424,330682,258,1169.8,443.2,623.89,315.16,10.0,"hair in black, long",polygon,,0.035757
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,330742,330910,168,692.1,407.6,369.12,289.85,2.0,woman with dark hair looking at pizza,polygon,,0.079324
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,330952,331304,352,451.3,443.1,240.69,315.09,2.0,woman with dark hair looking at pizza,polygon,,0.052449
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,331340,331700,360,525.3,567.7,280.16,403.7,23.0,pizza slice with cheese and sauce on a white paper plate,polygon,,0.094888
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,331710,332076,366,555.0,576.4,296.0,409.88,23.0,pizza slice with cheese and sauce on a white paper plate,polygon,,0.100862
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,332094,332370,276,476.2,564.3,253.97,401.28,23.0,pizza slice with cheese and sauce on a white paper plate,polygon,,0.109966
+Encode-Decode_Experiment-9-1,150472,pizza,decoding,4,64,332410,332790,380,170.3,509.8,90.83,362.52,2.0,woman with dark hair looking at pizza,polygon,,0.010534
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,332884,333618,734,673.2,578.6,359.04,411.45,0.0,"man in uniform with hat and tie, standing near the conveyor belt",polygon,,0.074129
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,333646,334156,510,543.3,594.8,289.76,422.97,0.0,"man in uniform with hat and tie, standing near the conveyor belt",polygon,,0.053072
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,334168,334274,106,503.9,560.6,268.75,398.65,16.0,"jacket worn by a man, part of his uniform.",polygon,,0.065201
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,334526,334620,94,515.9,546.9,275.15,388.91,16.0,"jacket worn by a man, part of his uniform.",polygon,,0.063696
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,334668,334914,246,887.2,519.4,473.17,369.35,2.0,plain wall behind the conveyor belt,polygon,,0.071388
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,334984,335124,140,1647.2,626.4,878.51,445.44,2.0,plain wall behind the conveyor belt,polygon,,0.024235
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,335170,335352,182,1751.3,938.8,934.03,667.59,,,none,,0.010563
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,335380,335402,22,1799.4,1012.5,959.68,720.0,,,none,,0.213035
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,335412,335658,246,1798.9,1011.0,959.41,718.93,,,none,,0.20999
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,335764,335954,190,707.8,626.2,377.49,445.3,2.0,plain wall behind the conveyor belt,polygon,,0.051147
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,335990,337184,1194,560.0,590.5,298.67,419.91,0.0,"man in uniform with hat and tie, standing near the conveyor belt",polygon,,0.040439
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,337220,337510,290,385.4,563.7,205.55,400.85,2.0,plain wall behind the conveyor belt,polygon,,0.102981
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,337536,338306,770,544.9,566.4,290.61,402.77,0.0,"man in uniform with hat and tie, standing near the conveyor belt",polygon,,0.051821
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,338332,338784,452,396.4,562.5,211.41,400.0,2.0,plain wall behind the conveyor belt,polygon,,0.117487
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,338810,339586,776,545.4,560.2,290.88,398.36,16.0,"jacket worn by a man, part of his uniform.",polygon,,0.050168
+Encode-Decode_Experiment-9-1,2356125,airport,decoding,5,65,339614,339934,320,416.1,540.2,221.92,384.14,2.0,plain wall behind the conveyor belt,polygon,,0.160342
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,339942,340562,620,674.5,510.4,359.73,362.95,33.0,"man in a grey jacket and jeans, standing on a ladder, holding a camera",polygon,,0.179599
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,340600,340860,260,422.5,484.2,225.33,344.32,2.0,building with a balcony and a clock,polygon,,0.175644
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,340888,340960,72,573.3,498.3,305.76,354.35,33.0,"man in a grey jacket and jeans, standing on a ladder, holding a camera",polygon,,0.146909
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,341198,341292,94,501.2,578.1,267.31,411.09,2.0,building with a balcony and a clock,polygon,,0.19644
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,341362,341628,266,1138.3,504.5,607.09,358.76,23.0,"man in a black jacket and grey pants, standing on a platform",polygon,,0.183529
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,341682,341864,182,672.6,515.5,358.72,366.58,33.0,"man in a grey jacket and jeans, standing on a ladder, holding a camera",polygon,,0.167583
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,341898,342206,308,497.0,527.7,265.07,375.25,2.0,building with a balcony and a clock,polygon,,0.39601
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,342252,342578,326,189.5,485.7,101.07,345.39,37.0,store with a large metal door.,polygon,,0.034525
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,342632,343016,384,546.9,484.9,291.68,344.82,33.0,"man in a grey jacket and jeans, standing on a ladder, holding a camera",polygon,,0.20572
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,343058,343368,310,793.4,471.9,423.15,335.57,27.0,jacket worn by a man.,polygon,,0.26805
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,343412,343674,262,1088.7,453.1,580.64,322.2,23.0,"man in a black jacket and grey pants, standing on a platform",polygon,,0.531117
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,343734,343898,164,516.0,495.5,275.2,352.36,2.0,building with a balcony and a clock,polygon,,0.282194
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,344124,344332,208,471.5,589.1,251.47,418.92,2.0,building with a balcony and a clock,polygon,,0.125197
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,344346,344654,308,499.0,519.8,266.13,369.64,2.0,building with a balcony and a clock,polygon,,0.386996
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,344886,345328,442,479.4,509.5,255.68,362.31,2.0,building with a balcony and a clock,polygon,,0.390833
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,345340,345632,292,497.1,537.9,265.12,382.51,2.0,building with a balcony and a clock,polygon,,0.367554
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,345938,346282,344,479.7,547.2,255.84,389.12,2.0,building with a balcony and a clock,polygon,,0.324832
+Encode-Decode_Experiment-9-1,2360001,clock,decoding,6,66,346864,346980,116,477.5,408.0,254.67,290.13,33.0,"man in a grey jacket and jeans, standing on a ladder, holding a camera",polygon,,0.170648
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,346988,347576,588,616.0,509.6,328.53,362.38,14.0,water in the background,polygon,,0.083529
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,347602,348036,434,494.8,481.2,263.89,342.19,14.0,water in the background,polygon,,0.025185
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,348062,348290,228,351.6,487.0,187.52,346.31,14.0,water in the background,polygon,,0.022096
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,348322,348530,208,548.9,489.7,292.75,348.23,14.0,water in the background,polygon,,0.039695
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,348584,348922,338,925.8,444.7,493.76,316.23,14.0,water in the background,polygon,,0.358911
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,348966,349230,264,682.3,517.1,363.89,367.72,14.0,water in the background,polygon,,0.085585
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,349268,349636,368,505.8,552.8,269.76,393.1,14.0,water in the background,polygon,,0.089582
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,349660,349896,236,423.1,532.1,225.65,378.38,14.0,water in the background,polygon,,0.034314
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,349928,350112,184,603.9,538.9,322.08,383.22,4.0,"reins held by a man, used to control the horse.",proximity,87.79,0.305146
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,350148,350476,328,817.2,548.2,435.84,389.83,11.0,"man in riding gear, including a hat and boots, riding a horse along the beach.",proximity,38.38,0.264606
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,350506,351066,560,694.8,513.4,370.56,365.08,14.0,water in the background,polygon,,0.053107
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,351098,351428,330,846.1,530.5,451.25,377.24,14.0,water in the background,polygon,,0.214826
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,351468,352242,774,1123.8,549.4,599.36,390.68,14.0,water in the background,proximity,34.02,0.297278
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,352286,352516,230,1179.6,736.9,629.12,524.02,15.0,white and brown horse being ridden by a man.,polygon,,0.39908
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,352556,352752,196,920.2,745.6,490.77,530.2,15.0,white and brown horse being ridden by a man.,polygon,,0.370167
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,352790,353200,410,736.3,759.8,392.69,540.3,4.0,"reins held by a man, used to control the horse.",proximity,86.37,0.553914
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,353256,353418,162,1188.3,679.2,633.76,482.99,6.0,two horses walking side by side along the beach.,proximity,47.88,0.51942
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,353480,353848,368,739.0,572.9,394.13,407.4,14.0,water in the background,polygon,,0.310725
+Encode-Decode_Experiment-9-1,2394020,horse ride,decoding,7,67,353886,354040,154,537.8,554.8,286.83,394.52,14.0,water in the background,polygon,,0.157595
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,354048,354078,30,768.9,474.6,410.08,337.49,,,none,,0.124017
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,354098,354620,522,626.0,459.4,333.87,326.68,9.0,man in black suit pointing,polygon,,0.0142
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,354644,354910,266,476.1,428.0,253.92,304.36,0.0,dark hair of man in black suit,polygon,,0.092365
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,354942,355124,182,291.2,439.2,155.31,312.32,0.0,dark hair of man in black suit,polygon,,0.208873
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,355610,355734,124,119.3,583.6,63.63,415.0,4.0,"man with short hair wearing a black shirt and watch, sitting",polygon,,0.192704
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,355802,356066,264,667.6,567.8,356.05,403.77,9.0,man in black suit pointing,polygon,,0.014191
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,356114,356244,130,339.2,492.5,180.91,350.22,9.0,man in black suit pointing,polygon,,0.570268
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,356486,356678,192,420.1,520.3,224.05,369.99,9.0,man in black suit pointing,polygon,,0.560832
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,356692,356776,84,464.0,450.7,247.47,320.5,0.0,dark hair of man in black suit,polygon,,0.186031
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,356816,357154,338,244.4,455.6,130.35,323.98,0.0,dark hair of man in black suit,proximity,86.58,0.240672
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,357184,357460,276,441.0,460.1,235.2,327.18,0.0,dark hair of man in black suit,polygon,,0.2125
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,357490,357820,330,577.0,509.4,307.73,362.24,9.0,man in black suit pointing,polygon,,0.051763
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,357864,358190,326,805.8,507.4,429.76,360.82,14.0,man with gray suit jacket smiling,polygon,,0.219758
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,358230,358708,478,1069.4,526.1,570.35,374.12,12.0,brown hair of man with gray suit,polygon,,0.042564
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,358740,359244,504,1240.8,521.8,661.76,371.06,7.0,doorway with white frame leading to another room,polygon,,0.22233
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,359290,359528,238,945.2,541.2,504.11,384.85,12.0,brown hair of man with gray suit,polygon,,0.101493
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,359562,359794,232,783.0,616.7,417.6,438.54,14.0,man with gray suit jacket smiling,polygon,,0.170126
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,359838,360010,172,495.9,552.2,264.48,392.68,9.0,man in black suit pointing,polygon,,0.444958
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,360018,360598,580,526.3,564.8,280.69,401.64,9.0,man in black suit pointing,polygon,,0.244394
+Encode-Decode_Experiment-9-1,2348899,tie,decoding,8,68,360638,361088,450,257.6,527.0,137.39,374.76,9.0,man in black suit pointing,polygon,,0.104922
+Encode-Decode_Experiment-9-1,2411268,apple,decoding,9,69,365832,366196,364,603.1,502.2,321.65,357.12,12.0,green grass below the child,polygon,,0.040262
+Encode-Decode_Experiment-9-1,2411268,apple,decoding,9,69,366208,366238,30,575.7,537.8,307.04,382.44,12.0,green grass below the child,polygon,,0.04476
+Encode-Decode_Experiment-9-1,2411268,apple,decoding,9,69,366330,366442,112,1492.3,533.8,795.89,379.59,,,none,,0.021633
+Encode-Decode_Experiment-9-1,2411268,apple,decoding,9,69,366506,366680,174,718.5,471.6,383.2,335.36,12.0,green grass below the child,polygon,,0.088736
+Encode-Decode_Experiment-9-1,2411268,apple,decoding,9,69,366726,366834,108,517.8,449.7,276.16,319.79,13.0,metal ladder,proximity,49.05,0.101164
+Encode-Decode_Experiment-9-1,2411268,apple,decoding,9,69,366918,367360,442,1300.2,508.0,693.44,361.24,12.0,green grass below the child,polygon,,0.226944
+Encode-Decode_Experiment-9-1,2411268,apple,decoding,9,69,367414,367580,166,1018.8,488.4,543.36,347.31,14.0,tan jacket worn by girl,polygon,,0.0637
+Encode-Decode_Experiment-9-1,2411268,apple,decoding,9,69,367634,368138,504,683.5,544.3,364.53,387.06,12.0,green grass below the child,polygon,,0.045288
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,368340,368644,304,638.1,482.0,340.32,342.76,2.0,t-shirt in white color,polygon,,0.259537
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,368668,369066,398,507.3,449.8,270.56,319.86,14.0,surfer in lady 's shirt,proximity,65.6,0.168308
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,369102,369416,314,707.2,456.3,377.17,324.48,2.0,t-shirt in white color,polygon,,0.22195
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,369444,369770,326,565.1,497.2,301.39,353.56,18.0,young surfer holding a lime green surfboard,proximity,55.49,0.484748
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,369810,370144,334,786.3,534.7,419.36,380.23,6.0,ocean water with waves,polygon,,0.124484
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,370176,370534,358,565.9,509.8,301.81,362.52,18.0,young surfer holding a lime green surfboard,proximity,52.59,0.557956
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,370606,370972,366,1240.5,543.2,661.6,386.28,6.0,ocean water with waves,polygon,,0.246265
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,371018,371242,224,1575.1,521.3,840.05,370.7,6.0,ocean water with waves,polygon,,0.066208
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,371312,371538,226,706.7,583.9,376.91,415.22,18.0,young surfer holding a lime green surfboard,polygon,,0.247338
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,371572,372406,834,517.1,543.8,275.79,386.7,18.0,young surfer holding a lime green surfboard,proximity,78.74,0.529648
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,372444,372656,212,363.9,488.3,194.08,347.24,9.0,surfboard in short woman's arm.,polygon,,0.428726
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,372682,372926,244,506.6,504.7,270.19,358.9,15.0,"wetsuit in ladies, black and red",proximity,69.58,0.298501
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,372958,373212,254,689.0,492.4,367.47,350.15,2.0,t-shirt in white color,polygon,,0.358457
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,373260,373572,312,982.0,512.1,523.73,364.16,6.0,ocean water with waves,polygon,,0.068925
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,373626,373882,256,1366.1,557.6,728.59,396.52,4.0,surfer in wetsuit holding a neon green longboard,polygon,,0.252192
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,373940,374208,268,905.0,548.1,482.67,389.76,13.0,"surfboard in lime green, green , and yellow colors.",polygon,,0.057105
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,374274,374564,290,1423.4,644.2,759.15,458.1,0.0,neon green longboard carried by a surfer,polygon,,0.41155
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,374626,374828,202,843.5,569.4,449.87,404.91,13.0,"surfboard in lime green, green , and yellow colors.",polygon,,0.04868
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,374870,375132,262,607.2,577.0,323.84,410.31,18.0,young surfer holding a lime green surfboard,proximity,47.51,0.675358
+Encode-Decode_Experiment-9-1,2408717,surfboard,decoding,10,70,375152,375192,40,526.2,560.7,280.64,398.72,18.0,young surfer holding a lime green surfboard,proximity,77.09,0.559496
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,375200,375640,440,663.9,557.9,354.08,396.73,16.0,green water in river,polygon,,0.041958
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,375658,375890,232,580.7,537.0,309.71,381.87,16.0,green water in river,polygon,,0.094357
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,375918,376094,176,770.8,503.2,411.09,357.83,16.0,green water in river,polygon,,0.058121
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,376350,376900,550,538.4,552.1,287.15,392.6,14.0,"man in blue shirt and shorts, standing on left elephant",polygon,,0.124727
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,376934,377128,194,346.8,620.2,184.96,441.03,10.0,left elephant with man standing on its back,polygon,,0.032792
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,377178,377406,228,669.8,593.4,357.23,421.97,16.0,green water in river,polygon,,0.099474
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,377454,377626,172,1010.0,554.1,538.67,394.03,9.0,back of right elephant,polygon,,0.06537
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,377668,377850,182,666.4,492.2,355.41,350.01,16.0,green water in river,polygon,,0.017055
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,377894,377918,24,490.9,338.0,261.81,240.36,14.0,"man in blue shirt and shorts, standing on left elephant",polygon,,0.137096
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,377928,378118,190,526.2,388.9,280.64,276.55,14.0,"man in blue shirt and shorts, standing on left elephant",proximity,64.13,0.201512
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,378158,378324,166,372.1,242.1,198.45,172.16,1.0,blue shirt worn by man on left elephant,polygon,,0.11597
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,378372,378534,162,574.3,494.8,306.29,351.86,16.0,green water in river,polygon,,0.106504
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,378558,379430,872,518.6,566.0,276.59,402.49,10.0,left elephant with man standing on its back,polygon,,0.081369
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,379444,380006,562,493.5,562.1,263.2,399.72,10.0,left elephant with man standing on its back,polygon,,0.085425
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,380036,380242,206,637.3,497.4,339.89,353.71,16.0,green water in river,polygon,,0.019261
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,380300,380548,248,1049.6,416.2,559.79,295.96,16.0,green water in river,polygon,,0.186027
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,380602,380792,190,655.5,439.9,349.6,312.82,16.0,green water in river,polygon,,0.013876
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,380820,381100,280,549.5,471.4,293.07,335.22,16.0,green water in river,polygon,,0.196592
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,381128,381448,320,521.8,569.2,278.29,404.76,10.0,left elephant with man standing on its back,polygon,,0.077764
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,381458,381686,228,535.0,554.6,285.33,394.38,14.0,"man in blue shirt and shorts, standing on left elephant",polygon,,0.117158
+Encode-Decode_Experiment-9-1,2409918,elephant,decoding,11,71,381742,381976,234,90.7,495.8,48.37,352.57,16.0,green water in river,polygon,,0.032282
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,382246,382878,632,703.1,522.1,374.99,371.27,14.0,"woman holding a baby, wearing a black hat and hoop earrings, smiling.",polygon,,0.025828
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,382896,383408,512,641.9,504.4,342.35,358.68,14.0,"woman holding a baby, wearing a black hat and hoop earrings, smiling.",polygon,,0.015826
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,383436,383926,490,508.3,465.0,271.09,330.67,4.0,"head of a woman with black hair and a black hat, smiling, located on the left side.",polygon,,0.131248
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,383952,384174,222,631.8,465.2,336.96,330.81,14.0,"woman holding a baby, wearing a black hat and hoop earrings, smiling.",polygon,,0.022523
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,384200,384430,230,467.8,438.7,249.49,311.96,4.0,"head of a woman with black hair and a black hat, smiling, located on the left side.",polygon,,0.14015
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,384454,384838,384,332.3,465.4,177.23,330.95,4.0,"head of a woman with black hair and a black hat, smiling, located on the left side.",polygon,,0.030876
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,384880,385142,262,37.2,481.6,19.84,342.47,,,none,,0.027366
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,385402,385864,462,485.3,452.9,258.83,322.06,4.0,"head of a woman with black hair and a black hat, smiling, located on the left side.",polygon,,0.150835
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,385896,386206,310,312.7,438.4,166.77,311.75,4.0,"head of a woman with black hair and a black hat, smiling, located on the left side.",polygon,,0.028307
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,386232,386562,330,471.1,461.5,251.25,328.18,4.0,"head of a woman with black hair and a black hat, smiling, located on the left side.",polygon,,0.120319
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,386588,387108,520,620.0,476.5,330.67,338.84,4.0,"head of a woman with black hair and a black hat, smiling, located on the left side.",polygon,,0.028038
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,387132,387406,274,737.4,510.0,393.28,362.67,14.0,"woman holding a baby, wearing a black hat and hoop earrings, smiling.",polygon,,0.041736
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,387440,387892,452,516.0,471.5,275.2,335.29,4.0,"head of a woman with black hair and a black hat, smiling, located on the left side.",polygon,,0.112894
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,387920,388328,408,344.7,441.1,183.84,313.67,4.0,"head of a woman with black hair and a black hat, smiling, located on the left side.",polygon,,0.023614
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,388366,388568,202,109.0,403.8,58.13,287.15,,,none,,0.028051
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,388860,389084,224,527.6,452.8,281.39,321.99,4.0,"head of a woman with black hair and a black hat, smiling, located on the left side.",polygon,,0.15705
+Encode-Decode_Experiment-9-1,2347025,umbrella,decoding,12,72,389096,389282,186,506.9,487.6,270.35,346.74,4.0,"head of a woman with black hair and a black hat, smiling, located on the left side.",polygon,,0.082972
+Encode-Decode_Experiment-9-1,2356991,baseball,decoding,13,73,389290,389868,578,708.6,559.9,377.92,398.15,34.0,tarp in green color,polygon,,0.015986
+Encode-Decode_Experiment-9-1,2356991,baseball,decoding,13,73,389890,390292,402,606.1,542.2,323.25,385.56,34.0,tarp in green color,polygon,,0.039345
+Encode-Decode_Experiment-9-1,2356991,baseball,decoding,13,73,390312,390776,464,508.8,561.5,271.36,399.29,34.0,tarp in green color,polygon,,0.03375
+Encode-Decode_Experiment-9-1,2356991,baseball,decoding,13,73,390788,391564,776,516.6,525.0,275.52,373.33,34.0,tarp in green color,polygon,,0.005099
+Encode-Decode_Experiment-9-1,2356991,baseball,decoding,13,73,391618,391956,338,918.6,657.0,489.92,467.2,44.0,grass in green and brown color on the baseball field.,proximity,86.5,0.01845
+Encode-Decode_Experiment-9-1,2356991,baseball,decoding,13,73,392042,392152,110,1664.7,993.3,887.84,706.35,9.0,grass in green and brown color.,polygon,,0.023634
+Encode-Decode_Experiment-9-1,2356991,baseball,decoding,13,73,392850,393126,276,1714.1,1071.1,914.19,761.67,9.0,grass in green and brown color.,polygon,,0.009003
+Encode-Decode_Experiment-9-1,2356991,baseball,decoding,13,73,393214,393432,218,684.8,424.6,365.23,301.94,34.0,tarp in green color,polygon,,0.002237
+Encode-Decode_Experiment-9-1,2356991,baseball,decoding,13,73,393472,393704,232,549.6,535.8,293.12,381.01,34.0,tarp in green color,polygon,,0.017397
+Encode-Decode_Experiment-9-1,2356991,baseball,decoding,13,73,393714,394788,1074,540.6,567.7,288.32,403.7,34.0,tarp in green color,polygon,,0.05175
+Encode-Decode_Experiment-9-1,2356991,baseball,decoding,13,73,394818,395680,862,430.5,505.3,229.6,359.32,34.0,tarp in green color,polygon,,0.006859
+Encode-Decode_Experiment-9-1,2356991,baseball,decoding,13,73,395706,396330,624,527.5,529.5,281.33,376.53,34.0,tarp in green color,polygon,,0.005672
+Encode-Decode_Experiment-9-1,2385851,suitcase,decoding,14,74,396338,396744,406,645.4,512.1,344.21,364.16,2.0,metal fence on the left side of the walkway,polygon,,0.251761
+Encode-Decode_Experiment-9-1,2385851,suitcase,decoding,14,74,396768,397194,426,575.6,567.5,306.99,403.56,2.0,metal fence on the left side of the walkway,polygon,,0.576136
+Encode-Decode_Experiment-9-1,2385851,suitcase,decoding,14,74,397216,397564,348,642.0,519.0,342.4,369.07,2.0,metal fence on the left side of the walkway,polygon,,0.277065
+Encode-Decode_Experiment-9-1,2385851,suitcase,decoding,14,74,397590,398026,436,543.5,546.7,289.87,388.76,2.0,metal fence on the left side of the walkway,polygon,,0.43843
+Encode-Decode_Experiment-9-1,2385851,suitcase,decoding,14,74,398054,398412,358,669.3,520.6,356.96,370.2,2.0,metal fence on the left side of the walkway,proximity,70.71,0.30571
+Encode-Decode_Experiment-9-1,2385851,suitcase,decoding,14,74,398438,398748,310,524.9,585.6,279.95,416.43,2.0,metal fence on the left side of the walkway,polygon,,0.399773
+Encode-Decode_Experiment-9-1,2385851,suitcase,decoding,14,74,398758,399450,692,513.5,563.1,273.87,400.43,2.0,metal fence on the left side of the walkway,polygon,,0.307973
+Encode-Decode_Experiment-9-1,2385851,suitcase,decoding,14,74,399734,400734,1000,532.7,540.9,284.11,384.64,2.0,metal fence on the left side of the walkway,polygon,,0.361888
+Encode-Decode_Experiment-9-1,2385851,suitcase,decoding,14,74,402236,402402,166,461.8,416.7,246.29,296.32,2.0,metal fence on the left side of the walkway,proximity,71.88,0.066032
+Encode-Decode_Experiment-9-1,2385851,suitcase,decoding,14,74,402444,402798,354,659.8,540.1,351.89,384.07,2.0,metal fence on the left side of the walkway,proximity,80.08,0.335782
+Encode-Decode_Experiment-9-1,2385851,suitcase,decoding,14,74,402826,403374,548,533.2,575.0,284.37,408.89,2.0,metal fence on the left side of the walkway,polygon,,0.436242

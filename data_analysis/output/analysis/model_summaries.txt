@@ -1,7 +1,7 @@
 
 === H1 Descriptives: raw decoding SVG z-scores (before covariate adjustment) ===
-  svg_z_inter_dec: n=58, mean=0.258, sd=1.135, median=0.256, % > 0: 58.6%
-  svg_z_all_dec: n=75, mean=0.366, sd=0.969, median=0.390, % > 0: 66.7%
+  svg_z_inter_dec: n=112, mean=0.158, sd=1.027, median=0.078, % > 0: 55.4%
+  svg_z_all_dec: n=147, mean=0.283, sd=0.956, median=0.272, % > 0: 62.6%
 
 
 ############################################################
@@ -13,142 +13,162 @@ H1a_svg_inter: H1a raw: Decoding interactional SVG — intercept only
 ============================================================
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:        svg_z_inter_dec   R-squared:                       0.027
-Model:                            OLS   Adj. R-squared:                 -0.027
-Method:                 Least Squares   F-statistic:                    0.4945
-Date:                Wed, 11 Mar 2026   Prob (F-statistic):              0.688
-Time:                        09:27:06   Log-Likelihood:                -88.368
-No. Observations:                  58   AIC:                             184.7
-Df Residuals:                      54   BIC:                             193.0
-Df Model:                           3                                         
+Dep. Variable:        svg_z_inter_dec   R-squared:                       0.039
+Model:                            OLS   Adj. R-squared:                 -0.036
+Method:                 Least Squares   F-statistic:                    0.5214
+Date:                Wed, 11 Mar 2026   Prob (F-statistic):              0.838
+Time:                        21:54:24   Log-Likelihood:                -159.20
+No. Observations:                 112   AIC:                             336.4
+Df Residuals:                     103   BIC:                             360.9
+Df Model:                           8                                         
 Covariance Type:            nonrobust                                         
 ================================================================================================================
                                                    coef    std err          t      P>|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------------------------------------
-Intercept                                        0.4989      0.264      1.890      0.064      -0.030       1.028
-C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.4625      0.405     -1.141      0.259      -1.275       0.350
-C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.2271      0.450     -0.505      0.615      -1.128       0.674
-C(SubjectID)[T.Encode-Decode_Experiment-4-1]    -0.3480      0.397     -0.876      0.385      -1.145       0.449
+Intercept                                        0.4989      0.240      2.080      0.040       0.023       0.975
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.4625      0.368     -1.256      0.212      -1.193       0.268
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.2271      0.408     -0.556      0.579      -1.037       0.583
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]    -0.3480      0.361     -0.964      0.337      -1.064       0.368
+C(SubjectID)[T.Encode-Decode_Experiment-5-1]    -0.7038      0.423     -1.664      0.099      -1.543       0.135
+C(SubjectID)[T.Encode-Decode_Experiment-6-1]    -0.4915      0.376     -1.306      0.194      -1.238       0.255
+C(SubjectID)[T.Encode-Decode_Experiment-7-1]    -0.2611      0.396     -0.659      0.511      -1.047       0.524
+C(SubjectID)[T.Encode-Decode_Experiment-8-1]    -0.3145      0.368     -0.854      0.395      -1.045       0.416
+C(SubjectID)[T.Encode-Decode_Experiment-9-1]    -0.5953      0.462     -1.288      0.201      -1.512       0.321
 ==============================================================================
-Omnibus:                        1.134   Durbin-Watson:                   2.411
-Prob(Omnibus):                  0.567   Jarque-Bera (JB):                0.474
-Skew:                           0.048   Prob(JB):                        0.789
-Kurtosis:                       3.432   Cond. No.                         4.32
+Omnibus:                        3.176   Durbin-Watson:                   2.273
+Prob(Omnibus):                  0.204   Jarque-Bera (JB):                2.625
+Skew:                           0.268   Prob(JB):                        0.269
+Kurtosis:                       3.524   Cond. No.                         8.26
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-Log-likelihood: -88.3683
-R²: 0.0267
+Log-likelihood: -159.2026
+R²: 0.0389
 
 ============================================================
 H1a_svg_all: H1a raw: Decoding all-edges SVG — intercept only
 ============================================================
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:          svg_z_all_dec   R-squared:                       0.041
-Model:                            OLS   Adj. R-squared:                  0.000
-Method:                 Least Squares   F-statistic:                     1.005
-Date:                Wed, 11 Mar 2026   Prob (F-statistic):              0.396
-Time:                        09:27:06   Log-Likelihood:                -102.03
-No. Observations:                  75   AIC:                             212.1
-Df Residuals:                      71   BIC:                             221.3
-Df Model:                           3                                         
+Dep. Variable:          svg_z_all_dec   R-squared:                       0.045
+Model:                            OLS   Adj. R-squared:                 -0.010
+Method:                 Least Squares   F-statistic:                    0.8122
+Date:                Wed, 11 Mar 2026   Prob (F-statistic):              0.593
+Time:                        21:54:24   Log-Likelihood:                -198.09
+No. Observations:                 147   AIC:                             414.2
+Df Residuals:                     138   BIC:                             441.1
+Df Model:                           8                                         
 Covariance Type:            nonrobust                                         
 ================================================================================================================
                                                    coef    std err          t      P>|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------------------------------------
-Intercept                                        0.4405      0.202      2.179      0.033       0.037       0.844
-C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.4163      0.305     -1.365      0.177      -1.025       0.192
-C(SubjectID)[T.Encode-Decode_Experiment-3-1]     0.0239      0.316      0.076      0.940      -0.605       0.653
-C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.0833      0.305      0.273      0.786      -0.525       0.692
+Intercept                                        0.4334      0.196      2.210      0.029       0.046       0.821
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.4092      0.300     -1.366      0.174      -1.002       0.183
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]     0.0310      0.310      0.100      0.921      -0.582       0.644
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.0903      0.300      0.301      0.764      -0.502       0.683
+C(SubjectID)[T.Encode-Decode_Experiment-5-1]    -0.1546      0.340     -0.455      0.650      -0.826       0.517
+C(SubjectID)[T.Encode-Decode_Experiment-6-1]    -0.3928      0.340     -1.156      0.250      -1.065       0.279
+C(SubjectID)[T.Encode-Decode_Experiment-7-1]    -0.3335      0.300     -1.113      0.268      -0.926       0.259
+C(SubjectID)[T.Encode-Decode_Experiment-8-1]    -0.2810      0.287     -0.979      0.329      -0.849       0.287
+C(SubjectID)[T.Encode-Decode_Experiment-9-1]     0.2059      0.392      0.525      0.601      -0.570       0.982
 ==============================================================================
-Omnibus:                        1.112   Durbin-Watson:                   2.164
-Prob(Omnibus):                  0.574   Jarque-Bera (JB):                0.999
-Skew:                          -0.277   Prob(JB):                        0.607
-Kurtosis:                       2.888   Cond. No.                         4.40
+Omnibus:                        0.045   Durbin-Watson:                   2.165
+Prob(Omnibus):                  0.978   Jarque-Bera (JB):                0.179
+Skew:                          -0.004   Prob(JB):                        0.914
+Kurtosis:                       2.829   Cond. No.                         8.43
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-Log-likelihood: -102.0342
-R²: 0.0407
+Log-likelihood: -198.0897
+R²: 0.0450
 
 ============================================================
 H1b_svg_inter: H1b adjusted: Decoding interactional SVG — covariate-adjusted intercept
 ============================================================
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:        svg_z_inter_dec   R-squared:                       0.050
-Model:                            OLS   Adj. R-squared:                 -0.062
-Method:                 Least Squares   F-statistic:                    0.4466
-Date:                Wed, 11 Mar 2026   Prob (F-statistic):              0.844
-Time:                        09:27:06   Log-Likelihood:                -87.669
-No. Observations:                  58   AIC:                             189.3
-Df Residuals:                      51   BIC:                             203.8
-Df Model:                           6                                         
+Dep. Variable:        svg_z_inter_dec   R-squared:                       0.041
+Model:                            OLS   Adj. R-squared:                 -0.065
+Method:                 Least Squares   F-statistic:                    0.3881
+Date:                Wed, 11 Mar 2026   Prob (F-statistic):              0.958
+Time:                        21:54:24   Log-Likelihood:                -159.08
+No. Observations:                 112   AIC:                             342.2
+Df Residuals:                     100   BIC:                             374.8
+Df Model:                          11                                         
 Covariance Type:            nonrobust                                         
 ================================================================================================================
                                                    coef    std err          t      P>|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------------------------------------
-Intercept                                        0.4999      0.301      1.662      0.103      -0.104       1.104
-C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.4233      0.427     -0.990      0.327      -1.281       0.435
-C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.2619      0.539     -0.486      0.629      -1.344       0.820
-C(SubjectID)[T.Encode-Decode_Experiment-4-1]    -0.3658      0.416     -0.880      0.383      -1.200       0.468
-n_fixations_dec_z                               -0.0416      0.206     -0.201      0.841      -0.456       0.373
-aoi_prop_dec_z                                   0.1595      0.257      0.620      0.538      -0.357       0.676
-mean_salience_dec_z                             -0.1397      0.166     -0.843      0.403      -0.472       0.193
+Intercept                                        0.4416      0.280      1.575      0.118      -0.115       0.998
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.4432      0.380     -1.165      0.247      -1.198       0.311
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.1507      0.452     -0.333      0.740      -1.048       0.747
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]    -0.3254      0.372     -0.876      0.383      -1.063       0.412
+C(SubjectID)[T.Encode-Decode_Experiment-5-1]    -0.6259      0.472     -1.327      0.188      -1.562       0.310
+C(SubjectID)[T.Encode-Decode_Experiment-6-1]    -0.4536      0.412     -1.102      0.273      -1.270       0.363
+C(SubjectID)[T.Encode-Decode_Experiment-7-1]    -0.1813      0.455     -0.399      0.691      -1.084       0.721
+C(SubjectID)[T.Encode-Decode_Experiment-8-1]    -0.2291      0.420     -0.545      0.587      -1.063       0.605
+C(SubjectID)[T.Encode-Decode_Experiment-9-1]    -0.6185      0.471     -1.312      0.193      -1.554       0.317
+n_fixations_dec_z                                0.0575      0.140      0.411      0.682      -0.220       0.335
+aoi_prop_dec_z                                   0.0071      0.156      0.046      0.964      -0.302       0.316
+mean_salience_dec_z                              0.0286      0.103      0.277      0.782      -0.176       0.233
 ==============================================================================
-Omnibus:                        1.352   Durbin-Watson:                   2.341
-Prob(Omnibus):                  0.509   Jarque-Bera (JB):                0.649
-Skew:                          -0.059   Prob(JB):                        0.723
-Kurtosis:                       3.505   Cond. No.                         5.17
+Omnibus:                        3.125   Durbin-Watson:                   2.281
+Prob(Omnibus):                  0.210   Jarque-Bera (JB):                2.599
+Skew:                           0.255   Prob(JB):                        0.273
+Kurtosis:                       3.545   Cond. No.                         10.2
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-Log-likelihood: -87.6691
-R²: 0.0499
+Log-likelihood: -159.0847
+R²: 0.0409
 
 ============================================================
 H1b_svg_all: H1b adjusted: Decoding all-edges SVG — covariate-adjusted intercept
 ============================================================
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:          svg_z_all_dec   R-squared:                       0.094
-Model:                            OLS   Adj. R-squared:                  0.014
-Method:                 Least Squares   F-statistic:                     1.179
-Date:                Wed, 11 Mar 2026   Prob (F-statistic):              0.328
-Time:                        09:27:06   Log-Likelihood:                -99.882
-No. Observations:                  75   AIC:                             213.8
-Df Residuals:                      68   BIC:                             230.0
-Df Model:                           6                                         
+Dep. Variable:          svg_z_all_dec   R-squared:                       0.072
+Model:                            OLS   Adj. R-squared:                 -0.003
+Method:                 Least Squares   F-statistic:                    0.9548
+Date:                Wed, 11 Mar 2026   Prob (F-statistic):              0.491
+Time:                        21:54:24   Log-Likelihood:                -195.96
+No. Observations:                 147   AIC:                             415.9
+Df Residuals:                     135   BIC:                             451.8
+Df Model:                          11                                         
 Covariance Type:            nonrobust                                         
 ================================================================================================================
                                                    coef    std err          t      P>|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------------------------------------
-Intercept                                        0.2879      0.220      1.307      0.196      -0.152       0.727
-C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.3090      0.314     -0.983      0.329      -0.937       0.319
-C(SubjectID)[T.Encode-Decode_Experiment-3-1]     0.3932      0.379      1.038      0.303      -0.363       1.149
-C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.1613      0.317      0.510      0.612      -0.470       0.793
-n_fixations_dec_z                                0.2012      0.142      1.416      0.161      -0.082       0.485
-aoi_prop_dec_z                                   0.1761      0.134      1.318      0.192      -0.090       0.443
-mean_salience_dec_z                              0.0149      0.123      0.121      0.904      -0.231       0.261
+Intercept                                        0.2326      0.224      1.037      0.302      -0.211       0.676
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.3336      0.305     -1.094      0.276      -0.936       0.269
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]     0.3165      0.346      0.915      0.362      -0.367       1.001
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.1820      0.306      0.595      0.553      -0.423       0.787
+C(SubjectID)[T.Encode-Decode_Experiment-5-1]     0.1639      0.380      0.431      0.667      -0.587       0.915
+C(SubjectID)[T.Encode-Decode_Experiment-6-1]    -0.2819      0.360     -0.783      0.435      -0.994       0.430
+C(SubjectID)[T.Encode-Decode_Experiment-7-1]    -0.0324      0.352     -0.092      0.927      -0.729       0.664
+C(SubjectID)[T.Encode-Decode_Experiment-8-1]     0.0439      0.331      0.133      0.895      -0.611       0.699
+C(SubjectID)[T.Encode-Decode_Experiment-9-1]     0.1435      0.394      0.365      0.716      -0.635       0.922
+n_fixations_dec_z                                0.1949      0.108      1.810      0.072      -0.018       0.408
+aoi_prop_dec_z                                   0.0556      0.088      0.635      0.527      -0.118       0.229
+mean_salience_dec_z                              0.0809      0.082      0.990      0.324      -0.081       0.243
 ==============================================================================
-Omnibus:                        3.143   Durbin-Watson:                   2.178
-Prob(Omnibus):                  0.208   Jarque-Bera (JB):                2.490
-Skew:                          -0.432   Prob(JB):                        0.288
-Kurtosis:                       3.226   Cond. No.                         5.20
+Omnibus:                        0.061   Durbin-Watson:                   2.137
+Prob(Omnibus):                  0.970   Jarque-Bera (JB):                0.154
+Skew:                          -0.044   Prob(JB):                        0.926
+Kurtosis:                       2.869   Cond. No.                         10.2
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-Log-likelihood: -99.8820
-R²: 0.0942
+Log-likelihood: -195.9647
+R²: 0.0722
 
 
 ############################################################
@@ -158,90 +178,154 @@ R²: 0.0942
 ============================================================
 H2_relational_inter: H2 primary: Decoding interactional SVG → relational recall
 ============================================================
-SKIPPED / FAILED
+                             OLS Regression Results                             
+================================================================================
+Dep. Variable:     n_relational_correct   R-squared:                       0.157
+Model:                              OLS   Adj. R-squared:                  0.013
+Method:                   Least Squares   F-statistic:                     1.092
+Date:                  Wed, 11 Mar 2026   Prob (F-statistic):              0.386
+Time:                          21:54:24   Log-Likelihood:                -91.431
+No. Observations:                    49   AIC:                             198.9
+Df Residuals:                        41   BIC:                             214.0
+Df Model:                             7                                         
+Covariance Type:              nonrobust                                         
+================================================================================================================
+                                                   coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------------
+Intercept                                        2.0267      0.576      3.519      0.001       0.864       3.190
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]     0.7437      0.698      1.065      0.293      -0.667       2.154
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.4188      0.939     -0.446      0.658      -2.316       1.479
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.7530      0.636      1.183      0.244      -0.532       2.038
+svg_z_inter_dec_z                                0.0056      0.215      0.026      0.979      -0.428       0.439
+n_fixations_dec_z                                0.5152      0.374      1.379      0.175      -0.239       1.270
+aoi_prop_dec_z                                  -0.3821      0.482     -0.792      0.433      -1.356       0.592
+mean_salience_dec_z                             -0.1131      0.341     -0.332      0.742      -0.802       0.576
+==============================================================================
+Omnibus:                        5.739   Durbin-Watson:                   3.028
+Prob(Omnibus):                  0.057   Jarque-Bera (JB):                5.330
+Skew:                           0.466   Prob(JB):                       0.0696
+Kurtosis:                       4.320   Cond. No.                         6.53
+==============================================================================
 
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Log-likelihood: -91.4305
+R²: 0.1571
 
 ============================================================
 H2_relational_all: H2 primary (all): Decoding all-edges SVG → relational recall
 ============================================================
                              OLS Regression Results                             
 ================================================================================
-Dep. Variable:     n_relational_correct   R-squared:                       0.335
-Model:                              OLS   Adj. R-squared:                  0.024
-Method:                   Least Squares   F-statistic:                     1.078
-Date:                  Wed, 11 Mar 2026   Prob (F-statistic):              0.423
-Time:                          09:27:06   Log-Likelihood:                -39.979
-No. Observations:                    23   AIC:                             95.96
-Df Residuals:                        15   BIC:                             105.0
+Dep. Variable:     n_relational_correct   R-squared:                       0.065
+Model:                              OLS   Adj. R-squared:                 -0.048
+Method:                   Least Squares   F-statistic:                    0.5746
+Date:                  Wed, 11 Mar 2026   Prob (F-statistic):              0.774
+Time:                          21:54:24   Log-Likelihood:                -123.10
+No. Observations:                    66   AIC:                             262.2
+Df Residuals:                        58   BIC:                             279.7
 Df Model:                             7                                         
 Covariance Type:              nonrobust                                         
 ================================================================================================================
                                                    coef    std err          t      P>|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------------------------------------
-Intercept                                        1.9102      0.776      2.461      0.026       0.256       3.565
-C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.0840      1.154     -0.073      0.943      -2.545       2.377
-C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.4011      1.158     -0.346      0.734      -2.869       2.067
-C(SubjectID)[T.Encode-Decode_Experiment-4-1]     1.6342      1.107      1.476      0.161      -0.726       3.994
-svg_z_all_dec_z                                 -0.3949      0.454     -0.870      0.398      -1.363       0.573
-n_fixations_dec_z                                0.1219      0.405      0.301      0.767      -0.741       0.985
-aoi_prop_dec_z                                   0.2450      0.327      0.749      0.466      -0.453       0.943
-mean_salience_dec_z                              0.6114      0.423      1.447      0.168      -0.289       1.512
+Intercept                                        2.0554      0.461      4.458      0.000       1.132       2.978
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]     0.4625      0.586      0.790      0.433      -0.710       1.635
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.0610      0.731     -0.084      0.934      -1.524       1.402
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.8033      0.573      1.401      0.166      -0.344       1.951
+svg_z_all_dec_z                                  0.0413      0.213      0.194      0.847      -0.385       0.468
+n_fixations_dec_z                                0.2264      0.284      0.797      0.429      -0.342       0.795
+aoi_prop_dec_z                                  -0.1025      0.277     -0.370      0.713      -0.657       0.452
+mean_salience_dec_z                              0.0734      0.281      0.261      0.795      -0.489       0.636
 ==============================================================================
-Omnibus:                       13.591   Durbin-Watson:                   2.447
-Prob(Omnibus):                  0.001   Jarque-Bera (JB):               13.645
-Skew:                           1.307   Prob(JB):                      0.00109
-Kurtosis:                       5.721   Cond. No.                         6.99
+Omnibus:                        1.773   Durbin-Watson:                   2.836
+Prob(Omnibus):                  0.412   Jarque-Bera (JB):                1.093
+Skew:                           0.267   Prob(JB):                        0.579
+Kurtosis:                       3.336   Cond. No.                         6.25
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-Log-likelihood: -39.9793
-R²: 0.3348
+Log-likelihood: -123.0953
+R²: 0.0649
 
 ============================================================
 H2_objects_inter: H2 secondary: Decoding interactional SVG → object recall
 ============================================================
-SKIPPED / FAILED
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:      n_objects_correct   R-squared:                       0.114
+Model:                            OLS   Adj. R-squared:                 -0.038
+Method:                 Least Squares   F-statistic:                    0.7520
+Date:                Wed, 11 Mar 2026   Prob (F-statistic):              0.630
+Time:                        21:54:24   Log-Likelihood:                -107.72
+No. Observations:                  49   AIC:                             231.4
+Df Residuals:                      41   BIC:                             246.6
+Df Model:                           7                                         
+Covariance Type:            nonrobust                                         
+================================================================================================================
+                                                   coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------------
+Intercept                                        4.1505      0.803      5.169      0.000       2.529       5.772
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]     0.7104      0.974      0.730      0.470      -1.256       2.677
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -1.3521      1.310     -1.032      0.308      -3.997       1.293
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.1991      0.887      0.224      0.824      -1.593       1.991
+svg_z_inter_dec_z                                0.0076      0.299      0.025      0.980      -0.596       0.612
+n_fixations_dec_z                                0.3487      0.521      0.669      0.507      -0.703       1.401
+aoi_prop_dec_z                                  -0.2414      0.673     -0.359      0.721      -1.600       1.117
+mean_salience_dec_z                             -0.3639      0.475     -0.765      0.448      -1.324       0.596
+==============================================================================
+Omnibus:                        1.089   Durbin-Watson:                   2.837
+Prob(Omnibus):                  0.580   Jarque-Bera (JB):                0.772
+Skew:                          -0.307   Prob(JB):                        0.680
+Kurtosis:                       2.981   Cond. No.                         6.53
+==============================================================================
 
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Log-likelihood: -107.7158
+R²: 0.1138
 
 ============================================================
 H2_objects_all: H2 secondary (all): Decoding all-edges SVG → object recall
 ============================================================
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:      n_objects_correct   R-squared:                       0.429
-Model:                            OLS   Adj. R-squared:                  0.163
-Method:                 Least Squares   F-statistic:                     1.612
-Date:                Wed, 11 Mar 2026   Prob (F-statistic):              0.207
-Time:                        09:27:06   Log-Likelihood:                -40.607
-No. Observations:                  23   AIC:                             97.21
-Df Residuals:                      15   BIC:                             106.3
+Dep. Variable:      n_objects_correct   R-squared:                       0.095
+Model:                            OLS   Adj. R-squared:                 -0.014
+Method:                 Least Squares   F-statistic:                    0.8733
+Date:                Wed, 11 Mar 2026   Prob (F-statistic):              0.533
+Time:                        21:54:24   Log-Likelihood:                -145.45
+No. Observations:                  66   AIC:                             306.9
+Df Residuals:                      58   BIC:                             324.4
 Df Model:                           7                                         
 Covariance Type:            nonrobust                                         
 ================================================================================================================
                                                    coef    std err          t      P>|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------------------------------------
-Intercept                                        4.2191      0.798      5.288      0.000       2.519       5.920
-C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.9291      1.186     -0.783      0.446      -3.458       1.600
-C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -1.6599      1.190     -1.395      0.183      -4.196       0.877
-C(SubjectID)[T.Encode-Decode_Experiment-4-1]     1.3211      1.138      1.161      0.264      -1.104       3.746
-svg_z_all_dec_z                                 -0.5605      0.467     -1.201      0.248      -1.555       0.434
-n_fixations_dec_z                               -0.3869      0.416     -0.930      0.367      -1.274       0.500
-aoi_prop_dec_z                                  -0.0889      0.336     -0.264      0.795      -0.806       0.628
-mean_salience_dec_z                              0.5431      0.434      1.251      0.230      -0.382       1.469
+Intercept                                        4.1542      0.647      6.421      0.000       2.859       5.449
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]     0.1389      0.822      0.169      0.866      -1.506       1.784
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.9549      1.025     -0.931      0.356      -3.007       1.097
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]     1.0689      0.804      1.329      0.189      -0.541       2.679
+svg_z_all_dec_z                                 -0.1898      0.299     -0.635      0.528      -0.788       0.408
+n_fixations_dec_z                                0.1361      0.399      0.341      0.734      -0.662       0.934
+aoi_prop_dec_z                                  -0.3818      0.389     -0.983      0.330      -1.160       0.396
+mean_salience_dec_z                              0.0260      0.394      0.066      0.948      -0.763       0.815
 ==============================================================================
-Omnibus:                        3.993   Durbin-Watson:                   2.878
-Prob(Omnibus):                  0.136   Jarque-Bera (JB):                2.889
-Skew:                          -0.868   Prob(JB):                        0.236
-Kurtosis:                       3.009   Cond. No.                         6.99
+Omnibus:                        4.677   Durbin-Watson:                   2.399
+Prob(Omnibus):                  0.096   Jarque-Bera (JB):                4.049
+Skew:                          -0.600   Prob(JB):                        0.132
+Kurtosis:                       3.180   Cond. No.                         6.25
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-Log-likelihood: -40.6070
-R²: 0.4293
+Log-likelihood: -145.4550
+R²: 0.0953
 
 
 ############################################################
@@ -251,348 +335,390 @@ R²: 0.4293
 ============================================================
 EXP_confab_inter: Exploratory: Decoding interactional SVG → relational confabulation
 ============================================================
-SKIPPED / FAILED
+                              OLS Regression Results                              
+==================================================================================
+Dep. Variable:     n_relational_incorrect   R-squared:                       0.098
+Model:                                OLS   Adj. R-squared:                 -0.056
+Method:                     Least Squares   F-statistic:                    0.6373
+Date:                    Wed, 11 Mar 2026   Prob (F-statistic):              0.722
+Time:                            21:54:24   Log-Likelihood:                -20.234
+No. Observations:                      49   AIC:                             56.47
+Df Residuals:                          41   BIC:                             71.60
+Df Model:                               7                                         
+Covariance Type:                nonrobust                                         
+================================================================================================================
+                                                   coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------------
+Intercept                                        0.0868      0.135      0.645      0.523      -0.185       0.359
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]     0.1075      0.163      0.658      0.514      -0.222       0.437
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.1147      0.220     -0.522      0.605      -0.558       0.329
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.1361      0.149      0.914      0.366      -0.165       0.437
+svg_z_inter_dec_z                               -0.0084      0.050     -0.168      0.868      -0.110       0.093
+n_fixations_dec_z                               -0.0574      0.087     -0.657      0.515      -0.234       0.119
+aoi_prop_dec_z                                   0.1122      0.113      0.994      0.326      -0.116       0.340
+mean_salience_dec_z                             -0.0461      0.080     -0.578      0.567      -0.207       0.115
+==============================================================================
+Omnibus:                       49.838   Durbin-Watson:                   2.334
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              201.032
+Skew:                           2.776   Prob(JB):                     2.22e-44
+Kurtosis:                      11.225   Cond. No.                         6.53
+==============================================================================
 
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Log-likelihood: -20.2342
+R²: 0.0981
 
 ============================================================
 EXP_confab_all: Exploratory: Decoding all-edges SVG → relational confabulation
 ============================================================
                               OLS Regression Results                              
 ==================================================================================
-Dep. Variable:     n_relational_incorrect   R-squared:                       0.189
-Model:                                OLS   Adj. R-squared:                 -0.190
-Method:                     Least Squares   F-statistic:                    0.4990
-Date:                    Wed, 11 Mar 2026   Prob (F-statistic):              0.821
-Time:                            09:27:06   Log-Likelihood:                -17.958
-No. Observations:                      23   AIC:                             51.92
-Df Residuals:                          15   BIC:                             61.00
+Dep. Variable:     n_relational_incorrect   R-squared:                       0.102
+Model:                                OLS   Adj. R-squared:                 -0.006
+Method:                     Least Squares   F-statistic:                    0.9456
+Date:                    Wed, 11 Mar 2026   Prob (F-statistic):              0.479
+Time:                            21:54:24   Log-Likelihood:                -31.047
+No. Observations:                      66   AIC:                             78.09
+Df Residuals:                          58   BIC:                             95.61
 Df Model:                               7                                         
 Covariance Type:                nonrobust                                         
 ================================================================================================================
                                                    coef    std err          t      P>|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------------------------------------
-Intercept                                        0.0418      0.298      0.140      0.890      -0.593       0.677
-C(SubjectID)[T.Encode-Decode_Experiment-2-1]     0.3048      0.443      0.688      0.502      -0.640       1.249
-C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.0250      0.445     -0.056      0.956      -0.972       0.923
-C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.4159      0.425      0.979      0.343      -0.490       1.322
-svg_z_all_dec_z                                  0.0289      0.174      0.166      0.870      -0.343       0.400
-n_fixations_dec_z                               -0.0514      0.155     -0.331      0.745      -0.383       0.280
-aoi_prop_dec_z                                   0.0480      0.126      0.382      0.708      -0.220       0.316
-mean_salience_dec_z                              0.0864      0.162      0.533      0.602      -0.259       0.432
+Intercept                                        0.0686      0.114      0.601      0.551      -0.160       0.297
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]     0.1997      0.145      1.375      0.174      -0.091       0.490
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.0691      0.181     -0.382      0.704      -0.432       0.293
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.1026      0.142      0.722      0.473      -0.182       0.387
+svg_z_all_dec_z                                  0.0400      0.053      0.759      0.451      -0.066       0.146
+n_fixations_dec_z                               -0.0290      0.070     -0.411      0.682      -0.170       0.112
+aoi_prop_dec_z                                   0.0661      0.069      0.963      0.339      -0.071       0.204
+mean_salience_dec_z                              0.0679      0.070      0.974      0.334      -0.072       0.207
 ==============================================================================
-Omnibus:                       19.098   Durbin-Watson:                   2.328
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):               22.077
-Skew:                           1.835   Prob(JB):                     1.61e-05
-Kurtosis:                       6.094   Cond. No.                         6.99
+Omnibus:                       66.474   Durbin-Watson:                   2.000
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              384.759
+Skew:                           3.058   Prob(JB):                     2.82e-84
+Kurtosis:                      13.125   Cond. No.                         6.25
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-Log-likelihood: -17.9580
-R²: 0.1889
+Log-likelihood: -31.0465
+R²: 0.1024
 
 ============================================================
 EXP_length_inter: Exploratory: Decoding interactional SVG → writing length
 ============================================================
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:         writing_length   R-squared:                       0.299
-Model:                            OLS   Adj. R-squared:                  0.201
-Method:                 Least Squares   F-statistic:                     3.049
-Date:                Wed, 11 Mar 2026   Prob (F-statistic):            0.00946
-Time:                        09:27:06   Log-Likelihood:                -298.73
-No. Observations:                  58   AIC:                             613.5
-Df Residuals:                      50   BIC:                             629.9
-Df Model:                           7                                         
+Dep. Variable:         writing_length   R-squared:                       0.515
+Model:                            OLS   Adj. R-squared:                  0.456
+Method:                 Least Squares   F-statistic:                     8.744
+Date:                Wed, 11 Mar 2026   Prob (F-statistic):           3.84e-11
+Time:                        21:54:24   Log-Likelihood:                -581.85
+No. Observations:                 112   AIC:                             1190.
+Df Residuals:                      99   BIC:                             1225.
+Df Model:                          12                                         
 Covariance Type:            nonrobust                                         
 ================================================================================================================
                                                    coef    std err          t      P>|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------------------------------------
-Intercept                                       77.4905     11.635      6.660      0.000      54.121     100.860
-C(SubjectID)[T.Encode-Decode_Experiment-2-1]    33.7473     16.584      2.035      0.047       0.438      67.057
-C(SubjectID)[T.Encode-Decode_Experiment-3-1]   -29.1728     20.756     -1.406      0.166     -70.862      12.516
-C(SubjectID)[T.Encode-Decode_Experiment-4-1]    30.3394     16.089      1.886      0.065      -1.976      62.654
-svg_z_inter_dec_z                                6.7733      6.109      1.109      0.273      -5.498      19.044
-n_fixations_dec_z                                2.7462      7.931      0.346      0.731     -13.183      18.675
-aoi_prop_dec_z                                  -2.1348      9.924     -0.215      0.831     -22.068      17.798
-mean_salience_dec_z                            -15.5381      6.413     -2.423      0.019     -28.419      -2.658
+Intercept                                       84.7125     12.344      6.863      0.000      60.220     109.205
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]    26.5675     16.771      1.584      0.116      -6.710      59.845
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]   -40.2055     19.832     -2.027      0.045     -79.556      -0.855
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]    26.1396     16.338      1.600      0.113      -6.278      58.558
+C(SubjectID)[T.Encode-Decode_Experiment-5-1]    50.9229     20.850      2.442      0.016       9.551      92.294
+C(SubjectID)[T.Encode-Decode_Experiment-6-1]    25.6607     18.135      1.415      0.160     -10.324      61.645
+C(SubjectID)[T.Encode-Decode_Experiment-7-1]   -16.8280     19.941     -0.844      0.401     -56.395      22.739
+C(SubjectID)[T.Encode-Decode_Experiment-8-1]   -16.6452     18.434     -0.903      0.369     -53.222      19.931
+C(SubjectID)[T.Encode-Decode_Experiment-9-1]   168.1491     20.831      8.072      0.000     126.816     209.482
+svg_z_inter_dec_z                                5.5451      4.500      1.232      0.221      -3.383      14.473
+n_fixations_dec_z                               -5.1976      6.136     -0.847      0.399     -17.372       6.977
+aoi_prop_dec_z                                  -8.6784      6.828     -1.271      0.207     -22.227       4.870
+mean_salience_dec_z                             -9.0547      4.524     -2.001      0.048     -18.032      -0.077
 ==============================================================================
-Omnibus:                        5.478   Durbin-Watson:                   2.362
-Prob(Omnibus):                  0.065   Jarque-Bera (JB):                4.870
-Skew:                          -0.470   Prob(JB):                       0.0876
-Kurtosis:                       4.064   Cond. No.                         5.24
+Omnibus:                        4.699   Durbin-Watson:                   2.239
+Prob(Omnibus):                  0.095   Jarque-Bera (JB):                6.369
+Skew:                          -0.040   Prob(JB):                       0.0414
+Kurtosis:                       4.165   Cond. No.                         10.2
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-Log-likelihood: -298.7265
-R²: 0.2991
+Log-likelihood: -581.8529
+R²: 0.5145
 
 ============================================================
 EXP_length_all: Exploratory: Decoding all-edges SVG → writing length
 ============================================================
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:         writing_length   R-squared:                       0.285
-Model:                            OLS   Adj. R-squared:                  0.210
-Method:                 Least Squares   F-statistic:                     3.815
-Date:                Wed, 11 Mar 2026   Prob (F-statistic):            0.00152
-Time:                        09:27:06   Log-Likelihood:                -384.23
-No. Observations:                  75   AIC:                             784.5
-Df Residuals:                      67   BIC:                             803.0
-Df Model:                           7                                         
+Dep. Variable:         writing_length   R-squared:                       0.415
+Model:                            OLS   Adj. R-squared:                  0.363
+Method:                 Least Squares   F-statistic:                     7.927
+Date:                Wed, 11 Mar 2026   Prob (F-statistic):           4.73e-11
+Time:                        21:54:24   Log-Likelihood:                -761.32
+No. Observations:                 147   AIC:                             1549.
+Df Residuals:                     134   BIC:                             1588.
+Df Model:                          12                                         
 Covariance Type:            nonrobust                                         
 ================================================================================================================
                                                    coef    std err          t      P>|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------------------------------------
-Intercept                                       80.0145      9.844      8.129      0.000      60.366      99.663
-C(SubjectID)[T.Encode-Decode_Experiment-2-1]    26.3704     14.139      1.865      0.067      -1.851      54.592
-C(SubjectID)[T.Encode-Decode_Experiment-3-1]   -35.5022     17.045     -2.083      0.041     -69.525      -1.480
-C(SubjectID)[T.Encode-Decode_Experiment-4-1]    22.3037     14.157      1.575      0.120      -5.955      50.562
-svg_z_all_dec_z                                  8.2989      5.249      1.581      0.119      -2.177      18.775
-n_fixations_dec_z                                1.3146      6.437      0.204      0.839     -11.534      14.163
-aoi_prop_dec_z                                  -6.0333      6.039     -0.999      0.321     -18.088       6.021
-mean_salience_dec_z                            -12.8016      5.512     -2.322      0.023     -23.804      -1.799
+Intercept                                       82.5038     10.537      7.830      0.000      61.662     103.345
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]    22.5130     14.382      1.565      0.120      -5.933      50.959
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]   -40.2805     16.299     -2.471      0.015     -72.517      -8.044
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]    17.9969     14.393      1.250      0.213     -10.469      46.463
+C(SubjectID)[T.Encode-Decode_Experiment-5-1]    44.4984     17.860      2.491      0.014       9.174      79.823
+C(SubjectID)[T.Encode-Decode_Experiment-6-1]    28.7379     16.959      1.695      0.092      -4.805      62.280
+C(SubjectID)[T.Encode-Decode_Experiment-7-1]    -9.5562     16.551     -0.577      0.565     -42.291      23.179
+C(SubjectID)[T.Encode-Decode_Experiment-8-1]   -18.1185     15.554     -1.165      0.246     -48.881      12.644
+C(SubjectID)[T.Encode-Decode_Experiment-9-1]   118.8234     18.498      6.424      0.000      82.237     155.409
+svg_z_all_dec_z                                  9.4070      3.865      2.434      0.016       1.762      17.052
+n_fixations_dec_z                               -1.4834      5.119     -0.290      0.772     -11.607       8.640
+aoi_prop_dec_z                                  -3.6530      4.119     -0.887      0.377     -11.800       4.494
+mean_salience_dec_z                             -9.1966      3.855     -2.386      0.018     -16.820      -1.573
 ==============================================================================
-Omnibus:                        3.241   Durbin-Watson:                   2.506
-Prob(Omnibus):                  0.198   Jarque-Bera (JB):                2.580
-Skew:                          -0.279   Prob(JB):                        0.275
-Kurtosis:                       3.717   Cond. No.                         5.41
+Omnibus:                       10.281   Durbin-Watson:                   2.070
+Prob(Omnibus):                  0.006   Jarque-Bera (JB):               15.790
+Skew:                           0.354   Prob(JB):                     0.000373
+Kurtosis:                       4.441   Cond. No.                         10.4
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-Log-likelihood: -384.2277
-R²: 0.2850
+Log-likelihood: -761.3216
+R²: 0.4152
 
 ============================================================
 EXP_enc_svg_inter: Exploratory: Encoding interactional SVG → relational recall
 ============================================================
                              OLS Regression Results                             
 ================================================================================
-Dep. Variable:     n_relational_correct   R-squared:                       0.235
-Model:                              OLS   Adj. R-squared:                  0.086
-Method:                   Least Squares   F-statistic:                     1.577
-Date:                  Wed, 11 Mar 2026   Prob (F-statistic):              0.174
-Time:                          09:27:06   Log-Likelihood:                -72.819
-No. Observations:                    44   AIC:                             161.6
-Df Residuals:                        36   BIC:                             175.9
+Dep. Variable:     n_relational_correct   R-squared:                       0.117
+Model:                              OLS   Adj. R-squared:                  0.052
+Method:                   Least Squares   F-statistic:                     1.811
+Date:                  Wed, 11 Mar 2026   Prob (F-statistic):             0.0938
+Time:                          21:54:24   Log-Likelihood:                -180.08
+No. Observations:                   104   AIC:                             376.2
+Df Residuals:                        96   BIC:                             397.3
 Df Model:                             7                                         
 Covariance Type:              nonrobust                                         
 ================================================================================================================
                                                    coef    std err          t      P>|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------------------------------------
-Intercept                                        2.3090      0.450      5.127      0.000       1.396       3.222
-C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.3146      0.626     -0.503      0.618      -1.584       0.955
-C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.4238      0.626     -0.678      0.502      -1.693       0.845
-C(SubjectID)[T.Encode-Decode_Experiment-4-1]     1.0089      0.600      1.682      0.101      -0.207       2.225
-svg_z_inter_enc_z                                0.1946      0.214      0.910      0.369      -0.239       0.628
-n_fixations_enc_z                                0.3084      0.257      1.200      0.238      -0.213       0.830
-aoi_prop_enc_z                                  -0.4651      0.226     -2.057      0.047      -0.924      -0.007
-mean_salience_enc_z                              0.0173      0.230      0.075      0.940      -0.449       0.484
+Intercept                                        2.3252      0.277      8.390      0.000       1.775       2.875
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.0882      0.418     -0.211      0.833      -0.918       0.741
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]     0.0223      0.418      0.053      0.958      -0.807       0.851
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.6107      0.390      1.567      0.120      -0.163       1.384
+svg_z_inter_enc_z                                0.3529      0.132      2.678      0.009       0.091       0.615
+n_fixations_enc_z                                0.1108      0.161      0.690      0.492      -0.208       0.430
+aoi_prop_enc_z                                  -0.1986      0.147     -1.352      0.180      -0.490       0.093
+mean_salience_enc_z                              0.1354      0.163      0.829      0.409      -0.189       0.460
 ==============================================================================
-Omnibus:                       16.536   Durbin-Watson:                   2.322
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):               24.184
-Skew:                           1.118   Prob(JB):                     5.61e-06
-Kurtosis:                       5.861   Cond. No.                         5.64
+Omnibus:                        1.635   Durbin-Watson:                   2.058
+Prob(Omnibus):                  0.442   Jarque-Bera (JB):                1.097
+Skew:                           0.147   Prob(JB):                        0.578
+Kurtosis:                       3.409   Cond. No.                         5.32
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-Log-likelihood: -72.8194
-R²: 0.2347
+Log-likelihood: -180.0794
+R²: 0.1167
 
 ============================================================
 EXP_enc_svg_all: Exploratory: Encoding all-edges SVG → relational recall
 ============================================================
                              OLS Regression Results                             
 ================================================================================
-Dep. Variable:     n_relational_correct   R-squared:                       0.224
-Model:                              OLS   Adj. R-squared:                  0.074
-Method:                   Least Squares   F-statistic:                     1.488
-Date:                  Wed, 11 Mar 2026   Prob (F-statistic):              0.203
-Time:                          09:27:06   Log-Likelihood:                -73.113
-No. Observations:                    44   AIC:                             162.2
-Df Residuals:                        36   BIC:                             176.5
+Dep. Variable:     n_relational_correct   R-squared:                       0.117
+Model:                              OLS   Adj. R-squared:                  0.054
+Method:                   Least Squares   F-statistic:                     1.869
+Date:                  Wed, 11 Mar 2026   Prob (F-statistic):             0.0826
+Time:                          21:54:24   Log-Likelihood:                -184.41
+No. Observations:                   107   AIC:                             384.8
+Df Residuals:                        99   BIC:                             406.2
 Df Model:                             7                                         
 Covariance Type:              nonrobust                                         
 ================================================================================================================
                                                    coef    std err          t      P>|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------------------------------------
-Intercept                                        2.3494      0.450      5.224      0.000       1.437       3.262
-C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.2923      0.631     -0.463      0.646      -1.573       0.988
-C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.5298      0.619     -0.855      0.398      -1.786       0.726
-C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.9794      0.604      1.620      0.114      -0.246       2.205
-svg_z_all_enc_z                                  0.1397      0.239      0.583      0.563      -0.346       0.625
-n_fixations_enc_z                                0.3248      0.258      1.260      0.216      -0.198       0.848
-aoi_prop_enc_z                                  -0.4595      0.229     -2.005      0.052      -0.924       0.005
-mean_salience_enc_z                             -0.0068      0.229     -0.029      0.977      -0.471       0.458
+Intercept                                        2.3887      0.269      8.876      0.000       1.855       2.923
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.0296      0.401     -0.074      0.941      -0.826       0.766
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.1503      0.407     -0.369      0.713      -0.958       0.657
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.5890      0.382      1.544      0.126      -0.168       1.346
+svg_z_all_enc_z                                  0.3752      0.134      2.801      0.006       0.109       0.641
+n_fixations_enc_z                                0.1257      0.155      0.811      0.419      -0.182       0.433
+aoi_prop_enc_z                                  -0.2219      0.145     -1.534      0.128      -0.509       0.065
+mean_salience_enc_z                              0.0861      0.156      0.551      0.583      -0.224       0.396
 ==============================================================================
-Omnibus:                       17.925   Durbin-Watson:                   2.347
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):               29.042
-Skew:                           1.154   Prob(JB):                     4.94e-07
-Kurtosis:                       6.243   Cond. No.                         5.45
+Omnibus:                        3.399   Durbin-Watson:                   2.018
+Prob(Omnibus):                  0.183   Jarque-Bera (JB):                2.924
+Skew:                           0.259   Prob(JB):                        0.232
+Kurtosis:                       3.622   Cond. No.                         5.28
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-Log-likelihood: -73.1129
-R²: 0.2244
+Log-likelihood: -184.4069
+R²: 0.1167
 
 ============================================================
 EXP_enc_lcs: Exploratory: LCS sequence overlap → relational recall
 ============================================================
                              OLS Regression Results                             
 ================================================================================
-Dep. Variable:     n_relational_correct   R-squared:                       0.230
-Model:                              OLS   Adj. R-squared:                  0.081
-Method:                   Least Squares   F-statistic:                     1.539
-Date:                  Wed, 11 Mar 2026   Prob (F-statistic):              0.186
-Time:                          09:27:06   Log-Likelihood:                -72.944
-No. Observations:                    44   AIC:                             161.9
-Df Residuals:                        36   BIC:                             176.2
+Dep. Variable:     n_relational_correct   R-squared:                       0.051
+Model:                              OLS   Adj. R-squared:                 -0.016
+Method:                   Least Squares   F-statistic:                    0.7550
+Date:                  Wed, 11 Mar 2026   Prob (F-statistic):              0.626
+Time:                          21:54:24   Log-Likelihood:                -188.27
+No. Observations:                   107   AIC:                             392.5
+Df Residuals:                        99   BIC:                             413.9
 Df Model:                             7                                         
 Covariance Type:              nonrobust                                         
 ================================================================================================================
                                                    coef    std err          t      P>|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------------------------------------
-Intercept                                        2.4103      0.450      5.357      0.000       1.498       3.323
-C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.3703      0.632     -0.586      0.561      -1.651       0.911
-C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.5439      0.617     -0.881      0.384      -1.796       0.708
-C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.9344      0.607      1.540      0.132      -0.296       2.165
-lcs_enc_dec_z                                   -0.1633      0.207     -0.787      0.436      -0.584       0.257
-n_fixations_enc_z                                0.3056      0.259      1.178      0.247      -0.221       0.832
-aoi_prop_enc_z                                  -0.4468      0.225     -1.988      0.054      -0.903       0.009
-mean_salience_enc_z                             -0.0079      0.226     -0.035      0.972      -0.467       0.451
+Intercept                                        2.3712      0.280      8.465      0.000       1.815       2.927
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.0354      0.416     -0.085      0.932      -0.861       0.790
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.1324      0.425     -0.312      0.756      -0.975       0.710
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.6052      0.397      1.526      0.130      -0.182       1.392
+lcs_enc_dec_z                                   -0.0896      0.140     -0.639      0.524      -0.368       0.189
+n_fixations_enc_z                                0.1151      0.161      0.715      0.476      -0.204       0.434
+aoi_prop_enc_z                                  -0.1600      0.148     -1.080      0.283      -0.454       0.134
+mean_salience_enc_z                              0.0710      0.162      0.438      0.663      -0.251       0.393
 ==============================================================================
-Omnibus:                       15.595   Durbin-Watson:                   2.339
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):               21.224
-Skew:                           1.097   Prob(JB):                     2.46e-05
-Kurtosis:                       5.601   Cond. No.                         5.79
+Omnibus:                        2.127   Durbin-Watson:                   2.012
+Prob(Omnibus):                  0.345   Jarque-Bera (JB):                1.589
+Skew:                           0.176   Prob(JB):                        0.452
+Kurtosis:                       3.482   Cond. No.                         5.34
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-Log-likelihood: -72.9442
-R²: 0.2303
+Log-likelihood: -188.2663
+R²: 0.0507
 
 ============================================================
 EXP_enc_combined: Exploratory: Encoding SVG + LCS jointly → relational recall
 ============================================================
                              OLS Regression Results                             
 ================================================================================
-Dep. Variable:     n_relational_correct   R-squared:                       0.255
-Model:                              OLS   Adj. R-squared:                  0.084
-Method:                   Least Squares   F-statistic:                     1.496
-Date:                  Wed, 11 Mar 2026   Prob (F-statistic):              0.194
-Time:                          09:27:06   Log-Likelihood:                -72.235
-No. Observations:                    44   AIC:                             162.5
-Df Residuals:                        35   BIC:                             178.5
+Dep. Variable:     n_relational_correct   R-squared:                       0.120
+Model:                              OLS   Adj. R-squared:                  0.046
+Method:                   Least Squares   F-statistic:                     1.622
+Date:                  Wed, 11 Mar 2026   Prob (F-statistic):              0.129
+Time:                          21:54:24   Log-Likelihood:                -179.87
+No. Observations:                   104   AIC:                             377.7
+Df Residuals:                        95   BIC:                             401.5
 Df Model:                             8                                         
 Covariance Type:              nonrobust                                         
 ================================================================================================================
                                                    coef    std err          t      P>|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------------------------------------
-Intercept                                        2.3494      0.453      5.190      0.000       1.430       3.268
-C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.3823      0.630     -0.606      0.548      -1.662       0.897
-C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.4244      0.626     -0.678      0.502      -1.695       0.847
-C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.9306      0.606      1.537      0.133      -0.299       2.160
-svg_z_inter_enc_z                                0.2331      0.218      1.071      0.292      -0.209       0.675
-lcs_enc_dec_z                                   -0.2043      0.210     -0.971      0.338      -0.632       0.223
-n_fixations_enc_z                                0.2522      0.264      0.956      0.345      -0.283       0.787
-aoi_prop_enc_z                                  -0.4869      0.227     -2.141      0.039      -0.949      -0.025
-mean_salience_enc_z                              0.0558      0.234      0.239      0.812      -0.418       0.530
+Intercept                                        2.3139      0.279      8.305      0.000       1.761       2.867
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.0824      0.419     -0.197      0.845      -0.915       0.750
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]     0.0478      0.421      0.114      0.910      -0.788       0.884
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.6235      0.392      1.592      0.115      -0.154       1.401
+svg_z_inter_enc_z                                0.3550      0.132      2.684      0.009       0.092       0.618
+lcs_enc_dec_z                                   -0.0854      0.138     -0.618      0.538      -0.360       0.189
+n_fixations_enc_z                                0.1031      0.162      0.638      0.525      -0.218       0.424
+aoi_prop_enc_z                                  -0.2018      0.147     -1.369      0.174      -0.495       0.091
+mean_salience_enc_z                              0.1418      0.164      0.863      0.390      -0.184       0.468
 ==============================================================================
-Omnibus:                       14.253   Durbin-Watson:                   2.258
-Prob(Omnibus):                  0.001   Jarque-Bera (JB):               17.521
-Skew:                           1.067   Prob(JB):                     0.000157
-Kurtosis:                       5.237   Cond. No.                         5.87
+Omnibus:                        1.320   Durbin-Watson:                   2.068
+Prob(Omnibus):                  0.517   Jarque-Bera (JB):                0.810
+Skew:                           0.134   Prob(JB):                        0.667
+Kurtosis:                       3.339   Cond. No.                         5.37
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-Log-likelihood: -72.2350
-R²: 0.2548
+Log-likelihood: -179.8708
+R²: 0.1202
 
 ============================================================
 EXP_replay_lcs: Exploratory: LCS (replay-quality filtered) → relational recall
 ============================================================
                              OLS Regression Results                             
 ================================================================================
-Dep. Variable:     n_relational_correct   R-squared:                       0.284
-Model:                              OLS   Adj. R-squared:                  0.067
-Method:                   Least Squares   F-statistic:                     1.305
-Date:                  Wed, 11 Mar 2026   Prob (F-statistic):              0.292
-Time:                          09:27:06   Log-Likelihood:                -53.371
-No. Observations:                    31   AIC:                             122.7
-Df Residuals:                        23   BIC:                             134.2
+Dep. Variable:     n_relational_correct   R-squared:                       0.080
+Model:                              OLS   Adj. R-squared:                 -0.009
+Method:                   Least Squares   F-statistic:                    0.8952
+Date:                  Wed, 11 Mar 2026   Prob (F-statistic):              0.515
+Time:                          21:54:24   Log-Likelihood:                -145.15
+No. Observations:                    80   AIC:                             306.3
+Df Residuals:                        72   BIC:                             325.4
 Df Model:                             7                                         
 Covariance Type:              nonrobust                                         
 ================================================================================================================
                                                    coef    std err          t      P>|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------------------------------------
-Intercept                                        2.2543      0.585      3.856      0.001       1.045       3.464
-C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.3290      0.870     -0.378      0.709      -2.128       1.470
-C(SubjectID)[T.Encode-Decode_Experiment-3-1]    -0.0797      0.934     -0.085      0.933      -2.011       1.852
-C(SubjectID)[T.Encode-Decode_Experiment-4-1]     1.4673      0.885      1.658      0.111      -0.363       3.298
-lcs_enc_dec_z                                    0.0048      0.295      0.016      0.987      -0.605       0.615
-n_fixations_dec_z                                0.0030      0.342      0.009      0.993      -0.704       0.710
-aoi_prop_dec_z                                  -0.1381      0.282     -0.490      0.629      -0.721       0.444
-mean_salience_dec_z                              0.5578      0.393      1.420      0.169      -0.255       1.370
+Intercept                                        2.1865      0.389      5.615      0.000       1.410       2.963
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]     0.0609      0.524      0.116      0.908      -0.984       1.106
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]     0.0315      0.625      0.050      0.960      -1.215       1.278
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.8150      0.484      1.683      0.097      -0.150       1.780
+lcs_enc_dec_z                                   -0.1161      0.189     -0.615      0.540      -0.492       0.260
+n_fixations_dec_z                                0.2047      0.245      0.834      0.407      -0.284       0.694
+aoi_prop_dec_z                                  -0.1266      0.212     -0.598      0.552      -0.549       0.296
+mean_salience_dec_z                              0.1906      0.252      0.756      0.452      -0.312       0.693
 ==============================================================================
-Omnibus:                        3.458   Durbin-Watson:                   2.451
-Prob(Omnibus):                  0.177   Jarque-Bera (JB):                2.016
-Skew:                           0.495   Prob(JB):                        0.365
-Kurtosis:                       3.762   Cond. No.                         7.00
+Omnibus:                        1.389   Durbin-Watson:                   1.983
+Prob(Omnibus):                  0.499   Jarque-Bera (JB):                0.795
+Skew:                           0.156   Prob(JB):                        0.672
+Kurtosis:                       3.375   Cond. No.                         5.98
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-Log-likelihood: -53.3706
-R²: 0.2843
+Log-likelihood: -145.1540
+R²: 0.0801
 
 ============================================================
 EXP_replay_tau: Exploratory: Tau (replay-quality filtered) → relational recall
 ============================================================
                              OLS Regression Results                             
 ================================================================================
-Dep. Variable:     n_relational_correct   R-squared:                       0.296
-Model:                              OLS   Adj. R-squared:                  0.082
-Method:                   Least Squares   F-statistic:                     1.383
-Date:                  Wed, 11 Mar 2026   Prob (F-statistic):              0.260
-Time:                          09:27:06   Log-Likelihood:                -53.112
-No. Observations:                    31   AIC:                             122.2
-Df Residuals:                        23   BIC:                             133.7
+Dep. Variable:     n_relational_correct   R-squared:                       0.076
+Model:                              OLS   Adj. R-squared:                 -0.014
+Method:                   Least Squares   F-statistic:                    0.8444
+Date:                  Wed, 11 Mar 2026   Prob (F-statistic):              0.554
+Time:                          21:54:24   Log-Likelihood:                -145.34
+No. Observations:                    80   AIC:                             306.7
+Df Residuals:                        72   BIC:                             325.7
 Df Model:                             7                                         
 Covariance Type:              nonrobust                                         
 ================================================================================================================
                                                    coef    std err          t      P>|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------------------------------------
-Intercept                                        2.1517      0.587      3.668      0.001       0.938       3.365
-C(SubjectID)[T.Encode-Decode_Experiment-2-1]    -0.3912      0.858     -0.456      0.653      -2.167       1.384
-C(SubjectID)[T.Encode-Decode_Experiment-3-1]     0.1389      0.966      0.144      0.887      -1.858       2.136
-C(SubjectID)[T.Encode-Decode_Experiment-4-1]     1.6173      0.902      1.793      0.086      -0.249       3.484
-tau_enc_dec_z                                    0.2195      0.353      0.623      0.540      -0.510       0.949
-n_fixations_dec_z                               -0.0110      0.336     -0.033      0.974      -0.707       0.685
-aoi_prop_dec_z                                  -0.1805      0.283     -0.637      0.530      -0.766       0.405
-mean_salience_dec_z                              0.6052      0.369      1.642      0.114      -0.157       1.368
+Intercept                                        2.2008      0.389      5.650      0.000       1.424       2.977
+C(SubjectID)[T.Encode-Decode_Experiment-2-1]     0.0153      0.522      0.029      0.977      -1.025       1.055
+C(SubjectID)[T.Encode-Decode_Experiment-3-1]     0.0458      0.630      0.073      0.942      -1.210       1.302
+C(SubjectID)[T.Encode-Decode_Experiment-4-1]     0.8010      0.487      1.646      0.104      -0.169       1.771
+tau_enc_dec_z                                   -0.0401      0.179     -0.223      0.824      -0.398       0.318
+n_fixations_dec_z                                0.2169      0.246      0.881      0.381      -0.274       0.708
+aoi_prop_dec_z                                  -0.1299      0.212     -0.612      0.542      -0.553       0.293
+mean_salience_dec_z                              0.2133      0.250      0.852      0.397      -0.286       0.712
 ==============================================================================
-Omnibus:                        4.870   Durbin-Watson:                   2.584
-Prob(Omnibus):                  0.088   Jarque-Bera (JB):                3.327
-Skew:                           0.569   Prob(JB):                        0.189
-Kurtosis:                       4.132   Cond. No.                         6.38
+Omnibus:                        1.592   Durbin-Watson:                   1.996
+Prob(Omnibus):                  0.451   Jarque-Bera (JB):                0.969
+Skew:                           0.180   Prob(JB):                        0.616
+Kurtosis:                       3.401   Cond. No.                         6.00
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
-Log-likelihood: -53.1117
-R²: 0.2962
+Log-likelihood: -145.3361
+R²: 0.0759

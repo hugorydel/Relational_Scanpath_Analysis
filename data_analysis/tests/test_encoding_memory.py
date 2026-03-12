@@ -24,7 +24,7 @@ DVs
 
 Covariates (partialled out from both predictor and DV before plotting)
 ----------------------------------------------------------------------
-  n_fixations_enc, aoi_prop_enc, mean_salience_enc, C(SubjectID)
+  n_fixations_enc, aoi_prop_enc, mean_salience_relational_enc, C(SubjectID)
 
 Output
 ------
@@ -86,7 +86,7 @@ DVS = [
     ("n_objects_correct", "Objects correct\n(identity + attribute)"),
 ]
 
-COVARIATES = ["n_fixations_enc", "aoi_prop_enc", "mean_salience_enc"]
+COVARIATES = ["n_fixations_enc", "aoi_prop_enc", "mean_salience_relational_enc"]
 
 # Palette per DV
 DV_COLOURS = {
@@ -119,6 +119,7 @@ def _load(features_path: Path, scores_path: Path) -> pd.DataFrame:
             "n_fixations": "n_fixations_enc",
             "aoi_prop": "aoi_prop_enc",
             "mean_salience": "mean_salience_enc",
+            "mean_salience_relational": "mean_salience_relational_enc",
             "low_n": "low_n_enc",
         }
     )
@@ -404,7 +405,7 @@ def _plot(df: pd.DataFrame, coef_records: list, output_path: Path) -> None:
 
     fig.suptitle(
         "Encoding scanpath → episodic memory\n"
-        "Partial regression plots (covariates: n_fixations, aoi_prop, mean_salience, SubjectID)",
+        "Partial regression plots (covariates: n_fixations, aoi_prop, mean_salience_relational, SubjectID)",
         fontsize=10,
         y=1.01,
     )

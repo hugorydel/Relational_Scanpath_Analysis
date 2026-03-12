@@ -24,9 +24,8 @@ Group-level test (two-stage):
 
 Per-participant descriptives are also printed for inspection.
 
-Metrics tested:
-    svg_z_inter  — interactional edges only (primary)
-    svg_z_all    — all relation types (comparison)
+Metric tested:
+    svg_z  — core edges (interactional + spatial + functional)
 
 Source data:
     Loads {SubjectID}_fixations_aoi.csv from output/features/ and computes
@@ -82,7 +81,7 @@ def _compute_svg_per_trial(
     combination in the encoding phase.
 
     Returns a DataFrame with columns:
-        StimID, TrialIndex, svg_z_inter, svg_z_all, low_n
+        StimID, TrialIndex, svg_z, low_n
     """
     enc = fixations_aoi[fixations_aoi["Phase"] == "encoding"].copy()
     records = []
@@ -91,23 +90,17 @@ def _compute_svg_per_trial(
         stim_id = str(stim_id)
         seq = build_object_sequence(group)
 
-        edges_all = graph_index["all"].get(stim_id, set())
-        edges_inter = graph_index["interactional"].get(stim_id, set())
-
-        svg_all = svg_alignment(
-            seq, edges_all, n_permutations=config.SVG_N_PERMUTATIONS, rng=rng
-        )
-        svg_inter = svg_alignment(
-            seq, edges_inter, n_permutations=config.SVG_N_PERMUTATIONS, rng=rng
+        edges = graph_index["all"].get(stim_id, set())
+        svg = svg_alignment(
+            seq, edges, n_permutations=config.SVG_N_PERMUTATIONS, rng=rng
         )
 
         records.append(
             {
                 "StimID": stim_id,
                 "TrialIndex": int(trial_idx),
-                "svg_z_all": svg_all["svg_z"],
-                "svg_z_inter": svg_inter["svg_z"],
-                "low_n": svg_all["low_n"],
+                "svg_z": svg["svg_z"],
+                "low_n": svg["low_n"],
             }
         )
 
@@ -152,7 +145,7 @@ def analyse_shift_subject(
 
     result = {"subject_id": subject_id, "n_images": len(shared)}
 
-    for metric in ["svg_z_inter", "svg_z_all"]:
+    for metric in ["svg_z"]:
         v1 = enc_first[metric]
         v2 = enc_second[metric]
         low_n1 = enc_first["low_n"].fillna(True)
@@ -193,7 +186,7 @@ def run_group_test(all_results: list[dict]) -> dict:
     """
     group = {}
 
-    for metric in ["svg_z_inter", "svg_z_all"]:
+    for metric in ["svg_z"]:
         # Collect mean diffs from participants with enough valid pairs
         mean_diffs = []
         for r in all_results:
@@ -244,14 +237,13 @@ def run_group_test(all_results: list[dict]) -> dict:
 def print_per_subject_report(result: dict):
     sid = result["subject_id"]
     print(f"\n  {sid}  (n_images={result['n_images']})")
-    for metric in ["svg_z_inter", "svg_z_all"]:
+    for metric in ["svg_z"]:
         r = result[metric]
-        label = "inter" if "inter" in metric else "all"
         if r["n_valid"] == 0:
-            print(f"    [{label}]  no valid pairs")
+            print(f"    [svg]  no valid pairs")
             continue
         print(
-            f"    [{label}]  n_valid={r['n_valid']}  "
+            f"    [svg]  n_valid={r['n_valid']}  "
             f"enc_first={r['mean_enc_first']:+.3f}  "
             f"enc_second={r['mean_enc_second']:+.3f}  "
             f"mean_diff={r['mean_diff']:+.3f}  "
@@ -265,11 +257,9 @@ def print_group_report(group: dict, n_total: int):
     print(f"{'='*65}")
     print("(Test: one-sample Wilcoxon on per-participant mean diffs vs 0)\n")
 
-    for metric in ["svg_z_inter", "svg_z_all"]:
+    for metric in ["svg_z"]:
         g = group[metric]
-        label = (
-            "SVG z (interactional)" if "inter" in metric else "SVG z (all relations)"
-        )
+        label = "SVG z (core: inter+spatial+func)"
         print(f"--- {label} ---")
         print(f"  Contributing participants: {g['n_contributing']}")
 

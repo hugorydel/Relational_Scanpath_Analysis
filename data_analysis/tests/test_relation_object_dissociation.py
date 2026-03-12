@@ -1,40 +1,48 @@
 """
-tests/test_relational_dissociation.py
-======================================
-Formal test of whether encoding SVG predicts action vs spatial relational
-recall differentially.
+tests/test_relation_object_dissociation.py
+==========================================
+Formal test of whether encoding SVG predicts relational memory more than
+object memory.
+
+Motivation
+----------
+The encoding SVG → memory effect is currently non-specific: both relational
+and object DVs are significant with similar β. This test asks whether the
+SVG → memory slope is meaningfully steeper for relational content.
 
 Approach
 --------
-Stack n_action_relation_correct and n_spatial_relation_correct into long
-format, adding a binary factor relation_type (0=action, 1=spatial).
+Stack n_relational_correct and n_objects_correct into long format, adding a
+binary factor memory_type (0=objects, 1=relational).
 Fit an OLS model with:
 
-    score ~ svg_pred + relation_type + svg_pred:relation_type
+    score ~ svg_z_enc * memory_type
             + covariates + C(SubjectID) + C(StimID)
 
-C(StimID) is included because each stimulus contributes one action and one
-spatial score — the two rows per trial are not independent.
+C(StimID) is included because each stimulus contributes one relational and
+one object score — the two rows per trial are not independent.
 
-The focal term is svg_pred:relation_type. A significant positive coefficient
-means the SVG → memory slope is steeper for spatial than action relations.
+The focal term is svg_z_enc:memory_type. A significant positive coefficient
+means the SVG → memory slope is steeper for relational than object memory —
+i.e. relational scanning specifically benefits relational recall beyond its
+general effect on memory quality.
 
-Run for svg_z_enc (core: interactional + spatial + functional edges).
+Covariates: n_fixations_enc, aoi_prop_enc, mean_salience_relational_enc
 
 Output
 ------
-  Console table of interaction term β, t, p for each SVG variant.
-  output/analysis/relational_dissociation.png
-    Side-by-side slope plot: predicted score as a function of SVG,
-    separately for action (dark) and spatial (light), for each SVG variant.
+  Console table of all model terms (main effects + interaction).
+  output/analysis/relation_object_dissociation.png
+    Predicted slopes for relational vs object memory as a function of
+    encoding SVG, at mean covariates.
 
 Usage
 -----
-    python tests/test_relational_dissociation.py
-    python tests/test_relational_dissociation.py --features path/to/trial_features_all.csv
-    python tests/test_relational_dissociation.py --scores   path/to/memory_scores.csv
-    python tests/test_relational_dissociation.py --output   path/to/output/analysis
-    python tests/test_relational_dissociation.py --no-plot
+    python tests/test_relation_object_dissociation.py
+    python tests/test_relation_object_dissociation.py --features path/to/trial_features_all.csv
+    python tests/test_relation_object_dissociation.py --scores   path/to/memory_scores.csv
+    python tests/test_relation_object_dissociation.py --output   path/to/output/analysis
+    python tests/test_relation_object_dissociation.py --no-plot
 """
 
 import argparse
@@ -78,8 +86,8 @@ SVG_PREDICTORS = [
 COVARIATES = ["n_fixations_enc", "aoi_prop_enc", "mean_salience_relational_enc"]
 
 COLOURS = {
-    "action": "#084594",
-    "spatial": "#6baed6",
+    "objects": "#a63603",
+    "relational": "#084594",
 }
 
 # ---------------------------------------------------------------------------
@@ -108,11 +116,24 @@ def _load(features_path: Path, scores_path: Path) -> pd.DataFrame:
 
     scores = pd.read_csv(scores_path, dtype={"StimID": str, "SubjectID": str})
 
+    def _sum(df, *cols):
+        present = [c for c in cols if c in df.columns]
+        return df[present].sum(axis=1) if present else pd.Series(0, index=df.index)
+
+    if "n_relational_correct" not in scores.columns:
+        scores["n_relational_correct"] = _sum(
+            scores, "n_action_relation_correct", "n_spatial_relation_correct"
+        )
+    if "n_objects_correct" not in scores.columns:
+        scores["n_objects_correct"] = _sum(
+            scores, "n_object_identity_correct", "n_object_attribute_correct"
+        )
+
     score_keep = [
         "SubjectID",
         "StimID",
-        "n_action_relation_correct",
-        "n_spatial_relation_correct",
+        "n_relational_correct",
+        "n_objects_correct",
         "wrong_image",
     ]
     scores = scores[[c for c in score_keep if c in scores.columns]]
@@ -123,7 +144,6 @@ def _load(features_path: Path, scores_path: Path) -> pd.DataFrame:
         before = len(merged)
         merged = merged[~merged["low_n_enc"]].copy()
         print(f"  Excluded {before - len(merged)} low-n encoding trials.")
-    # Exclude wrong-image trials (participant described a different image)
     if "wrong_image" in merged.columns:
         before = len(merged)
         merged = merged[merged["wrong_image"] != 1].copy()
@@ -134,7 +154,7 @@ def _load(features_path: Path, scores_path: Path) -> pd.DataFrame:
         ["SubjectID", "StimID"]
         + pred_cols
         + COVARIATES
-        + ["n_action_relation_correct", "n_spatial_relation_correct"]
+        + ["n_relational_correct", "n_objects_correct"]
     )
     merged = merged[[c for c in keep if c in merged.columns]].reset_index(drop=True)
 
@@ -152,36 +172,34 @@ def _load(features_path: Path, scores_path: Path) -> pd.DataFrame:
 
 def _to_long(wide: pd.DataFrame, svg_col: str) -> pd.DataFrame:
     """
-    Stack action and spatial scores into long format.
-    Each wide row becomes two long rows, distinguished by relation_type (0/1).
+    Stack relational and object scores into long format.
+    memory_type: 0 = objects, 1 = relational.
 
     Each DV is z-scored within the wide table before stacking so that both
-    are on a common variance-standardised scale. This removes any scale
-    asymmetry arising from differing numbers of action vs spatial items per
-    stimulus (unknown n_possible), and makes the interaction β interpretable
-    in SD units. Consistent with the relation-object dissociation test.
+    are on a common variance-standardised scale. Without this, the raw counts
+    differ in mean and spread across question types (scale confound), making
+    the main effect of memory_type uninterpretable and the interaction noisy.
     """
     wide = wide.copy()
     id_cols = ["SubjectID", "StimID", svg_col] + [
         c for c in COVARIATES if c in wide.columns
     ]
 
-    for col in ["n_action_relation_correct", "n_spatial_relation_correct"]:
+    for col in ["n_objects_correct", "n_relational_correct"]:
         mu, sd = wide[col].mean(), wide[col].std()
         wide[f"{col}_z"] = (wide[col] - mu) / sd if sd > 0 else 0.0
 
-    action = wide[id_cols + ["n_action_relation_correct_z"]].copy()
-    action = action.rename(columns={"n_action_relation_correct_z": "score"})
-    action["relation_type"] = 0  # action = 0
+    obj = wide[id_cols + ["n_objects_correct_z"]].copy()
+    obj = obj.rename(columns={"n_objects_correct_z": "score"})
+    obj["memory_type"] = 0
 
-    spatial = wide[id_cols + ["n_spatial_relation_correct_z"]].copy()
-    spatial = spatial.rename(columns={"n_spatial_relation_correct_z": "score"})
-    spatial["relation_type"] = 1  # spatial = 1
+    rel = wide[id_cols + ["n_relational_correct_z"]].copy()
+    rel = rel.rename(columns={"n_relational_correct_z": "score"})
+    rel["memory_type"] = 1
 
-    long = pd.concat([action, spatial], ignore_index=True)
+    long = pd.concat([obj, rel], ignore_index=True)
     long = long.dropna(subset=["score", svg_col])
 
-    # Z-score the SVG predictor within the long table
     mu, sd = long[svg_col].mean(), long[svg_col].std()
     long[f"{svg_col}_z"] = (long[svg_col] - mu) / sd if sd > 0 else 0.0
 
@@ -194,17 +212,10 @@ def _to_long(wide: pd.DataFrame, svg_col: str) -> pd.DataFrame:
 
 
 def _fit_interaction(long: pd.DataFrame, svg_col: str) -> dict:
-    """
-    Fit: score ~ svg_z * relation_type + covariates + C(SubjectID) + C(StimID)
-
-    Returns a dict with focal terms extracted.
-    """
     svg_z = f"{svg_col}_z"
     cov_str = " + ".join(c for c in COVARIATES if c in long.columns)
     formula = (
-        f"score ~ {svg_z} * relation_type"
-        f" + {cov_str}"
-        f" + C(SubjectID) + C(StimID)"
+        f"score ~ {svg_z} * memory_type" f" + {cov_str}" f" + C(SubjectID) + C(StimID)"
     )
 
     with warnings.catch_warnings():
@@ -216,7 +227,6 @@ def _fit_interaction(long: pd.DataFrame, svg_col: str) -> dict:
             return {}
 
     def _extract(term):
-        # Find term in params (handles statsmodels name formatting)
         matches = [k for k in result.params.index if term in k]
         if not matches:
             return dict(beta=np.nan, se=np.nan, t=np.nan, p=np.nan)
@@ -231,8 +241,8 @@ def _fit_interaction(long: pd.DataFrame, svg_col: str) -> dict:
     return {
         "result": result,
         "svg_main": _extract(svg_z),
-        "type_main": _extract("relation_type"),
-        "interaction": _extract(f"{svg_z}:relation_type"),
+        "type_main": _extract("memory_type"),
+        "interaction": _extract(f"{svg_z}:memory_type"),
         "n_obs": int(result.nobs),
         "r2": result.rsquared,
     }
@@ -245,13 +255,11 @@ def _fit_interaction(long: pd.DataFrame, svg_col: str) -> dict:
 
 def _print_summary(fit_results: dict) -> None:
     print("\n" + "=" * 72)
-    print("ACTION vs SPATIAL DISSOCIATION — SVG × relation_type interaction")
-    print(
-        "Model: score ~ SVG_z * relation_type + covariates + C(SubjectID) + C(StimID)"
-    )
-    print("       relation_type: 0 = action, 1 = spatial")
+    print("RELATIONAL vs OBJECT MEMORY — SVG × memory_type interaction")
+    print("Model: score ~ SVG_z * memory_type + covariates + C(SubjectID) + C(StimID)")
+    print("       memory_type: 0 = objects, 1 = relational")
     print("=" * 72)
-    print(f"  {'SVG predictor':<30} {'term':<22} {'β':>8} {'t':>7} {'p':>8}  sig")
+    print(f"  {'SVG predictor':<30} {'term':<24} {'β':>8} {'t':>7} {'p':>8}  sig")
     print("-" * 72)
 
     for svg_col, svg_label in SVG_PREDICTORS:
@@ -262,8 +270,8 @@ def _print_summary(fit_results: dict) -> None:
 
         for term_key, term_label in [
             ("svg_main", "SVG main effect"),
-            ("type_main", "relation_type main"),
-            ("interaction", "SVG × relation_type"),
+            ("type_main", "memory_type main"),
+            ("interaction", "SVG × memory_type"),
         ]:
             rec = fit.get(term_key, {})
             b, t, p = (
@@ -276,22 +284,22 @@ def _print_summary(fit_results: dict) -> None:
             )
             label_col = svg_label if term_key == "svg_main" else ""
             print(
-                f"  {label_col:<30} {term_label:<22} {b:>+8.3f} {t:>7.3f} {p:>8.4f}  {sig}"
+                f"  {label_col:<30} {term_label:<24} {b:>+8.3f} {t:>7.3f} {p:>8.4f}  {sig}"
             )
 
-        print(f"  {'':30} {'n_obs':<22} {fit['n_obs']:>8}  R²={fit['r2']:.3f}")
+        print(f"  {'':30} {'n_obs':<24} {fit['n_obs']:>8}  R²={fit['r2']:.3f}")
         print()
 
     print("=" * 72)
-    print("\n  Interpretation of SVG × relation_type:")
+    print("\n  Interpretation of SVG × memory_type:")
     print("  (Both DVs z-scored before stacking — βs are in SD units)")
-    print("  Positive β → SVG predicts spatial recall MORE than action recall")
-    print("  Negative β → SVG predicts action recall MORE than spatial recall")
-    print("  ns         → no evidence of differential prediction")
+    print("  Positive β → SVG predicts relational recall MORE than object recall")
+    print("  Negative β → SVG predicts object recall MORE than relational recall")
+    print("  ns         → no evidence of differential prediction (non-specific effect)")
 
 
 # ---------------------------------------------------------------------------
-# Plot: predicted slopes per relation type
+# Plot
 # ---------------------------------------------------------------------------
 
 
@@ -312,22 +320,19 @@ def _plot(wide: pd.DataFrame, fit_results: dict, output_path: Path) -> None:
         svg_z = f"{svg_col}_z"
         long = _to_long(wide, svg_col)
 
-        # SVG z range for prediction line
         x_range = np.linspace(long[svg_z].min(), long[svg_z].max(), 100)
-
-        # Build prediction DataFrames at mean covariates, reference SubjectID/StimID
         ref_subj = long["SubjectID"].mode()[0]
         ref_stim = long["StimID"].mode()[0]
         cov_means = {c: long[c].mean() for c in COVARIATES if c in long.columns}
 
-        for rel_type, label, colour in [
-            (0, "Action relation", COLOURS["action"]),
-            (1, "Spatial relation", COLOURS["spatial"]),
+        for mem_type, label, colour in [
+            (0, "Object memory", COLOURS["objects"]),
+            (1, "Relational memory", COLOURS["relational"]),
         ]:
             pred_df = pd.DataFrame(
                 {
                     svg_z: x_range,
-                    "relation_type": rel_type,
+                    "memory_type": mem_type,
                     "SubjectID": ref_subj,
                     "StimID": ref_stim,
                     **cov_means,
@@ -340,10 +345,14 @@ def _plot(wide: pd.DataFrame, fit_results: dict, output_path: Path) -> None:
 
             ax.plot(x_range, y_pred, color=colour, linewidth=2.2, label=label)
 
-            # Scatter raw data points
-            sub = long[long["relation_type"] == rel_type]
+            sub = long[long["memory_type"] == mem_type]
             ax.scatter(
-                sub[svg_z], sub["score"], color=colour, alpha=0.25, s=20, linewidths=0
+                sub[svg_z],
+                sub["score"],
+                color=colour,
+                alpha=0.25,
+                s=20,
+                linewidths=0,
             )
 
         # Annotate interaction term
@@ -363,7 +372,7 @@ def _plot(wide: pd.DataFrame, fit_results: dict, output_path: Path) -> None:
 
         ax.axhline(0, color="grey", linewidth=0.6, linestyle="--", alpha=0.4)
         ax.axvline(0, color="grey", linewidth=0.6, linestyle="--", alpha=0.4)
-        ax.set_xlabel(f"{svg_label} (z-scored)", fontsize=9)
+        ax.set_xlabel(f"{svg_label} (z-scored within long table)", fontsize=9)
         ax.set_ylabel("Recall score (z-scored within type)", fontsize=9)
         ax.set_title(svg_label, fontsize=10, fontweight="bold", pad=7)
         ax.legend(fontsize=8.5, framealpha=0.7)
@@ -371,9 +380,8 @@ def _plot(wide: pd.DataFrame, fit_results: dict, output_path: Path) -> None:
         ax.tick_params(labelsize=8)
 
     fig.suptitle(
-        "Action vs Spatial relational recall — encoding SVG dissociation test\n"
-        "Lines = model-predicted slopes at mean covariates; "
-        "dots = z-scored trial scores",
+        "Relational vs Object memory — encoding SVG specificity test\n"
+        "Lines = model-predicted slopes at mean covariates; dots = z-scored trial scores",
         fontsize=10,
         y=1.02,
     )
@@ -391,7 +399,7 @@ def _plot(wide: pd.DataFrame, fit_results: dict, output_path: Path) -> None:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Formal dissociation test: encoding SVG × relation type."
+        description="Relational vs object memory dissociation: encoding SVG specificity."
     )
     parser.add_argument("--features", default=str(_DEFAULT_FEATURES))
     parser.add_argument("--scores", default=str(_DEFAULT_SCORES))
@@ -400,7 +408,7 @@ def main():
     args = parser.parse_args()
 
     print("\n" + "=" * 60)
-    print("Action vs Spatial dissociation test")
+    print("Relational vs Object memory dissociation test")
     print("=" * 60)
 
     wide = _load(Path(args.features), Path(args.scores))
@@ -411,15 +419,15 @@ def main():
         long = _to_long(wide, svg_col)
         print(
             f"  Long format: {len(long)} rows "
-            f"({long['relation_type'].eq(0).sum()} action, "
-            f"{long['relation_type'].eq(1).sum()} spatial)"
+            f"({long['memory_type'].eq(0).sum()} object, "
+            f"{long['memory_type'].eq(1).sum()} relational)"
         )
         fit_results[svg_col] = _fit_interaction(long, svg_col)
 
     _print_summary(fit_results)
 
     if not args.no_plot:
-        _plot(wide, fit_results, Path(args.output) / "relational_dissociation.png")
+        _plot(wide, fit_results, Path(args.output) / "relation_object_dissociation.png")
 
 
 if __name__ == "__main__":

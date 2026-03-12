@@ -23,7 +23,7 @@ Predictors (decoding phase)
 
 Covariates partialled out from both predictor and DV
 -----------------------------------------------------
-  n_fixations_dec, aoi_prop_dec, mean_salience_dec, C(SubjectID)
+  n_fixations_dec, aoi_prop_dec, mean_salience_relational_dec, C(SubjectID)
 
 Usage
 -----
@@ -73,7 +73,7 @@ PREDICTORS = [
     ("svg_z_dec", "Decoding SVG (core)"),
 ]
 
-COVARIATES = ["n_fixations_dec", "aoi_prop_dec", "mean_salience_dec"]
+COVARIATES = ["n_fixations_dec", "aoi_prop_dec", "mean_salience_relational_dec"]
 
 # Single combined figure: relational + objects side by side
 FIGURES = [
@@ -110,6 +110,7 @@ def _load(features_path: Path, scores_path: Path) -> pd.DataFrame:
             "n_fixations": "n_fixations_dec",
             "aoi_prop": "aoi_prop_dec",
             "mean_salience": "mean_salience_dec",
+            "mean_salience_relational": "mean_salience_relational_dec",
             "low_n": "low_n_dec",
         }
     )
@@ -373,7 +374,7 @@ def _make_figure(
     ax_summary.tick_params(labelsize=8)
 
     fig.suptitle(
-        f"{title}\nPartial regression (covariates: n_fixations, aoi_prop, mean_salience, SubjectID)",
+        f"{title}\nPartial regression (covariates: n_fixations, aoi_prop, mean_salience_relational, SubjectID)",
         fontsize=10,
         y=1.01,
     )

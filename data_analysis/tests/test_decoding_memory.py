@@ -147,6 +147,11 @@ def _load(features_path: Path, scores_path: Path) -> pd.DataFrame:
         before = len(merged)
         merged = merged[~merged["low_n_dec"]].copy()
         print(f"  Excluded {before - len(merged)} low-n decoding trials.")
+    # Exclude wrong-image trials (participant described a different image)
+    if "wrong_image" in merged.columns:
+        before = len(merged)
+        merged = merged[merged["wrong_image"] != 1].copy()
+        print(f"  Excluded {before - len(merged)} wrong-image trials.")
 
     pred_cols = [p for p, _ in PREDICTORS]
     keep = ["SubjectID", "StimID"] + pred_cols + COVARIATES + dv_cols

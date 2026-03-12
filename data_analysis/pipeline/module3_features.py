@@ -249,77 +249,70 @@ def _join_behavioral(
         "TrialIndex",
     ]
 
-    # Encoding behavioral
+    # Encoding behavioral — 2 rows per StimID (Q1 and Q2, ordered by row)
+    # Pivot to wide format so the merge is 1-to-1 with trial_df rows.
     if enc_path.exists():
         enc_beh = pd.read_csv(enc_path, dtype={"StimID": str})
-        enc_beh = enc_beh[[c for c in enc_cols if c in enc_beh.columns]].copy()
-        enc_beh = enc_beh.rename(
-            columns={
-                "Accuracy": "enc_accuracy",
-                "RT_ms": "enc_rt_ms",
-                "Response": "enc_response",
-                "CorrectKey": "enc_correct_key",
-                "TrialIndex": "enc_trial_index",
-                "CueText": "CueText",
-            }
-        )
-        enc_merge_cols = [c for c in enc_beh.columns if c != "CueText"]
-        trial_df = trial_df.merge(enc_beh[enc_merge_cols], on="StimID", how="left")
+        wide_enc_rows = []
+        for stim_id, grp in enc_beh.groupby("StimID", sort=False):
+            grp = grp.reset_index(drop=True)
+            row = {"StimID": str(stim_id)}
+            for i, (_, qrow) in enumerate(grp.iterrows()):
+                qid = f"q{i+1}"
+                row[f"enc_{qid}_accuracy"] = qrow.get("Accuracy", np.nan)
+                row[f"enc_{qid}_rt_ms"] = qrow.get("RT_ms", np.nan)
+                row[f"enc_{qid}_response"] = qrow.get("Response", np.nan)
+                row[f"enc_{qid}_correct_key"] = qrow.get("CorrectKey", np.nan)
+                row[f"enc_{qid}_question"] = qrow.get("Question", "")
+            row["enc_trial_index"] = (
+                grp["TrialIndex"].iloc[0] if "TrialIndex" in grp.columns else np.nan
+            )
+            # Convenience: proportion correct across both questions
+            acc_vals = [row[k] for k in row if k.endswith("_accuracy")]
+            row["enc_total_correct"] = sum(
+                v for v in acc_vals if not (isinstance(v, float) and np.isnan(v))
+            )
+            wide_enc_rows.append(row)
+        enc_wide = pd.DataFrame(wide_enc_rows)
+        trial_df = trial_df.merge(enc_wide, on="StimID", how="left")
     else:
         logger.warning(f"  Encoding behavioral not found: {enc_path.name}")
         for col in [
-            "enc_accuracy",
-            "enc_rt_ms",
-            "enc_response",
-            "enc_correct_key",
+            "enc_q1_accuracy",
+            "enc_q2_accuracy",
             "enc_trial_index",
+            "enc_total_correct",
         ]:
             trial_df[col] = np.nan
 
-    # Decoding behavioral — long format (2 rows per image, one per question)
-    # Pivot to wide format keyed by StimID so we can join onto the trial table
+    # Decoding behavioral — free recall format (1 row per image)
+    # Columns: StimID, CueText, CueQuestion, FreeResponse, RT_ms, TrialIndex
     if dec_path.exists():
         dec_beh = pd.read_csv(dec_path, dtype={"StimID": str})
-
-        # Separate Q1 and Q2 rows and rename columns with question prefix
-        wide_rows = []
-        for stim_id, grp in dec_beh.groupby("StimID"):
-            row = {"StimID": stim_id}
-            for _, qrow in grp.iterrows():
-                qid = qrow["QuestionID"].lower()  # "q1" or "q2"
-                row[f"{qid}_accuracy"] = qrow.get("Accuracy", np.nan)
-                row[f"{qid}_rt_ms"] = qrow.get("RT_ms", np.nan)
-                row[f"{qid}_confidence"] = qrow.get("Confidence", np.nan)
-                row[f"{qid}_present_order"] = qrow.get("PresentOrder", np.nan)
-            wide_rows.append(row)
-
-        dec_wide = pd.DataFrame(wide_rows)
-
-        # Aggregate convenience columns
-        acc_cols = [c for c in dec_wide.columns if c.endswith("_accuracy")]
-        dec_wide["dec_total_correct"] = dec_wide[acc_cols].sum(axis=1, skipna=True)
-
-        dec_wide["dec_trial_index"] = (
-            dec_beh.drop_duplicates(subset="StimID")
-            .set_index("StimID")["TrialIndex"]
-            .reindex(dec_wide["StimID"])
-            .values
+        dec_beh = dec_beh.rename(
+            columns={
+                "FreeResponse": "dec_free_response",
+                "RT_ms": "dec_rt_ms",
+                "TrialIndex": "dec_trial_index",
+                "CueQuestion": "dec_cue_question",
+            }
         )
-
-        trial_df = trial_df.merge(dec_wide, on="StimID", how="left")
+        keep = [
+            "StimID",
+            "dec_free_response",
+            "dec_rt_ms",
+            "dec_trial_index",
+            "dec_cue_question",
+        ]
+        dec_beh = dec_beh[[c for c in keep if c in dec_beh.columns]]
+        trial_df = trial_df.merge(dec_beh, on="StimID", how="left")
     else:
         logger.warning(f"  Decoding behavioral not found: {dec_path.name}")
         for col in [
-            "q1_accuracy",
-            "q1_rt_ms",
-            "q1_confidence",
-            "q1_present_order",
-            "q2_accuracy",
-            "q2_rt_ms",
-            "q2_confidence",
-            "q2_present_order",
-            "dec_total_correct",
+            "dec_free_response",
+            "dec_rt_ms",
             "dec_trial_index",
+            "dec_cue_question",
         ]:
             trial_df[col] = np.nan
 
@@ -340,9 +333,7 @@ def _assemble(subject_id: str, trial_df: pd.DataFrame) -> pd.DataFrame:
     # Nullify phase-specific behavioral columns on the wrong phase rows.
     # The StimID-level merge in Step 8 propagates dec columns onto encoding
     # rows and enc columns onto decoding rows — correct values, wrong rows.
-    dec_only_cols = [
-        c for c in trial_df.columns if c.startswith(("q1_", "q2_", "dec_"))
-    ]
+    dec_only_cols = [c for c in trial_df.columns if c.startswith("dec_")]
     enc_only_cols = [c for c in trial_df.columns if c.startswith("enc_")]
     trial_df.loc[trial_df["Phase"] == "encoding", dec_only_cols] = np.nan
     trial_df.loc[trial_df["Phase"] == "decoding", enc_only_cols] = np.nan
@@ -387,19 +378,16 @@ def _validate(subject_id: str, trial_df: pd.DataFrame) -> bool:
         if n_nan > 0:
             logger.warning(f"    {col}: {n_nan} NaN values")
 
-    # Decoding accuracy present
+    # Decoding free response present
     dec_rows = trial_df[trial_df["Phase"] == "decoding"]
-    if "dec_total_correct" in trial_df.columns:
-        n_missing = dec_rows["dec_total_correct"].isna().sum()
+    if "dec_free_response" in trial_df.columns:
+        n_missing = dec_rows["dec_free_response"].isna().sum()
         if n_missing > 0:
             logger.warning(
-                f"    dec_total_correct: {n_missing} missing on decoding rows"
+                f"    dec_free_response: {n_missing} missing on decoding rows"
             )
         else:
-            logger.info(
-                f"    dec_total_correct: complete ✓  "
-                f"(mean={dec_rows['dec_total_correct'].mean():.2f}/2)"
-            )
+            logger.info(f"    dec_free_response: complete ✓")
 
     return ok
 

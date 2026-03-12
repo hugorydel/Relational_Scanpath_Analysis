@@ -177,18 +177,25 @@ def build_graph_index(metadata_file: Optional[Path] = None) -> dict:
       same edge. This matches the undirected treatment agreed for the
       graph-walk metric.
     - Self-loops (A→A) are excluded.
+    - "all" contains only relations where predicate_category is one of
+      {"interactional", "spatial", "functional"}. Social and emotional
+      predicates are excluded as they are the noisiest and least reliably
+      annotated categories.
     - "interactional" contains only relations where
-      predicate_category == "interactional", for sensitivity analyses.
+      predicate_category == "interactional", retained for reference.
     - The adjacency_matrix field in the JSON is ignored — we recompute
       binary 0/1 edges from the relations array directly.
     - Cached after first call.
     """
+    _CORE_CATEGORIES = {"interactional", "spatial", "functional"}
+
     metadata_file = Path(metadata_file) if metadata_file else None
     metadata = load_stimulus_metadata(metadata_file)
 
     all_edges = {}
     inter_edges = {}
     total_relations = 0
+    total_excluded = 0
 
     for stim_id, entry in metadata.items():
         edges_all = set()
@@ -202,20 +209,26 @@ def build_graph_index(metadata_file: Optional[Path] = None) -> dict:
             if subj is None or obj is None or subj == obj:
                 continue
 
+            total_relations += 1
+
+            if cat not in _CORE_CATEGORIES:
+                total_excluded += 1
+                continue
+
             edge = frozenset({subj, obj})
             edges_all.add(edge)
             if cat == "interactional":
                 edges_inter.add(edge)
-            total_relations += 1
 
         all_edges[stim_id] = edges_all
         inter_edges[stim_id] = edges_inter
 
     logger.info(
         f"Graph index built: {total_relations} relations across "
-        f"{len(all_edges)} stimuli. "
+        f"{len(all_edges)} stimuli "
+        f"({total_excluded} excluded — social/emotional predicates). "
         f"Unique undirected edges — "
-        f"all: {sum(len(v) for v in all_edges.values())}, "
-        f"interactional: {sum(len(v) for v in inter_edges.values())}."
+        f"core (inter+spatial+func): {sum(len(v) for v in all_edges.values())}, "
+        f"interactional only: {sum(len(v) for v in inter_edges.values())}."
     )
     return {"all": all_edges, "interactional": inter_edges}

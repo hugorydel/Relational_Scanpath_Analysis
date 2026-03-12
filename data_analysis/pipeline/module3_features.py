@@ -11,11 +11,9 @@ Runs per-participant, in sequence:
     Step 6  — Symbolic LCS and Kendall's tau (enc vs dec)
     Step 7  — Per-trial covariates (fixation count, AOI proportion,
                mean saliency)
-    Step 8  — Join behavioral data (encoding Q1/Q2 accuracy per image in
-               wide format; decoding free-recall RT and writing length)
-    Step 9  — Assemble trial_features.csv (60 rows per participant:
-               30 encoding rows — one per image, both questions merged;
-               30 decoding rows — one per image)
+    Step 8  — Join behavioral data (encoding + decoding accuracy,
+               confidence, RT per question)
+    Step 9  — Assemble trial_features.csv (60 rows per participant)
     Step 10 — Validate outputs
 
 Outputs (per participant):
@@ -38,7 +36,6 @@ Usage:
 
 import argparse
 import logging
-import re
 import sys
 import warnings
 from pathlib import Path
@@ -109,14 +106,11 @@ def _build_sequences_and_svg(
         stim_id = str(stim_id)
         seq = build_object_sequence(group)
 
-        edges_all = graph_index["all"].get(stim_id, set())
-        edges_inter = graph_index["interactional"].get(stim_id, set())
+        # Core edges: interactional + spatial + functional (social/emotional excluded)
+        edges_core = graph_index["all"].get(stim_id, set())
 
-        svg_all = svg_alignment(
-            seq, edges_all, n_permutations=config.SVG_N_PERMUTATIONS, rng=rng
-        )
-        svg_inter = svg_alignment(
-            seq, edges_inter, n_permutations=config.SVG_N_PERMUTATIONS, rng=rng
+        svg = svg_alignment(
+            seq, edges_core, n_permutations=config.SVG_N_PERMUTATIONS, rng=rng
         )
 
         records.append(
@@ -124,18 +118,13 @@ def _build_sequences_and_svg(
                 "StimID": stim_id,
                 "Phase": phase,
                 "_sequence": seq,  # temporary — dropped before output
-                "svg_z_all": svg_all["svg_z"],
-                "svg_obs_all": svg_all["svg_obs"],
-                "svg_null_mean_all": svg_all["svg_null_mean"],
-                "svg_null_std_all": svg_all["svg_null_std"],
-                "svg_z_inter": svg_inter["svg_z"],
-                "svg_obs_inter": svg_inter["svg_obs"],
-                "svg_null_mean_inter": svg_inter["svg_null_mean"],
-                "svg_null_std_inter": svg_inter["svg_null_std"],
-                "n_transitions": svg_all["n_transitions"],
-                "n_relational_all": svg_all["n_relational"],
-                "n_relational_inter": svg_inter["n_relational"],
-                "low_n": svg_all["low_n"],
+                "svg_z": svg["svg_z"],
+                "svg_obs": svg["svg_obs"],
+                "svg_null_mean": svg["svg_null_mean"],
+                "svg_null_std": svg["svg_null_std"],
+                "n_transitions": svg["n_transitions"],
+                "n_relational": svg["n_relational"],
+                "low_n": svg["low_n"],
             }
         )
 
@@ -250,61 +239,88 @@ def _join_behavioral(
     enc_path = config.OUTPUT_BEHAVIORAL_DIR / f"{subject_id}_encoding.csv"
     dec_path = config.OUTPUT_BEHAVIORAL_DIR / f"{subject_id}_decoding.csv"
 
-    # ------------------------------------------------------------------
-    # Encoding behavioral — 60 rows (2 per image), pivot to wide (30 rows)
-    # q1 = the question shown earlier (lower TrialIndex for that StimID)
-    # q2 = the question shown later  (higher TrialIndex for that StimID)
-    # ------------------------------------------------------------------
+    enc_cols = [
+        "StimID",
+        "CueText",
+        "Accuracy",
+        "RT_ms",
+        "Response",
+        "CorrectKey",
+        "TrialIndex",
+    ]
+
+    # Encoding behavioral
     if enc_path.exists():
         enc_beh = pd.read_csv(enc_path, dtype={"StimID": str})
-        enc_beh = enc_beh.sort_values(["StimID", "TrialIndex"])
-
-        enc_wide_rows = []
-        for stim_id, grp in enc_beh.groupby("StimID", sort=False):
-            grp = grp.reset_index(drop=True)
-            row = {"StimID": stim_id}
-            for i, (_, qrow) in enumerate(grp.iterrows(), start=1):
-                row[f"enc_q{i}_accuracy"] = qrow.get("Accuracy", np.nan)
-                row[f"enc_q{i}_rt_ms"] = qrow.get("RT_ms", np.nan)
-                row[f"enc_q{i}_trial_index"] = qrow.get("TrialIndex", np.nan)
-            enc_wide_rows.append(row)
-
-        enc_wide = pd.DataFrame(enc_wide_rows)
-        trial_df = trial_df.merge(enc_wide, on="StimID", how="left")
+        enc_beh = enc_beh[[c for c in enc_cols if c in enc_beh.columns]].copy()
+        enc_beh = enc_beh.rename(
+            columns={
+                "Accuracy": "enc_accuracy",
+                "RT_ms": "enc_rt_ms",
+                "Response": "enc_response",
+                "CorrectKey": "enc_correct_key",
+                "TrialIndex": "enc_trial_index",
+                "CueText": "CueText",
+            }
+        )
+        enc_merge_cols = [c for c in enc_beh.columns if c != "CueText"]
+        trial_df = trial_df.merge(enc_beh[enc_merge_cols], on="StimID", how="left")
     else:
         logger.warning(f"  Encoding behavioral not found: {enc_path.name}")
         for col in [
-            "enc_q1_accuracy",
-            "enc_q1_rt_ms",
-            "enc_q1_trial_index",
-            "enc_q2_accuracy",
-            "enc_q2_rt_ms",
-            "enc_q2_trial_index",
+            "enc_accuracy",
+            "enc_rt_ms",
+            "enc_response",
+            "enc_correct_key",
+            "enc_trial_index",
         ]:
             trial_df[col] = np.nan
 
-    # ------------------------------------------------------------------
-    # Decoding behavioral — 30 rows (1 per image), flat join
-    # Adds: dec_rt_ms, dec_trial_index, writing_length
-    # writing_length = alphanumeric character count of the free response
-    # ------------------------------------------------------------------
+    # Decoding behavioral — long format (2 rows per image, one per question)
+    # Pivot to wide format keyed by StimID so we can join onto the trial table
     if dec_path.exists():
         dec_beh = pd.read_csv(dec_path, dtype={"StimID": str})
 
-        dec_beh["writing_length"] = dec_beh["FreeResponse"].apply(
-            lambda x: len(re.sub(r"[^A-Za-z0-9]", "", str(x))) if pd.notna(x) else 0
+        # Separate Q1 and Q2 rows and rename columns with question prefix
+        wide_rows = []
+        for stim_id, grp in dec_beh.groupby("StimID"):
+            row = {"StimID": stim_id}
+            for _, qrow in grp.iterrows():
+                qid = qrow["QuestionID"].lower()  # "q1" or "q2"
+                row[f"{qid}_accuracy"] = qrow.get("Accuracy", np.nan)
+                row[f"{qid}_rt_ms"] = qrow.get("RT_ms", np.nan)
+                row[f"{qid}_confidence"] = qrow.get("Confidence", np.nan)
+                row[f"{qid}_present_order"] = qrow.get("PresentOrder", np.nan)
+            wide_rows.append(row)
+
+        dec_wide = pd.DataFrame(wide_rows)
+
+        # Aggregate convenience columns
+        acc_cols = [c for c in dec_wide.columns if c.endswith("_accuracy")]
+        dec_wide["dec_total_correct"] = dec_wide[acc_cols].sum(axis=1, skipna=True)
+
+        dec_wide["dec_trial_index"] = (
+            dec_beh.drop_duplicates(subset="StimID")
+            .set_index("StimID")["TrialIndex"]
+            .reindex(dec_wide["StimID"])
+            .values
         )
 
-        dec_join = dec_beh[["StimID", "RT_ms", "TrialIndex", "writing_length"]].rename(
-            columns={
-                "RT_ms": "dec_rt_ms",
-                "TrialIndex": "dec_trial_index",
-            }
-        )
-        trial_df = trial_df.merge(dec_join, on="StimID", how="left")
+        trial_df = trial_df.merge(dec_wide, on="StimID", how="left")
     else:
         logger.warning(f"  Decoding behavioral not found: {dec_path.name}")
-        for col in ["dec_rt_ms", "dec_trial_index", "writing_length"]:
+        for col in [
+            "q1_accuracy",
+            "q1_rt_ms",
+            "q1_confidence",
+            "q1_present_order",
+            "q2_accuracy",
+            "q2_rt_ms",
+            "q2_confidence",
+            "q2_present_order",
+            "dec_total_correct",
+            "dec_trial_index",
+        ]:
             trial_df[col] = np.nan
 
     return trial_df
@@ -325,7 +341,7 @@ def _assemble(subject_id: str, trial_df: pd.DataFrame) -> pd.DataFrame:
     # The StimID-level merge in Step 8 propagates dec columns onto encoding
     # rows and enc columns onto decoding rows — correct values, wrong rows.
     dec_only_cols = [
-        c for c in trial_df.columns if c.startswith("dec_") or c == "writing_length"
+        c for c in trial_df.columns if c.startswith(("q1_", "q2_", "dec_"))
     ]
     enc_only_cols = [c for c in trial_df.columns if c.startswith("enc_")]
     trial_df.loc[trial_df["Phase"] == "encoding", dec_only_cols] = np.nan
@@ -363,7 +379,7 @@ def _validate(subject_id: str, trial_df: pd.DataFrame) -> bool:
         )
 
     # NaN rates for key columns
-    key_cols = ["svg_z_all", "svg_z_inter", "n_fixations", "aoi_prop", "mean_salience"]
+    key_cols = ["svg_z", "n_fixations", "aoi_prop", "mean_salience"]
     for col in key_cols:
         if col not in trial_df.columns:
             continue
@@ -371,16 +387,18 @@ def _validate(subject_id: str, trial_df: pd.DataFrame) -> bool:
         if n_nan > 0:
             logger.warning(f"    {col}: {n_nan} NaN values")
 
-    # writing_length present on decoding rows
+    # Decoding accuracy present
     dec_rows = trial_df[trial_df["Phase"] == "decoding"]
-    if "writing_length" in trial_df.columns:
-        n_missing = dec_rows["writing_length"].isna().sum()
+    if "dec_total_correct" in trial_df.columns:
+        n_missing = dec_rows["dec_total_correct"].isna().sum()
         if n_missing > 0:
-            logger.warning(f"    writing_length: {n_missing} missing on decoding rows")
+            logger.warning(
+                f"    dec_total_correct: {n_missing} missing on decoding rows"
+            )
         else:
             logger.info(
-                f"    writing_length: complete ✓  "
-                f"(mean={dec_rows['writing_length'].mean():.1f} chars)"
+                f"    dec_total_correct: complete ✓  "
+                f"(mean={dec_rows['dec_total_correct'].mean():.2f}/2)"
             )
 
     return ok

@@ -44,7 +44,11 @@ import numpy as np
 import pandas as pd
 from pipeline.misc import get_subject_ids, setup_logging
 from pipeline.module_3.aoi import assign_aoi
-from pipeline.module_3.metrics import build_object_sequence, svg_alignment
+from pipeline.module_3.metrics import (
+    build_object_sequence,
+    compute_transition_salience,
+    svg_alignment,
+)
 from pipeline.module_3.scene_graph import build_graph_index
 
 logger = logging.getLogger(__name__)
@@ -107,6 +111,8 @@ def _build_sequences_and_svg(
             seq, edges_core, n_permutations=config.SVG_N_PERMUTATIONS, rng=rng
         )
 
+        sal = compute_transition_salience(group, edges_core)
+
         records.append(
             {
                 "StimID": stim_id,
@@ -119,6 +125,10 @@ def _build_sequences_and_svg(
                 "n_transitions": svg["n_transitions"],
                 "n_relational": svg["n_relational"],
                 "low_n": svg["low_n"],
+                "mean_salience_relational": sal["mean_salience_relational"],
+                "mean_salience_nonrelational": sal["mean_salience_nonrelational"],
+                "n_relational_fixations": sal["n_relational_fixations"],
+                "n_nonrelational_fixations": sal["n_nonrelational_fixations"],
             }
         )
 
@@ -315,7 +325,14 @@ def _validate(subject_id: str, trial_df: pd.DataFrame) -> bool:
         )
 
     # NaN rates for key columns
-    key_cols = ["svg_z", "n_fixations", "aoi_prop", "mean_salience"]
+    key_cols = [
+        "svg_z",
+        "n_fixations",
+        "aoi_prop",
+        "mean_salience",
+        "mean_salience_relational",
+        "mean_salience_nonrelational",
+    ]
     for col in key_cols:
         if col not in trial_df.columns:
             continue

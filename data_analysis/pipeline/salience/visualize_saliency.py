@@ -16,14 +16,15 @@ Usage:
 
 import argparse
 import logging
+import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 import config
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
-
-from data_analysis.pipeline.salience.saliency import get_saliency_map
+from pipeline.salience.saliency import get_saliency_map
 
 logger = logging.getLogger(__name__)
 

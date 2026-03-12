@@ -197,6 +197,94 @@ def svg_alignment(
     }
 
 
+def compute_transition_salience(
+    trial_fixations: "pd.DataFrame",
+    edges: set,
+) -> dict:
+    """
+    Compute mean salience at relational vs non-relational fixations.
+
+    A fixation is classified as "relational" if it is part of any relational
+    edge transition — i.e. either the next distinct object visited is
+    relationally connected to the current object, or the previous distinct
+    object visited was. This tags both sides of each edge traversal.
+
+    Fixations without an AOI assignment (ObjectID NaN) are excluded.
+    Fixations with NaN SalienceAtFixation are excluded from the mean but
+    still used for transition classification.
+
+    Parameters
+    ----------
+    trial_fixations : pd.DataFrame
+        AOI-assigned fixations for one trial. Must contain:
+        FixStart_ms, ObjectID, SalienceAtFixation.
+    edges : set of frozenset
+        Relational edges for this stimulus, from build_graph_index()["all"].
+
+    Returns
+    -------
+    dict with keys:
+        mean_salience_relational    : float — NaN if no relational fixations
+        mean_salience_nonrelational : float — NaN if no non-relational fixations
+        n_relational_fixations      : int
+        n_nonrelational_fixations   : int
+    """
+    null = {
+        "mean_salience_relational": np.nan,
+        "mean_salience_nonrelational": np.nan,
+        "n_relational_fixations": 0,
+        "n_nonrelational_fixations": 0,
+    }
+
+    if "SalienceAtFixation" not in trial_fixations.columns:
+        return null
+
+    assigned = trial_fixations[trial_fixations["ObjectID"].notna()].copy()
+    if len(assigned) < 2:
+        return null
+
+    assigned = assigned.sort_values("FixStart_ms").reset_index(drop=True)
+    obj_ids = assigned["ObjectID"].astype(int).values
+    salience = pd.to_numeric(assigned["SalienceAtFixation"], errors="coerce").values
+    n = len(obj_ids)
+
+    is_relational = np.zeros(n, dtype=bool)
+
+    for i in range(n):
+        current = obj_ids[i]
+
+        # Check outgoing transition: next distinct object
+        for j in range(i + 1, n):
+            if obj_ids[j] != current:
+                if frozenset({current, obj_ids[j]}) in edges:
+                    is_relational[i] = True
+                break
+
+        # Check incoming transition: previous distinct object
+        if not is_relational[i]:
+            for j in range(i - 1, -1, -1):
+                if obj_ids[j] != current:
+                    if frozenset({current, obj_ids[j]}) in edges:
+                        is_relational[i] = True
+                    break
+
+    sal_rel = salience[is_relational]
+    sal_nonrel = salience[~is_relational]
+
+    # Exclude NaN from means but preserve counts
+    mean_rel = float(np.nanmean(sal_rel)) if np.any(~np.isnan(sal_rel)) else np.nan
+    mean_nonrel = (
+        float(np.nanmean(sal_nonrel)) if np.any(~np.isnan(sal_nonrel)) else np.nan
+    )
+
+    return {
+        "mean_salience_relational": mean_rel,
+        "mean_salience_nonrelational": mean_nonrel,
+        "n_relational_fixations": int(is_relational.sum()),
+        "n_nonrelational_fixations": int((~is_relational).sum()),
+    }
+
+
 def _sample_permutation(
     visited: list[int],
     length: int,

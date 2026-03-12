@@ -8,7 +8,6 @@ Runs per-participant, in sequence:
                proximity fallback, saliency sampling)
     Step 4  — Build object sequences per trial
     Step 5  — SVG alignment z-scores (all relations + interactional only)
-    Step 6  — Symbolic LCS and Kendall's tau (enc vs dec)
     Step 7  — Per-trial covariates (fixation count, AOI proportion,
                mean saliency)
     Step 8  — Join behavioral data (encoding + decoding accuracy,
@@ -45,12 +44,7 @@ import numpy as np
 import pandas as pd
 from pipeline.misc import get_subject_ids, setup_logging
 from pipeline.module_3.aoi import assign_aoi
-from pipeline.module_3.metrics import (
-    build_object_sequence,
-    kendall_tau_shared,
-    svg_alignment,
-    symbolic_lcs,
-)
+from pipeline.module_3.metrics import build_object_sequence, svg_alignment
 from pipeline.module_3.scene_graph import build_graph_index
 
 logger = logging.getLogger(__name__)
@@ -129,55 +123,6 @@ def _build_sequences_and_svg(
         )
 
     return pd.DataFrame(records)
-
-
-# ---------------------------------------------------------------------------
-# Step 6: Pairwise LCS and Kendall's tau
-# ---------------------------------------------------------------------------
-
-
-def _compute_pairwise_metrics(trial_df: pd.DataFrame) -> pd.DataFrame:
-    """
-    For each StimID, compute LCS and Kendall's tau between:
-        enc vs dec  (primary — encoding scanpath vs retrieval scanpath)
-
-    Results are stored on the decoding row for each StimID.
-    """
-    logger.info(f"  Step 6: Pairwise LCS / Kendall's tau ...")
-
-    # Index sequences by (StimID, Phase) — no ViewingNumber needed
-    seq_index = {
-        (str(row["StimID"]), row["Phase"]): row["_sequence"]
-        for _, row in trial_df.iterrows()
-    }
-
-    pairwise_cols = [
-        "lcs_enc_dec",
-        "lcs_len_enc_dec",
-        "tau_enc_dec",
-        "tau_p_enc_dec",
-        "n_shared_enc_dec",
-    ]
-    for col in pairwise_cols:
-        trial_df[col] = np.nan
-
-    for stim_id in trial_df["StimID"].unique():
-        stim_id = str(stim_id)
-
-        seq_enc = seq_index.get((stim_id, "encoding"), [])
-        seq_dec = seq_index.get((stim_id, "decoding"), [])
-
-        if seq_enc and seq_dec:
-            lcs = symbolic_lcs(seq_enc, seq_dec)
-            tau = kendall_tau_shared(seq_enc, seq_dec)
-            mask = (trial_df["StimID"] == stim_id) & (trial_df["Phase"] == "decoding")
-            trial_df.loc[mask, "lcs_enc_dec"] = lcs["lcs_score"]
-            trial_df.loc[mask, "lcs_len_enc_dec"] = lcs["lcs_length"]
-            trial_df.loc[mask, "tau_enc_dec"] = tau["tau"]
-            trial_df.loc[mask, "tau_p_enc_dec"] = tau["tau_p"]
-            trial_df.loc[mask, "n_shared_enc_dec"] = tau["n_shared"]
-
-    return trial_df
 
 
 # ---------------------------------------------------------------------------
@@ -425,9 +370,6 @@ def process_subject(subject_id, force_aoi=False, rng=None) -> pd.DataFrame:
 
     # Steps 4–5 — sequences + SVG alignment
     trial_df = _build_sequences_and_svg(fixations_aoi, graph_index, rng)
-
-    # Step 6 — pairwise LCS / tau
-    trial_df = _compute_pairwise_metrics(trial_df)
 
     # Step 7 — covariates
     trial_df = _compute_covariates(fixations_aoi, trial_df)

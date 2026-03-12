@@ -11,10 +11,6 @@ Step 5 — svg_alignment()
     Computes the SVG alignment z-score for one object sequence against the
     scene's relational graph, using a permutation null distribution.
 
-Step 6 — symbolic_lcs() and kendall_tau_shared()
-    Computes normalised LCS and Kendall's tau between two object sequences
-    (e.g. encoding vs decoding) as replay-fidelity metrics.
-
 All functions operate on plain Python lists / numpy arrays and have no
 side effects — they can be called independently for testing.
 """
@@ -25,7 +21,6 @@ from typing import Optional
 import config
 import numpy as np
 import pandas as pd
-from scipy.stats import kendalltau
 
 logger = logging.getLogger(__name__)
 
@@ -226,142 +221,3 @@ def _sample_permutation(
         result.append(rng.choice(candidates))
 
     return result
-
-
-# ---------------------------------------------------------------------------
-# Step 6: Symbolic LCS and Kendall's tau
-# ---------------------------------------------------------------------------
-
-
-def _first_occurrence_sequence(sequence: list[int]) -> list[int]:
-    """
-    Compress sequence to first-occurrence-only ordering.
-
-    Each object appears at most once, at its first position in the input.
-    This gives a clean ordinal ranking for Kendall's tau and avoids
-    repeat-distortion in LCS.
-
-    Example: [A, B, A, C, B] → [A, B, C]
-    """
-    seen = set()
-    result = []
-    for obj in sequence:
-        if obj not in seen:
-            seen.add(obj)
-            result.append(obj)
-    return result
-
-
-def _lcs_length(seq_a: list, seq_b: list) -> int:
-    """
-    Standard dynamic programming LCS length computation.
-    O(m × n) time, O(min(m,n)) space.
-    """
-    if len(seq_a) < len(seq_b):
-        seq_a, seq_b = seq_b, seq_a  # ensure seq_b is shorter for space efficiency
-
-    m, n = len(seq_a), len(seq_b)
-    prev = [0] * (n + 1)
-    curr = [0] * (n + 1)
-
-    for i in range(1, m + 1):
-        for j in range(1, n + 1):
-            if seq_a[i - 1] == seq_b[j - 1]:
-                curr[j] = prev[j - 1] + 1
-            else:
-                curr[j] = max(curr[j - 1], prev[j])
-        prev, curr = curr, [0] * (n + 1)
-
-    return prev[n]
-
-
-def symbolic_lcs(
-    seq_a: list[int],
-    seq_b: list[int],
-) -> dict:
-    """
-    Compute normalised LCS between two object sequences.
-
-    Both sequences are first compressed to first-occurrence-only before
-    comparison, removing repeat-distortion.
-
-    Parameters
-    ----------
-    seq_a, seq_b : list of int
-        Object sequences (e.g. encoding and decoding for the same image).
-
-    Returns
-    -------
-    dict with keys:
-        lcs_score : float — LCS length / min(len(seq_a), len(seq_b))
-                            NaN if either sequence is empty.
-        lcs_length: int   — raw LCS length
-        len_a     : int   — length of compressed seq_a
-        len_b     : int   — length of compressed seq_b
-    """
-    fa = _first_occurrence_sequence(seq_a)
-    fb = _first_occurrence_sequence(seq_b)
-
-    if not fa or not fb:
-        return {
-            "lcs_score": np.nan,
-            "lcs_length": 0,
-            "len_a": len(fa),
-            "len_b": len(fb),
-        }
-
-    lcs_len = _lcs_length(fa, fb)
-    lcs_score = lcs_len / min(len(fa), len(fb))
-
-    return {
-        "lcs_score": lcs_score,
-        "lcs_length": lcs_len,
-        "len_a": len(fa),
-        "len_b": len(fb),
-    }
-
-
-def kendall_tau_shared(
-    seq_a: list[int],
-    seq_b: list[int],
-) -> dict:
-    """
-    Compute Kendall's tau on the shared object subset.
-
-    Objects are ranked by their first occurrence position in each sequence.
-    Only objects appearing in both sequences are included. This is the
-    discrete analogue of Johansson et al.'s MultiMatch replay metric.
-
-    Parameters
-    ----------
-    seq_a, seq_b : list of int
-
-    Returns
-    -------
-    dict with keys:
-        tau        : float — Kendall's tau (-1 to 1), NaN if < 2 shared objects
-        tau_p      : float — p-value
-        n_shared   : int   — number of objects in both sequences
-    """
-    fa = _first_occurrence_sequence(seq_a)
-    fb = _first_occurrence_sequence(seq_b)
-
-    shared = [obj for obj in fa if obj in set(fb)]
-
-    if len(shared) < 2:
-        return {"tau": np.nan, "tau_p": np.nan, "n_shared": len(shared)}
-
-    # Rank by first-occurrence position in each compressed sequence
-    rank_a = {obj: i for i, obj in enumerate(fa)}
-    rank_b = {obj: i for i, obj in enumerate(fb)}
-
-    ranks_a = [rank_a[obj] for obj in shared]
-    ranks_b = [rank_b[obj] for obj in shared]
-
-    tau, p = kendalltau(ranks_a, ranks_b)
-
-    return {
-        "tau": float(tau),
-        "tau_p": float(p),
-        "n_shared": len(shared),
-    }

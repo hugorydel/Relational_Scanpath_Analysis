@@ -112,6 +112,7 @@ def _load(features_path: Path, scores_path: Path) -> pd.DataFrame:
         "StimID",
         "n_action_relation_correct",
         "n_spatial_relation_correct",
+        "wrong_image",
     ]
     scores = scores[[c for c in score_keep if c in scores.columns]]
 
@@ -121,6 +122,11 @@ def _load(features_path: Path, scores_path: Path) -> pd.DataFrame:
         before = len(merged)
         merged = merged[~merged["low_n_enc"]].copy()
         print(f"  Excluded {before - len(merged)} low-n encoding trials.")
+    # Exclude wrong-image trials (participant described a different image)
+    if "wrong_image" in merged.columns:
+        before = len(merged)
+        merged = merged[merged["wrong_image"] != 1].copy()
+        print(f"  Excluded {before - len(merged)} wrong-image trials.")
 
     pred_cols = [p for p, _ in SVG_PREDICTORS]
     keep = (

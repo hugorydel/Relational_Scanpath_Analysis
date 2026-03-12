@@ -271,9 +271,7 @@ def assign_aoi(
     polygon_index = build_polygon_index()
 
     image_dir = Path(image_dir) if image_dir else config.DATA_METADATA_DIR / "images"
-    cache_dir = (
-        Path(cache_dir) if cache_dir else config.OUTPUT_FEATURES_DIR / "saliency_maps"
-    )
+    cache_dir = Path(cache_dir) if cache_dir else config.OUTPUT_DIR / "saliency_maps"
 
     # Pre-load saliency maps for all unique StimIDs in this participant's data
     stim_ids = fixations_df["StimID"].unique()

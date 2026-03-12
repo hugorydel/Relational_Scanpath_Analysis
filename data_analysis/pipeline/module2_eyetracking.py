@@ -24,9 +24,18 @@ import argparse
 import logging
 import re
 from pathlib import Path
+from typing import Optional
 
+import numpy as np
 import pandas as pd
-from config import DISPLAY_HEIGHT_PX, DISPLAY_WIDTH_PX
+from config import (
+    DATA_METADATA_IMAGES_DIR,
+    DISPLAY_HEIGHT_PX,
+    DISPLAY_WIDTH_PX,
+    IMAGE_H,
+    IMAGE_W,
+    SALIENCE_SMOOTHING_SIGMA,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -384,6 +393,159 @@ def segment_events(
 
 
 # ---------------------------------------------------------------------------
+# Step 4b: Assign per-fixation salience
+# ---------------------------------------------------------------------------
+
+# Module-level cache: {stim_id: np.ndarray (IMAGE_H × IMAGE_W, float32)}
+_SALIENCE_CACHE: dict[str, np.ndarray] = {}
+
+
+def _build_salience_map(stim_id: str) -> Optional[np.ndarray]:
+    """
+    Compute and cache a spectral-residual saliency map for one stimulus.
+
+    The map is returned as a float32 array of shape (IMAGE_H, IMAGE_W)
+    with values in [0, 1], smoothed with a Gaussian of sigma
+    SALIENCE_SMOOTHING_SIGMA to produce spatially coherent blobs.
+
+    Uses OpenCV StaticSaliencySpectralResidual (Hou & Zhang 2007) —
+    a fast, parameter-free bottom-up model appropriate as a low-level
+    visual control covariate. Swap for DeepGaze or GBVS if a stronger
+    baseline is needed for review.
+
+    Returns None if the image file cannot be found or OpenCV saliency
+    is unavailable.
+    """
+    if stim_id in _SALIENCE_CACHE:
+        return _SALIENCE_CACHE[stim_id]
+
+    try:
+        import cv2
+    except ImportError:
+        logger.warning(
+            "opencv-python not installed — salience assignment skipped. "
+            "Install with: pip install opencv-python"
+        )
+        return None
+
+    # Find image file (.jpg or .png)
+    img_path: Optional[Path] = None
+    for ext in (".jpg", ".jpeg", ".png"):
+        candidate = DATA_METADATA_IMAGES_DIR / f"{stim_id}{ext}"
+        if candidate.exists():
+            img_path = candidate
+            break
+
+    if img_path is None:
+        logger.warning(f"  Salience: image not found for StimID={stim_id} — skipping.")
+        return None
+
+    img_bgr = cv2.imread(str(img_path))
+    if img_bgr is None:
+        logger.warning(f"  Salience: failed to load {img_path.name} — skipping.")
+        return None
+
+    # Resize to canonical image space (IMAGE_W × IMAGE_H) if needed
+    h, w = img_bgr.shape[:2]
+    if w != IMAGE_W or h != IMAGE_H:
+        img_bgr = cv2.resize(img_bgr, (IMAGE_W, IMAGE_H), interpolation=cv2.INTER_AREA)
+
+    saliency = cv2.saliency.StaticSaliencySpectralResidual_create()
+    ok, sal_map = saliency.computeSaliency(img_bgr)
+    if not ok:
+        logger.warning(f"  Salience: computeSaliency failed for {stim_id}.")
+        return None
+
+    sal_map = sal_map.astype(np.float32)
+
+    # Gaussian smoothing to produce spatially coherent blobs
+    if SALIENCE_SMOOTHING_SIGMA > 0:
+        ksize = int(6 * SALIENCE_SMOOTHING_SIGMA + 1) | 1  # odd kernel
+        sal_map = cv2.GaussianBlur(sal_map, (ksize, ksize), SALIENCE_SMOOTHING_SIGMA)
+
+    # Normalise to [0, 1]
+    sal_min, sal_max = sal_map.min(), sal_map.max()
+    if sal_max > sal_min:
+        sal_map = (sal_map - sal_min) / (sal_max - sal_min)
+    else:
+        sal_map = np.zeros_like(sal_map)
+
+    _SALIENCE_CACHE[stim_id] = sal_map
+    return sal_map
+
+
+def assign_salience(
+    fixations: pd.DataFrame,
+    subject_id: str,
+) -> pd.DataFrame:
+    """
+    Add a ``Salience`` column to the fixations DataFrame.
+
+    For each fixation, gaze coordinates (in screen pixels) are converted
+    to image-space coordinates and the salience map value at that location
+    is looked up via nearest-neighbour indexing.
+
+    Screen → image transform:
+        img_x = GazeX * (IMAGE_W / DISPLAY_WIDTH_PX)
+        img_y = GazeY * (IMAGE_H / DISPLAY_HEIGHT_PX)
+
+    Parameters
+    ----------
+    fixations : pd.DataFrame
+        Must contain columns: StimID, axp (gaze X, screen px), ayp (gaze Y).
+    subject_id : str
+        Used only for logging.
+
+    Returns
+    -------
+    pd.DataFrame
+        Input dataframe with an additional ``Salience`` column (float32,
+        NaN where the salience map could not be loaded).
+
+    Notes
+    -----
+    Salience maps are cached in _SALIENCE_CACHE after first computation,
+    so each stimulus image is loaded and processed only once per run.
+    """
+    if len(fixations) == 0:
+        fixations = fixations.copy()
+        fixations["Salience"] = np.nan
+        return fixations
+
+    fixations = fixations.copy()
+    fixations["Salience"] = np.nan
+
+    scale_x = IMAGE_W / DISPLAY_WIDTH_PX
+    scale_y = IMAGE_H / DISPLAY_HEIGHT_PX
+
+    n_assigned = 0
+    n_missing = 0
+
+    for stim_id, group_idx in fixations.groupby("StimID").groups.items():
+        sal_map = _build_salience_map(str(stim_id))
+        if sal_map is None:
+            n_missing += len(group_idx)
+            continue
+
+        gaze_x = fixations.loc[group_idx, "axp"].values
+        gaze_y = fixations.loc[group_idx, "ayp"].values
+
+        # Transform to image pixel coordinates (clamp to valid range)
+        img_x = np.clip((gaze_x * scale_x).round().astype(int), 0, IMAGE_W - 1)
+        img_y = np.clip((gaze_y * scale_y).round().astype(int), 0, IMAGE_H - 1)
+
+        salience_vals = sal_map[img_y, img_x].astype(np.float32)
+        fixations.loc[group_idx, "Salience"] = salience_vals
+        n_assigned += len(group_idx)
+
+    logger.info(
+        f"  [{subject_id}] Salience assigned: {n_assigned} fixations. "
+        f"{n_missing} skipped (image not found)."
+    )
+    return fixations
+
+
+# ---------------------------------------------------------------------------
 # Step 5: Validate
 # ---------------------------------------------------------------------------
 
@@ -470,6 +632,11 @@ def write_outputs(
                 "Duration_ms": fixations["etime"] - fixations["stime"],
                 "GazeX": fixations["axp"].round(2),
                 "GazeY": fixations["ayp"].round(2),
+                "Salience": (
+                    fixations["Salience"].round(4)
+                    if "Salience" in fixations.columns
+                    else np.nan
+                ),
             }
         )
 
@@ -567,6 +734,9 @@ def process_subject(
         edf_data["fixations"], trial_table, subject_id, "fixation"
     )
     saccades = segment_events(edf_data["saccades"], trial_table, subject_id, "saccade")
+
+    # Step 4b: Assign per-fixation salience
+    fixations = assign_salience(fixations, subject_id)
 
     # Step 5: Validate
     validate_outputs(fixations, saccades, trial_table, subject_id)

@@ -103,7 +103,7 @@ def main():
     )
     parser.add_argument(
         "--cache-dir",
-        default=str(config.OUTPUT_FEATURES_DIR / "saliency_maps"),
+        default=str(config.OUTPUT_DIR / "saliency_maps"),
         help="Path to the directory containing cached .npy files",
     )
     parser.add_argument(

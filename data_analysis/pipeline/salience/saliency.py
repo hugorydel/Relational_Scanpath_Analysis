@@ -4,7 +4,7 @@ salience/saliency.py
 Spectral Residual saliency maps (Hou & Zhang, CVPR 2007) via OpenCV.
 
 Computes one saliency map per stimulus image and caches the result to
-output/features/saliency_maps/{StimID}.npy so it is only computed once.
+output/saliency_maps/{StimID}.npy so it is only computed once.
 
 Algorithm:
     Utilizes cv2.saliency.StaticSaliencySpectralResidual_create() which
@@ -113,9 +113,7 @@ def get_saliency_map(
     Return the saliency map for a stimulus, loading from cache if available.
     """
     image_dir = Path(image_dir) if image_dir else config.DATA_METADATA_DIR / "images"
-    cache_dir = (
-        Path(cache_dir) if cache_dir else config.OUTPUT_FEATURES_DIR / "saliency_maps"
-    )
+    cache_dir = Path(cache_dir) if cache_dir else config.OUTPUT_DIR / "saliency_maps"
     cache_dir.mkdir(parents=True, exist_ok=True)
 
     cached = _cache_path(stim_id, cache_dir)
@@ -158,9 +156,7 @@ def compute_all_saliency_maps(
     Compute and cache saliency maps for all (or a subset of) stimuli.
     """
     image_dir = Path(image_dir) if image_dir else config.DATA_METADATA_DIR / "images"
-    cache_dir = (
-        Path(cache_dir) if cache_dir else config.OUTPUT_FEATURES_DIR / "saliency_maps"
-    )
+    cache_dir = Path(cache_dir) if cache_dir else config.OUTPUT_DIR / "saliency_maps"
 
     if stim_ids is None:
         metadata = load_stimulus_metadata()
@@ -226,7 +222,7 @@ def main():
     )
     parser.add_argument(
         "--output-dir",
-        default=str(config.OUTPUT_FEATURES_DIR / "saliency_maps"),
+        default=str(config.OUTPUT_DIR / "saliency_maps"),
         help="Directory to write cached .npy saliency maps",
     )
     parser.add_argument(

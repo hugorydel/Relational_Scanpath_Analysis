@@ -1,0 +1,61 @@
+SubjectID,StimID,CueText,Question,Accuracy,RT_ms,Response,CorrectKey,TrialIndex
+Encode-Decode_Experiment-15-1,2347025,umbrella,Who is holding the umbrella in the scene?,1,6200,2,2,1
+Encode-Decode_Experiment-15-1,2374670,spray-vehicle,What vehicle sprays water in the scene?,1,7792,1,1,2
+Encode-Decode_Experiment-15-1,2369373,chef,What tool is the chef using?,1,4360,3,3,3
+Encode-Decode_Experiment-15-1,2371471,bike-stuntmen,What stunt is one motorcyclist performing?,1,5313,2,2,4
+Encode-Decode_Experiment-15-1,2349475,blender,Which part of the blender is the woman holding?,1,4076,3,3,5
+Encode-Decode_Experiment-15-1,2356125,airport,Where is the luggage being moved to?,1,7624,1,1,6
+Encode-Decode_Experiment-15-1,2386442,teeth,What is the person on the right wearing?,1,4191,3,3,7
+Encode-Decode_Experiment-15-1,2347025,umbrella,Where is the baby in relation to the mother?,1,2622,1,1,8
+Encode-Decode_Experiment-15-1,2385550,tangerines,Where are the tangerines in the scene?,1,3406,4,4,9
+Encode-Decode_Experiment-15-1,2386442,teeth,Who is brushing their teeth in the scene?,1,2598,1,1,10
+Encode-Decode_Experiment-15-1,2362704,bears,How many bears are in the scene?,1,1438,2,2,11
+Encode-Decode_Experiment-15-1,2410309,laptop,What is the baby touching?,1,4005,2,2,12
+Encode-Decode_Experiment-15-1,2412687,dog,What is the dog biting onto in the scene?,1,3573,4,4,13
+Encode-Decode_Experiment-15-1,2409918,elephant,What is the elephant on the right (from your perspective) doing with its trunk?,0,6143,4,2,14
+Encode-Decode_Experiment-15-1,2344622,cat,Where is the cat located?,1,5472,2,2,15
+Encode-Decode_Experiment-15-1,150472,pizza-slice,Where is the pizza slice located?,1,4101,2,2,16
+Encode-Decode_Experiment-15-1,2409918,elephant,Where are the elephants in the scene?,1,5553,4,4,17
+Encode-Decode_Experiment-15-1,2379478,baby-milk,What is the position of the babies?,1,3396,4,4,18
+Encode-Decode_Experiment-15-1,2412687,dog,What is the human's body position?,1,4651,3,3,19
+Encode-Decode_Experiment-15-1,2410309,laptop,How many laptops or electronic devices are visible?,1,3441,4,4,20
+Encode-Decode_Experiment-15-1,2385851,suitcase,Where are the men?,1,5086,3,3,21
+Encode-Decode_Experiment-15-1,2383555,boat,Who is holding the child in the boat?,1,3426,2,2,22
+Encode-Decode_Experiment-15-1,2397102,cake,What are the couple doing with the cake?,1,2329,1,1,23
+Encode-Decode_Experiment-15-1,2379478,baby-milk,How many babies are visible in the scene?,1,2596,2,2,24
+Encode-Decode_Experiment-15-1,2348899,tie,Where is the woman located relative to the man? (from your perspective),1,4196,1,1,25
+Encode-Decode_Experiment-15-1,2360001,clock,What are the workers doing to the clock?,0,3772,1,4,26
+Encode-Decode_Experiment-15-1,2370664,donuts,Where are the people located in the scene?,1,2589,1,1,27
+Encode-Decode_Experiment-15-1,2350974,drink,Between which two objects is the child standing?,1,4588,4,4,28
+Encode-Decode_Experiment-15-1,2397102,cake,What is the man holding besides the cake knife?,1,3435,3,3,29
+Encode-Decode_Experiment-15-1,2356991,baseball,What is the current action of the gloved player on the base?,1,5553,2,2,30
+Encode-Decode_Experiment-15-1,2349475,blender,What is the man doing to power the blender?,1,4491,1,1,31
+Encode-Decode_Experiment-15-1,2356991,baseball,How is the player on the left (from your perspective) reaching the base?,1,12279,1,1,32
+Encode-Decode_Experiment-15-1,2387122,polar bear,Where is the polar bear located in the scene?,1,2723,3,3,33
+Encode-Decode_Experiment-15-1,2394020,horse ride,What are the riders wearing on their heads?,1,2942,2,2,34
+Encode-Decode_Experiment-15-1,2383555,boat,What is the woman at the back doing in the boat?,1,5662,4,4,35
+Encode-Decode_Experiment-15-1,2350974,drink,What is the child up against?,1,2251,1,1,36
+Encode-Decode_Experiment-15-1,2387122,polar bear,What is the polar bear doing next to the enclosure edge?,1,9753,1,1,37
+Encode-Decode_Experiment-15-1,2385550,tangerines,Which side of the frame is the boy on? (from your perspective),1,3460,3,3,38
+Encode-Decode_Experiment-15-1,2345035,football,Who runs toward the football in the scene?,1,5744,2,2,39
+Encode-Decode_Experiment-15-1,2348899,tie,What is the woman doing?,1,2770,4,4,40
+Encode-Decode_Experiment-15-1,2344622,cat,What is the cat resting its head on?,1,3186,4,4,41
+Encode-Decode_Experiment-15-1,150472,pizza-slice,How many women are in the scene?,1,2987,4,4,42
+Encode-Decode_Experiment-15-1,2411268,apple,Where is the fruit branch relative to the child?,1,5627,4,4,43
+Encode-Decode_Experiment-15-1,2367132,video game,In which hand(s) are the men holding the controllers?,1,3457,4,4,44
+Encode-Decode_Experiment-15-1,2385851,suitcase,What are the men doing with the suitcases?,1,2998,2,2,45
+Encode-Decode_Experiment-15-1,2374670,spray-vehicle,Where is the man standing relative to the vehicle?,0,4486,2,3,46
+Encode-Decode_Experiment-15-1,2369373,chef,What is the appearance of the oven?,1,3235,3,3,47
+Encode-Decode_Experiment-15-1,2347400,wine,What are the men doing with the wine?,1,2560,3,3,48
+Encode-Decode_Experiment-15-1,2367132,video game,How many men are playing in the scene?,1,2026,2,2,49
+Encode-Decode_Experiment-15-1,2394020,horse ride,Where is the scene taking place?,1,2465,1,1,50
+Encode-Decode_Experiment-15-1,2360001,clock,Where are the men standing?,0,4063,1,4,51
+Encode-Decode_Experiment-15-1,2362704,bears,What are the bears doing with the pumpkins?,1,2827,4,4,52
+Encode-Decode_Experiment-15-1,2408717,surfboard,How many surfers are in the scene?,1,3120,2,2,53
+Encode-Decode_Experiment-15-1,2411268,apple,What is the child holding while picking fruit?,1,3900,2,2,54
+Encode-Decode_Experiment-15-1,2347400,wine,What are the men sitting on in the scene?,1,2462,1,1,55
+Encode-Decode_Experiment-15-1,2408717,surfboard,What are the surfers doing with the surfboards?,1,2779,3,3,56
+Encode-Decode_Experiment-15-1,2345035,football,What are the people doing with the football?,0,3747,2,3,57
+Encode-Decode_Experiment-15-1,2356125,airport,How many uniformed staff are moving the luggage?,1,5413,2,2,58
+Encode-Decode_Experiment-15-1,2371471,bike-stuntmen,What is nearest to the motorcyclists?,1,8140,3,3,59
+Encode-Decode_Experiment-15-1,2370664,donuts,How many donuts are in the scene?,1,2830,4,4,60

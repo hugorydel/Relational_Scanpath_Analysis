@@ -1,0 +1,370 @@
+[
+  {
+    "node_id": "2387122_001",
+    "concept": "polar bear",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "polar bear",
+      "bear",
+      "white polar bear"
+    ]
+  },
+  {
+    "node_id": "2387122_002",
+    "concept": "person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "photograper",
+      "man",
+      "person",
+      "woman",
+      "boy",
+      "blonde person"
+    ]
+  },
+  {
+    "node_id": "2387122_003",
+    "concept": "camera",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "camera",
+      "camera around his neck",
+      "camera in his hand"
+    ]
+  },
+  {
+    "node_id": "2387122_004",
+    "concept": "glass barrier",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "glass",
+      "glass facade",
+      "see through wall",
+      "glass panel",
+      "glass enclosure",
+      "the other side of the glass"
+    ]
+  },
+  {
+    "node_id": "2387122_005",
+    "concept": "water",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "water",
+      "pool",
+      "water enclosure",
+      "in pool",
+      "glass pool"
+    ]
+  },
+  {
+    "node_id": "2387122_006",
+    "concept": "zoo",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "zoo enclosure",
+      "the picture was taken in a zoo"
+    ]
+  },
+  {
+    "node_id": "2387122_007",
+    "concept": "enclosure",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "enclosure",
+      "water enclosure",
+      "glass inclosure",
+      "within its enclosure"
+    ]
+  },
+  {
+    "node_id": "2387122_008",
+    "concept": "aquarium",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "aquarium"
+    ]
+  },
+  {
+    "node_id": "2387122_009",
+    "concept": "rocks",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "rocks at back of picture"
+    ]
+  },
+  {
+    "node_id": "2387122_010",
+    "concept": "large",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "big"
+    ]
+  },
+  {
+    "node_id": "2387122_011",
+    "concept": "white",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white"
+    ]
+  },
+  {
+    "node_id": "2387122_012",
+    "concept": "gray hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "gray hair"
+    ]
+  },
+  {
+    "node_id": "2387122_013",
+    "concept": "blonde hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blonde",
+      "blond",
+      "blonde woman",
+      "blonde man",
+      "blonde short haired woman"
+    ]
+  },
+  {
+    "node_id": "2387122_014",
+    "concept": "short hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "short haired"
+    ]
+  },
+  {
+    "node_id": "2387122_015",
+    "concept": "glasses",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "wearing glasses",
+      "glasses on"
+    ]
+  },
+  {
+    "node_id": "2387122_016",
+    "concept": "paw",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "paw",
+      "paws",
+      "one paw"
+    ]
+  },
+  {
+    "node_id": "2387122_017",
+    "concept": "claws",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "claws"
+    ]
+  },
+  {
+    "node_id": "2387122_018",
+    "concept": "head",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "head"
+    ]
+  },
+  {
+    "node_id": "2387122_019",
+    "concept": "mouth",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "mouth on railing"
+    ]
+  },
+  {
+    "node_id": "2387122_020",
+    "concept": "snout",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "snout"
+    ]
+  },
+  {
+    "node_id": "2387122_021",
+    "concept": "railing",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "railing"
+    ]
+  },
+  {
+    "node_id": "2387122_022",
+    "concept": "pressing paw against glass",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pawing at the glass",
+      "pressed against the glass with its paw",
+      "paw showing",
+      "hands on glass",
+      "paws on the glass",
+      "one paw presses on glass",
+      "put its paw on the glass",
+      "paws pressedup against the glass",
+      "paw up against the glass",
+      "putting its paw up agains the glass"
+    ]
+  },
+  {
+    "node_id": "2387122_023",
+    "concept": "bear in water",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in water",
+      "bear in pool",
+      "polar bear in water",
+      "within its enclosure and has its head poking up out of the water",
+      "swimming in water"
+    ]
+  },
+  {
+    "node_id": "2387122_024",
+    "concept": "behind glass",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "behind a glass facade",
+      "behind the glass",
+      "the other side of the glass",
+      "opposite to her",
+      "other side of the glass"
+    ]
+  },
+  {
+    "node_id": "2387122_025",
+    "concept": "looking at bear",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "looking at him",
+      "looking at it",
+      "looking closely at the polar bear"
+    ]
+  },
+  {
+    "node_id": "2387122_026",
+    "concept": "taking photo",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with a camera",
+      "taking photo",
+      "taking photographs",
+      "holding camera",
+      "camera around his neck",
+      "camera in his hand"
+    ]
+  },
+  {
+    "node_id": "2387122_027",
+    "concept": "close to glass",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "to the glass",
+      "standing close to the left side of the glass panel",
+      "up against the see through wall",
+      "pressed up against the glass enclosure"
+    ]
+  },
+  {
+    "node_id": "2387122_028",
+    "concept": "crouching",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "crouching"
+    ]
+  },
+  {
+    "node_id": "2387122_029",
+    "concept": "head turned up",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "its head is turned up",
+      "head poking up out of the water",
+      "snout up against the glass enclosure"
+    ]
+  },
+  {
+    "node_id": "2387122_030",
+    "concept": "back of picture",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "at back of picture"
+    ]
+  },
+  {
+    "node_id": "2387122_031",
+    "concept": "left side",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "left side of the glass panel"
+    ]
+  }
+]

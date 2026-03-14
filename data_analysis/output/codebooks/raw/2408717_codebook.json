@@ -1,0 +1,394 @@
+[
+  {
+    "node_id": "2408717_001",
+    "concept": "four people",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "four women",
+      "4 girls",
+      "4 women",
+      "4 surfers",
+      "four girls",
+      "four women",
+      "4 women",
+      "four girls total",
+      "four girls",
+      "four women",
+      "4 women",
+      "4 women",
+      "4 women",
+      "4 women",
+      "4 women"
+    ]
+  },
+  {
+    "node_id": "2408717_002",
+    "concept": "women",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "women",
+      "girls",
+      "women",
+      "girls",
+      "women",
+      "girls",
+      "women",
+      "girls",
+      "girls",
+      "women",
+      "women",
+      "women",
+      "women",
+      "women"
+    ]
+  },
+  {
+    "node_id": "2408717_003",
+    "concept": "surfers",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "surfers"
+    ]
+  },
+  {
+    "node_id": "2408717_004",
+    "concept": "beach",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on a beach",
+      "beach",
+      "on beach",
+      "along a beach",
+      "at a beach"
+    ]
+  },
+  {
+    "node_id": "2408717_005",
+    "concept": "surfboards",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "surfboards",
+      "one surfboard each",
+      "their surfboards",
+      "4 surfboards",
+      "surboard",
+      "surforad",
+      "surdfboards"
+    ]
+  },
+  {
+    "node_id": "2408717_006",
+    "concept": "carrying surfboards",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with surfboards",
+      "carrying surfboards",
+      "carrying one surfboard each",
+      "holding their surfboards",
+      "carry 4 surfboards",
+      "carrying their surfboards",
+      "were holding surboard",
+      "holding surfboards",
+      "all 4 had surfboards"
+    ]
+  },
+  {
+    "node_id": "2408717_007",
+    "concept": "walking",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "walking towards the ocean",
+      "walking to the water",
+      "walkign towards water",
+      "walk towards ocean",
+      "were walking on the becah",
+      "walking towards water",
+      "were walking towards the ocean"
+    ]
+  },
+  {
+    "node_id": "2408717_008",
+    "concept": "toward the water",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "towards the ocean",
+      "to the water",
+      "towards the ocean",
+      "towards the sea",
+      "towards water",
+      "towards ocean",
+      "to the sea",
+      "towards the sea",
+      "towards water",
+      "towards the ocean"
+    ]
+  },
+  {
+    "node_id": "2408717_009",
+    "concept": "green surfboards",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "neon green surfboards",
+      "green",
+      "a neon green surfbpard",
+      "green one",
+      "green",
+      "green surfboards",
+      "blue/ turquoise surdfboards",
+      "green surfboards",
+      "green surfboards",
+      "green",
+      "bright green surfboards"
+    ]
+  },
+  {
+    "node_id": "2408717_010",
+    "concept": "white surfboards",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white with a slight pattern",
+      "white surfboards",
+      "white surfboard",
+      "mostly white surfboards",
+      "white ones",
+      "white parts in the surfboard"
+    ]
+  },
+  {
+    "node_id": "2408717_011",
+    "concept": "two green surfboards",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "2 surfboardsa are green",
+      "the other two have a neon green surfbpard",
+      "two have a green one",
+      "the two surfboards on the right are green",
+      "other two on the rigth was carrying a green surforad",
+      "the two in the front had neon green surfboards",
+      "the 2 women on the right had green surfboards",
+      "2 green on the right",
+      "the two eomen to the left had bright green surfboards"
+    ]
+  },
+  {
+    "node_id": "2408717_012",
+    "concept": "two white surfboards",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "2 of them are white",
+      "2 women have white surfboards",
+      "two have a white surfboard",
+      "the other two women had white ones"
+    ]
+  },
+  {
+    "node_id": "2408717_013",
+    "concept": "right side",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the ones closer to the photographer",
+      "the two women to the right of the screen",
+      "the two surfboards on the right",
+      "two farthest right",
+      "other two on the rigth",
+      "the 2 women on the right",
+      "2 green on the right",
+      "the two women to the right"
+    ]
+  },
+  {
+    "node_id": "2408717_014",
+    "concept": "left side",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "other two far left",
+      "two on the left",
+      "2 others on the left",
+      "the two eomen to the left"
+    ]
+  },
+  {
+    "node_id": "2408717_015",
+    "concept": "front/closer to viewer",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "closer to the photographer",
+      "women closest to me relative to the image",
+      "the two in the front"
+    ]
+  },
+  {
+    "node_id": "2408717_016",
+    "concept": "holding under right arm",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding surboard under their righ arms"
+    ]
+  },
+  {
+    "node_id": "2408717_017",
+    "concept": "separated apart",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "other two far left were seperate"
+    ]
+  },
+  {
+    "node_id": "2408717_018",
+    "concept": "sunny/daytime",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "sunny",
+      "daytime"
+    ]
+  },
+  {
+    "node_id": "2408717_019",
+    "concept": "wetsuits",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in wetsuits",
+      "were wearing wetsuits"
+    ]
+  },
+  {
+    "node_id": "2408717_020",
+    "concept": "shorts",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "shorts"
+    ]
+  },
+  {
+    "node_id": "2408717_021",
+    "concept": "T-shirt",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a t shirt"
+    ]
+  },
+  {
+    "node_id": "2408717_022",
+    "concept": "entering the sea",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "about to enter the sea",
+      "about to enter the sea",
+      "from the sand into the sea"
+    ]
+  },
+  {
+    "node_id": "2408717_023",
+    "concept": "sand",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "from the sand"
+    ]
+  },
+  {
+    "node_id": "2408717_024",
+    "concept": "untying hair",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one girl was untying her hair"
+    ]
+  },
+  {
+    "node_id": "2408717_025",
+    "concept": "hair",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "her hair"
+    ]
+  },
+  {
+    "node_id": "2408717_026",
+    "concept": "patterned surfboard",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white with a slight pattern"
+    ]
+  },
+  {
+    "node_id": "2408717_027",
+    "concept": "different-colored surfboards",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "2 different coloured surfboards"
+    ]
+  },
+  {
+    "node_id": "2408717_028",
+    "concept": "red surfboards",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "two red"
+    ]
+  },
+  {
+    "node_id": "2408717_029",
+    "concept": "blue/turquoise surfboards",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "blue/ turquoise surdfboards"
+    ]
+  }
+]

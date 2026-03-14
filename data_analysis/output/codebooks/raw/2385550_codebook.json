@@ -1,0 +1,289 @@
+[
+  {
+    "node_id": "2385550_001",
+    "concept": "two children",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one boy and one girl",
+      "two children",
+      "two kids",
+      "older sister and younger brother",
+      "two shildren",
+      "2 children"
+    ]
+  },
+  {
+    "node_id": "2385550_002",
+    "concept": "boy",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "boy",
+      "one boy",
+      "a boy",
+      "younger brother"
+    ]
+  },
+  {
+    "node_id": "2385550_003",
+    "concept": "girl",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "girl",
+      "one girl",
+      "a girl",
+      "older sister"
+    ]
+  },
+  {
+    "node_id": "2385550_004",
+    "concept": "tangerine",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "tangerines",
+      "quaters of tangerines",
+      "orange pieces",
+      "tangerine piece",
+      "slice of tangerine",
+      "peeled tangerines"
+    ]
+  },
+  {
+    "node_id": "2385550_005",
+    "concept": "two",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two",
+      "one boy and one girl",
+      "both"
+    ]
+  },
+  {
+    "node_id": "2385550_006",
+    "concept": "boy on the left",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the boy is on the left of the screne",
+      "boy on left",
+      "boy on the left",
+      "a boy on the left",
+      "the boy on the left",
+      "younger brother",
+      "young blonde boy on the left"
+    ]
+  },
+  {
+    "node_id": "2385550_007",
+    "concept": "girl on the right",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the girl is on the right of the screen",
+      "girl on right",
+      "the girl is on the rught side",
+      "a girl on the right",
+      "the girl on the right",
+      "slightly older brunette girl on the right"
+    ]
+  },
+  {
+    "node_id": "2385550_008",
+    "concept": "tangerine in mouth",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "eating tangerines",
+      "holding quaters of tangerines in their mouths",
+      "with tangerines in their mouth",
+      "with tangerines in their mouths",
+      "have tangerines in their mouths",
+      "orange pieces in their mouths",
+      "tangerine piece in their mouths",
+      "peeled tangerines in their mouths",
+      "holding tangerines in their mouths",
+      "slice of tangerine in his mouth",
+      "slice of tangerine in her mouth",
+      "tangerines inside their mouths"
+    ]
+  },
+  {
+    "node_id": "2385550_009",
+    "concept": "smiling",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "while smiling",
+      "pretending to smile"
+    ]
+  },
+  {
+    "node_id": "2385550_010",
+    "concept": "posing for picture",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "posing to the camera",
+      "pose for picture"
+    ]
+  },
+  {
+    "node_id": "2385550_011",
+    "concept": "brown eyes",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "both children has brown eyes",
+      "they both have brown eyes",
+      "both have brown eyes"
+    ]
+  },
+  {
+    "node_id": "2385550_012",
+    "concept": "siblings",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "look like siblings",
+      "older sister and younger brother"
+    ]
+  },
+  {
+    "node_id": "2385550_013",
+    "concept": "boy is younger than girl",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "younger girl",
+      "the boy on the left was younger than the girl on the right",
+      "younger brother",
+      "young blonde boy",
+      "slightly older brunette girl"
+    ]
+  },
+  {
+    "node_id": "2385550_014",
+    "concept": "blonde hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "boy blonde",
+      "young blonde boy"
+    ]
+  },
+  {
+    "node_id": "2385550_015",
+    "concept": "brown hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "girl brunette",
+      "has brown hair",
+      "slightly older brunette girl"
+    ]
+  },
+  {
+    "node_id": "2385550_016",
+    "concept": "fringe / bangs",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with a fringe",
+      "girl with fringe",
+      "has a fringe",
+      "brown hair with a fringe",
+      "and bangs"
+    ]
+  },
+  {
+    "node_id": "2385550_017",
+    "concept": "peeled tangerine",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "peeled tangerines",
+      "peeled tangerines in their mouths"
+    ]
+  },
+  {
+    "node_id": "2385550_018",
+    "concept": "outdoors",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "outside"
+    ]
+  },
+  {
+    "node_id": "2385550_019",
+    "concept": "sunny",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "sunny"
+    ]
+  },
+  {
+    "node_id": "2385550_020",
+    "concept": "hoodie",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "boy is wearing a hoodie"
+    ]
+  },
+  {
+    "node_id": "2385550_021",
+    "concept": "different coloured inside of hood",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "different coloured inside of hood"
+    ]
+  },
+  {
+    "node_id": "2385550_022",
+    "concept": "pink clothing",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the girl is earing pink"
+    ]
+  },
+  {
+    "node_id": "2385550_023",
+    "concept": "unchewed",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "unchewed"
+    ]
+  }
+]

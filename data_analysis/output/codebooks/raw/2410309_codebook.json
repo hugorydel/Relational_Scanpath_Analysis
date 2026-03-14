@@ -1,0 +1,375 @@
+[
+  {
+    "node_id": "2410309_001",
+    "concept": "woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a woman",
+      "woman",
+      "mum",
+      "lady",
+      "the woman"
+    ]
+  },
+  {
+    "node_id": "2410309_002",
+    "concept": "baby",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a child",
+      "baby",
+      "babay",
+      "the baby"
+    ]
+  },
+  {
+    "node_id": "2410309_003",
+    "concept": "couch",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "couch",
+      "sofa",
+      "counch"
+    ]
+  },
+  {
+    "node_id": "2410309_004",
+    "concept": "laptop",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "laptop",
+      "laptops",
+      "dell laptop",
+      "laption"
+    ]
+  },
+  {
+    "node_id": "2410309_005",
+    "concept": "two",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "both of them",
+      "two different laptops",
+      "two separate laptops",
+      "2 laptops",
+      "they both had laptops"
+    ]
+  },
+  {
+    "node_id": "2410309_006",
+    "concept": "sitting",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "sitting together",
+      "sat",
+      "were sitting"
+    ]
+  },
+  {
+    "node_id": "2410309_007",
+    "concept": "on lap",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on their laps",
+      "on her lap"
+    ]
+  },
+  {
+    "node_id": "2410309_008",
+    "concept": "using laptop",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "have a laptop",
+      "working on laptop",
+      "with a laptop",
+      "both looking at laptops",
+      "both on keyboards on two different laptops",
+      "both using two separate laptops",
+      "on a laptop",
+      "looking at laptop",
+      "facing screen and looking at laptop",
+      "with another laptop"
+    ]
+  },
+  {
+    "node_id": "2410309_009",
+    "concept": "touching keyboard",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "baby touching the keyboard",
+      "touching a keyboard of a laptop",
+      "touching keyboard",
+      "baby was on the right and she was looking to a laptop waswell her hand were on the keyboard",
+      "person's hand is on the black keyboard",
+      "touching the keyboard",
+      "touching a laptop keyboard",
+      "with hands on keyboard"
+    ]
+  },
+  {
+    "node_id": "2410309_010",
+    "concept": "bottle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a bottle of diet coke",
+      "some drink plastic bottle",
+      "diet coke bottle"
+    ]
+  },
+  {
+    "node_id": "2410309_011",
+    "concept": "between them",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in the middle of them",
+      "in between them",
+      "inbetween her and a baby"
+    ]
+  },
+  {
+    "node_id": "2410309_012",
+    "concept": "typing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "woman is typing"
+    ]
+  },
+  {
+    "node_id": "2410309_013",
+    "concept": "right side",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on right",
+      "baby on the right",
+      "to right of her"
+    ]
+  },
+  {
+    "node_id": "2410309_014",
+    "concept": "left side",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "mum on left",
+      "to the left of the woman",
+      "woman was on the elft",
+      "woman on the left",
+      "lady on left"
+    ]
+  },
+  {
+    "node_id": "2410309_015",
+    "concept": "facing forward",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "facing forward"
+    ]
+  },
+  {
+    "node_id": "2410309_016",
+    "concept": "red clothing",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "red top",
+      "red dress"
+    ]
+  },
+  {
+    "node_id": "2410309_017",
+    "concept": "holding laptop",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the woman was holding one"
+    ]
+  },
+  {
+    "node_id": "2410309_018",
+    "concept": "screen",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "facing screen"
+    ]
+  },
+  {
+    "node_id": "2410309_019",
+    "concept": "sideways",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "facing sideways",
+      "on side"
+    ]
+  },
+  {
+    "node_id": "2410309_020",
+    "concept": "annoyed facial expression",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "had annoyed look on her face"
+    ]
+  },
+  {
+    "node_id": "2410309_021",
+    "concept": "Diet Coke",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "diet coke",
+      "diet coke bottle"
+    ]
+  },
+  {
+    "node_id": "2410309_022",
+    "concept": "plastic",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "plastic bottle"
+    ]
+  },
+  {
+    "node_id": "2410309_023",
+    "concept": "Dell",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "dell laptop"
+    ]
+  },
+  {
+    "node_id": "2410309_024",
+    "concept": "keyboard",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "keyboard",
+      "keyboards",
+      "black keyboard"
+    ]
+  },
+  {
+    "node_id": "2410309_025",
+    "concept": "black",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "black keyboard"
+    ]
+  },
+  {
+    "node_id": "2410309_026",
+    "concept": "hand",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "a person's hand",
+      "her hand were on the keyboard",
+      "with hands on keyboard"
+    ]
+  },
+  {
+    "node_id": "2410309_027",
+    "concept": "person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "a person's"
+    ]
+  },
+  {
+    "node_id": "2410309_028",
+    "concept": "cat",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "grey and black cat"
+    ]
+  },
+  {
+    "node_id": "2410309_029",
+    "concept": "grey",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "grey and black cat",
+      "grey and black"
+    ]
+  },
+  {
+    "node_id": "2410309_030",
+    "concept": "blue",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "blue cloth"
+    ]
+  },
+  {
+    "node_id": "2410309_031",
+    "concept": "cloth",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "blue cloth"
+    ]
+  },
+  {
+    "node_id": "2410309_032",
+    "concept": "lying",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "laying ona blue cloth"
+    ]
+  }
+]

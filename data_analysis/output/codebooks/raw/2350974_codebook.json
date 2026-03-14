@@ -1,0 +1,320 @@
+[
+  {
+    "node_id": "2350974_001",
+    "concept": "child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a child",
+      "child",
+      "a toddler",
+      "small child",
+      "little boy"
+    ]
+  },
+  {
+    "node_id": "2350974_002",
+    "concept": "man",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "a man",
+      "man"
+    ]
+  },
+  {
+    "node_id": "2350974_003",
+    "concept": "woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "women"
+    ]
+  },
+  {
+    "node_id": "2350974_004",
+    "concept": "car",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "car",
+      "red car"
+    ]
+  },
+  {
+    "node_id": "2350974_005",
+    "concept": "motorcycle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blue motorcyle",
+      "a motorcycle",
+      "blue motorbike",
+      "motorbike",
+      "blue motorcycle",
+      "bike"
+    ]
+  },
+  {
+    "node_id": "2350974_006",
+    "concept": "bottle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "something",
+      "drink from a bottle",
+      "bottle",
+      "nearly emtpy bottle of coke",
+      "coca cola bottle"
+    ]
+  },
+  {
+    "node_id": "2350974_007",
+    "concept": "drink beverage",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a drink",
+      "coke",
+      "coca cola",
+      "ENERGY DRINK",
+      "beer",
+      "drink"
+    ]
+  },
+  {
+    "node_id": "2350974_008",
+    "concept": "glass or can",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "beer glass or can"
+    ]
+  },
+  {
+    "node_id": "2350974_009",
+    "concept": "blender",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "blender"
+    ]
+  },
+  {
+    "node_id": "2350974_010",
+    "concept": "lid",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "lid"
+    ]
+  },
+  {
+    "node_id": "2350974_011",
+    "concept": "drinking",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "drinking something",
+      "holding a beer glass or can",
+      "man drinking",
+      "child drinking drink",
+      "drinking coke",
+      "having a drink",
+      "drinks from",
+      "drinking from a coca cola bottle",
+      "shown to be drinking"
+    ]
+  },
+  {
+    "node_id": "2350974_012",
+    "concept": "holding",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding a beer glass or can",
+      "holding a bottle"
+    ]
+  },
+  {
+    "node_id": "2350974_013",
+    "concept": "leaning on car",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "as he leans on a red car",
+      "leaning with his hand against a red car"
+    ]
+  },
+  {
+    "node_id": "2350974_014",
+    "concept": "standing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "stood between blue motorcycle and red car"
+    ]
+  },
+  {
+    "node_id": "2350974_015",
+    "concept": "cycling",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "cycling"
+    ]
+  },
+  {
+    "node_id": "2350974_016",
+    "concept": "powering blender",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "to power blender"
+    ]
+  },
+  {
+    "node_id": "2350974_017",
+    "concept": "between two vehicles",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in between a red and blue car",
+      "between a blue motorcyle and a red car",
+      "between a car and a motorcycle",
+      "in between two vehicles",
+      "between the red car and a blue motorbike",
+      "BETWEEN A RED CAR AND A BLUE MOTORCYCLE",
+      "between blue motorcycle and red car"
+    ]
+  },
+  {
+    "node_id": "2350974_018",
+    "concept": "in front of child",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "infront of the child"
+    ]
+  },
+  {
+    "node_id": "2350974_019",
+    "concept": "to the right of man",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "to right of him"
+    ]
+  },
+  {
+    "node_id": "2350974_020",
+    "concept": "red",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "red car",
+      "red car",
+      "red car",
+      "red car",
+      "RED CAR",
+      "red car"
+    ]
+  },
+  {
+    "node_id": "2350974_021",
+    "concept": "blue",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blue car",
+      "blue motorcyle",
+      "blue motorbike",
+      "blue motorcycle",
+      "blue motorcycle"
+    ]
+  },
+  {
+    "node_id": "2350974_022",
+    "concept": "small",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a toddler",
+      "small child",
+      "small child",
+      "little boy"
+    ]
+  },
+  {
+    "node_id": "2350974_023",
+    "concept": "brown hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "short brown hair"
+    ]
+  },
+  {
+    "node_id": "2350974_024",
+    "concept": "short hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "short brown hair"
+    ]
+  },
+  {
+    "node_id": "2350974_025",
+    "concept": "nearly empty",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "nearly emtpy"
+    ]
+  },
+  {
+    "node_id": "2350974_026",
+    "concept": "red lid",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "red lid"
+    ]
+  },
+  {
+    "node_id": "2350974_027",
+    "concept": "label",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "label"
+    ]
+  }
+]

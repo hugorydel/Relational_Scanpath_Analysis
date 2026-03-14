@@ -1,0 +1,209 @@
+[
+  {
+    "node_id": "2362704_001",
+    "concept": "bear",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "bears",
+      "black bears",
+      "brown bears"
+    ]
+  },
+  {
+    "node_id": "2362704_002",
+    "concept": "two",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two bears",
+      "2 black bears",
+      "there appears to be two pumpkins",
+      "eating two pumpkins"
+    ]
+  },
+  {
+    "node_id": "2362704_003",
+    "concept": "black",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two black bears",
+      "black bears",
+      "2 black bears"
+    ]
+  },
+  {
+    "node_id": "2362704_004",
+    "concept": "brown",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "brow bears",
+      "two brown bears"
+    ]
+  },
+  {
+    "node_id": "2362704_005",
+    "concept": "eat",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "eating a pumpkin",
+      "eating the pumpkins",
+      "eating something which looks like a pumpkin",
+      "eating pumpkins",
+      "are eating pumpkins",
+      "in the middle of eating pumpkins",
+      "eating pumkins",
+      "on ground eating pumpkins",
+      "sit on the ground eating two pumpkins",
+      "are eating some pumpkis",
+      "one bear is eating his",
+      "had mouth in pumpkin"
+    ]
+  },
+  {
+    "node_id": "2362704_006",
+    "concept": "pumpkin",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a pumpkin",
+      "pumpkins",
+      "something which looks like a pumpkin",
+      "something orange",
+      "half eaten pumpkin",
+      "two pumpkins",
+      "pumpkis",
+      "pumkins",
+      "pumpkin"
+    ]
+  },
+  {
+    "node_id": "2362704_007",
+    "concept": "half eaten/torn apart",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "half eaten pumpkin",
+      "torn apart"
+    ]
+  },
+  {
+    "node_id": "2362704_008",
+    "concept": "look away/look around",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one is looking away",
+      "the other is looking around a little"
+    ]
+  },
+  {
+    "node_id": "2362704_009",
+    "concept": "lie/lay down",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "are laying down",
+      "lying on the ground"
+    ]
+  },
+  {
+    "node_id": "2362704_010",
+    "concept": "sit",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "sitting down",
+      "sit on the ground",
+      "other sat next to it"
+    ]
+  },
+  {
+    "node_id": "2362704_011",
+    "concept": "ground",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "lying on the ground",
+      "on ground",
+      "sit on the ground"
+    ]
+  },
+  {
+    "node_id": "2362704_012",
+    "concept": "look toward camera",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "one to the left is looking at camera",
+      "one was looking toward the camera",
+      "one was looking towards the camera"
+    ]
+  },
+  {
+    "node_id": "2362704_013",
+    "concept": "left",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one to the left"
+    ]
+  },
+  {
+    "node_id": "2362704_014",
+    "concept": "right",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one on the right",
+      "one on right"
+    ]
+  },
+  {
+    "node_id": "2362704_015",
+    "concept": "look at pumpkin",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one on the right is lookign at pumpkin"
+    ]
+  },
+  {
+    "node_id": "2362704_016",
+    "concept": "next to",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "sat next to it"
+    ]
+  },
+  {
+    "node_id": "2362704_017",
+    "concept": "mouth in pumpkin",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "had mouth in pumpkin"
+    ]
+  }
+]

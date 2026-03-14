@@ -1,0 +1,196 @@
+[
+  {
+    "node_id": "2385851_001",
+    "concept": "two",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two men",
+      "two people",
+      "2 men",
+      "2 man",
+      "both"
+    ]
+  },
+  {
+    "node_id": "2385851_002",
+    "concept": "men",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "men",
+      "man",
+      "people"
+    ]
+  },
+  {
+    "node_id": "2385851_003",
+    "concept": "suitcases",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "suitcases",
+      "suitcase",
+      "luggages"
+    ]
+  },
+  {
+    "node_id": "2385851_004",
+    "concept": "red",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "red",
+      "red one"
+    ]
+  },
+  {
+    "node_id": "2385851_005",
+    "concept": "large",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "bigger",
+      "big",
+      "large",
+      "giant"
+    ]
+  },
+  {
+    "node_id": "2385851_006",
+    "concept": "carrying",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "carrying",
+      "carry",
+      "holding"
+    ]
+  },
+  {
+    "node_id": "2385851_007",
+    "concept": "walking",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "walking",
+      "go through",
+      "go through a covered walkway"
+    ]
+  },
+  {
+    "node_id": "2385851_008",
+    "concept": "covered walkway",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "covered walkway",
+      "covered area",
+      "covered shelter",
+      "covered pathway",
+      "under a walkway",
+      "under a cover",
+      "underneath a covered pathway",
+      "through a covered walkway",
+      "walking through a shielded underpass",
+      "through underpass thing",
+      "under a bridge",
+      "under a pathway"
+    ]
+  },
+  {
+    "node_id": "2385851_009",
+    "concept": "up a ramp/path",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "up a path",
+      "up a ramp"
+    ]
+  },
+  {
+    "node_id": "2385851_010",
+    "concept": "away from camera/viewer",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "back facing me",
+      "walking away from camera",
+      "away from the screen"
+    ]
+  },
+  {
+    "node_id": "2385851_011",
+    "concept": "on their backs",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on their backs",
+      "carrying the suitcases on their backs",
+      "suitcases large and on their backs"
+    ]
+  },
+  {
+    "node_id": "2385851_012",
+    "concept": "over their heads",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "over thei heads",
+      "above them"
+    ]
+  },
+  {
+    "node_id": "2385851_013",
+    "concept": "loose clothing",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "wearing loose clothing"
+    ]
+  },
+  {
+    "node_id": "2385851_014",
+    "concept": "shade",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "walking in shade"
+    ]
+  },
+  {
+    "node_id": "2385851_015",
+    "concept": "sunny area",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "far left was sunny",
+      "where there was no sun"
+    ]
+  },
+  {
+    "node_id": "2385851_016",
+    "concept": "left side",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "far left"
+    ]
+  }
+]

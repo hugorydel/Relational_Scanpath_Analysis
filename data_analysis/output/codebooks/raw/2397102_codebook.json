@@ -1,0 +1,299 @@
+[
+  {
+    "node_id": "2397102_001",
+    "concept": "man",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one man",
+      "the man",
+      "a man",
+      "man on right",
+      "men stood to the right",
+      "man next to her"
+    ]
+  },
+  {
+    "node_id": "2397102_002",
+    "concept": "woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one woman",
+      "a woman",
+      "woman on left",
+      "woman in bright pink dress",
+      "women",
+      "she"
+    ]
+  },
+  {
+    "node_id": "2397102_003",
+    "concept": "couple",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "a couple",
+      "A COUPLE"
+    ]
+  },
+  {
+    "node_id": "2397102_004",
+    "concept": "cake",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a cake",
+      "the cake",
+      "cak",
+      "white cake",
+      "colourful cake"
+    ]
+  },
+  {
+    "node_id": "2397102_005",
+    "concept": "knife",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "knife",
+      "cake knife",
+      "the same knife"
+    ]
+  },
+  {
+    "node_id": "2397102_006",
+    "concept": "beer",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a beer bottle",
+      "a beer",
+      "holding a beer",
+      "beer can",
+      "beer in his free hand",
+      "THE MAN IS ALSO HOLDING BEER"
+    ]
+  },
+  {
+    "node_id": "2397102_007",
+    "concept": "beer bottle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "beer bottle",
+      "brown bottle"
+    ]
+  },
+  {
+    "node_id": "2397102_008",
+    "concept": "Guinness",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "a guinness"
+    ]
+  },
+  {
+    "node_id": "2397102_009",
+    "concept": "dress",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pink dress",
+      "dress",
+      "strapless dress",
+      "red strapless dress",
+      "woman in dress"
+    ]
+  },
+  {
+    "node_id": "2397102_010",
+    "concept": "suit",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in suit"
+    ]
+  },
+  {
+    "node_id": "2397102_011",
+    "concept": "cutting cake",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "is cutting a cake",
+      "cutting a cake",
+      "cutting into a cake",
+      "cut cake together",
+      "cuting cak",
+      "cutting the cake",
+      "cutting the first piece of the cake",
+      "both cutting a cake"
+    ]
+  },
+  {
+    "node_id": "2397102_012",
+    "concept": "holding beer",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "is holding a beer bottle",
+      "has a beer in his hand",
+      "is holding a beer",
+      "holding beer bottle",
+      "holding a beer bottle",
+      "holding a beer can in his hand",
+      "holding beer",
+      "holds a beer in his free hand",
+      "the man has a beer in his other hand",
+      "man on right holding beer"
+    ]
+  },
+  {
+    "node_id": "2397102_013",
+    "concept": "holding knife together",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "both cut cake together",
+      "he holds the knife with one hand and she holds it with two",
+      "they were holding the cake knife together",
+      "THEYRE BOTH HOLDING THE KNIFE",
+      "both cutting a cake with the same knife"
+    ]
+  },
+  {
+    "node_id": "2397102_014",
+    "concept": "woman on left",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the woman on the left",
+      "woman on left",
+      "woman was on the left",
+      "a woman on the left"
+    ]
+  },
+  {
+    "node_id": "2397102_015",
+    "concept": "man on right",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the man on the right",
+      "man on right",
+      "stood to the right",
+      "a man on the right"
+    ]
+  },
+  {
+    "node_id": "2397102_016",
+    "concept": "pink",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "bright pink dress",
+      "pink dress",
+      "wearing a pink strapless dress"
+    ]
+  },
+  {
+    "node_id": "2397102_017",
+    "concept": "red",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "women in red",
+      "red strapless dress",
+      "as well as red"
+    ]
+  },
+  {
+    "node_id": "2397102_018",
+    "concept": "strapless",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "strapless dress",
+      "red strapless dress"
+    ]
+  },
+  {
+    "node_id": "2397102_019",
+    "concept": "white cake",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "cake white",
+      "white cake",
+      "white frosting",
+      "the icing on the cake is ... white"
+    ]
+  },
+  {
+    "node_id": "2397102_020",
+    "concept": "multicolored decoration",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "colourful accents",
+      "multicoloured writing on top",
+      "sprinkles on",
+      "a colourful cake",
+      "red yellow and blue",
+      "blue letters as well as red",
+      "coloured dots"
+    ]
+  },
+  {
+    "node_id": "2397102_021",
+    "concept": "brown bottle",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "brown bottle"
+    ]
+  },
+  {
+    "node_id": "2397102_022",
+    "concept": "white individuals",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "both white individuals"
+    ]
+  },
+  {
+    "node_id": "2397102_023",
+    "concept": "wedding",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "MAYBE AT A WEDDING"
+    ]
+  }
+]

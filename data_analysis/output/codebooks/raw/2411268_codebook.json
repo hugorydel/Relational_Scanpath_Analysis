@@ -1,0 +1,388 @@
+[
+  {
+    "node_id": "2411268_001",
+    "concept": "girl",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a girl",
+      "little girl",
+      "child",
+      "small girl"
+    ]
+  },
+  {
+    "node_id": "2411268_002",
+    "concept": "pink boots",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pink boots",
+      "pink wellies",
+      "boots"
+    ]
+  },
+  {
+    "node_id": "2411268_003",
+    "concept": "pink",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pink boots",
+      "pink wellies",
+      "pink dress"
+    ]
+  },
+  {
+    "node_id": "2411268_004",
+    "concept": "picking apples",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "picking apples",
+      "picking green apples",
+      "pick a green apple",
+      "pick an apple",
+      "grabbing green apples",
+      "picking apples from a tree",
+      "picking apples from a high branch",
+      "pick a green apple off the tree"
+    ]
+  },
+  {
+    "node_id": "2411268_005",
+    "concept": "apple",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "apples",
+      "green apples",
+      "a green apple",
+      "an apple",
+      "2 apples"
+    ]
+  },
+  {
+    "node_id": "2411268_006",
+    "concept": "tree",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "tree",
+      "apple tree",
+      "green apple tree",
+      "small tree"
+    ]
+  },
+  {
+    "node_id": "2411268_007",
+    "concept": "above her head",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "above her head",
+      "branch above her head",
+      "tree above her head"
+    ]
+  },
+  {
+    "node_id": "2411268_008",
+    "concept": "standing under the tree",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "standing under a tree"
+    ]
+  },
+  {
+    "node_id": "2411268_009",
+    "concept": "basket",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "brown basket"
+    ]
+  },
+  {
+    "node_id": "2411268_010",
+    "concept": "brown",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "brown basket"
+    ]
+  },
+  {
+    "node_id": "2411268_011",
+    "concept": "field",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "large feild"
+    ]
+  },
+  {
+    "node_id": "2411268_012",
+    "concept": "green",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "green apples",
+      "green apple",
+      "green apple tree"
+    ]
+  },
+  {
+    "node_id": "2411268_013",
+    "concept": "red bag",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "red bag",
+      "a red bag"
+    ]
+  },
+  {
+    "node_id": "2411268_014",
+    "concept": "red",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "red bag"
+    ]
+  },
+  {
+    "node_id": "2411268_015",
+    "concept": "putting apples into the bag",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "putting them into a red bag",
+      "putting them into the bag",
+      "putting them into a red bag she had"
+    ]
+  },
+  {
+    "node_id": "2411268_016",
+    "concept": "reaching up",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "reaching up",
+      "reaches up",
+      "reaching to pick"
+    ]
+  },
+  {
+    "node_id": "2411268_017",
+    "concept": "orchard",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "in an orchard"
+    ]
+  },
+  {
+    "node_id": "2411268_018",
+    "concept": "holding bag",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding a red bag",
+      "she is holding a red bag",
+      "had a red bag",
+      "holding red bag",
+      "the child is holding a red bag",
+      "while holding a red bag"
+    ]
+  },
+  {
+    "node_id": "2411268_019",
+    "concept": "garden",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "in garden"
+    ]
+  },
+  {
+    "node_id": "2411268_020",
+    "concept": "left hand",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "left hand",
+      "in her left hand"
+    ]
+  },
+  {
+    "node_id": "2411268_021",
+    "concept": "other hand reaching",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "reaches up with other hand"
+    ]
+  },
+  {
+    "node_id": "2411268_022",
+    "concept": "second child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "another child",
+      "someone"
+    ]
+  },
+  {
+    "node_id": "2411268_023",
+    "concept": "background",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "in the background",
+      "in the far left background"
+    ]
+  },
+  {
+    "node_id": "2411268_024",
+    "concept": "left side",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "to the left",
+      "far left background",
+      "from my perspective"
+    ]
+  },
+  {
+    "node_id": "2411268_025",
+    "concept": "small",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "little girl",
+      "small girl",
+      "small tree"
+    ]
+  },
+  {
+    "node_id": "2411268_026",
+    "concept": "low branch",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "branches on the tree were relatively low",
+      "branch was quite low down"
+    ]
+  },
+  {
+    "node_id": "2411268_027",
+    "concept": "branch",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "high branch",
+      "branch above her head",
+      "branches on the tree",
+      "a branch"
+    ]
+  },
+  {
+    "node_id": "2411268_028",
+    "concept": "high",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "high branch"
+    ]
+  },
+  {
+    "node_id": "2411268_029",
+    "concept": "pink dress",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "pink dress"
+    ]
+  },
+  {
+    "node_id": "2411268_030",
+    "concept": "blonde hair",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "blonde hair"
+    ]
+  },
+  {
+    "node_id": "2411268_031",
+    "concept": "hair",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "blonde hair"
+    ]
+  },
+  {
+    "node_id": "2411268_032",
+    "concept": "blonde",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "blonde hair"
+    ]
+  },
+  {
+    "node_id": "2411268_033",
+    "concept": "two",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "2 apples"
+    ]
+  },
+  {
+    "node_id": "2411268_034",
+    "concept": "right hand",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "right hand"
+    ]
+  }
+]

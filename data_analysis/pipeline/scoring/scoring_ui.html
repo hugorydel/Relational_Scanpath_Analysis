@@ -723,7 +723,9 @@
 				const item = queue[idx];
 				annotations = {};
 				document.getElementById('stim-img').src = `/api/image/${item.stim_id}`;
-				document.getElementById('stim-label').textContent = `StimID: ${item.stim_id}`;
+				const batchSuffix = item.batch_label ? `  (${item.batch_label})` : '';
+				document.getElementById('stim-label').textContent =
+					`StimID: ${item.stim_id}${batchSuffix}`;
 				item.responses.forEach(r => {
 					annotations[r.subject_id] = { spans: [], wrongImage: false };
 				});

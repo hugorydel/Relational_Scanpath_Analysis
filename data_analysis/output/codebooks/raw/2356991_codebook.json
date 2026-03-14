@@ -1,0 +1,305 @@
+[
+  {
+    "node_id": "2356991_001",
+    "concept": "two players",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two baseball player",
+      "oen guy was sliding in",
+      "one boy sliding towards the base headfirst. the other boy",
+      "a man lying on ground hands out and another man",
+      "one man on the base",
+      "player diving and player on right of the screen",
+      "two men were in the picture",
+      "man diving and another",
+      "there were 2 men",
+      "2 baseball players",
+      "one player was sliding headfirst",
+      "the other player"
+    ]
+  },
+  {
+    "node_id": "2356991_002",
+    "concept": "baseball players",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two baseball player",
+      "2 men playing baseball",
+      "2 baseball players"
+    ]
+  },
+  {
+    "node_id": "2356991_003",
+    "concept": "baseball game",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in the middle of a game",
+      "playing baseball",
+      "in baseball field",
+      "on a pitch"
+    ]
+  },
+  {
+    "node_id": "2356991_004",
+    "concept": "left player",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the player on the left",
+      "man to the left",
+      "a man on the left",
+      "one on left"
+    ]
+  },
+  {
+    "node_id": "2356991_005",
+    "concept": "right player",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the player on the right",
+      "player on right of the screen",
+      "man on the right",
+      "the man ob the right",
+      "one on the right",
+      "the other player was standing"
+    ]
+  },
+  {
+    "node_id": "2356991_006",
+    "concept": "diving/sliding headfirst",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "diving head first",
+      "sliding in",
+      "sliding towards the base headfirst",
+      "dove to floor",
+      "diving head-first for the base",
+      "player diving",
+      "falling head first",
+      "man diving",
+      "a man dives head first towards a base",
+      "sliding into the base headfirst",
+      "diving face first onto the floor",
+      "sliding headfirst"
+    ]
+  },
+  {
+    "node_id": "2356991_007",
+    "concept": "trying to catch the ball",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "trying to catch the ball",
+      "trying to catch the ball with a focused face",
+      "trying to catch the ball",
+      "another man catching a ball",
+      "ready to catch ball",
+      "trying to catch the ball",
+      "is getting ready to catch the ball",
+      "stood trying to catch it",
+      "looking for the ball",
+      "another about to catch",
+      "preparing to catch the ball",
+      "trying to catch the ball that is incoming",
+      "waiting to catcvh the ball",
+      "ready to catch the baseball",
+      "ready to catch the ball"
+    ]
+  },
+  {
+    "node_id": "2356991_008",
+    "concept": "ball",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "grab the ball",
+      "catch the ball",
+      "ball",
+      "a ball",
+      "catch ball",
+      "ball in the air",
+      "ball mid air",
+      "looking for the ball",
+      "catch the ball",
+      "the ball that is incoming",
+      "the ball",
+      "baseball",
+      "the ball"
+    ]
+  },
+  {
+    "node_id": "2356991_009",
+    "concept": "base",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "get to base",
+      "towards the base",
+      "on the base",
+      "for the base",
+      "towards a base",
+      "at base",
+      "into the base"
+    ]
+  },
+  {
+    "node_id": "2356991_010",
+    "concept": "on the ground/floor",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "lying on ground",
+      "to floor",
+      "on the floor",
+      "on the ground",
+      "onto the floor",
+      "close to the ground"
+    ]
+  },
+  {
+    "node_id": "2356991_011",
+    "concept": "standing upright",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "standing up",
+      "stood",
+      "standing upright",
+      "was standing"
+    ]
+  },
+  {
+    "node_id": "2356991_012",
+    "concept": "glove",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one of the men is wearing a glove",
+      "the one with the glove",
+      "a man with a glove",
+      "had a glove on"
+    ]
+  },
+  {
+    "node_id": "2356991_013",
+    "concept": "arms/hands outstretched",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "hands out",
+      "has his arm out reaching"
+    ]
+  },
+  {
+    "node_id": "2356991_014",
+    "concept": "ball in the air",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "ball in the air",
+      "ball mid air",
+      "ball flying between them",
+      "incoming"
+    ]
+  },
+  {
+    "node_id": "2356991_015",
+    "concept": "red helmet",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "red helmet on"
+    ]
+  },
+  {
+    "node_id": "2356991_016",
+    "concept": "red cap",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "read cap"
+    ]
+  },
+  {
+    "node_id": "2356991_017",
+    "concept": "white and red uniforms",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "uniforms are white and red",
+      "red and white striped outflit"
+    ]
+  },
+  {
+    "node_id": "2356991_018",
+    "concept": "striped outfit",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "red and white striped outflit"
+    ]
+  },
+  {
+    "node_id": "2356991_019",
+    "concept": "focused expression",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "with a focused face"
+    ]
+  },
+  {
+    "node_id": "2356991_020",
+    "concept": "middle of the game",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "in the middle of a game"
+    ]
+  },
+  {
+    "node_id": "2356991_021",
+    "concept": "trying to tag the runner out",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "trying to catch him out"
+    ]
+  },
+  {
+    "node_id": "2356991_022",
+    "concept": "tossing the ball",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "had just tossed it"
+    ]
+  }
+]

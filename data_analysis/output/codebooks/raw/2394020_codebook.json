@@ -1,0 +1,326 @@
+[
+  {
+    "node_id": "2394020_001",
+    "concept": "two",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two men",
+      "2 men",
+      "two horses",
+      "riding two horses"
+    ]
+  },
+  {
+    "node_id": "2394020_002",
+    "concept": "men",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two men",
+      "2 men"
+    ]
+  },
+  {
+    "node_id": "2394020_003",
+    "concept": "middle aged",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "middle aged"
+    ]
+  },
+  {
+    "node_id": "2394020_004",
+    "concept": "cowboy hats",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "cowboy hats",
+      "cow boy hats",
+      "coyboy hats",
+      "cowbot hats"
+    ]
+  },
+  {
+    "node_id": "2394020_005",
+    "concept": "boots",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "boots"
+    ]
+  },
+  {
+    "node_id": "2394020_006",
+    "concept": "shirts",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "shirts"
+    ]
+  },
+  {
+    "node_id": "2394020_007",
+    "concept": "jeans",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "jeans"
+    ]
+  },
+  {
+    "node_id": "2394020_008",
+    "concept": "horses",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "horses",
+      "horse"
+    ]
+  },
+  {
+    "node_id": "2394020_009",
+    "concept": "saddles",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "saddles on"
+    ]
+  },
+  {
+    "node_id": "2394020_010",
+    "concept": "brown",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "brown and white horses",
+      "brown horses",
+      "white and brown patched horses",
+      "the one on the right is more brown",
+      "white with brown patches",
+      "black white and brown horses"
+    ]
+  },
+  {
+    "node_id": "2394020_011",
+    "concept": "white",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "brown and white horses",
+      "white and brown patched horses",
+      "the left horse is white and brown",
+      "white with brown patches",
+      "black white and brown horses"
+    ]
+  },
+  {
+    "node_id": "2394020_012",
+    "concept": "black",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "black white and brown horses"
+    ]
+  },
+  {
+    "node_id": "2394020_013",
+    "concept": "patched",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white and brown patched horses",
+      "brown patches"
+    ]
+  },
+  {
+    "node_id": "2394020_014",
+    "concept": "riding horses",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "riding horses",
+      "riding two horses",
+      "ride horses",
+      "on horses"
+    ]
+  },
+  {
+    "node_id": "2394020_015",
+    "concept": "walking",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the horses are walking",
+      "waliing along beach"
+    ]
+  },
+  {
+    "node_id": "2394020_016",
+    "concept": "galloping",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "mid gallop"
+    ]
+  },
+  {
+    "node_id": "2394020_017",
+    "concept": "along the beach",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "alongside a shore",
+      "along beach",
+      "along the beach",
+      "down beach"
+    ]
+  },
+  {
+    "node_id": "2394020_018",
+    "concept": "beach",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "beach",
+      "shore",
+      "on the sand by the beach"
+    ]
+  },
+  {
+    "node_id": "2394020_019",
+    "concept": "sand",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the sand",
+      "riding on sand"
+    ]
+  },
+  {
+    "node_id": "2394020_020",
+    "concept": "water",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "beside water",
+      "the waters are blue"
+    ]
+  },
+  {
+    "node_id": "2394020_021",
+    "concept": "sea",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the sea behind them",
+      "behind them was sea"
+    ]
+  },
+  {
+    "node_id": "2394020_022",
+    "concept": "behind them",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "behind them",
+      "the sea behind them",
+      "behind them was sea"
+    ]
+  },
+  {
+    "node_id": "2394020_023",
+    "concept": "grassy patches",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "few grassy patches"
+    ]
+  },
+  {
+    "node_id": "2394020_024",
+    "concept": "sunset",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "then sunset",
+      "at sunset"
+    ]
+  },
+  {
+    "node_id": "2394020_025",
+    "concept": "to the right",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "from my perspective to the right",
+      "the one on the right"
+    ]
+  },
+  {
+    "node_id": "2394020_026",
+    "concept": "slightly ahead",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one horse is slightly ahead of the other"
+    ]
+  },
+  {
+    "node_id": "2394020_027",
+    "concept": "daytime",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "it was daytime"
+    ]
+  },
+  {
+    "node_id": "2394020_028",
+    "concept": "blue",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the waters are blue"
+    ]
+  },
+  {
+    "node_id": "2394020_029",
+    "concept": "landscape image",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "its a landscape image"
+    ]
+  }
+]

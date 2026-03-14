@@ -1,0 +1,208 @@
+[
+  {
+    "node_id": "2379478_001",
+    "concept": "two",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two baby gitls",
+      "two babies",
+      "two babie",
+      "2 babies"
+    ]
+  },
+  {
+    "node_id": "2379478_002",
+    "concept": "babies",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "baby gitls",
+      "babies",
+      "babie",
+      "baby",
+      "toddler and smaller baby"
+    ]
+  },
+  {
+    "node_id": "2379478_003",
+    "concept": "girls",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "baby gitls"
+    ]
+  },
+  {
+    "node_id": "2379478_004",
+    "concept": "lying down",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "lying in a bed",
+      "lying down on a bed",
+      "lying down",
+      "while lying on a bed",
+      "are lying on a bed",
+      "lying in bed",
+      "were lying on the bed",
+      "lying on their backs in bed",
+      "laying down on a bed",
+      "laid in a bed"
+    ]
+  },
+  {
+    "node_id": "2379478_005",
+    "concept": "bed",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "bed",
+      "in bed",
+      "on the bed"
+    ]
+  },
+  {
+    "node_id": "2379478_006",
+    "concept": "drinking milk",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "drinking milk",
+      "drink milk",
+      "drinking it",
+      "drink bottle of milk"
+    ]
+  },
+  {
+    "node_id": "2379478_007",
+    "concept": "bottle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "bottles",
+      "baby bottle",
+      "bottle",
+      "bottles in their hands",
+      "bottle of milk",
+      "their own bottle",
+      "its own bottle"
+    ]
+  },
+  {
+    "node_id": "2379478_008",
+    "concept": "milk",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "milk",
+      "baby milk",
+      "bottle of milk",
+      "bottles of milk"
+    ]
+  },
+  {
+    "node_id": "2379478_009",
+    "concept": "next to each other",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "next to eachother"
+    ]
+  },
+  {
+    "node_id": "2379478_010",
+    "concept": "one with nappy",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one with nappy"
+    ]
+  },
+  {
+    "node_id": "2379478_011",
+    "concept": "holding bottle",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with bottles in their hands",
+      "holding each their own bottle",
+      "each has its own bottle"
+    ]
+  },
+  {
+    "node_id": "2379478_012",
+    "concept": "smaller",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "smaller baby"
+    ]
+  },
+  {
+    "node_id": "2379478_013",
+    "concept": "on their backs",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "lying on their backs"
+    ]
+  },
+  {
+    "node_id": "2379478_014",
+    "concept": "black and white",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "black and white photograph",
+      "black and white picture"
+    ]
+  },
+  {
+    "node_id": "2379478_015",
+    "concept": "photograph",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "photograph",
+      "picture"
+    ]
+  },
+  {
+    "node_id": "2379478_016",
+    "concept": "each has own bottle",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "each",
+      "each their own bottle",
+      "its own bottle"
+    ]
+  },
+  {
+    "node_id": "2379478_017",
+    "concept": "bottle in mouth",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "bottles of milk in their mouths"
+    ]
+  }
+]

@@ -1,0 +1,295 @@
+[
+  {
+    "node_id": "2409918_001",
+    "concept": "elephant",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two elephants",
+      "2 elephants",
+      "the elephants",
+      "elephant"
+    ]
+  },
+  {
+    "node_id": "2409918_002",
+    "concept": "man",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two men",
+      "2 men",
+      "one man on each",
+      "two men on them",
+      "people on the backs",
+      "man",
+      "men"
+    ]
+  },
+  {
+    "node_id": "2409918_003",
+    "concept": "two",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two",
+      "2",
+      "one on each"
+    ]
+  },
+  {
+    "node_id": "2409918_004",
+    "concept": "water",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in water",
+      "in a river",
+      "in a stream",
+      "blue green water/lake",
+      "body of water",
+      "the water was brown",
+      "water"
+    ]
+  },
+  {
+    "node_id": "2409918_005",
+    "concept": "on top of",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "sitting on top of",
+      "sat on top of",
+      "on each",
+      "on them",
+      "riding them",
+      "on the backs",
+      "sit on top of",
+      "stood on top of",
+      "standing on top of",
+      "with a man on top",
+      "were on top of"
+    ]
+  },
+  {
+    "node_id": "2409918_006",
+    "concept": "sitting",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "sitting on top of",
+      "sat on top of",
+      "the man sits on the elephant",
+      "man sitting on top of it"
+    ]
+  },
+  {
+    "node_id": "2409918_007",
+    "concept": "eating",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "is eating plants",
+      "was eating from a plant",
+      "is eating a plant",
+      "is eating plants",
+      "was eating leaves",
+      "the elephants are eating",
+      "eating leaves",
+      "was eating plants",
+      "was eating a green branch"
+    ]
+  },
+  {
+    "node_id": "2409918_008",
+    "concept": "plant",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "plants",
+      "a plant",
+      "leaves",
+      "green branch"
+    ]
+  },
+  {
+    "node_id": "2409918_009",
+    "concept": "right",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the right",
+      "the elephant on the right",
+      "man on the right",
+      "right"
+    ]
+  },
+  {
+    "node_id": "2409918_010",
+    "concept": "grey",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "grey"
+    ]
+  },
+  {
+    "node_id": "2409918_011",
+    "concept": "swimming",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "are swimming"
+    ]
+  },
+  {
+    "node_id": "2409918_012",
+    "concept": "cave",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "water of a cave"
+    ]
+  },
+  {
+    "node_id": "2409918_013",
+    "concept": "riding",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "riding them"
+    ]
+  },
+  {
+    "node_id": "2409918_014",
+    "concept": "shirtless",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "man on the right is shirtless",
+      "had shirtless man on him",
+      "one man is shirtless"
+    ]
+  },
+  {
+    "node_id": "2409918_015",
+    "concept": "left",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the left",
+      "the one on the left",
+      "man on left elephant",
+      "left"
+    ]
+  },
+  {
+    "node_id": "2409918_016",
+    "concept": "shirt",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "was wearing a shirt"
+    ]
+  },
+  {
+    "node_id": "2409918_017",
+    "concept": "wearing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "was wearing a shirt"
+    ]
+  },
+  {
+    "node_id": "2409918_018",
+    "concept": "cleaning",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "being cleaned",
+      "they were being cleaned"
+    ]
+  },
+  {
+    "node_id": "2409918_019",
+    "concept": "standing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the man stands",
+      "who were stood on top of",
+      "had a man standing on top of it"
+    ]
+  },
+  {
+    "node_id": "2409918_020",
+    "concept": "back",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the backs",
+      "with men on their backs"
+    ]
+  },
+  {
+    "node_id": "2409918_021",
+    "concept": "trunk",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with its trunk"
+    ]
+  },
+  {
+    "node_id": "2409918_022",
+    "concept": "talking to each other",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "they looked like they were talking to each other"
+    ]
+  },
+  {
+    "node_id": "2409918_023",
+    "concept": "blue-green",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blue green water/lake"
+    ]
+  },
+  {
+    "node_id": "2409918_024",
+    "concept": "brown",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the water was brown"
+    ]
+  }
+]

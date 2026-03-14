@@ -103,11 +103,19 @@ def _load_scored_pairs() -> set[tuple[str, str]]:
     return scored
 
 
+# Maximum number of participant responses shown per queue page for one image.
+# If a stim has more unscored participants than this, it becomes multiple
+# consecutive queue entries (same stim_id, different response slices).
+BATCH_SIZE = 5
+
+
 def _build_queue(responses: list[dict], scored: set[tuple[str, str]]) -> list[dict]:
     """
-    Build the ordered scoring queue: one item per StimID, each carrying only
-    the unscored (subject_id, free_response) pairs for that image.
+    Build the ordered scoring queue: one item per StimID batch, each carrying
+    at most BATCH_SIZE unscored (subject_id, free_response) pairs.
     Images where all participants are already scored are dropped entirely.
+    Stims with more than BATCH_SIZE unscored participants are split into
+    consecutive entries so the UI never shows more than BATCH_SIZE cards.
     """
     # Group by stim_id, preserving insertion order (CSVs already sorted)
     by_stim: dict[str, list[dict]] = defaultdict(list)
@@ -121,12 +129,28 @@ def _build_queue(responses: list[dict], scored: set[tuple[str, str]]) -> list[di
                 }
             )
 
-    queue = [
-        {"stim_id": stim_id, "responses": resp_list}
-        for stim_id, resp_list in by_stim.items()
-        if resp_list  # drop if all already scored
-    ]
-    logger.info(f"Scoring queue: {len(queue)} images remaining")
+    queue = []
+    for stim_id, resp_list in by_stim.items():
+        if not resp_list:
+            continue
+        n_batches = (len(resp_list) + BATCH_SIZE - 1) // BATCH_SIZE
+        for i in range(0, len(resp_list), BATCH_SIZE):
+            batch_num = i // BATCH_SIZE + 1
+            label = (
+                f"batch {batch_num}/{n_batches}" if n_batches > 1 else None
+            )
+            queue.append(
+                {
+                    "stim_id": stim_id,
+                    "responses": resp_list[i : i + BATCH_SIZE],
+                    "batch_label": label,
+                }
+            )
+
+    logger.info(
+        f"Scoring queue: {len(queue)} page(s) across "
+        f"{len(by_stim)} image(s) remaining (batch size={BATCH_SIZE})"
+    )
     return queue
 
 

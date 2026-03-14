@@ -1,0 +1,424 @@
+[
+  {
+    "node_id": "150472_001",
+    "concept": "two people",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two women",
+      "2 girls",
+      "two girls",
+      "2 women"
+    ]
+  },
+  {
+    "node_id": "150472_002",
+    "concept": "women",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "women",
+      "girl",
+      "girls",
+      "woman"
+    ]
+  },
+  {
+    "node_id": "150472_003",
+    "concept": "pizza",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pizza",
+      "pizza slice",
+      "pslice",
+      "big pizza slice",
+      "large pizza slice",
+      "slcie of pizza",
+      "slice of pizza"
+    ]
+  },
+  {
+    "node_id": "150472_004",
+    "concept": "paper plate",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "paper plate",
+      "white paper plate"
+    ]
+  },
+  {
+    "node_id": "150472_005",
+    "concept": "eating",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "eating pizza",
+      "about to eat it",
+      "opening their mouths to a slice of pizza",
+      "pretending to eat",
+      "sharing a pizza slice",
+      "eating large pizza slice",
+      "eating pizza",
+      "trying to bite the pizza at the same time"
+    ]
+  },
+  {
+    "node_id": "150472_006",
+    "concept": "street",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in the middle of the street",
+      "on street",
+      "on a street",
+      "in the street"
+    ]
+  },
+  {
+    "node_id": "150472_007",
+    "concept": "outside",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "outside"
+    ]
+  },
+  {
+    "node_id": "150472_008",
+    "concept": "glasses",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "wears glasses",
+      "wearing glasees",
+      "had glasses",
+      "wearing glasses"
+    ]
+  },
+  {
+    "node_id": "150472_009",
+    "concept": "right side",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the right",
+      "girl on the right",
+      "one on the right",
+      "woman on the right"
+    ]
+  },
+  {
+    "node_id": "150472_010",
+    "concept": "dim lighting",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "dim lighting",
+      "dim lighting on a street"
+    ]
+  },
+  {
+    "node_id": "150472_011",
+    "concept": "mouth open",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "opening their mouths",
+      "both mouth open",
+      "had her mouth open",
+      "mouth open"
+    ]
+  },
+  {
+    "node_id": "150472_012",
+    "concept": "leaning toward pizza",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "leaning to pizza"
+    ]
+  },
+  {
+    "node_id": "150472_013",
+    "concept": "white",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white paper plate"
+    ]
+  },
+  {
+    "node_id": "150472_014",
+    "concept": "dark hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "dark hair",
+      "dark haired"
+    ]
+  },
+  {
+    "node_id": "150472_015",
+    "concept": "smiling",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "smiling"
+    ]
+  },
+  {
+    "node_id": "150472_016",
+    "concept": "night",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "at night"
+    ]
+  },
+  {
+    "node_id": "150472_017",
+    "concept": "sharing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "sharing a pizza",
+      "sharing a pizza slice",
+      "sharing a slice of pizza"
+    ]
+  },
+  {
+    "node_id": "150472_018",
+    "concept": "simultaneous biting",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "they were both trying to bite the pizza at the same time"
+    ]
+  },
+  {
+    "node_id": "150472_019",
+    "concept": "posing for a picture",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "correct",
+    "source_phrases": [
+      "posed for a picture"
+    ]
+  },
+  {
+    "node_id": "150472_020",
+    "concept": "taking a selfie",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "correct",
+    "source_phrases": [
+      "taking a selfie"
+    ]
+  },
+  {
+    "node_id": "150472_021",
+    "concept": "plastic plate",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "plastic plate"
+    ]
+  },
+  {
+    "node_id": "150472_022",
+    "concept": "one plate",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a paper plate",
+      "a paper plate infront of them",
+      "one plastic plate"
+    ]
+  },
+  {
+    "node_id": "150472_023",
+    "concept": "one person with mouth open",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one woman had her mouth open",
+      "the woman on the right had her mouth open",
+      "and the woman on the left did not"
+    ]
+  },
+  {
+    "node_id": "150472_024",
+    "concept": "left side",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "woman on the left"
+    ]
+  },
+  {
+    "node_id": "150472_025",
+    "concept": "man",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "a man",
+      "man in chef clothes"
+    ]
+  },
+  {
+    "node_id": "150472_026",
+    "concept": "chef",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "chef",
+      "chef clothes"
+    ]
+  },
+  {
+    "node_id": "150472_027",
+    "concept": "chef clothes",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "chef clothes",
+      "white uniform",
+      "chef hat"
+    ]
+  },
+  {
+    "node_id": "150472_028",
+    "concept": "white",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "white uniform"
+    ]
+  },
+  {
+    "node_id": "150472_029",
+    "concept": "chef hat",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "chef hat"
+    ]
+  },
+  {
+    "node_id": "150472_030",
+    "concept": "pizza paddle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "pizza hanle",
+      "slides p;izza",
+      "pizza paddle"
+    ]
+  },
+  {
+    "node_id": "150472_031",
+    "concept": "using tool to put pizza into oven",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "using a pizza hanle to put pizzas",
+      "slides p;izza into",
+      "uses pizza paddle to put pizza into oven"
+    ]
+  },
+  {
+    "node_id": "150472_032",
+    "concept": "oven",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "mouth shaped oven",
+      "stone oven",
+      "pizza ove"
+    ]
+  },
+  {
+    "node_id": "150472_033",
+    "concept": "mouth-shaped",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "mouth shaped oven",
+      "looks like a large open mouth"
+    ]
+  },
+  {
+    "node_id": "150472_034",
+    "concept": "stone",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "stone oven",
+      "made from stone"
+    ]
+  },
+  {
+    "node_id": "150472_035",
+    "concept": "fire",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "fire seen inside the oven"
+    ]
+  },
+  {
+    "node_id": "150472_036",
+    "concept": "inside",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "inside the oven"
+    ]
+  },
+  {
+    "node_id": "150472_037",
+    "concept": "greek statue",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "looks like a greek statue"
+    ]
+  }
+]

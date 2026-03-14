@@ -1,0 +1,358 @@
+[
+  {
+    "node_id": "2374670_001",
+    "concept": "red vehicle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a red spray vehicle",
+      "red truck spraying water",
+      "redd truck",
+      "big red truck",
+      "red truck",
+      "red van",
+      "red truck on dirt road",
+      "a red truck was sparing water",
+      "red farem vehicle",
+      "a red truck",
+      "a red spraying truck",
+      "a red veirchle",
+      "red vehicle"
+    ]
+  },
+  {
+    "node_id": "2374670_002",
+    "concept": "red",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "red",
+      "redd"
+    ]
+  },
+  {
+    "node_id": "2374670_003",
+    "concept": "man",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a man",
+      "man",
+      "another",
+      "guy"
+    ]
+  },
+  {
+    "node_id": "2374670_004",
+    "concept": "driver",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "one man driving",
+      "guy in front driving was visble"
+    ]
+  },
+  {
+    "node_id": "2374670_005",
+    "concept": "water",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "water",
+      "spraying water"
+    ]
+  },
+  {
+    "node_id": "2374670_006",
+    "concept": "liquid",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "liquid",
+      "like liquid"
+    ]
+  },
+  {
+    "node_id": "2374670_007",
+    "concept": "spraying",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "spraying water",
+      "sparying water",
+      "water spraying out the back",
+      "spray coming out of back",
+      "spraying water on the ground",
+      "spraying liquid out of the back",
+      "multiple outlets of water spraying",
+      "sparing water like liquid",
+      "spraying water from the bottom",
+      "spraying water onto a field"
+    ]
+  },
+  {
+    "node_id": "2374670_008",
+    "concept": "back of vehicle",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the back of a spray vehicle",
+      "on the back of the truck",
+      "at the back of a redd truck",
+      "out the back",
+      "standing on the back",
+      "on back",
+      "at the back",
+      "stood at the back",
+      "behind the truck",
+      "man on the back",
+      "standing on the back of it",
+      "on behind of truck"
+    ]
+  },
+  {
+    "node_id": "2374670_009",
+    "concept": "holding on",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding on"
+    ]
+  },
+  {
+    "node_id": "2374670_010",
+    "concept": "field",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "what look slike a field",
+      "onto a field"
+    ]
+  },
+  {
+    "node_id": "2374670_011",
+    "concept": "road",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on road",
+      "onto the road",
+      "on dirt road",
+      "driving down street",
+      "on the road"
+    ]
+  },
+  {
+    "node_id": "2374670_012",
+    "concept": "dirt road",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on dirt road",
+      "dirt track",
+      "driving down dirt track"
+    ]
+  },
+  {
+    "node_id": "2374670_013",
+    "concept": "driving/moving",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "driving",
+      "while moving",
+      "rriving down",
+      "appears to be driving down"
+    ]
+  },
+  {
+    "node_id": "2374670_014",
+    "concept": "ground",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the ground"
+    ]
+  },
+  {
+    "node_id": "2374670_015",
+    "concept": "bending over",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "bending over"
+    ]
+  },
+  {
+    "node_id": "2374670_016",
+    "concept": "multiple spray outlets",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "multiple outlets",
+      "4 hoses"
+    ]
+  },
+  {
+    "node_id": "2374670_017",
+    "concept": "blue tube",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blue tube"
+    ]
+  },
+  {
+    "node_id": "2374670_018",
+    "concept": "blue",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blue"
+    ]
+  },
+  {
+    "node_id": "2374670_019",
+    "concept": "campervans",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "campervans behind"
+    ]
+  },
+  {
+    "node_id": "2374670_020",
+    "concept": "behind the vehicle",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "campervans behind"
+    ]
+  },
+  {
+    "node_id": "2374670_021",
+    "concept": "back facing viewer",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the mans back is facing screen"
+    ]
+  },
+  {
+    "node_id": "2374670_022",
+    "concept": "green hose/pipe",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "green hose",
+      "green pipe"
+    ]
+  },
+  {
+    "node_id": "2374670_023",
+    "concept": "green",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "green"
+    ]
+  },
+  {
+    "node_id": "2374670_024",
+    "concept": "left side of back",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "man stands on left side of back"
+    ]
+  },
+  {
+    "node_id": "2374670_025",
+    "concept": "wooden plank",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a wooden plank"
+    ]
+  },
+  {
+    "node_id": "2374670_026",
+    "concept": "wooden",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "wooden"
+    ]
+  },
+  {
+    "node_id": "2374670_027",
+    "concept": "large",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "big"
+    ]
+  },
+  {
+    "node_id": "2374670_028",
+    "concept": "bottom of vehicle",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "at bottom",
+      "from the bottom"
+    ]
+  },
+  {
+    "node_id": "2374670_029",
+    "concept": "standing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "standing",
+      "stood",
+      "man standing",
+      "man is standing",
+      "man stood"
+    ]
+  },
+  {
+    "node_id": "2374670_030",
+    "concept": "ledge",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "ledge"
+    ]
+  }
+]

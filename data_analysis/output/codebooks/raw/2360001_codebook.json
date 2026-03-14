@@ -1,0 +1,251 @@
+[
+  {
+    "node_id": "2360001_001",
+    "concept": "men",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "4 men",
+      "a few men",
+      "multiple men",
+      "3 men",
+      "3 or 4 men"
+    ]
+  },
+  {
+    "node_id": "2360001_002",
+    "concept": "people",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "four people",
+      "a group of people",
+      "bunch of people"
+    ]
+  },
+  {
+    "node_id": "2360001_003",
+    "concept": "four",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "four people",
+      "4 men"
+    ]
+  },
+  {
+    "node_id": "2360001_004",
+    "concept": "three",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "3 men"
+    ]
+  },
+  {
+    "node_id": "2360001_005",
+    "concept": "clock",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a clock",
+      "big clock",
+      "clock",
+      "large clock"
+    ]
+  },
+  {
+    "node_id": "2360001_006",
+    "concept": "large",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "big clock",
+      "large clock",
+      "big old clock"
+    ]
+  },
+  {
+    "node_id": "2360001_007",
+    "concept": "old",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "big old clock"
+    ]
+  },
+  {
+    "node_id": "2360001_008",
+    "concept": "scaffolding",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a scaffold",
+      "scaffolding",
+      "on a scaffold"
+    ]
+  },
+  {
+    "node_id": "2360001_009",
+    "concept": "wooden plank",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a wooden plank"
+    ]
+  },
+  {
+    "node_id": "2360001_010",
+    "concept": "standing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "standing on a scaffold",
+      "standing on something",
+      "stood on scaffolding",
+      "standing on scaffolding",
+      "stand on scaffolding"
+    ]
+  },
+  {
+    "node_id": "2360001_011",
+    "concept": "raising",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "fixing a clock",
+      "raising a big clock",
+      "putting up a big old clock",
+      "raising clock up",
+      "attempting to raise the clock",
+      "raising a large clock",
+      "holding up clock",
+      "were raising a clock",
+      "putting clock up",
+      "holding up a big clock",
+      "raising a big clock onto a building"
+    ]
+  },
+  {
+    "node_id": "2360001_012",
+    "concept": "holding",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding up clock",
+      "holding up a big clock"
+    ]
+  },
+  {
+    "node_id": "2360001_013",
+    "concept": "fixing",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "fixing a clock"
+    ]
+  },
+  {
+    "node_id": "2360001_014",
+    "concept": "attempting",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "attempting to raise the clock"
+    ]
+  },
+  {
+    "node_id": "2360001_015",
+    "concept": "on scaffolding",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on a scaffold",
+      "on something",
+      "on scaffolding",
+      "stood on scaffolding",
+      "by standing on the scaffolding",
+      "on a scaffold"
+    ]
+  },
+  {
+    "node_id": "2360001_016",
+    "concept": "above their heads",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "above their heads"
+    ]
+  },
+  {
+    "node_id": "2360001_017",
+    "concept": "left side of building",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on left side of building"
+    ]
+  },
+  {
+    "node_id": "2360001_018",
+    "concept": "onto a building",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "onto a building"
+    ]
+  },
+  {
+    "node_id": "2360001_019",
+    "concept": "street",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on a street"
+    ]
+  },
+  {
+    "node_id": "2360001_020",
+    "concept": "black and white image",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "balck and white image",
+      "black and white photo",
+      "black and white picture",
+      "balck and whote",
+      "in black and white"
+    ]
+  },
+  {
+    "node_id": "2360001_021",
+    "concept": "ZENITH",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the word ZENITH on it",
+      "that says ZENITH"
+    ]
+  }
+]

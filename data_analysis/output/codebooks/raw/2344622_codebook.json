@@ -1,0 +1,283 @@
+[
+  {
+    "node_id": "2344622_001",
+    "concept": "cat",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a cat",
+      "cat",
+      "brown spripyish cat",
+      "brownish cat"
+    ]
+  },
+  {
+    "node_id": "2344622_002",
+    "concept": "keyboard",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a keyboard",
+      "keyboard",
+      "keybpard",
+      "key board",
+      "old faishioned keyboard"
+    ]
+  },
+  {
+    "node_id": "2344622_003",
+    "concept": "blanket",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blue blanket",
+      "blanket",
+      "b;ue blamket",
+      "light blue blanket"
+    ]
+  },
+  {
+    "node_id": "2344622_004",
+    "concept": "blue",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blue",
+      "light blue",
+      "b;ue"
+    ]
+  },
+  {
+    "node_id": "2344622_005",
+    "concept": "lying down",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "lounging",
+      "laying",
+      "sleeping",
+      "lying down",
+      "lying",
+      "asleep",
+      "laid on"
+    ]
+  },
+  {
+    "node_id": "2344622_006",
+    "concept": "next to",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "next to",
+      "bside",
+      "on the side of",
+      "to the left of a keyboard"
+    ]
+  },
+  {
+    "node_id": "2344622_007",
+    "concept": "hand",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a hand",
+      "his hand",
+      "persons hand",
+      "womens hand",
+      "this hand",
+      "man's right hand"
+    ]
+  },
+  {
+    "node_id": "2344622_008",
+    "concept": "typing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "is typing",
+      "typing",
+      "hand on it",
+      "hand on keyboard",
+      "hand over the left side of the keyboard"
+    ]
+  },
+  {
+    "node_id": "2344622_009",
+    "concept": "left side",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on left",
+      "to the left",
+      "left side of photo",
+      "on the left",
+      "on the left edge"
+    ]
+  },
+  {
+    "node_id": "2344622_010",
+    "concept": "brown",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "brownish",
+      "brown"
+    ]
+  },
+  {
+    "node_id": "2344622_011",
+    "concept": "striped",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "spripyish"
+    ]
+  },
+  {
+    "node_id": "2344622_012",
+    "concept": "desk",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "desk"
+    ]
+  },
+  {
+    "node_id": "2344622_013",
+    "concept": "person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "someone",
+      "person",
+      "persons",
+      "man",
+      "white middle aged mans",
+      "woman",
+      "womens"
+    ]
+  },
+  {
+    "node_id": "2344622_014",
+    "concept": "CDs",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "cds"
+    ]
+  },
+  {
+    "node_id": "2344622_015",
+    "concept": "behind",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "behind the cat was cds"
+    ]
+  },
+  {
+    "node_id": "2344622_016",
+    "concept": "computer",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "computer"
+    ]
+  },
+  {
+    "node_id": "2344622_017",
+    "concept": "laptop",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "laptop"
+    ]
+  },
+  {
+    "node_id": "2344622_018",
+    "concept": "sitting",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "was sitting"
+    ]
+  },
+  {
+    "node_id": "2344622_019",
+    "concept": "looking at",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "looking at the laptop"
+    ]
+  },
+  {
+    "node_id": "2344622_020",
+    "concept": "long nails",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "long nails"
+    ]
+  },
+  {
+    "node_id": "2344622_021",
+    "concept": "middle aged",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "middle aged"
+    ]
+  },
+  {
+    "node_id": "2344622_022",
+    "concept": "white",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "white"
+    ]
+  },
+  {
+    "node_id": "2344622_023",
+    "concept": "old-fashioned",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "old faishioned"
+    ]
+  },
+  {
+    "node_id": "2344622_024",
+    "concept": "right hand",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "right hand"
+    ]
+  }
+]

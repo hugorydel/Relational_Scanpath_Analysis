@@ -1,0 +1,321 @@
+[
+  {
+    "node_id": "2369373_001",
+    "concept": "chef",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pizza chef",
+      "chef",
+      "a chef",
+      "man",
+      "the chef"
+    ]
+  },
+  {
+    "node_id": "2369373_002",
+    "concept": "pizza",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a pizza",
+      "pizza",
+      "pizza slice"
+    ]
+  },
+  {
+    "node_id": "2369373_003",
+    "concept": "oven",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "oven",
+      "open mouth oven",
+      "pizza oven",
+      "open over"
+    ]
+  },
+  {
+    "node_id": "2369373_004",
+    "concept": "pizza paddle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pizza pan",
+      "pizza slice",
+      "pizza paddle",
+      "pizza slider",
+      "pizza plate"
+    ]
+  },
+  {
+    "node_id": "2369373_005",
+    "concept": "hat",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white hat",
+      "chefs hat",
+      "hat"
+    ]
+  },
+  {
+    "node_id": "2369373_006",
+    "concept": "apron",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "apron",
+      "white apron"
+    ]
+  },
+  {
+    "node_id": "2369373_007",
+    "concept": "uniform",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white uniform",
+      "white chef outfit"
+    ]
+  },
+  {
+    "node_id": "2369373_008",
+    "concept": "face",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "stone figure of a face",
+      "big face"
+    ]
+  },
+  {
+    "node_id": "2369373_009",
+    "concept": "mouth",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "open mouth",
+      "mouth",
+      "mouth open",
+      "open mout"
+    ]
+  },
+  {
+    "node_id": "2369373_010",
+    "concept": "fire",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "fire",
+      "fire inside oven"
+    ]
+  },
+  {
+    "node_id": "2369373_011",
+    "concept": "statue",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a statue of somesort"
+    ]
+  },
+  {
+    "node_id": "2369373_012",
+    "concept": "stone",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "stone mouth",
+      "made of stone",
+      "stone figure",
+      "stone man's mouth"
+    ]
+  },
+  {
+    "node_id": "2369373_013",
+    "concept": "white",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white hat",
+      "white hat and apron",
+      "white uniform",
+      "white chef outfit",
+      "white apron"
+    ]
+  },
+  {
+    "node_id": "2369373_014",
+    "concept": "grey",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "grey pizza oven"
+    ]
+  },
+  {
+    "node_id": "2369373_015",
+    "concept": "large",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "large pizza oven",
+      "big face"
+    ]
+  },
+  {
+    "node_id": "2369373_016",
+    "concept": "open",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "open mouth oven",
+      "mouth open",
+      "open mout",
+      "open over"
+    ]
+  },
+  {
+    "node_id": "2369373_017",
+    "concept": "putting pizza into oven",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "placing a pizza into",
+      "putting a pizza into",
+      "placing pizza on pizza pan into",
+      "using a pizza slice to get pizza out of",
+      "putting pizza in",
+      "slides pizza into oven",
+      "using a pizza paddle to put a pizza into",
+      "using a pizza slider to put the pizza inside of the oven",
+      "moving pizza using a pizza plate into",
+      "putting a pizza in"
+    ]
+  },
+  {
+    "node_id": "2369373_018",
+    "concept": "using pizza paddle",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on pizza pan",
+      "using a pizza slice",
+      "using a pizza paddle",
+      "using a pizza slider",
+      "using a pizza plate"
+    ]
+  },
+  {
+    "node_id": "2369373_019",
+    "concept": "left",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on left"
+    ]
+  },
+  {
+    "node_id": "2369373_020",
+    "concept": "right",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on right"
+    ]
+  },
+  {
+    "node_id": "2369373_021",
+    "concept": "inside",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "inside oven",
+      "inside of the oven"
+    ]
+  },
+  {
+    "node_id": "2369373_022",
+    "concept": "above",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "above the oven"
+    ]
+  },
+  {
+    "node_id": "2369373_023",
+    "concept": "pizza oven scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "pizza chef",
+      "pizza oven",
+      "chef putting a pizza into a oven",
+      "man slides pizza into oven"
+    ]
+  },
+  {
+    "node_id": "2369373_024",
+    "concept": "mouth-shaped oven",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "open mouth oven",
+      "oven in the shape of a stone mouth",
+      "oven shaped like someone with mouth open",
+      "open oven with fire",
+      "oven looks like a monster with the mouth as its opening",
+      "oven looked like an open mout",
+      "pizza oven in the shape of a big face",
+      "pizza oven thaat has the design of an open mouth as the oven",
+      "pizza oven in the shape of a stone man's mouth"
+    ]
+  },
+  {
+    "node_id": "2369373_025",
+    "concept": "monster",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "monster"
+    ]
+  },
+  {
+    "node_id": "2369373_026",
+    "concept": "stone man",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "someone",
+      "stone man's mouth"
+    ]
+  }
+]

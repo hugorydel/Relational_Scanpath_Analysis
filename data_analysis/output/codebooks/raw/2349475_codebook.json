@@ -1,0 +1,372 @@
+[
+  {
+    "node_id": "2349475_001",
+    "concept": "blender",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a blender",
+      "the blender",
+      "one blender",
+      "large blender"
+    ]
+  },
+  {
+    "node_id": "2349475_002",
+    "concept": "person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "3 people",
+      "three people",
+      "someone",
+      "person",
+      "3 friends"
+    ]
+  },
+  {
+    "node_id": "2349475_003",
+    "concept": "man",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the man",
+      "one man",
+      "a man",
+      "another man",
+      "2 boys"
+    ]
+  },
+  {
+    "node_id": "2349475_004",
+    "concept": "woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a woman",
+      "the woman",
+      "one lady",
+      "one girl",
+      "women",
+      "woman"
+    ]
+  },
+  {
+    "node_id": "2349475_005",
+    "concept": "bike",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a bike",
+      "bike",
+      "bicycle",
+      "cycling",
+      "pedal powering"
+    ]
+  },
+  {
+    "node_id": "2349475_006",
+    "concept": "lid",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the lid",
+      "top lid",
+      "top",
+      "lid"
+    ]
+  },
+  {
+    "node_id": "2349475_007",
+    "concept": "smoothie",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "some type of smoothie",
+      "smoothie"
+    ]
+  },
+  {
+    "node_id": "2349475_008",
+    "concept": "mixture",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "mixture",
+      "liquid",
+      "drink"
+    ]
+  },
+  {
+    "node_id": "2349475_009",
+    "concept": "garden",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in garden",
+      "outside",
+      "outdoors"
+    ]
+  },
+  {
+    "node_id": "2349475_010",
+    "concept": "three",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "3 people",
+      "three people",
+      "3 friends"
+    ]
+  },
+  {
+    "node_id": "2349475_011",
+    "concept": "two",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "2 boys"
+    ]
+  },
+  {
+    "node_id": "2349475_012",
+    "concept": "green",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "green shirt",
+      "green",
+      "wearing green"
+    ]
+  },
+  {
+    "node_id": "2349475_013",
+    "concept": "white",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white one"
+    ]
+  },
+  {
+    "node_id": "2349475_014",
+    "concept": "yellow",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "yellow looking drink"
+    ]
+  },
+  {
+    "node_id": "2349475_015",
+    "concept": "large",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "large blender"
+    ]
+  },
+  {
+    "node_id": "2349475_016",
+    "concept": "sportswear",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "sportswear"
+    ]
+  },
+  {
+    "node_id": "2349475_017",
+    "concept": "holding",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding the lid",
+      "holidng the lid",
+      "holding the top lid",
+      "hold lid",
+      "holding the lid shut",
+      "holdin the lid",
+      "holding the top"
+    ]
+  },
+  {
+    "node_id": "2349475_018",
+    "concept": "riding",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "riding a bike",
+      "cycling",
+      "pedalling",
+      "peddles a bike",
+      "biking",
+      "on a bike"
+    ]
+  },
+  {
+    "node_id": "2349475_019",
+    "concept": "powering blender",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "cycling in order for it to blend",
+      "pedal powering the blender",
+      "ride bike to power it",
+      "riding a bike to blend",
+      "cycling to power a blender",
+      "to power blender",
+      "powering it using his bicycle",
+      "bike which appears to be connected to the blender"
+    ]
+  },
+  {
+    "node_id": "2349475_020",
+    "concept": "blending",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "to blend",
+      "making smoothie"
+    ]
+  },
+  {
+    "node_id": "2349475_021",
+    "concept": "watching",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "watching"
+    ]
+  },
+  {
+    "node_id": "2349475_022",
+    "concept": "looking at camera",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "looking at the camera"
+    ]
+  },
+  {
+    "node_id": "2349475_023",
+    "concept": "smiling",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "smiling"
+    ]
+  },
+  {
+    "node_id": "2349475_024",
+    "concept": "center",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "at the center",
+      "in middle"
+    ]
+  },
+  {
+    "node_id": "2349475_025",
+    "concept": "left of blender",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the left of the blender",
+      "to the left",
+      "on left side",
+      "next to the blender"
+    ]
+  },
+  {
+    "node_id": "2349475_026",
+    "concept": "right of blender",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "to the other side of the blender which is the right side",
+      "on the right",
+      "someone stood to the right"
+    ]
+  },
+  {
+    "node_id": "2349475_027",
+    "concept": "background",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in the background",
+      "standing back",
+      "behind the blender in the background",
+      "in the back"
+    ]
+  },
+  {
+    "node_id": "2349475_028",
+    "concept": "face not visible",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "his face cannot be seen"
+    ]
+  },
+  {
+    "node_id": "2349475_029",
+    "concept": "green shirt",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "green shirt"
+    ]
+  },
+  {
+    "node_id": "2349475_030",
+    "concept": "white shirt",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white one"
+    ]
+  },
+  {
+    "node_id": "2349475_031",
+    "concept": "charity",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "for charity"
+    ]
+  }
+]

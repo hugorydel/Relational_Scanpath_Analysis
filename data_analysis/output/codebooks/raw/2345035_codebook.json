@@ -1,0 +1,392 @@
+[
+  {
+    "node_id": "2345035_001",
+    "concept": "two",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two girls",
+      "2 girls",
+      "two young girls",
+      "2 female players"
+    ]
+  },
+  {
+    "node_id": "2345035_002",
+    "concept": "girls",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "girls",
+      "young girls",
+      "female players"
+    ]
+  },
+  {
+    "node_id": "2345035_003",
+    "concept": "chasing/running after the ball",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "chasing a football",
+      "chasing after a foootball",
+      "chasing a football during a match",
+      "chasing after ball",
+      "are chasing the football",
+      "are chasing after a ball",
+      "running for the ball",
+      "running for the ball",
+      "were chasing a ball",
+      "chases 3 with football",
+      "are chasing a football",
+      "running after a football"
+    ]
+  },
+  {
+    "node_id": "2345035_004",
+    "concept": "football/ball",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "football",
+      "foootball",
+      "a football",
+      "ball",
+      "the ball"
+    ]
+  },
+  {
+    "node_id": "2345035_005",
+    "concept": "jersey/sports kit/uniform",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "jersey",
+      "white kit",
+      "black top",
+      "blue top",
+      "shirt",
+      "sports kit",
+      "uniform",
+      "blue top"
+    ]
+  },
+  {
+    "node_id": "2345035_006",
+    "concept": "number 20",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "number 20",
+      "20 on it",
+      "numbers 20",
+      "earing the number 20",
+      "blue top with 20 on it",
+      "20 chases 3"
+    ]
+  },
+  {
+    "node_id": "2345035_007",
+    "concept": "number 3",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "numbers 20 amd 3",
+      "the number 3",
+      "20 chases 3",
+      "numbers 20 and 3"
+    ]
+  },
+  {
+    "node_id": "2345035_008",
+    "concept": "football pitch/field",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "football field",
+      "a feild",
+      "a field",
+      "football pitch",
+      "pitch",
+      "on a pitch"
+    ]
+  },
+  {
+    "node_id": "2345035_009",
+    "concept": "people in the background",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "people in back ground",
+      "men in the background",
+      "parents in background",
+      "people in the background"
+    ]
+  },
+  {
+    "node_id": "2345035_010",
+    "concept": "background position",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in back ground",
+      "in the background",
+      "background"
+    ]
+  },
+  {
+    "node_id": "2345035_011",
+    "concept": "different/opposite teams",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "from diferent teams",
+      "from opposite teams"
+    ]
+  },
+  {
+    "node_id": "2345035_012",
+    "concept": "white",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white kit",
+      "one in white",
+      "white goal"
+    ]
+  },
+  {
+    "node_id": "2345035_013",
+    "concept": "blue",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one in blue",
+      "blue top",
+      "one had a blue shirt",
+      "blue top with 20 on it"
+    ]
+  },
+  {
+    "node_id": "2345035_014",
+    "concept": "black",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "black top",
+      "blacl stripped uniform",
+      "black knee high socks"
+    ]
+  },
+  {
+    "node_id": "2345035_015",
+    "concept": "green",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "one had a green"
+    ]
+  },
+  {
+    "node_id": "2345035_016",
+    "concept": "left side of photo",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on left",
+      "far left of photo",
+      "to the left of"
+    ]
+  },
+  {
+    "node_id": "2345035_017",
+    "concept": "right side of photo",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in right of photo",
+      "ball on the right of the girls"
+    ]
+  },
+  {
+    "node_id": "2345035_018",
+    "concept": "goal",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white goal"
+    ]
+  },
+  {
+    "node_id": "2345035_019",
+    "concept": "far left",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "far left of photo"
+    ]
+  },
+  {
+    "node_id": "2345035_020",
+    "concept": "taller girl",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "taller girl"
+    ]
+  },
+  {
+    "node_id": "2345035_021",
+    "concept": "shorter girl",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "shorter girl"
+    ]
+  },
+  {
+    "node_id": "2345035_022",
+    "concept": "girl to the left of the other girl",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "taller girl was to the left of a shorter girl"
+    ]
+  },
+  {
+    "node_id": "2345035_023",
+    "concept": "ball to the right/in front of the girls",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "who was to the left of the ball",
+      "infront on them",
+      "ball on the right of the girls"
+    ]
+  },
+  {
+    "node_id": "2345035_024",
+    "concept": "men",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "men in the background"
+    ]
+  },
+  {
+    "node_id": "2345035_025",
+    "concept": "another football pitch",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "another football pitch behind"
+    ]
+  },
+  {
+    "node_id": "2345035_026",
+    "concept": "behind",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "behind",
+      "behind"
+    ]
+  },
+  {
+    "node_id": "2345035_027",
+    "concept": "match/game",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "during a match"
+    ]
+  },
+  {
+    "node_id": "2345035_028",
+    "concept": "other players",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "other players on the footbacll pitch"
+    ]
+  },
+  {
+    "node_id": "2345035_029",
+    "concept": "away from the viewer",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "away from the screen"
+    ]
+  },
+  {
+    "node_id": "2345035_030",
+    "concept": "long hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "ling hair"
+    ]
+  },
+  {
+    "node_id": "2345035_031",
+    "concept": "ponytails",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "ponytails",
+      "ponytails in their hair"
+    ]
+  },
+  {
+    "node_id": "2345035_032",
+    "concept": "striped",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blacl stripped uniform"
+    ]
+  },
+  {
+    "node_id": "2345035_033",
+    "concept": "black knee-high socks",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "black knee high socks"
+    ]
+  }
+]

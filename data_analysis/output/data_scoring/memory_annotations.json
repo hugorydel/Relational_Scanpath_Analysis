@@ -8728,5 +8728,7079 @@
     "char_start": 122,
     "char_end": 135,
     "text": "had gray hair"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 18,
+    "char_end": 47,
+    "text": " at the center of the oicture"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "incorrect",
+    "char_start": 119,
+    "char_end": 134,
+    "text": "on the left of "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 199,
+    "char_end": 217,
+    "text": " in the background"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 9,
+    "char_end": 18,
+    "text": "a blender"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 49,
+    "char_end": 57,
+    "text": "the man "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 111,
+    "char_end": 118,
+    "text": "a woman"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 71,
+    "char_end": 84,
+    "text": " the blender "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 57,
+    "char_end": 71,
+    "text": "on the left pf"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 84,
+    "char_end": 93,
+    "text": "is riding"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 94,
+    "char_end": 101,
+    "text": "a bike,"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 146,
+    "char_end": 153,
+    "text": "holding"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 191,
+    "char_end": 199,
+    "text": "a person"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 154,
+    "char_end": 176,
+    "text": "the lid of the belnder"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 134,
+    "char_end": 145,
+    "text": "the belnder"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 36,
+    "char_end": 44,
+    "text": "one man "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 59,
+    "char_end": 68,
+    "text": "one lady "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 88,
+    "char_end": 99,
+    "text": "another man"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 100,
+    "char_end": 132,
+    "text": "cycling in order for it to blend"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 157,
+    "char_end": 165,
+    "text": "smoothie"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2349475",
+    "content_type": "object_attribute",
+    "status": "repeat",
+    "char_start": 144,
+    "char_end": 156,
+    "text": "some type of"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 169,
+    "char_end": 180,
+    "text": "the blender"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 0,
+    "char_end": 24,
+    "text": "3 people standing around"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 25,
+    "char_end": 34,
+    "text": "a blender"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 68,
+    "char_end": 76,
+    "text": "holidng "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 44,
+    "char_end": 57,
+    "text": "standing back"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 76,
+    "char_end": 83,
+    "text": "the lid"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 5,
+    "text": "a man"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 23,
+    "char_end": 32,
+    "text": "a blender"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 33,
+    "char_end": 41,
+    "text": " a woman"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 81,
+    "char_end": 88,
+    "text": "someone"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 6,
+    "char_end": 23,
+    "text": "cycling to power "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 42,
+    "char_end": 50,
+    "text": "holding "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 89,
+    "char_end": 115,
+    "text": "standing in the background"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 62,
+    "char_end": 76,
+    "text": "of the blender"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 50,
+    "char_end": 61,
+    "text": "the top lid"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 10,
+    "text": "a blender "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2349475",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 10,
+    "char_end": 25,
+    "text": "full of mixture"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 27,
+    "char_end": 34,
+    "text": "one man"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 69,
+    "char_end": 78,
+    "text": "one woman"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 79,
+    "char_end": 89,
+    "text": "is holding"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2349475",
+    "content_type": "object_attribute",
+    "status": "repeat",
+    "char_start": 53,
+    "char_end": 65,
+    "text": "the blender "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 34,
+    "char_end": 53,
+    "text": " is pedal powering "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 89,
+    "char_end": 96,
+    "text": "the lid"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 13,
+    "char_end": 24,
+    "text": "one blender"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2349475",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 24,
+    "char_end": 34,
+    "text": " in garden"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 44,
+    "char_end": 47,
+    "text": "lid"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 52,
+    "char_end": 70,
+    "text": "ride bike to power"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 12,
+    "text": "three people"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 35,
+    "char_end": 38,
+    "text": "one"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 39,
+    "char_end": 43,
+    "text": "hold"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 48,
+    "char_end": 51,
+    "text": "one"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 11,
+    "text": "one person "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 21,
+    "char_end": 27,
+    "text": "a bike"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 36,
+    "char_end": 47,
+    "text": "the blender"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 52,
+    "char_end": 61,
+    "text": "the woman"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 77,
+    "char_end": 95,
+    "text": "lid of the blender"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 11,
+    "char_end": 21,
+    "text": "is riding "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "repeat",
+    "char_start": 28,
+    "char_end": 35,
+    "text": "next to"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 61,
+    "char_end": 73,
+    "text": " is holding "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 8,
+    "text": "blender "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 39,
+    "char_end": 46,
+    "text": "someone"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 54,
+    "char_end": 60,
+    "text": "a bike"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 99,
+    "char_end": 107,
+    "text": "someone "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 130,
+    "char_end": 137,
+    "text": "someone"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 18,
+    "text": "in middle "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 83,
+    "char_end": 95,
+    "text": "to the left "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 113,
+    "char_end": 125,
+    "text": "to the right"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 141,
+    "char_end": 152,
+    "text": "in the back"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 3,
+    "text": "man"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 4,
+    "char_end": 12,
+    "text": "on bike "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 36,
+    "char_end": 49,
+    "text": " on left side"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 56,
+    "char_end": 66,
+    "text": " on right "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 98,
+    "char_end": 112,
+    "text": "in background "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 12,
+    "char_end": 28,
+    "text": "cycling to power"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 29,
+    "char_end": 36,
+    "text": "blender"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 51,
+    "char_end": 56,
+    "text": "women"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 84,
+    "char_end": 98,
+    "text": "another women "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 66,
+    "char_end": 73,
+    "text": "holding"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 73,
+    "char_end": 77,
+    "text": " lid"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "inference",
+    "char_start": 78,
+    "char_end": 82,
+    "text": "shut"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 112,
+    "char_end": 120,
+    "text": "watching"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 5,
+    "text": "a man"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 10,
+    "char_end": 15,
+    "text": "woman"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2349475",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 16,
+    "char_end": 29,
+    "text": "were outside "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 33,
+    "char_end": 41,
+    "text": "the man "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 51,
+    "char_end": 61,
+    "text": " the women"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "repeat",
+    "char_start": 62,
+    "char_end": 72,
+    "text": "was holdin"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 73,
+    "char_end": 80,
+    "text": "the lid"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2349475",
+    "content_type": "object_attribute",
+    "status": "incorrect",
+    "char_start": 138,
+    "char_end": 157,
+    "text": "wearing a white one"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 100,
+    "char_end": 103,
+    "text": "she"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 130,
+    "char_end": 137,
+    "text": "the man"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2349475",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 104,
+    "char_end": 129,
+    "text": "was wearing a green shirt"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 41,
+    "char_end": 51,
+    "text": "was biking"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 84,
+    "char_end": 95,
+    "text": "the blender"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-3-1",
+    "StimID": "2349475",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 35,
+    "char_end": 44,
+    "text": " outside "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-3-1",
+    "StimID": "2349475",
+    "content_type": "scene_gist",
+    "status": "inference",
+    "char_start": 44,
+    "char_end": 55,
+    "text": "for charity"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-3-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 4,
+    "text": "man "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-3-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 17,
+    "char_end": 23,
+    "text": " woman"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-3-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 23,
+    "char_end": 31,
+    "text": " holding"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-3-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 31,
+    "char_end": 35,
+    "text": " top"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-3-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 4,
+    "char_end": 13,
+    "text": "pedalling"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 9,
+    "char_end": 26,
+    "text": "a yellow looking "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 26,
+    "char_end": 31,
+    "text": "drink"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 42,
+    "char_end": 57,
+    "text": "a large blender"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 59,
+    "char_end": 65,
+    "text": "a man "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 65,
+    "char_end": 72,
+    "text": "peddles"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 72,
+    "char_end": 80,
+    "text": " a bike "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 80,
+    "char_end": 113,
+    "text": "which appears to be connected to "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "repeat",
+    "char_start": 31,
+    "char_end": 41,
+    "text": " inside of"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 113,
+    "char_end": 124,
+    "text": "the blender"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 126,
+    "char_end": 133,
+    "text": "a woman"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 134,
+    "char_end": 197,
+    "text": "stands to the other side of the blender which is the right side"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 212,
+    "char_end": 248,
+    "text": "behind the blender in the background"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 198,
+    "char_end": 204,
+    "text": " a man"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 253,
+    "char_end": 276,
+    "text": "his face cannot be seen"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 205,
+    "char_end": 211,
+    "text": "stands"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "incorrect",
+    "char_start": 298,
+    "char_end": 322,
+    "text": "is looking at the camera"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 327,
+    "char_end": 335,
+    "text": "smiling,"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "object_attribute",
+    "status": "inference",
+    "char_start": 336,
+    "char_end": 363,
+    "text": "they are wearing sportswear"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-4-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 278,
+    "char_end": 297,
+    "text": "the man on the bike"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 66,
+    "char_end": 81,
+    "text": "one of the boys"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 129,
+    "char_end": 137,
+    "text": "the girl"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 42,
+    "char_end": 49,
+    "text": "2 boys "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 52,
+    "char_end": 62,
+    "text": " one girl "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 9,
+    "char_end": 20,
+    "text": " are around"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 0,
+    "char_end": 9,
+    "text": "3 friends"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 21,
+    "char_end": 30,
+    "text": "a blender"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 81,
+    "char_end": 92,
+    "text": " is riding "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 92,
+    "char_end": 98,
+    "text": "a bike"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 99,
+    "char_end": 108,
+    "text": "to power "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 138,
+    "char_end": 149,
+    "text": "is holding "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 149,
+    "char_end": 172,
+    "text": "the top of the blender."
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2349475",
+    "content_type": "object_attribute",
+    "status": "incorrect",
+    "char_start": 173,
+    "char_end": 211,
+    "text": "the liquid inside the blender is green"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 108,
+    "char_end": 120,
+    "text": "the blender,"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 7,
+    "text": "a woman"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 23,
+    "char_end": 29,
+    "text": "a bike"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 34,
+    "char_end": 41,
+    "text": "a woman"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2349475",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 55,
+    "char_end": 62,
+    "text": "holding"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 41,
+    "char_end": 54,
+    "text": " on the right"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 19,
+    "text": "on the left"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 63,
+    "char_end": 85,
+    "text": "the lid of the blender"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 10,
+    "char_end": 18,
+    "text": "3 people"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 29,
+    "char_end": 32,
+    "text": "man"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 42,
+    "char_end": 47,
+    "text": "woman"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2349475",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 8,
+    "text": "outdoors"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2349475",
+    "content_type": "spatial_relation",
+    "status": "repeat",
+    "char_start": 19,
+    "char_end": 27,
+    "text": "in photo"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2349475",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 36,
+    "char_end": 40,
+    "text": "bike"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2349475",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 48,
+    "char_end": 61,
+    "text": "wearing green"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 8,
+    "text": "two baby"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2379478",
+    "content_type": "object_attribute",
+    "status": "inference",
+    "char_start": 9,
+    "char_end": 15,
+    "text": "gitls "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 15,
+    "char_end": 20,
+    "text": "lying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2379478",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 21,
+    "char_end": 29,
+    "text": "in a bed"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 30,
+    "char_end": 43,
+    "text": "drinking milk"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 44,
+    "char_end": 57,
+    "text": "form bottles."
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 10,
+    "text": "two babies"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 11,
+    "char_end": 21,
+    "text": "lying down"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2379478",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 22,
+    "char_end": 30,
+    "text": "on a bed"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 31,
+    "char_end": 45,
+    "text": "drinking milk "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 50,
+    "char_end": 63,
+    "text": "a baby bottle"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 10,
+    "text": "two babies"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 27,
+    "char_end": 43,
+    "text": "bottles of milk "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 11,
+    "char_end": 22,
+    "text": "lying down "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2379478",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 43,
+    "char_end": 58,
+    "text": "in their mouths"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 10,
+    "text": "two babie "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 59,
+    "char_end": 65,
+    "text": "lying "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2379478",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 65,
+    "char_end": 73,
+    "text": "on a bed"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 10,
+    "char_end": 21,
+    "text": "drink milk "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2379478",
+    "content_type": "spatial_relation",
+    "status": "repeat",
+    "char_start": 21,
+    "char_end": 38,
+    "text": "next to eachother"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 39,
+    "char_end": 52,
+    "text": "out of bottle"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 10,
+    "text": "two babies"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 11,
+    "char_end": 20,
+    "text": "are lying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2379478",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 21,
+    "char_end": 29,
+    "text": "on a bed"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 31,
+    "char_end": 44,
+    "text": "drinking milk"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 45,
+    "char_end": 60,
+    "text": "out of a bottle"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 10,
+    "text": "two babies"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 10,
+    "char_end": 16,
+    "text": " lying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2379478",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 16,
+    "char_end": 23,
+    "text": " in bed"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2379478",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 25,
+    "char_end": 39,
+    "text": "one with nappy"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 41,
+    "char_end": 54,
+    "text": "drinking milk"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 55,
+    "char_end": 66,
+    "text": "from bottle"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 10,
+    "text": "two babies"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 11,
+    "char_end": 21,
+    "text": "were lying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2379478",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 22,
+    "char_end": 32,
+    "text": "on the bed"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 33,
+    "char_end": 46,
+    "text": "with bottles "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-2-1",
+    "StimID": "2379478",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 46,
+    "char_end": 60,
+    "text": "in their hands"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-3-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 25,
+    "text": "toddler and smaller baby "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-3-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 25,
+    "char_end": 30,
+    "text": "drink"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-3-1",
+    "StimID": "2379478",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 71,
+    "char_end": 78,
+    "text": " in bed"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-3-1",
+    "StimID": "2379478",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 57,
+    "char_end": 71,
+    "text": "on their backs"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-3-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 31,
+    "char_end": 46,
+    "text": "bottle of milk "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-3-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 46,
+    "char_end": 56,
+    "text": "each lying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 8,
+    "text": "2 babies"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2379478",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 9,
+    "char_end": 40,
+    "text": "in a black and white photograph"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 41,
+    "char_end": 48,
+    "text": "holding"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 49,
+    "char_end": 53,
+    "text": "each"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 53,
+    "char_end": 82,
+    "text": " their own bottle of milk lat"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 34,
+    "char_end": 45,
+    "text": " two babies"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2379478",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 31,
+    "text": "it is a black and white picture"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 45,
+    "char_end": 57,
+    "text": " laying down"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2379478",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 58,
+    "char_end": 67,
+    "text": "on a bed,"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 81,
+    "char_end": 104,
+    "text": "own bottle of baby milk"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 109,
+    "char_end": 125,
+    "text": "they;re drinking"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 68,
+    "char_end": 73,
+    "text": "each "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 126,
+    "char_end": 129,
+    "text": "it."
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 77,
+    "char_end": 80,
+    "text": "its"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 9,
+    "text": "2 babies "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 9,
+    "char_end": 13,
+    "text": "laid"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2379478",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 13,
+    "char_end": 23,
+    "text": " in a bed "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2379478",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 23,
+    "char_end": 31,
+    "text": "drinking"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2379478",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 32,
+    "char_end": 50,
+    "text": "milk from a bottle"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 14,
+    "char_end": 24,
+    "text": "one child "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 42,
+    "char_end": 51,
+    "text": "the woman"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 101,
+    "char_end": 110,
+    "text": "the woman"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2383555",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 111,
+    "char_end": 134,
+    "text": "at the back of the boat"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2383555",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 134,
+    "char_end": 144,
+    "text": " is rowing"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 145,
+    "char_end": 154,
+    "text": "the boat."
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 68,
+    "char_end": 76,
+    "text": "the boat"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2383555",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 77,
+    "char_end": 87,
+    "text": "is holding"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 0,
+    "char_end": 9,
+    "text": "two women"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 27,
+    "char_end": 40,
+    "text": "a wooden boat"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2383555",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 52,
+    "char_end": 67,
+    "text": "at the front of"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-1-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 88,
+    "char_end": 97,
+    "text": "a childe "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 45,
+    "char_end": 53,
+    "text": " 2 women"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 30,
+    "char_end": 37,
+    "text": "a baby "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 0,
+    "char_end": 9,
+    "text": "3 people "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 12,
+    "char_end": 18,
+    "text": "a raft"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 54,
+    "char_end": 63,
+    "text": "the women"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2383555",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 63,
+    "char_end": 75,
+    "text": " at the back"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2383555",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 76,
+    "char_end": 86,
+    "text": "was rowing"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 18,
+    "char_end": 25,
+    "text": "a raft "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 25,
+    "char_end": 28,
+    "text": "one"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 40,
+    "char_end": 43,
+    "text": "one"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 51,
+    "char_end": 59,
+    "text": " a child"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 0,
+    "char_end": 14,
+    "text": "3 asian people"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2383555",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 29,
+    "char_end": 36,
+    "text": "rowing "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2383555",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 44,
+    "char_end": 51,
+    "text": "holding"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 11,
+    "text": "four people"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2383555",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 24,
+    "char_end": 30,
+    "text": "rowing"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2383555",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 35,
+    "char_end": 43,
+    "text": "carrying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 44,
+    "char_end": 48,
+    "text": "baby"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 15,
+    "char_end": 19,
+    "text": "boat"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 20,
+    "char_end": 23,
+    "text": "one"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2383555",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 31,
+    "char_end": 34,
+    "text": "one"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 3,
+    "text": "cat"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 21,
+    "char_end": 29,
+    "text": "blanket "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2344622",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 4,
+    "char_end": 10,
+    "text": "laying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 11,
+    "char_end": 15,
+    "text": "on a"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 29,
+    "char_end": 36,
+    "text": "next to"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 71,
+    "char_end": 81,
+    "text": " brownish "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 16,
+    "char_end": 20,
+    "text": "blue"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 37,
+    "char_end": 48,
+    "text": "a keyboard "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 54,
+    "char_end": 61,
+    "text": "a hand "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2344622",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 61,
+    "char_end": 70,
+    "text": "is typing"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 81,
+    "char_end": 84,
+    "text": "cat"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 6,
+    "text": "a cat "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 25,
+    "char_end": 33,
+    "text": "blanket "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2344622",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 6,
+    "char_end": 15,
+    "text": "sleeping "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 33,
+    "char_end": 40,
+    "text": "next to"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 18,
+    "char_end": 25,
+    "text": "a blue "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 41,
+    "char_end": 51,
+    "text": "a keyboard"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 62,
+    "char_end": 69,
+    "text": "a hand "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 71,
+    "char_end": 74,
+    "text": " it"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 15,
+    "char_end": 17,
+    "text": "on"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 4,
+    "text": "cat "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 40,
+    "char_end": 47,
+    "text": "blanket"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 21,
+    "char_end": 30,
+    "text": "keyboard "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 30,
+    "char_end": 35,
+    "text": "on a "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 35,
+    "char_end": 39,
+    "text": "blue"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2344622",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 4,
+    "char_end": 14,
+    "text": "lying down"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 15,
+    "char_end": 20,
+    "text": "bside"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 35,
+    "char_end": 42,
+    "text": "blanket"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "incorrect",
+    "char_start": 51,
+    "char_end": 58,
+    "text": "on left"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "incorrect",
+    "char_start": 94,
+    "char_end": 102,
+    "text": "on right"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 5,
+    "char_end": 20,
+    "text": " spripyish cat "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2344622",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 20,
+    "char_end": 26,
+    "text": "asleep"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 27,
+    "char_end": 29,
+    "text": "on"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 5,
+    "text": "brown"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 30,
+    "char_end": 34,
+    "text": "blue"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2344622",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 43,
+    "char_end": 50,
+    "text": "on desk"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2344622",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 63,
+    "char_end": 70,
+    "text": "typing "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 73,
+    "char_end": 82,
+    "text": "keybpard "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 82,
+    "char_end": 93,
+    "text": "next to cat"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "incorrect",
+    "char_start": 59,
+    "char_end": 62,
+    "text": "man"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 5,
+    "text": "a cat"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2344622",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 6,
+    "char_end": 19,
+    "text": "is lying down"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 4,
+    "text": "cat "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 18,
+    "char_end": 25,
+    "text": "blanket"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 41,
+    "char_end": 48,
+    "text": "someone"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 59,
+    "char_end": 69,
+    "text": "a keyboard"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2344622",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 4,
+    "char_end": 9,
+    "text": "lying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 10,
+    "char_end": 12,
+    "text": "on"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 12,
+    "char_end": 17,
+    "text": " blue"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 26,
+    "char_end": 40,
+    "text": "to the left of"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 56,
+    "char_end": 59,
+    "text": "on "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2344622",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 49,
+    "char_end": 55,
+    "text": "typing"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 4,
+    "text": "cat "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 96,
+    "char_end": 102,
+    "text": "white "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "inference",
+    "char_start": 102,
+    "char_end": 119,
+    "text": "middle aged mans "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 119,
+    "char_end": 125,
+    "text": "right "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 125,
+    "char_end": 129,
+    "text": "hand"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 160,
+    "char_end": 169,
+    "text": " keyboard"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 146,
+    "char_end": 160,
+    "text": "old faishioned"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 4,
+    "char_end": 6,
+    "text": "on"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 7,
+    "char_end": 17,
+    "text": "light blue"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 18,
+    "char_end": 25,
+    "text": "blanket"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 26,
+    "char_end": 47,
+    "text": "in left side of photo"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 49,
+    "char_end": 64,
+    "text": "behind the cat "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 64,
+    "char_end": 71,
+    "text": "was cds"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "incorrect",
+    "char_start": 73,
+    "char_end": 95,
+    "text": "to the left of cat was"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 129,
+    "char_end": 132,
+    "text": " on"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 132,
+    "char_end": 146,
+    "text": " left edge of "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 9,
+    "char_end": 14,
+    "text": "a cat"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2344622",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 14,
+    "char_end": 21,
+    "text": " laying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 22,
+    "char_end": 24,
+    "text": "on"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 32,
+    "char_end": 38,
+    "text": "cover "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 53,
+    "char_end": 95,
+    "text": "a person which we can only see the hand of"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 97,
+    "char_end": 106,
+    "text": "this hand"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 113,
+    "char_end": 125,
+    "text": "the keyboard"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "inference",
+    "char_start": 126,
+    "char_end": 139,
+    "text": "of a computer"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 25,
+    "char_end": 32,
+    "text": "a blue "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 109,
+    "char_end": 113,
+    "text": " on "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 38,
+    "char_end": 52,
+    "text": "on the side of"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 10,
+    "char_end": 16,
+    "text": "a cat "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2344622",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 16,
+    "char_end": 22,
+    "text": "laying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 33,
+    "char_end": 40,
+    "text": "blanket"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 56,
+    "char_end": 66,
+    "text": "a keyboard"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 76,
+    "char_end": 83,
+    "text": "a hand "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 23,
+    "char_end": 25,
+    "text": "on"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 26,
+    "char_end": 32,
+    "text": "a blue"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 41,
+    "char_end": 55,
+    "text": "to the left of"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 83,
+    "char_end": 89,
+    "text": "on it."
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 5,
+    "text": "a cat"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 34,
+    "char_end": 41,
+    "text": "blanket"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 50,
+    "char_end": 61,
+    "text": "a key board"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 66,
+    "char_end": 80,
+    "text": "a persons hand"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 103,
+    "char_end": 115,
+    "text": "the keyboard"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 6,
+    "char_end": 18,
+    "text": "on the left "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2344622",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 18,
+    "char_end": 24,
+    "text": "lying "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 24,
+    "char_end": 26,
+    "text": "on"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 26,
+    "char_end": 33,
+    "text": " a blue"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 81,
+    "char_end": 85,
+    "text": "over"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 86,
+    "char_end": 102,
+    "text": "the left side of"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 4,
+    "text": "cat "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 19,
+    "char_end": 27,
+    "text": "blanket "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 35,
+    "char_end": 43,
+    "text": "a person"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2344622",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 54,
+    "char_end": 64,
+    "text": "a keyboard"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2344622",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 44,
+    "char_end": 50,
+    "text": "typing"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 51,
+    "char_end": 53,
+    "text": "on"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2344622",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 4,
+    "char_end": 9,
+    "text": "laid "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 9,
+    "char_end": 12,
+    "text": "on "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2344622",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 12,
+    "char_end": 18,
+    "text": "a blue"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2344622",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 27,
+    "char_end": 34,
+    "text": "next to"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 73,
+    "char_end": 77,
+    "text": "boy "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 86,
+    "char_end": 90,
+    "text": "girl"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 0,
+    "char_end": 12,
+    "text": "two children"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 31,
+    "char_end": 42,
+    "text": " tangerines"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 77,
+    "char_end": 84,
+    "text": "on left"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 91,
+    "char_end": 99,
+    "text": "on right"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 42,
+    "char_end": 58,
+    "text": " in their mouths"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 144,
+    "char_end": 157,
+    "text": "with a fringe"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 134,
+    "char_end": 143,
+    "text": " brunette"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 122,
+    "char_end": 129,
+    "text": " blonde"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "inference",
+    "char_start": 100,
+    "char_end": 118,
+    "text": "look like siblings"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 59,
+    "char_end": 72,
+    "text": "while smiling"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 13,
+    "char_end": 20,
+    "text": "holding"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 21,
+    "char_end": 31,
+    "text": "quaters of"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 119,
+    "char_end": 122,
+    "text": "boy"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 130,
+    "char_end": 134,
+    "text": "girl"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 14,
+    "char_end": 22,
+    "text": "one boy "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 26,
+    "char_end": 34,
+    "text": "one girl"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 0,
+    "char_end": 12,
+    "text": "two children"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 39,
+    "char_end": 50,
+    "text": " tangerines"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 51,
+    "char_end": 65,
+    "text": "in their mouth"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 13,
+    "char_end": 21,
+    "text": " a girl "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 25,
+    "char_end": 31,
+    "text": "a boy "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 0,
+    "char_end": 12,
+    "text": "two children"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 35,
+    "char_end": 46,
+    "text": " tangerines"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 46,
+    "char_end": 62,
+    "text": " in their mouths"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2385550",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 63,
+    "char_end": 82,
+    "text": "pretending to smile"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 3,
+    "text": "boy"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 19,
+    "char_end": 25,
+    "text": " girl "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 33,
+    "char_end": 39,
+    "text": " both "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 44,
+    "char_end": 55,
+    "text": "tangerines "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 4,
+    "char_end": 11,
+    "text": "on left"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 25,
+    "char_end": 33,
+    "text": "on right"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 55,
+    "char_end": 63,
+    "text": "in mouth"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "inference",
+    "char_start": 12,
+    "char_end": 18,
+    "text": "younge"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 63,
+    "char_end": 67,
+    "text": " boy"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 68,
+    "char_end": 87,
+    "text": "is wearing a hoodie"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 88,
+    "char_end": 126,
+    "text": "woth different coloured inside of hood"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 6,
+    "text": "a boy "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 21,
+    "char_end": 29,
+    "text": " a girl "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 47,
+    "char_end": 58,
+    "text": "tangerines "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 58,
+    "char_end": 73,
+    "text": "in their mouths"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 29,
+    "char_end": 41,
+    "text": "on the right"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 6,
+    "char_end": 17,
+    "text": "on the left"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 46,
+    "char_end": 51,
+    "text": "girl "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 106,
+    "char_end": 112,
+    "text": "a boy "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 0,
+    "char_end": 12,
+    "text": "two children"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 18,
+    "char_end": 28,
+    "text": "tangerines"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 29,
+    "char_end": 44,
+    "text": "in their mouths"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 51,
+    "char_end": 63,
+    "text": "on the right"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 112,
+    "char_end": 123,
+    "text": "on the left"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 64,
+    "char_end": 79,
+    "text": "has brown hair "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 79,
+    "char_end": 92,
+    "text": "with a fringe"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 48,
+    "char_end": 52,
+    "text": "boy "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 63,
+    "char_end": 69,
+    "text": " girl "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385550",
+    "content_type": "scene_gist",
+    "status": "incorrect",
+    "char_start": 90,
+    "char_end": 105,
+    "text": " outside, sunny"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 0,
+    "char_end": 8,
+    "text": "two kids"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 32,
+    "char_end": 46,
+    "text": "in their mouth"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 14,
+    "char_end": 20,
+    "text": "peeled"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 20,
+    "char_end": 31,
+    "text": " tangerines"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 52,
+    "char_end": 60,
+    "text": "on left "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 69,
+    "char_end": 80,
+    "text": "with fringe"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 80,
+    "char_end": 90,
+    "text": " on right,"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 13,
+    "char_end": 18,
+    "text": "a boy"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 23,
+    "char_end": 29,
+    "text": "a girl"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 34,
+    "char_end": 45,
+    "text": " tangerines"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 90,
+    "char_end": 104,
+    "text": "is earing pink"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 46,
+    "char_end": 61,
+    "text": "in their mouths"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 0,
+    "char_end": 12,
+    "text": "two shildren"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 81,
+    "char_end": 89,
+    "text": "the girl"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 62,
+    "char_end": 79,
+    "text": "that are unchewed"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 6,
+    "text": "a boy "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 19,
+    "char_end": 26,
+    "text": "a girl "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 40,
+    "char_end": 60,
+    "text": "both have brown eyes"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 118,
+    "char_end": 128,
+    "text": "tangerines"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 6,
+    "char_end": 17,
+    "text": "on the left"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 26,
+    "char_end": 39,
+    "text": "on the right,"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 61,
+    "char_end": 70,
+    "text": " the girl"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 96,
+    "char_end": 105,
+    "text": " theyboth"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 128,
+    "char_end": 145,
+    "text": " in their mouths."
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 71,
+    "char_end": 86,
+    "text": "has brown hair "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 90,
+    "char_end": 95,
+    "text": "bangs"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 111,
+    "char_end": 117,
+    "text": "peeled"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 15,
+    "char_end": 19,
+    "text": "boy "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 101,
+    "char_end": 105,
+    "text": "girl"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 47,
+    "char_end": 57,
+    "text": "tangerine "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 14,
+    "text": "a young blonde"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 135,
+    "char_end": 144,
+    "text": "tangerine"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "repeat",
+    "char_start": 144,
+    "char_end": 158,
+    "text": " in her mouth "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "repeat",
+    "char_start": 124,
+    "char_end": 135,
+    "text": "a slice of "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 36,
+    "char_end": 46,
+    "text": "a slice of"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 19,
+    "char_end": 30,
+    "text": "on the left"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 105,
+    "char_end": 119,
+    "text": " on the right "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 57,
+    "char_end": 69,
+    "text": "in his mouth"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385550",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 75,
+    "char_end": 100,
+    "text": "a slightly older brunette"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 12,
+    "char_end": 15,
+    "text": "boy"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 25,
+    "char_end": 30,
+    "text": "girl "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 40,
+    "char_end": 51,
+    "text": "tangerines "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 51,
+    "char_end": 70,
+    "text": "inside their mouths"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 30,
+    "char_end": 39,
+    "text": "on right,"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2385550",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 15,
+    "char_end": 23,
+    "text": " on left"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2385550",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 0,
+    "char_end": 10,
+    "text": "2 children"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 7,
+    "text": "two men"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 16,
+    "text": "carrying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 16,
+    "char_end": 27,
+    "text": " suitcases "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 38,
+    "char_end": 46,
+    "text": "through "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 34,
+    "char_end": 38,
+    "text": " go "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 46,
+    "char_end": 63,
+    "text": "a covered walkway"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 7,
+    "text": "two men"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 29,
+    "char_end": 38,
+    "text": "carrying "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 14,
+    "char_end": 29,
+    "text": "a covered area "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 14,
+    "text": "under "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 38,
+    "char_end": 41,
+    "text": "red"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 41,
+    "char_end": 51,
+    "text": " suitcases"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 10,
+    "text": "two people"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 11,
+    "char_end": 19,
+    "text": "carrying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 20,
+    "char_end": 35,
+    "text": "a suitcase each"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 98,
+    "char_end": 105,
+    "text": "a path "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 87,
+    "char_end": 98,
+    "text": "walking up "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 76,
+    "char_end": 85,
+    "text": "a red one"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "incorrect",
+    "char_start": 36,
+    "char_end": 62,
+    "text": "one with a bigger suitcase"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 67,
+    "char_end": 75,
+    "text": "one with"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2385851",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 105,
+    "char_end": 119,
+    "text": "back facing me"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 7,
+    "text": "two men"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 16,
+    "text": "carrying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 20,
+    "char_end": 30,
+    "text": " suitcases"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 38,
+    "char_end": 54,
+    "text": " underpass thing"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 30,
+    "char_end": 38,
+    "text": " through"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 16,
+    "char_end": 20,
+    "text": " red"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 7,
+    "text": "two men"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 20,
+    "text": "are carrying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 21,
+    "char_end": 28,
+    "text": "two big"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 29,
+    "char_end": 32,
+    "text": "red"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 33,
+    "char_end": 42,
+    "text": "suitcases"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 45,
+    "char_end": 66,
+    "text": " a ramp under a cover"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 98,
+    "char_end": 113,
+    "text": " on their backs"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "repeat",
+    "char_start": 68,
+    "char_end": 85,
+    "text": "they're carrying "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 85,
+    "char_end": 98,
+    "text": "the suitcases"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 42,
+    "char_end": 45,
+    "text": " up"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 7,
+    "text": "two men"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 63,
+    "char_end": 83,
+    "text": "a shielded underpass"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 16,
+    "text": "carrying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 21,
+    "char_end": 30,
+    "text": "suitcases"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 31,
+    "char_end": 46,
+    "text": "over thei heads"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 47,
+    "char_end": 63,
+    "text": "walking through "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 17,
+    "char_end": 20,
+    "text": "red"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 7,
+    "text": "two man"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 45,
+    "char_end": 86,
+    "text": "far left was sunny where there was no sun"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385851",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 34,
+    "char_end": 43,
+    "text": " in shade"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 11,
+    "char_end": 26,
+    "text": "covered walkway"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 104,
+    "char_end": 114,
+    "text": "suitcases "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 160,
+    "char_end": 174,
+    "text": "on their backs"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 27,
+    "char_end": 34,
+    "text": "walking"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 88,
+    "char_end": 92,
+    "text": "men "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385851",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 114,
+    "char_end": 138,
+    "text": "walking away from camera"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 140,
+    "char_end": 149,
+    "text": "suitcases"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "inference",
+    "char_start": 149,
+    "char_end": 156,
+    "text": " large "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 11,
+    "text": "on "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 99,
+    "char_end": 104,
+    "text": " red "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 92,
+    "char_end": 99,
+    "text": "holding"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 5,
+    "text": "2 men"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 19,
+    "char_end": 30,
+    "text": "a large red"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 98,
+    "char_end": 112,
+    "text": "on their backs"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 6,
+    "char_end": 18,
+    "text": "holding each"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 38,
+    "char_end": 47,
+    "text": " walking "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 58,
+    "char_end": 76,
+    "text": "a covered pathway."
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "repeat",
+    "char_start": 82,
+    "char_end": 95,
+    "text": "are carrying "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 30,
+    "char_end": 38,
+    "text": " suitcae"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 47,
+    "char_end": 57,
+    "text": "underneath"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 77,
+    "char_end": 82,
+    "text": "They "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 95,
+    "char_end": 98,
+    "text": "it "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 8,
+    "text": "two men "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 17,
+    "char_end": 23,
+    "text": "a red "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 17,
+    "text": "carrying "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 48,
+    "char_end": 66,
+    "text": "a covered pathway."
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 37,
+    "char_end": 47,
+    "text": "underneath"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 23,
+    "char_end": 32,
+    "text": "suitcase "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 32,
+    "char_end": 36,
+    "text": "each"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 5,
+    "text": "2 men"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 39,
+    "char_end": 53,
+    "text": "on their backs"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 59,
+    "char_end": 68,
+    "text": " a bridge"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 6,
+    "char_end": 18,
+    "text": "walking with"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 54,
+    "char_end": 59,
+    "text": "under"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 29,
+    "char_end": 39,
+    "text": "suitcases "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 24,
+    "char_end": 28,
+    "text": " red"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "inference",
+    "char_start": 19,
+    "char_end": 24,
+    "text": "giant"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 5,
+    "text": "2 man"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 14,
+    "char_end": 23,
+    "text": "carryinh "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 23,
+    "char_end": 27,
+    "text": "red "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 6,
+    "char_end": 13,
+    "text": "walking"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 37,
+    "char_end": 47,
+    "text": "above them"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 27,
+    "char_end": 37,
+    "text": "suitcases "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 7,
+    "text": "two men"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2385851",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 38,
+    "char_end": 47,
+    "text": "carrying "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 52,
+    "char_end": 57,
+    "text": " red "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2385851",
+    "content_type": "object_attribute",
+    "status": "inference",
+    "char_start": 47,
+    "char_end": 52,
+    "text": "large"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 57,
+    "char_end": 67,
+    "text": "suitcases."
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 19,
+    "char_end": 28,
+    "text": "a walkway"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2385851",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 33,
+    "char_end": 37,
+    "text": "both"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2385851",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 13,
+    "char_end": 18,
+    "text": "under"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 11,
+    "text": "little girl"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 27,
+    "char_end": 34,
+    "text": "a tree "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 41,
+    "char_end": 48,
+    "text": " apples"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2411268",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 82,
+    "char_end": 106,
+    "text": "ooks to be a large feild"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2411268",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 12,
+    "char_end": 26,
+    "text": "standing under"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 34,
+    "char_end": 41,
+    "text": "picking"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "incorrect",
+    "char_start": 73,
+    "char_end": 79,
+    "text": "basket"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "incorrect",
+    "char_start": 65,
+    "char_end": 72,
+    "text": "a brown"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 56,
+    "char_end": 65,
+    "text": "carrying "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 13,
+    "text": "a little girl"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 14,
+    "char_end": 22,
+    "text": "in pink "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 22,
+    "char_end": 29,
+    "text": "wellies"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 30,
+    "char_end": 38,
+    "text": "picking "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 38,
+    "char_end": 43,
+    "text": "green"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 44,
+    "char_end": 51,
+    "text": "apples "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 62,
+    "char_end": 65,
+    "text": "bag"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 55,
+    "char_end": 61,
+    "text": " a red"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 7,
+    "text": "a girl "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 17,
+    "char_end": 23,
+    "text": "boots "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 33,
+    "char_end": 40,
+    "text": " apples"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 53,
+    "char_end": 59,
+    "text": "branch"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 88,
+    "char_end": 91,
+    "text": "bag"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 11,
+    "char_end": 16,
+    "text": " pink"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 26,
+    "char_end": 33,
+    "text": "picking"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 46,
+    "char_end": 53,
+    "text": "a high "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "inference",
+    "char_start": 63,
+    "char_end": 82,
+    "text": " putting them into "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 82,
+    "char_end": 87,
+    "text": "a red"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 12,
+    "text": "little girl "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 30,
+    "char_end": 41,
+    "text": "reaching up"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "repeat",
+    "char_start": 55,
+    "char_end": 63,
+    "text": " to pick"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 64,
+    "char_end": 72,
+    "text": "a green "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 125,
+    "char_end": 131,
+    "text": "a red "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 131,
+    "char_end": 134,
+    "text": "bag"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 22,
+    "char_end": 29,
+    "text": "wellies"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 12,
+    "char_end": 21,
+    "text": "with pink"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2411268",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 42,
+    "char_end": 55,
+    "text": "in an orchard"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 72,
+    "char_end": 77,
+    "text": "apple"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2411268",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 91,
+    "char_end": 105,
+    "text": "above her head"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 114,
+    "char_end": 125,
+    "text": "is holding "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 109,
+    "char_end": 113,
+    "text": " she"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 82,
+    "char_end": 90,
+    "text": "the tree"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 12,
+    "text": "little girl "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 12,
+    "char_end": 20,
+    "text": "picking "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 80,
+    "char_end": 86,
+    "text": "a red "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 86,
+    "char_end": 89,
+    "text": "bag"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 20,
+    "char_end": 26,
+    "text": "apples"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2411268",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 27,
+    "char_end": 44,
+    "text": "from a small tree"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 46,
+    "char_end": 56,
+    "text": "the apples"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 57,
+    "char_end": 68,
+    "text": "were green "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 72,
+    "char_end": 79,
+    "text": "she had"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 104,
+    "char_end": 115,
+    "text": "on the tree"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2411268",
+    "content_type": "spatial_relation",
+    "status": "inference",
+    "char_start": 116,
+    "char_end": 135,
+    "text": "were relatively low"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 95,
+    "char_end": 103,
+    "text": "branches"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 12,
+    "text": "a small girl"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 12,
+    "char_end": 29,
+    "text": " reaching to pick"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 68,
+    "char_end": 75,
+    "text": " a red "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 75,
+    "char_end": 79,
+    "text": "bag."
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 29,
+    "char_end": 38,
+    "text": " an apple"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 43,
+    "char_end": 54,
+    "text": " apple tree"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 55,
+    "char_end": 68,
+    "text": "while holding"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 14,
+    "text": "a little girl "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 14,
+    "char_end": 21,
+    "text": "holding"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 22,
+    "char_end": 28,
+    "text": "a red "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 58,
+    "char_end": 64,
+    "text": "green "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "incorrect",
+    "char_start": 124,
+    "char_end": 129,
+    "text": "dress"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2411268",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 32,
+    "char_end": 48,
+    "text": "in her left hand"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 28,
+    "char_end": 32,
+    "text": "bag "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "incorrect",
+    "char_start": 105,
+    "char_end": 124,
+    "text": "was wearing a pink "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 49,
+    "char_end": 58,
+    "text": "grabbing "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 64,
+    "char_end": 71,
+    "text": "apples "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2411268",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 84,
+    "char_end": 100,
+    "text": " above her head,"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "inference",
+    "char_start": 133,
+    "char_end": 149,
+    "text": " had blonde hair"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 76,
+    "char_end": 84,
+    "text": "a branch"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 12,
+    "char_end": 16,
+    "text": "tree"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 6,
+    "char_end": 11,
+    "text": "apple"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 5,
+    "text": "green"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 14,
+    "text": "a little girl "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 14,
+    "char_end": 25,
+    "text": "was picking"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 26,
+    "char_end": 31,
+    "text": "green"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 32,
+    "char_end": 39,
+    "text": "apples "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 72,
+    "char_end": 78,
+    "text": "a red "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 78,
+    "char_end": 81,
+    "text": "bag"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2411268",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 90,
+    "char_end": 129,
+    "text": "in her right hand (from my perspective)"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2411268",
+    "content_type": "scene_gist",
+    "status": "inference",
+    "char_start": 131,
+    "char_end": 160,
+    "text": "the branch was quite low down"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 188,
+    "char_end": 214,
+    "text": "in the far left background"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 169,
+    "char_end": 187,
+    "text": " ther ewas someone"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2411268",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 227,
+    "char_end": 235,
+    "text": "2 apples"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 43,
+    "char_end": 49,
+    "text": "a tree"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2411268",
+    "content_type": "action_relation",
+    "status": "inference",
+    "char_start": 54,
+    "char_end": 71,
+    "text": "putting them into"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2411268",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 238,
+    "char_end": 247,
+    "text": " the tree"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2411268",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 235,
+    "char_end": 238,
+    "text": " on"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2350974",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 6,
+    "text": "child "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2350974",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 6,
+    "char_end": 20,
+    "text": "drinking drink"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2350974",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 50,
+    "char_end": 60,
+    "text": "motorcyle "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2350974",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 70,
+    "char_end": 73,
+    "text": "car"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2350974",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 64,
+    "char_end": 70,
+    "text": "a red "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2350974",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 43,
+    "char_end": 49,
+    "text": "a blue"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2350974",
+    "content_type": "object_attribute",
+    "status": "repeat",
+    "char_start": 20,
+    "char_end": 35,
+    "text": " from a bottle "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2350974",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 35,
+    "char_end": 42,
+    "text": "between"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2350974",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 14,
+    "text": "a small child "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2350974",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 14,
+    "char_end": 25,
+    "text": "is drinking"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2350974",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 31,
+    "char_end": 49,
+    "text": "a coca cola bottle"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2350974",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 54,
+    "char_end": 62,
+    "text": "leaning "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2350974",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 62,
+    "char_end": 83,
+    "text": "with his hand against"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2350974",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 84,
+    "char_end": 89,
+    "text": "a red"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2350974",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 90,
+    "char_end": 93,
+    "text": "car"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2350974",
+    "content_type": "spatial_relation",
+    "status": "inference",
+    "char_start": 103,
+    "char_end": 128,
+    "text": "who i think was on a bike"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2350974",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 129,
+    "char_end": 143,
+    "text": "is infront of "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2350974",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 143,
+    "char_end": 152,
+    "text": "the child"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2350974",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 14,
+    "text": "A SMALL CHILD "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2350974",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 54,
+    "char_end": 74,
+    "text": "SHOWN TO BE DRINKING"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2350974",
+    "content_type": "object_attribute",
+    "status": "inference",
+    "char_start": 75,
+    "char_end": 96,
+    "text": "LIKE AN ENERGY DRINK."
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2350974",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 14,
+    "char_end": 22,
+    "text": "BETWEEN "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2350974",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 28,
+    "char_end": 32,
+    "text": "CAR "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2350974",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 43,
+    "char_end": 53,
+    "text": "MOTORCYCLE"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2350974",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 36,
+    "char_end": 43,
+    "text": "A BLUE "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2350974",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 22,
+    "char_end": 27,
+    "text": "A RED"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2350974",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 10,
+    "text": "little boy"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2350974",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 11,
+    "char_end": 24,
+    "text": "stood between"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2350974",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 24,
+    "char_end": 30,
+    "text": " blue "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2350974",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 44,
+    "char_end": 49,
+    "text": " red "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2350974",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 30,
+    "char_end": 41,
+    "text": "motorcycle "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2350974",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 49,
+    "char_end": 54,
+    "text": "car. "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2350974",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 54,
+    "char_end": 62,
+    "text": "holding "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2350974",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 62,
+    "char_end": 71,
+    "text": "a bottle "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2350974",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 71,
+    "char_end": 95,
+    "text": "with a red lid and label"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 69,
+    "char_end": 78,
+    "text": "are green"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 89,
+    "char_end": 99,
+    "text": "are white "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 99,
+    "char_end": 120,
+    "text": "with a slight pattern"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 131,
+    "char_end": 142,
+    "text": "was untying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 143,
+    "char_end": 151,
+    "text": "her hair"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 8,
+    "text": "4 girls "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 17,
+    "text": "carrying "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 17,
+    "char_end": 28,
+    "text": "surfboards "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 55,
+    "char_end": 68,
+    "text": "2 surfboardsa"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 78,
+    "char_end": 89,
+    "text": " 2 of them "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 122,
+    "char_end": 130,
+    "text": "one girl"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 28,
+    "char_end": 36,
+    "text": "walking "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-10-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 36,
+    "char_end": 53,
+    "text": "towards the ocean"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 7,
+    "text": "4 women"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 19,
+    "char_end": 27,
+    "text": "carrying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 18,
+    "text": "on a beach"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 32,
+    "char_end": 42,
+    "text": "surfboard "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 61,
+    "char_end": 78,
+    "text": "white surfboards "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 101,
+    "char_end": 114,
+    "text": "a neon green "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 48,
+    "char_end": 56,
+    "text": "2 women "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 81,
+    "char_end": 100,
+    "text": " the other two have"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-11-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 114,
+    "char_end": 123,
+    "text": "surfbpard"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 9,
+    "text": "4 surfers"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 39,
+    "char_end": 55,
+    "text": "their surfboards"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 18,
+    "char_end": 31,
+    "text": "to the water "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 9,
+    "char_end": 17,
+    "text": " walking"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-12-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 31,
+    "char_end": 39,
+    "text": "holding "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 10,
+    "text": "four girls"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 11,
+    "char_end": 17,
+    "text": "carry "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 17,
+    "char_end": 30,
+    "text": "4 surfboards "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "incorrect",
+    "char_start": 30,
+    "char_end": 38,
+    "text": "two red "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-13-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 38,
+    "char_end": 55,
+    "text": "towards the ocean"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 10,
+    "text": "four women"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 11,
+    "char_end": 24,
+    "text": "are carrying "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 41,
+    "char_end": 51,
+    "text": "to the sea"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 24,
+    "char_end": 40,
+    "text": "their surfboards"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 57,
+    "char_end": 79,
+    "text": "have a white surfboard"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-14-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 87,
+    "char_end": 104,
+    "text": " have a green one"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 8,
+    "text": "4 women "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 17,
+    "text": "carrying "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 17,
+    "char_end": 27,
+    "text": "surfboards"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 43,
+    "char_end": 75,
+    "text": "the two surfboards on the right "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 75,
+    "char_end": 84,
+    "text": "are green"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-15-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 27,
+    "char_end": 41,
+    "text": " along a beach"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 16,
+    "text": "four girls total"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 37,
+    "char_end": 50,
+    "text": "were holding "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 50,
+    "char_end": 58,
+    "text": "surboard"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2408717",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 153,
+    "char_end": 159,
+    "text": " sunny"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 121,
+    "char_end": 129,
+    "text": "on beach"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 131,
+    "char_end": 139,
+    "text": "walkign "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 139,
+    "char_end": 153,
+    "text": "towards water,"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 82,
+    "char_end": 92,
+    "text": " other two"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 17,
+    "char_end": 36,
+    "text": " two farthest right"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "incorrect",
+    "char_start": 59,
+    "char_end": 81,
+    "text": "under their righ arms "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "incorrect",
+    "char_start": 92,
+    "char_end": 101,
+    "text": " far left"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-16-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "incorrect",
+    "char_start": 102,
+    "char_end": 116,
+    "text": "were seperate,"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 7,
+    "text": "4 women"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 92,
+    "char_end": 129,
+    "text": " closest to me relative to the image "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 44,
+    "char_end": 57,
+    "text": "on the becah "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 31,
+    "char_end": 43,
+    "text": "were walking"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2408717",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 30,
+    "text": "about to enter the sea"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 129,
+    "char_end": 138,
+    "text": "had green"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 178,
+    "char_end": 189,
+    "text": "white ones,"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 64,
+    "char_end": 81,
+    "text": " their surfboards"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 57,
+    "char_end": 64,
+    "text": "holding"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 82,
+    "char_end": 92,
+    "text": " the women"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 139,
+    "char_end": 150,
+    "text": "surfboards "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-5-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 155,
+    "char_end": 173,
+    "text": "he other two women"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 7,
+    "text": "4 women"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 7,
+    "char_end": 16,
+    "text": " carrying"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 17,
+    "char_end": 28,
+    "text": "surfboards "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 64,
+    "char_end": 76,
+    "text": "in the front"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 28,
+    "char_end": 54,
+    "text": "from the sand into the sea"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 56,
+    "char_end": 63,
+    "text": "the two"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 80,
+    "char_end": 91,
+    "text": " neon green"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-6-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 92,
+    "char_end": 102,
+    "text": "surfboards"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 8,
+    "text": "4 women "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 35,
+    "char_end": 43,
+    "text": "holding "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 79,
+    "char_end": 99,
+    "text": "had green surfboards"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 43,
+    "char_end": 54,
+    "text": "surfboards "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 58,
+    "char_end": 66,
+    "text": "2 women "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 66,
+    "char_end": 78,
+    "text": "on the right"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-7-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 31,
+    "text": "about to enter the sea "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 7,
+    "text": "4 women"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 28,
+    "char_end": 36,
+    "text": "2 green "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 36,
+    "char_end": 48,
+    "text": "on the right"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 63,
+    "char_end": 74,
+    "text": "on the left"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 88,
+    "char_end": 103,
+    "text": "walking towards"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 104,
+    "char_end": 109,
+    "text": "water"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2408717",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 76,
+    "char_end": 86,
+    "text": "on a beach"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "repeat",
+    "char_start": 54,
+    "char_end": 62,
+    "text": "2 others"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 16,
+    "text": "holding "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-8-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 16,
+    "char_end": 28,
+    "text": "surfboards, "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 0,
+    "char_end": 7,
+    "text": "4 women"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2408717",
+    "content_type": "action_relation",
+    "status": "correct",
+    "char_start": 8,
+    "char_end": 21,
+    "text": "were walking "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "correct",
+    "char_start": 21,
+    "char_end": 38,
+    "text": "towards the ocean"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2408717",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 38,
+    "char_end": 49,
+    "text": " at a beach"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 50,
+    "char_end": 57,
+    "text": " all 4 "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "correct",
+    "char_start": 57,
+    "char_end": 71,
+    "text": "had surfboards"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2408717",
+    "content_type": "object_identity",
+    "status": "repeat",
+    "char_start": 72,
+    "char_end": 87,
+    "text": " the two eomen "
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "incorrect",
+    "char_start": 87,
+    "char_end": 98,
+    "text": "to the left"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 99,
+    "char_end": 126,
+    "text": "had bright green surfboards"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 131,
+    "char_end": 152,
+    "text": "were wearing wetsuits"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "correct",
+    "char_start": 181,
+    "char_end": 216,
+    "text": "had 2 different coloured surfboards"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2408717",
+    "content_type": "spatial_relation",
+    "status": "incorrect",
+    "char_start": 154,
+    "char_end": 180,
+    "text": "the two women to the right"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "incorrect",
+    "char_start": 217,
+    "char_end": 272,
+    "text": "- i think both of them had white parts in the surfboard"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2408717",
+    "content_type": "object_attribute",
+    "status": "incorrect",
+    "char_start": 274,
+    "char_end": 328,
+    "text": "the two women to the right had shorts and a t shirt on"
+  },
+  {
+    "SubjectID": "Encode-Decode_Experiment-9-1",
+    "StimID": "2408717",
+    "content_type": "scene_gist",
+    "status": "correct",
+    "char_start": 329,
+    "char_end": 353,
+    "text": " it looked to be daytime"
   }
 ]

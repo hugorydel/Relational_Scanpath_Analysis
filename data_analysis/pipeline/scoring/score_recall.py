@@ -13,11 +13,12 @@ trial_features_all.csv via SubjectID × StimID.
 
 Output layout
 -------------
-  output/scoring/recall_scores.csv           — flat per-node scores
-  output/scoring/recall_by_category.csv      — aggregated counts per content_type
+  output/scoring/recall_scores.csv           — flat per-node scores (one row per SubjectID × StimID × node_id)
   output/scoring/score_results.jsonl         — successful API calls (append)
   output/scoring/score_errors.jsonl          — failed API calls (append)
   output/scoring/score_manifest.json         — run summary
+
+Run aggregate_recall.py afterwards to produce recall_by_category.csv.
 
 Schema of recall_scores.csv
 ----------------------------
@@ -78,7 +79,6 @@ DEFAULT_CONCURRENCY = 10
 EDITED_DIR = config.OUTPUT_DIR / "codebooks" / "edited"
 SCORING_DIR = config.OUTPUT_DIR / "scoring"
 SCORES_CSV = SCORING_DIR / "recall_scores.csv"
-CATEGORY_CSV = SCORING_DIR / "recall_by_category.csv"
 RESULTS_PATH = SCORING_DIR / "score_results.jsonl"
 ERRORS_PATH = SCORING_DIR / "score_errors.jsonl"
 MANIFEST_PATH = SCORING_DIR / "score_manifest.json"
@@ -93,25 +93,6 @@ SCORES_FIELDNAMES = [
     "status",
     "recalled",
     "matched_phrase",
-]
-
-CATEGORY_FIELDNAMES = [
-    "SubjectID",
-    "StimID",
-    "n_object_identity_recalled",
-    "n_object_identity_total",
-    "n_object_attribute_recalled",
-    "n_object_attribute_total",
-    "n_action_relation_recalled",
-    "n_action_relation_total",
-    "n_spatial_relation_recalled",
-    "n_spatial_relation_total",
-    "n_scene_gist_recalled",
-    "n_scene_gist_total",
-    "n_correct_nodes_recalled",
-    "n_correct_nodes_total",
-    "n_total_recalled",
-    "n_total_nodes",
 ]
 
 # ---------------------------------------------------------------------------
@@ -131,7 +112,7 @@ SCORING RULES:
 2. SEMANTIC MATCHING (not keyword matching)
    Match on meaning, not exact words. Examples:
    - "kitty" matches concept "cat"
-   - "typing on keyboard" matches concept "typing"
+   - "typing" in the context of "typing on keyboard" matches concept "typing"
    - "sitting on something blue" matches concept "blue" AND concept "on" (spatial)
    - "furry animal" does NOT match concept "cat" — too vague, could be any animal
    Use judgement: the match must be specific enough that a human coder would agree.
@@ -500,49 +481,6 @@ async def _write_score_rows(rows: list[dict]) -> None:
 # ---------------------------------------------------------------------------
 
 
-def build_category_csv() -> None:
-    """
-    Read recall_scores.csv and aggregate by (SubjectID, StimID, content_type).
-    Writes recall_by_category.csv — one row per (SubjectID, StimID).
-    """
-    if not SCORES_CSV.exists():
-        logger.warning("recall_scores.csv not found — skipping category aggregation.")
-        return
-
-    import pandas as pd
-
-    df = pd.read_csv(SCORES_CSV, dtype={"StimID": str, "SubjectID": str})
-
-    # Only count correct nodes (incorrect nodes are definitional non-recall)
-    correct = df[df["status"] == "correct"].copy()
-
-    categories = [
-        "object_identity",
-        "object_attribute",
-        "action_relation",
-        "spatial_relation",
-        "scene_gist",
-    ]
-
-    records = []
-    for (subj, stim), grp in df.groupby(["SubjectID", "StimID"]):
-        rec = {"SubjectID": subj, "StimID": stim}
-        correct_grp = grp[grp["status"] == "correct"]
-        for cat in categories:
-            cat_grp = correct_grp[correct_grp["content_type"] == cat]
-            rec[f"n_{cat}_recalled"] = int(cat_grp["recalled"].sum())
-            rec[f"n_{cat}_total"] = len(cat_grp)
-        rec["n_correct_nodes_recalled"] = int(correct_grp["recalled"].sum())
-        rec["n_correct_nodes_total"] = len(correct_grp)
-        rec["n_total_recalled"] = int(grp["recalled"].sum())
-        rec["n_total_nodes"] = len(grp)
-        records.append(rec)
-
-    cat_df = pd.DataFrame(records, columns=CATEGORY_FIELDNAMES)
-    cat_df.to_csv(CATEGORY_CSV, index=False)
-    logger.info(f"Category CSV written -> {CATEGORY_CSV} ({len(cat_df)} rows)")
-
-
 # ---------------------------------------------------------------------------
 # Manifest
 # ---------------------------------------------------------------------------
@@ -632,18 +570,13 @@ async def run(args) -> None:
     ]
     results = await asyncio.gather(*tasks)
 
-    # Build category aggregation CSV
-    logger.info("Building category aggregation CSV ...")
-    build_category_csv()
-
     save_manifest(list(results), args.model)
 
     n_ok = sum(1 for r in results if r["status"] in ("ok", "ok_empty"))
     n_failed = sum(1 for r in results if r["status"] == "failed")
     print(f"\n{'='*50}")
     print(f"Done.  ok={n_ok}  failed={n_failed}")
-    print(f"Per-node scores  -> {SCORES_CSV}")
-    print(f"Category totals  -> {CATEGORY_CSV}")
+    print(f"Per-node scores -> {SCORES_CSV}")
     if n_failed:
         failed = [
             (r["subject_id"], r["stim_id"]) for r in results if r["status"] == "failed"

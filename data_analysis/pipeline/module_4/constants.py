@@ -1,14 +1,12 @@
 """
-pipeline/module4/constants.py
+pipeline/module_4/constants.py
 ==============================
 All symbolic names, thresholds, and model specifications for Module 4.
 
-This is the single place to:
-  - Add or rename a model (MODEL_SPECS)
-  - Change a DV or covariate list
-  - Adjust pilot-mode thresholds
+Encoding-only analysis. DVs are empirically normalised proportions (0-1)
+computed in loader.py as participant_recalled / max_recalled_per_stim.
 
-No analysis logic lives here; no imports beyond stdlib and config.
+No analysis logic lives here.
 """
 
 import sys
@@ -21,185 +19,82 @@ import config
 # Thresholds
 # ---------------------------------------------------------------------------
 
-# Minimum n_shared_enc_dec fixations for replay models.
-# Set to 2 for pilot. Raise to 3 for final analysis.
-MIN_N_SHARED_REPLAY = 2
-
-# Below this many subjects, statsmodels' REML C optimizer hard-crashes
-# (segfault) before Python's try/except can fire.  We fall back to OLS +
-# C(SubjectID) fixed effect for pilot runs.
+# Below this many subjects, statsmodels' REML C optimizer can hard-crash.
+# Fall back to OLS + C(SubjectID) fixed effect for pilot runs.
 PILOT_SUBJ_THRESHOLD = 10
 
 # ---------------------------------------------------------------------------
 # Covariate lists
 # ---------------------------------------------------------------------------
 
-DEC_COVARIATES = ["n_fixations_dec", "aoi_prop_dec", "mean_salience_dec"]
-ENC_COVARIATES = ["n_fixations_enc", "aoi_prop_enc", "mean_salience_enc"]
-
-# Backwards-compatible alias used by run_pipeline.py
-COVARIATES = DEC_COVARIATES
+ENC_COVARIATES = ["n_fixations_enc", "aoi_prop_enc", "mean_salience_relational_enc"]
 
 # ---------------------------------------------------------------------------
 # Dependent variables
 # ---------------------------------------------------------------------------
+# These are proportion columns computed in loader.py (0-1 scale).
 
-DV_RELATIONAL = "n_relational_correct"
-DV_OBJECTS = "n_objects_correct"
-DV_CONFAB = "n_relational_incorrect"
-DV_LENGTH = "writing_length"
+DV_TOTAL = "prop_total"  # all correct nodes recalled / empirical max
+DV_RELATIONS = "prop_relations"  # (action + spatial) recalled / empirical max
+DV_OBJECTS = "prop_objects"  # (identity + attribute) recalled / empirical max
 
 # ---------------------------------------------------------------------------
 # Default I/O paths
 # ---------------------------------------------------------------------------
 
-DEFAULT_SCORES_PATH = config.MEMORY_SCORES_FILE
+DEFAULT_SCORES_PATH = config.OUTPUT_DIR / "scoring" / "recall_by_category.csv"
 
 # ---------------------------------------------------------------------------
 # Model specifications
 # ---------------------------------------------------------------------------
 # Each entry: (name, primary_predictor, description, table_key, hypothesis_group)
 #
-# table_key must be one of: dec_inter | dec_all | enc_inter | enc_all | replay
-# hypothesis_group must be one of: H1 | H2 | Exploratory
+# table_key: "enc" (single encoding table)
+# hypothesis_group: H1 | H2 | Exploratory
 #
 # primary_predictor special values:
-#   "1"          → intercept-only (H1 raw)
-#   "covariates" → covariate-adjusted intercept (H1b)
-#   anything else → treated as a statsmodels formula fragment
+#   "1"  → intercept-only (H1 SVG strength test)
+#   anything else → statsmodels formula fragment
 
 MODEL_SPECS = [
-    # H1 — decoding SVG as outcome
+    # H1 — is encoding SVG reliably above zero?
     (
-        "H1a_svg_inter",
+        "H1_svg_enc",
         "1",
-        "H1a raw: Decoding interactional SVG — intercept only",
-        "dec_inter",
+        "H1: Encoding SVG — intercept test (mean SVG > 0?)",
+        "enc",
         "H1",
     ),
+    # H2 — encoding SVG → memory proportions
     (
-        "H1a_svg_all",
-        "1",
-        "H1a raw: Decoding all-edges SVG — intercept only",
-        "dec_all",
-        "H1",
-    ),
-    (
-        "H1b_svg_inter",
-        "covariates",
-        "H1b adjusted: Decoding interactional SVG — covariate-adjusted intercept",
-        "dec_inter",
-        "H1",
-    ),
-    (
-        "H1b_svg_all",
-        "covariates",
-        "H1b adjusted: Decoding all-edges SVG — covariate-adjusted intercept",
-        "dec_all",
-        "H1",
-    ),
-    # H2 primary — dec SVG → relational recall
-    (
-        "H2_relational_inter",
-        "svg_z_inter_dec_z",
-        "H2 primary: Decoding interactional SVG → relational recall",
-        "dec_inter",
+        "H2_total",
+        "svg_z_enc_z",
+        "H2 overall: Encoding SVG → total node recall proportion",
+        "enc",
         "H2",
     ),
     (
-        "H2_relational_all",
-        "svg_z_all_dec_z",
-        "H2 primary (all): Decoding all-edges SVG → relational recall",
-        "dec_all",
-        "H2",
-    ),
-    # H2 secondary — dec SVG → object recall (dissociation check)
-    (
-        "H2_objects_inter",
-        "svg_z_inter_dec_z",
-        "H2 secondary: Decoding interactional SVG → object recall",
-        "dec_inter",
+        "H2_relations",
+        "svg_z_enc_z",
+        "H2 relations: Encoding SVG → relational recall proportion (action + spatial)",
+        "enc",
         "H2",
     ),
     (
-        "H2_objects_all",
-        "svg_z_all_dec_z",
-        "H2 secondary (all): Decoding all-edges SVG → object recall",
-        "dec_all",
+        "H2_objects",
+        "svg_z_enc_z",
+        "H2 objects: Encoding SVG → object recall proportion (identity + attribute)",
+        "enc",
         "H2",
     ),
-    # Exploratory — confabulation
+    # Exploratory — dissociation: is the SVG effect larger for relations than objects?
+    # Fit via the stacked long-format interaction model (see test_relation_object_dissociation.py)
+    # Included here for coefficient logging only; formula handled specially in models.py.
     (
-        "EXP_confab_inter",
-        "svg_z_inter_dec_z",
-        "Exploratory: Decoding interactional SVG → relational confabulation",
-        "dec_inter",
-        "Exploratory",
-    ),
-    (
-        "EXP_confab_all",
-        "svg_z_all_dec_z",
-        "Exploratory: Decoding all-edges SVG → relational confabulation",
-        "dec_all",
-        "Exploratory",
-    ),
-    # Exploratory — writing length (overall recall fluency)
-    (
-        "EXP_length_inter",
-        "svg_z_inter_dec_z",
-        "Exploratory: Decoding interactional SVG → writing length",
-        "dec_inter",
-        "Exploratory",
-    ),
-    (
-        "EXP_length_all",
-        "svg_z_all_dec_z",
-        "Exploratory: Decoding all-edges SVG → writing length",
-        "dec_all",
-        "Exploratory",
-    ),
-    # Exploratory — encoding → relational recall
-    (
-        "EXP_enc_svg_inter",
-        "svg_z_inter_enc_z",
-        "Exploratory: Encoding interactional SVG → relational recall",
-        "enc_inter",
-        "Exploratory",
-    ),
-    (
-        "EXP_enc_svg_all",
-        "svg_z_all_enc_z",
-        "Exploratory: Encoding all-edges SVG → relational recall",
-        "enc_all",
-        "Exploratory",
-    ),
-    (
-        "EXP_enc_lcs",
-        "lcs_enc_dec_z",
-        "Exploratory: LCS sequence overlap → relational recall",
-        "enc_all",
-        "Exploratory",
-    ),
-    (
-        "EXP_enc_combined",
-        "svg_z_inter_enc_z + lcs_enc_dec_z",
-        "Exploratory: Encoding SVG + LCS jointly → relational recall",
-        "enc_inter",
-        "Exploratory",
-    ),
-    # Exploratory — replay quality → relational recall
-    (
-        "EXP_replay_lcs",
-        "lcs_enc_dec_z",
-        "Exploratory: LCS (replay-quality filtered) → relational recall",
-        "replay",
-        "Exploratory",
-    ),
-    (
-        "EXP_replay_tau",
-        "tau_enc_dec_z",
-        "Exploratory: Tau (replay-quality filtered) → relational recall",
-        "replay",
+        "EXP_dissociation",
+        "svg_z_enc_z * memory_type",
+        "Exploratory: SVG × memory_type (relations vs objects dissociation)",
+        "enc_long",
         "Exploratory",
     ),
 ]

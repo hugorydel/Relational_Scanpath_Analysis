@@ -1,23 +1,15 @@
 """
-pipeline/module4/models.py
-===========================
+pipeline/module_4/models.py
+============================
 Step 5: Model fitting.
 
-Contains the entire fitting strategy:
-  - _formula_for : maps a MODEL_SPECS entry to a statsmodels formula string
-  - _fit_one     : fits a single model with pilot/full-n branching
-  - fit_all_models : iterates MODEL_SPECS and collects results
+All models are encoding-phase only. DVs are proportion columns (0-1).
 
-Pilot mode (n_subj < PILOT_SUBJ_THRESHOLD)
--------------------------------------------
-statsmodels' REML C-level optimizer hard-crashes (segfault) before Python's
-try/except can fire when n_subj is small.  Below threshold we fall back to
-OLS with C(SubjectID) as a fixed effect; this controls for between-subject
-variance without random-effects machinery and cannot crash.
+Pilot mode  (n_subj < PILOT_SUBJ_THRESHOLD): OLS + C(SubjectID)
+Full mode   (n_subj >= PILOT_SUBJ_THRESHOLD): LMM + (1|SubjectID) + (1|StimID)
 
-Full mode (n_subj >= PILOT_SUBJ_THRESHOLD)
--------------------------------------------
-LMM with (1|SubjectID) as groups and crossed (1|StimID) via vc_formula.
+The dissociation model (EXP_dissociation) is handled separately via a
+long-format table with a memory_type binary factor.
 """
 
 import logging
@@ -28,11 +20,9 @@ import pandas as pd
 import statsmodels.formula.api as smf
 
 from .constants import (
-    DEC_COVARIATES,
-    DV_CONFAB,
-    DV_LENGTH,
     DV_OBJECTS,
-    DV_RELATIONAL,
+    DV_RELATIONS,
+    DV_TOTAL,
     ENC_COVARIATES,
     MODEL_SPECS,
     PILOT_SUBJ_THRESHOLD,
@@ -40,60 +30,43 @@ from .constants import (
 
 logger = logging.getLogger(__name__)
 
+_COV_ENC_Z = " + ".join(f"{c}_z" for c in ENC_COVARIATES)
+
 
 # ---------------------------------------------------------------------------
 # Formula construction
 # ---------------------------------------------------------------------------
 
 
-def _formula_for(name: str, primary_pred: str) -> tuple[str, str, bool]:
+def _formula_for(name: str, primary_pred: str) -> tuple:
     """
-    Return (formula_fragment, dv_column, use_trial_re).
-
-    formula_fragment does NOT include the DV — _fit_one prepends it.
-    use_trial_re is always False for trial-level models (all current specs).
+    Return (rhs_formula, dv_column).
+    rhs_formula does not include the DV.
     """
-    cov_dec_z = " + ".join(f"{c}_z" for c in DEC_COVARIATES)
-    cov_enc_z = " + ".join(f"{c}_z" for c in ENC_COVARIATES)
 
-    # H1: DV is the SVG score itself; test whether intercept > 0
+    # H1: DV is the SVG score itself; intercept test
     if name.startswith("H1"):
-        dv = "svg_z_inter_dec" if "inter" in name else "svg_z_all_dec"
-        formula = "1" if primary_pred == "1" else cov_dec_z
-        return formula, dv, False
+        dv = "svg_z_enc"
+        rhs = "1"
+        return rhs, dv
 
-    # H2 — relational recall (primary outcome)
-    if name.startswith("H2_relational"):
-        return f"{primary_pred} + {cov_dec_z}", DV_RELATIONAL, False
+    # H2 / Exploratory — main encoding models
+    if name == "H2_total":
+        return f"{primary_pred} + {_COV_ENC_Z}", DV_TOTAL
 
-    # H2 — object recall (dissociation check)
-    if name.startswith("H2_objects"):
-        return f"{primary_pred} + {cov_dec_z}", DV_OBJECTS, False
+    if name == "H2_relations":
+        return f"{primary_pred} + {_COV_ENC_Z}", DV_RELATIONS
 
-    # Exploratory — confabulation
-    if "confab" in name:
-        return f"{primary_pred} + {cov_dec_z}", DV_CONFAB, False
+    if name == "H2_objects":
+        return f"{primary_pred} + {_COV_ENC_Z}", DV_OBJECTS
 
-    # Exploratory — writing length
-    if "length" in name:
-        return f"{primary_pred} + {cov_dec_z}", DV_LENGTH, False
-
-    # Exploratory — encoding predictors → relational recall
-    if "enc" in name:
-        if "combined" in name:
-            formula = f"svg_z_inter_enc_z + lcs_enc_dec_z + {cov_enc_z}"
-        elif "lcs" in name:
-            formula = f"lcs_enc_dec_z + {cov_enc_z}"
-        elif "inter" in name:
-            formula = f"svg_z_inter_enc_z + {cov_enc_z}"
-        else:
-            formula = f"svg_z_all_enc_z + {cov_enc_z}"
-        return formula, DV_RELATIONAL, False
-
-    # Exploratory — replay quality → relational recall
-    if "replay" in name:
-        pred_z = "tau_enc_dec_z" if "tau" in name else "lcs_enc_dec_z"
-        return f"{pred_z} + {cov_dec_z}", DV_RELATIONAL, False
+    # Dissociation: long-format, DV is "score" (stacked prop_relations / prop_objects)
+    # StimID is handled as a random effect via vc_formula in _fit_lmm — not fixed dummies.
+    if name == "EXP_dissociation":
+        return (
+            f"svg_z_enc_z * memory_type + {_COV_ENC_Z}",
+            "score",
+        )
 
     raise ValueError(f"Cannot determine formula for model: {name}")
 
@@ -103,26 +76,15 @@ def _formula_for(name: str, primary_pred: str) -> tuple[str, str, bool]:
 # ---------------------------------------------------------------------------
 
 
-def _fit_one(
-    name: str,
-    formula: str,
-    dv: str,
-    df: pd.DataFrame,
-    vc_trial: bool = False,
-) -> tuple:
+def _fit_one(name: str, formula: str, dv: str, df: pd.DataFrame) -> tuple:
     """
-    Fit one model and return (result, trial_re_used: bool).
-
-    Selects between OLS (pilot) and LMM (full) based on n_subj.
-    Returns (None, False) on failure or insufficient data.
+    Fit one model. Returns (result | None, mode: str).
+    mode is "ols_pilot" or "lmm".
     """
     full_formula = f"{dv} ~ {formula}"
 
-    # Build minimal DataFrame (only columns needed by the formula)
     tokens = re.findall(r"[A-Za-z_][A-Za-z0-9_]*", formula)
     req = list({dv, "SubjectID", "StimID"} | {t for t in tokens if t in df.columns})
-    if vc_trial and "TrialID" in df.columns:
-        req.append("TrialID")
     model_df = df[[c for c in req if c in df.columns]].dropna()
 
     n_obs = len(model_df)
@@ -132,96 +94,48 @@ def _fit_one(
 
     if n_obs < 20 or n_subj < 2:
         logger.warning(f"  {name}: insufficient data — skipping.")
-        return None, False
+        return None, "skipped"
 
-    # ── Branch: pilot OLS vs full LMM ────────────────────────────────────
     if n_subj < PILOT_SUBJ_THRESHOLD:
-        return _fit_ols_pilot(name, full_formula, dv, model_df)
+        return _fit_ols_pilot(name, full_formula, model_df)
     else:
-        return _fit_lmm(name, full_formula, dv, model_df, vc_trial)
+        return _fit_lmm(name, full_formula, model_df)
 
 
-def _fit_ols_pilot(
-    name: str,
-    full_formula: str,
-    dv: str,
-    model_df: pd.DataFrame,
-) -> tuple:
-    """
-    OLS + C(SubjectID) fixed effect for pilot runs (n_subj < threshold).
-
-    C(SubjectID) absorbs between-subject variance without any random-effects
-    machinery, so it cannot trigger the statsmodels C-level REML segfault.
-
-    Standard (non-robust) SEs are used deliberately: HC3 calls into
-    statsmodels' C extension and can itself segfault on Windows with small n.
-    For pilot data (n<10 subjects) OLS p-values are descriptive anyway.
-    """
+def _fit_ols_pilot(name: str, full_formula: str, model_df: pd.DataFrame) -> tuple:
     pilot_formula = full_formula + " + C(SubjectID)"
     logger.warning(
         f"  {name}: n_subj < {PILOT_SUBJ_THRESHOLD} — "
-        "using OLS + C(SubjectID) fixed effect (pilot mode). "
-        f"Switch to LMM for final analysis (n>={PILOT_SUBJ_THRESHOLD})."
+        "using OLS + C(SubjectID) (pilot mode)."
     )
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
         try:
             result = smf.ols(pilot_formula, data=model_df).fit()
         except Exception as e:
-            logger.error(f"  {name}: OLS pilot fit failed — {e}")
-            return None, False
+            logger.error(f"  {name}: OLS fit failed — {e}")
+            return None, "failed"
     logger.info(f"    OLS R²={result.rsquared:.3f}, F p={result.f_pvalue:.4f}")
-    return result, False
+    return result, "ols_pilot"
 
 
-def _fit_lmm(
-    name: str,
-    full_formula: str,
-    dv: str,
-    model_df: pd.DataFrame,
-    vc_trial: bool,
-) -> tuple:
-    """
-    Full LMM: (1|SubjectID) + crossed (1|StimID) [+ optional (1|TrialID)].
-
-    Falls back to dropping TrialID RE if it causes a singular Hessian
-    (expected when each trial has very few observations).
-    """
-    vc: dict = {"StimID": "0 + C(StimID)"}
-    if vc_trial and "TrialID" in model_df.columns:
-        vc["TrialID"] = "0 + C(TrialID)"
-
-    def _try(vc_formula):
-        with warnings.catch_warnings():
-            warnings.simplefilter("ignore")
+def _fit_lmm(name: str, full_formula: str, model_df: pd.DataFrame) -> tuple:
+    vc = {"StimID": "0 + C(StimID)"}
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        try:
             model = smf.mixedlm(
                 full_formula,
                 data=model_df,
                 groups="SubjectID",
-                vc_formula=vc_formula if vc_formula else None,
+                vc_formula=vc,
             )
-            return model.fit(reml=True, method="lbfgs", maxiter=300)
-
-    try:
-        result = _try(vc)
-    except Exception as e:
-        if vc_trial and "TrialID" in vc and "ingular" in str(e):
-            logger.warning(
-                f"  {name}: TrialID RE singular — retrying without TrialID RE."
-            )
-            vc_no_trial = {k: v for k, v in vc.items() if k != "TrialID"}
-            try:
-                result = _try(vc_no_trial if vc_no_trial else None)
-                vc_trial = False
-            except Exception as e2:
-                logger.error(f"  {name}: LMM fallback also failed — {e2}")
-                return None, False
-        else:
-            logger.error(f"  {name}: LMM fitting failed — {e}")
-            return None, False
-
-    logger.info(f"    Converged: {result.converged}")
-    return result, vc_trial
+            result = model.fit(reml=True, method="lbfgs", maxiter=300)
+        except Exception as e:
+            logger.error(f"  {name}: LMM failed — {e}")
+            return None, "failed"
+    logger.info(f"    LMM converged: {result.converged}")
+    return result, "lmm"
 
 
 # ---------------------------------------------------------------------------
@@ -231,11 +145,8 @@ def _fit_lmm(
 
 def fit_all_models(filtered: dict) -> dict:
     """
-    Iterate MODEL_SPECS, fit each model, and return a results dict.
-
-    Returns
-    -------
-    dict mapping model name → (result | None, trial_re_used: bool)
+    Iterate MODEL_SPECS, fit each model, return results dict.
+    Keys: model name → (result | None, mode: str)
     """
     logger.info("\nStep 5: Fitting models ...")
     results = {}
@@ -245,11 +156,11 @@ def fit_all_models(filtered: dict) -> dict:
         df = filtered.get(table_key, pd.DataFrame())
         if df.empty:
             logger.warning(f"  {name}: table '{table_key}' is empty — skipping.")
-            results[name] = (None, False)
+            results[name] = (None, "skipped")
             continue
 
-        formula, dv, use_trial_re = _formula_for(name, primary_pred)
+        formula, dv = _formula_for(name, primary_pred)
         logger.info(f"    {dv} ~ {formula}")
-        results[name] = _fit_one(name, formula, dv, df, vc_trial=use_trial_re)
+        results[name] = _fit_one(name, formula, dv, df)
 
     return results

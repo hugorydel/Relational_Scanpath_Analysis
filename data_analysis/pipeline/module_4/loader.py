@@ -1,27 +1,33 @@
 """
-pipeline/module4/loader.py
-===========================
-Steps 1–4: data loading, table construction, exclusions, standardisation.
+pipeline/module_4/loader.py
+============================
+Steps 1-4: data loading, table construction, exclusions, standardisation.
 
-All functions are pure data-in → data-out (no model fitting, no plotting).
+Memory DVs come from recall_by_category.csv (output of aggregate_recall.py),
+not from the manual scoring UI. Three proportion DVs are computed:
+
+    prop_total     = n_correct_nodes_recalled / max_per_stim
+    prop_relations = (n_action_relation_recalled + n_spatial_relation_recalled) / max_per_stim
+    prop_objects   = (n_object_identity_recalled + n_object_attribute_recalled) / max_per_stim
+
+Each denominator is the empirical maximum across all participants for that
+StimID, separately per DV. This normalises for both image complexity and
+image memorability, placing all images on a 0-1 scale.
+
+If max=0 for a given StimID × DV (nobody recalled any relations for that
+image), those cells become NaN and are silently excluded by model dropna.
 """
 
 import logging
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
-from .constants import (
-    DEC_COVARIATES,
-    DV_CONFAB,
-    DV_LENGTH,
-    DV_OBJECTS,
-    DV_RELATIONAL,
-    ENC_COVARIATES,
-    MIN_N_SHARED_REPLAY,
-)
+from .constants import DV_OBJECTS, DV_RELATIONS, DV_TOTAL, ENC_COVARIATES
 
 logger = logging.getLogger(__name__)
+
 
 # ---------------------------------------------------------------------------
 # Step 1a: Load trial features
@@ -30,7 +36,7 @@ logger = logging.getLogger(__name__)
 
 def load_data(input_path: Path) -> pd.DataFrame:
     """Load trial_features_all.csv produced by Module 3."""
-    logger.info(f"Step 1: Loading {input_path.name} ...")
+    logger.info(f"Step 1a: Loading {input_path.name} ...")
     if not input_path.exists():
         raise FileNotFoundError(f"Features file not found: {input_path}")
     df = pd.read_csv(input_path, dtype={"StimID": str, "SubjectID": str})
@@ -42,122 +48,109 @@ def load_data(input_path: Path) -> pd.DataFrame:
 
 
 # ---------------------------------------------------------------------------
-# Step 1b: Load memory scores
+# Step 1b: Load recall_by_category.csv and compute proportion DVs
 # ---------------------------------------------------------------------------
-
-# Content types and statuses used by the new 20-column scorer schema.
-_NEW_CONTENT_TYPES = [
-    "object_identity",
-    "object_attribute",
-    "action_relation",
-    "spatial_relation",
-    "scene_gist",
-]
-_NEW_STATUSES = ["correct", "incorrect", "inference", "repeat"]
-_NEW_COUNT_COLS = [f"n_{ct}_{st}" for ct in _NEW_CONTENT_TYPES for st in _NEW_STATUSES]
-
-
-def _derive_legacy_columns(scores: pd.DataFrame) -> pd.DataFrame:
-    """
-    Given a new-schema scores DataFrame, compute the legacy aggregate columns
-    that the rest of the pipeline expects:
-        n_relational_correct   = action_relation + spatial_relation (correct)
-        n_relational_incorrect = action_relation + spatial_relation (incorrect)
-        n_objects_correct      = object_identity + object_attribute (correct)
-        n_objects_incorrect    = object_identity + object_attribute (incorrect)
-
-    Also adds convenience totals:
-        n_gist_correct     = n_scene_gist_correct
-        n_inference_total  = sum of all *_inference columns
-        n_repeat_total     = sum of all *_repeat columns
-    """
-    # Ensure every expected count column is present (fills zeros for any
-    # content types added after the CSV header was first written).
-    for col in _NEW_COUNT_COLS:
-        if col not in scores.columns:
-            scores[col] = 0
-
-    scores["n_relational_correct"] = (
-        scores["n_action_relation_correct"] + scores["n_spatial_relation_correct"]
-    )
-    scores["n_relational_incorrect"] = (
-        scores["n_action_relation_incorrect"] + scores["n_spatial_relation_incorrect"]
-    )
-    scores["n_objects_correct"] = (
-        scores["n_object_identity_correct"] + scores["n_object_attribute_correct"]
-    )
-    scores["n_objects_incorrect"] = (
-        scores["n_object_identity_incorrect"] + scores["n_object_attribute_incorrect"]
-    )
-    scores["n_gist_correct"] = scores["n_scene_gist_correct"]
-    scores["n_inference_total"] = scores[
-        [f"n_{ct}_inference" for ct in _NEW_CONTENT_TYPES]
-    ].sum(axis=1)
-    scores["n_repeat_total"] = scores[
-        [f"n_{ct}_repeat" for ct in _NEW_CONTENT_TYPES]
-    ].sum(axis=1)
-    return scores
 
 
 def load_memory_scores(scores_path: Path) -> pd.DataFrame:
     """
-    Load manually scored memory data and compute derived columns.
+    Load recall_by_category.csv (from aggregate_recall.py) and compute the
+    three empirically-normalised proportion DVs.
 
-    Supports two scorer schemas:
-
-    Legacy (4-column):
+    Returns a DataFrame with columns:
         SubjectID, StimID,
-        n_relational_correct, n_relational_incorrect,
-        n_objects_correct, n_objects_incorrect, empty_response
-
-    New (20-column, content_type × status):
-        SubjectID, StimID, empty_response, [wrong_image],
-        n_{content_type}_{status}  (5 types × 4 statuses = 20 columns)
-
-    In both cases, the following derived columns are added:
-        n_relational_total     = n_relational_correct + n_relational_incorrect
-        any_relational_correct = 1 if n_relational_correct >= 1 else 0
+        prop_total, prop_relations, prop_objects
+    plus the underlying raw counts for diagnostics.
     """
-    logger.info(f"  Loading memory scores from {scores_path.name} ...")
+    logger.info(f"Step 1b: Loading recall scores from {scores_path.name} ...")
     if not scores_path.exists():
         raise FileNotFoundError(
-            f"Memory scores file not found: {scores_path}\n"
-            "Score responses with the scoring app and save before running Module 4."
+            f"Recall scores file not found: {scores_path}\n"
+            "Run aggregate_recall.py before Module 4."
         )
 
-    scores = pd.read_csv(scores_path, dtype={"StimID": str, "SubjectID": str})
+    df = pd.read_csv(scores_path, dtype={"StimID": str, "SubjectID": str})
 
-    # Detect schema by spot-checking the first four new-schema columns.
-    is_new_schema = all(c in scores.columns for c in _NEW_COUNT_COLS[:4])
-
-    if is_new_schema:
-        logger.info("  Detected new 20-column scorer schema — deriving legacy columns.")
-        scores = _derive_legacy_columns(scores)
-    else:
-        logger.info("  Detected legacy 4-column scorer schema.")
-        required = [
-            "SubjectID",
-            "StimID",
-            "n_relational_correct",
-            "n_relational_incorrect",
-            "n_objects_correct",
-            "n_objects_incorrect",
-            "empty_response",
-        ]
-        missing = [c for c in required if c not in scores.columns]
-        if missing:
-            raise ValueError(f"Memory scores file missing columns: {missing}")
-
-    scores["n_relational_total"] = (
-        scores["n_relational_correct"] + scores["n_relational_incorrect"]
+    # Derive combined raw counts
+    # Relations: action + spatial
+    for col in ["n_action_relation_recalled", "n_spatial_relation_recalled"]:
+        if col not in df.columns:
+            logger.warning(f"  Column {col} missing from scores — treating as 0.")
+            df[col] = 0
+    df["n_relations_recalled"] = (
+        df["n_action_relation_recalled"] + df["n_spatial_relation_recalled"]
     )
-    scores["any_relational_correct"] = (scores["n_relational_correct"] >= 1).astype(int)
+
+    # Objects: identity + attribute
+    for col in ["n_object_identity_recalled", "n_object_attribute_recalled"]:
+        if col not in df.columns:
+            logger.warning(f"  Column {col} missing from scores — treating as 0.")
+            df[col] = 0
+    df["n_objects_recalled"] = (
+        df["n_object_identity_recalled"] + df["n_object_attribute_recalled"]
+    )
+
+    # Total correct nodes
+    if "n_correct_nodes_recalled" not in df.columns:
+        raise ValueError("recall_by_category.csv missing n_correct_nodes_recalled.")
+    df["n_total_recalled"] = df["n_correct_nodes_recalled"]
+
+    # ------------------------------------------------------------------
+    # Empirical per-StimID maxima (separately per DV)
+    # ------------------------------------------------------------------
+    raw_cols = {
+        DV_TOTAL: "n_total_recalled",
+        DV_RELATIONS: "n_relations_recalled",
+        DV_OBJECTS: "n_objects_recalled",
+    }
+
+    for prop_col, raw_col in raw_cols.items():
+        stim_max = df.groupby("StimID")[raw_col].max().rename(f"_max_{raw_col}")
+        df = df.merge(stim_max, on="StimID", how="left")
+        max_col = f"_max_{raw_col}"
+
+        # Proportion: NaN where max=0 (nobody recalled anything for that DV/stim)
+        df[prop_col] = np.where(
+            df[max_col] > 0,
+            df[raw_col] / df[max_col],
+            np.nan,
+        )
+
+        n_nan = df[prop_col].isna().sum()
+        n_zero_max = (df[max_col] == 0).sum()
+        if n_zero_max > 0:
+            logger.warning(
+                f"  {prop_col}: {n_zero_max} rows have max=0 for their StimID "
+                f"({n_nan} NaN entries — excluded from that DV's models)."
+            )
+        df = df.drop(columns=[max_col])
 
     logger.info(
-        f"  Loaded {len(scores)} scored trials, "
-        f"{scores['SubjectID'].nunique()} participants."
+        f"  Loaded {len(df)} scored rows, "
+        f"{df['SubjectID'].nunique()} participants, "
+        f"{df['StimID'].nunique()} stimuli."
     )
-    return scores
+
+    # Log proportion descriptives
+    for prop_col in [DV_TOTAL, DV_RELATIONS, DV_OBJECTS]:
+        vals = df[prop_col].dropna()
+        logger.info(
+            f"  {prop_col}: n={len(vals)}, "
+            f"mean={vals.mean():.3f}, sd={vals.std():.3f}, "
+            f"range=[{vals.min():.3f}, {vals.max():.3f}]"
+        )
+
+    keep_cols = [
+        "SubjectID",
+        "StimID",
+        DV_TOTAL,
+        DV_RELATIONS,
+        DV_OBJECTS,
+        "n_total_recalled",
+        "n_relations_recalled",
+        "n_objects_recalled",
+    ]
+    return df[[c for c in keep_cols if c in df.columns]]
 
 
 # ---------------------------------------------------------------------------
@@ -165,166 +158,99 @@ def load_memory_scores(scores_path: Path) -> pd.DataFrame:
 # ---------------------------------------------------------------------------
 
 
-def build_analysis_tables(
-    df: pd.DataFrame, memory_scores: pd.DataFrame
-) -> dict[str, pd.DataFrame]:
+def build_analysis_tables(df: pd.DataFrame, memory_scores: pd.DataFrame) -> dict:
     """
-    Split trial_features_all into decoding, encoding, and wide tables,
-    then join memory scores onto the decoding table.
+    Build encoding analysis table by joining memory proportions onto the
+    encoding phase of trial_features_all.csv.
 
-    Returns
-    -------
-    dict with keys: "dec", "enc", "wide"
+    Also builds a long-format table for the dissociation model
+    (SVG × memory_type: relations vs objects).
+
+    Returns dict with keys: "enc", "enc_long"
     """
     logger.info("Step 2: Building analysis tables ...")
 
-    enc_raw = df[df["Phase"] == "encoding"].copy()
-    dec_raw = df[df["Phase"] == "decoding"].copy()
-
-    # ── Decoding table ────────────────────────────────────────────────────
-    dec = dec_raw.rename(
+    enc = df[df["Phase"] == "encoding"].copy()
+    enc = enc.rename(
         columns={
-            "svg_z_all": "svg_z_all_dec",
-            "svg_z_inter": "svg_z_inter_dec",
-            "n_fixations": "n_fixations_dec",
-            "aoi_prop": "aoi_prop_dec",
-            "mean_salience": "mean_salience_dec",
-            "low_n": "low_n_dec",
-            "n_transitions": "n_transitions_dec",
-        }
-    ).reset_index(drop=True)
-
-    dec = dec.merge(memory_scores, on=["SubjectID", "StimID"], how="left")
-    n_unscored = dec[DV_RELATIONAL].isna().sum()
-    if n_unscored > 0:
-        logger.warning(
-            f"  {n_unscored} decoding row(s) have no memory score — "
-            "check that memory_scores.csv covers all participants/stimuli."
-        )
-
-    # ── Encoding table ────────────────────────────────────────────────────
-    enc = enc_raw.rename(
-        columns={
-            "svg_z_all": "svg_z_all_enc",
-            "svg_z_inter": "svg_z_inter_enc",
+            "svg_z": "svg_z_enc",
             "n_fixations": "n_fixations_enc",
             "aoi_prop": "aoi_prop_enc",
             "mean_salience": "mean_salience_enc",
+            "mean_salience_relational": "mean_salience_relational_enc",
             "low_n": "low_n_enc",
-            "n_transitions": "n_transitions_enc",
         }
     ).reset_index(drop=True)
 
-    # ── Wide table (enc + dec joined) for exploratory models ─────────────
-    memory_cols = [
-        DV_RELATIONAL,
-        DV_OBJECTS,
-        DV_CONFAB,
-        "n_objects_incorrect",
-        "n_relational_total",
-        "any_relational_correct",
-        "empty_response",
-        DV_LENGTH,
-    ]
-    enc_keep = [
-        "SubjectID",
-        "StimID",
-        "svg_z_all_enc",
-        "svg_z_inter_enc",
-        "n_fixations_enc",
-        "aoi_prop_enc",
-        "mean_salience_enc",
-        "low_n_enc",
-    ]
-    dec_keep = [
-        "SubjectID",
-        "StimID",
-        "svg_z_all_dec",
-        "svg_z_inter_dec",
-        "n_fixations_dec",
-        "aoi_prop_dec",
-        "mean_salience_dec",
-        "low_n_dec",
-        "n_shared_enc_dec",
-        "lcs_enc_dec",
-        "tau_enc_dec",
-    ] + [c for c in memory_cols if c in dec.columns]
+    enc = enc.merge(memory_scores, on=["SubjectID", "StimID"], how="left")
 
-    wide = enc[[c for c in enc_keep if c in enc.columns]].merge(
-        dec[[c for c in dec_keep if c in dec.columns]],
-        on=["SubjectID", "StimID"],
-        how="inner",
+    n_unscored = enc[DV_TOTAL].isna().sum()
+    if n_unscored > 0:
+        logger.warning(
+            f"  {n_unscored} encoding rows have no recall score — "
+            "check that recall_by_category.csv covers all participants/stimuli."
+        )
+
+    # ------------------------------------------------------------------
+    # Long-format table for dissociation model
+    # Stack prop_relations and prop_objects with a memory_type factor.
+    # Both DVs are already on a 0-1 scale so no further normalisation needed.
+    # ------------------------------------------------------------------
+    id_cols = (
+        ["SubjectID", "StimID", "svg_z_enc"]
+        + [c for c in ENC_COVARIATES if c in enc.columns]
+        + ["low_n_enc"]
     )
 
-    logger.info(f"  dec table:  {len(dec)} rows  ({n_unscored} unscored)")
-    logger.info(f"  enc table:  {len(enc)} rows")
-    logger.info(f"  wide table: {len(wide)} rows")
+    rel_rows = enc[[c for c in id_cols if c in enc.columns] + [DV_RELATIONS]].copy()
+    rel_rows = rel_rows.rename(columns={DV_RELATIONS: "score"})
+    rel_rows["memory_type"] = 1  # relations = 1
 
-    return {"dec": dec, "enc": enc, "wide": wide}
+    obj_rows = enc[[c for c in id_cols if c in enc.columns] + [DV_OBJECTS]].copy()
+    obj_rows = obj_rows.rename(columns={DV_OBJECTS: "score"})
+    obj_rows["memory_type"] = 0  # objects = 0
+
+    enc_long = pd.concat([rel_rows, obj_rows], ignore_index=True)
+
+    logger.info(f"  enc table:      {len(enc)} rows")
+    logger.info(
+        f"  enc_long table: {len(enc_long)} rows "
+        f"({rel_rows['score'].notna().sum()} relation, "
+        f"{obj_rows['score'].notna().sum()} object rows with data)"
+    )
+
+    return {"enc": enc, "enc_long": enc_long}
 
 
 # ---------------------------------------------------------------------------
-# Step 3: Hypothesis-specific exclusions
+# Step 3: Exclusions
 # ---------------------------------------------------------------------------
 
 
 def apply_exclusions(tables: dict) -> dict:
     """
-    Apply per-hypothesis trial-level exclusions and return filtered tables.
-
-    Returns
-    -------
-    dict with keys: dec_inter | dec_all | enc_inter | enc_all | replay
+    Remove low-n encoding trials (too few AOI transitions for reliable SVG).
     """
-    logger.info("Step 3: Applying hypothesis-specific exclusions ...")
+    logger.info("Step 3: Applying exclusions ...")
 
-    dec = tables["dec"]
-    wide = tables["wide"]
-
-    def _log(name, before, after, reason):
-        logger.info(
-            f"  {name}: {before} → {after} (removed {before - after}: {reason})"
-        )
-
-    # H1 / H2: filter decoding table on low_n_dec
-    n = len(dec)
-    dec_inter = dec[~dec["low_n_dec"]].copy()
-    dec_all = dec[~dec["low_n_dec"]].copy()
-    _log("dec_inter / dec_all", n, len(dec_inter), "low_n_dec=True")
-
-    # Exploratory enc → memory: filter wide table on low_n_enc
-    n_w = len(wide)
-    enc_inter = wide[~wide["low_n_enc"]].copy()
-    enc_all = wide[~wide["low_n_enc"]].copy()
-    _log("enc_inter / enc_all", n_w, len(enc_inter), "low_n_enc=True")
-
-    # Replay: additionally require n_shared >= MIN and non-null tau
-    replay = wide[
-        (~wide["low_n_dec"])
-        & (~wide["low_n_enc"])
-        & (wide["n_shared_enc_dec"] >= MIN_N_SHARED_REPLAY)
-    ].copy()
-    n_before_tau = len(replay)
-    replay = replay[replay["tau_enc_dec"].notna()].copy()
-    _log(
-        "replay",
-        n_w,
-        n_before_tau,
-        f"low_n_dec + low_n_enc + n_shared < {MIN_N_SHARED_REPLAY}",
-    )
-    _log("replay", n_before_tau, len(replay), "missing tau_enc_dec")
+    enc = tables["enc"]
+    before = len(enc)
+    enc_filtered = enc[~enc["low_n_enc"]].copy()
     logger.info(
-        f"  Note: MIN_N_SHARED_REPLAY={MIN_N_SHARED_REPLAY} (pilot). "
-        "Raise to 3 for final analysis."
+        f"  enc: {before} → {len(enc_filtered)} "
+        f"(removed {before - len(enc_filtered)}: low_n_enc=True)"
     )
 
-    return {
-        "dec_inter": dec_inter,
-        "dec_all": dec_all,
-        "enc_inter": enc_inter,
-        "enc_all": enc_all,
-        "replay": replay,
-    }
+    # Apply same exclusion to long table
+    enc_long = tables["enc_long"]
+    before_long = len(enc_long)
+    enc_long_filtered = enc_long[~enc_long["low_n_enc"]].copy()
+    logger.info(
+        f"  enc_long: {before_long} → {len(enc_long_filtered)} "
+        f"(removed {before_long - len(enc_long_filtered)}: low_n_enc=True)"
+    )
+
+    return {"enc": enc_filtered, "enc_long": enc_long_filtered}
 
 
 # ---------------------------------------------------------------------------
@@ -334,24 +260,16 @@ def apply_exclusions(tables: dict) -> dict:
 
 def standardise_tables(filtered: dict) -> dict:
     """
-    Z-score continuous predictors within each filtered table.
-    Adds `{col}_z` columns; originals are kept.
-    Global standardisation within table ensures the intercept in H1 models
-    equals the mean SVG score at an average-covariate trial.
+    Z-score continuous predictors within each table.
+    Adds {col}_z columns; originals are kept.
     """
     logger.info("Step 4: Standardising predictors ...")
 
-    cols_by_table = {
-        "dec_inter": ["svg_z_inter_dec"] + DEC_COVARIATES,
-        "dec_all": ["svg_z_all_dec"] + DEC_COVARIATES,
-        "enc_inter": ["svg_z_inter_enc", "lcs_enc_dec"] + ENC_COVARIATES,
-        "enc_all": ["svg_z_all_enc", "lcs_enc_dec"] + ENC_COVARIATES,
-        "replay": ["lcs_enc_dec", "tau_enc_dec"] + DEC_COVARIATES,
-    }
+    cols_to_standardise = ["svg_z_enc"] + ENC_COVARIATES
 
-    for key, cols in cols_by_table.items():
+    for key in ("enc", "enc_long"):
         df = filtered[key]
-        for col in cols:
+        for col in cols_to_standardise:
             if col not in df.columns:
                 continue
             mu, sd = df[col].mean(), df[col].std()

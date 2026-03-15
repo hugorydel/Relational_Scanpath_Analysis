@@ -40,7 +40,7 @@ from pipeline.misc import get_subject_ids, init_output_dirs, setup_logging
 from pipeline.module1_behavioral import process_subject as run_module1
 from pipeline.module2_eyetracking import process_subject as run_module2
 from pipeline.module3_features import process_subject as run_module3
-from pipeline.module4_analysis import (
+from pipeline.module_4 import (
     apply_exclusions,
     build_analysis_tables,
     fit_all_models,
@@ -211,19 +211,25 @@ def main():
     features_path = config.OUTPUT_FEATURES_DIR / "trial_features_all.csv"
     _concat_trial_features(features_path, subject_ids=subject_ids)
 
-    # Module 4: mixed-effects analysis across all participants
+    # Module 4: encoding SVG → memory recall (proportion DVs)
     if 4 in args.modules:
-        logger.info("--- Module 4: Mixed-effects analysis ---")
+        logger.info("--- Module 4: Encoding SVG → memory analysis ---")
+        scores_path = config.OUTPUT_DIR / "scoring" / "recall_by_category.csv"
         if not features_path.exists():
             logger.error(
                 f"  trial_features_all.csv not found at {features_path}. "
-                f"Run Module 3 first to generate it."
+                "Run Module 3 first."
+            )
+        elif not scores_path.exists():
+            logger.error(
+                f"  recall_by_category.csv not found at {scores_path}. "
+                "Run score_recall.py then aggregate_recall.py first."
             )
         else:
             try:
                 output_dir = config.OUTPUT_DIR / "analysis"
                 raw_df = load_data(features_path)
-                memory_scores = load_memory_scores(config.MEMORY_SCORES_FILE)
+                memory_scores = load_memory_scores(scores_path)
                 tables = build_analysis_tables(raw_df, memory_scores)
                 filtered = apply_exclusions(tables)
                 filtered = standardise_tables(filtered)

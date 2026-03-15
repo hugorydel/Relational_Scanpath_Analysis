@@ -1,12 +1,12 @@
 """
-pipeline/module4/output.py
-===========================
-Step 6: Summarise results and write all outputs.
+pipeline/module_4/output.py
+============================
+Step 6: Summarise results and write outputs.
 
   - _extract_coef_table : normalises coefficients from LMM or OLS result
-  - _h1_descriptives    : raw SVG descriptive stats string
-  - _forest_plot        : three-panel forest plot (H1 | H2 | Exploratory)
-  - summarise           : master function — writes CSVs, txt, and plot
+  - _descriptives       : proportion DV summary stats
+  - _forest_plot        : two-panel forest plot (H2 | Exploratory)
+  - summarise           : master function
 """
 
 import logging
@@ -16,29 +16,28 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
+import statsmodels.formula.api as smf
+from scipy import stats
 
-from .constants import DEC_COVARIATES, DEFAULT_SCORES_PATH, ENC_COVARIATES, MODEL_SPECS
-from .pilot_diagnostics import make_pilot_diagnostics
+from .constants import DV_OBJECTS, DV_RELATIONS, DV_TOTAL, ENC_COVARIATES, MODEL_SPECS
 
 logger = logging.getLogger(__name__)
 
-# Terms to skip in the forest plot (nuisance / variance components)
-_SKIP_TERMS = {f"{c}_z" for c in DEC_COVARIATES + ENC_COVARIATES} | {
+# Nuisance terms to skip in the forest plot
+_SKIP_TERMS = {f"{c}_z" for c in ENC_COVARIATES} | {
     "Group Var",
     "StimID Var",
+    "Intercept",
 }
 
-# Colour palette for confirmatory models; exploratory defaults to grey
 _PALETTE = {
-    "H1a_svg_inter": "#084594",
-    "H1b_svg_inter": "#4292c6",
-    "H1a_svg_all": "#084594",
-    "H1b_svg_all": "#4292c6",
-    "H2_relational_inter": "#99000d",
-    "H2_relational_all": "#ef3b2c",
-    "H2_objects_inter": "#a63603",
-    "H2_objects_all": "#fd8d3c",
+    "H1_svg_enc": "#636363",
+    "H2_total": "#2166ac",
+    "H2_relations": "#084594",
+    "H2_objects": "#a63603",
+    "EXP_dissociation": "#74c476",
 }
 
 
@@ -49,22 +48,21 @@ _PALETTE = {
 
 def _extract_coef_table(name: str, result) -> pd.DataFrame:
     """
-    Build a tidy coefficient DataFrame from either a MixedLMResults (LMM)
-    or an OLS RegressionResultsWrapper (pilot mode).
-
-    C(SubjectID) dummy rows are stripped — they are nuisance parameters and
-    would clutter the coefficients CSV and forest plot.
+    Build tidy coefficient DataFrame from LMM or OLS result.
+    C(SubjectID) and C(StimID) dummy rows are stripped.
     """
     ci = result.conf_int()
     params = result.params
-    mask = ~params.index.str.startswith("C(SubjectID)")
+    mask = ~params.index.str.startswith("C(SubjectID)") & ~params.index.str.startswith(
+        "C(StimID)"
+    )
     return pd.DataFrame(
         {
             "model": name,
             "term": params.index[mask],
             "coef": params.values[mask],
             "std_err": result.bse.values[mask],
-            "z": result.tvalues.values[mask],
+            "z_or_t": result.tvalues.values[mask],
             "p": result.pvalues.values[mask],
             "ci_lower": ci.iloc[:, 0].values[mask],
             "ci_upper": ci.iloc[:, 1].values[mask],
@@ -73,27 +71,145 @@ def _extract_coef_table(name: str, result) -> pd.DataFrame:
 
 
 # ---------------------------------------------------------------------------
-# H1 descriptives
+# Descriptives
 # ---------------------------------------------------------------------------
 
 
-def _h1_descriptives(filtered: dict) -> str:
-    lines = [
-        "\n=== H1 Descriptives: raw decoding SVG z-scores "
-        "(before covariate adjustment) ==="
-    ]
-    for key, col in [("dec_inter", "svg_z_inter_dec"), ("dec_all", "svg_z_all_dec")]:
-        df = filtered.get(key, pd.DataFrame())
-        vals = df[col].dropna() if col in df.columns else pd.Series(dtype=float)
-        if len(vals) == 0:
-            lines.append(f"  {col}: no data")
-        else:
+def _descriptives(filtered: dict) -> str:
+    enc = filtered.get("enc", pd.DataFrame())
+    lines = ["\n=== Encoding SVG and proportion DV descriptives ==="]
+
+    if "svg_z_enc" in enc.columns:
+        vals = enc["svg_z_enc"].dropna()
+        lines.append(
+            f"  svg_z_enc:     n={len(vals)}, mean={vals.mean():.3f}, "
+            f"sd={vals.std():.3f}, %>0={100*(vals>0).mean():.1f}%"
+        )
+
+    for col, label in [
+        (DV_TOTAL, "prop_total    "),
+        (DV_RELATIONS, "prop_relations"),
+        (DV_OBJECTS, "prop_objects  "),
+    ]:
+        if col in enc.columns:
+            vals = enc[col].dropna()
             lines.append(
-                f"  {col}: n={len(vals)}, mean={vals.mean():.3f}, "
-                f"sd={vals.std():.3f}, median={vals.median():.3f}, "
-                f"% > 0: {100*(vals > 0).mean():.1f}%"
+                f"  {label}: n={len(vals)}, mean={vals.mean():.3f}, "
+                f"sd={vals.std():.3f}, range=[{vals.min():.3f}, {vals.max():.3f}]"
             )
     return "\n".join(lines)
+
+
+# ---------------------------------------------------------------------------
+# Partial regression plot
+# ---------------------------------------------------------------------------
+
+_DV_SPECS = [
+    (DV_TOTAL, "Total recall\n(all correct nodes)", "#2166ac"),
+    (DV_RELATIONS, "Relational recall\n(action + spatial)", "#084594"),
+    (DV_OBJECTS, "Object recall\n(identity + attribute)", "#a63603"),
+]
+
+
+def _residualise(df: pd.DataFrame, target: str) -> pd.Series:
+    """
+    Return residuals of `target` after regressing on ENC_COVARIATES + C(SubjectID).
+    Rows with any NaN in required columns are set to NaN in output.
+    """
+    import warnings
+
+    req = [target] + [c for c in ENC_COVARIATES if c in df.columns]
+    mask = df[req].notna().all(axis=1)
+    out = pd.Series(np.nan, index=df.index)
+    sub = df[mask].copy()
+    if len(sub) < 10:
+        return out
+    cov_terms = " + ".join(f"{c}_z" for c in ENC_COVARIATES if f"{c}_z" in sub.columns)
+    formula = f"{target} ~ {cov_terms} + C(SubjectID)"
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        try:
+            res = smf.ols(formula, data=sub).fit()
+            out.loc[mask] = res.resid.values
+        except Exception as e:
+            logger.warning(f"  residualisation of {target} failed: {e}")
+    return out
+
+
+def _partial_regression_plot(enc: pd.DataFrame, output_path: Path) -> None:
+    """
+    Three-panel partial regression plot: encoding SVG → each proportion DV.
+    Both SVG and DV are residualised against ENC_COVARIATES + C(SubjectID)
+    before plotting, so the trend line shows the unique relationship
+    independent of nuisance variables.
+    """
+    svg_col = "svg_z_enc"
+    # Need z-scored covariates in the df
+    for c in ENC_COVARIATES:
+        if f"{c}_z" not in enc.columns and c in enc.columns:
+            mu, sd = enc[c].mean(), enc[c].std()
+            enc = enc.copy()
+            enc[f"{c}_z"] = (enc[c] - mu) / sd if sd > 0 else 0.0
+
+    svg_resid = _residualise(enc, svg_col)
+
+    fig, axes = plt.subplots(1, 3, figsize=(13, 4.5), sharey=False)
+
+    for ax, (dv_col, dv_label, colour) in zip(axes, _DV_SPECS):
+        if dv_col not in enc.columns:
+            ax.set_visible(False)
+            continue
+
+        dv_resid = _residualise(enc, dv_col)
+        x = svg_resid.values
+        y = dv_resid.values
+        mask = ~(np.isnan(x) | np.isnan(y))
+
+        ax.scatter(
+            x[mask], y[mask], color=colour, alpha=0.35, s=22, linewidths=0, zorder=3
+        )
+
+        if mask.sum() >= 5:
+            slope, intercept, r, p, _ = stats.linregress(x[mask], y[mask])
+            x_line = np.linspace(np.nanmin(x), np.nanmax(x), 100)
+            ax.plot(
+                x_line,
+                intercept + slope * x_line,
+                color=colour,
+                linewidth=2.0,
+                zorder=4,
+            )
+            sig = (
+                "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
+            )
+            ax.annotate(
+                f"r = {r:+.3f},  p = {p:.3f}  {sig}",
+                xy=(0.05, 0.93),
+                xycoords="axes fraction",
+                fontsize=8.5,
+                color=colour,
+                bbox=dict(boxstyle="round,pad=0.25", fc="white", alpha=0.8),
+            )
+
+        ax.axhline(0, color="grey", linewidth=0.6, linestyle="--", alpha=0.5)
+        ax.axvline(0, color="grey", linewidth=0.6, linestyle="--", alpha=0.5)
+        ax.set_xlabel("Encoding SVG\n(covariate-residualised)", fontsize=9)
+        ax.set_ylabel(f"{dv_label}\n(covariate-residualised)", fontsize=9)
+        ax.set_title(dv_label.replace("\n", " "), fontsize=10, fontweight="bold", pad=6)
+        ax.tick_params(labelsize=8)
+        ax.spines[["top", "right"]].set_visible(False)
+
+    fig.suptitle(
+        "Partial regression: Encoding SVG → memory recall (proportion DVs)\n"
+        "Covariates removed: n_fixations, aoi_prop, mean_salience_relational, SubjectID",
+        fontsize=9,
+        y=1.02,
+    )
+    plt.tight_layout()
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    plt.savefig(output_path, dpi=150, bbox_inches="tight")
+    plt.close()
+    logger.info(f"  Written → {output_path.name}")
 
 
 # ---------------------------------------------------------------------------
@@ -102,11 +218,11 @@ def _h1_descriptives(filtered: dict) -> str:
 
 
 def _forest_plot(coef_df: pd.DataFrame, output_path: Path) -> None:
-    """Three-panel forest plot: H1 intercepts | H2 | Exploratory."""
-    groups = ["H1", "H2", "Exploratory"]
-    fig, axes = plt.subplots(1, 3, figsize=(16, 6.5))
+    """Two-panel forest plot: H2 main effects | Exploratory."""
+    plot_groups = ["H2", "Exploratory"]
+    fig, axes = plt.subplots(1, 2, figsize=(13, 5.5))
 
-    for ax, group in zip(axes, groups):
+    for ax, group in zip(axes, plot_groups):
         to_plot = []
         for name, _, _, _, grp in MODEL_SPECS:
             if grp != group:
@@ -114,14 +230,10 @@ def _forest_plot(coef_df: pd.DataFrame, output_path: Path) -> None:
             sub = coef_df[coef_df["model"] == name].copy()
             if sub.empty:
                 continue
-            if group == "H1":
-                sub = sub[sub["term"].str.strip() == "Intercept"]
-            else:
-                sub = sub[
-                    ~sub["term"].str.strip().isin(_SKIP_TERMS)
-                    & ~sub["term"].str.strip().str.startswith("C(")
-                    & (sub["term"].str.strip() != "Intercept")
-                ]
+            sub = sub[
+                ~sub["term"].str.strip().isin(_SKIP_TERMS)
+                & ~sub["term"].str.strip().str.startswith("C(")
+            ]
             for _, r in sub.iterrows():
                 to_plot.append(
                     {
@@ -157,7 +269,7 @@ def _forest_plot(coef_df: pd.DataFrame, output_path: Path) -> None:
             )
             if sig:
                 ax.text(
-                    row["hi"] + 0.02,
+                    row["hi"] + 0.01,
                     y,
                     sig,
                     va="center",
@@ -167,15 +279,16 @@ def _forest_plot(coef_df: pd.DataFrame, output_path: Path) -> None:
 
         ax.axvline(0, color="black", linewidth=0.8, linestyle="--", alpha=0.6)
         ax.set_yticks(ypos)
-        ax.set_yticklabels([r["label"] for r in to_plot], fontsize=7.5)
-        ax.set_xlabel("β  (or intercept for H1)", fontsize=9)
+        ax.set_yticklabels([r["label"] for r in to_plot], fontsize=8)
+        ax.set_xlabel("β  (proportion units, 0-1 scale)", fontsize=9)
         ax.set_title(group, fontsize=11, fontweight="bold", pad=8)
         ax.spines[["top", "right"]].set_visible(False)
 
-    plt.suptitle(
-        "Module 4 results — pilot: OLS+C(SubjectID) | final: LMM+(1|SubjectID)+(1|StimID)",
-        fontsize=8,
-        y=1.01,
+    fig.suptitle(
+        "Module 4 — Encoding SVG → memory recall proportions\n"
+        "pilot: OLS+C(SubjectID) | final: LMM+(1|SubjectID)+(1|StimID)",
+        fontsize=9,
+        y=1.02,
     )
     plt.tight_layout()
     plt.savefig(output_path, dpi=150, bbox_inches="tight")
@@ -193,31 +306,23 @@ def summarise(
     filtered: dict,
     output_dir: Path,
     plot: bool = True,
-    features_path: "Path | None" = None,
-    scores_path: "Path | None" = None,
+    **kwargs,
 ) -> pd.DataFrame:
     """
-    Write all Module 4 outputs to output_dir:
-      analysis_dec_inter.csv, analysis_enc_all.csv, analysis_replay.csv
-      model_coefficients.csv
-      model_summaries.txt
-      forest_plot.png          (if plot=True and any models converged)
-      pilot_diagnostics.png    (always, if features_path and scores_path given)
-
+    Write all Module 4 outputs to output_dir.
     Returns the concatenated coefficient DataFrame.
     """
     logger.info("\nStep 6: Writing outputs ...")
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Analysis tables
-    for key in ("dec_inter", "enc_all", "replay"):
-        df = filtered.get(key, pd.DataFrame())
-        if not df.empty:
-            df.to_csv(output_dir / f"analysis_{key}.csv", index=False)
-    logger.info("  Written → analysis_*.csv")
+    enc = filtered.get("enc", pd.DataFrame())
+    if not enc.empty:
+        enc.to_csv(output_dir / "analysis_enc.csv", index=False)
+    logger.info("  Written → analysis_enc.csv")
 
     all_coefs = []
-    summary_lines = [_h1_descriptives(filtered)]
+    summary_lines = [_descriptives(filtered)]
 
     for group in ["H1", "H2", "Exploratory"]:
         summary_lines.append(f"\n\n{'#'*60}\n# {group} MODELS\n{'#'*60}")
@@ -227,37 +332,37 @@ def summarise(
                 continue
 
             entry = results.get(name)
-            result, _ = entry if entry else (None, False)
+            result, mode = entry if entry else (None, "skipped")
 
             summary_lines.append(f"\n{'='*60}\n{name}: {desc}\n{'='*60}")
             if result is None:
-                summary_lines.append("SKIPPED / FAILED\n")
+                summary_lines.append(f"SKIPPED / FAILED (mode={mode})\n")
                 continue
 
+            summary_lines.append(f"Mode: {mode}")
             coef_df = _extract_coef_table(name, result)
             all_coefs.append(coef_df)
             summary_lines.append(str(result.summary()))
 
-            # Append fit quality line (llf / R² depending on model type)
-            if hasattr(result, "llf") and result.llf is not None:
-                summary_lines.append(f"\nLog-likelihood: {result.llf:.4f}")
             if hasattr(result, "rsquared"):
                 summary_lines.append(f"R²: {result.rsquared:.4f}")
             if hasattr(result, "converged"):
                 summary_lines.append(f"Converged: {result.converged}")
 
-            # Log the focal term(s) to console
-            focus = (
+            # Log focal term(s)
+            focus_terms = (
                 ["Intercept"]
                 if group == "H1"
                 else [
                     t
                     for t in coef_df["term"].str.strip()
                     if t.endswith("_z")
-                    and t not in {f"{c}_z" for c in DEC_COVARIATES + ENC_COVARIATES}
+                    and t not in {f"{c}_z" for c in ENC_COVARIATES}
+                    or t == "memory_type"
+                    or "memory_type" in t
                 ]
             )
-            for term in focus:
+            for term in focus_terms:
                 row = coef_df[coef_df["term"].str.strip() == term]
                 if row.empty:
                     continue
@@ -269,7 +374,7 @@ def summarise(
                     else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
                 )
                 logger.info(
-                    f"    {term}: β={b:.4f} [{lo:.4f}, {hi:.4f}], p={p:.4f} {sig}"
+                    f"    {term}: β={b:.4f} [{lo:.4f}, {hi:.4f}], " f"p={p:.4f} {sig}"
                 )
 
     coef_all = pd.concat(all_coefs, ignore_index=True) if all_coefs else pd.DataFrame()
@@ -284,14 +389,7 @@ def summarise(
     if plot and not coef_all.empty:
         _forest_plot(coef_all, output_dir / "forest_plot.png")
 
-    if plot and features_path is not None and scores_path is not None:
-        try:
-            make_pilot_diagnostics(
-                features_path,
-                scores_path,
-                output_dir / "pilot_diagnostics.png",
-            )
-        except Exception as e:
-            logger.warning(f"  pilot_diagnostics skipped: {e}")
+    if plot and not enc.empty:
+        _partial_regression_plot(enc, output_dir / "partial_regression.png")
 
     return coef_all

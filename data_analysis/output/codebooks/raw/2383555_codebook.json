@@ -1,144 +1,171 @@
 [
   {
     "node_id": "2383555_001",
-    "concept": "boat",
+    "concept": "people",
+    "context": "individuals on the boat/raft",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "wooden boat",
-      "boat",
-      "raft",
-      "raft boat",
-      "makeshift raft"
+      "3 people on a raft",
+      "3 asian people on a raft",
+      "four people on boat",
+      "4 people on a boat",
+      "people on a raft made out of branches",
+      "there were four people on the boat"
     ]
   },
   {
     "node_id": "2383555_002",
-    "concept": "people",
-    "content_type": "object_identity",
+    "concept": "three",
+    "context": "count of people on the boat/raft",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct",
+    "status": "incorrect",
     "source_phrases": [
-      "3 people",
-      "3 asian people",
-      "four people",
-      "people"
+      "3 people on a raft",
+      "3 asian people on a raft",
+      "three women and a baby are in a raft",
+      "3 women and a baby on a boat"
     ]
   },
   {
     "node_id": "2383555_003",
-    "concept": "women",
-    "content_type": "object_identity",
+    "concept": "four",
+    "context": "count of people on the boat/raft",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "two women",
-      "2 women",
-      "three women",
-      "3 women",
-      "women",
-      "another women",
-      "woman",
-      "lady"
+      "four people on boat",
+      "4 people on a boat",
+      "there were four people on the boat",
+      "4 people on the boat"
     ]
   },
   {
     "node_id": "2383555_004",
+    "concept": "woman",
+    "context": "adult female person(s) on the boat/raft",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two women and one child",
+      "2 women",
+      "woman at the front",
+      "woman at the back",
+      "three women and a baby",
+      "3 women one child"
+    ]
+  },
+  {
+    "node_id": "2383555_005",
+    "concept": "two",
+    "context": "count of women on the boat/raft",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "two women and one child",
+      "2 women"
+    ]
+  },
+  {
+    "node_id": "2383555_006",
     "concept": "child",
+    "context": "young person on the boat/raft",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "one child",
-      "baby",
-      "childe",
-      "child",
-      "little boy",
-      "small child",
-      "girl",
-      "younger boy",
-      "little girl"
-    ]
-  },
-  {
-    "node_id": "2383555_005",
-    "concept": "three",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "3 people",
-      "3 asian people",
-      "three women",
-      "3 women"
-    ]
-  },
-  {
-    "node_id": "2383555_006",
-    "concept": "four",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "four people",
-      "4 people",
-      "4 people on a boat"
+      "holding a child",
+      "one child, lady at the back is rowing"
     ]
   },
   {
     "node_id": "2383555_007",
-    "concept": "front of boat",
-    "content_type": "spatial_relation",
+    "concept": "one",
+    "context": "count of child on the boat/raft",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "at the front of the boat",
-      "front of the boat",
-      "at the fron of the boat",
-      "at the front",
-      "woman in the front",
-      "front"
+      "one child",
+      "one holding a child"
     ]
   },
   {
     "node_id": "2383555_008",
-    "concept": "back of boat",
-    "content_type": "spatial_relation",
+    "concept": "boat",
+    "context": "watercraft carrying the people",
+    "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "at the back of the boat",
-      "at the back",
-      "back of raft",
-      "very back",
-      "back right of the boat",
-      "the very back"
+      "wooden boat",
+      "on a boat",
+      "rowing the boat",
+      "the boat was a makeshift raft"
     ]
   },
   {
     "node_id": "2383555_009",
-    "concept": "holding child",
+    "concept": "wooden",
+    "context": "material/appearance of the boat",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "wooden boat"
+    ]
+  },
+  {
+    "node_id": "2383555_010",
+    "concept": "front",
+    "context": "position at the front of the boat/raft",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "woman at the front of the boat",
+      "at the front was another woman",
+      "woman in the front"
+    ]
+  },
+  {
+    "node_id": "2383555_011",
+    "concept": "holding",
+    "context": "action of the woman at the front with the child",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "holding a childe",
-      "holding a child",
-      "holding a child",
+      "one holding a child",
       "holding a baby",
-      "holding on to him",
-      "carrying baby",
-      "sat in womans lap",
-      "holding small child",
-      "carrying the baby",
-      "holding a baby",
-      "holding a little girl"
+      "holding small child"
     ]
   },
   {
-    "node_id": "2383555_010",
+    "node_id": "2383555_012",
+    "concept": "back",
+    "context": "position at the back of the boat/raft",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "woman at the back of the boat",
+      "women at the back was rowing",
+      "lady at the back is rowing",
+      "woman at the very back rowing"
+    ]
+  },
+  {
+    "node_id": "2383555_013",
     "concept": "rowing",
+    "context": "action performed by the person at the back of the boat/raft",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
@@ -146,30 +173,133 @@
       "rowing the boat",
       "was rowing",
       "one rowing",
-      "the women at the back was rowing",
-      "woman at the back is rowing the boat",
-      "holding paddle and was rowing",
-      "another women rowing the boat",
-      "woman at the very back rowing",
-      "paddeling",
-      "lady at the back is rowing",
-      "was rowing the boat"
-    ]
-  },
-  {
-    "node_id": "2383555_011",
-    "concept": "paddle",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "holding paddle",
       "paddeling"
     ]
   },
   {
-    "node_id": "2383555_012",
+    "node_id": "2383555_014",
+    "concept": "raft",
+    "context": "watercraft carrying the people",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "3 people on a raft",
+      "on a raft",
+      "a raft through a stream",
+      "makeshift raft"
+    ]
+  },
+  {
+    "node_id": "2383555_015",
+    "concept": "baby",
+    "context": "young child being held/carried on the boat/raft",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "there was a baby",
+      "carrying baby",
+      "holding a baby",
+      "3 women and a baby"
+    ]
+  },
+  {
+    "node_id": "2383555_016",
+    "concept": "asian",
+    "context": "appearance/ethnicity descriptor for the people on the raft",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "3 asian people on a raft"
+    ]
+  },
+  {
+    "node_id": "2383555_017",
+    "concept": "carrying",
+    "context": "action of the front woman with the baby/child",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one carrying baby",
+      "the woman in the front was carrying the baby"
+    ]
+  },
+  {
+    "node_id": "2383555_018",
+    "concept": "boy",
+    "context": "child on the boat/raft",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "little boy sat in womans lap",
+      "younger boy"
+    ]
+  },
+  {
+    "node_id": "2383555_019",
+    "concept": "little",
+    "context": "size/age descriptor for the child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "little boy",
+      "little girl"
+    ]
+  },
+  {
+    "node_id": "2383555_020",
+    "concept": "sitting",
+    "context": "posture of the child in the woman's lap",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "sat in womans lap"
+    ]
+  },
+  {
+    "node_id": "2383555_021",
+    "concept": "lap",
+    "context": "body area where the child is sitting",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "sat in womans lap"
+    ]
+  },
+  {
+    "node_id": "2383555_022",
+    "concept": "branch",
+    "context": "material composing the raft",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "raft made out of branches"
+    ]
+  },
+  {
+    "node_id": "2383555_023",
+    "concept": "made out of",
+    "context": "relation between the raft and its branch/stick material",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "raft made out of branches",
+      "raft boat made with sticks"
+    ]
+  },
+  {
+    "node_id": "2383555_024",
     "concept": "river",
+    "context": "water setting around the boat/raft",
     "content_type": "scene_gist",
     "evidence_type": "literal",
     "status": "correct",
@@ -180,49 +310,9 @@
     ]
   },
   {
-    "node_id": "2383555_013",
-    "concept": "stream",
-    "content_type": "scene_gist",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "through a stream"
-    ]
-  },
-  {
-    "node_id": "2383555_014",
-    "concept": "water",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "the water was not very clear"
-    ]
-  },
-  {
-    "node_id": "2383555_015",
-    "concept": "wooden",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "wooden boat"
-    ]
-  },
-  {
-    "node_id": "2383555_016",
-    "concept": "made of branches/sticks",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "made out of branches",
-      ",ade with sticks"
-    ]
-  },
-  {
-    "node_id": "2383555_017",
+    "node_id": "2383555_025",
     "concept": "hat",
+    "context": "item worn by one or more people on the boat/raft",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
@@ -233,8 +323,9 @@
     ]
   },
   {
-    "node_id": "2383555_018",
-    "concept": "triangle-shaped",
+    "node_id": "2383555_026",
+    "concept": "triangle",
+    "context": "shape descriptor for the hat",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
@@ -243,8 +334,31 @@
     ]
   },
   {
-    "node_id": "2383555_019",
-    "concept": "left of rower",
+    "node_id": "2383555_027",
+    "concept": "small",
+    "context": "size descriptor for the child being held",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "small child"
+    ]
+  },
+  {
+    "node_id": "2383555_028",
+    "concept": "paddle",
+    "context": "object held/used by the person rowing at the back",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding paddle"
+    ]
+  },
+  {
+    "node_id": "2383555_029",
+    "concept": "left",
+    "context": "position of another woman to the left of the rower",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
@@ -253,50 +367,43 @@
     ]
   },
   {
-    "node_id": "2383555_020",
-    "concept": "back right of boat",
-    "content_type": "spatial_relation",
+    "node_id": "2383555_030",
+    "concept": "girl",
+    "context": "person described as female child on the boat/raft",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct",
+    "status": "incorrect",
     "source_phrases": [
-      "at the back right of the boat"
+      "a girl at the back",
+      "little girl"
     ]
   },
   {
-    "node_id": "2383555_021",
-    "concept": "behind front woman",
-    "content_type": "spatial_relation",
+    "node_id": "2383555_031",
+    "concept": "water",
+    "context": "body of water around the boat/raft",
+    "content_type": "scene_gist",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "the woman behind is holding on to him",
-      "behind them"
+      "the water was not very clear"
     ]
   },
   {
-    "node_id": "2383555_022",
-    "concept": "in front of rower",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "infront of the woman rowing the boat"
-    ]
-  },
-  {
-    "node_id": "2383555_023",
-    "concept": "muddy/unclear water",
+    "node_id": "2383555_032",
+    "concept": "not very clear",
+    "context": "appearance of the water",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "the water was not very clear",
-      "river that looked muddy"
+      "the water was not very clear"
     ]
   },
   {
-    "node_id": "2383555_024",
-    "concept": "rainy weather",
+    "node_id": "2383555_033",
+    "concept": "rainy",
+    "context": "weather condition in the scene",
     "content_type": "scene_gist",
     "evidence_type": "speculative",
     "status": "incorrect",
@@ -305,48 +412,65 @@
     ]
   },
   {
-    "node_id": "2383555_025",
-    "concept": "embankment",
-    "content_type": "object_identity",
+    "node_id": "2383555_034",
+    "concept": "stream",
+    "context": "water setting around the raft",
+    "content_type": "scene_gist",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "next to an embankment"
+      "a raft through a stream"
     ]
   },
   {
-    "node_id": "2383555_026",
-    "concept": "next to embankment",
+    "node_id": "2383555_035",
+    "concept": "behind",
+    "context": "position of the woman behind the child at the front",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "next to an embankment"
+      "the woman behind is holding on to him",
+      "behind them and infront of the woman rowing"
     ]
   },
   {
-    "node_id": "2383555_027",
-    "concept": "asian",
-    "content_type": "object_attribute",
-    "evidence_type": "speculative",
-    "status": "incorrect",
+    "node_id": "2383555_036",
+    "concept": "holding on",
+    "context": "action of the woman behind the child at the front",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
     "source_phrases": [
-      "asian"
+      "the woman behind is holding on to him"
     ]
   },
   {
-    "node_id": "2383555_028",
+    "node_id": "2383555_037",
     "concept": "family",
+    "context": "social grouping of the people on the raft",
     "content_type": "scene_gist",
     "evidence_type": "latent",
     "status": "incorrect",
     "source_phrases": [
-      "family"
+      "family is on a raft boat"
     ]
   },
   {
-    "node_id": "2383555_029",
+    "node_id": "2383555_038",
+    "concept": "stick",
+    "context": "material composing the raft",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "made with sticks"
+    ]
+  },
+  {
+    "node_id": "2383555_039",
     "concept": "man",
+    "context": "adult male person on the boat/raft",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "incorrect",
@@ -355,13 +479,59 @@
     ]
   },
   {
-    "node_id": "2383555_030",
-    "concept": "not fully in shot",
+    "node_id": "2383555_040",
+    "concept": "back right",
+    "context": "position of the paddling woman on the boat",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a woman at the back right of the boat"
+    ]
+  },
+  {
+    "node_id": "2383555_041",
+    "concept": "wearing",
+    "context": "relation of people to hats in the boat scene",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "wearing a hat",
+      "wearing hats"
+    ]
+  },
+  {
+    "node_id": "2383555_042",
+    "concept": "muddy",
+    "context": "appearance of the river/water",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "another person who was not in shot"
+      "river that looked muddy"
+    ]
+  },
+  {
+    "node_id": "2383555_043",
+    "concept": "next to",
+    "context": "spatial relation between the raft and the embankment",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "they were next to an embankment"
+    ]
+  },
+  {
+    "node_id": "2383555_044",
+    "concept": "embankment",
+    "context": "land edge beside the river/raft",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "an embankment"
     ]
   }
 ]

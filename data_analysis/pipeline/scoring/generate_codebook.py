@@ -61,7 +61,7 @@ logger = logging.getLogger(__name__)
 DEFAULT_MODEL = "gpt-5.4"
 MAX_RETRIES = 5
 INITIAL_RETRY_DELAY = 1.0
-DEFAULT_CONCURRENCY = 5
+DEFAULT_CONCURRENCY = 30
 
 OUTPUT_DIR = config.OUTPUT_DIR / "codebooks" / "raw"
 RESULTS_PATH = config.OUTPUT_DIR / "codebooks" / "results.jsonl"
@@ -86,12 +86,17 @@ SYSTEM_PROMPT = """You are an expert data annotator for a cognitive psychology s
 Given a set of participant text descriptions of a single image, extract an exhaustive, deduplicated list of every distinct concept mentioned across all responses.
 
 Rules for extraction:
-- Do NOT combine distinct items into one entry (e.g. "woman in green shirt" = two concepts: "woman" and "green shirt").
+- STRICT ATOMICITY: Do NOT combine distinct items into one entry. 
+  - NEVER output a number and a noun together. "Two dogs" MUST be split into "two" (object_attribute) and "dog" (object_identity).
+  - NEVER output an adjective and a noun together. "Green shirt" MUST be split into "green" (object_attribute) and "shirt" (object_identity).
+  - The `object_identity` field must contain a noun ONLY. Adjectives and materials are forbidden in this field.
 - DO merge surface variations of the same concept (e.g. "smelling", "sniffing", "smell" -> one entry).
 - Extract only concepts that are genuinely memory-relevant; ignore filler phrases like "there is" or "I remember".
-- List source_phrases: the exact words/phrases from the responses that map to this concept.
 
 Classify each concept using this strict schema:
+
+context (string):
+  A brief description of what the concept modifies, relates to, or acts upon in the scene, so we know exactly how it was used. (e.g. "modifies the bag being held", "action performed by the woman", "reaching for the apple").
 
 content_type (choose exactly one):
   object_identity  - Distinct physical entities / nouns (e.g. "woman", "dog", "surfboard")
@@ -102,7 +107,7 @@ content_type (choose exactly one):
 
 evidence_type (choose exactly one):
   literal      - Relies strictly on visible pixels; no synthesis required. Basic biology, geometry,
-                 colour, physical movement. (e.g. "woman", "red", "two people touching")
+                 colour, physical movement. (e.g. "woman", "red", "two", "touching")
   latent       - Pragmatic shortcut describing a highly probable visual reality. Synthesises visible
                  cues into standard social or functional labels. Reasonable inference, but not
                  directly pixel-readable. (e.g. "mother and daughter" inferred from age gap and
@@ -135,6 +140,7 @@ RESPONSE_SCHEMA = {
                         "properties": {
                             "node_id": {"type": "string"},
                             "concept": {"type": "string"},
+                            "context": {"type": "string"},
                             "content_type": {
                                 "type": "string",
                                 "enum": sorted(VALID_CONTENT_TYPES),
@@ -155,6 +161,7 @@ RESPONSE_SCHEMA = {
                         "required": [
                             "node_id",
                             "concept",
+                            "context",
                             "content_type",
                             "evidence_type",
                             "status",
@@ -286,7 +293,6 @@ class CodebookScorer:
                         {"role": "user", "content": user_prompt},
                     ],
                     response_format=RESPONSE_SCHEMA,
-                    reasoning_effort="xhigh",
                 )
                 raw = response.choices[0].message.content
                 parsed = json.loads(raw)

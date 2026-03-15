@@ -2,183 +2,234 @@
   {
     "node_id": "2362704_001",
     "concept": "bear",
+    "context": "animal subjects in the scene",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "bears",
-      "black bears",
-      "brown bears"
+      "two bears eating a pumpkin",
+      "bears eating the pumpkins",
+      "two bears eating something which looks like a pumpkin",
+      "two black bears eating pumpkins",
+      "two bears eating pumpkins brow bears",
+      "two black bears are laying down and eating pumpkins",
+      "two bears in the middle of eating pumpkins",
+      "two brown bears eating pumpkins sitting down",
+      "two bears eating pumkins",
+      "two black bears on ground eating pumpkins",
+      "two black bears sit on the ground eating two pumpkins",
+      "2 black bears are eating some pumpkis",
+      "there were 2 black bears eating pumpkins",
+      "2 black bears eating pumpkin",
+      "2 bears, eating pumpkins. black bears."
     ]
   },
   {
     "node_id": "2362704_002",
     "concept": "two",
+    "context": "count of the bears",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "two bears",
-      "2 black bears",
-      "there appears to be two pumpkins",
-      "eating two pumpkins"
+      "two bears eating a pumpkin",
+      "two black bears",
+      "two bears eating something which looks like a pumpkin",
+      "two black bears eating pumpkins",
+      "two bears eating pumpkins brow bears",
+      "two black bears are laying down and eating pumpkins",
+      "two bears in the middle of eating pumpkins",
+      "two brown bears eating pumpkins sitting down",
+      "two bears eating pumkins",
+      "two black bears on ground eating pumpkins",
+      "two black bears sit on the ground eating two pumpkins",
+      "2 black bears are eating some pumpkis",
+      "there were 2 black bears eating pumpkins",
+      "2 black bears eating pumpkin",
+      "2 bears, eating pumpkins."
     ]
   },
   {
     "node_id": "2362704_003",
+    "concept": "pumpkin",
+    "context": "food object being eaten by the bears",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two bears eating a pumpkin",
+      "half eaten pumpkin",
+      "bears eating the pumpkins",
+      "two bears eating something which looks like a pumpkin, something orange",
+      "two black bears eating pumpkins",
+      "two bears eating pumpkins brow bears",
+      "two black bears are laying down and eating pumpkins",
+      "two bears in the middle of eating pumpkins",
+      "two brown bears eating pumpkins sitting down",
+      "two bears eating pumkins",
+      "two black bears on ground eating pumpkins",
+      "two black bears sit on the ground eating two pumpkins which are torn apart",
+      "2 black bears are eating some pumpkis. there appears to be two pumpkins",
+      "there were 2 black bears eating pumpkins",
+      "2 black bears eating pumpkin",
+      "2 bears, eating pumpkins.",
+      "one on right had mouth in pumpkin"
+    ]
+  },
+  {
+    "node_id": "2362704_004",
+    "concept": "eating",
+    "context": "action performed by the bears on the pumpkin",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two bears eating a pumpkin",
+      "bears eating the pumpkins",
+      "two bears eating something which looks like a pumpkin",
+      "two black bears eating pumpkins",
+      "two bears eating pumpkins brow bears",
+      "two black bears are laying down and eating pumpkins",
+      "two bears in the middle of eating pumpkins",
+      "two brown bears eating pumpkins sitting down",
+      "two bears eating pumkins",
+      "two black bears on ground eating pumpkins",
+      "two black bears sit on the ground eating two pumpkins",
+      "2 black bears are eating some pumpkis",
+      "there were 2 black bears eating pumpkins",
+      "2 black bears eating pumpkin",
+      "2 bears, eating pumpkins."
+    ]
+  },
+  {
+    "node_id": "2362704_005",
     "concept": "black",
+    "context": "colour attributed to the bears",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "two black bears",
-      "black bears",
-      "2 black bears"
-    ]
-  },
-  {
-    "node_id": "2362704_004",
-    "concept": "brown",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "incorrect",
-    "source_phrases": [
-      "brow bears",
-      "two brown bears"
-    ]
-  },
-  {
-    "node_id": "2362704_005",
-    "concept": "eat",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "eating a pumpkin",
-      "eating the pumpkins",
-      "eating something which looks like a pumpkin",
-      "eating pumpkins",
-      "are eating pumpkins",
-      "in the middle of eating pumpkins",
-      "eating pumkins",
-      "on ground eating pumpkins",
-      "sit on the ground eating two pumpkins",
-      "are eating some pumpkis",
-      "one bear is eating his",
-      "had mouth in pumpkin"
+      "two black bears eating pumpkins",
+      "two black bears are laying down and eating pumpkins",
+      "two black bears on ground eating pumpkins",
+      "two black bears sit on the ground eating two pumpkins",
+      "2 black bears are eating some pumpkis",
+      "there were 2 black bears eating pumpkins",
+      "2 black bears eating pumpkin",
+      "2 bears, eating pumpkins. black bears."
     ]
   },
   {
     "node_id": "2362704_006",
-    "concept": "pumpkin",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "a pumpkin",
-      "pumpkins",
-      "something which looks like a pumpkin",
-      "something orange",
-      "half eaten pumpkin",
-      "two pumpkins",
-      "pumpkis",
-      "pumkins",
-      "pumpkin"
-    ]
-  },
-  {
-    "node_id": "2362704_007",
-    "concept": "half eaten/torn apart",
+    "concept": "brown",
+    "context": "colour attributed to the bears",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "half eaten pumpkin",
-      "torn apart"
+      "two bears eating pumpkins brow bears",
+      "two brown bears eating pumpkins sitting down"
+    ]
+  },
+  {
+    "node_id": "2362704_007",
+    "concept": "half-eaten",
+    "context": "state of the pumpkin being eaten",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "half eaten pumpkin"
     ]
   },
   {
     "node_id": "2362704_008",
-    "concept": "look away/look around",
-    "content_type": "action_relation",
+    "concept": "orange",
+    "context": "colour attributed to the pumpkin-like object",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "one is looking away",
-      "the other is looking around a little"
+      "something orange"
     ]
   },
   {
     "node_id": "2362704_009",
-    "concept": "lie/lay down",
+    "concept": "looking away",
+    "context": "gaze direction of one bear away from the viewer or central action",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "are laying down",
-      "lying on the ground"
+      "one is looking away"
     ]
   },
   {
     "node_id": "2362704_010",
-    "concept": "sit",
+    "concept": "lying",
+    "context": "body posture of the bears on the ground",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "sitting down",
-      "sit on the ground",
-      "other sat next to it"
+      "two black bears are laying down",
+      "two bears eating pumkins and lying on the ground"
     ]
   },
   {
     "node_id": "2362704_011",
-    "concept": "ground",
-    "content_type": "scene_gist",
+    "concept": "sitting",
+    "context": "body posture of the bears while eating",
+    "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "lying on the ground",
-      "on ground",
-      "sit on the ground"
+      "two brown bears eating pumpkins sitting down",
+      "two black bears sit on the ground",
+      "other sat next to it"
     ]
   },
   {
     "node_id": "2362704_012",
-    "concept": "look toward camera",
-    "content_type": "action_relation",
-    "evidence_type": "latent",
+    "concept": "left",
+    "context": "position of one bear relative to the other bears",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "one to the left is looking at camera",
-      "one was looking toward the camera",
-      "one was looking towards the camera"
+      "one to the left is looking at camera"
     ]
   },
   {
     "node_id": "2362704_013",
-    "concept": "left",
+    "concept": "right",
+    "context": "position of one bear relative to the other bears",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "one to the left"
+      "one on the right is lookign at pumpkin",
+      "one on right had mouth in pumpkin"
     ]
   },
   {
     "node_id": "2362704_014",
-    "concept": "right",
-    "content_type": "spatial_relation",
+    "concept": "looking at camera",
+    "context": "gaze direction of one bear toward the viewer",
+    "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "one on the right",
-      "one on right"
+      "one to the left is looking at camera",
+      "one was looking toward the camera",
+      "there were 2 black bears eating pumpkins. one was looking towards the camera."
     ]
   },
   {
     "node_id": "2362704_015",
-    "concept": "look at pumpkin",
+    "concept": "looking at pumpkin",
+    "context": "gaze direction of one bear toward the pumpkin",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
@@ -188,22 +239,83 @@
   },
   {
     "node_id": "2362704_016",
-    "concept": "next to",
-    "content_type": "spatial_relation",
+    "concept": "ground",
+    "context": "surface beneath the bears",
+    "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "sat next to it"
+      "lying on the ground",
+      "two black bears on ground eating pumpkins",
+      "two black bears sit on the ground"
     ]
   },
   {
     "node_id": "2362704_017",
-    "concept": "mouth in pumpkin",
+    "concept": "on",
+    "context": "spatial relation of the bears relative to the ground",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "had mouth in pumpkin"
+      "lying on the ground",
+      "two black bears on ground eating pumpkins",
+      "two black bears sit on the ground"
+    ]
+  },
+  {
+    "node_id": "2362704_018",
+    "concept": "torn apart",
+    "context": "condition of the pumpkins",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two pumpkins which are torn apart"
+    ]
+  },
+  {
+    "node_id": "2362704_019",
+    "concept": "looking around",
+    "context": "head or gaze movement of one bear scanning away from the pumpkin",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the other is looking around a little"
+    ]
+  },
+  {
+    "node_id": "2362704_020",
+    "concept": "mouth",
+    "context": "body part of the bear placed into the pumpkin",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one on right had mouth in pumpkin"
+    ]
+  },
+  {
+    "node_id": "2362704_021",
+    "concept": "in",
+    "context": "spatial relation of the bear's mouth relative to the pumpkin",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "mouth in pumpkin"
+    ]
+  },
+  {
+    "node_id": "2362704_022",
+    "concept": "next to",
+    "context": "spatial relation between the two bears",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "other sat next to it"
     ]
   }
 ]

@@ -1,38 +1,86 @@
 [
   {
     "node_id": "2348899_001",
-    "concept": "four people",
+    "concept": "four",
+    "context": "count of people in the scene",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "4 people",
-      "three men one woman",
-      "three men and one woman",
       "there were four people",
-      "4 people in photo",
-      "there were 4 people pictures"
+      "4 people in photo"
     ]
   },
   {
     "node_id": "2348899_002",
-    "concept": "man",
+    "concept": "people",
+    "context": "human figures present in the scene",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "a man at the center of the photograph",
-      "man sitting",
-      "man with pink and white tie",
-      "a man sitting down has a tie on",
-      "a man had a tie on",
-      "a man sat in the middle",
-      "a man with a tie on"
+      "4 people",
+      "there were four people",
+      "people in this picture"
     ]
   },
   {
     "node_id": "2348899_003",
+    "concept": "three",
+    "context": "count of men in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "three men",
+      "3 guys",
+      "3 men"
+    ]
+  },
+  {
+    "node_id": "2348899_004",
+    "concept": "man",
+    "context": "male people present in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "man",
+      "men",
+      "guys"
+    ]
+  },
+  {
+    "node_id": "2348899_005",
+    "concept": "one",
+    "context": "count of woman in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one woman",
+      "a woman",
+      "a girl"
+    ]
+  },
+  {
+    "node_id": "2348899_006",
+    "concept": "woman",
+    "context": "female person on the right side of the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "woman",
+      "girl",
+      "women"
+    ]
+  },
+  {
+    "node_id": "2348899_007",
     "concept": "center",
+    "context": "location of the main seated man in the scene",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
@@ -42,194 +90,173 @@
     ]
   },
   {
-    "node_id": "2348899_004",
-    "concept": "three men",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "two toher men",
-      "3 guys",
-      "2 of his male friends",
-      "three men",
-      "the three men",
-      "two other men",
-      "3 men",
-      "2 more men",
-      "2 men"
-    ]
-  },
-  {
-    "node_id": "2348899_005",
-    "concept": "woman",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "a woman",
-      "a girl",
-      "one woman",
-      "women",
-      "blonde girl"
-    ]
-  },
-  {
-    "node_id": "2348899_006",
-    "concept": "left of the central man",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "on the left side of the man with the pink tie",
-      "standing next to him",
-      "with two other men stood to the left of him",
-      "two men to left of him",
-      "2 other men standing to the left of the man wearing the tie",
-      "3 men on left",
-      "to the left were 2 men"
-    ]
-  },
-  {
-    "node_id": "2348899_007",
-    "concept": "right of the central man",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "on thr roght of the man at the center",
-      "she is to the right of the men",
-      "a women is standing over him to the right",
-      "there is a blonde girl to the right of him",
-      "a woman to the right of him",
-      "one woman on right",
-      "there was a woman on the right"
-    ]
-  },
-  {
     "node_id": "2348899_008",
-    "concept": "touching the tie",
-    "content_type": "action_relation",
+    "concept": "left",
+    "context": "location of the other men relative to the main man",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "the woman is touching the pink tie",
-      "a girl touching the tie",
-      "a woman touching his pink and white tie",
-      "woman touching it",
-      "shes playing with mans pink and whote stripe tie",
-      "the woman is touching the third man's pink and white tie",
-      "reaching to hold mans pink and white tie",
-      "reaching right for mans tie",
-      "a woman was touching the guys tie",
-      "woman touching tie",
-      "is touchin ghte tie",
-      "a woman is touching his tie",
-      "touching his tie",
-      "holdinbg the tie",
-      "which is being touched by the woman",
-      "she was reaching over a table to touch the pink tie"
+      "on the left side",
+      "to the left of him",
+      "3 men on left"
     ]
   },
   {
     "node_id": "2348899_009",
+    "concept": "right",
+    "context": "location of the woman relative to the main man",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the right",
+      "to the right of him",
+      "one woman on right"
+    ]
+  },
+  {
+    "node_id": "2348899_010",
+    "concept": "touching",
+    "context": "action performed by the woman on the man's tie",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "touching the pink tie",
+      "touching his pink and white tie",
+      "is being touched by the woman"
+    ]
+  },
+  {
+    "node_id": "2348899_011",
     "concept": "tie",
+    "context": "item around the main man's neck",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "pink tie",
       "tie",
-      "pink and white tie",
-      "stripe tie",
-      "tie on",
-      "another tie",
-      "pink ti"
+      "striped pink and white tie"
     ]
   },
   {
-    "node_id": "2348899_010",
+    "node_id": "2348899_012",
+    "concept": "neck",
+    "context": "body part where the tie is worn",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the mans neck",
+      "around his neck"
+    ]
+  },
+  {
+    "node_id": "2348899_013",
     "concept": "pink",
+    "context": "color of the tie being touched",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "pink tie",
-      "pink and white tie",
-      "pink and stripey",
-      "loose pink tie",
-      "striped pink and white tie"
+      "pink and white tie"
     ]
   },
   {
-    "node_id": "2348899_011",
+    "node_id": "2348899_014",
     "concept": "white",
+    "context": "color of the tie being touched",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "pink and white tie",
-      "pink and white stripped tie",
-      "black and white stripey shirt"
+      "white tie"
     ]
   },
   {
-    "node_id": "2348899_012",
+    "node_id": "2348899_015",
     "concept": "striped",
+    "context": "pattern of the tie being touched",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "it is stripey",
-      "pink and white tie",
-      "whote stripe tie",
       "stripey",
+      "stripe tie",
       "striped pink and white tie"
     ]
   },
   {
-    "node_id": "2348899_013",
+    "node_id": "2348899_016",
+    "concept": "chatting",
+    "context": "action among the men on the left side of the scene",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "3 guys chatting",
+      "three men were talking to each other",
+      "2 men talking to a man"
+    ]
+  },
+  {
+    "node_id": "2348899_017",
     "concept": "sitting",
+    "context": "posture of the main man in the center",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "a man sitting",
       "one was sitting",
-      "one sat",
-      "a man sitting down",
-      "he is sat down on a chair",
-      "one sitting down",
-      "a man sat in the middle"
+      "man sat in the middle"
     ]
   },
   {
-    "node_id": "2348899_014",
+    "node_id": "2348899_018",
     "concept": "standing",
+    "context": "posture of the woman and/or the men beside the seated man",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "2 of his male friends standing next to him",
-      "there are 2 more men",
-      "a women is standing over him to the right",
+      "standing next to him",
+      "woman is standing over him",
       "2 other men standing to the left"
     ]
   },
   {
-    "node_id": "2348899_015",
-    "concept": "talking/chatting",
+    "node_id": "2348899_019",
+    "concept": "playing",
+    "context": "action describing the woman manipulating the man's tie",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "shes playing with mans pink and whote stripe tie"
+    ]
+  },
+  {
+    "node_id": "2348899_020",
+    "concept": "reaching",
+    "context": "action of the woman extending toward the man's tie",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "3 guys chatting",
-      "three men were talking to each other",
-      "2 men talking to a man with a tie on"
+      "women reaching to hold mans pink and white tie",
+      "reaching right for mans tie",
+      "reaching over a table to touch the pink tie"
     ]
   },
   {
-    "node_id": "2348899_016",
+    "node_id": "2348899_021",
     "concept": "pub",
+    "context": "overall setting of the scene",
     "content_type": "scene_gist",
     "evidence_type": "speculative",
     "status": "incorrect",
@@ -238,20 +265,35 @@
     ]
   },
   {
-    "node_id": "2348899_017",
-    "concept": "blonde hair",
+    "node_id": "2348899_022",
+    "concept": "blonde",
+    "context": "hair color attributed to people in the scene",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "a blonde girl",
       "the man with the tie on had blonde hair",
-      "the man to the left of him had blonde hair"
+      "had blonde hair"
     ]
   },
   {
-    "node_id": "2348899_018",
+    "node_id": "2348899_023",
+    "concept": "looking",
+    "context": "gaze direction of people toward the main man or away from the woman",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two men to left of him looking",
+      "the man sat down is looking at",
+      "was not looking at her"
+    ]
+  },
+  {
+    "node_id": "2348899_024",
     "concept": "pointing",
+    "context": "gesture by the men to the left toward the main man",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
@@ -260,28 +302,9 @@
     ]
   },
   {
-    "node_id": "2348899_019",
-    "concept": "drinking",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "they;re all drinking"
-    ]
-  },
-  {
-    "node_id": "2348899_020",
-    "concept": "laughing",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "laughing"
-    ]
-  },
-  {
-    "node_id": "2348899_021",
+    "node_id": "2348899_025",
     "concept": "background",
+    "context": "location of two men relative to the main seated man",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
@@ -290,18 +313,20 @@
     ]
   },
   {
-    "node_id": "2348899_022",
+    "node_id": "2348899_026",
     "concept": "shirt",
+    "context": "garment worn by one of the men on the left",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "shirt"
+      "one is wearing a black and white stripey shirt"
     ]
   },
   {
-    "node_id": "2348899_023",
+    "node_id": "2348899_027",
     "concept": "black",
+    "context": "color of the shirt worn by one man on the left",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
@@ -310,76 +335,102 @@
     ]
   },
   {
-    "node_id": "2348899_024",
-    "concept": "chair",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "chair"
-    ]
-  },
-  {
-    "node_id": "2348899_025",
-    "concept": "second tie",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "another tie",
-      "he out on another one",
-      "had 1 tie already on and a pink ti that was losely around his neck on top of the other tie"
-    ]
-  },
-  {
-    "node_id": "2348899_026",
-    "concept": "loose/untied",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "wasn't tied yet",
-      "loose pink tie",
-      "was losely around his neck"
-    ]
-  },
-  {
-    "node_id": "2348899_027",
-    "concept": "around the neck",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "on the mans neck",
-      "around his neck",
-      "around his neck on top of the other tie"
-    ]
-  },
-  {
     "node_id": "2348899_028",
-    "concept": "wearing the tie",
-    "content_type": "action_relation",
+    "concept": "chair",
+    "context": "object the main man is sitting on",
+    "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "the man is wearing it",
-      "wearing a pink and white stripped tie",
-      "is wearing a striped pink and white tie"
+      "he is sat down on a chair"
     ]
   },
   {
     "node_id": "2348899_029",
-    "concept": "dark hair",
+    "concept": "another",
+    "context": "additional count/property of a second tie on the main man",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "had dark hair"
+      "another tie",
+      "on another one"
     ]
   },
   {
     "node_id": "2348899_030",
-    "concept": "curly hair",
+    "concept": "loose",
+    "context": "state of the pink tie around the main man's neck",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "loose pink tie",
+      "pink tie that was losely around his neck"
+    ]
+  },
+  {
+    "node_id": "2348899_031",
+    "concept": "drinking",
+    "context": "action attributed to the group in the scene",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "they;re all drinking"
+    ]
+  },
+  {
+    "node_id": "2348899_032",
+    "concept": "laughing",
+    "context": "action attributed to the group in the scene",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "laughing"
+    ]
+  },
+  {
+    "node_id": "2348899_033",
+    "concept": "already",
+    "context": "state of one tie being already worn by the main man before the second tie",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "a tie on already",
+      "had 1 tie already on"
+    ]
+  },
+  {
+    "node_id": "2348899_034",
+    "concept": "hair",
+    "context": "visible hair of people in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blonde hair",
+      "dark hair",
+      "blonde curly hair"
+    ]
+  },
+  {
+    "node_id": "2348899_035",
+    "concept": "dark",
+    "context": "hair color attributed to one man on the left",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "dark hair"
+    ]
+  },
+  {
+    "node_id": "2348899_036",
+    "concept": "curly",
+    "context": "hair texture attributed to the woman on the right",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
@@ -388,45 +439,14 @@
     ]
   },
   {
-    "node_id": "2348899_031",
+    "node_id": "2348899_037",
     "concept": "table",
+    "context": "object the woman is described as reaching over",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "over a table"
-    ]
-  },
-  {
-    "node_id": "2348899_032",
-    "concept": "reaching",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "women reaching to hold",
-      "reaching right for mans tie",
-      "she was reaching over a table"
-    ]
-  },
-  {
-    "node_id": "2348899_033",
-    "concept": "looking at the man",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "looking and pointing at him"
-    ]
-  },
-  {
-    "node_id": "2348899_034",
-    "concept": "not looking at the woman",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "the man with the tie on was not looking at her"
+      "reaching over a table"
     ]
   }
 ]

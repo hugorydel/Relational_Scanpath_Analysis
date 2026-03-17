@@ -29,6 +29,11 @@ PILOT_SUBJ_THRESHOLD = 10
 
 ENC_COVARIATES = ["n_fixations_enc", "aoi_prop_enc", "mean_salience_relational_enc"]
 
+# Between-image SVG covariate — included in H2/Exploratory models alongside
+# the within-image predictor to decompose participant-level from image-level
+# SVG variance. Computed in loader.py via per-StimID mean centering.
+ENC_BETWEEN_COVARIATES = ["svg_z_enc_image_mean"]
+
 # ---------------------------------------------------------------------------
 # Dependent variables
 # ---------------------------------------------------------------------------
@@ -66,34 +71,35 @@ MODEL_SPECS = [
         "H1",
     ),
     # H2 — encoding SVG → memory proportions
+    # Primary predictor is the within-image centred SVG (participant deviation
+    # from per-image mean). svg_z_enc_image_mean is included as a between-image
+    # covariate to cleanly separate the two variance components.
     (
         "H2_total",
-        "svg_z_enc_z",
-        "H2 overall: Encoding SVG → total node recall proportion",
+        "svg_z_enc_within_z",
+        "H2 overall: Encoding SVG (within-image) → total node recall proportion",
         "enc",
         "H2",
     ),
     (
         "H2_relations",
-        "svg_z_enc_z",
-        "H2 relations: Encoding SVG → relational recall proportion (action + spatial)",
+        "svg_z_enc_within_z",
+        "H2 relations: Encoding SVG (within-image) → relational recall proportion (action + spatial)",
         "enc",
         "H2",
     ),
     (
         "H2_objects",
-        "svg_z_enc_z",
-        "H2 objects: Encoding SVG → object recall proportion (identity + attribute)",
+        "svg_z_enc_within_z",
+        "H2 objects: Encoding SVG (within-image) → object recall proportion (identity + attribute)",
         "enc",
         "H2",
     ),
-    # Exploratory — dissociation: is the SVG effect larger for relations than objects?
-    # Fit via the stacked long-format interaction model (see test_relation_object_dissociation.py)
-    # Included here for coefficient logging only; formula handled specially in models.py.
+    # Exploratory — dissociation
     (
         "EXP_dissociation",
-        "svg_z_enc_z * memory_type",
-        "Exploratory: SVG × memory_type (relations vs objects dissociation)",
+        "svg_z_enc_within_z * memory_type",
+        "Exploratory: SVG (within-image) × memory_type (relations vs objects dissociation)",
         "enc_long",
         "Exploratory",
     ),

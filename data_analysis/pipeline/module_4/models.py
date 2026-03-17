@@ -23,6 +23,7 @@ from .constants import (
     DV_OBJECTS,
     DV_RELATIONS,
     DV_TOTAL,
+    ENC_BETWEEN_COVARIATES,
     ENC_COVARIATES,
     MODEL_SPECS,
     PILOT_SUBJ_THRESHOLD,
@@ -31,6 +32,8 @@ from .constants import (
 logger = logging.getLogger(__name__)
 
 _COV_ENC_Z = " + ".join(f"{c}_z" for c in ENC_COVARIATES)
+_COV_BETWEEN_Z = " + ".join(f"{c}_z" for c in ENC_BETWEEN_COVARIATES)
+_COV_FULL_Z = f"{_COV_ENC_Z} + {_COV_BETWEEN_Z}"
 
 
 # ---------------------------------------------------------------------------
@@ -51,20 +54,20 @@ def _formula_for(name: str, primary_pred: str) -> tuple:
         return rhs, dv
 
     # H2 / Exploratory — main encoding models
+    # Primary predictor: within-image centred SVG (participant deviation from image mean)
+    # Full covariates: within-trial covariates + between-image svg_z_enc_image_mean
     if name == "H2_total":
-        return f"{primary_pred} + {_COV_ENC_Z}", DV_TOTAL
+        return f"{primary_pred} + {_COV_FULL_Z}", DV_TOTAL
 
     if name == "H2_relations":
-        return f"{primary_pred} + {_COV_ENC_Z}", DV_RELATIONS
+        return f"{primary_pred} + {_COV_FULL_Z}", DV_RELATIONS
 
     if name == "H2_objects":
-        return f"{primary_pred} + {_COV_ENC_Z}", DV_OBJECTS
+        return f"{primary_pred} + {_COV_FULL_Z}", DV_OBJECTS
 
-    # Dissociation: long-format, DV is "score" (stacked prop_relations / prop_objects)
-    # StimID is handled as a random effect via vc_formula in _fit_lmm — not fixed dummies.
     if name == "EXP_dissociation":
         return (
-            f"svg_z_enc_z * memory_type + {_COV_ENC_Z}",
+            f"{primary_pred} + {_COV_FULL_Z}",
             "score",
         )
 

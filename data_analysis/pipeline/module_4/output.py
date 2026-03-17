@@ -21,7 +21,14 @@ import pandas as pd
 import statsmodels.formula.api as smf
 from scipy import stats
 
-from .constants import DV_OBJECTS, DV_RELATIONS, DV_TOTAL, ENC_COVARIATES, MODEL_SPECS
+from .constants import (
+    DV_OBJECTS,
+    DV_RELATIONS,
+    DV_TOTAL,
+    ENC_BETWEEN_COVARIATES,
+    ENC_COVARIATES,
+    MODEL_SPECS,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -113,18 +120,20 @@ _DV_SPECS = [
 
 def _residualise(df: pd.DataFrame, target: str) -> pd.Series:
     """
-    Return residuals of `target` after regressing on ENC_COVARIATES + C(SubjectID).
+    Return residuals of `target` after regressing on
+    ENC_COVARIATES + ENC_BETWEEN_COVARIATES + C(SubjectID).
     Rows with any NaN in required columns are set to NaN in output.
     """
     import warnings
 
-    req = [target] + [c for c in ENC_COVARIATES if c in df.columns]
+    all_covs = ENC_COVARIATES + ENC_BETWEEN_COVARIATES
+    req = [target] + [c for c in all_covs if c in df.columns]
     mask = df[req].notna().all(axis=1)
     out = pd.Series(np.nan, index=df.index)
     sub = df[mask].copy()
     if len(sub) < 10:
         return out
-    cov_terms = " + ".join(f"{c}_z" for c in ENC_COVARIATES if f"{c}_z" in sub.columns)
+    cov_terms = " + ".join(f"{c}_z" for c in all_covs if f"{c}_z" in sub.columns)
     formula = f"{target} ~ {cov_terms} + C(SubjectID)"
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
@@ -138,14 +147,22 @@ def _residualise(df: pd.DataFrame, target: str) -> pd.Series:
 
 def _partial_regression_plot(enc: pd.DataFrame, output_path: Path) -> None:
     """
-    Three-panel partial regression plot: encoding SVG → each proportion DV.
-    Both SVG and DV are residualised against ENC_COVARIATES + C(SubjectID)
-    before plotting, so the trend line shows the unique relationship
-    independent of nuisance variables.
+    Three-panel partial regression plot: encoding SVG (within-image) → each DV.
+    X axis: svg_z_enc_within residualised against ENC_COVARIATES +
+            ENC_BETWEEN_COVARIATES + C(SubjectID).
+    Y axis: each proportion DV residualised against the same set.
+    This matches exactly what the LMM H2 models estimate.
     """
-    svg_col = "svg_z_enc"
-    # Need z-scored covariates in the df
-    for c in ENC_COVARIATES:
+    svg_col = "svg_z_enc_within"
+    if svg_col not in enc.columns:
+        logger.warning(
+            "  _partial_regression_plot: svg_z_enc_within missing — skipping."
+        )
+        return
+
+    # Ensure z-scored covariate columns exist
+    all_covs = ENC_COVARIATES + ENC_BETWEEN_COVARIATES
+    for c in all_covs:
         if f"{c}_z" not in enc.columns and c in enc.columns:
             mu, sd = enc[c].mean(), enc[c].std()
             enc = enc.copy()
@@ -193,15 +210,18 @@ def _partial_regression_plot(enc: pd.DataFrame, output_path: Path) -> None:
 
         ax.axhline(0, color="grey", linewidth=0.6, linestyle="--", alpha=0.5)
         ax.axvline(0, color="grey", linewidth=0.6, linestyle="--", alpha=0.5)
-        ax.set_xlabel("Encoding SVG\n(covariate-residualised)", fontsize=9)
+        ax.set_xlabel(
+            "Encoding SVG (within-image)\n(covariate-residualised)", fontsize=9
+        )
         ax.set_ylabel(f"{dv_label}\n(covariate-residualised)", fontsize=9)
         ax.set_title(dv_label.replace("\n", " "), fontsize=10, fontweight="bold", pad=6)
         ax.tick_params(labelsize=8)
         ax.spines[["top", "right"]].set_visible(False)
 
     fig.suptitle(
-        "Partial regression: Encoding SVG → memory recall (proportion DVs)\n"
-        "Covariates removed: n_fixations, aoi_prop, mean_salience_relational, SubjectID",
+        "Partial regression: Encoding SVG (within-image) → memory recall (proportion DVs)\n"
+        "Covariates removed: n_fixations, aoi_prop, mean_salience_relational,"
+        " svg_z_enc_image_mean, SubjectID",
         fontsize=9,
         y=1.02,
     )

@@ -24,7 +24,13 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from .constants import DV_OBJECTS, DV_RELATIONS, DV_TOTAL, ENC_COVARIATES
+from .constants import (
+    DV_OBJECTS,
+    DV_RELATIONS,
+    DV_TOTAL,
+    ENC_BETWEEN_COVARIATES,
+    ENC_COVARIATES,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -192,12 +198,38 @@ def build_analysis_tables(df: pd.DataFrame, memory_scores: pd.DataFrame) -> dict
         )
 
     # ------------------------------------------------------------------
+    # Within-image SVG mean-centering (L1/L2 decomposition)
+    #
+    # svg_z_enc_image_mean : per-StimID mean of svg_z_enc across participants
+    #                        — captures image-level structural relational pull
+    # svg_z_enc_within     : participant deviation from that image mean
+    #                        — captures individual-level relational scanning
+    #                          above/below what this image typically elicits
+    #
+    # Both are carried forward; H2 models use svg_z_enc_within as the
+    # primary predictor and include svg_z_enc_image_mean as a between-image
+    # covariate, cleanly separating the two variance components.
+    # ------------------------------------------------------------------
+    stim_svg_mean = (
+        enc.groupby("StimID")["svg_z_enc"].mean().rename("svg_z_enc_image_mean")
+    )
+    enc = enc.merge(stim_svg_mean, on="StimID", how="left")
+    enc["svg_z_enc_within"] = enc["svg_z_enc"] - enc["svg_z_enc_image_mean"]
+
+    n_images = enc["StimID"].nunique()
+    logger.info(
+        f"  SVG decomposition: image means computed across {n_images} stimuli. "
+        f"svg_z_enc_within mean={enc['svg_z_enc_within'].mean():.4f} "
+        f"(should be ~0), sd={enc['svg_z_enc_within'].std():.4f}"
+    )
+
+    # ------------------------------------------------------------------
     # Long-format table for dissociation model
     # Stack prop_relations and prop_objects with a memory_type factor.
     # Both DVs are already on a 0-1 scale so no further normalisation needed.
     # ------------------------------------------------------------------
     id_cols = (
-        ["SubjectID", "StimID", "svg_z_enc"]
+        ["SubjectID", "StimID", "svg_z_enc", "svg_z_enc_within", "svg_z_enc_image_mean"]
         + [c for c in ENC_COVARIATES if c in enc.columns]
         + ["low_n_enc"]
     )
@@ -265,7 +297,11 @@ def standardise_tables(filtered: dict) -> dict:
     """
     logger.info("Step 4: Standardising predictors ...")
 
-    cols_to_standardise = ["svg_z_enc"] + ENC_COVARIATES
+    cols_to_standardise = (
+        ["svg_z_enc", "svg_z_enc_within", "svg_z_enc_image_mean"]
+        + ENC_COVARIATES
+        + ENC_BETWEEN_COVARIATES
+    )
 
     for key in ("enc", "enc_long"):
         df = filtered[key]

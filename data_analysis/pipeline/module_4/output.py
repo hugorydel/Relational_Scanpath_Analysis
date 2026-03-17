@@ -213,6 +213,133 @@ def _partial_regression_plot(enc: pd.DataFrame, output_path: Path) -> None:
 
 
 # ---------------------------------------------------------------------------
+# H1 plot — per-participant SVG means
+# ---------------------------------------------------------------------------
+
+
+def _h1_plot(enc: pd.DataFrame, results: dict, output_path: Path) -> None:
+    """
+    Dot plot of per-participant mean encoding SVG with 95% CIs, sorted ascending.
+    Reference line at 0. Annotated with grand mean and H1 intercept test result.
+
+    Shows that the group-level SVG > 0 effect is consistent across individuals,
+    which is a natural reader concern with N=16.
+    """
+    svg_col = "svg_z_enc"
+    if svg_col not in enc.columns or "SubjectID" not in enc.columns:
+        logger.warning("  _h1_plot: missing svg_z_enc or SubjectID — skipping.")
+        return
+
+    # Per-participant mean and 95% CI via t-distribution
+    records = []
+    for subj, grp in enc.groupby("SubjectID"):
+        vals = grp[svg_col].dropna().values
+        n = len(vals)
+        if n < 2:
+            continue
+        mean = vals.mean()
+        se = vals.std(ddof=1) / np.sqrt(n)
+        t_crit = stats.t.ppf(0.975, df=n - 1)
+        records.append(
+            {
+                "SubjectID": subj,
+                "mean": mean,
+                "lo": mean - t_crit * se,
+                "hi": mean + t_crit * se,
+                "n": n,
+            }
+        )
+
+    if not records:
+        logger.warning("  _h1_plot: no valid per-participant data — skipping.")
+        return
+
+    df_plot = pd.DataFrame(records).sort_values("mean").reset_index(drop=True)
+
+    # Grand mean from H1 model if available, else compute directly
+    grand_mean = enc[svg_col].dropna().mean()
+    pct_above = 100 * (enc[svg_col].dropna() > 0).mean()
+
+    # Pull p-value from H1 model intercept if fitted
+    h1_result, h1_mode = results.get("H1_svg_enc", (None, "skipped"))
+    if h1_result is not None:
+        try:
+            h1_p = h1_result.pvalues["Intercept"]
+            h1_sig = (
+                "***"
+                if h1_p < 0.001
+                else "**" if h1_p < 0.01 else "*" if h1_p < 0.05 else "ns"
+            )
+            stat_label = f"Grand mean = {grand_mean:.2f},  {pct_above:.0f}% > 0"
+        except Exception:
+            stat_label = f"Grand mean = {grand_mean:.2f},  {pct_above:.0f}% > 0"
+    else:
+        stat_label = f"Grand mean = {grand_mean:.2f},  {pct_above:.0f}% > 0"
+
+    n_subj = len(df_plot)
+    colour = "#2166ac"
+    above_zero = df_plot["mean"] > 0
+
+    fig, ax = plt.subplots(figsize=(6, max(3.5, n_subj * 0.42)))
+
+    for i, row in df_plot.iterrows():
+        c = colour if row["mean"] > 0 else "#a63603"
+        ax.errorbar(
+            row["mean"],
+            i,
+            xerr=[[row["mean"] - row["lo"]], [row["hi"] - row["mean"]]],
+            fmt="o",
+            color=c,
+            markersize=6,
+            linewidth=1.4,
+            capsize=3,
+            alpha=0.85,
+        )
+
+    # Grand mean line
+    ax.axvline(
+        grand_mean,
+        color="#636363",
+        linewidth=1.2,
+        linestyle="-",
+        alpha=0.7,
+        label=f"Grand mean ({grand_mean:.2f})",
+    )
+    ax.axvline(
+        0, color="black", linewidth=0.8, linestyle="--", alpha=0.5, label="Chance (0)"
+    )
+
+    ax.set_yticks(range(n_subj))
+    ax.set_yticklabels(df_plot["SubjectID"].values, fontsize=8)
+    ax.set_xlabel("Mean encoding SVG (z-scored, ± 95% CI)", fontsize=9)
+    ax.set_title(
+        "H1: Encoding SVG by participant\n(sorted by mean; blue = above zero)",
+        fontsize=10,
+        fontweight="bold",
+        pad=8,
+    )
+    ax.annotate(
+        stat_label,
+        xy=(0.97, 0.03),
+        xycoords="axes fraction",
+        fontsize=8.5,
+        ha="right",
+        va="bottom",
+        bbox=dict(boxstyle="round,pad=0.3", fc="white", alpha=0.85),
+    )
+    ax.legend(
+        fontsize=8, loc="lower right", bbox_to_anchor=(0.97, 0.10), framealpha=0.85
+    )
+    ax.spines[["top", "right"]].set_visible(False)
+
+    plt.tight_layout()
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    plt.savefig(output_path, dpi=150, bbox_inches="tight")
+    plt.close()
+    logger.info(f"  Written → {output_path.name}")
+
+
+# ---------------------------------------------------------------------------
 # Forest plot
 # ---------------------------------------------------------------------------
 
@@ -391,5 +518,6 @@ def summarise(
 
     if plot and not enc.empty:
         _partial_regression_plot(enc, output_dir / "partial_regression.png")
+        _h1_plot(enc, results, output_dir / "h1_svg_by_participant.png")
 
     return coef_all

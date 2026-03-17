@@ -153,10 +153,6 @@ RESPONSE_SCHEMA = {
                                 "type": "string",
                                 "enum": sorted(VALID_STATUSES),
                             },
-                            "source_phrases": {
-                                "type": "array",
-                                "items": {"type": "string"},
-                            },
                         },
                         "required": [
                             "node_id",

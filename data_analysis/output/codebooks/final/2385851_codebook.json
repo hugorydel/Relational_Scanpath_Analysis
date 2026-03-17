@@ -1,0 +1,431 @@
+[
+	{
+		"node_id": "2385851_001",
+		"concept": "two",
+		"context": "count of the people in the scene",
+		"content_type": "object_attribute",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men carrying suitcases, both suitcases are red.",
+			"two men carrying suitcases as they go through a covered walkway",
+			"two men under a covered area carrying red suitcases",
+			"two people carrying a suitcase each one with a bigger suitcase and one with a red one, walking up a path back facing me",
+			"two men carrying red suitcases through underpass thing",
+			"two men are carrying two big red suitcases up a ramp under a cover. they're carrying the suitcases on their backs",
+			"two men carrying red suitcases over thei heads walking through a shielded underpass",
+			"two man on covered walkway walking in shade. far left was sunny where there was no sun. men holding red suitcases walking away from camera. suitcases large and on their backs.",
+			"two men were carring red luggages under a pathway",
+			"two men carry suitcases opn their backs along a covered walkway wearing loose clothing",
+			"to men carrying red suitcases on their backs, walking through a covered shelter away from the screen",
+			"2 men holding each a large red suitcae walking underneath a covered pathway. They are carrying it on their backs",
+			"two men carrying a red suitcase each underneath a covered pathway.",
+			"2 men walking with giant red suitcases on their backs under a bridge",
+			"2 man walking carryinh red suitcases above them",
+			"two men were under a walkway and both carrying large red suitcases."
+		]
+	},
+	{
+		"node_id": "2385851_002",
+		"concept": "person",
+		"context": "identity label for the two human figures in the scene",
+		"content_type": "object_identity",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two people carrying a suitcase each one with a bigger suitcase and one with a red one, walking up a path back facing me"
+		]
+	},
+	{
+		"node_id": "2385851_003",
+		"concept": "man",
+		"context": "more specific identity label used for the two human figures",
+		"content_type": "object_identity",
+		"evidence_type": "latent",
+		"status": "correct",
+		"source_phrases": [
+			"two men carrying suitcases, both suitcases are red.",
+			"two men carrying suitcases as they go through a covered walkway",
+			"two men under a covered area carrying red suitcases",
+			"two men carrying red suitcases through underpass thing",
+			"two men are carrying two big red suitcases up a ramp under a cover. they're carrying the suitcases on their backs",
+			"two men carrying red suitcases over thei heads walking through a shielded underpass",
+			"two man on covered walkway walking in shade. far left was sunny where there was no sun. men holding red suitcases walking away from camera. suitcases large and on their backs.",
+			"two men were carring red luggages under a pathway",
+			"two men carry suitcases opn their backs along a covered walkway wearing loose clothing",
+			"to men carrying red suitcases on their backs, walking through a covered shelter away from the screen",
+			"2 men holding each a large red suitcae walking underneath a covered pathway. They are carrying it on their backs",
+			"two men carrying a red suitcase each underneath a covered pathway.",
+			"2 men walking with giant red suitcases on their backs under a bridge",
+			"2 man walking carryinh red suitcases above them",
+			"two men were under a walkway and both carrying large red suitcases."
+		]
+	},
+	{
+		"node_id": "2385851_004",
+		"concept": "suitcase",
+		"context": "item being carried by the people",
+		"content_type": "object_identity",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men carrying suitcases, both suitcases are red.",
+			"two men carrying suitcases as they go through a covered walkway",
+			"two men under a covered area carrying red suitcases",
+			"two people carrying a suitcase each one with a bigger suitcase and one with a red one, walking up a path back facing me",
+			"two men carrying red suitcases through underpass thing",
+			"two men are carrying two big red suitcases up a ramp under a cover. they're carrying the suitcases on their backs",
+			"two men carrying red suitcases over thei heads walking through a shielded underpass",
+			"two man on covered walkway walking in shade. far left was sunny where there was no sun. men holding red suitcases walking away from camera. suitcases large and on their backs.",
+			"two men carry suitcases opn their backs along a covered walkway wearing loose clothing",
+			"2 men holding each a large red suitcae walking underneath a covered pathway. They are carrying it on their backs",
+			"two men carrying a red suitcase each underneath a covered pathway.",
+			"2 men walking with giant red suitcases on their backs under a bridge",
+			"2 man walking carryinh red suitcases above them",
+			"two men were under a walkway and both carrying large red suitcases."
+		]
+	},
+	{
+		"node_id": "2385851_005",
+		"concept": "red",
+		"context": "color of the suitcase",
+		"content_type": "object_attribute",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men carrying suitcases, both suitcases are red.",
+			"two men under a covered area carrying red suitcases",
+			"two people carrying a suitcase each one with a bigger suitcase and one with a red one, walking up a path back facing me",
+			"two men carrying red suitcases through underpass thing",
+			"two men are carrying two big red suitcases up a ramp under a cover. they're carrying the suitcases on their backs",
+			"two men carrying red suitcases over thei heads walking through a shielded underpass",
+			"two man on covered walkway walking in shade. far left was sunny where there was no sun. men holding red suitcases walking away from camera. suitcases large and on their backs.",
+			"two men were carring red luggages under a pathway",
+			"to men carrying red suitcases on their backs, walking through a covered shelter away from the screen",
+			"2 men holding each a large red suitcae walking underneath a covered pathway. They are carrying it on their backs",
+			"two men carrying a red suitcase each underneath a covered pathway.",
+			"2 men walking with giant red suitcases on their backs under a bridge",
+			"2 man walking carryinh red suitcases above them",
+			"two men were under a walkway and both carrying large red suitcases."
+		]
+	},
+	{
+		"node_id": "2385851_006",
+		"concept": "one",
+		"context": "count of the suitcase associated with each person",
+		"content_type": "object_attribute",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two people carrying a suitcase each one with a bigger suitcase and one with a red one, walking up a path back facing me",
+			"2 men holding each a large red suitcae walking underneath a covered pathway. They are carrying it on their backs",
+			"two men carrying a red suitcase each underneath a covered pathway."
+		]
+	},
+	{
+		"node_id": "2385851_007",
+		"concept": "large",
+		"context": "size of the suitcase",
+		"content_type": "object_attribute",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two people carrying a suitcase each one with a bigger suitcase and one with a red one, walking up a path back facing me",
+			"two men are carrying two big red suitcases up a ramp under a cover. they're carrying the suitcases on their backs",
+			"two man on covered walkway walking in shade. far left was sunny where there was no sun. men holding red suitcases walking away from camera. suitcases large and on their backs.",
+			"2 men holding each a large red suitcae walking underneath a covered pathway. They are carrying it on their backs",
+			"2 men walking with giant red suitcases on their backs under a bridge",
+			"two men were under a walkway and both carrying large red suitcases."
+		]
+	},
+	{
+		"node_id": "2385851_008",
+		"concept": "carry",
+		"context": "action performed by the people on the suitcase",
+		"content_type": "action_relation",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men carrying suitcases, both suitcases are red.",
+			"two men carrying suitcases as they go through a covered walkway",
+			"two men under a covered area carrying red suitcases",
+			"two people carrying a suitcase each one with a bigger suitcase and one with a red one, walking up a path back facing me",
+			"two men carrying red suitcases through underpass thing",
+			"two men are carrying two big red suitcases up a ramp under a cover. they're carrying the suitcases on their backs",
+			"two men carrying red suitcases over thei heads walking through a shielded underpass",
+			"two man on covered walkway walking in shade. far left was sunny where there was no sun. men holding red suitcases walking away from camera. suitcases large and on their backs.",
+			"two men were carring red luggages under a pathway",
+			"two men carry suitcases opn their backs along a covered walkway wearing loose clothing",
+			"to men carrying red suitcases on their backs, walking through a covered shelter away from the screen",
+			"2 men holding each a large red suitcae walking underneath a covered pathway. They are carrying it on their backs",
+			"two men carrying a red suitcase each underneath a covered pathway.",
+			"2 man walking carryinh red suitcases above them",
+			"two men were under a walkway and both carrying large red suitcases."
+		]
+	},
+	{
+		"node_id": "2385851_009",
+		"concept": "walk",
+		"context": "locomotion of the people along the passage",
+		"content_type": "action_relation",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two people carrying a suitcase each one with a bigger suitcase and one with a red one, walking up a path back facing me",
+			"two men carrying red suitcases over thei heads walking through a shielded underpass",
+			"two man on covered walkway walking in shade. far left was sunny where there was no sun. men holding red suitcases walking away from camera. suitcases large and on their backs.",
+			"to men carrying red suitcases on their backs, walking through a covered shelter away from the screen",
+			"2 men holding each a large red suitcae walking underneath a covered pathway. They are carrying it on their backs",
+			"2 men walking with giant red suitcases on their backs under a bridge",
+			"2 man walking carryinh red suitcases above them"
+		]
+	},
+	{
+		"node_id": "2385851_010",
+		"concept": "walkway",
+		"context": "covered passage structure the people are moving along",
+		"content_type": "object_identity",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men carrying suitcases as they go through a covered walkway",
+			"two men under a covered area carrying red suitcases",
+			"two people carrying a suitcase each one with a bigger suitcase and one with a red one, walking up a path back facing me",
+			"two man on covered walkway walking in shade. far left was sunny where there was no sun. men holding red suitcases walking away from camera. suitcases large and on their backs.",
+			"two men were carring red luggages under a pathway",
+			"two men carry suitcases opn their backs along a covered walkway wearing loose clothing",
+			"to men carrying red suitcases on their backs, walking through a covered shelter away from the screen",
+			"2 men holding each a large red suitcae walking underneath a covered pathway. They are carrying it on their backs",
+			"two men carrying a red suitcase each underneath a covered pathway.",
+			"two men were under a walkway and both carrying large red suitcases."
+		]
+	},
+	{
+		"node_id": "2385851_011",
+		"concept": "covered",
+		"context": "attribute of the walkway structure above the people",
+		"content_type": "object_attribute",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men carrying suitcases as they go through a covered walkway",
+			"two men under a covered area carrying red suitcases",
+			"two men are carrying two big red suitcases up a ramp under a cover. they're carrying the suitcases on their backs",
+			"two man on covered walkway walking in shade. far left was sunny where there was no sun. men holding red suitcases walking away from camera. suitcases large and on their backs.",
+			"two men carry suitcases opn their backs along a covered walkway wearing loose clothing",
+			"to men carrying red suitcases on their backs, walking through a covered shelter away from the screen",
+			"2 men holding each a large red suitcae walking underneath a covered pathway. They are carrying it on their backs"
+		]
+	},
+	{
+		"node_id": "2385851_012",
+		"concept": "under",
+		"context": "position of the people relative to the covered walkway structure",
+		"content_type": "spatial_relation",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men under a covered area carrying red suitcases",
+			"two men are carrying two big red suitcases up a ramp under a cover. they're carrying the suitcases on their backs",
+			"two men were carring red luggages under a pathway",
+			"2 men holding each a large red suitcae walking underneath a covered pathway. They are carrying it on their backs",
+			"two men carrying a red suitcase each underneath a covered pathway.",
+			"2 men walking with giant red suitcases on their backs under a bridge",
+			"two men were under a walkway and both carrying large red suitcases."
+		]
+	},
+	{
+		"node_id": "2385851_013",
+		"concept": "through",
+		"context": "movement of the people within the walkway structure",
+		"content_type": "spatial_relation",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men carrying suitcases as they go through a covered walkway",
+			"two men carrying red suitcases through underpass thing",
+			"two men carrying red suitcases over thei heads walking through a shielded underpass",
+			"to men carrying red suitcases on their backs, walking through a covered shelter away from the screen"
+		]
+	},
+	{
+		"node_id": "2385851_014",
+		"concept": "ramp",
+		"context": "sloped section of the walkway the people are moving along",
+		"content_type": "object_identity",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men are carrying two big red suitcases up a ramp under a cover. they're carrying the suitcases on their backs"
+		]
+	},
+	{
+		"node_id": "2385851_015",
+		"concept": "up",
+		"context": "upward direction of movement along the sloped walkway",
+		"content_type": "spatial_relation",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two people carrying a suitcase each one with a bigger suitcase and one with a red one, walking up a path back facing me",
+			"two men are carrying two big red suitcases up a ramp under a cover. they're carrying the suitcases on their backs"
+		]
+	},
+	{
+		"node_id": "2385851_016",
+		"concept": "away",
+		"context": "direction of the people relative to the viewer",
+		"content_type": "spatial_relation",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two people carrying a suitcase each one with a bigger suitcase and one with a red one, walking up a path back facing me",
+			"two man on covered walkway walking in shade. far left was sunny where there was no sun. men holding red suitcases walking away from camera. suitcases large and on their backs.",
+			"to men carrying red suitcases on their backs, walking through a covered shelter away from the screen"
+		]
+	},
+	{
+		"node_id": "2385851_017",
+		"concept": "back",
+		"context": "body part supporting the suitcase",
+		"content_type": "object_identity",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men are carrying two big red suitcases up a ramp under a cover. they're carrying the suitcases on their backs",
+			"two man on covered walkway walking in shade. far left was sunny where there was no sun. men holding red suitcases walking away from camera. suitcases large and on their backs.",
+			"two men carry suitcases opn their backs along a covered walkway wearing loose clothing",
+			"to men carrying red suitcases on their backs, walking through a covered shelter away from the screen",
+			"2 men holding each a large red suitcae walking underneath a covered pathway. They are carrying it on their backs",
+			"2 men walking with giant red suitcases on their backs under a bridge"
+		]
+	},
+	{
+		"node_id": "2385851_018",
+		"concept": "on",
+		"context": "position of the suitcase relative to the back",
+		"content_type": "spatial_relation",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men are carrying two big red suitcases up a ramp under a cover. they're carrying the suitcases on their backs",
+			"two man on covered walkway walking in shade. far left was sunny where there was no sun. men holding red suitcases walking away from camera. suitcases large and on their backs.",
+			"two men carry suitcases opn their backs along a covered walkway wearing loose clothing",
+			"to men carrying red suitcases on their backs, walking through a covered shelter away from the screen",
+			"2 men holding each a large red suitcae walking underneath a covered pathway. They are carrying it on their backs",
+			"2 men walking with giant red suitcases on their backs under a bridge"
+		]
+	},
+	{
+		"node_id": "2385851_019",
+		"concept": "head",
+		"context": "body part below the suitcase carried by the right-side figure",
+		"content_type": "object_identity",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men carrying red suitcases over thei heads walking through a shielded underpass"
+		]
+	},
+	{
+		"node_id": "2385851_020",
+		"concept": "above",
+		"context": "position of the suitcase relative to the upper body or head",
+		"content_type": "spatial_relation",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men carrying red suitcases over thei heads walking through a shielded underpass",
+			"2 man walking carryinh red suitcases above them"
+		]
+	},
+	{
+		"node_id": "2385851_021",
+		"concept": "clothing",
+		"context": "garments worn by the people",
+		"content_type": "object_identity",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men carry suitcases opn their backs along a covered walkway wearing loose clothing"
+		]
+	},
+	{
+		"node_id": "2385851_022",
+		"concept": "loose",
+		"context": "fit attribute of the clothing",
+		"content_type": "object_attribute",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men carry suitcases opn their backs along a covered walkway wearing loose clothing"
+		]
+	},
+	{
+		"node_id": "2385851_023",
+		"concept": "wear",
+		"context": "relation between the people and their clothing",
+		"content_type": "action_relation",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two men carry suitcases opn their backs along a covered walkway wearing loose clothing"
+		]
+	},
+	{
+		"node_id": "2385851_024",
+		"concept": "shade",
+		"context": "lighting condition within the covered walkway",
+		"content_type": "scene_gist",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two man on covered walkway walking in shade. far left was sunny where there was no sun. men holding red suitcases walking away from camera. suitcases large and on their backs."
+		]
+	},
+	{
+		"node_id": "2385851_025",
+		"concept": "left",
+		"context": "location of the brighter exposed area in the scene",
+		"content_type": "spatial_relation",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two man on covered walkway walking in shade. far left was sunny where there was no sun. men holding red suitcases walking away from camera. suitcases large and on their backs."
+		]
+	},
+	{
+		"node_id": "2385851_026",
+		"concept": "sunny",
+		"context": "lighting condition of the exposed area on the left side of the scene",
+		"content_type": "scene_gist",
+		"evidence_type": "literal",
+		"status": "correct",
+		"source_phrases": [
+			"two man on covered walkway walking in shade. far left was sunny where there was no sun. men holding red suitcases walking away from camera. suitcases large and on their backs."
+		]
+	},
+	{
+		"node_id": "2385851_027",
+		"concept": "underpass",
+		"context": "alternative structural label used for the covered passage",
+		"content_type": "object_identity",
+		"evidence_type": "speculative",
+		"status": "incorrect",
+		"source_phrases": [
+			"two men carrying red suitcases through underpass thing",
+			"two men carrying red suitcases over thei heads walking through a shielded underpass"
+		]
+	},
+	{
+		"node_id": "2385851_028",
+		"concept": "bridge",
+		"context": "alternative structural label used for the overhead structure",
+		"content_type": "object_identity",
+		"evidence_type": "speculative",
+		"status": "incorrect",
+		"source_phrases": [
+			"2 men walking with giant red suitcases on their backs under a bridge"
+		]
+	}
+]

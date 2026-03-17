@@ -1,0 +1,97 @@
+SubjectID,StimID,node_id,concept,content_type,evidence_type,status,recalled,matched_phrase
+Encode-Decode_Experiment-1-1,2412687,2412687_001,man,object_attribute,literal,correct,1,a man
+Encode-Decode_Experiment-1-1,2412687,2412687_002,dog,object_identity,literal,correct,1,a dog
+Encode-Decode_Experiment-1-1,2412687,2412687_003,frisbee,object_identity,literal,correct,1,red frisbee
+Encode-Decode_Experiment-1-1,2412687,2412687_004,red,object_attribute,literal,correct,1,red
+Encode-Decode_Experiment-1-1,2412687,2412687_005,playing,action_relation,literal,correct,1,playing with a dog
+Encode-Decode_Experiment-1-1,2412687,2412687_007,grabbing,action_relation,literal,correct,1,trying to grab the red frisbee
+Encode-Decode_Experiment-1-1,2412687,2412687_009,night,scene_gist,latent,correct,1,at night
+Encode-Decode_Experiment-11-1,2412687,2412687_001,man,object_attribute,literal,correct,1,a man
+Encode-Decode_Experiment-11-1,2412687,2412687_002,dog,object_identity,literal,correct,1,the dog
+Encode-Decode_Experiment-11-1,2412687,2412687_003,frisbee,object_identity,literal,correct,1,frisbee
+Encode-Decode_Experiment-11-1,2412687,2412687_004,red,object_attribute,literal,correct,1,red
+Encode-Decode_Experiment-11-1,2412687,2412687_006,holding,action_relation,literal,correct,1,holding out
+Encode-Decode_Experiment-11-1,2412687,2412687_007,grabbing,action_relation,literal,correct,1,trying to take with its mouth
+Encode-Decode_Experiment-11-1,2412687,2412687_019,mouth,object_identity,latent,correct,1,mouth
+Encode-Decode_Experiment-12-1,2412687,2412687_002,dog,object_identity,literal,correct,1,dog
+Encode-Decode_Experiment-15-1,2412687,2412687_001,man,object_attribute,literal,correct,1,mans hand
+Encode-Decode_Experiment-15-1,2412687,2412687_002,dog,object_identity,literal,correct,1,dog
+Encode-Decode_Experiment-15-1,2412687,2412687_003,frisbee,object_identity,literal,correct,1,red frisbee
+Encode-Decode_Experiment-15-1,2412687,2412687_004,red,object_attribute,literal,correct,1,red
+Encode-Decode_Experiment-15-1,2412687,2412687_006,holding,action_relation,literal,correct,1,mans hand
+Encode-Decode_Experiment-15-1,2412687,2412687_007,grabbing,action_relation,literal,correct,1,trying to bite red frisbee
+Encode-Decode_Experiment-15-1,2412687,2412687_014,right,spatial_relation,literal,correct,1,to the right oft he dog
+Encode-Decode_Experiment-15-1,2412687,2412687_017,standing,action_relation,literal,correct,1,man standing up
+Encode-Decode_Experiment-15-1,2412687,2412687_018,hand,object_identity,literal,correct,1,mans hand
+Encode-Decode_Experiment-2-1,2412687,2412687_001,man,object_attribute,literal,correct,1,a man
+Encode-Decode_Experiment-2-1,2412687,2412687_002,dog,object_identity,literal,correct,1,a dog
+Encode-Decode_Experiment-2-1,2412687,2412687_003,frisbee,object_identity,literal,correct,1,red frisbee
+Encode-Decode_Experiment-2-1,2412687,2412687_004,red,object_attribute,literal,correct,1,red
+Encode-Decode_Experiment-2-1,2412687,2412687_005,playing,action_relation,literal,correct,1,they were playin
+Encode-Decode_Experiment-2-1,2412687,2412687_006,holding,action_relation,literal,correct,1,was holdina red frisbee
+Encode-Decode_Experiment-2-1,2412687,2412687_009,night,scene_gist,latent,correct,1,at night
+Encode-Decode_Experiment-2-1,2412687,2412687_011,outside,scene_gist,literal,correct,1,outside
+Encode-Decode_Experiment-2-1,2412687,2412687_012,backyard,scene_gist,latent,correct,1,backyard
+Encode-Decode_Experiment-6-1,2412687,2412687_002,dog,object_identity,literal,correct,1,a dog
+Encode-Decode_Experiment-16-1,2412687,2412687_001,man,object_attribute,literal,correct,1,man on right
+Encode-Decode_Experiment-16-1,2412687,2412687_002,dog,object_identity,literal,correct,1,dog left of photo
+Encode-Decode_Experiment-16-1,2412687,2412687_003,frisbee,object_identity,literal,correct,1,red frizbee
+Encode-Decode_Experiment-16-1,2412687,2412687_004,red,object_attribute,literal,correct,1,red frizbee
+Encode-Decode_Experiment-16-1,2412687,2412687_006,holding,action_relation,literal,correct,1,held by man
+Encode-Decode_Experiment-16-1,2412687,2412687_007,grabbing,action_relation,literal,correct,1,biting on red frizbee
+Encode-Decode_Experiment-16-1,2412687,2412687_010,dark,scene_gist,literal,correct,1,dark lighting
+Encode-Decode_Experiment-16-1,2412687,2412687_014,right,spatial_relation,literal,correct,1,on right
+Encode-Decode_Experiment-16-1,2412687,2412687_020,shoe,object_identity,literal,correct,1,adidas shoes
+Encode-Decode_Experiment-16-1,2412687,2412687_021,black,object_attribute,literal,correct,1,blakc and white adidas shoes
+Encode-Decode_Experiment-16-1,2412687,2412687_022,white,object_attribute,literal,correct,1,white adidas shoes
+Encode-Decode_Experiment-16-1,2412687,2412687_023,Adidas,object_attribute,literal,correct,1,adidas shoes
+Encode-Decode_Experiment-16-1,2412687,2412687_024,shorts,object_identity,literal,correct,1,shorts
+Encode-Decode_Experiment-4-1,2412687,2412687_001,man,object_attribute,literal,correct,1,man
+Encode-Decode_Experiment-4-1,2412687,2412687_002,dog,object_identity,literal,correct,1,golden retriver dog
+Encode-Decode_Experiment-4-1,2412687,2412687_003,frisbee,object_identity,literal,correct,1,red frisbee
+Encode-Decode_Experiment-4-1,2412687,2412687_004,red,object_attribute,literal,correct,1,red
+Encode-Decode_Experiment-4-1,2412687,2412687_005,playing,action_relation,literal,correct,1,playing with a golden retriver dog
+Encode-Decode_Experiment-4-1,2412687,2412687_006,holding,action_relation,literal,correct,1,holding a red frisbee
+Encode-Decode_Experiment-4-1,2412687,2412687_009,night,scene_gist,latent,correct,1,appeared to be nighttime
+Encode-Decode_Experiment-4-1,2412687,2412687_012,backyard,scene_gist,latent,correct,1,in a garden
+Encode-Decode_Experiment-4-1,2412687,2412687_014,right,spatial_relation,literal,correct,1,to the right
+Encode-Decode_Experiment-4-1,2412687,2412687_017,standing,action_relation,literal,correct,1,standing
+Encode-Decode_Experiment-4-1,2412687,2412687_025,grey,object_attribute,literal,correct,1,grey outfit
+Encode-Decode_Experiment-7-1,2412687,2412687_001,man,object_attribute,literal,correct,1,a man
+Encode-Decode_Experiment-7-1,2412687,2412687_002,dog,object_identity,literal,correct,1,a dog
+Encode-Decode_Experiment-7-1,2412687,2412687_003,frisbee,object_identity,literal,correct,1,red frizbe
+Encode-Decode_Experiment-7-1,2412687,2412687_004,red,object_attribute,literal,correct,1,red frizbe
+Encode-Decode_Experiment-7-1,2412687,2412687_006,holding,action_relation,literal,correct,1,man holding the grizbe
+Encode-Decode_Experiment-7-1,2412687,2412687_014,right,spatial_relation,literal,correct,1,on the right
+Encode-Decode_Experiment-5-1,2412687,2412687_002,dog,object_identity,literal,correct,1,a dog
+Encode-Decode_Experiment-5-1,2412687,2412687_003,frisbee,object_identity,literal,correct,1,red frisbee
+Encode-Decode_Experiment-5-1,2412687,2412687_004,red,object_attribute,literal,correct,1,red
+Encode-Decode_Experiment-5-1,2412687,2412687_007,grabbing,action_relation,literal,correct,1,about to take a red frisbee
+Encode-Decode_Experiment-5-1,2412687,2412687_012,backyard,scene_gist,latent,correct,1,in a back garden of some sort
+Encode-Decode_Experiment-5-1,2412687,2412687_018,hand,object_identity,literal,correct,1,from the hand of its owner
+Encode-Decode_Experiment-5-1,2412687,2412687_031,blonde,object_attribute,literal,correct,1,blonde labrador
+Encode-Decode_Experiment-8-1,2412687,2412687_001,man,object_attribute,literal,correct,1,man
+Encode-Decode_Experiment-8-1,2412687,2412687_002,dog,object_identity,literal,correct,1,dog in centre
+Encode-Decode_Experiment-8-1,2412687,2412687_003,frisbee,object_identity,literal,correct,1,red frisbee
+Encode-Decode_Experiment-8-1,2412687,2412687_004,red,object_attribute,literal,correct,1,red frisbee
+Encode-Decode_Experiment-8-1,2412687,2412687_005,playing,action_relation,literal,correct,1,playing with a man
+Encode-Decode_Experiment-8-1,2412687,2412687_006,holding,action_relation,literal,correct,1,holding a red frisbee
+Encode-Decode_Experiment-8-1,2412687,2412687_010,dark,scene_gist,literal,correct,1,its dark
+Encode-Decode_Experiment-8-1,2412687,2412687_011,outside,scene_gist,literal,correct,1,outside
+Encode-Decode_Experiment-8-1,2412687,2412687_016,centre,spatial_relation,literal,correct,1,dog in centre
+Encode-Decode_Experiment-8-1,2412687,2412687_025,grey,object_attribute,literal,correct,1,grey clothes
+Encode-Decode_Experiment-9-1,2412687,2412687_001,man,object_attribute,literal,correct,1,a man
+Encode-Decode_Experiment-9-1,2412687,2412687_002,dog,object_identity,literal,correct,1,the beige coloured dog
+Encode-Decode_Experiment-9-1,2412687,2412687_003,frisbee,object_identity,literal,correct,1,red frisbee
+Encode-Decode_Experiment-9-1,2412687,2412687_004,red,object_attribute,literal,correct,1,red frisbee
+Encode-Decode_Experiment-9-1,2412687,2412687_005,playing,action_relation,literal,correct,1,playing with
+Encode-Decode_Experiment-9-1,2412687,2412687_007,grabbing,action_relation,literal,correct,1,biting the frisbee
+Encode-Decode_Experiment-9-1,2412687,2412687_009,night,scene_gist,latent,correct,1,late at night
+Encode-Decode_Experiment-9-1,2412687,2412687_012,backyard,scene_gist,latent,correct,1,in a garden
+Encode-Decode_Experiment-9-1,2412687,2412687_020,shoe,object_identity,literal,correct,1,black adidas shoes
+Encode-Decode_Experiment-9-1,2412687,2412687_021,black,object_attribute,literal,correct,1,black adidas shoes
+Encode-Decode_Experiment-9-1,2412687,2412687_023,Adidas,object_attribute,literal,correct,1,adidas shoes
+Encode-Decode_Experiment-9-1,2412687,2412687_030,beige,object_attribute,literal,correct,1,beige coloured dog
+Encode-Decode_Experiment-9-1,2412687,2412687_034,all fours,action_relation,literal,correct,1,on all fours
+Encode-Decode_Experiment-9-1,2412687,2412687_035,fence,object_identity,literal,correct,1,a fence in the background
+Encode-Decode_Experiment-9-1,2412687,2412687_036,background,spatial_relation,literal,correct,1,in the background

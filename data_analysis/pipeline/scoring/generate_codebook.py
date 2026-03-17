@@ -33,6 +33,7 @@ Usage
 
 import argparse
 import asyncio
+import base64
 import csv
 import getpass
 import json
@@ -67,6 +68,14 @@ OUTPUT_DIR = config.OUTPUT_DIR / "codebooks" / "raw"
 RESULTS_PATH = config.OUTPUT_DIR / "codebooks" / "results.jsonl"
 ERRORS_PATH = config.OUTPUT_DIR / "codebooks" / "errors.jsonl"
 MANIFEST_PATH = config.OUTPUT_DIR / "codebooks" / "manifest.json"
+
+# Stimulus images directory — override with --image-dir at runtime
+try:
+    IMAGES_DIR = config.IMAGES_DIR
+except AttributeError:
+    IMAGES_DIR = _DA_DIR / "data" / "stimuli" / "images"
+
+_IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".webp"]
 
 VALID_CONTENT_TYPES = {
     "object_identity",
@@ -153,6 +162,10 @@ RESPONSE_SCHEMA = {
                                 "type": "string",
                                 "enum": sorted(VALID_STATUSES),
                             },
+                            "source_phrases": {
+                                "type": "array",
+                                "items": {"type": "string"},
+                            },
                         },
                         "required": [
                             "node_id",
@@ -226,6 +239,33 @@ def load_processed_stims() -> set:
 
 
 # ---------------------------------------------------------------------------
+# Image loading
+# ---------------------------------------------------------------------------
+
+
+def _load_image_b64(stim_id: str, images_dir: Path) -> tuple[str, str] | None:
+    """
+    Find and base64-encode the stimulus image for stim_id.
+    Tries .jpg, .jpeg, .png, .webp in order.
+    Returns (base64_data, media_type) or None if not found.
+    """
+    for ext in _IMAGE_EXTENSIONS:
+        path = images_dir / f"{stim_id}{ext}"
+        if path.exists():
+            media_type = (
+                "image/jpeg" if ext in (".jpg", ".jpeg") else f"image/{ext.lstrip('.')}"
+            )
+            with open(path, "rb") as f:
+                b64 = base64.b64encode(f.read()).decode("utf-8")
+            logger.debug(f"  [{stim_id}] loaded image: {path.name}")
+            return b64, media_type
+    logger.warning(
+        f"  [{stim_id}] no image found in {images_dir} — falling back to text-only"
+    )
+    return None
+
+
+# ---------------------------------------------------------------------------
 # Prompt construction
 # ---------------------------------------------------------------------------
 
@@ -267,18 +307,36 @@ async def _append_jsonl(path: Path, record: dict) -> None:
 class CodebookScorer:
     """Async OpenAI client with semaphore concurrency and exponential backoff."""
 
-    def __init__(self, api_key: str, model: str, max_concurrency: int):
+    def __init__(
+        self, api_key: str, model: str, max_concurrency: int, images_dir: Path
+    ):
         from openai import AsyncOpenAI
 
         self.client = AsyncOpenAI(api_key=api_key)
         self.model = model
         self.semaphore = asyncio.Semaphore(max_concurrency)
+        self.images_dir = images_dir
         self.processed = 0
         self.errors = 0
         self._lock = asyncio.Lock()
 
-    async def _extract(self, stim_id: str, user_prompt: str) -> list | None:
+    async def _extract(
+        self, stim_id: str, user_prompt: str, image: tuple | None
+    ) -> list | None:
         """Call API with retry. Returns list of nodes or None on failure."""
+        # Build user message — multimodal if image is available, text-only otherwise
+        if image is not None:
+            b64, media_type = image
+            user_content = [
+                {
+                    "type": "image_url",
+                    "image_url": {"url": f"data:{media_type};base64,{b64}"},
+                },
+                {"type": "text", "text": user_prompt},
+            ]
+        else:
+            user_content = user_prompt
+
         delay = INITIAL_RETRY_DELAY
         for attempt in range(1, MAX_RETRIES + 1):
             try:
@@ -286,7 +344,7 @@ class CodebookScorer:
                     model=self.model,
                     messages=[
                         {"role": "system", "content": SYSTEM_PROMPT},
-                        {"role": "user", "content": user_prompt},
+                        {"role": "user", "content": user_content},
                     ],
                     response_format=RESPONSE_SCHEMA,
                 )
@@ -335,12 +393,14 @@ class CodebookScorer:
             }
 
         user_prompt = build_user_prompt(stim_id, responses)
+        image = _load_image_b64(stim_id, self.images_dir)
 
         async with self.semaphore:
             logger.info(
-                f"  [{stim_id}] calling {self.model} ({len(responses)} responses) ..."
+                f"  [{stim_id}] calling {self.model} "
+                f"({'image+text' if image else 'text-only'}, {len(responses)} responses) ..."
             )
-            nodes = await self._extract(stim_id, user_prompt)
+            nodes = await self._extract(stim_id, user_prompt, image)
 
         if nodes is None:
             async with self._lock:
@@ -446,6 +506,7 @@ async def run(args) -> None:
         api_key=api_key.strip(),
         model=args.model,
         max_concurrency=args.max_concurrency,
+        images_dir=Path(args.image_dir),
     )
     tasks = [
         scorer.process_stim(stim_id, responses, args.force)
@@ -492,6 +553,11 @@ def main():
         default=DEFAULT_CONCURRENCY,
         help=f"Max parallel API calls (default: {DEFAULT_CONCURRENCY}).",
     )
+    parser.add_argument(
+        "--image-dir",
+        default=str(IMAGES_DIR),
+        help="Directory containing stimulus images (jpg/png). Passed alongside text to the VLM.",
+    )
     args = parser.parse_args()
 
     logger.info("Phase 1: Automated Codebook Generation")
@@ -499,6 +565,7 @@ def main():
     logger.info(f"  Dry run         : {args.dry_run}")
     logger.info(f"  Force           : {args.force}")
     logger.info(f"  Max concurrency : {args.max_concurrency}")
+    logger.info(f"  Image dir       : {args.image_dir}")
     logger.info(f"  Output dir      : {OUTPUT_DIR}")
 
     asyncio.run(run(args))

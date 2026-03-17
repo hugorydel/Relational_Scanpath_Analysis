@@ -105,9 +105,9 @@ You are given a participant's free-text recall description of an image, and a Co
 SCORING RULES:
 
 1. RECALL DECISION
-   For each node in the Codebook, decide:
-   - recalled: true  — the participant's response contains this concept, even if worded differently.
-   - recalled: false — the concept is genuinely absent from the response.
+   For each node in the Codebook, decide whether the participant's response contains this concept.
+   Only return nodes where the concept WAS recalled. Omit nodes that were not recalled.
+   Nodes absent from your response will automatically be scored as recalled=false.
 
 2. SEMANTIC MATCHING (not keyword matching)
    Match on meaning, not exact words. Examples:
@@ -118,20 +118,18 @@ SCORING RULES:
    Use judgement: the match must be specific enough that a human coder would agree.
 
 3. MATCHED PHRASE
-   If recalled is true, copy the shortest phrase from the response that triggered the match.
-   If recalled is false, set matched_phrase to an empty string "".
+   For each recalled node, copy the shortest phrase from the response that triggered the match.
 
 4. ONLY SCORE CORRECT NODES
-   Nodes with status "incorrect" in the Codebook are hallucinated concepts — they are not
-   in the image. Do not score these as recalled even if the participant mentions them.
-   For incorrect nodes, always set recalled to false and matched_phrase to "".
+   Nodes with status "incorrect" in the Codebook are hallucinated concepts — do not return them
+   even if the participant mentions them.
 
 5. PRESERVE NODE IDs
-   Return every node from the input Codebook. Do not add or remove nodes.
-   Preserve node_id, concept, content_type, evidence_type, and status exactly.
+   Use node_id values exactly as they appear in the Codebook. Do not add or invent node IDs.
 
-Return ONLY a valid JSON array. No preamble, no explanation, no markdown fences.
-Each element must have exactly: node_id, recalled (boolean), matched_phrase (string).
+Return ONLY a valid JSON array of recalled nodes. No preamble, no explanation, no markdown fences.
+Each element must have exactly: node_id (string), matched_phrase (string).
+If no nodes were recalled, return an empty array: []
 """
 
 # ---------------------------------------------------------------------------
@@ -151,10 +149,9 @@ RESPONSE_SCHEMA = {
                         "type": "object",
                         "properties": {
                             "node_id": {"type": "string"},
-                            "recalled": {"type": "boolean"},
                             "matched_phrase": {"type": "string"},
                         },
-                        "required": ["node_id", "recalled", "matched_phrase"],
+                        "required": ["node_id", "matched_phrase"],
                         "additionalProperties": False,
                     },
                 }
@@ -252,7 +249,7 @@ def build_user_prompt(
         f"{len(nodes) - len(correct_nodes)} incorrect nodes pre-set to not-recalled):",
         json.dumps(correct_nodes, indent=2, ensure_ascii=False),
         f"",
-        f"Score each node above. Return all {len(correct_nodes)} nodes.",
+        f"Score each node above. Return ONLY the nodes that were recalled (omit unrecalled nodes).",
     ]
     return "\n".join(lines)
 
@@ -341,15 +338,12 @@ class RecallScorer:
         force: bool,
     ) -> dict:
         """Score one (subject, stim) pair. Returns result record."""
-        key = (subject_id, stim_id)
 
-        # Handle empty responses: all nodes = not recalled, no API call needed
+        # Empty response: nothing to score — fill_zeros() will handle these
         if not free_response:
-            logger.info(f"  [{subject_id}×{stim_id}] empty response — all nodes = 0")
-            rows = _build_score_rows(
-                subject_id, stim_id, nodes, scores=None, empty=True
+            logger.info(
+                f"  [{subject_id}×{stim_id}] empty response — skipping API call"
             )
-            await _write_score_rows(rows)
             await _append_jsonl(
                 RESULTS_PATH,
                 {
@@ -382,20 +376,20 @@ class RecallScorer:
             )
             return {"subject_id": subject_id, "stim_id": stim_id, "status": "failed"}
 
-        # Validate: every correct node must have a score returned
-        correct_ids = {n["node_id"] for n in nodes if n.get("status") == "correct"}
-        returned_ids = {s["node_id"] for s in scores}
-        missing = correct_ids - returned_ids
-        if missing:
+        # Guard: drop any node_ids not in this codebook (model hallucination)
+        valid_ids = {n["node_id"] for n in nodes if n.get("status") == "correct"}
+        n_before = len(scores)
+        scores = [s for s in scores if s.get("node_id") in valid_ids]
+        if len(scores) < n_before:
             logger.warning(
-                f"  [{subject_id}×{stim_id}] {len(missing)} nodes missing from "
-                f"API response — treating as not-recalled: {missing}"
+                f"  [{subject_id}×{stim_id}] dropped {n_before - len(scores)} "
+                "unknown/incorrect node_ids from API response"
             )
 
-        rows = _build_score_rows(subject_id, stim_id, nodes, scores, empty=False)
+        rows = _build_score_rows(subject_id, stim_id, nodes, scores)
         await _write_score_rows(rows)
 
-        n_recalled = sum(r["recalled"] for r in rows)
+        n_recalled = len(rows)
         await _append_jsonl(
             RESULTS_PATH,
             {
@@ -410,7 +404,7 @@ class RecallScorer:
         async with self._lock:
             self.processed += 1
         logger.info(
-            f"  [{subject_id}×{stim_id}] " f"{n_recalled}/{len(nodes)} nodes recalled"
+            f"  [{subject_id}×{stim_id}] {n_recalled}/{len(valid_ids)} nodes recalled"
         )
         return {"subject_id": subject_id, "stim_id": stim_id, "status": "ok"}
 
@@ -421,30 +415,34 @@ class RecallScorer:
 
 
 def _build_score_rows(
-    subject_id: str, stim_id: str, nodes: list, scores: list | None, empty: bool
+    subject_id: str, stim_id: str, nodes: list, scores: list
 ) -> list[dict]:
     """
-    Merge codebook nodes with API scores into flat row dicts.
-    incorrect nodes always get recalled=0, matched_phrase="".
+    Build CSV rows for nodes recalled by this participant (recalled=1 only).
+    The caller is responsible for filling in recalled=0 for absent nodes via fill_zeros().
+    incorrect nodes are never included regardless of what the API returned.
     """
-    score_lookup = {}
-    if scores:
-        for s in scores:
-            score_lookup[s["node_id"]] = s
+    # Build lookup from whatever the API returned
+    matched: dict[str, str] = {}
+    for s in scores or []:
+        nid = s.get("node_id", "")
+        if nid:
+            matched[nid] = s.get("matched_phrase", "")
+
+    # Index nodes for metadata lookup
+    node_meta = {n["node_id"]: n for n in nodes}
 
     rows = []
-    for node in nodes:
-        nid = node["node_id"]
-        is_inc = node.get("status") == "incorrect"
-
-        if is_inc or empty:
-            recalled = 0
-            matched_phrase = ""
-        else:
-            s = score_lookup.get(nid, {})
-            recalled = 1 if s.get("recalled", False) else 0
-            matched_phrase = s.get("matched_phrase", "") if recalled else ""
-
+    for nid, phrase in matched.items():
+        node = node_meta.get(nid)
+        if node is None:
+            logger.warning(
+                f"  [{subject_id}×{stim_id}] API returned unknown node_id {nid!r} — skipping"
+            )
+            continue
+        if node.get("status") == "incorrect":
+            # Silently drop — model shouldn't return these but guard anyway
+            continue
         rows.append(
             {
                 "SubjectID": subject_id,
@@ -454,8 +452,8 @@ def _build_score_rows(
                 "content_type": node.get("content_type", ""),
                 "evidence_type": node.get("evidence_type", ""),
                 "status": node.get("status", ""),
-                "recalled": recalled,
-                "matched_phrase": matched_phrase,
+                "recalled": 1,
+                "matched_phrase": phrase,
             }
         )
     return rows
@@ -479,6 +477,63 @@ async def _write_score_rows(rows: list[dict]) -> None:
 # ---------------------------------------------------------------------------
 # Category aggregation (post-processing)
 # ---------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------
+# Gap-fill: write recalled=0 for every (subject, stim, node_id) not in CSV
+# ---------------------------------------------------------------------------
+
+
+def fill_zeros(pairs: list, codebooks: dict) -> int:
+    """
+    After all API scoring, append recalled=0 rows for any (SubjectID, StimID, node_id)
+    combination not already present in recall_scores.csv.
+
+    pairs    : list of (subject_id, stim_id, free_response, nodes) — full scoring scope
+    codebooks: {stim_id: [node, ...]} — all loaded codebooks
+
+    Returns count of rows written.
+    """
+    # Read existing (subject, stim, node_id) keys from CSV
+    existing: set[tuple[str, str, str]] = set()
+    if SCORES_CSV.exists():
+        with open(SCORES_CSV, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                existing.add((row["SubjectID"], row["StimID"], row["node_id"]))
+
+    zero_rows = []
+    for subject_id, stim_id, _, nodes in pairs:
+        for node in nodes:
+            nid = node["node_id"]
+            key = (subject_id, stim_id, nid)
+            if key not in existing:
+                zero_rows.append(
+                    {
+                        "SubjectID": subject_id,
+                        "StimID": stim_id,
+                        "node_id": nid,
+                        "concept": node.get("concept", ""),
+                        "content_type": node.get("content_type", ""),
+                        "evidence_type": node.get("evidence_type", ""),
+                        "status": node.get("status", ""),
+                        "recalled": 0,
+                        "matched_phrase": "",
+                    }
+                )
+
+    if zero_rows:
+        SCORING_DIR.mkdir(parents=True, exist_ok=True)
+        write_header = not SCORES_CSV.exists()
+        with open(SCORES_CSV, "a", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=SCORES_FIELDNAMES)
+            if write_header:
+                writer.writeheader()
+            writer.writerows(zero_rows)
+        logger.info(f"fill_zeros: wrote {len(zero_rows)} recalled=0 rows")
+    else:
+        logger.info("fill_zeros: no gaps found")
+
+    return len(zero_rows)
 
 
 # ---------------------------------------------------------------------------
@@ -569,6 +624,9 @@ async def run(args) -> None:
         for subj, stim, fr, nodes in pairs
     ]
     results = await asyncio.gather(*tasks)
+
+    logger.info("\nFilling in recalled=0 for unscored nodes ...")
+    fill_zeros(pairs, {stim_id: nodes for _, stim_id, _, nodes in pairs})
 
     save_manifest(list(results), args.model)
 

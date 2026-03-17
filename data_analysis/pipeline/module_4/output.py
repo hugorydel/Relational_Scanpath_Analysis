@@ -33,11 +33,11 @@ from .constants import (
 logger = logging.getLogger(__name__)
 
 # Nuisance terms to skip in the forest plot
-_SKIP_TERMS = {f"{c}_z" for c in ENC_COVARIATES} | {
-    "Group Var",
-    "StimID Var",
-    "Intercept",
-}
+_SKIP_TERMS = (
+    {f"{c}_z" for c in ENC_COVARIATES}
+    | {f"{c}_z" for c in ENC_BETWEEN_COVARIATES}
+    | {"Group Var", "StimID Var", "Intercept"}
+)
 
 _PALETTE = {
     "H1_svg_enc": "#636363",

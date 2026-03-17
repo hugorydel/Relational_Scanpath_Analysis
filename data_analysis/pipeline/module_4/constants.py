@@ -27,7 +27,12 @@ PILOT_SUBJ_THRESHOLD = 10
 # Covariate lists
 # ---------------------------------------------------------------------------
 
-ENC_COVARIATES = ["n_fixations_enc", "aoi_prop_enc", "mean_salience_relational_enc"]
+ENC_COVARIATES = [
+    "n_fixations_enc",
+    "aoi_prop_enc",
+    "mean_salience_relational_enc",
+    "enc_total_correct",
+]
 
 # Between-image SVG covariate — included in H2/Exploratory models alongside
 # the within-image predictor to decompose participant-level from image-level

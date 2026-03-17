@@ -1,0 +1,282 @@
+[
+  {
+    "node_id": "2344622_001",
+    "concept": "cat",
+    "context": "main animal resting beside the keyboard",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_002",
+    "concept": "keyboard",
+    "context": "device beside the cat and under the hand",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_003",
+    "concept": "blanket",
+    "context": "fabric under the cat",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_004",
+    "concept": "blue",
+    "context": "modifies the blanket under the cat",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_005",
+    "concept": "light",
+    "context": "modifies the shade of the blue blanket",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_006",
+    "concept": "hand",
+    "context": "visible human hand touching the keyboard",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_007",
+    "concept": "person",
+    "context": "owner of the visible hand at the keyboard",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_008",
+    "concept": "man",
+    "context": "gender label applied to the person with the visible hand",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2344622_009",
+    "concept": "woman",
+    "context": "gender label applied to the person with the visible hand",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2344622_010",
+    "concept": "desk",
+    "context": "surface holding the cat, blanket, and keyboard",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_011",
+    "concept": "cd",
+    "context": "media cases positioned behind the cat",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_012",
+    "concept": "computer",
+    "context": "device inferred from the keyboard setup",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_013",
+    "concept": "laptop",
+    "context": "device the person was said to be looking at",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2344622_014",
+    "concept": "nail",
+    "context": "part of the visible hand",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2344622_015",
+    "concept": "brown",
+    "context": "modifies the cat's fur color",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_016",
+    "concept": "grey",
+    "context": "modifies the cat's fur color",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_017",
+    "concept": "striped",
+    "context": "modifies the cat's fur pattern",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_018",
+    "concept": "white",
+    "context": "modifies the supposed man with the visible hand",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2344622_019",
+    "concept": "middle-aged",
+    "context": "modifies the supposed man with the visible hand",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2344622_020",
+    "concept": "long",
+    "context": "modifies the nails on the visible hand",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2344622_021",
+    "concept": "old-fashioned",
+    "context": "modifies the keyboard style",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_022",
+    "concept": "right",
+    "context": "modifies the visible hand as a right hand",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_023",
+    "concept": "lying",
+    "context": "posture of the cat on the blanket",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_024",
+    "concept": "sleeping",
+    "context": "state attributed to the cat while resting",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_025",
+    "concept": "typing",
+    "context": "action attributed to the person/hand on the keyboard",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_026",
+    "concept": "sitting",
+    "context": "posture attributed to the person with the visible hand",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2344622_027",
+    "concept": "looking",
+    "context": "action attributed to the person toward a laptop",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2344622_028",
+    "concept": "next to",
+    "context": "relates the cat and the keyboard",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_029",
+    "concept": "on",
+    "context": "relates the cat and the blanket",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_030",
+    "concept": "on",
+    "context": "relates the hand and the keyboard",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_031",
+    "concept": "over",
+    "context": "positions the hand above the keyboard keys",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_032",
+    "concept": "left",
+    "context": "positions the cat on the left side of the image and to the left of the keyboard/person",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_033",
+    "concept": "left",
+    "context": "positions the hand over the left side or left edge of the keyboard",
+    "content_type": "spatial_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2344622_034",
+    "concept": "right",
+    "context": "positions the hand or keyboard to the right of the cat",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2344622_035",
+    "concept": "behind",
+    "context": "positions the CDs behind the cat",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  }
+]

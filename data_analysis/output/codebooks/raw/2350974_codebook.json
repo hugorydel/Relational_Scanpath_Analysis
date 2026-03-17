@@ -1,0 +1,442 @@
+[
+  {
+    "node_id": "2350974_001",
+    "concept": "child",
+    "context": "main young person in the center of the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_002",
+    "concept": "boy",
+    "context": "main child interpreted as male",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_003",
+    "concept": "small",
+    "context": "modifies the size/age appearance of the child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_004",
+    "concept": "standing",
+    "context": "posture of the child between the vehicles",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_005",
+    "concept": "drinking",
+    "context": "action performed by the child",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_006",
+    "concept": "holding",
+    "context": "child holding the bottle while drinking",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_007",
+    "concept": "bottle",
+    "context": "container from which the child is drinking",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_008",
+    "concept": "drink",
+    "context": "beverage being consumed by the child",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_009",
+    "concept": "coca-cola",
+    "context": "branding/type of the bottle or beverage",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_010",
+    "concept": "label",
+    "context": "label/packaging on the bottle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_011",
+    "concept": "red",
+    "context": "modifies the bottle label/packaging",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_012",
+    "concept": "red",
+    "context": "modifies the car beside the child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_013",
+    "concept": "car",
+    "context": "red vehicle beside the child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_014",
+    "concept": "blue",
+    "context": "modifies the motorcycle beside the child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_015",
+    "concept": "motorcycle",
+    "context": "blue vehicle beside the child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_016",
+    "concept": "vehicle",
+    "context": "category describing the car and motorcycle around the child",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_017",
+    "concept": "two",
+    "context": "count of the vehicles around the child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_018",
+    "concept": "between",
+    "context": "child positioned between the car and motorcycle",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_019",
+    "concept": "leaning",
+    "context": "child leaning on the red car",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_020",
+    "concept": "against",
+    "context": "child or child's hand resting against the car",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_021",
+    "concept": "hand",
+    "context": "child's hand touching the car",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_022",
+    "concept": "red",
+    "context": "modifies the child's headwear/hood area",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_023",
+    "concept": "person",
+    "context": "partially visible adult near the motorcycle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_024",
+    "concept": "on",
+    "context": "partially visible person positioned on the motorcycle",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_025",
+    "concept": "in front of",
+    "context": "motorcycle/person positioned in front of the child",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_026",
+    "concept": "outdoors",
+    "context": "overall scene setting",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_027",
+    "concept": "road",
+    "context": "ground/street surface in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_028",
+    "concept": "grey",
+    "context": "modifies the road/street surface",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2350974_029",
+    "concept": "man",
+    "context": "hallucinated adult male figure described as the main actor or drinker",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_030",
+    "concept": "drinking",
+    "context": "action attributed to hallucinated man or couch scene figures",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_031",
+    "concept": "holding",
+    "context": "action attributed to hallucinated man or woman holding other items",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_032",
+    "concept": "beer",
+    "context": "hallucinated beverage in the man's container",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_033",
+    "concept": "glass",
+    "context": "hallucinated container held by the man",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_034",
+    "concept": "can",
+    "context": "alternative hallucinated container held by the man",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_035",
+    "concept": "toddler",
+    "context": "main child recalled as much younger than shown",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_036",
+    "concept": "water",
+    "context": "hallucinated bottle contents",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_037",
+    "concept": "hat",
+    "context": "child's headwear recalled as a hat",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_038",
+    "concept": "helmet",
+    "context": "child's headwear recalled as a helmet",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_039",
+    "concept": "hair",
+    "context": "child's hair recalled as visibly detailed",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_040",
+    "concept": "short",
+    "context": "modifies the recalled hair length",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_041",
+    "concept": "brown",
+    "context": "modifies the recalled hair color",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_042",
+    "concept": "empty",
+    "context": "modifies the recalled fill level of the bottle",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_043",
+    "concept": "blue",
+    "context": "modifies a falsely recalled blue car beside the child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_044",
+    "concept": "car",
+    "context": "blue vehicle beside the child misidentified as a car instead of a motorcycle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_045",
+    "concept": "energy",
+    "context": "modifies the hallucinated type of drink",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_046",
+    "concept": "bicycle",
+    "context": "hallucinated vehicle in the unrelated cycling scene",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_047",
+    "concept": "cycling",
+    "context": "hallucinated action in the unrelated scene",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_048",
+    "concept": "power",
+    "context": "hallucinated action of using cycling to power another object",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_049",
+    "concept": "blender",
+    "context": "hallucinated appliance in the unrelated scene",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_050",
+    "concept": "woman",
+    "context": "hallucinated additional person in the unrelated scene",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_051",
+    "concept": "lid",
+    "context": "hallucinated object being held, or recalled bottle closure",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_052",
+    "concept": "right of",
+    "context": "hallucinated woman positioned to the right of a man",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_053",
+    "concept": "sitting",
+    "context": "hallucinated posture of men on a couch",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_054",
+    "concept": "couch",
+    "context": "hallucinated furniture in the alternative scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2350974_055",
+    "concept": "two",
+    "context": "count of hallucinated men in the couch scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  }
+]

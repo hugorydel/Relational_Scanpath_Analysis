@@ -1,0 +1,306 @@
+[
+  {
+    "node_id": "2411268_001",
+    "concept": "girl",
+    "context": "main child subject in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_002",
+    "concept": "one",
+    "context": "count of the main girl subject",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_003",
+    "concept": "young",
+    "context": "age-related description of the main girl subject",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_004",
+    "concept": "standing",
+    "context": "posture of the main girl subject",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_005",
+    "concept": "tree",
+    "context": "tree the girl is standing under and picking from",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_006",
+    "concept": "under",
+    "context": "describes the girl's position relative to the tree",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_007",
+    "concept": "apple",
+    "context": "fruit being reached for and picked; also used to identify the tree type",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_008",
+    "concept": "green",
+    "context": "modifies the apples on the tree",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_009",
+    "concept": "picking",
+    "context": "action of taking apples from the tree",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_010",
+    "concept": "reaching",
+    "context": "upward arm movement toward the apples",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_011",
+    "concept": "branch",
+    "context": "tree branch the apples hang from",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_012",
+    "concept": "above",
+    "context": "describes the apples or branch being above the girl's head",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_013",
+    "concept": "head",
+    "context": "body part used as the reference point for the apples or branch being above",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_014",
+    "concept": "holding",
+    "context": "action of the girl holding the bag",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_015",
+    "concept": "bag",
+    "context": "container carried by the girl while picking apples",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_016",
+    "concept": "red",
+    "context": "modifies the bag carried by the girl",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_017",
+    "concept": "boot",
+    "context": "footwear worn by the girl",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_018",
+    "concept": "pink",
+    "context": "modifies the girl's boots",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_019",
+    "concept": "orchard",
+    "context": "overall setting of the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_020",
+    "concept": "field",
+    "context": "overall outdoor setting of the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_021",
+    "concept": "garden",
+    "context": "overall outdoor setting of the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_022",
+    "concept": "collecting",
+    "context": "implied use of the bag for gathering picked apples",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_023",
+    "concept": "hand",
+    "context": "girl's hand used to hold the bag or reach toward the apples",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_024",
+    "concept": "right",
+    "context": "describes the bag-holding hand from the viewer's perspective",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_025",
+    "concept": "left",
+    "context": "claimed laterality of the bag-holding hand or claimed location of a background figure",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2411268_026",
+    "concept": "basket",
+    "context": "claimed container carried by the girl",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2411268_027",
+    "concept": "brown",
+    "context": "modifies the claimed basket",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2411268_028",
+    "concept": "low",
+    "context": "describes the branch as hanging low or low down",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_029",
+    "concept": "high",
+    "context": "describes the branch as high",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2411268_030",
+    "concept": "person",
+    "context": "claimed additional human figure in the background",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2411268_031",
+    "concept": "another",
+    "context": "count-related description of a claimed second background person",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2411268_032",
+    "concept": "background",
+    "context": "claimed location of an additional person behind the main subject",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2411268_033",
+    "concept": "dress",
+    "context": "claimed clothing worn by the girl",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2411268_034",
+    "concept": "hair",
+    "context": "girl's hair",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_035",
+    "concept": "blonde",
+    "context": "modifies the girl's hair color",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_036",
+    "concept": "two",
+    "context": "claimed count of apples on the tree",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2411268_037",
+    "concept": "small",
+    "context": "modifies the size of the tree",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2411268_038",
+    "concept": "large",
+    "context": "modifies the size of the field setting",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  }
+]

@@ -1,0 +1,338 @@
+[
+  {
+    "node_id": "2410309_001",
+    "concept": "woman",
+    "context": "adult female seated on the left side of the sofa",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_002",
+    "concept": "mother",
+    "context": "social role attributed to the woman beside the baby",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_003",
+    "concept": "baby",
+    "context": "infant seated beside the woman on the sofa",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_004",
+    "concept": "sofa",
+    "context": "furniture supporting the woman and baby",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_005",
+    "concept": "laptop",
+    "context": "portable computers used by the woman and the baby",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_006",
+    "concept": "keyboard",
+    "context": "keyboard area of the laptops, especially the one the baby touches",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_007",
+    "concept": "bottle",
+    "context": "container lying between the woman and the baby",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_008",
+    "concept": "coke",
+    "context": "beverage/brand associated with the bottle between the woman and the baby",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_009",
+    "concept": "hand",
+    "context": "the baby's hand placed on the laptop keyboard",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_010",
+    "concept": "cloth",
+    "context": "fabric covering the sofa beneath the woman and baby",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_011",
+    "concept": "top",
+    "context": "woman's upper-body clothing",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_012",
+    "concept": "dress",
+    "context": "woman's outfit described as a dress",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_013",
+    "concept": "screen",
+    "context": "part of the laptop the woman is facing and looking toward",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_014",
+    "concept": "cat",
+    "context": "animal claimed to be to the left of the person on the sofa",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2410309_015",
+    "concept": "two",
+    "context": "count of the laptops in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_016",
+    "concept": "separate",
+    "context": "property that the laptops are different individual devices",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_017",
+    "concept": "red",
+    "context": "color attributed to the woman's clothing",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_018",
+    "concept": "purple",
+    "context": "color attributed to the woman's clothing",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_019",
+    "concept": "blue",
+    "context": "color of the sofa covering or cloth beneath the subjects",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_020",
+    "concept": "gray",
+    "context": "color of the woman's laptop",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_021",
+    "concept": "black",
+    "context": "color of the baby's laptop or its keyboard",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_022",
+    "concept": "plastic",
+    "context": "material of the bottle between the woman and the baby",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_023",
+    "concept": "diet",
+    "context": "attribute of the coke bottle label",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_024",
+    "concept": "Dell",
+    "context": "brand marking on the woman's laptop",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_025",
+    "concept": "older",
+    "context": "relative age description of the woman compared with the baby",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_026",
+    "concept": "annoyed",
+    "context": "claimed facial expression or emotional state of the woman",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2410309_027",
+    "concept": "sitting",
+    "context": "posture/action of the woman and baby on the sofa",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_028",
+    "concept": "looking",
+    "context": "gaze of the woman and baby directed toward laptops",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_029",
+    "concept": "using",
+    "context": "general engagement of the woman and baby with their laptops",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_030",
+    "concept": "touching",
+    "context": "the baby's contact with the laptop keyboard",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_031",
+    "concept": "typing",
+    "context": "the woman's action on her laptop",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_032",
+    "concept": "working",
+    "context": "claimed task the woman is doing on her laptop",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2410309_033",
+    "concept": "left side",
+    "context": "position of the woman within the image or on the sofa",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_034",
+    "concept": "right side",
+    "context": "position of the baby within the image or on the sofa",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_035",
+    "concept": "next to",
+    "context": "position of the baby beside the woman",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_036",
+    "concept": "between",
+    "context": "location of the bottle relative to the woman and the baby",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_037",
+    "concept": "on lap",
+    "context": "location of the woman's laptop relative to her body",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_038",
+    "concept": "in front of",
+    "context": "location of the baby's laptop relative to the baby",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_039",
+    "concept": "forward",
+    "context": "orientation of the woman's body as described while seated with the laptop",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_040",
+    "concept": "sideways",
+    "context": "orientation of the baby's body or head while attending to the laptop",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_041",
+    "concept": "rightward",
+    "context": "direction of the baby's gaze toward the right side of the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2410309_042",
+    "concept": "left of",
+    "context": "claimed position of the baby relative to the woman",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  }
+]

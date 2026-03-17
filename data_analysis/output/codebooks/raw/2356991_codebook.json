@@ -1,0 +1,306 @@
+[
+  {
+    "node_id": "2356991_001",
+    "concept": "player",
+    "context": "the two human figures involved in the baseball play",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_002",
+    "concept": "two",
+    "context": "modifies the number of players in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_003",
+    "concept": "ball",
+    "context": "the baseball traveling between the players",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_004",
+    "concept": "base",
+    "context": "the base beside the standing player that the sliding player is reaching toward",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_005",
+    "concept": "glove",
+    "context": "worn on the standing player's hand while awaiting the ball",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_006",
+    "concept": "helmet",
+    "context": "worn by the sliding player on the left",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_007",
+    "concept": "cap",
+    "context": "worn by the standing player on the right",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_008",
+    "concept": "uniform",
+    "context": "the baseball clothing worn by the players",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_009",
+    "concept": "ground",
+    "context": "the dirt surface the sliding player is moving across",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_010",
+    "concept": "arm",
+    "context": "the limb stretched outward by a player during the play",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_011",
+    "concept": "hand",
+    "context": "the sliding player's outstretched hands and the standing player's gloved hand",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_012",
+    "concept": "face",
+    "context": "the visible face of the standing player while tracking the play",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_013",
+    "concept": "field",
+    "context": "the outdoor baseball playing surface surrounding the players",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_014",
+    "concept": "baseball",
+    "context": "the sport setting implied by the ball, base, uniforms, and field",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_015",
+    "concept": "game",
+    "context": "the ongoing athletic contest depicted in the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_016",
+    "concept": "red",
+    "context": "modifies the sliding player's helmet and red uniform accents",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_017",
+    "concept": "white",
+    "context": "modifies the players' uniforms",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_018",
+    "concept": "striped",
+    "context": "modifies the standing player's uniform pattern",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_019",
+    "concept": "focused",
+    "context": "modifies the standing player's facial expression while awaiting the ball",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_020",
+    "concept": "sliding",
+    "context": "action performed by the left player moving toward the base",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_021",
+    "concept": "catching",
+    "context": "action the standing player is attempting with the incoming ball",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_022",
+    "concept": "reaching",
+    "context": "action of the sliding player extending toward the base",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_023",
+    "concept": "standing",
+    "context": "upright posture of the player on the right near the base",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_024",
+    "concept": "looking",
+    "context": "visual attention directed toward the ball during the play",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_025",
+    "concept": "flying",
+    "context": "motion of the ball through the air between the players",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_026",
+    "concept": "grabbing",
+    "context": "alleged action of the left player trying to take the ball",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2356991_027",
+    "concept": "throwing",
+    "context": "alleged prior action of the sliding player tossing the ball",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2356991_028",
+    "concept": "tackling",
+    "context": "alleged action of one player trying to tackle the other",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2356991_029",
+    "concept": "on the left",
+    "context": "position of the sliding player within the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_030",
+    "concept": "on the right",
+    "context": "position of the standing player within the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_031",
+    "concept": "behind",
+    "context": "position of the standing player relative to the sliding player in depth",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_032",
+    "concept": "in front",
+    "context": "position of the sliding player relative to the standing player in depth",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_033",
+    "concept": "between",
+    "context": "position of the ball relative to the two players",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_034",
+    "concept": "at the base",
+    "context": "position of the standing player beside the base",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_035",
+    "concept": "on the ground",
+    "context": "position of the sliding player against the dirt surface",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_036",
+    "concept": "in the air",
+    "context": "position of the ball while traveling toward the standing player",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_037",
+    "concept": "headfirst",
+    "context": "orientation of the sliding player's body as he moves toward the base",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356991_038",
+    "concept": "catcher",
+    "context": "alleged baseball position assigned to the standing player",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  }
+]

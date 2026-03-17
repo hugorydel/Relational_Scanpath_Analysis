@@ -1,0 +1,394 @@
+[
+  {
+    "node_id": "2397102_001",
+    "concept": "man",
+    "context": "one of the two primary people cutting the cake",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_002",
+    "concept": "woman",
+    "context": "one of the two primary people cutting the cake",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_003",
+    "concept": "person",
+    "context": "generic reference to the two main humans in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_004",
+    "concept": "couple",
+    "context": "social label for the man and woman cutting the cake together",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_005",
+    "concept": "cake",
+    "context": "dessert being cut by the man and woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_006",
+    "concept": "knife",
+    "context": "utensil both people are using to cut the cake",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_007",
+    "concept": "hand",
+    "context": "body part used to hold the knife and the drink container",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_008",
+    "concept": "beer",
+    "context": "drink inferred to be in the man's container",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_009",
+    "concept": "bottle",
+    "context": "container held by the man while cutting the cake",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_010",
+    "concept": "can",
+    "context": "container incorrectly described as being in the man's hand",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2397102_011",
+    "concept": "Guinness",
+    "context": "specific beer brand claimed for the man's drink",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2397102_012",
+    "concept": "dress",
+    "context": "garment worn by the woman on the left",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_013",
+    "concept": "shirt",
+    "context": "garment on the man's upper body",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_014",
+    "concept": "suit",
+    "context": "formal outfit incorrectly used to describe the man's clothing",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2397102_015",
+    "concept": "glass",
+    "context": "container incorrectly said to be in the woman's hand",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2397102_016",
+    "concept": "wine",
+    "context": "drink incorrectly said to be in the woman's glass",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2397102_017",
+    "concept": "ring",
+    "context": "item on the man's hand",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_018",
+    "concept": "finger",
+    "context": "specific finger claimed as the location of the man's ring",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2397102_019",
+    "concept": "frosting",
+    "context": "white icing covering the cake",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_020",
+    "concept": "decoration",
+    "context": "colored dots or accents around and on the cake",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_021",
+    "concept": "writing",
+    "context": "colored text or lettering described on top of the cake",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_022",
+    "concept": "piece",
+    "context": "slice or portion of cake being cut",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_023",
+    "concept": "one",
+    "context": "count used for a single person or a single hand in the cake-cutting interaction",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_024",
+    "concept": "two",
+    "context": "count used for the two main people or the woman's two hands on the knife",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_025",
+    "concept": "pink",
+    "context": "color of the woman's dress",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_026",
+    "concept": "bright",
+    "context": "intensity descriptor for the woman's pink dress",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_027",
+    "concept": "strapless",
+    "context": "style of the woman's dress",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_028",
+    "concept": "red",
+    "context": "color incorrectly used for the woman's dress",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2397102_029",
+    "concept": "white",
+    "context": "color of the cake and its frosting",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_030",
+    "concept": "white",
+    "context": "skin-tone descriptor applied to the two primary people",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_031",
+    "concept": "colorful",
+    "context": "multicolored appearance of the cake decorations or overall cake surface",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_032",
+    "concept": "blue",
+    "context": "color of some cake writing or decorations",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_033",
+    "concept": "red",
+    "context": "color of some cake writing or decorations",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_034",
+    "concept": "yellow",
+    "context": "color of some cake decorations",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_035",
+    "concept": "brown",
+    "context": "color of the bottle held by the man",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_036",
+    "concept": "blue",
+    "context": "color incorrectly attributed to the man's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2397102_037",
+    "concept": "first",
+    "context": "ordinal claim that the cut piece was the first piece of the cake",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2397102_038",
+    "concept": "cutting",
+    "context": "action performed by the man and woman on the cake",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_039",
+    "concept": "holding",
+    "context": "action of grasping the knife or drink container",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_040",
+    "concept": "wearing",
+    "context": "relation between the people and their clothing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_041",
+    "concept": "standing",
+    "context": "posture of the main people by the cake table",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_042",
+    "concept": "next to",
+    "context": "relation of the man beside the woman while cutting the cake",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_043",
+    "concept": "left",
+    "context": "position of the woman in the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_044",
+    "concept": "right",
+    "context": "position of the man in the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_045",
+    "concept": "left",
+    "context": "incorrect position assigned to the man in one response",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2397102_046",
+    "concept": "on top",
+    "context": "location of the cake writing or decorations",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_047",
+    "concept": "left",
+    "context": "side incorrectly specified for the finger wearing the man's ring",
+    "content_type": "spatial_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2397102_048",
+    "concept": "party",
+    "context": "general celebratory event setting inferred from cake-cutting and attire",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2397102_049",
+    "concept": "wedding",
+    "context": "specific event setting or ring type inferred from the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  }
+]

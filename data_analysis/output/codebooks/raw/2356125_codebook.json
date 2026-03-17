@@ -1,0 +1,354 @@
+[
+  {
+    "node_id": "2356125_001",
+    "concept": "airport",
+    "context": "overall setting of the baggage-handling scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_002",
+    "concept": "personnel",
+    "context": "uniformed workers/staff in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_003",
+    "concept": "officer",
+    "context": "personnel described as officers",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_004",
+    "concept": "guard",
+    "context": "personnel described as security guards",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2356125_005",
+    "concept": "attendant",
+    "context": "personnel described as flight attendants",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2356125_006",
+    "concept": "pilot",
+    "context": "male personnel described as a pilot",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2356125_007",
+    "concept": "woman",
+    "context": "female personnel in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_008",
+    "concept": "man",
+    "context": "male personnel in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_009",
+    "concept": "luggage",
+    "context": "bags/suitcases on or being placed onto the conveyor belt",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_010",
+    "concept": "conveyor belt",
+    "context": "baggage belt in the foreground/loading area",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_011",
+    "concept": "ramp",
+    "context": "short feeder ramp/scanner exit leading to the belt",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_012",
+    "concept": "wall",
+    "context": "background wall behind the standing personnel",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_013",
+    "concept": "arm",
+    "context": "man's arms in his standing posture",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_014",
+    "concept": "back",
+    "context": "man's back relative to his arms",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_015",
+    "concept": "four",
+    "context": "modifies the total number of personnel in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_016",
+    "concept": "three",
+    "context": "modifies the number of women among the personnel",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_017",
+    "concept": "one",
+    "context": "modifies the number of men among the personnel",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_018",
+    "concept": "two",
+    "context": "modifies the number of women handling/loading luggage",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_019",
+    "concept": "two",
+    "context": "modifies the number of personnel standing aside on the left/background",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_020",
+    "concept": "three",
+    "context": "modifies the total number of luggage pieces visible or on the belt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_021",
+    "concept": "four",
+    "context": "modifies the claimed number of luggage pieces on the belt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2356125_022",
+    "concept": "two",
+    "context": "modifies the claimed number of men in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2356125_023",
+    "concept": "two",
+    "context": "modifies the number of other luggage pieces visible besides the one being handled",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_024",
+    "concept": "uniformed",
+    "context": "modifies the personnel clothing",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_025",
+    "concept": "large",
+    "context": "modifies the luggage being handled on the right",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_026",
+    "concept": "black",
+    "context": "modifies the conveyor belt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_027",
+    "concept": "red",
+    "context": "modifies visible luggage color or stripe",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_028",
+    "concept": "blue",
+    "context": "modifies visible luggage color or stripe",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_029",
+    "concept": "green",
+    "context": "modifies the claimed stripe color of the handled luggage",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2356125_030",
+    "concept": "colorful",
+    "context": "modifies the luggage being handled on the right",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_031",
+    "concept": "striped",
+    "context": "modifies the luggage being handled on the right",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_032",
+    "concept": "wrapped",
+    "context": "modifies the luggage being handled on the right",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_033",
+    "concept": "cellophane",
+    "context": "modifies the wrapping material around the large luggage",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_034",
+    "concept": "standing",
+    "context": "posture of the personnel not handling luggage",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_035",
+    "concept": "loading",
+    "context": "women placing or moving luggage onto the conveyor belt",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_036",
+    "concept": "helping",
+    "context": "two women cooperatively assisting with the luggage",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_037",
+    "concept": "next to",
+    "context": "personnel positioned beside the conveyor belt",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_038",
+    "concept": "on the right",
+    "context": "location of the two women handling luggage",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_039",
+    "concept": "on the left",
+    "context": "location of the standing personnel",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_040",
+    "concept": "against",
+    "context": "standing personnel positioned against the wall",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_041",
+    "concept": "in the back",
+    "context": "standing personnel located in the background",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_042",
+    "concept": "behind",
+    "context": "man's arms positioned behind his back",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_043",
+    "concept": "left of",
+    "context": "man positioned left of the two women handling luggage",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2356125_044",
+    "concept": "left of",
+    "context": "standing woman positioned left of the man",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  }
+]

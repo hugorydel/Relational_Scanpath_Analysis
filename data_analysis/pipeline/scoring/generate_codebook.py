@@ -71,6 +71,7 @@ ERRORS_PATH = config.OUTPUT_DIR / "codebooks" / "errors.jsonl"
 MANIFEST_PATH = config.OUTPUT_DIR / "codebooks" / "manifest.json"
 IMAGES_DIR = config.DATA_METADATA_DIR / "images"
 
+
 _IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".webp"]
 
 VALID_CONTENT_TYPES = {

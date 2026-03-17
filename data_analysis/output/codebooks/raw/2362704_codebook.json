@@ -1,0 +1,194 @@
+[
+  {
+    "node_id": "2362704_001",
+    "concept": "bear",
+    "context": "animal present in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_002",
+    "concept": "pumpkin",
+    "context": "food object being eaten by the bears",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_003",
+    "concept": "ground",
+    "context": "surface beneath the bears and pumpkins",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_004",
+    "concept": "mouth",
+    "context": "part of the right bear positioned in the pumpkin",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_005",
+    "concept": "two",
+    "context": "count of bears in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_006",
+    "concept": "two",
+    "context": "count of pumpkins in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_007",
+    "concept": "black",
+    "context": "coat color of the bears",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_008",
+    "concept": "brown",
+    "context": "coat color of the bears",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2362704_009",
+    "concept": "orange",
+    "context": "color of the pumpkin(s) / orange object being eaten",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_010",
+    "concept": "eating",
+    "context": "action performed by the bears on the pumpkin(s)",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_011",
+    "concept": "partially eaten",
+    "context": "state of the pumpkin(s) being consumed",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_012",
+    "concept": "torn apart",
+    "context": "damaged/opened state of the pumpkin(s)",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_013",
+    "concept": "sitting",
+    "context": "posture of the bears while eating",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_014",
+    "concept": "lying",
+    "context": "posture of the bears on the ground",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2362704_015",
+    "concept": "looking toward viewer",
+    "context": "gaze direction of the left bear",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_016",
+    "concept": "looking away",
+    "context": "gaze direction of one bear not facing the viewer",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_017",
+    "concept": "looking at pumpkin",
+    "context": "gaze direction of the right bear toward the pumpkin",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_018",
+    "concept": "on the ground",
+    "context": "position of the bears relative to the ground surface",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_019",
+    "concept": "on the left",
+    "context": "location of one bear in the frame",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_020",
+    "concept": "on the right",
+    "context": "location of one bear in the frame",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_021",
+    "concept": "next to",
+    "context": "spatial relation between the two bears",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_022",
+    "concept": "behind",
+    "context": "position of one bear relative to the other bear",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_023",
+    "concept": "obscured",
+    "context": "visibility of the rear/right bear relative to the other bear",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2362704_024",
+    "concept": "inside",
+    "context": "position of the right bear's mouth relative to the pumpkin",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  }
+]

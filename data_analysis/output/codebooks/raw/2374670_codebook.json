@@ -1,0 +1,290 @@
+[
+  {
+    "node_id": "2374670_001",
+    "concept": "red",
+    "context": "modifies the main spraying vehicle",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_002",
+    "concept": "big",
+    "context": "modifies the main vehicle",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_003",
+    "concept": "truck",
+    "context": "main red vehicle in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_004",
+    "concept": "vehicle",
+    "context": "generic label for the main red sprayer",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_005",
+    "concept": "van",
+    "context": "alternative label for the main red sprayer",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2374670_006",
+    "concept": "man",
+    "context": "person on the rear of the vehicle and person visible in the cab",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_007",
+    "concept": "driver",
+    "context": "role assigned to the person visible in the front cab",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_008",
+    "concept": "water",
+    "context": "substance being sprayed from the rear of the vehicle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_009",
+    "concept": "hose",
+    "context": "rear tube or pipe attached to the spraying apparatus",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_010",
+    "concept": "outlet",
+    "context": "rear spray nozzles or openings releasing water",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_011",
+    "concept": "platform",
+    "context": "rear ledge or step where the man is positioned",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_012",
+    "concept": "road",
+    "context": "surface the vehicle is driving on and spraying",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_013",
+    "concept": "dirt",
+    "context": "modifies the road or track surface",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_014",
+    "concept": "mud",
+    "context": "modifies the road or track surface",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_015",
+    "concept": "campervan",
+    "context": "background vehicles behind the spraying truck",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_016",
+    "concept": "green",
+    "context": "modifies the hose at the rear of the vehicle",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_017",
+    "concept": "blue",
+    "context": "modifies the rear hose or tube",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2374670_018",
+    "concept": "grey",
+    "context": "modifies the road surface",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2374670_019",
+    "concept": "wooden",
+    "context": "modifies the rear platform or plank",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2374670_020",
+    "concept": "four",
+    "context": "modifies the count of rear hoses or outlets",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2374670_021",
+    "concept": "eight",
+    "context": "modifies the count of rear water spurts or streams",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2374670_022",
+    "concept": "multiple",
+    "context": "modifies the number of spray outlets or water streams at the rear",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_023",
+    "concept": "spraying",
+    "context": "action performed by the vehicle releasing water",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_024",
+    "concept": "driving",
+    "context": "movement of the vehicle along the road",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_025",
+    "concept": "standing",
+    "context": "posture of the man on the rear platform",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_026",
+    "concept": "holding",
+    "context": "action of the rear man gripping the vehicle",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_027",
+    "concept": "bending",
+    "context": "posture of the rear man leaning over the equipment",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_028",
+    "concept": "at the back of",
+    "context": "position of the man relative to the truck",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_029",
+    "concept": "behind",
+    "context": "position of background campervans relative to the truck or of the man relative to the vehicle",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_030",
+    "concept": "in front of",
+    "context": "position of the cab occupant relative to the rear worker",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_031",
+    "concept": "on the left side of",
+    "context": "position of the rear man on the truck's back end",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_032",
+    "concept": "from the bottom of",
+    "context": "location of the spray relative to the truck",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_033",
+    "concept": "facing away",
+    "context": "orientation of the rear man's back toward the viewer",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2374670_034",
+    "concept": "field",
+    "context": "describes the area being sprayed",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2374670_035",
+    "concept": "residential area",
+    "context": "describes the broader setting around the road",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2374670_036",
+    "concept": "farm",
+    "context": "describes the vehicle or setting as agricultural",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  }
+]

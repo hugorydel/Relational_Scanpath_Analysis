@@ -1,0 +1,178 @@
+[
+  {
+    "node_id": "2360001_001",
+    "concept": "man",
+    "context": "individuals on the scaffolding handling the clock",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_002",
+    "concept": "workman",
+    "context": "occupational role inferred for the men lifting/installing the clock",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_003",
+    "concept": "four",
+    "context": "count of the men on the scaffolding",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_004",
+    "concept": "three",
+    "context": "alternate reported count of the men on the scaffolding",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2360001_005",
+    "concept": "several",
+    "context": "vague plural count of the men on the scaffolding",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_006",
+    "concept": "clock",
+    "context": "object being lifted and mounted",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_007",
+    "concept": "large",
+    "context": "modifies the clock being handled",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_008",
+    "concept": "old",
+    "context": "modifies the style/appearance of the clock",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_009",
+    "concept": "scaffolding",
+    "context": "structure the men are standing on",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_010",
+    "concept": "plank",
+    "context": "platform beneath the men as part of the support structure",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_011",
+    "concept": "wooden",
+    "context": "modifies the plank/platform beneath the men",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_012",
+    "concept": "building",
+    "context": "facade beside which the clock is being positioned",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_013",
+    "concept": "street",
+    "context": "overall location of the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_014",
+    "concept": "city",
+    "context": "overall urban setting of the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_015",
+    "concept": "black and white",
+    "context": "modifies the overall image rendering",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_016",
+    "concept": "standing",
+    "context": "pose/action of the men on the scaffolding",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_017",
+    "concept": "raising",
+    "context": "action performed on the clock",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_018",
+    "concept": "installing",
+    "context": "action of putting the clock onto the building",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_019",
+    "concept": "on",
+    "context": "physical positioning of the men relative to the scaffolding and of the clock relative to the building",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_020",
+    "concept": "above",
+    "context": "position of the clock relative to the men's heads",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_021",
+    "concept": "left",
+    "context": "position of the clock on the left side of the building in the frame",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2360001_022",
+    "concept": "ZENITH",
+    "context": "reported text/brand on the clock face",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  }
+]

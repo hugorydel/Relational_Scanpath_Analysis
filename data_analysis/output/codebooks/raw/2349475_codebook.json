@@ -1,0 +1,386 @@
+[
+  {
+    "node_id": "2349475_001",
+    "concept": "blender",
+    "context": "main appliance at the center of the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_002",
+    "concept": "bicycle",
+    "context": "vehicle being pedaled by the left foreground person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_003",
+    "concept": "lid",
+    "context": "top piece being held on the blender",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_004",
+    "concept": "liquid",
+    "context": "contents visible inside the blender jar",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_005",
+    "concept": "smoothie",
+    "context": "inferred type of beverage inside the blender",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_006",
+    "concept": "person",
+    "context": "human figures in the scene, including the background figure",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_007",
+    "concept": "man",
+    "context": "left foreground rider pedaling the bicycle",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_008",
+    "concept": "woman",
+    "context": "right foreground person holding the blender lid",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_009",
+    "concept": "man",
+    "context": "background figure behind the blender",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_010",
+    "concept": "woman",
+    "context": "left foreground rider pedaling the bicycle",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2349475_011",
+    "concept": "woman",
+    "context": "background figure behind the blender",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2349475_012",
+    "concept": "boy",
+    "context": "male youths among the three people in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2349475_013",
+    "concept": "girl",
+    "context": "right foreground lid-holder described as younger female",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2349475_014",
+    "concept": "friend",
+    "context": "relationship label for the three people around the blender",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2349475_015",
+    "concept": "shirt",
+    "context": "upper-body clothing worn by foreground people",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_016",
+    "concept": "sportswear",
+    "context": "clothing category attributed to the people in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_017",
+    "concept": "lever",
+    "context": "tool supposedly used by the rider to operate the blender",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2349475_018",
+    "concept": "pump",
+    "context": "tool supposedly used by the rider to operate the blender",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2349475_019",
+    "concept": "cigarette",
+    "context": "item allegedly held or used by the background person",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2349475_020",
+    "concept": "beer",
+    "context": "drink allegedly held by the background person",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2349475_021",
+    "concept": "three",
+    "context": "count of people visible in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_022",
+    "concept": "two",
+    "context": "count of boys described among the people in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2349475_023",
+    "concept": "large",
+    "context": "size of the blender",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_024",
+    "concept": "green",
+    "context": "color of the right foreground woman's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_025",
+    "concept": "white",
+    "context": "color attributed to the cyclist's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2349475_026",
+    "concept": "yellow",
+    "context": "color attributed to the blender contents",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_027",
+    "concept": "green",
+    "context": "color attributed to the blender contents",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2349475_028",
+    "concept": "grayish",
+    "context": "color attributed to the blender contents",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2349475_029",
+    "concept": "pedaling",
+    "context": "action performed by the left foreground rider on the bicycle",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_030",
+    "concept": "powering",
+    "context": "left rider using the bicycle to drive the blender",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_031",
+    "concept": "holding",
+    "context": "right foreground woman holding the blender lid",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_032",
+    "concept": "standing",
+    "context": "posture of the non-riding people around or behind the blender",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_033",
+    "concept": "watching",
+    "context": "background person's attention directed toward the blender activity",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_034",
+    "concept": "smiling",
+    "context": "facial expression of the left foreground rider",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_035",
+    "concept": "looking",
+    "context": "gaze of the left foreground rider toward the viewer/camera",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_036",
+    "concept": "blending",
+    "context": "operation of the blender on its contents",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_037",
+    "concept": "connected",
+    "context": "physical linkage between the bicycle setup and the blender",
+    "content_type": "spatial_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_038",
+    "concept": "center",
+    "context": "position of the blender in the image frame",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_039",
+    "concept": "left",
+    "context": "position of the rider relative to the blender",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_040",
+    "concept": "right",
+    "context": "position of the lid-holder relative to the blender",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_041",
+    "concept": "background",
+    "context": "location of the third person behind the foreground action",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_042",
+    "concept": "behind",
+    "context": "position of the third person relative to the blender",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_043",
+    "concept": "next to",
+    "context": "position of the bicycle rider relative to the blender",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_044",
+    "concept": "around",
+    "context": "arrangement of the three people surrounding the blender",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_045",
+    "concept": "top",
+    "context": "location of the lid on the blender",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_046",
+    "concept": "outdoors",
+    "context": "overall setting of the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2349475_047",
+    "concept": "garden",
+    "context": "specific outdoor setting described for the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2349475_048",
+    "concept": "charity",
+    "context": "event context attributed to the outdoor activity",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  }
+]

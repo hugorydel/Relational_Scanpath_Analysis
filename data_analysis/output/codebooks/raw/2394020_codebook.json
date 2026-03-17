@@ -1,0 +1,274 @@
+[
+  {
+    "node_id": "2394020_001",
+    "concept": "two",
+    "context": "count of the riders and horses in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_002",
+    "concept": "one",
+    "context": "count of the horse described as being ahead of the other horse",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_003",
+    "concept": "man",
+    "context": "adult riders on the horses",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_004",
+    "concept": "horse",
+    "context": "animals being ridden by the men",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_005",
+    "concept": "hat",
+    "context": "headwear worn by the riders",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_006",
+    "concept": "cowboy",
+    "context": "modifies the style of the riders' hats",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_007",
+    "concept": "shirt",
+    "context": "upper-body clothing worn by the riders",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_008",
+    "concept": "boot",
+    "context": "footwear worn by the riders",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_009",
+    "concept": "jeans",
+    "context": "legwear worn by the riders",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2394020_010",
+    "concept": "saddle",
+    "context": "tack placed on the horses",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_011",
+    "concept": "water",
+    "context": "body of water beside and behind the riders",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_012",
+    "concept": "sand",
+    "context": "ground surface at the shoreline under the horses",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_013",
+    "concept": "grass",
+    "context": "small grassy areas on the ground near the sand",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_014",
+    "concept": "beach",
+    "context": "overall shoreline setting where the riding occurs",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_015",
+    "concept": "daytime",
+    "context": "time-of-day appearance of the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_016",
+    "concept": "sunset",
+    "context": "warm low-sun interpretation of the scene lighting",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_017",
+    "concept": "middle-aged",
+    "context": "describes the riders' age",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2394020_018",
+    "concept": "brown",
+    "context": "modifies the horses' coat colour",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_019",
+    "concept": "white",
+    "context": "modifies the horses' coat colour",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_020",
+    "concept": "black",
+    "context": "modifies the horses' coat colour",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_021",
+    "concept": "blue",
+    "context": "modifies the colour of the water",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_022",
+    "concept": "checkered",
+    "context": "modifies the riders' shirts",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2394020_023",
+    "concept": "few",
+    "context": "modifies the amount of grass visible on the sand",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_024",
+    "concept": "patched",
+    "context": "describes the horses' coat pattern as having coloured patches",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_025",
+    "concept": "riding",
+    "context": "action performed by the men on the horses",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_026",
+    "concept": "wearing",
+    "context": "action relating the riders to hats and clothing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_027",
+    "concept": "walking",
+    "context": "gait of the horses along the shoreline",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_028",
+    "concept": "galloping",
+    "context": "faster gait attributed to the horses",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2394020_029",
+    "concept": "along",
+    "context": "movement of the riders and horses parallel to the beach",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_030",
+    "concept": "near",
+    "context": "riders and horses positioned close to the water",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_031",
+    "concept": "behind",
+    "context": "water positioned behind the riders and horses",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_032",
+    "concept": "ahead",
+    "context": "one horse positioned slightly in front of the other horse",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_033",
+    "concept": "right",
+    "context": "riders or horses positioned or moving toward the right side from the viewer's perspective",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2394020_034",
+    "concept": "left",
+    "context": "horse positioned on the left side from the viewer's perspective",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  }
+]

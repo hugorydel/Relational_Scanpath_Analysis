@@ -1,0 +1,234 @@
+[
+  {
+    "node_id": "2369373_001",
+    "concept": "chef",
+    "context": "role label for the person operating the oven",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_002",
+    "concept": "man",
+    "context": "human figure operating the oven",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_003",
+    "concept": "pizza",
+    "context": "food item being handled at the oven",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_004",
+    "concept": "oven",
+    "context": "heated appliance receiving the pizza",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_005",
+    "concept": "mouth",
+    "context": "sculpted opening used as the oven entrance",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_006",
+    "concept": "face",
+    "context": "large sculpted face above and around the oven opening",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_007",
+    "concept": "statue",
+    "context": "decorative sculpted structure surrounding the oven",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_008",
+    "concept": "man",
+    "context": "description of the sculpted face around the oven as male",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_009",
+    "concept": "hat",
+    "context": "headwear worn by the person operating the oven",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_010",
+    "concept": "uniform",
+    "context": "work clothing worn by the person operating the oven",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_011",
+    "concept": "apron",
+    "context": "additional clothing item described on the person operating the oven",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2369373_012",
+    "concept": "paddle",
+    "context": "flat tool used to support and move the pizza",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_013",
+    "concept": "fire",
+    "context": "flames visible inside the oven",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_014",
+    "concept": "monster",
+    "context": "description of the sculpted oven face",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2369373_015",
+    "concept": "slice",
+    "context": "utensil described as being used to get the pizza out",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2369373_016",
+    "concept": "white",
+    "context": "color of the person's hat and clothing",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_017",
+    "concept": "stone",
+    "context": "material of the sculpted face and mouth around the oven",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_018",
+    "concept": "gray",
+    "context": "color of the oven facade and sculpted face",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_019",
+    "concept": "large",
+    "context": "size of the oven and sculpted face structure",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_020",
+    "concept": "open",
+    "context": "state of the sculpted mouth and oven entrance",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_021",
+    "concept": "placing",
+    "context": "action of moving the pizza into the oven",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_022",
+    "concept": "holding",
+    "context": "action of grasping the pizza tool",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_023",
+    "concept": "wearing",
+    "context": "relation between the person and the hat/clothing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_024",
+    "concept": "using",
+    "context": "action of employing the pizza tool to handle the pizza",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_025",
+    "concept": "removing",
+    "context": "action of taking the pizza out of the oven",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2369373_026",
+    "concept": "on the left",
+    "context": "location of the person operating the oven within the frame",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_027",
+    "concept": "on the right",
+    "context": "location of the oven within the frame",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_028",
+    "concept": "above",
+    "context": "location of the sculpted face relative to the oven opening",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2369373_029",
+    "concept": "inside",
+    "context": "location of the pizza or fire relative to the oven interior",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  }
+]

@@ -1,0 +1,346 @@
+[
+  {
+    "node_id": "2386442_001",
+    "concept": "woman",
+    "context": "adult female person on the left side of the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_002",
+    "concept": "man",
+    "context": "adult male person on the right side of the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_003",
+    "concept": "child",
+    "context": "young person in the middle of the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_004",
+    "concept": "person",
+    "context": "group of human subjects depicted together",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_005",
+    "concept": "mum",
+    "context": "family-role label applied to the adult woman",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_006",
+    "concept": "dad",
+    "context": "family-role label applied to the adult man",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_007",
+    "concept": "boy",
+    "context": "sex label applied to the child in the middle",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_008",
+    "concept": "toddler",
+    "context": "age label applied to the child in the middle",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_009",
+    "concept": "baby",
+    "context": "age label applied to the child in the middle",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2386442_010",
+    "concept": "hair",
+    "context": "hair visible on all three people",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_011",
+    "concept": "shirt",
+    "context": "upper garments worn by the people, especially the man, woman, and child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_012",
+    "concept": "sweater",
+    "context": "garment label incorrectly applied to the man's upper clothing",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2386442_013",
+    "concept": "toothbrush",
+    "context": "brushes held in the mouths/hands of the three people",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_014",
+    "concept": "teeth",
+    "context": "body part being brushed by the three people",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_015",
+    "concept": "mouth",
+    "context": "body part containing the toothbrushes and toothpaste residue",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_016",
+    "concept": "toothpaste",
+    "context": "paste visible around the woman's mouth while brushing",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_017",
+    "concept": "tangerine",
+    "context": "object incorrectly claimed to be in children's mouths",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2386442_018",
+    "concept": "glasses",
+    "context": "accessory incorrectly claimed to be worn by the woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2386442_019",
+    "concept": "camera",
+    "context": "implied target of the subjects' gaze",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_020",
+    "concept": "one",
+    "context": "count applied to each individual person in one response",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_021",
+    "concept": "two",
+    "context": "incorrect count applied to children in one response",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2386442_022",
+    "concept": "three",
+    "context": "count of people in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_023",
+    "concept": "young",
+    "context": "describes the age of the boy/child in the middle",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_024",
+    "concept": "purple",
+    "context": "describes the man's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_025",
+    "concept": "pink",
+    "context": "describes the child's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_026",
+    "concept": "pink",
+    "context": "incorrectly describes the man's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2386442_027",
+    "concept": "checked",
+    "context": "describes the pattern on the child's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_028",
+    "concept": "striped",
+    "context": "describes the pattern on the woman's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_029",
+    "concept": "yellow",
+    "context": "describes one of the stripe colors on the woman's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_030",
+    "concept": "white",
+    "context": "describes the woman's toothbrush color",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_031",
+    "concept": "green",
+    "context": "describes the woman's toothbrush color",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_032",
+    "concept": "brown",
+    "context": "incorrectly describes the hair and/or the woman's shirt color in some responses",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2386442_033",
+    "concept": "brushing",
+    "context": "action performed by the people on their teeth",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_034",
+    "concept": "wearing",
+    "context": "relation between each person and their clothing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_035",
+    "concept": "looking",
+    "context": "gaze action directed toward the camera",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_036",
+    "concept": "left",
+    "context": "position of the woman on the left side of the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_037",
+    "concept": "middle",
+    "context": "position of the child in the center of the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_038",
+    "concept": "right",
+    "context": "position of the man on the right side of the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_039",
+    "concept": "left of",
+    "context": "incorrect relative placement of the child as left of the woman in one response",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2386442_040",
+    "concept": "inside",
+    "context": "position of toothbrushes inside the mouths",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_041",
+    "concept": "around",
+    "context": "position of toothpaste around the woman's mouth",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_042",
+    "concept": "close-up",
+    "context": "overall framing of the image as a close-up view",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2386442_043",
+    "concept": "bathroom",
+    "context": "scene setting inferred from tooth-brushing activity",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  }
+]

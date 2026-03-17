@@ -76,7 +76,8 @@ MAX_RETRIES = 5
 INITIAL_RETRY_DELAY = 1.0
 DEFAULT_CONCURRENCY = 10
 
-EDITED_DIR = config.OUTPUT_DIR / "codebooks" / "edited"
+FINAL_DIR = config.OUTPUT_DIR / "codebooks" / "final"
+RAW_DIR = config.OUTPUT_DIR / "codebooks" / "raw"
 SCORING_DIR = config.OUTPUT_DIR / "scoring"
 SCORES_CSV = SCORING_DIR / "recall_scores.csv"
 RESULTS_PATH = SCORING_DIR / "score_results.jsonl"
@@ -200,13 +201,19 @@ def load_responses() -> dict:
 
 
 def load_codebook(stim_id: str) -> list | None:
-    """Load the edited codebook for a StimID. Returns None if not found."""
-    path = EDITED_DIR / f"{stim_id}_codebook.json"
-    if not path.exists():
-        logger.warning(f"  [{stim_id}] no edited codebook found at {path} — skipping")
-        return None
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
+    """
+    Load the codebook for a StimID.
+    Tries final/ first, falls back to raw/ if not found.
+    Returns None if neither exists.
+    """
+    for directory in (FINAL_DIR, RAW_DIR):
+        path = directory / f"{stim_id}_codebook.json"
+        if path.exists():
+            logger.info(f"  [{stim_id}] loading codebook from {directory.name}/")
+            with open(path, encoding="utf-8") as f:
+                return json.load(f)
+    logger.warning(f"  [{stim_id}] no codebook found in final/ or raw/ — skipping")
+    return None
 
 
 def load_processed_pairs() -> set:
@@ -676,7 +683,8 @@ def main():
     logger.info(f"  Stim filter     : {args.stim or 'all'}")
     logger.info(f"  Subject filter  : {args.subject or 'all'}")
     logger.info(f"  Max concurrency : {args.max_concurrency}")
-    logger.info(f"  Edited codebooks: {EDITED_DIR}")
+    logger.info(f"  Codebooks (final/): {FINAL_DIR}")
+    logger.info(f"  Codebooks (raw/):   {RAW_DIR}  (fallback)")
     logger.info(f"  Output          : {SCORING_DIR}")
 
     asyncio.run(run(args))

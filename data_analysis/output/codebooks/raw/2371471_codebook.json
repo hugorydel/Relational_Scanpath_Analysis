@@ -1,0 +1,370 @@
+[
+  {
+    "node_id": "2371471_001",
+    "concept": "rider",
+    "context": "human figures on the motorcycles",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_002",
+    "concept": "two",
+    "context": "count of the riders",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_003",
+    "concept": "motorcycle",
+    "context": "vehicles being ridden during the stunt",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_004",
+    "concept": "two",
+    "context": "count of the motorcycles",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_005",
+    "concept": "helmet",
+    "context": "protective headgear worn by the riders",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_006",
+    "concept": "ramp",
+    "context": "earthen jump/landing mound beneath and ahead of the riders",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_007",
+    "concept": "dirt",
+    "context": "modifies the ramp or track surface",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_008",
+    "concept": "track",
+    "context": "overall stunt-riding course setting",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_009",
+    "concept": "wall",
+    "context": "large background surface behind the riders",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_010",
+    "concept": "panel",
+    "context": "sections of the background wall",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_011",
+    "concept": "metal",
+    "context": "modifies the background wall",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_012",
+    "concept": "grey",
+    "context": "modifies the background panels",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_013",
+    "concept": "building",
+    "context": "background structure enclosing the scene",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_014",
+    "concept": "clothing",
+    "context": "riding outfit worn by the riders",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_015",
+    "concept": "leg",
+    "context": "raised lower limb of the rider doing the trick",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_016",
+    "concept": "seat",
+    "context": "motorcycle seat the trick-performing rider is lifted away from",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_017",
+    "concept": "handlebar",
+    "context": "part of the motorcycle being gripped by the trick-performing rider",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_018",
+    "concept": "jump",
+    "context": "stunt motion performed by the motorcycles and riders",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_019",
+    "concept": "ride",
+    "context": "action of the riders operating the motorcycles",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_020",
+    "concept": "stunt",
+    "context": "general trick performance on the motorcycles",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_021",
+    "concept": "handstand",
+    "context": "trick performed by the rider on the right motorcycle",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_022",
+    "concept": "sit",
+    "context": "posture of the rider on the left motorcycle",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_023",
+    "concept": "hold",
+    "context": "action of gripping the handlebars during the trick",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_024",
+    "concept": "landing",
+    "context": "riders descending toward the ramp",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_025",
+    "concept": "airborne",
+    "context": "position of the riders and motorcycles in mid-air",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_026",
+    "concept": "above",
+    "context": "riders and motorcycles relative to the ramp below",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_027",
+    "concept": "in front of",
+    "context": "riders relative to the wall/building backdrop",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_028",
+    "concept": "left",
+    "context": "position of the seated rider and motorcycle",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_029",
+    "concept": "right",
+    "context": "position of the handstand-performing rider and motorcycle",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_030",
+    "concept": "ahead of",
+    "context": "position of the trick-performing rider relative to the other rider",
+    "content_type": "spatial_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_031",
+    "concept": "behind",
+    "context": "position of the seated rider relative to the trick-performing rider",
+    "content_type": "spatial_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_032",
+    "concept": "off",
+    "context": "position of the trick-performing rider relative to the motorcycle seat",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_033",
+    "concept": "red",
+    "context": "modifies one of the motorcycles",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_034",
+    "concept": "brown",
+    "context": "modifies the ramp/ground surface",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_035",
+    "concept": "sandy",
+    "context": "modifies the ramp surface",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2371471_036",
+    "concept": "red",
+    "context": "modifies riding gear such as clothing or helmet",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2371471_037",
+    "concept": "child",
+    "context": "hallucinated figure described between a car and a motorcycle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2371471_038",
+    "concept": "small",
+    "context": "modifies the hallucinated child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2371471_039",
+    "concept": "drink",
+    "context": "action attributed to the hallucinated child",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2371471_040",
+    "concept": "car",
+    "context": "hallucinated vehicle beside the child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2371471_041",
+    "concept": "between",
+    "context": "hallucinated child positioned between a car and a motorcycle",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2371471_042",
+    "concept": "red",
+    "context": "modifies the hallucinated car",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2371471_043",
+    "concept": "blue",
+    "context": "modifies one of the motorcycles",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2371471_044",
+    "concept": "blue",
+    "context": "modifies riding gear such as clothing or helmet",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2371471_045",
+    "concept": "warehouse",
+    "context": "overall scene setting",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2371471_046",
+    "concept": "cycling",
+    "context": "modifies the track setting",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  }
+]

@@ -1,0 +1,314 @@
+[
+  {
+    "node_id": "2409918_001",
+    "concept": "elephant",
+    "context": "large animals in the water being occupied by the men",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_002",
+    "concept": "two",
+    "context": "modifies the number of elephants in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_003",
+    "concept": "man",
+    "context": "human figures positioned on the elephants",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_004",
+    "concept": "two",
+    "context": "modifies the number of men in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_005",
+    "concept": "water",
+    "context": "surrounding environment containing the elephants",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_006",
+    "concept": "body of water",
+    "context": "general label for the watery setting around the elephants",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_007",
+    "concept": "river",
+    "context": "type of watery setting containing the elephants",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_008",
+    "concept": "stream",
+    "context": "type of watery setting containing the elephants",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_009",
+    "concept": "lake",
+    "context": "type of watery setting containing the elephants",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2409918_010",
+    "concept": "cave",
+    "context": "claimed surrounding setting of the water scene",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2409918_011",
+    "concept": "on top of",
+    "context": "locates the men relative to the elephants",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_012",
+    "concept": "back",
+    "context": "surface of the elephants where the men are positioned",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_013",
+    "concept": "riding",
+    "context": "interaction of the men with the elephants",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_014",
+    "concept": "sitting",
+    "context": "posture of the man on the right elephant",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_015",
+    "concept": "standing",
+    "context": "posture of the man on the left elephant",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_016",
+    "concept": "shirtless",
+    "context": "attribute of the man on the right elephant",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_017",
+    "concept": "shirt",
+    "context": "garment worn by the man on the left elephant",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_018",
+    "concept": "wearing",
+    "context": "relation between the man on the left elephant and his shirt",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_019",
+    "concept": "on the right",
+    "context": "locates the elephant that is eating vegetation",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_020",
+    "concept": "on the left",
+    "context": "locates the other elephant in the scene",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_021",
+    "concept": "on the right",
+    "context": "locates the shirtless man seated on an elephant",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_022",
+    "concept": "on the left",
+    "context": "locates the clothed man standing on an elephant",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_023",
+    "concept": "eating",
+    "context": "action performed by the elephant on the right",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_024",
+    "concept": "plant",
+    "context": "vegetation being eaten by the elephant on the right",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_025",
+    "concept": "trunk",
+    "context": "body part used by the right elephant to grasp the vegetation",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_026",
+    "concept": "green",
+    "context": "modifies the vegetation being eaten by the right elephant",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_027",
+    "concept": "grey",
+    "context": "modifies the elephants",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_028",
+    "concept": "blue",
+    "context": "modifies the color of the water",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_029",
+    "concept": "green",
+    "context": "modifies the color of the water",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_030",
+    "concept": "brown",
+    "context": "modifies the color of the water",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2409918_031",
+    "concept": "deep",
+    "context": "modifies the depth of the water around the elephants",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_032",
+    "concept": "wading",
+    "context": "action of the elephants moving or standing through the water",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_033",
+    "concept": "swimming",
+    "context": "claimed action of the elephants in the water",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2409918_034",
+    "concept": "cleaning",
+    "context": "claimed action of the men toward the elephants",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2409918_035",
+    "concept": "leg",
+    "context": "body part of the man on the right elephant described as raised",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_036",
+    "concept": "one",
+    "context": "modifies the raised leg of the man on the right elephant",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_037",
+    "concept": "up",
+    "context": "locates the raised leg of the man on the right elephant",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2409918_038",
+    "concept": "stick",
+    "context": "claimed object held by the man on the left elephant",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2409918_039",
+    "concept": "talking",
+    "context": "claimed interaction between the two men",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  }
+]

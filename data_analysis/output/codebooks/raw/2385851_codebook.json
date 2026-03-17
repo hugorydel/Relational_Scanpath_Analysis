@@ -1,0 +1,282 @@
+[
+  {
+    "node_id": "2385851_001",
+    "concept": "two",
+    "context": "count of the main people and their suitcases in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_002",
+    "concept": "man",
+    "context": "identity of the two carriers",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_003",
+    "concept": "person",
+    "context": "identity of the two carriers",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_004",
+    "concept": "suitcase",
+    "context": "item each carrier is transporting",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_005",
+    "concept": "red",
+    "context": "colour of the suitcases",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_006",
+    "concept": "large",
+    "context": "size of the suitcases",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_007",
+    "concept": "carrying",
+    "context": "action performed on the suitcases by the two carriers",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_008",
+    "concept": "walking",
+    "context": "action performed by the two carriers along the passage",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_009",
+    "concept": "walkway",
+    "context": "pedestrian passage the people are moving along",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_010",
+    "concept": "covered",
+    "context": "modifies the walkway or passage area",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_011",
+    "concept": "cover",
+    "context": "overhead structure above the walkway",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_012",
+    "concept": "under",
+    "context": "location of the people relative to the overhead cover",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_013",
+    "concept": "through",
+    "context": "movement of the people along the passage",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_014",
+    "concept": "up",
+    "context": "direction of movement along the sloped passage",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_015",
+    "concept": "away",
+    "context": "direction of the people relative to the viewer or camera",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_016",
+    "concept": "back",
+    "context": "body part used to support a carried suitcase",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_017",
+    "concept": "on",
+    "context": "position of a suitcase relative to a carrier's back",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_018",
+    "concept": "head",
+    "context": "body part used as reference for the raised suitcase",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_019",
+    "concept": "above",
+    "context": "position of a suitcase relative to a carrier's head",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_020",
+    "concept": "tied",
+    "context": "way the left suitcase is secured to the carrier",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_021",
+    "concept": "clothing",
+    "context": "garments worn by the carriers",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_022",
+    "concept": "loose",
+    "context": "fit or style of the carriers' clothing",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_023",
+    "concept": "shade",
+    "context": "lighting condition inside the covered walkway",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_024",
+    "concept": "sunny",
+    "context": "lighting condition of the exposed area at the far left side",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_025",
+    "concept": "left",
+    "context": "position used to identify the left carrier and the bright area on the left side",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_026",
+    "concept": "right",
+    "context": "position used to identify the carrier with the raised suitcase",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2385851_027",
+    "concept": "four",
+    "context": "count of the purported workers or attendants",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2385851_028",
+    "concept": "staff",
+    "context": "purported occupational identity of the people in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2385851_029",
+    "concept": "airport",
+    "context": "purported setting associated with the imagined staff",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2385851_030",
+    "concept": "overseeing",
+    "context": "purported action of two extra imagined workers",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2385851_031",
+    "concept": "moving",
+    "context": "purported action of taking baggage onto machinery",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2385851_032",
+    "concept": "conveyor belt",
+    "context": "purported baggage-handling machinery in the imagined airport scene",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2385851_033",
+    "concept": "colorful",
+    "context": "purported colour property of an imagined suitcase",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2385851_034",
+    "concept": "striped",
+    "context": "purported pattern property of an imagined suitcase",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2385851_035",
+    "concept": "bridge",
+    "context": "purported structure above the people",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  }
+]

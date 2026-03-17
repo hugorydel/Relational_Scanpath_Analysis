@@ -1,0 +1,338 @@
+[
+  {
+    "node_id": "2345035_001",
+    "concept": "two",
+    "context": "count of the two main subjects",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_002",
+    "concept": "girl",
+    "context": "identity of the two main subjects pursuing the ball",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_003",
+    "concept": "young",
+    "context": "age attribute of the two main subjects",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_004",
+    "concept": "player",
+    "context": "sports role of the girls and some other figures on the pitch",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_005",
+    "concept": "football",
+    "context": "ball being pursued in the foreground",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_006",
+    "concept": "chasing",
+    "context": "action of the two girls moving after the football",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_007",
+    "concept": "wearing",
+    "context": "relation between the players and their clothing or jersey numbers",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_008",
+    "concept": "jersey",
+    "context": "upper sports garment worn by the two girls",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_009",
+    "concept": "uniform",
+    "context": "overall sports outfit worn by the players",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_010",
+    "concept": "20",
+    "context": "number printed on the white jersey",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_011",
+    "concept": "3",
+    "context": "number printed on the blue jersey",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_012",
+    "concept": "10",
+    "context": "claimed number on a player's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2345035_013",
+    "concept": "blue",
+    "context": "color of the right girl's jersey",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_014",
+    "concept": "white",
+    "context": "color of the left girl's jersey and the visible goal frame",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_015",
+    "concept": "black",
+    "context": "color of shorts, socks, and some uniform markings",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_016",
+    "concept": "green",
+    "context": "claimed shirt color of one player",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2345035_017",
+    "concept": "striped",
+    "context": "claimed pattern of the players' uniform",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2345035_018",
+    "concept": "sock",
+    "context": "clothing on the players' lower legs",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_019",
+    "concept": "knee-high",
+    "context": "height of the players' socks",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_020",
+    "concept": "hair",
+    "context": "visible hair of the two girls",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_021",
+    "concept": "long",
+    "context": "length attribute of the girls' hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_022",
+    "concept": "ponytail",
+    "context": "hairstyle of at least one of the girls",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_023",
+    "concept": "taller",
+    "context": "relative height of the left girl compared with the right girl",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_024",
+    "concept": "shorter",
+    "context": "relative height of the right girl compared with the left girl",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_025",
+    "concept": "field",
+    "context": "outdoor sports field or pitch setting",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_026",
+    "concept": "match",
+    "context": "organized game taking place on the pitch",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_027",
+    "concept": "goal",
+    "context": "soccer goals visible at the left and in the background",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_028",
+    "concept": "grass",
+    "context": "ground surface under the players and ball",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_029",
+    "concept": "left",
+    "context": "location of the taller girl and the nearer goal relative to the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_030",
+    "concept": "right",
+    "context": "location of the blue-shirted girl and the ball relative to the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_031",
+    "concept": "background",
+    "context": "placement of extra people and a goal farther back in the scene",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_032",
+    "concept": "behind",
+    "context": "relation of background figures and goal behind the main girls",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_033",
+    "concept": "in front of",
+    "context": "relation of the ball ahead of the girls",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_034",
+    "concept": "close",
+    "context": "small distance between the girls and the ball",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_035",
+    "concept": "away from camera",
+    "context": "the two girls are oriented and moving away from the viewer",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_036",
+    "concept": "team",
+    "context": "team membership indicated by contrasting uniforms",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_037",
+    "concept": "different",
+    "context": "attribute that the two girls belong to opposing teams",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_038",
+    "concept": "person",
+    "context": "background individuals standing near the field",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_039",
+    "concept": "man",
+    "context": "adult male figures in the background",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_040",
+    "concept": "watching",
+    "context": "action of background individuals observing the play",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2345035_041",
+    "concept": "coach",
+    "context": "claimed identity of a background person in blue",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2345035_042",
+    "concept": "parent",
+    "context": "claimed identity of background spectators",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  }
+]

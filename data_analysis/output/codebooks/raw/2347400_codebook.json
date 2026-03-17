@@ -1,0 +1,338 @@
+[
+  {
+    "node_id": "2347400_001",
+    "concept": "two",
+    "context": "modifies the count of the men and the wine glasses in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_002",
+    "concept": "man",
+    "context": "the seated adults in the foreground",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_003",
+    "concept": "sitting",
+    "context": "posture/action of the men on the couch",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_004",
+    "concept": "on",
+    "context": "positions the men relative to the couch",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_005",
+    "concept": "couch",
+    "context": "the seat the men are sitting on",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_006",
+    "concept": "smelling",
+    "context": "action performed by the men toward the wine/glasses",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_007",
+    "concept": "holding",
+    "context": "action of the men with the glasses",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_008",
+    "concept": "glass",
+    "context": "container being held and smelled",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_009",
+    "concept": "wine",
+    "context": "drink inside the glasses",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_010",
+    "concept": "red",
+    "context": "colour of the wine",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_011",
+    "concept": "indoors",
+    "context": "overall scene setting",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_012",
+    "concept": "living room",
+    "context": "room type of the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_013",
+    "concept": "window",
+    "context": "background fixture behind the men",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_014",
+    "concept": "behind",
+    "context": "positions the window and small toy relative to the men",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_015",
+    "concept": "plushie",
+    "context": "small toy object in the background",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_016",
+    "concept": "mushroom",
+    "context": "depicted form of the background plushie",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_017",
+    "concept": "Toad",
+    "context": "character identity assigned to the background plushie",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_018",
+    "concept": "Mario",
+    "context": "franchise label applied to the background mushroom plushie",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_019",
+    "concept": "ball",
+    "context": "misremembered background object",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2347400_020",
+    "concept": "Pokémon",
+    "context": "franchise label applied to the misremembered ball",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2347400_021",
+    "concept": "shirt",
+    "context": "upper-body garment worn by the men",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_022",
+    "concept": "blue",
+    "context": "colour of the right man's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_023",
+    "concept": "face",
+    "context": "graphic printed on the right man's shirt",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_024",
+    "concept": "grey",
+    "context": "colour of the left man's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_025",
+    "concept": "jeans",
+    "context": "pants worn by the men",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_026",
+    "concept": "clothes",
+    "context": "general garments worn by the men",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_027",
+    "concept": "casual",
+    "context": "style of the men's clothes",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_028",
+    "concept": "hair",
+    "context": "hair on the men's heads",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_029",
+    "concept": "short",
+    "context": "length of the men's hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_030",
+    "concept": "blonde",
+    "context": "colour of the left man's hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_031",
+    "concept": "right",
+    "context": "locates the man on the right side of the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_032",
+    "concept": "left",
+    "context": "locates the man on the left side of the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_033",
+    "concept": "drinking",
+    "context": "misremembered action involving the wine",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2347400_034",
+    "concept": "talking",
+    "context": "misremembered action assigned to the left man",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2347400_035",
+    "concept": "squinting",
+    "context": "facial action of the right man while smelling the wine",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_036",
+    "concept": "eye",
+    "context": "body part described as squinting on the right man",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_037",
+    "concept": "nose",
+    "context": "body part the glasses are held near while smelling",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_038",
+    "concept": "mouth",
+    "context": "body part near the left man's lower-held glass",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_039",
+    "concept": "lower",
+    "context": "describes the left man's glass as held lower than the other",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_040",
+    "concept": "brown",
+    "context": "colour of the couch",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347400_041",
+    "concept": "greyish",
+    "context": "misremembered colour of the couch",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2347400_042",
+    "concept": "wearing",
+    "context": "relation between the men and their clothing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  }
+]

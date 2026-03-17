@@ -1,0 +1,402 @@
+[
+  {
+    "node_id": "2383555_001",
+    "concept": "person",
+    "context": "generic identity for the people occupying the boat/raft",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_002",
+    "concept": "woman",
+    "context": "adult female occupants on the boat/raft",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_003",
+    "concept": "child",
+    "context": "young occupant at the front being held by the front woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_004",
+    "concept": "baby",
+    "context": "young occupant at the front being held by the front woman",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_005",
+    "concept": "boy",
+    "context": "young front occupant described as male",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2383555_006",
+    "concept": "girl",
+    "context": "an occupant described as a female child or young female rather than a woman",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2383555_007",
+    "concept": "man",
+    "context": "rear occupant described as male",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2383555_008",
+    "concept": "family",
+    "context": "group on the raft described as a family unit",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2383555_009",
+    "concept": "Asian",
+    "context": "ethnic appearance attributed to the people on the raft",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_010",
+    "concept": "older",
+    "context": "age descriptor applied to the front woman",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2383555_011",
+    "concept": "young",
+    "context": "age descriptor applied to the child",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_012",
+    "concept": "small",
+    "context": "size descriptor applied to the child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_013",
+    "concept": "two",
+    "context": "modifies the number of women on the boat/raft",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2383555_014",
+    "concept": "three",
+    "context": "modifies the total number of occupants on the boat/raft",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2383555_015",
+    "concept": "three",
+    "context": "modifies the number of women on the boat/raft",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_016",
+    "concept": "four",
+    "context": "modifies the total number of occupants on the boat/raft",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_017",
+    "concept": "one",
+    "context": "modifies the number of child occupants on the boat/raft",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_018",
+    "concept": "boat",
+    "context": "the small watercraft carrying the people",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_019",
+    "concept": "raft",
+    "context": "the small raft-like watercraft carrying the people",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_020",
+    "concept": "branch",
+    "context": "material element described as composing the raft",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_021",
+    "concept": "stick",
+    "context": "material element described as composing the raft",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_022",
+    "concept": "wooden",
+    "context": "material attribute of the boat/raft",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_023",
+    "concept": "brown",
+    "context": "colour attribute of the boat/raft",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_024",
+    "concept": "makeshift",
+    "context": "construction quality attributed to the raft",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_025",
+    "concept": "paddle",
+    "context": "tool held by the rear woman for propelling the raft",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_026",
+    "concept": "hat",
+    "context": "headwear on the front woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_027",
+    "concept": "triangle",
+    "context": "shape attribute of the front woman's hat",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_028",
+    "concept": "lap",
+    "context": "the front woman's lap where the child is seated",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_029",
+    "concept": "water",
+    "context": "water surrounding the raft",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_030",
+    "concept": "murky",
+    "context": "clarity attribute of the water",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_031",
+    "concept": "muddy",
+    "context": "appearance attribute of the water",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_032",
+    "concept": "greenery",
+    "context": "vegetation surrounding the waterway",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_033",
+    "concept": "embankment",
+    "context": "bank beside the waterway near the raft",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_034",
+    "concept": "river",
+    "context": "overall water setting described for the raft scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_035",
+    "concept": "stream",
+    "context": "overall water setting described for the raft scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_036",
+    "concept": "lake",
+    "context": "overall water setting described for the raft scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2383555_037",
+    "concept": "rainy",
+    "context": "weather condition attributed to the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2383555_038",
+    "concept": "on",
+    "context": "occupants located on the boat/raft",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_039",
+    "concept": "front",
+    "context": "position at the front of the boat/raft for the woman holding the child",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_040",
+    "concept": "back",
+    "context": "position at the back of the boat/raft for the rowing woman",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_041",
+    "concept": "left",
+    "context": "position of the additional seated woman on the left side of the raft",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_042",
+    "concept": "right",
+    "context": "position of the rower on the right side of the raft",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_043",
+    "concept": "behind",
+    "context": "woman positioned behind the child/front pair on the raft",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_044",
+    "concept": "in front of",
+    "context": "middle occupant positioned in front of the rowing woman",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_045",
+    "concept": "next to",
+    "context": "raft positioned next to the embankment/bank",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_046",
+    "concept": "holding",
+    "context": "front woman holding the child",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_047",
+    "concept": "holding",
+    "context": "rear woman holding the paddle",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_048",
+    "concept": "rowing",
+    "context": "rear woman propelling the boat/raft",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_049",
+    "concept": "sitting",
+    "context": "middle-left occupant seated on the raft and child seated in the front woman's lap",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2383555_050",
+    "concept": "wearing",
+    "context": "front woman wearing the hat",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  }
+]

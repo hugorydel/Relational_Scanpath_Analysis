@@ -1,0 +1,330 @@
+[
+  {
+    "node_id": "2347025_001",
+    "concept": "woman",
+    "context": "adult female figure carrying the child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_002",
+    "concept": "child",
+    "context": "young person positioned on the woman's back",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_003",
+    "concept": "baby",
+    "context": "same young person on the woman's back, described with a more infant-like label",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_004",
+    "concept": "girl",
+    "context": "same young person on the woman's back, described as female",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_005",
+    "concept": "mother",
+    "context": "relationship label applied to the woman relative to the child",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_006",
+    "concept": "grandmother",
+    "context": "relationship label applied to the older woman relative to the child",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_007",
+    "concept": "umbrella",
+    "context": "object held above the woman and child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_008",
+    "concept": "earring",
+    "context": "jewelry worn by the woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_009",
+    "concept": "jewelry",
+    "context": "accessories worn by the woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_010",
+    "concept": "jacket",
+    "context": "outerwear worn by the woman and/or child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_011",
+    "concept": "hood",
+    "context": "head covering worn by the child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_012",
+    "concept": "hat",
+    "context": "headwear on the woman and possibly also the child",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_013",
+    "concept": "hand",
+    "context": "the child's hand grasping the umbrella shaft",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_014",
+    "concept": "back",
+    "context": "the woman's back supporting the child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_015",
+    "concept": "pattern",
+    "context": "printed design covering the umbrella",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_016",
+    "concept": "character",
+    "context": "small illustrated figures printed on the umbrella",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_017",
+    "concept": "one",
+    "context": "counts the adult woman",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_018",
+    "concept": "two",
+    "context": "counts the human figures in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_019",
+    "concept": "old",
+    "context": "describes the woman's age appearance",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_020",
+    "concept": "small",
+    "context": "describes the child's size/young age",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_021",
+    "concept": "pink",
+    "context": "describes the umbrella color",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_022",
+    "concept": "red",
+    "context": "alternative color label applied to the umbrella",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2347025_023",
+    "concept": "multicolored",
+    "context": "describes the umbrella as containing multiple colors in its design",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_024",
+    "concept": "cartoon",
+    "context": "describes the style of the printed umbrella characters",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_025",
+    "concept": "Asian",
+    "context": "describes the apparent ethnicity of the woman and/or child",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_026",
+    "concept": "silver",
+    "context": "describes the color/material appearance of the woman's earrings",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_027",
+    "concept": "hoop",
+    "context": "describes the shape of the woman's earrings",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_028",
+    "concept": "rain",
+    "context": "modifies the reported jackets or coat worn by the subjects",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2347025_029",
+    "concept": "right",
+    "context": "describes which hand the child uses to hold the umbrella",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_030",
+    "concept": "many",
+    "context": "describes the reported amount of jewelry worn by the woman",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  },
+  {
+    "node_id": "2347025_031",
+    "concept": "carrying",
+    "context": "action of the woman transporting the child on her back",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_032",
+    "concept": "holding",
+    "context": "action of the child grasping the umbrella",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_033",
+    "concept": "on back",
+    "context": "locates the child relative to the woman's body",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_034",
+    "concept": "strapped",
+    "context": "describes the child as attached or secured to the woman's back",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_035",
+    "concept": "smiling",
+    "context": "facial expression of the woman",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_036",
+    "concept": "posing",
+    "context": "woman and child presented toward the photographer for the image",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_037",
+    "concept": "toward viewer",
+    "context": "orientation of the woman's face/body relative to the camera",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_038",
+    "concept": "wearing",
+    "context": "relation between the people and their earrings, headwear, and outerwear",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_039",
+    "concept": "in rows",
+    "context": "arrangement of the printed figures on the umbrella",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_040",
+    "concept": "sunny",
+    "context": "describes the bright weather or lighting conditions",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct"
+  },
+  {
+    "node_id": "2347025_041",
+    "concept": "raining",
+    "context": "describes the weather as rainy",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect"
+  }
+]

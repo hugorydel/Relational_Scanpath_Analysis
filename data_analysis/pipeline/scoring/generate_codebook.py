@@ -64,16 +64,12 @@ MAX_RETRIES = 5
 INITIAL_RETRY_DELAY = 1.0
 DEFAULT_CONCURRENCY = 30
 
+REASONING_EFFORT = config.REASONING_EFFORT
 OUTPUT_DIR = config.OUTPUT_DIR / "codebooks" / "raw"
 RESULTS_PATH = config.OUTPUT_DIR / "codebooks" / "results.jsonl"
 ERRORS_PATH = config.OUTPUT_DIR / "codebooks" / "errors.jsonl"
 MANIFEST_PATH = config.OUTPUT_DIR / "codebooks" / "manifest.json"
-
-# Stimulus images directory — override with --image-dir at runtime
-try:
-    IMAGES_DIR = config.IMAGES_DIR
-except AttributeError:
-    IMAGES_DIR = _DA_DIR / "data" / "stimuli" / "images"
+IMAGES_DIR = config.DATA_METADATA_DIR / "images"
 
 _IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".webp"]
 
@@ -162,10 +158,6 @@ RESPONSE_SCHEMA = {
                                 "type": "string",
                                 "enum": sorted(VALID_STATUSES),
                             },
-                            "source_phrases": {
-                                "type": "array",
-                                "items": {"type": "string"},
-                            },
                         },
                         "required": [
                             "node_id",
@@ -174,7 +166,6 @@ RESPONSE_SCHEMA = {
                             "content_type",
                             "evidence_type",
                             "status",
-                            "source_phrases",
                         ],
                         "additionalProperties": False,
                     },
@@ -219,23 +210,6 @@ def load_responses() -> dict:
     n_total = sum(len(v) for v in by_stim.values())
     logger.info(f"Loaded {n_total} non-empty responses across {n_stims} stimuli.")
     return dict(by_stim)
-
-
-def load_processed_stims() -> set:
-    """Return set of StimIDs already present in results.jsonl."""
-    processed = set()
-    if not RESULTS_PATH.exists():
-        return processed
-    with open(RESULTS_PATH, encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if line:
-                try:
-                    processed.add(json.loads(line)["stim_id"])
-                except (json.JSONDecodeError, KeyError):
-                    continue
-    logger.info(f"Found {len(processed)} already-processed stim(s) in results.jsonl.")
-    return processed
 
 
 # ---------------------------------------------------------------------------
@@ -347,6 +321,7 @@ class CodebookScorer:
                         {"role": "user", "content": user_content},
                     ],
                     response_format=RESPONSE_SCHEMA,
+                    reasoning_effort=REASONING_EFFORT,
                 )
                 raw = response.choices[0].message.content
                 parsed = json.loads(raw)
@@ -475,10 +450,15 @@ async def run(args) -> None:
         stim_items = sorted(all_responses.items())
 
     if not args.force:
-        processed = load_processed_stims()
-        stim_items = [(s, r) for s, r in stim_items if s not in processed]
+        stim_items = [
+            (s, r)
+            for s, r in stim_items
+            if not (OUTPUT_DIR / f"{s}_codebook.json").exists()
+        ]
         if not stim_items:
-            logger.info("All stims already processed. Use --force to rerun.")
+            logger.info(
+                "All codebook files already exist on disk. Use --force to rerun."
+            )
             return
 
     logger.info(f"Processing {len(stim_items)} stim(s) ...\n")

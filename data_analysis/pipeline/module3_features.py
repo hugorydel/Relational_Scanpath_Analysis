@@ -359,7 +359,7 @@ def _validate(subject_id: str, trial_df: pd.DataFrame) -> bool:
 # ---------------------------------------------------------------------------
 
 
-def process_subject(subject_id, force_aoi=False, rng=None) -> pd.DataFrame:
+def process_subject(subject_id, force_aoi=False, force=False, rng=None) -> pd.DataFrame:
     logger.info(f"\n{'='*60}")
     logger.info(f"Module 3: {subject_id}")
     logger.info(f"{'='*60}")
@@ -370,6 +370,11 @@ def process_subject(subject_id, force_aoi=False, rng=None) -> pd.DataFrame:
     fixations_path = config.OUTPUT_EYETRACKING_DIR / f"{subject_id}_fixations.csv"
     aoi_path = config.OUTPUT_FEATURES_DIR / f"{subject_id}_fixations_aoi.csv"
     output_path = config.OUTPUT_FEATURES_DIR / f"{subject_id}_trial_features.csv"
+
+    # Skip if output already exists and force not requested
+    if output_path.exists() and not force:
+        logger.info(f"  Already processed — loading cached output.")
+        return pd.read_csv(output_path, dtype={"StimID": str, "SubjectID": str})
 
     if not fixations_path.exists():
         logger.error(f"  Fixations file not found: {fixations_path}")
@@ -430,6 +435,11 @@ def main():
         help="Recompute AOI assignment even if cached _fixations_aoi.csv exists",
     )
     parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Reprocess all subjects even if trial_features.csv already exists.",
+    )
+    parser.add_argument(
         "--seed",
         type=int,
         default=42,
@@ -445,24 +455,39 @@ def main():
         subject_ids = get_subject_ids()
         logger.info(f"Discovered {len(subject_ids)} subjects.")
 
-    all_dfs = []
     failed = []
 
     for subject_id in subject_ids:
         try:
-            df = process_subject(subject_id, force_aoi=args.force_aoi, rng=rng)
-            if not df.empty:
-                all_dfs.append(df)
+            process_subject(
+                subject_id,
+                force_aoi=args.force_aoi,
+                force=args.force,
+                rng=rng,
+            )
         except Exception as e:
             logger.error(f"  FAILED {subject_id}: {e}", exc_info=True)
             failed.append(subject_id)
 
-    # Concatenate and write combined output
-    if all_dfs:
-        combined = pd.concat(all_dfs, ignore_index=True)
+    # Rebuild combined output from ALL per-participant files on disk,
+    # so skipped (cached) participants are included alongside newly processed ones.
+    all_files = sorted(config.OUTPUT_FEATURES_DIR.glob("*_trial_features.csv"))
+    # Exclude the combined file itself if it exists in the same dir
+    all_files = [f for f in all_files if f.name != "trial_features_all.csv"]
+    if all_files:
+        combined = pd.concat(
+            [
+                pd.read_csv(f, dtype={"StimID": str, "SubjectID": str})
+                for f in all_files
+            ],
+            ignore_index=True,
+        )
         combined_path = config.OUTPUT_FEATURES_DIR / "trial_features_all.csv"
         combined.to_csv(combined_path, index=False)
-        logger.info(f"\nCombined output: {len(combined)} rows → {combined_path}")
+        logger.info(
+            f"\nCombined output: {len(combined)} rows from "
+            f"{len(all_files)} participants → {combined_path}"
+        )
 
     if failed:
         logger.warning(f"\nFailed subjects ({len(failed)}): {failed}")

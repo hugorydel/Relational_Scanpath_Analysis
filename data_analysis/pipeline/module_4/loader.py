@@ -25,6 +25,7 @@ import numpy as np
 import pandas as pd
 
 from .constants import (
+    DEFAULT_FLAGS_PATH,
     DV_OBJECTS,
     DV_RELATIONS,
     DV_TOTAL,
@@ -233,9 +234,13 @@ def build_analysis_tables(df: pd.DataFrame, memory_scores: pd.DataFrame) -> dict
 # ---------------------------------------------------------------------------
 
 
-def apply_exclusions(tables: dict) -> dict:
+def apply_exclusions(tables: dict, flags_path: Path | None = None) -> dict:
     """
-    Remove low-n encoding trials (too few AOI transitions for reliable SVG).
+    Remove low-n encoding trials (too few AOI transitions for reliable SVG)
+    and wrong-image pairs flagged via review_wrong_images.py.
+
+    flags_path : optional path to wrong_image_flags.csv.
+                 Defaults to DEFAULT_FLAGS_PATH; silently skipped if absent.
     """
     logger.info("Step 3: Applying exclusions ...")
 
@@ -246,6 +251,36 @@ def apply_exclusions(tables: dict) -> dict:
         f"  enc: {before} → {len(enc_filtered)} "
         f"(removed {before - len(enc_filtered)}: low_n_enc=True)"
     )
+
+    # ------------------------------------------------------------------
+    # Wrong-image exclusions
+    # ------------------------------------------------------------------
+    if flags_path is None:
+        flags_path = DEFAULT_FLAGS_PATH
+
+    if flags_path.exists():
+        flags_df = pd.read_csv(flags_path, dtype={"SubjectID": str, "StimID": str})
+        wrong = set(
+            zip(
+                flags_df.loc[flags_df["flagged"] == 1, "SubjectID"],
+                flags_df.loc[flags_df["flagged"] == 1, "StimID"],
+            )
+        )
+        if wrong:
+            mask = enc_filtered.apply(
+                lambda r: (r["SubjectID"], r["StimID"]) in wrong, axis=1
+            )
+            enc_filtered = enc_filtered[~mask].copy()
+            logger.info(
+                f"  enc: removed {mask.sum()} wrong-image pairs "
+                f"({len(wrong)} unique flagged pairs in flags file)."
+            )
+        else:
+            logger.info("  No wrong-image pairs flagged — nothing extra removed.")
+    else:
+        logger.info(
+            f"  No flags file found at {flags_path.name} — skipping wrong-image exclusion."
+        )
 
     # ------------------------------------------------------------------
     # Within-image SVG mean-centering (L1/L2 decomposition)
@@ -270,13 +305,20 @@ def apply_exclusions(tables: dict) -> dict:
         f"(should be ~0), sd={enc_filtered['svg_z_enc_within'].std():.4f}"
     )
 
-    # Apply same exclusion to long table, then join decomposition columns
+    # Apply same exclusions to long table
     enc_long = tables["enc_long"]
     before_long = len(enc_long)
     enc_long_filtered = enc_long[~enc_long["low_n_enc"]].copy()
+
+    if flags_path.exists() and wrong:
+        mask_long = enc_long_filtered.apply(
+            lambda r: (r["SubjectID"], r["StimID"]) in wrong, axis=1
+        )
+        enc_long_filtered = enc_long_filtered[~mask_long].copy()
+
     logger.info(
         f"  enc_long: {before_long} → {len(enc_long_filtered)} "
-        f"(removed {before_long - len(enc_long_filtered)}: low_n_enc=True)"
+        f"(low_n + wrong-image exclusions)"
     )
 
     # Propagate decomposition columns into enc_long via SubjectID × StimID

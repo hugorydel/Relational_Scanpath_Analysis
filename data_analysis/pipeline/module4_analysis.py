@@ -63,7 +63,7 @@ from pipeline.module_4 import (
     standardise_tables,
     summarise,
 )
-from pipeline.module_4.constants import DEFAULT_SCORES_PATH
+from pipeline.module_4.constants import DEFAULT_FLAGS_PATH, DEFAULT_SCORES_PATH
 
 logger = logging.getLogger(__name__)
 
@@ -89,6 +89,11 @@ def main() -> None:
         help="Path to recall_by_category.csv (aggregate_recall.py output).",
     )
     parser.add_argument(
+        "--flags",
+        default=str(DEFAULT_FLAGS_PATH),
+        help="Path to wrong_image_flags.csv (review_wrong_images.py output).",
+    )
+    parser.add_argument(
         "--output-dir",
         default=str(config.OUTPUT_DIR / "analysis"),
         help="Directory for all output files.",
@@ -107,7 +112,7 @@ def main() -> None:
     raw_df = load_data(Path(args.input))
     memory_scores = load_memory_scores(Path(args.scores))
     tables = build_analysis_tables(raw_df, memory_scores)
-    filtered = apply_exclusions(tables)
+    filtered = apply_exclusions(tables, flags_path=Path(args.flags))
     filtered = standardise_tables(filtered)
     results = fit_all_models(filtered)
     summarise(

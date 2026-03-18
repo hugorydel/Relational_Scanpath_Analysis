@@ -53,6 +53,7 @@ DV_OBJECTS = "prop_objects"  # (identity + attribute) recalled / empirical max
 # ---------------------------------------------------------------------------
 
 DEFAULT_SCORES_PATH = config.OUTPUT_DIR / "scoring" / "recall_by_category.csv"
+DEFAULT_FLAGS_PATH = config.OUTPUT_DIR / "scoring" / "wrong_image_flags.csv"
 
 # ---------------------------------------------------------------------------
 # Model specifications

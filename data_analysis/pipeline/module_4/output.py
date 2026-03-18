@@ -233,78 +233,124 @@ def _partial_regression_plot(enc: pd.DataFrame, output_path: Path) -> None:
 
 
 # ---------------------------------------------------------------------------
-# H1 plot — per-participant SVG means
+# H1 figure — trial distribution + per-participant consistency
 # ---------------------------------------------------------------------------
 
 
-def _h1_plot(enc: pd.DataFrame, results: dict, output_path: Path) -> None:
+def _h1_figure(enc: pd.DataFrame, results: dict, output_path: Path) -> None:
     """
-    Dot plot of per-participant mean encoding SVG with 95% CIs, sorted ascending.
-    Reference line at 0. Annotated with grand mean and H1 intercept test result.
+    Two-panel H1 figure.
 
-    Shows that the group-level SVG > 0 effect is consistent across individuals,
-    which is a natural reader concern with N=16.
+    Left  — density of all trial-level svg_z_enc values with 0 (chance)
+             and grand mean marked. Area above 0 shaded.
+    Right — per-participant mean ± 95% CI dot plot, sorted ascending.
+
+    Together these show: (a) the distribution is shifted well above chance,
+    and (b) this is consistent across every participant.
     """
     svg_col = "svg_z_enc"
-    if svg_col not in enc.columns or "SubjectID" not in enc.columns:
-        logger.warning("  _h1_plot: missing svg_z_enc or SubjectID — skipping.")
+    if svg_col not in enc.columns:
+        logger.warning("  _h1_figure: missing svg_z_enc — skipping.")
         return
 
-    # Per-participant mean and 95% CI via t-distribution
+    vals_all = enc[svg_col].dropna().values
+    grand_mean = vals_all.mean()
+    grand_sd = vals_all.std()
+    pct_above = 100 * (vals_all > 0).mean()
+
+    # Per-participant means + 95% CI
     records = []
     for subj, grp in enc.groupby("SubjectID"):
         vals = grp[svg_col].dropna().values
         n = len(vals)
         if n < 2:
             continue
-        mean = vals.mean()
+        m = vals.mean()
         se = vals.std(ddof=1) / np.sqrt(n)
-        t_crit = stats.t.ppf(0.975, df=n - 1)
+        tc = stats.t.ppf(0.975, df=n - 1)
         records.append(
-            {
-                "SubjectID": subj,
-                "mean": mean,
-                "lo": mean - t_crit * se,
-                "hi": mean + t_crit * se,
-                "n": n,
-            }
+            {"SubjectID": subj, "mean": m, "lo": m - tc * se, "hi": m + tc * se}
         )
-
     if not records:
-        logger.warning("  _h1_plot: no valid per-participant data — skipping.")
+        logger.warning("  _h1_figure: no per-participant data — skipping.")
         return
+    df_pp = pd.DataFrame(records).sort_values("mean").reset_index(drop=True)
+    n_subj = len(df_pp)
 
-    df_plot = pd.DataFrame(records).sort_values("mean").reset_index(drop=True)
-
-    # Grand mean from H1 model if available, else compute directly
-    grand_mean = enc[svg_col].dropna().mean()
-    pct_above = 100 * (enc[svg_col].dropna() > 0).mean()
-
-    # Pull p-value from H1 model intercept if fitted
-    h1_result, h1_mode = results.get("H1_svg_enc", (None, "skipped"))
-    if h1_result is not None:
-        try:
-            h1_p = h1_result.pvalues["Intercept"]
-            h1_sig = (
-                "***"
-                if h1_p < 0.001
-                else "**" if h1_p < 0.01 else "*" if h1_p < 0.05 else "ns"
-            )
-            stat_label = f"Grand mean = {grand_mean:.2f},  {pct_above:.0f}% > 0"
-        except Exception:
-            stat_label = f"Grand mean = {grand_mean:.2f},  {pct_above:.0f}% > 0"
-    else:
-        stat_label = f"Grand mean = {grand_mean:.2f},  {pct_above:.0f}% > 0"
-
-    n_subj = len(df_plot)
     colour = "#2166ac"
-    above_zero = df_plot["mean"] > 0
+    fig, (ax_dist, ax_pp) = plt.subplots(
+        1,
+        2,
+        figsize=(13, max(5, n_subj * 0.38)),
+        gridspec_kw={"width_ratios": [1, 1]},
+    )
 
-    fig, ax = plt.subplots(figsize=(6, max(3.5, n_subj * 0.42)))
+    # ── Left: distribution ────────────────────────────────────────────────
+    from scipy.stats import gaussian_kde
 
-    for i, row in df_plot.iterrows():
+    kde = gaussian_kde(vals_all, bw_method=0.3)
+    x_grid = np.linspace(vals_all.min() - 0.5, vals_all.max() + 0.5, 400)
+    y_kde = kde(x_grid)
+
+    ax_dist.plot(x_grid, y_kde, color=colour, linewidth=2, zorder=4)
+    # Shade above 0
+    mask_above = x_grid >= 0
+    ax_dist.fill_between(
+        x_grid[mask_above],
+        y_kde[mask_above],
+        color=colour,
+        alpha=0.25,
+        zorder=3,
+        label=f"{pct_above:.0f}% of trials > 0",
+    )
+    ax_dist.fill_between(
+        x_grid[~mask_above],
+        y_kde[~mask_above],
+        color="#a63603",
+        alpha=0.18,
+        zorder=3,
+    )
+    ax_dist.axvline(
+        0,
+        color="black",
+        linewidth=1.0,
+        linestyle="--",
+        alpha=0.6,
+        label="Permutation chance (0)",
+    )
+    ax_dist.axvline(
+        grand_mean,
+        color=colour,
+        linewidth=1.4,
+        linestyle="-",
+        alpha=0.85,
+        label=f"Grand mean = {grand_mean:.2f} SD",
+    )
+    ax_dist.set_xlabel("Encoding SVG (z-score above permutation baseline)", fontsize=9)
+    ax_dist.set_ylabel("Density", fontsize=9)
+    ax_dist.set_title(
+        "H1: Distribution of relational scanning\nacross all encoding trials",
+        fontsize=10,
+        fontweight="bold",
+        pad=8,
+    )
+    ax_dist.annotate(
+        f"mean = {grand_mean:.2f} SD  (σ = {grand_sd:.2f})\n{pct_above:.0f}% of trials above chance",
+        xy=(0.97, 0.97),
+        xycoords="axes fraction",
+        fontsize=8.5,
+        ha="right",
+        va="top",
+        bbox=dict(boxstyle="round,pad=0.3", fc="white", alpha=0.88),
+    )
+    ax_dist.legend(fontsize=8, framealpha=0.85)
+    ax_dist.spines[["top", "right"]].set_visible(False)
+    ax_dist.tick_params(labelsize=8)
+
+    # ── Right: per-participant dot plot ───────────────────────────────────
+    for i, row in df_pp.iterrows():
         c = colour if row["mean"] > 0 else "#a63603"
-        ax.errorbar(
+        ax_pp.errorbar(
             row["mean"],
             i,
             xerr=[[row["mean"] - row["lo"]], [row["hi"] - row["mean"]]],
@@ -315,9 +361,7 @@ def _h1_plot(enc: pd.DataFrame, results: dict, output_path: Path) -> None:
             capsize=3,
             alpha=0.85,
         )
-
-    # Grand mean line
-    ax.axvline(
+    ax_pp.axvline(
         grand_mean,
         color="#636363",
         linewidth=1.2,
@@ -325,33 +369,266 @@ def _h1_plot(enc: pd.DataFrame, results: dict, output_path: Path) -> None:
         alpha=0.7,
         label=f"Grand mean ({grand_mean:.2f})",
     )
-    ax.axvline(
+    ax_pp.axvline(
         0, color="black", linewidth=0.8, linestyle="--", alpha=0.5, label="Chance (0)"
     )
-
-    ax.set_yticks(range(n_subj))
-    ax.set_yticklabels(df_plot["SubjectID"].values, fontsize=8)
-    ax.set_xlabel("Mean encoding SVG (z-scored, ± 95% CI)", fontsize=9)
-    ax.set_title(
-        "H1: Encoding SVG by participant\n(sorted by mean; blue = above zero)",
+    ax_pp.set_yticks(range(n_subj))
+    ax_pp.set_yticklabels(
+        [
+            r["SubjectID"].replace("Encode-Decode_Experiment-", "P")
+            for _, r in df_pp.iterrows()
+        ],
+        fontsize=8,
+    )
+    ax_pp.set_xlabel("Mean encoding SVG (z-scored, ± 95% CI)", fontsize=9)
+    ax_pp.set_title(
+        "H1: Per-participant relational scanning\n(sorted ascending; blue = above chance)",
         fontsize=10,
         fontweight="bold",
         pad=8,
     )
-    ax.annotate(
-        stat_label,
-        xy=(0.97, 0.03),
-        xycoords="axes fraction",
-        fontsize=8.5,
-        ha="right",
-        va="bottom",
-        bbox=dict(boxstyle="round,pad=0.3", fc="white", alpha=0.85),
-    )
-    ax.legend(
-        fontsize=8, loc="lower right", bbox_to_anchor=(0.97, 0.10), framealpha=0.85
-    )
-    ax.spines[["top", "right"]].set_visible(False)
+    ax_pp.legend(fontsize=8, framealpha=0.85)
+    ax_pp.spines[["top", "right"]].set_visible(False)
+    ax_pp.tick_params(labelsize=8)
 
+    fig.suptitle(
+        "H1: Encoding scanpaths are reliably more relational than the permutation baseline",
+        fontsize=11,
+        fontweight="bold",
+        y=1.01,
+    )
+    plt.tight_layout()
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    plt.savefig(output_path, dpi=150, bbox_inches="tight")
+    plt.close()
+    logger.info(f"  Written → {output_path.name}")
+
+
+# ---------------------------------------------------------------------------
+# H2 figure — quartile bin plot + per-image correlation distribution
+# ---------------------------------------------------------------------------
+
+
+def _h2_figure(
+    enc: pd.DataFrame,
+    results: dict,
+    output_path: Path,
+) -> None:
+    """
+    Two-panel H2 figure.
+
+    Left  — Quartile bins of svg_z_enc_within on X; mean recall proportion
+             (± 95% CI) on Y for prop_total, prop_relations, prop_objects.
+             LMM β and p annotated per DV.
+    Right — Per-image correlation distribution: strip + box of per-image
+             Pearson r (svg_z_enc_within vs each DV), with one-sample
+             t-test vs zero annotated.
+    """
+    import warnings
+
+    from scipy.stats import pearsonr, ttest_1samp
+
+    svg_within = "svg_z_enc_within"
+    dvs = [
+        (DV_TOTAL, "Total recall", "#2166ac"),
+        (DV_RELATIONS, "Relational recall", "#084594"),
+        (DV_OBJECTS, "Object recall", "#a63603"),
+    ]
+
+    if svg_within not in enc.columns:
+        logger.warning("  _h2_figure: svg_z_enc_within missing — skipping.")
+        return
+
+    fig, (ax_bin, ax_img) = plt.subplots(1, 2, figsize=(14, 5.5))
+
+    # ── Left: quartile bin plot ───────────────────────────────────────────
+    enc_q = enc.copy()
+    try:
+        enc_q["svg_quartile"] = pd.qcut(
+            enc_q[svg_within],
+            q=4,
+            labels=["Q1\n(lowest)", "Q2", "Q3", "Q4\n(highest)"],
+        )
+    except ValueError:
+        # Fallback if too few unique values
+        enc_q["svg_quartile"] = pd.qcut(
+            enc_q[svg_within],
+            q=4,
+            labels=["Q1", "Q2", "Q3", "Q4"],
+            duplicates="drop",
+        )
+
+    q_labels = enc_q["svg_quartile"].cat.categories.tolist()
+    x_pos = np.arange(len(q_labels))
+    offsets = [-0.22, 0, 0.22]
+
+    for (dv_col, dv_label, colour), offset in zip(dvs, offsets):
+        if dv_col not in enc_q.columns:
+            continue
+        means, los, his = [], [], []
+        for ql in q_labels:
+            grp = enc_q.loc[enc_q["svg_quartile"] == ql, dv_col].dropna().values
+            if len(grp) < 3:
+                means.append(np.nan)
+                los.append(np.nan)
+                his.append(np.nan)
+                continue
+            m = grp.mean()
+            se = grp.std(ddof=1) / np.sqrt(len(grp))
+            tc = stats.t.ppf(0.975, df=len(grp) - 1)
+            means.append(m)
+            los.append(m - tc * se)
+            his.append(m + tc * se)
+
+        means = np.array(means, dtype=float)
+        los = np.array(los, dtype=float)
+        his = np.array(his, dtype=float)
+
+        ax_bin.errorbar(
+            x_pos + offset,
+            means,
+            yerr=[means - los, his - means],
+            fmt="o-",
+            color=colour,
+            markersize=6,
+            linewidth=1.8,
+            capsize=3,
+            label=dv_label,
+        )
+
+    # Annotate LMM betas
+    model_name_map = {
+        DV_TOTAL: "H2_total",
+        DV_RELATIONS: "H2_relations",
+        DV_OBJECTS: "H2_objects",
+    }
+    annot_lines = []
+    for dv_col, dv_label, _ in dvs:
+        mname = model_name_map.get(dv_col)
+        if mname and mname in results:
+            res, _ = results[mname]
+            if res is not None:
+                try:
+                    b = res.params.get(
+                        "svg_z_enc_within_z", res.params.get(svg_within + "_z", np.nan)
+                    )
+                    p = res.pvalues.get(
+                        "svg_z_enc_within_z", res.pvalues.get(svg_within + "_z", np.nan)
+                    )
+                    sig = (
+                        "***"
+                        if p < 0.001
+                        else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
+                    )
+                    annot_lines.append(f"{dv_label}: β={b:+.3f} {sig}")
+                except Exception:
+                    pass
+    if annot_lines:
+        ax_bin.annotate(
+            "\n".join(annot_lines),
+            xy=(0.03, 0.97),
+            xycoords="axes fraction",
+            fontsize=8,
+            va="top",
+            bbox=dict(boxstyle="round,pad=0.35", fc="white", alpha=0.88),
+        )
+
+    ax_bin.set_xticks(x_pos)
+    ax_bin.set_xticklabels(q_labels, fontsize=9)
+    ax_bin.set_xlabel(
+        "Within-image SVG quartile\n(relational scanning relative to image mean)",
+        fontsize=9,
+    )
+    ax_bin.set_ylabel("Mean recall proportion (± 95% CI)", fontsize=9)
+    ax_bin.set_title(
+        "H2: Relational scanning predicts memory\nacross encoding SVG quartiles",
+        fontsize=10,
+        fontweight="bold",
+        pad=8,
+    )
+    ax_bin.legend(fontsize=8.5, framealpha=0.85)
+    ax_bin.spines[["top", "right"]].set_visible(False)
+    ax_bin.tick_params(labelsize=8)
+
+    # ── Right: per-image correlation distribution ─────────────────────────
+    stim_ids = enc["StimID"].unique()
+    offsets_img = [-0.22, 0, 0.22]
+
+    for col_i, ((dv_col, dv_label, colour), x_off) in enumerate(zip(dvs, offsets_img)):
+        if dv_col not in enc.columns:
+            continue
+        rs = []
+        for stim_id in stim_ids:
+            sub = enc[enc["StimID"] == stim_id][[svg_within, dv_col]].dropna()
+            if len(sub) < 6:
+                continue
+            r, _ = pearsonr(sub[svg_within], sub[dv_col])
+            rs.append(r)
+        if not rs:
+            continue
+        rs = np.array(rs)
+        x_center = col_i
+
+        # Box
+        ax_img.boxplot(
+            rs,
+            positions=[x_center],
+            widths=0.3,
+            patch_artist=True,
+            showfliers=False,
+            medianprops=dict(color="white", linewidth=2),
+            boxprops=dict(facecolor=colour, alpha=0.35),
+            whiskerprops=dict(color=colour, alpha=0.6),
+            capprops=dict(color=colour, alpha=0.6),
+        )
+        # Strip
+        jitter = np.random.default_rng(42).uniform(-0.08, 0.08, len(rs))
+        ax_img.scatter(
+            np.ones(len(rs)) * x_center + jitter,
+            rs,
+            color=colour,
+            alpha=0.6,
+            s=26,
+            linewidths=0,
+            zorder=4,
+        )
+        # t-test annotation
+        t, p_t = ttest_1samp(rs, 0)
+        sig = (
+            "***"
+            if p_t < 0.001
+            else "**" if p_t < 0.01 else "*" if p_t < 0.05 else "ns"
+        )
+        ax_img.annotate(
+            f"mean r={rs.mean():+.3f}\n{sig}",
+            xy=(x_center, rs.max() + 0.03),
+            ha="center",
+            fontsize=8,
+            color=colour,
+        )
+
+    ax_img.axhline(0, color="black", linewidth=0.8, linestyle="--", alpha=0.5)
+    ax_img.set_xticks([0, 1, 2])
+    ax_img.set_xticklabels(
+        [dv_label for _, dv_label, _ in dvs],
+        fontsize=9,
+    )
+    ax_img.set_ylabel("Per-image Pearson r\n(within-image SVG vs recall)", fontsize=9)
+    ax_img.set_title(
+        "H2: Effect is consistent across images\n(each point = one image, N=30)",
+        fontsize=10,
+        fontweight="bold",
+        pad=8,
+    )
+    ax_img.spines[["top", "right"]].set_visible(False)
+    ax_img.tick_params(labelsize=8)
+
+    fig.suptitle(
+        "H2: Within-image relational scanning predicts episodic memory recall",
+        fontsize=11,
+        fontweight="bold",
+        y=1.01,
+    )
     plt.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(output_path, dpi=150, bbox_inches="tight")
@@ -537,7 +814,10 @@ def summarise(
         _forest_plot(coef_all, output_dir / "forest_plot.png")
 
     if plot and not enc.empty:
-        _partial_regression_plot(enc, output_dir / "partial_regression.png")
-        _h1_plot(enc, results, output_dir / "h1_svg_by_participant.png")
+        _partial_regression_plot(
+            enc, output_dir / "supplementary_partial_regression.png"
+        )
+        _h1_figure(enc, results, output_dir / "h1_relational_scanning.png")
+        _h2_figure(enc, results, output_dir / "h2_svg_memory.png")
 
     return coef_all

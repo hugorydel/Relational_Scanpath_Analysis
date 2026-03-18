@@ -1,0 +1,635 @@
+[
+  {
+    "node_id": "2387122_001",
+    "concept": "polar bear",
+    "context": "animal in the enclosure/water being observed through glass",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a big polar bear",
+      "polar bear in water enclosure",
+      "a polar bear in water",
+      "bear in pool",
+      "polar bear in water",
+      "a white polar bear",
+      "polar bear",
+      "polar bear in behind the glass in water",
+      "a polar bear",
+      "polar bear",
+      "the polar bear",
+      "a white polar bear",
+      "a polar bear",
+      "polar bear in water"
+    ]
+  },
+  {
+    "node_id": "2387122_002",
+    "concept": "person",
+    "context": "human on the viewing side of the glass looking at the bear",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "person"
+    ]
+  },
+  {
+    "node_id": "2387122_002a",
+    "concept": "photographer",
+    "context": "human on the viewing side of the glass using a camera",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the photographer",
+      "person with camera",
+      "photographer",
+      "a photographer"
+    ]
+  },
+  {
+    "node_id": "2387122_002b",
+    "concept": "man",
+    "context": "gender description of the person on the viewing side of the glass",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "a man looking at him",
+      "blonde man"
+    ]
+  },
+  {
+    "node_id": "2387122_002c",
+    "concept": "woman",
+    "context": "gender description of the person on the viewing side of the glass",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "the woman",
+      "woman stood the other side",
+      "blonde woman"
+    ]
+  },
+  {
+    "node_id": "2387122_002d",
+    "concept": "boy",
+    "context": "age/gender description of the person on the viewing side of the glass",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "there was a boy"
+    ]
+  },
+  {
+    "node_id": "2387122_003",
+    "concept": "camera",
+    "context": "object carried or held by the person observing/photographing the bear",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with a camera around his neck",
+      "person with camera",
+      "man taking photo",
+      "with a camera",
+      "woman stood the other side with a camera",
+      "camera behind glass pool",
+      "with a camera in his hand",
+      "holding camera to glass",
+      "a camera",
+      "with a camera",
+      "with a camera"
+    ]
+  },
+  {
+    "node_id": "2387122_004",
+    "concept": "glass",
+    "context": "transparent barrier separating the bear from the person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pawing at the glass",
+      "pressed against the glass",
+      "behind a glass facade",
+      "paws on the glass",
+      "hands on glass",
+      "see through wall",
+      "behind glass pool",
+      "put its paw on the glass",
+      "to glass",
+      "pressedup against the glass enclosure",
+      "up against the glass",
+      "glass enclosure",
+      "up agains the glass",
+      "pressed up against the glass"
+    ]
+  },
+  {
+    "node_id": "2387122_005",
+    "concept": "water",
+    "context": "substance filling the bear enclosure/pool around the bear",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in water enclosure",
+      "in water",
+      "in pool",
+      "in the water of an aquarium",
+      "glass pool",
+      "enclosure of water",
+      "in water",
+      "in water",
+      "swimming in water",
+      "in water"
+    ]
+  },
+  {
+    "node_id": "2387122_006",
+    "concept": "enclosure",
+    "context": "contained habitat holding the bear",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "zoo enclosure",
+      "water enclosure",
+      "an enclosure",
+      "glass inclosure",
+      "glass enclosure",
+      "within its enclosure",
+      "glass enclosure"
+    ]
+  },
+  {
+    "node_id": "2387122_007",
+    "concept": "zoo",
+    "context": "overall facility setting of the bear exhibit",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "in a zoo enclosure",
+      "the picture was taken in a zoo"
+    ]
+  },
+  {
+    "node_id": "2387122_008",
+    "concept": "aquarium",
+    "context": "overall facility setting describing the glass-and-water animal exhibit",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "in the water of an aquarium"
+    ]
+  },
+  {
+    "node_id": "2387122_009",
+    "concept": "pool",
+    "context": "water area in the enclosure occupied by the bear",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "bear in pool",
+      "glass pool"
+    ]
+  },
+  {
+    "node_id": "2387122_010",
+    "concept": "rock",
+    "context": "background elements behind the water at the back of the picture",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "behind water are rocks at back of picture"
+    ]
+  },
+  {
+    "node_id": "2387122_011",
+    "concept": "paw",
+    "context": "bear body part visible against the glass underwater",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with its paw",
+      "paw showing",
+      "paws on the glass",
+      "one paw presses on glass",
+      "put its paw on the glass",
+      "its paws pressedup against the glass",
+      "with its paw up against the glass",
+      "putting its paw up agains the glass"
+    ]
+  },
+  {
+    "node_id": "2387122_012",
+    "concept": "head",
+    "context": "bear body part visible above water",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "its head is turned up",
+      "has its head poking up out of the water"
+    ]
+  },
+  {
+    "node_id": "2387122_013",
+    "concept": "mouth",
+    "context": "bear mouth contacting the horizontal rail",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with mouth on railing"
+    ]
+  },
+  {
+    "node_id": "2387122_014",
+    "concept": "railing",
+    "context": "horizontal structure contacted by the bear's mouth near the barrier",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "mouth on railing"
+    ]
+  },
+  {
+    "node_id": "2387122_015",
+    "concept": "claw",
+    "context": "bear claws visible on the paw against the glass",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "showing its claws"
+    ]
+  },
+  {
+    "node_id": "2387122_016",
+    "concept": "snout",
+    "context": "bear snout pressed near the glass/rail area",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "its snout up against the glass enclosure"
+    ]
+  },
+  {
+    "node_id": "2387122_017",
+    "concept": "neck",
+    "context": "person body area where the camera strap is worn",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with a camera around his neck"
+    ]
+  },
+  {
+    "node_id": "2387122_018",
+    "concept": "hand",
+    "context": "person body part holding the camera",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with a camera in his hand"
+    ]
+  },
+  {
+    "node_id": "2387122_019",
+    "concept": "hair",
+    "context": "person hair visible from the back/side",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "gray hair",
+      "blonde man",
+      "a blonde short haired woman",
+      "a blond woman",
+      "blonde person"
+    ]
+  },
+  {
+    "node_id": "2387122_020",
+    "concept": "glass barrier",
+    "context": "transparent divider between the person and the bear",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "glass facade",
+      "see through wall",
+      "glass panel"
+    ]
+  },
+  {
+    "node_id": "2387122_021",
+    "concept": "big",
+    "context": "modifies the polar bear's apparent size",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a big polar bear"
+    ]
+  },
+  {
+    "node_id": "2387122_022",
+    "concept": "gray",
+    "context": "modifies the person's hair color",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "gray hair"
+    ]
+  },
+  {
+    "node_id": "2387122_023",
+    "concept": "white",
+    "context": "modifies the polar bear's fur color",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a white polar bear",
+      "the polar bear is white implied by white polar bear"
+    ]
+  },
+  {
+    "node_id": "2387122_024",
+    "concept": "blonde",
+    "context": "modifies the person's hair color",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blonde man",
+      "blonde woman",
+      "a blond woman",
+      "blonde person",
+      "blonde short haired woman"
+    ]
+  },
+  {
+    "node_id": "2387122_025",
+    "concept": "short-haired",
+    "context": "modifies the person's hairstyle",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "short haired woman"
+    ]
+  },
+  {
+    "node_id": "2387122_026",
+    "concept": "see-through",
+    "context": "modifies the wall/barrier transparency",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "see through wall"
+    ]
+  },
+  {
+    "node_id": "2387122_027",
+    "concept": "behind",
+    "context": "positions the bear relative to the glass or water",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "behind a glass facade",
+      "in behind the glass",
+      "behing glass",
+      "behind the glass",
+      "behind water are rocks"
+    ]
+  },
+  {
+    "node_id": "2387122_028",
+    "concept": "other side",
+    "context": "positions the person opposite the bear across the glass",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the other side",
+      "opposite to her",
+      "on the other side of the glass",
+      "the other side of the glass"
+    ]
+  },
+  {
+    "node_id": "2387122_029",
+    "concept": "left side",
+    "context": "positions the photographer relative to the glass panel",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "close to the left side of the glass panel"
+    ]
+  },
+  {
+    "node_id": "2387122_030",
+    "concept": "back",
+    "context": "positions the rocks in the background of the picture",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "at back of picture"
+    ]
+  },
+  {
+    "node_id": "2387122_031",
+    "concept": "against",
+    "context": "contact relation between the bear or its body parts and the glass",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pawing at the glass",
+      "pressed against the glass",
+      "hands on glass",
+      "up against the see through wall",
+      "one paw presses on glass",
+      "its paws pressedup against the glass",
+      "paw up against the glass",
+      "snout up against the glass enclosure",
+      "paw up agains the glass",
+      "pressed up against the glass"
+    ]
+  },
+  {
+    "node_id": "2387122_032",
+    "concept": "pawing",
+    "context": "action performed by the bear at the glass",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "pawing at the glass"
+    ]
+  },
+  {
+    "node_id": "2387122_033",
+    "concept": "pressing",
+    "context": "action of the bear or its paw being pressed onto the glass",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pressed against the glass",
+      "paws on the glass",
+      "one paw presses on glass",
+      "put its paw on the glass",
+      "its paws pressedup against the glass",
+      "paw up against the glass",
+      "pressed up against the glass"
+    ]
+  },
+  {
+    "node_id": "2387122_034",
+    "concept": "looking",
+    "context": "action of the person looking at the bear",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a man looking at him",
+      "looking at it",
+      "looking closely at the polar bear"
+    ]
+  },
+  {
+    "node_id": "2387122_035",
+    "concept": "photographing",
+    "context": "action of the person taking pictures of the bear",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "the photographer",
+      "person with camera",
+      "man taking photo",
+      "woman stood the other side with a camera",
+      "with camera",
+      "holding camera",
+      "taking photographs",
+      "photographer",
+      "with a camera",
+      "with a camera"
+    ]
+  },
+  {
+    "node_id": "2387122_036",
+    "concept": "standing",
+    "context": "action/posture of the person by the glass",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "woman stood the other side",
+      "photographer standing close"
+    ]
+  },
+  {
+    "node_id": "2387122_037",
+    "concept": "crouching",
+    "context": "action/posture of the man near the glass",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "blonde man crouching"
+    ]
+  },
+  {
+    "node_id": "2387122_038",
+    "concept": "turning up",
+    "context": "action/posture of the bear's head angled upward",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "its head is turned up"
+    ]
+  },
+  {
+    "node_id": "2387122_039",
+    "concept": "poking up",
+    "context": "action/posture of the bear's head emerging above the water",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "head poking up out of the water"
+    ]
+  },
+  {
+    "node_id": "2387122_040",
+    "concept": "swimming",
+    "context": "action of the bear moving in the water",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "swimming in water"
+    ]
+  },
+  {
+    "node_id": "2387122_041",
+    "concept": "holding",
+    "context": "action of the person holding the camera",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding camera to glass",
+      "with a camera in his hand"
+    ]
+  },
+  {
+    "node_id": "2387122_042",
+    "concept": "wearing",
+    "context": "relation of the person wearing glasses or a camera around the neck",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "camera around his neck",
+      "is wearing glasses",
+      "glasses on"
+    ]
+  },
+  {
+    "node_id": "2387122_043",
+    "concept": "glasses",
+    "context": "eyewear worn by the person observing the bear",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the woman is wearing glasses",
+      "glasses on"
+    ]
+  }
+]

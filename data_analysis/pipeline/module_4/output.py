@@ -233,491 +233,373 @@ def _partial_regression_plot(enc: pd.DataFrame, output_path: Path) -> None:
 
 
 # ---------------------------------------------------------------------------
-# H1 figure — trial distribution + per-participant consistency
+# Prediction helpers for model-predicted figures
 # ---------------------------------------------------------------------------
 
 
-def _h1_figure(enc: pd.DataFrame, results: dict, output_path: Path) -> None:
+def _fe_params_and_cov(result):
     """
-    Two-panel H1 figure.
+    Return (fe_params Series, fe_cov DataFrame) for fixed effects only,
+    stripping out variance component rows from LMM or returning OLS equivalents.
+    """
+    params = result.params
+    # Exclude variance component rows (contain 'Var' or 'scale')
+    mask = ~params.index.str.contains(r"Var|scale", regex=True, na=False)
+    fe_names = params.index[mask]
+    fe_params = params[fe_names]
 
-    Left  — density of all trial-level svg_z_enc values with 0 (chance)
-             and grand mean marked. Area above 0 shaded.
-    Right — per-participant mean ± 95% CI dot plot, sorted ascending.
+    try:
+        full_cov = result.cov_params()
+        available = [n for n in fe_names if n in full_cov.index]
+        fe_cov = full_cov.loc[available, available]
+        fe_params = fe_params[available]
+    except Exception:
+        fe_cov = pd.DataFrame(
+            np.diag(result.bse[fe_names].values ** 2),
+            index=fe_names,
+            columns=fe_names,
+        )
+    return fe_params, fe_cov
 
-    Together these show: (a) the distribution is shifted well above chance,
-    and (b) this is consistent across every participant.
+
+def _marginal_predict(result, design_fn, x_grid: np.ndarray) -> tuple:
+    """
+    Marginal fixed-effects predictions over x_grid.
+
+    design_fn(x) → dict {param_name: coefficient_value} for one x value.
+    All params not returned by design_fn default to 0.
+
+    Returns (preds, ci_lo, ci_hi) as numpy arrays.
+    """
+    fe_params, fe_cov = _fe_params_and_cov(result)
+
+    preds, ci_lo, ci_hi = [], [], []
+    for x in x_grid:
+        design = design_fn(x)
+        row = np.array([design.get(n, 0.0) for n in fe_params.index])
+        pred = float(row @ fe_params.values)
+        var  = float(row @ fe_cov.values @ row)
+        se   = np.sqrt(max(var, 0.0))
+        preds.append(pred)
+        ci_lo.append(pred - 1.96 * se)
+        ci_hi.append(pred + 1.96 * se)
+
+    return np.array(preds), np.array(ci_lo), np.array(ci_hi)
+
+
+# ---------------------------------------------------------------------------
+# Figure 1 — Vertical violin of encoding SVG
+# ---------------------------------------------------------------------------
+
+
+def _figure1_violin(enc: pd.DataFrame, output_path: Path) -> pd.DataFrame:
+    """
+    Vertical violin plot of trial-level svg_z_enc values.
+    Single 'Encoding' category on x-axis — future-proof for adding Decoding.
+    Returns the figure data DataFrame.
     """
     svg_col = "svg_z_enc"
     if svg_col not in enc.columns:
-        logger.warning("  _h1_figure: missing svg_z_enc — skipping.")
-        return
+        logger.warning("  _figure1_violin: svg_z_enc missing — skipping.")
+        return pd.DataFrame()
 
-    vals_all = enc[svg_col].dropna().values
-    grand_mean = vals_all.mean()
-    grand_sd = vals_all.std()
-    pct_above = 100 * (vals_all > 0).mean()
+    vals = enc[[svg_col, "SubjectID", "StimID"]].dropna(subset=[svg_col]).copy()
+    vals["phase"] = "Encoding"
 
-    # Per-participant means + 95% CI
-    records = []
-    for subj, grp in enc.groupby("SubjectID"):
-        vals = grp[svg_col].dropna().values
-        n = len(vals)
-        if n < 2:
-            continue
-        m = vals.mean()
-        se = vals.std(ddof=1) / np.sqrt(n)
-        tc = stats.t.ppf(0.975, df=n - 1)
-        records.append(
-            {"SubjectID": subj, "mean": m, "lo": m - tc * se, "hi": m + tc * se}
-        )
-    if not records:
-        logger.warning("  _h1_figure: no per-participant data — skipping.")
-        return
-    df_pp = pd.DataFrame(records).sort_values("mean").reset_index(drop=True)
-    n_subj = len(df_pp)
+    grand_mean = vals[svg_col].mean()
+    pct_above  = 100 * (vals[svg_col] > 0).mean()
 
-    colour = "#2166ac"
-    fig, (ax_dist, ax_pp) = plt.subplots(
-        1,
-        2,
-        figsize=(13, max(5, n_subj * 0.38)),
-        gridspec_kw={"width_ratios": [1, 1]},
+    fig, ax = plt.subplots(figsize=(4.5, 6))
+
+    # Violin
+    vp = ax.violinplot(
+        vals[svg_col].values,
+        positions=[0],
+        widths=0.55,
+        showmedians=False,
+        showextrema=False,
+    )
+    for body in vp["bodies"]:
+        body.set_facecolor("#2166ac")
+        body.set_alpha(0.35)
+        body.set_edgecolor("#2166ac")
+        body.set_linewidth(1.2)
+
+    # Jittered strip
+    rng = np.random.default_rng(42)
+    jitter = rng.uniform(-0.07, 0.07, len(vals))
+    ax.scatter(
+        jitter, vals[svg_col].values,
+        color="#2166ac", alpha=0.25, s=12, linewidths=0, zorder=3,
     )
 
-    # ── Left: distribution ────────────────────────────────────────────────
-    from scipy.stats import gaussian_kde
+    # IQR box
+    q25, q75 = np.percentile(vals[svg_col], [25, 75])
+    median    = np.median(vals[svg_col])
+    ax.vlines(0, q25, q75, color="#2166ac", linewidth=5, alpha=0.7, zorder=4)
+    ax.scatter([0], [median], color="white", s=30, zorder=5)
 
-    kde = gaussian_kde(vals_all, bw_method=0.3)
-    x_grid = np.linspace(vals_all.min() - 0.5, vals_all.max() + 0.5, 400)
-    y_kde = kde(x_grid)
+    # Reference lines
+    ax.axhline(0, color="black", linewidth=1.0, linestyle="--",
+               alpha=0.6, label="Permutation chance (0)", zorder=2)
+    ax.axhline(grand_mean, color="#2166ac", linewidth=1.4, linestyle="-",
+               alpha=0.85, label=f"Grand mean = {grand_mean:.2f} SD", zorder=2)
 
-    ax_dist.plot(x_grid, y_kde, color=colour, linewidth=2, zorder=4)
-    # Shade above 0
-    mask_above = x_grid >= 0
-    ax_dist.fill_between(
-        x_grid[mask_above],
-        y_kde[mask_above],
-        color=colour,
-        alpha=0.25,
-        zorder=3,
-        label=f"{pct_above:.0f}% of trials > 0",
+    # Annotations
+    ax.annotate(
+        f"Mean = {grand_mean:.2f} SD\n{pct_above:.0f}% > chance",
+        xy=(0.97, 0.97), xycoords="axes fraction",
+        fontsize=9, ha="right", va="top",
+        bbox=dict(boxstyle="round,pad=0.3", fc="white", alpha=0.9),
     )
-    ax_dist.fill_between(
-        x_grid[~mask_above],
-        y_kde[~mask_above],
-        color="#a63603",
-        alpha=0.18,
-        zorder=3,
-    )
-    ax_dist.axvline(
-        0,
-        color="black",
-        linewidth=1.0,
-        linestyle="--",
-        alpha=0.6,
-        label="Permutation chance (0)",
-    )
-    ax_dist.axvline(
-        grand_mean,
-        color=colour,
-        linewidth=1.4,
-        linestyle="-",
-        alpha=0.85,
-        label=f"Grand mean = {grand_mean:.2f} SD",
-    )
-    ax_dist.set_xlabel("Encoding SVG (z-score above permutation baseline)", fontsize=9)
-    ax_dist.set_ylabel("Density", fontsize=9)
-    ax_dist.set_title(
-        "H1: Distribution of relational scanning\nacross all encoding trials",
-        fontsize=10,
-        fontweight="bold",
-        pad=8,
-    )
-    ax_dist.annotate(
-        f"mean = {grand_mean:.2f} SD  (σ = {grand_sd:.2f})\n{pct_above:.0f}% of trials above chance",
-        xy=(0.97, 0.97),
-        xycoords="axes fraction",
-        fontsize=8.5,
-        ha="right",
-        va="top",
-        bbox=dict(boxstyle="round,pad=0.3", fc="white", alpha=0.88),
-    )
-    ax_dist.legend(fontsize=8, framealpha=0.85)
-    ax_dist.spines[["top", "right"]].set_visible(False)
-    ax_dist.tick_params(labelsize=8)
 
-    # ── Right: per-participant dot plot ───────────────────────────────────
-    for i, row in df_pp.iterrows():
-        c = colour if row["mean"] > 0 else "#a63603"
-        ax_pp.errorbar(
-            row["mean"],
-            i,
-            xerr=[[row["mean"] - row["lo"]], [row["hi"] - row["mean"]]],
-            fmt="o",
-            color=c,
-            markersize=6,
-            linewidth=1.4,
-            capsize=3,
-            alpha=0.85,
-        )
-    ax_pp.axvline(
-        grand_mean,
-        color="#636363",
-        linewidth=1.2,
-        linestyle="-",
-        alpha=0.7,
-        label=f"Grand mean ({grand_mean:.2f})",
-    )
-    ax_pp.axvline(
-        0, color="black", linewidth=0.8, linestyle="--", alpha=0.5, label="Chance (0)"
-    )
-    ax_pp.set_yticks(range(n_subj))
-    ax_pp.set_yticklabels(
-        [
-            r["SubjectID"].replace("Encode-Decode_Experiment-", "P")
-            for _, r in df_pp.iterrows()
-        ],
-        fontsize=8,
-    )
-    ax_pp.set_xlabel("Mean encoding SVG (z-scored, ± 95% CI)", fontsize=9)
-    ax_pp.set_title(
-        "H1: Per-participant relational scanning\n(sorted ascending; blue = above chance)",
-        fontsize=10,
-        fontweight="bold",
-        pad=8,
-    )
-    ax_pp.legend(fontsize=8, framealpha=0.85)
-    ax_pp.spines[["top", "right"]].set_visible(False)
-    ax_pp.tick_params(labelsize=8)
+    ax.set_xticks([0])
+    ax.set_xticklabels(["Encoding"], fontsize=10)
+    ax.set_ylabel("Relational scanpath strength\n(z-score above permutation baseline)", fontsize=9)
+    ax.legend(fontsize=8, framealpha=0.85, loc="lower right")
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.tick_params(labelsize=8)
 
-    fig.suptitle(
-        "H1: Encoding scanpaths are reliably more relational than the permutation baseline",
-        fontsize=11,
-        fontweight="bold",
-        y=1.01,
-    )
     plt.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(output_path, dpi=150, bbox_inches="tight")
     plt.close()
     logger.info(f"  Written → {output_path.name}")
 
+    return vals[["SubjectID", "StimID", svg_col, "phase"]].copy()
+
 
 # ---------------------------------------------------------------------------
-# H2 figure — quartile bin plot + per-image correlation distribution
+# Figure 3 — Model-predicted total recall
 # ---------------------------------------------------------------------------
 
 
-def _h2_figure(
+def _figure3_predicted_total(
     enc: pd.DataFrame,
     results: dict,
     output_path: Path,
-) -> None:
+) -> pd.DataFrame:
     """
-    Two-panel H2 figure.
-
-    Left  — Quartile bins of svg_z_enc_within on X; mean recall proportion
-             (± 95% CI) on Y for prop_total, prop_relations, prop_objects.
-             LMM β and p annotated per DV.
-    Right — Per-image correlation distribution: strip + box of per-image
-             Pearson r (svg_z_enc_within vs each DV), with one-sample
-             t-test vs zero annotated.
+    Model-predicted total recall proportion as a function of within-image SVG.
+    Fixed effects only; all covariates at their standardised mean (0).
+    Returns the figure data DataFrame.
     """
-    import warnings
+    entry = results.get("H2_total")
+    if entry is None or entry[0] is None:
+        logger.warning("  _figure3_predicted_total: H2_total result missing — skipping.")
+        return pd.DataFrame()
 
-    from scipy.stats import pearsonr, ttest_1samp
+    result, _ = entry
+    svg_col = "svg_z_enc_within_z"
 
-    svg_within = "svg_z_enc_within"
-    dvs = [
-        (DV_TOTAL, "Total recall", "#2166ac"),
-        (DV_RELATIONS, "Relational recall", "#084594"),
-        (DV_OBJECTS, "Object recall", "#a63603"),
-    ]
+    if svg_col not in enc.columns:
+        logger.warning("  _figure3_predicted_total: svg_z_enc_within_z missing — skipping.")
+        return pd.DataFrame()
 
-    if svg_within not in enc.columns:
-        logger.warning("  _h2_figure: svg_z_enc_within missing — skipping.")
-        return
+    vals = enc[svg_col].dropna().values
+    x_grid = np.linspace(np.percentile(vals, 2.5), np.percentile(vals, 97.5), 120)
 
-    fig, (ax_bin, ax_img) = plt.subplots(1, 2, figsize=(14, 5.5))
+    def design(x):
+        return {"Intercept": 1.0, svg_col: x}
 
-    # ── Left: quartile bin plot ───────────────────────────────────────────
-    enc_q = enc.copy()
-    try:
-        enc_q["svg_quartile"] = pd.qcut(
-            enc_q[svg_within],
-            q=4,
-            labels=["Q1\n(lowest)", "Q2", "Q3", "Q4\n(highest)"],
-        )
-    except ValueError:
-        # Fallback if too few unique values
-        enc_q["svg_quartile"] = pd.qcut(
-            enc_q[svg_within],
-            q=4,
-            labels=["Q1", "Q2", "Q3", "Q4"],
-            duplicates="drop",
-        )
+    preds, ci_lo, ci_hi = _marginal_predict(result, design, x_grid)
 
-    q_labels = enc_q["svg_quartile"].cat.categories.tolist()
-    x_pos = np.arange(len(q_labels))
-    offsets = [-0.22, 0, 0.22]
+    fig, ax = plt.subplots(figsize=(5.5, 4.5))
 
-    for (dv_col, dv_label, colour), offset in zip(dvs, offsets):
-        if dv_col not in enc_q.columns:
-            continue
-        means, los, his = [], [], []
-        for ql in q_labels:
-            grp = enc_q.loc[enc_q["svg_quartile"] == ql, dv_col].dropna().values
-            if len(grp) < 3:
-                means.append(np.nan)
-                los.append(np.nan)
-                his.append(np.nan)
-                continue
-            m = grp.mean()
-            se = grp.std(ddof=1) / np.sqrt(len(grp))
-            tc = stats.t.ppf(0.975, df=len(grp) - 1)
-            means.append(m)
-            los.append(m - tc * se)
-            his.append(m + tc * se)
+    ax.fill_between(x_grid, ci_lo, ci_hi, color="#2166ac", alpha=0.18, zorder=2)
+    ax.plot(x_grid, preds, color="#2166ac", linewidth=2.2, zorder=3)
 
-        means = np.array(means, dtype=float)
-        los = np.array(los, dtype=float)
-        his = np.array(his, dtype=float)
-
-        ax_bin.errorbar(
-            x_pos + offset,
-            means,
-            yerr=[means - los, his - means],
-            fmt="o-",
-            color=colour,
-            markersize=6,
-            linewidth=1.8,
-            capsize=3,
-            label=dv_label,
-        )
-
-    # Annotate LMM betas
-    model_name_map = {
-        DV_TOTAL: "H2_total",
-        DV_RELATIONS: "H2_relations",
-        DV_OBJECTS: "H2_objects",
-    }
-    annot_lines = []
-    for dv_col, dv_label, _ in dvs:
-        mname = model_name_map.get(dv_col)
-        if mname and mname in results:
-            res, _ = results[mname]
-            if res is not None:
-                try:
-                    b = res.params.get(
-                        "svg_z_enc_within_z", res.params.get(svg_within + "_z", np.nan)
-                    )
-                    p = res.pvalues.get(
-                        "svg_z_enc_within_z", res.pvalues.get(svg_within + "_z", np.nan)
-                    )
-                    sig = (
-                        "***"
-                        if p < 0.001
-                        else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
-                    )
-                    annot_lines.append(f"{dv_label}: β={b:+.3f} {sig}")
-                except Exception:
-                    pass
-    if annot_lines:
-        ax_bin.annotate(
-            "\n".join(annot_lines),
-            xy=(0.03, 0.97),
-            xycoords="axes fraction",
-            fontsize=8,
-            va="top",
-            bbox=dict(boxstyle="round,pad=0.35", fc="white", alpha=0.88),
-        )
-
-    ax_bin.set_xticks(x_pos)
-    ax_bin.set_xticklabels(q_labels, fontsize=9)
-    ax_bin.set_xlabel(
-        "Within-image SVG quartile\n(relational scanning relative to image mean)",
+    ax.axvline(0, color="grey", linewidth=0.7, linestyle="--", alpha=0.5)
+    ax.set_xlabel(
+        "Encoding relational scanpath strength within image (z)",
         fontsize=9,
     )
-    ax_bin.set_ylabel("Mean recall proportion (± 95% CI)", fontsize=9)
-    ax_bin.set_title(
-        "H2: Relational scanning predicts memory\nacross encoding SVG quartiles",
-        fontsize=10,
-        fontweight="bold",
-        pad=8,
-    )
-    ax_bin.legend(fontsize=8.5, framealpha=0.85)
-    ax_bin.spines[["top", "right"]].set_visible(False)
-    ax_bin.tick_params(labelsize=8)
+    ax.set_ylabel("Predicted total recall proportion", fontsize=9)
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.tick_params(labelsize=8)
 
-    # ── Right: per-image correlation distribution ─────────────────────────
-    stim_ids = enc["StimID"].unique()
-    offsets_img = [-0.22, 0, 0.22]
-
-    for col_i, ((dv_col, dv_label, colour), x_off) in enumerate(zip(dvs, offsets_img)):
-        if dv_col not in enc.columns:
-            continue
-        rs = []
-        for stim_id in stim_ids:
-            sub = enc[enc["StimID"] == stim_id][[svg_within, dv_col]].dropna()
-            if len(sub) < 6:
-                continue
-            r, _ = pearsonr(sub[svg_within], sub[dv_col])
-            rs.append(r)
-        if not rs:
-            continue
-        rs = np.array(rs)
-        x_center = col_i
-
-        # Box
-        ax_img.boxplot(
-            rs,
-            positions=[x_center],
-            widths=0.3,
-            patch_artist=True,
-            showfliers=False,
-            medianprops=dict(color="white", linewidth=2),
-            boxprops=dict(facecolor=colour, alpha=0.35),
-            whiskerprops=dict(color=colour, alpha=0.6),
-            capprops=dict(color=colour, alpha=0.6),
-        )
-        # Strip
-        jitter = np.random.default_rng(42).uniform(-0.08, 0.08, len(rs))
-        ax_img.scatter(
-            np.ones(len(rs)) * x_center + jitter,
-            rs,
-            color=colour,
-            alpha=0.6,
-            s=26,
-            linewidths=0,
-            zorder=4,
-        )
-        # t-test annotation
-        t, p_t = ttest_1samp(rs, 0)
-        sig = (
-            "***"
-            if p_t < 0.001
-            else "**" if p_t < 0.01 else "*" if p_t < 0.05 else "ns"
-        )
-        ax_img.annotate(
-            f"mean r={rs.mean():+.3f}\n{sig}",
-            xy=(x_center, rs.max() + 0.03),
-            ha="center",
-            fontsize=8,
-            color=colour,
-        )
-
-    ax_img.axhline(0, color="black", linewidth=0.8, linestyle="--", alpha=0.5)
-    ax_img.set_xticks([0, 1, 2])
-    ax_img.set_xticklabels(
-        [dv_label for _, dv_label, _ in dvs],
-        fontsize=9,
-    )
-    ax_img.set_ylabel("Per-image Pearson r\n(within-image SVG vs recall)", fontsize=9)
-    ax_img.set_title(
-        "H2: Effect is consistent across images\n(each point = one image, N=30)",
-        fontsize=10,
-        fontweight="bold",
-        pad=8,
-    )
-    ax_img.spines[["top", "right"]].set_visible(False)
-    ax_img.tick_params(labelsize=8)
-
-    fig.suptitle(
-        "H2: Within-image relational scanning predicts episodic memory recall",
-        fontsize=11,
-        fontweight="bold",
-        y=1.01,
-    )
     plt.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(output_path, dpi=150, bbox_inches="tight")
     plt.close()
     logger.info(f"  Written → {output_path.name}")
 
+    return pd.DataFrame({
+        "svg_z_enc_within_z": x_grid,
+        "pred_total":          preds,
+        "ci_lower":            ci_lo,
+        "ci_upper":            ci_hi,
+    })
+
 
 # ---------------------------------------------------------------------------
-# Forest plot
+# Figure 4 — Model-predicted object vs relational recall
 # ---------------------------------------------------------------------------
 
 
-def _forest_plot(coef_df: pd.DataFrame, output_path: Path) -> None:
-    """Two-panel forest plot: H2 main effects | Exploratory."""
-    plot_groups = ["H2", "Exploratory"]
-    fig, axes = plt.subplots(1, 2, figsize=(13, 5.5))
+def _figure4_content_comparison(
+    enc: pd.DataFrame,
+    results: dict,
+    output_path: Path,
+) -> pd.DataFrame:
+    """
+    Two parallel model-predicted lines from the dissociation model:
+    object recall (rust) and relational recall (blue), both vs within-image SVG.
+    Shows equal slopes and baseline gap.
+    Returns the figure data DataFrame.
+    """
+    entry = results.get("EXP_dissociation")
+    if entry is None or entry[0] is None:
+        logger.warning("  _figure4_content_comparison: EXP_dissociation result missing — skipping.")
+        return pd.DataFrame()
 
-    for ax, group in zip(axes, plot_groups):
-        to_plot = []
-        for name, _, _, _, grp in MODEL_SPECS:
-            if grp != group:
-                continue
-            sub = coef_df[coef_df["model"] == name].copy()
-            if sub.empty:
-                continue
-            sub = sub[
-                ~sub["term"].str.strip().isin(_SKIP_TERMS)
-                & ~sub["term"].str.strip().str.startswith("C(")
-            ]
-            for _, r in sub.iterrows():
-                to_plot.append(
-                    {
-                        "label": f"{name}\n({r['term'].strip()})",
-                        "coef": r["coef"],
-                        "lo": r["ci_lower"],
-                        "hi": r["ci_upper"],
-                        "p": r["p"],
-                        "color": _PALETTE.get(name, "#636363"),
-                    }
-                )
+    result, _ = entry
+    svg_col = "svg_z_enc_within_z"
 
-        if not to_plot:
-            ax.set_visible(False)
-            continue
+    if svg_col not in enc.columns:
+        logger.warning("  _figure4_content_comparison: svg_z_enc_within_z missing — skipping.")
+        return pd.DataFrame()
 
-        ypos = list(range(len(to_plot)))[::-1]
-        for y, row in zip(ypos, to_plot):
-            ax.errorbar(
-                row["coef"],
-                y,
-                xerr=[[row["coef"] - row["lo"]], [row["hi"] - row["coef"]]],
-                fmt="o",
-                color=row["color"],
-                markersize=6,
-                linewidth=1.6,
-                capsize=3,
-            )
-            sig = (
-                "***"
-                if row["p"] < 0.001
-                else "**" if row["p"] < 0.01 else "*" if row["p"] < 0.05 else ""
-            )
-            if sig:
-                ax.text(
-                    row["hi"] + 0.01,
-                    y,
-                    sig,
-                    va="center",
-                    fontsize=10,
-                    color=row["color"],
-                )
+    vals = enc[svg_col].dropna().values
+    x_grid = np.linspace(np.percentile(vals, 2.5), np.percentile(vals, 97.5), 120)
 
-        ax.axvline(0, color="black", linewidth=0.8, linestyle="--", alpha=0.6)
-        ax.set_yticks(ypos)
-        ax.set_yticklabels([r["label"] for r in to_plot], fontsize=8)
-        ax.set_xlabel("β  (proportion units, 0-1 scale)", fontsize=9)
-        ax.set_title(group, fontsize=11, fontweight="bold", pad=8)
-        ax.spines[["top", "right"]].set_visible(False)
+    # Objects: memory_type = 0
+    def design_obj(x):
+        return {"Intercept": 1.0, svg_col: x, "memory_type": 0.0,
+                f"{svg_col}:memory_type": 0.0}
 
-    fig.suptitle(
-        "Module 4 — Encoding SVG → memory recall proportions\n"
-        "pilot: OLS+C(SubjectID) | final: LMM+(1|SubjectID)+(1|StimID)",
+    # Relations: memory_type = 1
+    def design_rel(x):
+        return {"Intercept": 1.0, svg_col: x, "memory_type": 1.0,
+                f"{svg_col}:memory_type": x}
+
+    preds_obj, ci_lo_obj, ci_hi_obj = _marginal_predict(result, design_obj, x_grid)
+    preds_rel, ci_lo_rel, ci_hi_rel = _marginal_predict(result, design_rel, x_grid)
+
+    colour_obj = "#a63603"
+    colour_rel = "#2166ac"
+
+    fig, ax = plt.subplots(figsize=(5.5, 4.5))
+
+    # Objects
+    ax.fill_between(x_grid, ci_lo_obj, ci_hi_obj, color=colour_obj, alpha=0.18, zorder=2)
+    ax.plot(x_grid, preds_obj, color=colour_obj, linewidth=2.2, zorder=3)
+
+    # Relations
+    ax.fill_between(x_grid, ci_lo_rel, ci_hi_rel, color=colour_rel, alpha=0.18, zorder=2)
+    ax.plot(x_grid, preds_rel, color=colour_rel, linewidth=2.2, zorder=3)
+
+    # Direct line labels at right edge
+    x_label = x_grid[-1] + 0.05
+    ax.text(x_label, float(preds_obj[-1]), "Object recall",
+            color=colour_obj, fontsize=8.5, va="center")
+    ax.text(x_label, float(preds_rel[-1]), "Relational recall",
+            color=colour_rel, fontsize=8.5, va="center")
+
+    ax.axvline(0, color="grey", linewidth=0.7, linestyle="--", alpha=0.5)
+    ax.set_xlabel(
+        "Encoding relational scanpath strength within image (z)",
         fontsize=9,
-        y=1.02,
     )
+    ax.set_ylabel("Predicted recall proportion", fontsize=9)
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.tick_params(labelsize=8)
+
+    # Extra right margin for labels
+    xlo, xhi = ax.get_xlim()
+    ax.set_xlim(xlo, xhi + (xhi - xlo) * 0.22)
+
     plt.tight_layout()
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(output_path, dpi=150, bbox_inches="tight")
     plt.close()
     logger.info(f"  Written → {output_path.name}")
+
+    return pd.DataFrame({
+        "svg_z_enc_within_z":  x_grid,
+        "pred_objects":         preds_obj,
+        "ci_lower_objects":     ci_lo_obj,
+        "ci_upper_objects":     ci_hi_obj,
+        "pred_relations":       preds_rel,
+        "ci_lower_relations":   ci_lo_rel,
+        "ci_upper_relations":   ci_hi_rel,
+    })
+
+
+# ---------------------------------------------------------------------------
+# Supplementary — per-image mean relationality
+# ---------------------------------------------------------------------------
+
+
+def _supp_per_image(enc: pd.DataFrame, output_path: Path) -> pd.DataFrame:
+    """
+    Sorted dot plot of per-image mean encoding SVG (svg_z_enc_image_mean).
+    Shows how much each image structurally pulls relational scanning.
+    Returns the figure data DataFrame.
+    """
+    svg_col = "svg_z_enc"
+    if svg_col not in enc.columns or "StimID" not in enc.columns:
+        logger.warning("  _supp_per_image: missing columns — skipping.")
+        return pd.DataFrame()
+
+    img_stats = (
+        enc.groupby("StimID")[svg_col]
+        .agg(mean="mean", sd="std", n="count")
+        .reset_index()
+        .sort_values("mean")
+        .reset_index(drop=True)
+    )
+    img_stats["se"] = img_stats["sd"] / np.sqrt(img_stats["n"])
+    tc = stats.t.ppf(0.975, df=img_stats["n"] - 1)
+    img_stats["ci_lo"] = img_stats["mean"] - tc * img_stats["se"]
+    img_stats["ci_hi"] = img_stats["mean"] + tc * img_stats["se"]
+
+    n_img = len(img_stats)
+    fig, ax = plt.subplots(figsize=(5.5, max(4.5, n_img * 0.32)))
+
+    for i, row in img_stats.iterrows():
+        c = "#2166ac" if row["mean"] > 0 else "#a63603"
+        ax.errorbar(
+            row["mean"], i,
+            xerr=[[row["mean"] - row["ci_lo"]], [row["ci_hi"] - row["mean"]]],
+            fmt="o", color=c, markersize=5, linewidth=1.2, capsize=2.5, alpha=0.8,
+        )
+
+    ax.axvline(0, color="black", linewidth=0.8, linestyle="--", alpha=0.5)
+    grand = img_stats["mean"].mean()
+    ax.axvline(grand, color="#636363", linewidth=1.0, linestyle="-", alpha=0.7)
+    ax.set_yticks(range(n_img))
+    ax.set_yticklabels(img_stats["StimID"].values, fontsize=7)
+    ax.set_xlabel("Mean encoding SVG (z-score, ± 95% CI)", fontsize=9)
+    ax.set_title("Per-image mean relational scanpath strength\n(sorted ascending)", fontsize=9)
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.tick_params(labelsize=8)
+
+    plt.tight_layout()
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    plt.savefig(output_path, dpi=150, bbox_inches="tight")
+    plt.close()
+    logger.info(f"  Written → {output_path.name}")
+
+    return img_stats[["StimID", "mean", "sd", "n", "ci_lo", "ci_hi"]].rename(
+        columns={"mean": "svg_z_enc_image_mean", "sd": "svg_z_enc_image_sd",
+                 "ci_lo": "ci_lower", "ci_hi": "ci_upper"}
+    )
+
+
+def _save_partial_regression_data(enc: pd.DataFrame, output_path: Path) -> None:
+    """Save residualised data used by the partial regression supplementary figure."""
+    svg_col = "svg_z_enc_within"
+    rows = {}
+    targets = [svg_col, DV_TOTAL, DV_RELATIONS, DV_OBJECTS]
+    for t in targets:
+        if t in enc.columns:
+            rows[t + "_resid"] = _residualise(enc, t).values
+    if rows:
+        df_out = pd.DataFrame(rows)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        df_out.to_csv(output_path, index=False)
+        logger.info("  Written → figure_data/supp_partial_regression_data.csv")
 
 
 # ---------------------------------------------------------------------------
@@ -734,19 +616,31 @@ def summarise(
 ) -> pd.DataFrame:
     """
     Write all Module 4 outputs to output_dir.
+
+    Directory layout
+    ----------------
+    output_dir/
+      model_summaries.txt          — full model output text
+      figures/                     — main paper figures
+      supplementary/               — supplementary figures
+      figure_data/                 — CSVs to reproduce each figure
+
     Returns the concatenated coefficient DataFrame.
     """
     logger.info("\nStep 6: Writing outputs ...")
-    output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Analysis tables
+    figures_dir     = output_dir / "figures"
+    supp_dir        = output_dir / "supplementary"
+    fig_data_dir    = output_dir / "figure_data"
+
+    for d in (output_dir, figures_dir, supp_dir, fig_data_dir):
+        d.mkdir(parents=True, exist_ok=True)
+
     enc = filtered.get("enc", pd.DataFrame())
-    if not enc.empty:
-        enc.to_csv(output_dir / "analysis_enc.csv", index=False)
-    logger.info("  Written → analysis_enc.csv")
 
-    all_coefs = []
-    summary_lines = [_descriptives(filtered)]
+    # ── Model summaries text ────────────────────────────────────────────────
+    all_coefs      = []
+    summary_lines  = [_descriptives(filtered)]
 
     for group in ["H1", "H2", "Exploratory"]:
         summary_lines.append(f"\n\n{'#'*60}\n# {group} MODELS\n{'#'*60}")
@@ -773,15 +667,17 @@ def summarise(
             if hasattr(result, "converged"):
                 summary_lines.append(f"Converged: {result.converged}")
 
-            # Log focal term(s)
             focus_terms = (
                 ["Intercept"]
                 if group == "H1"
                 else [
                     t
                     for t in coef_df["term"].str.strip()
-                    if t.endswith("_z")
-                    and t not in {f"{c}_z" for c in ENC_COVARIATES}
+                    if (
+                        t.endswith("_z")
+                        and t not in {f"{c}_z" for c in ENC_COVARIATES}
+                        and t not in {f"{c}_z" for c in ENC_BETWEEN_COVARIATES}
+                    )
                     or t == "memory_type"
                     or "memory_type" in t
                 ]
@@ -790,34 +686,54 @@ def summarise(
                 row = coef_df[coef_df["term"].str.strip() == term]
                 if row.empty:
                     continue
-                b, p = row["coef"].values[0], row["p"].values[0]
+                b, p   = row["coef"].values[0], row["p"].values[0]
                 lo, hi = row["ci_lower"].values[0], row["ci_upper"].values[0]
-                sig = (
-                    "***"
-                    if p < 0.001
-                    else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
-                )
+                sig = ("***" if p < 0.001 else "**" if p < 0.01
+                       else "*" if p < 0.05 else "ns")
                 logger.info(
-                    f"    {term}: β={b:.4f} [{lo:.4f}, {hi:.4f}], " f"p={p:.4f} {sig}"
+                    f"    {term}: β={b:.4f} [{lo:.4f}, {hi:.4f}], p={p:.4f} {sig}"
                 )
 
     coef_all = pd.concat(all_coefs, ignore_index=True) if all_coefs else pd.DataFrame()
-    if not coef_all.empty:
-        coef_all.to_csv(output_dir / "model_coefficients.csv", index=False)
-        logger.info("  Written → model_coefficients.csv")
 
     with open(output_dir / "model_summaries.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(summary_lines))
     logger.info("  Written → model_summaries.txt")
 
-    if plot and not coef_all.empty:
-        _forest_plot(coef_all, output_dir / "forest_plot.png")
+    if not plot or enc.empty:
+        return coef_all
 
-    if plot and not enc.empty:
-        _partial_regression_plot(
-            enc, output_dir / "supplementary_partial_regression.png"
-        )
-        _h1_figure(enc, results, output_dir / "h1_relational_scanning.png")
-        _h2_figure(enc, results, output_dir / "h2_svg_memory.png")
+    # ── Main figures ────────────────────────────────────────────────────────
+
+    # Figure 1: violin
+    fig1_data = _figure1_violin(enc, figures_dir / "figure1_violin.png")
+    if not fig1_data.empty:
+        fig1_data.to_csv(fig_data_dir / "figure1_data.csv", index=False)
+        logger.info("  Written → figure_data/figure1_data.csv")
+
+    # Figure 3: predicted total recall
+    fig3_data = _figure3_predicted_total(enc, results, figures_dir / "figure3_total_recall.png")
+    if not fig3_data.empty:
+        fig3_data.to_csv(fig_data_dir / "figure3_data.csv", index=False)
+        logger.info("  Written → figure_data/figure3_data.csv")
+
+    # Figure 4: object vs relational recall
+    fig4_data = _figure4_content_comparison(enc, results, figures_dir / "figure4_content_comparison.png")
+    if not fig4_data.empty:
+        fig4_data.to_csv(fig_data_dir / "figure4_data.csv", index=False)
+        logger.info("  Written → figure_data/figure4_data.csv")
+
+    # ── Supplementary figures ────────────────────────────────────────────────
+
+    # Partial regression
+    _partial_regression_plot(enc, supp_dir / "supp_partial_regression.png")
+    # Save residualised data for partial regression
+    _save_partial_regression_data(enc, fig_data_dir / "supp_partial_regression_data.csv")
+
+    # Per-image mean relationality
+    img_data = _supp_per_image(enc, supp_dir / "supp_per_image_relationality.png")
+    if not img_data.empty:
+        img_data.to_csv(fig_data_dir / "supp_per_image_data.csv", index=False)
+        logger.info("  Written → figure_data/supp_per_image_data.csv")
 
     return coef_all

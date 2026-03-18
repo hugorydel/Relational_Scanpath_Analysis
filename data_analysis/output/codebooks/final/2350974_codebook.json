@@ -1,0 +1,470 @@
+[
+  {
+    "node_id": "2350974_001",
+    "concept": "child",
+    "context": "person located between the vehicles and drinking",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a child in between a red and blue car drinking something",
+      "child drinking drink from a bottle between a blue motorcyle and a red car",
+      "a toddler was drinking coke between a car and a motorcycle",
+      "small child having a drink in between two vehicles",
+      "a child drinks from a nearly emtpy bottle of coke as he leans on a red car",
+      "a small child is drinking from a coca cola bottle and leaning with his hand against a red car",
+      "A SMALL CHILD BETWEEN A RED CAR AND A BLUE MOTORCYCLE SHOWN TO BE DRINKING LIKE AN ENERGY DRINK",
+      "little boy stood between blue motorcycle and red car"
+    ]
+  },
+  {
+    "node_id": "2350974_002",
+    "concept": "small",
+    "context": "modifies the child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "small child having a drink in between two vehicles",
+      "a small child is drinking from a coca cola bottle and leaning with his hand against a red car",
+      "A SMALL CHILD BETWEEN A RED CAR AND A BLUE MOTORCYCLE SHOWN TO BE DRINKING LIKE AN ENERGY DRINK"
+    ]
+  },
+  {
+    "node_id": "2350974_003",
+    "concept": "boy",
+    "context": "gender/age attribute of the child between the vehicles",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "little boy stood between blue motorcycle and red car"
+    ]
+  },
+  {
+    "node_id": "2350974_004",
+    "concept": "little",
+    "context": "modifies the child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "little boy stood between blue motorcycle and red car"
+    ]
+  },
+  {
+    "node_id": "2350974_005",
+    "concept": "man",
+    "context": "alternative identity claimed for the central person",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "there was a man holding a beer glass or can",
+      "man drinking",
+      "man on biki cycling to power blender, women holding lid to right of him"
+    ]
+  },
+  {
+    "node_id": "2350974_006",
+    "concept": "drinking",
+    "context": "action performed by the central person",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a child in between a red and blue car drinking something",
+      "man drinking",
+      "child drinking drink from a bottle between a blue motorcyle and a red car",
+      "a toddler was drinking coke between a car and a motorcycle",
+      "small child having a drink in between two vehicles",
+      "a child drinks from a nearly emtpy bottle of coke as he leans on a red car",
+      "a small child is drinking from a coca cola bottle and leaning with his hand against a red car",
+      "A SMALL CHILD BETWEEN A RED CAR AND A BLUE MOTORCYCLE SHOWN TO BE DRINKING LIKE AN ENERGY DRINK"
+    ]
+  },
+  {
+    "node_id": "2350974_007",
+    "concept": "bottle",
+    "context": "container the child drinks from or holds",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "child drinking drink from a bottle between a blue motorcyle and a red car",
+      "a child drinks from a nearly emtpy bottle of coke as he leans on a red car",
+      "a small child is drinking from a coca cola bottle and leaning with his hand against a red car",
+      "little boy stood between blue motorcycle and red car. holding a bottle with a red lid and label"
+    ]
+  },
+  {
+    "node_id": "2350974_008",
+    "concept": "between",
+    "context": "position of the child relative to the two vehicles",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a child in between a red and blue car drinking something",
+      "child drinking drink from a bottle between a blue motorcyle and a red car",
+      "a toddler was drinking coke between a car and a motorcycle",
+      "small child having a drink in between two vehicles",
+      "he is between the red car and a blue motorbike",
+      "A SMALL CHILD BETWEEN A RED CAR AND A BLUE MOTORCYCLE SHOWN TO BE DRINKING LIKE AN ENERGY DRINK",
+      "little boy stood between blue motorcycle and red car"
+    ]
+  },
+  {
+    "node_id": "2350974_009",
+    "concept": "car",
+    "context": "vehicle beside the child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a child in between a red and blue car drinking something",
+      "child drinking drink from a bottle between a blue motorcyle and a red car",
+      "a toddler was drinking coke between a car and a motorcycle",
+      "a child drinks from a nearly emtpy bottle of coke as he leans on a red car",
+      "a small child is drinking from a coca cola bottle and leaning with his hand against a red car",
+      "A SMALL CHILD BETWEEN A RED CAR AND A BLUE MOTORCYCLE SHOWN TO BE DRINKING LIKE AN ENERGY DRINK",
+      "little boy stood between blue motorcycle and red car"
+    ]
+  },
+  {
+    "node_id": "2350974_010",
+    "concept": "red",
+    "context": "modifies the car beside the child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a child in between a red and blue car drinking something",
+      "child drinking drink from a bottle between a blue motorcyle and a red car",
+      "a child drinks from a nearly emtpy bottle of coke as he leans on a red car",
+      "a small child is drinking from a coca cola bottle and leaning with his hand against a red car",
+      "A SMALL CHILD BETWEEN A RED CAR AND A BLUE MOTORCYCLE SHOWN TO BE DRINKING LIKE AN ENERGY DRINK",
+      "little boy stood between blue motorcycle and red car"
+    ]
+  },
+  {
+    "node_id": "2350974_011",
+    "concept": "motorcycle",
+    "context": "other vehicle beside the child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "child drinking drink from a bottle between a blue motorcyle and a red car",
+      "a toddler was drinking coke between a car and a motorcycle",
+      "A SMALL CHILD BETWEEN A RED CAR AND A BLUE MOTORCYCLE SHOWN TO BE DRINKING LIKE AN ENERGY DRINK",
+      "little boy stood between blue motorcycle and red car"
+    ]
+  },
+  {
+    "node_id": "2350974_012",
+    "concept": "motorbike",
+    "context": "other vehicle beside the child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "he is between the red car and a blue motorbike"
+    ]
+  },
+  {
+    "node_id": "2350974_013",
+    "concept": "blue",
+    "context": "modifies the motorcycle or motorbike beside the child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a child in between a red and blue car drinking something",
+      "child drinking drink from a bottle between a blue motorcyle and a red car",
+      "he is between the red car and a blue motorbike",
+      "A SMALL CHILD BETWEEN A RED CAR AND A BLUE MOTORCYCLE SHOWN TO BE DRINKING LIKE AN ENERGY DRINK",
+      "little boy stood between blue motorcycle and red car"
+    ]
+  },
+  {
+    "node_id": "2350974_014",
+    "concept": "vehicle",
+    "context": "generic description of the two objects flanking the child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "small child having a drink in between two vehicles"
+    ]
+  },
+  {
+    "node_id": "2350974_015",
+    "concept": "two",
+    "context": "modifies the vehicles flanking the child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "small child having a drink in between two vehicles"
+    ]
+  },
+  {
+    "node_id": "2350974_016",
+    "concept": "leaning",
+    "context": "action of the child against the car",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a child drinks from a nearly emtpy bottle of coke as he leans on a red car",
+      "a small child is drinking from a coca cola bottle and leaning with his hand against a red car"
+    ]
+  },
+  {
+    "node_id": "2350974_017",
+    "concept": "hand",
+    "context": "body part used by the child while leaning against the car",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a small child is drinking from a coca cola bottle and leaning with his hand against a red car"
+    ]
+  },
+  {
+    "node_id": "2350974_018",
+    "concept": "against",
+    "context": "contact relation of the child or hand with the car",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a small child is drinking from a coca cola bottle and leaning with his hand against a red car"
+    ]
+  },
+  {
+    "node_id": "2350974_019",
+    "concept": "hair",
+    "context": "part of the child's appearance",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "he has short brown hair"
+    ]
+  },
+  {
+    "node_id": "2350974_020",
+    "concept": "short",
+    "context": "modifies the child's hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "he has short brown hair"
+    ]
+  },
+  {
+    "node_id": "2350974_021",
+    "concept": "brown",
+    "context": "modifies the child's hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "he has short brown hair"
+    ]
+  },
+  {
+    "node_id": "2350974_022",
+    "concept": "front",
+    "context": "position of the motorcycle relative to the child",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "someone who i think was on a bike is infront of the child"
+    ]
+  },
+  {
+    "node_id": "2350974_023",
+    "concept": "bike",
+    "context": "vehicle in front of the child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "someone who i think was on a bike is infront of the child",
+      "man on biki cycling to power blender, women holding lid to right of him"
+    ]
+  },
+  {
+    "node_id": "2350974_024",
+    "concept": "holding",
+    "context": "action involving the bottle held by the child",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding a bottle with a red lid and label"
+    ]
+  },
+  {
+    "node_id": "2350974_025",
+    "concept": "lid",
+    "context": "part of the bottle being held",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding a bottle with a red lid and label"
+    ]
+  },
+  {
+    "node_id": "2350974_026",
+    "concept": "label",
+    "context": "part of the bottle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding a bottle with a red lid and label"
+    ]
+  },
+  {
+    "node_id": "2350974_027",
+    "concept": "right",
+    "context": "position of an alleged person or object relative to the central figure",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "women holding lid to right of him"
+    ]
+  },
+  {
+    "node_id": "2350974_028",
+    "concept": "woman",
+    "context": "additional person claimed to be to the right of the central figure",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "women holding lid to right of him"
+    ]
+  },
+  {
+    "node_id": "2350974_029",
+    "concept": "cycling",
+    "context": "action claimed for the man on the bike",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "man on biki cycling to power blender, women holding lid to right of him"
+    ]
+  },
+  {
+    "node_id": "2350974_030",
+    "concept": "blender",
+    "context": "object allegedly being powered by cycling",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "man on biki cycling to power blender, women holding lid to right of him"
+    ]
+  },
+  {
+    "node_id": "2350974_031",
+    "concept": "coke",
+    "context": "claimed beverage in the bottle",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "a toddler was drinking coke between a car and a motorcycle",
+      "a child drinks from a nearly emtpy bottle of coke as he leans on a red car"
+    ]
+  },
+  {
+    "node_id": "2350974_032",
+    "concept": "Coca-Cola",
+    "context": "claimed brand of the drink bottle",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "a small child is drinking from a coca cola bottle"
+    ]
+  },
+  {
+    "node_id": "2350974_033",
+    "concept": "drink",
+    "context": "generic substance being consumed by the child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "drinking something",
+      "child drinking drink from a bottle",
+      "small child having a drink"
+    ]
+  },
+  {
+    "node_id": "2350974_034",
+    "concept": "empty",
+    "context": "modifies the bottle as nearly empty",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "a child drinks from a nearly emtpy bottle of coke as he leans on a red car"
+    ]
+  },
+  {
+    "node_id": "2350974_035",
+    "concept": "beer",
+    "context": "claimed type of drink in the glass or can held by the man",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "there was a man holding a beer glass or can"
+    ]
+  },
+  {
+    "node_id": "2350974_036",
+    "concept": "glass",
+    "context": "claimed container held by the man",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "there was a man holding a beer glass or can"
+    ]
+  },
+  {
+    "node_id": "2350974_037",
+    "concept": "can",
+    "context": "claimed alternative container held by the man",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "there was a man holding a beer glass or can"
+    ]
+  },
+  {
+    "node_id": "2350974_038",
+    "concept": "energy drink",
+    "context": "claimed type of beverage being consumed",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "SHOWN TO BE DRINKING LIKE AN ENERGY DRINK"
+    ]
+  }
+]

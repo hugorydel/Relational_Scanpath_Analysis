@@ -1,0 +1,409 @@
+[
+  {
+    "node_id": "2344622_001",
+    "concept": "cat",
+    "context": "main animal resting beside the keyboard",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a cat next to a keyboard",
+      "cat laying on a blue blanket",
+      "a cat sleeping on a blue blanket",
+      "cat lying down bside keyboard",
+      "brown spripyish cat asleep",
+      "a cat is lying down",
+      "cat lying on blue blanket",
+      "cat on light blue blanket",
+      "the cat was sleeping on a blue blanket",
+      "cat to the left lying on blue blanket",
+      "a cat laying on a blue cover",
+      "a cat laying on a blue blanket",
+      "a cat on the left lying on a blue blanket",
+      "cat laid on a blue blanket"
+    ]
+  },
+  {
+    "node_id": "2344622_002",
+    "concept": "keyboard",
+    "context": "device adjacent to the cat and under the hand",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "next to a keyboard",
+      "next to a keyboard",
+      "next to a keyboard which has a hand on it",
+      "bside keyboard",
+      "typing on keybpard",
+      "someone typing on a keyboard",
+      "old faishioned keyboard",
+      "persons hand on keyboard",
+      "key board",
+      "keyboard of a computer",
+      "keyboard that had a hand on it",
+      "key board",
+      "typing on a keyboard"
+    ]
+  },
+  {
+    "node_id": "2344622_003",
+    "concept": "blanket",
+    "context": "blue fabric surface under the cat",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blue blanket",
+      "blue blanket",
+      "blue blanket",
+      "blue blanket",
+      "blue blanket",
+      "blue blanket",
+      "light blue blanket",
+      "blue blanket",
+      "blue blanket",
+      "b;ue blamket",
+      "blue cover",
+      "blue blanket",
+      "blue blanket",
+      "blue blanket"
+    ]
+  },
+  {
+    "node_id": "2344622_004",
+    "concept": "blue",
+    "context": "color of the blanket or cover under the cat",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blue blanket",
+      "blue blanket",
+      "blue blanket",
+      "blue blanket",
+      "blue blanket",
+      "blue blanket",
+      "light blue blanket",
+      "blue blanket",
+      "blue blanket",
+      "b;ue blamket",
+      "blue cover",
+      "blue blanket",
+      "blue blanket",
+      "blue blanket"
+    ]
+  },
+  {
+    "node_id": "2344622_005",
+    "concept": "lying",
+    "context": "posture or action of the cat",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "lounging",
+      "cat laying",
+      "cat sleeping",
+      "cat lying down",
+      "cat asleep",
+      "is lying down",
+      "cat lying",
+      "cat was sleeping",
+      "cat to the left lying",
+      "cat laying",
+      "cat laying",
+      "cat on the left lying",
+      "cat laid"
+    ]
+  },
+  {
+    "node_id": "2344622_006",
+    "concept": "next to",
+    "context": "spatial relation between the cat and the keyboard",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "next to a keyboard",
+      "next to a keyboard",
+      "next to a keyboard",
+      "to the left of a keyboard",
+      "to the left of a keyboard",
+      "next to a key board"
+    ]
+  },
+  {
+    "node_id": "2344622_007",
+    "concept": "hand",
+    "context": "visible human hand positioned on or over the keyboard",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a hand is typing",
+      "has a hand on it",
+      "man typing on keybpard",
+      "someone typing",
+      "white middle aged mans right hand",
+      "his hand",
+      "persons hand",
+      "womens hand",
+      "we can only see the hand of",
+      "had a hand on it",
+      "persons hand over the left side of the keyboard",
+      "person typing"
+    ]
+  },
+  {
+    "node_id": "2344622_008",
+    "concept": "typing",
+    "context": "action performed by the visible person/hand on the keyboard",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "a hand is typing",
+      "man typing on keybpard",
+      "someone typing on a keyboard",
+      "persons hand on keyboard",
+      "this hand is on the keyboard of a computer",
+      "persons hand over the left side of the keyboard",
+      "a person typing on a keyboard"
+    ]
+  },
+  {
+    "node_id": "2344622_009",
+    "concept": "left",
+    "context": "location of the cat relative to the image or to the keyboard/person",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on left",
+      "to the left of someone typing",
+      "in left side of photo",
+      "on the left",
+      "to the left lying",
+      "to the left of a key board",
+      "on the left"
+    ]
+  },
+  {
+    "node_id": "2344622_010",
+    "concept": "brown",
+    "context": "color of the cat",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "brownish cat",
+      "brown spripyish cat"
+    ]
+  },
+  {
+    "node_id": "2344622_011",
+    "concept": "desk",
+    "context": "surface supporting the blanket, cat, keyboard, and other objects",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on desk"
+    ]
+  },
+  {
+    "node_id": "2344622_012",
+    "concept": "CD",
+    "context": "objects located behind the cat",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "behind the cat was cds"
+    ]
+  },
+  {
+    "node_id": "2344622_013",
+    "concept": "behind",
+    "context": "spatial relation locating the CDs relative to the cat",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "behind the cat was cds"
+    ]
+  },
+  {
+    "node_id": "2344622_014",
+    "concept": "white",
+    "context": "skin tone attribute of the visible hand/person",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white middle aged mans right hand"
+    ]
+  },
+  {
+    "node_id": "2344622_015",
+    "concept": "middle aged",
+    "context": "age attribute attributed to the visible person",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "white middle aged mans right hand"
+    ]
+  },
+  {
+    "node_id": "2344622_016a",
+    "concept": "man",
+    "context": "person inferred as the owner of the visible hand typing at the keyboard",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "man typing on keybpard",
+      "white middle aged mans right hand",
+      "a man was sitting and looking at the laptop"
+    ]
+  },
+  {
+    "node_id": "2344622_017",
+    "concept": "right",
+    "context": "side designation for the visible hand",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on right",
+      "right hand"
+    ]
+  },
+  {
+    "node_id": "2344622_019",
+    "concept": "old-fashioned",
+    "context": "style attribute of the keyboard",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "old faishioned keyboard"
+    ]
+  },
+  {
+    "node_id": "2344622_020",
+    "concept": "sitting",
+    "context": "posture attributed to the person",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "a man was sitting"
+    ]
+  },
+  {
+    "node_id": "2344622_021",
+    "concept": "looking",
+    "context": "action attributed to the person toward a laptop",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "looking at the laptop"
+    ]
+  },
+  {
+    "node_id": "2344622_022",
+    "concept": "laptop",
+    "context": "computer device reportedly being looked at by the person",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "the laptop"
+    ]
+  },
+  {
+    "node_id": "2344622_023",
+    "concept": "person",
+    "context": "human present only via visible hand near the keyboard",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "someone typing",
+      "persons hand",
+      "person which we can only see the hand of",
+      "persons hand over the left side of the keyboard",
+      "person typing on a keyboard"
+    ]
+  },
+  {
+    "node_id": "2344622_024",
+    "concept": "computer",
+    "context": "device category for the keyboard setup",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "keyboard of a computer"
+    ]
+  },
+  {
+    "node_id": "2344622_025",
+    "concept": "side",
+    "context": "cat positioned at the side of the person",
+    "content_type": "spatial_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "on the side of a person"
+    ]
+  },
+  {
+    "node_id": "2344622_026a",
+    "concept": "woman",
+    "context": "person inferred as the owner of the visible hand near the keyboard",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "a womens hand is lying"
+    ]
+  },
+  {
+    "node_id": "2344622_027",
+    "concept": "long",
+    "context": "length attribute of the nails on the visible hand",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "long nails"
+    ]
+  },
+  {
+    "node_id": "2344622_028",
+    "concept": "nail",
+    "context": "fingernails on the visible hand",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "long nails"
+    ]
+  },
+  {
+    "node_id": "2344622_029",
+    "concept": "striped",
+    "context": "pattern attribute of the cat",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "spripyish cat"
+    ]
+  }
+]

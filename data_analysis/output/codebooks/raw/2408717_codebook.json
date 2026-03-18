@@ -2,321 +2,505 @@
   {
     "node_id": "2408717_001",
     "concept": "four",
-    "context": "modifies the total number of people/women/girls/surfers in the scene",
+    "context": "count of women/girls/surfers in the scene",
     "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "four women",
+      "4 girls",
+      "4 women",
+      "4 surfers",
+      "four girls",
+      "4 women",
+      "4 women",
+      "four girls total",
+      "four girls",
+      "four women",
+      "4 women",
+      "4 women",
+      "4 women",
+      "4 women",
+      "4 women",
+      "4 women"
+    ]
   },
   {
     "node_id": "2408717_002",
-    "concept": "four",
-    "context": "modifies the total number of surfboards in the scene",
-    "content_type": "object_attribute",
+    "concept": "woman",
+    "context": "people depicted in the scene",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "women",
+      "women",
+      "women",
+      "women",
+      "women",
+      "women",
+      "women",
+      "women",
+      "women",
+      "women"
+    ]
   },
   {
     "node_id": "2408717_003",
-    "concept": "one",
-    "context": "modifies the surfboard count per person",
-    "content_type": "object_attribute",
+    "concept": "girl",
+    "context": "people depicted in the scene",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "girls",
+      "girls",
+      "girls",
+      "girls",
+      "girls"
+    ]
   },
   {
     "node_id": "2408717_004",
-    "concept": "two",
-    "context": "modifies the number of green surfboards and their holders",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct"
+    "concept": "surfer",
+    "context": "people depicted in the scene as inferred from carrying surfboards at the beach",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "surfers"
+    ]
   },
   {
     "node_id": "2408717_005",
-    "concept": "two",
-    "context": "modifies the number of white surfboards and their holders",
-    "content_type": "object_attribute",
+    "concept": "beach",
+    "context": "overall setting where the people are walking with surfboards",
+    "content_type": "scene_gist",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "on a beach",
+      "beach",
+      "on beach",
+      "at a beach"
+    ]
   },
   {
     "node_id": "2408717_006",
-    "concept": "woman",
-    "context": "female adults depicted carrying boards on the beach",
+    "concept": "surfboard",
+    "context": "objects being carried/held by the people",
     "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct"
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "surfboards",
+      "surfboards",
+      "surfboard each",
+      "surfboards",
+      "4 surfboards",
+      "surfboards",
+      "surfboards",
+      "surboard",
+      "surforad",
+      "surfboards",
+      "surfboards",
+      "surfboards",
+      "surfboards",
+      "surfboards",
+      "surfboards"
+    ]
   },
   {
     "node_id": "2408717_007",
-    "concept": "girl",
-    "context": "young female people depicted carrying boards on the beach",
-    "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct"
+    "concept": "carry",
+    "context": "action performed by the people on the surfboards",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with surfboards",
+      "carrying surfboards",
+      "carrying one surfboard each",
+      "holding their surfboards",
+      "carry 4 surfboards",
+      "carrying their surfboards",
+      "carrying surfboards",
+      "were holding surboard",
+      "carrying surfboards",
+      "holding green surfboards",
+      "carry surfboards",
+      "holding their surfboards",
+      "holding surfboards",
+      "all 4 had surfboards"
+    ]
   },
   {
     "node_id": "2408717_008",
-    "concept": "person",
-    "context": "human figures present in the scene",
-    "content_type": "object_identity",
+    "concept": "walk",
+    "context": "action performed by the people as they move along the beach toward the water",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "walking towards the ocean",
+      "walking to the water",
+      "walk towards ocean",
+      "walkign towards water",
+      "walking on the becah",
+      "walking towards the ocean",
+      "walking towards water",
+      "walking towards the ocean"
+    ]
   },
   {
     "node_id": "2408717_009",
-    "concept": "surfer",
-    "context": "people described by their surfing activity and equipment",
-    "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct"
+    "concept": "ocean",
+    "context": "destination the people are moving toward",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "towards the ocean",
+      "towards ocean",
+      "towards the ocean",
+      "towards the ocean"
+    ]
   },
   {
     "node_id": "2408717_010",
-    "concept": "surfboard",
-    "context": "boards being carried by the group",
-    "content_type": "object_identity",
+    "concept": "water",
+    "context": "destination the people are moving toward",
+    "content_type": "scene_gist",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "to the water",
+      "towards water",
+      "towards water"
+    ]
   },
   {
     "node_id": "2408717_011",
-    "concept": "beach",
-    "context": "overall shoreline setting of the scene",
+    "concept": "sea",
+    "context": "destination the people are moving toward",
     "content_type": "scene_gist",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "to the sea",
+      "towards the sea",
+      "into the sea",
+      "enter the sea"
+    ]
   },
   {
     "node_id": "2408717_012",
-    "concept": "ocean",
-    "context": "body of water the group is moving toward",
-    "content_type": "scene_gist",
+    "concept": "green",
+    "context": "colour of some surfboards",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "neon green surfboards",
+      "green",
+      "neon green surfbpard",
+      "green one",
+      "green",
+      "green surforad",
+      "green surfboards",
+      "green surfboards",
+      "green surfboards",
+      "2 green",
+      "bright green surfboards"
+    ]
   },
   {
     "node_id": "2408717_013",
-    "concept": "sand",
-    "context": "ground surface under the people on the shoreline",
-    "content_type": "object_identity",
+    "concept": "neon",
+    "context": "brightness/quality of the green surfboards",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "neon green surfboards",
+      "a neon green surfbpard",
+      "neon green surfboards"
+    ]
   },
   {
     "node_id": "2408717_014",
-    "concept": "carrying",
-    "context": "action of the group with the surfboards",
-    "content_type": "action_relation",
+    "concept": "two",
+    "context": "count of surfboards or people in subgroupings by side/colour",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "2 surfboardsa",
+      "2 women have white surfboards",
+      "the other two",
+      "two red",
+      "two have a white surfboard",
+      "the two surfboards",
+      "two farthest right",
+      "other two far left",
+      "two on the left",
+      "other two on the rigth",
+      "the two women",
+      "the other two women",
+      "the two in the front",
+      "the 2 women",
+      "2 green on the right",
+      "the two eomen to the left",
+      "the two women to the right"
+    ]
   },
   {
     "node_id": "2408717_015",
-    "concept": "walking",
-    "context": "movement of the group along the beach",
-    "content_type": "action_relation",
+    "concept": "white",
+    "context": "colour of some surfboards",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "white with a slight pattern",
+      "white surfboards",
+      "white surfboard",
+      "mostly white surfboards",
+      "white ones",
+      "white parts in the surfboard"
+    ]
   },
   {
     "node_id": "2408717_016",
-    "concept": "approaching",
-    "context": "movement of the group toward the ocean",
-    "content_type": "action_relation",
+    "concept": "pattern",
+    "context": "visual marking on the white surfboards",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "a slight pattern"
+    ]
   },
   {
     "node_id": "2408717_017",
-    "concept": "entering",
-    "context": "movement described as going into the sea",
-    "content_type": "action_relation",
-    "evidence_type": "latent",
-    "status": "correct"
+    "concept": "one",
+    "context": "count of surfboards per person or a single surfboard in a subgroup",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one surfboard each",
+      "a green one"
+    ]
   },
   {
     "node_id": "2408717_018",
-    "concept": "under",
-    "context": "position of some surfboards relative to the women's arms",
-    "content_type": "spatial_relation",
+    "concept": "untie",
+    "context": "action performed on hair by one girl",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "incorrect",
+    "source_phrases": [
+      "one girl was untying her hair"
+    ]
   },
   {
     "node_id": "2408717_019",
-    "concept": "arm",
-    "context": "body part used to hold the surfboards",
+    "concept": "hair",
+    "context": "object involved in the reported untying action",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "incorrect",
+    "source_phrases": [
+      "her hair"
+    ]
   },
   {
     "node_id": "2408717_020",
-    "concept": "right",
-    "context": "modifies the arm said to be holding the surfboard",
+    "concept": "red",
+    "context": "colour of some surfboards",
     "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "incorrect",
+    "source_phrases": [
+      "two red"
+    ]
   },
   {
     "node_id": "2408717_021",
-    "concept": "hair",
-    "context": "body feature of the woman on the right side",
-    "content_type": "object_identity",
+    "concept": "right",
+    "context": "location of a subgroup of people or surfboards in the image",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "the two surfboards on the right",
+      "two farthest right",
+      "other two on the rigth",
+      "the two women to the right of the screen",
+      "the 2 women on the right",
+      "2 green on the right",
+      "the two women to the right"
+    ]
   },
   {
     "node_id": "2408717_022",
-    "concept": "untying",
-    "context": "specific action attributed to the right-side woman's hair",
-    "content_type": "action_relation",
-    "evidence_type": "speculative",
-    "status": "incorrect"
+    "concept": "left",
+    "context": "location of a subgroup of people or surfboards in the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "far left",
+      "two on the left",
+      "the other two women",
+      "2 others on the left",
+      "the two eomen to the left"
+    ]
   },
   {
     "node_id": "2408717_023",
-    "concept": "green",
-    "context": "colour of two surfboards",
-    "content_type": "object_attribute",
+    "concept": "arm",
+    "context": "body part under which surfboards were reportedly held",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "under their righ arms"
+    ]
   },
   {
     "node_id": "2408717_024",
-    "concept": "neon",
-    "context": "vivid shade modifying the green surfboards",
-    "content_type": "object_attribute",
+    "concept": "under",
+    "context": "position of the surfboard relative to the arm",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "under their righ arms"
+    ]
   },
   {
     "node_id": "2408717_025",
-    "concept": "white",
-    "context": "base colour of two surfboards on the left",
-    "content_type": "object_attribute",
+    "concept": "separate",
+    "context": "spatial relation describing distance between the two people on the far left",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "incorrect",
+    "source_phrases": [
+      "other two far left were seperate"
+    ]
   },
   {
     "node_id": "2408717_026",
-    "concept": "patterned",
-    "context": "multicoloured markings on the white surfboards",
-    "content_type": "object_attribute",
+    "concept": "sunny",
+    "context": "weather or lighting condition of the scene",
+    "content_type": "scene_gist",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "sunny"
+    ]
   },
   {
     "node_id": "2408717_027",
-    "concept": "red",
-    "context": "colour attributed to two surfboards as their main colour",
-    "content_type": "object_attribute",
+    "concept": "wetsuit",
+    "context": "clothing worn by some or all of the women",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "correct",
+    "source_phrases": [
+      "in wetsuits",
+      "were wearing wetsuits"
+    ]
   },
   {
     "node_id": "2408717_028",
     "concept": "blue",
-    "context": "colour attributed to the right-side surfboards",
+    "context": "colour of some surfboards",
     "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "blue/ turquoise surdfboards"
+    ]
   },
   {
     "node_id": "2408717_029",
     "concept": "turquoise",
-    "context": "alternative colour label attributed to the right-side surfboards",
+    "context": "colour of some surfboards",
     "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "blue/ turquoise surdfboards"
+    ]
   },
   {
     "node_id": "2408717_030",
-    "concept": "right",
-    "context": "side of the image where the green surfboards/women were placed",
+    "concept": "front",
+    "context": "relative position of the two people with green surfboards",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "the two in the front"
+    ]
   },
   {
     "node_id": "2408717_031",
-    "concept": "left",
-    "context": "side of the image where the white surfboards/women were placed",
-    "content_type": "spatial_relation",
+    "concept": "sand",
+    "context": "surface from which the people were moving into the sea",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "from the sand into the sea"
+    ]
   },
   {
     "node_id": "2408717_032",
-    "concept": "closer",
-    "context": "relative near-camera position of the green-board pair",
-    "content_type": "spatial_relation",
+    "concept": "enter",
+    "context": "action of moving into the sea",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "about to enter the sea",
+      "about to enter the sea"
+    ]
   },
   {
     "node_id": "2408717_033",
-    "concept": "apart",
-    "context": "spacing between the left pair and the right pair of women",
-    "content_type": "spatial_relation",
+    "concept": "shorts",
+    "context": "clothing reportedly worn by the two women on the right",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "incorrect",
+    "source_phrases": [
+      "had shorts"
+    ]
   },
   {
     "node_id": "2408717_034",
-    "concept": "wetsuit",
-    "context": "surfing attire worn by some of the women",
+    "concept": "shirt",
+    "context": "clothing reportedly worn by the two women on the right",
     "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct"
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "a t shirt"
+    ]
   },
   {
     "node_id": "2408717_035",
-    "concept": "swimsuit",
-    "context": "swimming attire worn by the women",
-    "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct"
-  },
-  {
-    "node_id": "2408717_036",
-    "concept": "shorts",
-    "context": "lower-body clothing worn by some of the women",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2408717_037",
-    "concept": "shirt",
-    "context": "upper-body clothing worn by some of the women",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2408717_038",
-    "concept": "wearing",
-    "context": "relation between the women and their clothing",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2408717_039",
     "concept": "daytime",
-    "context": "time/lighting condition of the scene",
+    "context": "time-of-day appearance of the scene",
     "content_type": "scene_gist",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2408717_040",
-    "concept": "sunny",
-    "context": "weather and light quality of the beach scene",
-    "content_type": "scene_gist",
-    "evidence_type": "literal",
-    "status": "correct"
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "it looked to be daytime"
+    ]
   }
 ]

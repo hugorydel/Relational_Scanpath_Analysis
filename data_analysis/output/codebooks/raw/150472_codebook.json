@@ -2,385 +2,601 @@
   {
     "node_id": "150472_001",
     "concept": "two",
-    "context": "modifies the number of women in the scene",
+    "context": "count of the women/girls in the scene",
     "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "two women eating pizza from a paper plate",
+      "2 girls holding pizza",
+      "two women sharing",
+      "two women in dim lighting",
+      "two girls on street",
+      "two women are sharing",
+      "two women, one wearing glasses",
+      "two girls eating pizza outside",
+      "two women posed for a picture",
+      "2 women with dark hair",
+      "2 women outside at night",
+      "two dark haired women"
+    ]
   },
   {
     "node_id": "150472_002",
     "concept": "woman",
-    "context": "the two people depicted with the pizza",
+    "context": "people depicted in the main scene",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "two women eating pizza",
+      "two women sharing",
+      "two women in dim lighting",
+      "two women are sharing",
+      "two women, one wearing glasses",
+      "two women posed for a picture",
+      "2 women with dark hair",
+      "2 women outside at night",
+      "two dark haired women"
+    ]
   },
   {
     "node_id": "150472_003",
-    "concept": "pizza",
-    "context": "the food item in front of the women",
+    "concept": "girl",
+    "context": "people depicted in the main scene",
     "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "2 girls holding pizza",
+      "two girls on street",
+      "two girls eating pizza outside"
+    ]
   },
   {
     "node_id": "150472_004",
-    "concept": "slice",
-    "context": "the single piece form of the pizza being shared",
+    "concept": "pizza",
+    "context": "food item the people are holding, sharing, or eating",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "eating pizza",
+      "holding pizza",
+      "sharing a pizza",
+      "slice of pizza",
+      "big pizza slice",
+      "large pizza slice",
+      "slcie of pizza each",
+      "a slice of pizza",
+      "eating a big slice of pizza",
+      "sharing a slice of pizza"
+    ]
   },
   {
     "node_id": "150472_005",
-    "concept": "plate",
-    "context": "the dish holding the pizza slice",
+    "concept": "slice",
+    "context": "form of the pizza being eaten or shared",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "pizza pslice",
+      "slice of pizza",
+      "big pizza slice",
+      "large pizza slice",
+      "a slcie of pizza each",
+      "a slice of pizza",
+      "big slice of pizza",
+      "sharing a slice of pizza"
+    ]
   },
   {
     "node_id": "150472_006",
-    "concept": "paper",
-    "context": "modifies the material of the plate",
-    "content_type": "object_attribute",
+    "concept": "paper plate",
+    "context": "item holding the pizza",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "paper plate",
+      "a paper plate",
+      "on white paper plate",
+      "off a paper plate",
+      "holding paper plates",
+      "on a paper plate"
+    ]
   },
   {
     "node_id": "150472_007",
-    "concept": "white",
-    "context": "modifies the color of the plate",
-    "content_type": "object_attribute",
+    "concept": "street",
+    "context": "location of the people and food",
+    "content_type": "scene_gist",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "in the middle of the street",
+      "on street",
+      "on a street",
+      "pictured in the street"
+    ]
   },
   {
     "node_id": "150472_008",
-    "concept": "large",
-    "context": "modifies the size of the pizza slice",
-    "content_type": "object_attribute",
+    "concept": "outside",
+    "context": "overall setting of the scene",
+    "content_type": "scene_gist",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "eating pizza outside",
+      "women outside at night"
+    ]
   },
   {
     "node_id": "150472_009",
     "concept": "glasses",
-    "context": "eyewear worn by the woman on the right",
+    "context": "worn by the person on the right / one of the women",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "the woman on the right wears glasses",
+      "girl on the right is wearing glasees",
+      "on of them had glasses",
+      "one wearing glasses",
+      "girl on right had glasses",
+      "one on the right is wearing glasses"
+    ]
   },
   {
     "node_id": "150472_010",
-    "concept": "hair",
-    "context": "the women's visible hair",
-    "content_type": "object_identity",
+    "concept": "right",
+    "context": "position of the woman/girl wearing glasses",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "woman on the right",
+      "girl on the right",
+      "girl on right",
+      "one on the right"
+    ]
   },
   {
     "node_id": "150472_011",
-    "concept": "dark",
-    "context": "modifies the tone of the women's hair",
-    "content_type": "object_attribute",
+    "concept": "eat",
+    "context": "action directed toward the pizza slice",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "eating pizza",
+      "about to eat it",
+      "opening their mouths to a slice of pizza",
+      "pretending to eat",
+      "eating large pizza slice",
+      "they were both trying to bite the pizza"
+    ]
   },
   {
     "node_id": "150472_012",
-    "concept": "brown",
-    "context": "modifies the color of the women's hair",
-    "content_type": "object_attribute",
+    "concept": "hold",
+    "context": "action involving the pizza or plate",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "holding pizza on a paper plate",
+      "while holding paper plates"
+    ]
   },
   {
     "node_id": "150472_013",
-    "concept": "mouth",
-    "context": "the women's mouths directed toward the pizza",
-    "content_type": "object_identity",
+    "concept": "share",
+    "context": "interaction between the two people and the pizza slice",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "sharing a pizza pslice",
+      "two women are sharing",
+      "sharing a slice of pizza"
+    ]
   },
   {
     "node_id": "150472_014",
-    "concept": "open",
-    "context": "modifies the women's mouths",
-    "content_type": "object_attribute",
+    "concept": "mouth",
+    "context": "body part opened toward the pizza",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "opening their mouths",
+      "both mouth open",
+      "had her mouth open",
+      "one woman had her mouth open"
+    ]
   },
   {
     "node_id": "150472_015",
-    "concept": "eating",
-    "context": "action the women are performing or about to perform with the pizza",
-    "content_type": "action_relation",
-    "evidence_type": "latent",
-    "status": "correct"
+    "concept": "open",
+    "context": "state of the mouth of one or both women",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "opening their mouths",
+      "both mouth open",
+      "had her mouth open",
+      "one woman had her mouth open"
+    ]
   },
   {
     "node_id": "150472_016",
-    "concept": "biting",
-    "context": "imminent action of the women toward the pizza slice",
-    "content_type": "action_relation",
-    "evidence_type": "latent",
-    "status": "correct"
+    "concept": "dim",
+    "context": "lighting condition of the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in dim lighting",
+      "dim lighting"
+    ]
   },
   {
     "node_id": "150472_017",
-    "concept": "sharing",
-    "context": "relation of both women to the single pizza slice",
-    "content_type": "action_relation",
-    "evidence_type": "latent",
-    "status": "correct"
+    "concept": "lighting",
+    "context": "illumination in the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in dim lighting",
+      "dim lighting"
+    ]
   },
   {
     "node_id": "150472_018",
-    "concept": "holding",
-    "context": "the plate being held in front of the women",
-    "content_type": "action_relation",
+    "concept": "big",
+    "context": "size of the pizza slice",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "big pizza slice",
+      "big slice of pizza"
+    ]
   },
   {
     "node_id": "150472_019",
-    "concept": "wearing",
-    "context": "relation of the right woman to the glasses",
-    "content_type": "action_relation",
+    "concept": "large",
+    "context": "size of the pizza slice",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "large pizza slice"
+    ]
   },
   {
     "node_id": "150472_020",
-    "concept": "leaning",
-    "context": "the women leaning toward the pizza slice",
-    "content_type": "action_relation",
+    "concept": "white",
+    "context": "color of the paper plate",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "white paper plate"
+    ]
   },
   {
     "node_id": "150472_021",
-    "concept": "posing",
-    "context": "the women appearing to playfully present themselves with the pizza",
+    "concept": "lean",
+    "context": "body posture of the women toward the pizza",
     "content_type": "action_relation",
-    "evidence_type": "latent",
-    "status": "correct"
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "leaning to pizza"
+    ]
   },
   {
     "node_id": "150472_022",
-    "concept": "outdoors",
-    "context": "overall setting of the scene",
-    "content_type": "scene_gist",
+    "concept": "dark",
+    "context": "color attribute of the women's hair",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "dark hair",
+      "dark haired women"
+    ]
   },
   {
     "node_id": "150472_023",
-    "concept": "street",
-    "context": "streetlike outdoor setting in the background",
-    "content_type": "scene_gist",
+    "concept": "hair",
+    "context": "feature of the women described as dark",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "dark hair",
+      "dark haired women"
+    ]
   },
   {
     "node_id": "150472_024",
-    "concept": "night",
-    "context": "time-of-day setting of the outdoor scene",
-    "content_type": "scene_gist",
+    "concept": "smile",
+    "context": "facial expression of the women",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "smiling"
+    ]
   },
   {
     "node_id": "150472_025",
-    "concept": "dim",
-    "context": "modifies the scene lighting",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct"
+    "concept": "night",
+    "context": "time-of-day description of the outdoor scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "outside at night"
+    ]
   },
   {
     "node_id": "150472_026",
-    "concept": "right",
-    "context": "locates the woman wearing glasses",
-    "content_type": "spatial_relation",
+    "concept": "same time",
+    "context": "timing of both women trying to bite the pizza together",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "at the same time"
+    ]
   },
   {
     "node_id": "150472_027",
-    "concept": "left",
-    "context": "locates the other woman beside the pizza",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct"
+    "concept": "picture",
+    "context": "suggested photographic framing of the women",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "posed for a picture",
+      "were pictured"
+    ]
   },
   {
     "node_id": "150472_028",
-    "concept": "on",
-    "context": "locates the pizza slice relative to the plate",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct"
+    "concept": "pose",
+    "context": "suggested deliberate posing by the women",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "posed for a picture",
+      "pose as if she was eating"
+    ]
   },
   {
     "node_id": "150472_029",
-    "concept": "in front of",
-    "context": "locates the plate relative to the women",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct"
+    "concept": "selfie",
+    "context": "suggested type of photo being taken",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "taking a selfie"
+    ]
   },
   {
     "node_id": "150472_030",
-    "concept": "middle",
-    "context": "locates the subjects as being in the middle of the street",
-    "content_type": "spatial_relation",
-    "evidence_type": "speculative",
-    "status": "incorrect"
+    "concept": "plastic plate",
+    "context": "alternative material description of the plate",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "one plastic plate"
+    ]
   },
   {
     "node_id": "150472_031",
-    "concept": "photographing",
-    "context": "action of taking a photo or selfie of the women",
-    "content_type": "action_relation",
-    "evidence_type": "speculative",
-    "status": "incorrect"
+    "concept": "each",
+    "context": "distribution of one slice of pizza per woman",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "a slcie of pizza each"
+    ]
   },
   {
     "node_id": "150472_032",
-    "concept": "smiling",
-    "context": "facial expression attributed to the women",
-    "content_type": "action_relation",
+    "concept": "left",
+    "context": "position of the woman described as not opening her mouth",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "the woman on the left"
+    ]
   },
   {
     "node_id": "150472_033",
-    "concept": "plastic",
-    "context": "modifies the material of the plate",
-    "content_type": "object_attribute",
-    "evidence_type": "latent",
-    "status": "incorrect"
+    "concept": "man",
+    "context": "person operating pizza equipment in an alternative recalled scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "a man was using",
+      "man in chef clothes"
+    ]
   },
   {
     "node_id": "150472_034",
-    "concept": "half",
-    "context": "modifies the pizza slice as partly eaten",
-    "content_type": "object_attribute",
+    "concept": "handle",
+    "context": "tool part used with the pizza in the alternative recalled scene",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "pizza hanle"
+    ]
   },
   {
     "node_id": "150472_035",
-    "concept": "cafe",
-    "context": "inferred nearby venue for the outdoor scene",
-    "content_type": "scene_gist",
-    "evidence_type": "speculative",
-    "status": "incorrect"
+    "concept": "put",
+    "context": "action of moving pizza into the oven in the alternative recalled scene",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "to put pizzas in",
+      "put pizza into oven"
+    ]
   },
   {
     "node_id": "150472_036",
-    "concept": "man",
-    "context": "imagined person in the confabulated oven scene",
+    "concept": "oven",
+    "context": "cooking appliance in the alternative recalled scene",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "mouth shaped oven",
+      "stone oven",
+      "pizza ove",
+      "inside the oven"
+    ]
   },
   {
     "node_id": "150472_037",
     "concept": "chef",
-    "context": "imagined occupational identity of the man",
+    "context": "occupational role of the man in the alternative recalled scene",
     "content_type": "object_identity",
     "evidence_type": "latent",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "man in chef clothes",
+      "chef in white uniform"
+    ]
   },
   {
     "node_id": "150472_038",
-    "concept": "uniform",
-    "context": "clothing attributed to the imagined chef",
+    "concept": "clothes",
+    "context": "garments worn by the man in the alternative recalled scene",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "chef clothes"
+    ]
   },
   {
     "node_id": "150472_039",
-    "concept": "white",
-    "context": "modifies the imagined chef uniform",
-    "content_type": "object_attribute",
+    "concept": "slide",
+    "context": "action of inserting pizza into the oven in the alternative recalled scene",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "slides p;izza into stone oven"
+    ]
   },
   {
     "node_id": "150472_040",
-    "concept": "hat",
-    "context": "headwear attributed to the imagined chef",
-    "content_type": "object_identity",
+    "concept": "stone",
+    "context": "material attributed to the oven in the alternative recalled scene",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "stone oven",
+      "made from stone"
+    ]
   },
   {
     "node_id": "150472_041",
-    "concept": "paddle",
-    "context": "tool used in the imagined pizza-oven scene",
+    "concept": "statue",
+    "context": "appearance comparison for the oven in the alternative recalled scene",
     "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "incorrect"
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "looks like a greek statue"
+    ]
   },
   {
     "node_id": "150472_042",
-    "concept": "oven",
-    "context": "cooking appliance in the imagined alternate scene",
+    "concept": "uniform",
+    "context": "garment category worn by the chef in the alternative recalled scene",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "white uniform"
+    ]
   },
   {
     "node_id": "150472_043",
-    "concept": "stone",
-    "context": "modifies the imagined oven material",
-    "content_type": "object_attribute",
+    "concept": "hat",
+    "context": "headwear worn by the chef in the alternative recalled scene",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "chef hat"
+    ]
   },
   {
     "node_id": "150472_044",
-    "concept": "mouth",
-    "context": "mouth-shaped opening attributed to the imagined oven",
+    "concept": "paddle",
+    "context": "tool used to place pizza into the oven in the alternative recalled scene",
     "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "incorrect"
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "pizza paddle"
+    ]
   },
   {
     "node_id": "150472_045",
     "concept": "fire",
-    "context": "contents seen inside the imagined oven",
+    "context": "visible element inside the oven in the alternative recalled scene",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "fire seen inside the oven"
+    ]
   },
   {
     "node_id": "150472_046",
-    "concept": "placing",
-    "context": "action of moving pizza into the imagined oven",
-    "content_type": "action_relation",
+    "concept": "inside",
+    "context": "spatial relation of the fire relative to the oven in the alternative recalled scene",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "inside the oven"
+    ]
   },
   {
     "node_id": "150472_047",
-    "concept": "statue",
-    "context": "comparison target for the imagined oven appearance",
-    "content_type": "object_identity",
-    "evidence_type": "speculative",
-    "status": "incorrect"
-  },
-  {
-    "node_id": "150472_048",
-    "concept": "Greek",
-    "context": "modifies the imagined statue comparison",
+    "concept": "mouth-shaped",
+    "context": "shape description of the oven in the alternative recalled scene",
     "content_type": "object_attribute",
-    "evidence_type": "speculative",
-    "status": "incorrect"
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "mouth shaped oven",
+      "looks like a large open mouth"
+    ]
   }
 ]

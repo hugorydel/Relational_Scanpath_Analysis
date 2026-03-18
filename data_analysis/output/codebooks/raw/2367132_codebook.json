@@ -2,393 +2,486 @@
   {
     "node_id": "2367132_001",
     "concept": "two",
-    "context": "modifies the number of men in the foreground",
+    "context": "count of the men playing the video game",
     "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "two men playing v'deo games",
+      "2 men playing a vidoe game",
+      "two men playing a game",
+      "two dad looking men",
+      "two men are holding the remote",
+      "two men standing up",
+      "two men standing up holding wii remotes",
+      "two men had a white controller",
+      "two men play wii ga,me",
+      "two men play wii",
+      "two men stood up with Wii controllers",
+      "two men holding videogame controllers",
+      "2 men holding a video game consalt",
+      "2 men stood up playing"
+    ]
   },
   {
     "node_id": "2367132_002",
     "concept": "man",
-    "context": "adult male players in the foreground",
+    "context": "people in the foreground playing the video game",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "two men playing v'deo games",
+      "2 men playing a vidoe game",
+      "two men playing a game",
+      "two dad looking men",
+      "two men are holding the remote",
+      "two men standing up",
+      "two men standing up holding wii remotes",
+      "two men had a white controller",
+      "two men play wii ga,me",
+      "two men play wii",
+      "two men stood up with Wii controllers",
+      "one of the men had brown hair",
+      "two men holding videogame controllers",
+      "2 men holding a video game consalt",
+      "2 men stood up playing"
+    ]
   },
   {
     "node_id": "2367132_003",
-    "concept": "playing",
-    "context": "action performed by the men with the game system",
+    "concept": "play",
+    "context": "action performed by the men with the game/controllers",
     "content_type": "action_relation",
-    "evidence_type": "latent",
-    "status": "correct"
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "playing v'deo games",
+      "playing a vidoe game",
+      "playing a game",
+      "playing wii",
+      "playing video game",
+      "play wii ga,me",
+      "two men play wii",
+      "playing a game"
+    ]
   },
   {
     "node_id": "2367132_004",
-    "concept": "game",
-    "context": "activity or game being played by the men",
+    "concept": "video game",
+    "context": "activity/object being played by the men",
     "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct"
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "v'deo games",
+      "a vidoe game",
+      "video game",
+      "wii ga,me",
+      "play wii",
+      "playing a game"
+    ]
   },
   {
     "node_id": "2367132_005",
-    "concept": "Wii",
-    "context": "console or brand inferred for the controllers and game being played",
-    "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct"
+    "concept": "small",
+    "context": "modifies the child seated in the background",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a small child sitting on a sofa in the background"
+    ]
   },
   {
     "node_id": "2367132_006",
-    "concept": "holding",
-    "context": "action of the men gripping the controllers",
-    "content_type": "action_relation",
+    "concept": "child",
+    "context": "young person in the background watching/seated",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "a small child sitting on a sofa in the background",
+      "girl in back watches",
+      "a girl sitting on the couch behind them",
+      "girl on sofa",
+      "girl is sat on the couch behind",
+      "girl with pink shirt on couch",
+      "there was a girl behind them sitting on a couch",
+      "daughter watches on couch",
+      "there is a girl in the background sitting on a brown/beige sofa",
+      "there was also a girl wearing a pink shirt in the background on the couch",
+      "a blonde girl sat on the sofa",
+      "girl in the back on sofa"
+    ]
   },
   {
     "node_id": "2367132_007",
-    "concept": "controller",
-    "context": "handheld game controllers held by the men",
-    "content_type": "object_identity",
+    "concept": "sit",
+    "context": "posture/action of the child on the sofa/couch",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "sitting on a sofa in the background",
+      "a girl sitting on the couch behind them",
+      "girl is sat on the couch behind",
+      "girl with pink shirt on couch",
+      "there was a girl behind them sitting on a couch",
+      "daughter watches on couch",
+      "there is a girl in the background sitting on a brown/beige sofa",
+      "there was also a girl wearing a pink shirt in the background on the couch",
+      "a blonde girl sat on the sofa",
+      "girl in the back on sofa"
+    ]
   },
   {
     "node_id": "2367132_008",
-    "concept": "white",
-    "context": "modifies the color of the controllers",
-    "content_type": "object_attribute",
+    "concept": "sofa",
+    "context": "seat occupied by the child in the background",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "sitting on a sofa in the background",
+      "girl on sofa",
+      "a brown/beige sofa",
+      "a blonde girl sat on the sofa",
+      "girl in the back on sofa"
+    ]
   },
   {
     "node_id": "2367132_009",
-    "concept": "hand",
-    "context": "the men's hands used to hold the controllers",
-    "content_type": "object_identity",
+    "concept": "background",
+    "context": "location of the seated child relative to the men",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "in the background",
+      "girl in back watches",
+      "girl with pink shirt on couch in the back",
+      "there is a girl in the background",
+      "there was also a girl wearing a pink shirt in the background",
+      "girl in the back on sofa"
+    ]
   },
   {
     "node_id": "2367132_010",
-    "concept": "both",
-    "context": "modifies the number of hands being used by each man",
+    "concept": "blonde",
+    "context": "modifies the men and/or the girl as hair color description",
     "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "two blonde men",
+      "a blonde girl sat on the sofa"
+    ]
   },
   {
     "node_id": "2367132_011",
-    "concept": "one",
-    "context": "modifies the number of controllers per hand",
-    "content_type": "object_attribute",
+    "concept": "controller",
+    "context": "handheld game device held by the men",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "wii controllers",
+      "the remotes",
+      "remote controls",
+      "wii with contoller",
+      "the remote",
+      "holding controllers",
+      "wii remotes",
+      "white controller",
+      "controller in each hand",
+      "Wii controllers",
+      "videogame controllers",
+      "video game consalt",
+      "holding controller in both hands"
+    ]
   },
   {
     "node_id": "2367132_012",
-    "concept": "standing",
-    "context": "posture of the men in the foreground",
+    "concept": "hold",
+    "context": "action of the men grasping the controllers/remotes",
     "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "holding the remotes in both hands",
+      "with the remote controls in both their hands",
+      "playing wii with contoller in both hands",
+      "holding the remote in both hands",
+      "holding controllers in each hand",
+      "holding wii remotes in both hands",
+      "had a white controller in their hands",
+      "hold on to a controller in each hand",
+      "holding videogame controllers",
+      "holding a video game consalt in both hands",
+      "holding controller in both hands"
+    ]
   },
   {
     "node_id": "2367132_013",
-    "concept": "girl",
-    "context": "female child in the background",
-    "content_type": "object_identity",
+    "concept": "both",
+    "context": "modifies the hands used by each man to hold controllers",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "in both hands",
+      "in both their hands",
+      "in both hands",
+      "in both hands",
+      "in both hands",
+      "in both hands",
+      "in both hands",
+      "both hans were up out in front of them",
+      "in both hands"
+    ]
   },
   {
     "node_id": "2367132_014",
-    "concept": "child",
-    "context": "young person on the couch in the background",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
+    "concept": "watch",
+    "context": "action of the child observing the men/game",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "girl in back watches",
+      "daughter watches on couch"
+    ]
   },
   {
     "node_id": "2367132_015",
-    "concept": "small",
-    "context": "modifies the child in the background",
-    "content_type": "object_attribute",
+    "concept": "behind",
+    "context": "position of the child/couch relative to the men",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "a girl sitting on the couch behind them",
+      "girl is sat on the couch behind",
+      "there was a girl behind them sitting on a couch"
+    ]
   },
   {
     "node_id": "2367132_016",
-    "concept": "sitting",
-    "context": "posture of the girl on the couch",
-    "content_type": "action_relation",
+    "concept": "cat",
+    "context": "animal said to be beside the computer",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "incorrect",
+    "source_phrases": [
+      "cat sat bside computer"
+    ]
   },
   {
     "node_id": "2367132_017",
-    "concept": "watching",
-    "context": "action attributed to the girl toward the men or their game",
-    "content_type": "action_relation",
-    "evidence_type": "latent",
-    "status": "correct"
+    "concept": "beside",
+    "context": "position of the cat relative to the computer",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "cat sat bside computer"
+    ]
   },
   {
     "node_id": "2367132_018",
-    "concept": "couch",
-    "context": "seating furniture behind the men",
+    "concept": "computer",
+    "context": "object said to be next to the cat",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "incorrect",
+    "source_phrases": [
+      "cat sat bside computer"
+    ]
   },
   {
     "node_id": "2367132_019",
-    "concept": "behind",
-    "context": "positions the girl and couch in the back relative to the men",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct"
+    "concept": "dad",
+    "context": "description of the men as father-like",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "two dad looking men"
+    ]
   },
   {
     "node_id": "2367132_020",
-    "concept": "left",
-    "context": "positions the girl or couch to the left side of the men or image",
-    "content_type": "spatial_relation",
+    "concept": "stand",
+    "context": "posture of the men while playing and holding controllers",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "two men standing up holding controllers",
+      "two men standing up holding wii remotes",
+      "two men stood up with Wii controllers",
+      "two men holding videogame controllers standing up",
+      "which is white standing up",
+      "2 men stood up playing"
+    ]
   },
   {
     "node_id": "2367132_021",
-    "concept": "living room",
-    "context": "overall room setting of the scene",
-    "content_type": "scene_gist",
-    "evidence_type": "latent",
-    "status": "correct"
+    "concept": "pink",
+    "context": "modifies the girl's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "girl with pink shirt",
+      "girl wearing a pink shirt"
+    ]
   },
   {
     "node_id": "2367132_022",
-    "concept": "picture",
-    "context": "framed picture hanging on the wall",
+    "concept": "shirt",
+    "context": "garment worn by the girl in the background",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "girl with pink shirt",
+      "girl wearing a pink shirt"
+    ]
   },
   {
     "node_id": "2367132_023",
-    "concept": "wall",
-    "context": "wall behind the people and supporting the picture",
+    "concept": "table",
+    "context": "furniture in front of the couch",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "table in front of couch had a beer on it"
+    ]
   },
   {
     "node_id": "2367132_024",
-    "concept": "on",
-    "context": "support or attachment relation placing the girl on the couch, the picture on the wall, and the beer on the table",
+    "concept": "in front of",
+    "context": "position of the table relative to the couch",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "table in front of couch"
+    ]
   },
   {
     "node_id": "2367132_025",
-    "concept": "camel",
-    "context": "animals depicted within the wall picture",
+    "concept": "beer",
+    "context": "drink located on the table",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "had a beer on it"
+    ]
   },
   {
     "node_id": "2367132_026",
-    "concept": "three",
-    "context": "modifies the number of camels in the wall picture",
-    "content_type": "object_attribute",
+    "concept": "couch",
+    "context": "seat occupied by the child in the background",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "while girl in back watches",
+      "a girl sitting on the couch behind them",
+      "girl is sat on the couch behind",
+      "girl with pink shirt on couch",
+      "there was a girl behind them sitting on a couch",
+      "daughter watches on couch",
+      "there was also a girl wearing a pink shirt in the background on the couch",
+      "table in front of couch had a beer on it"
+    ]
   },
   {
     "node_id": "2367132_027",
-    "concept": "hair",
-    "context": "hair of people in the scene",
-    "content_type": "object_identity",
+    "concept": "white",
+    "context": "modifies the controller/console held by the men",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "a white controller",
+      "which is white"
+    ]
   },
   {
     "node_id": "2367132_028",
-    "concept": "brown",
-    "context": "modifies the men's hair color",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct"
+    "concept": "living room",
+    "context": "overall indoor setting of the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "living room setting",
+      "in a living room setting"
+    ]
   },
   {
     "node_id": "2367132_029",
-    "concept": "blonde",
-    "context": "modifies the men's hair color",
+    "concept": "brown",
+    "context": "modifies one man's hair or the sofa color",
     "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "correct",
+    "source_phrases": [
+      "brown/beige sofa",
+      "one of the men had brown hair",
+      "the man to the right of the image definitely having brown hair"
+    ]
   },
   {
     "node_id": "2367132_030",
-    "concept": "blonde",
-    "context": "modifies the girl's hair color",
+    "concept": "beige",
+    "context": "modifies the sofa color",
     "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "brown/beige sofa"
+    ]
   },
   {
     "node_id": "2367132_031",
-    "concept": "shaved",
-    "context": "modifies one man's hair or hairstyle",
-    "content_type": "object_attribute",
+    "concept": "hair",
+    "context": "feature of one or more men described by color",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "correct",
+    "source_phrases": [
+      "one of the men had brown hair",
+      "the other one did too",
+      "definitely having brown hair"
+    ]
   },
   {
     "node_id": "2367132_032",
-    "concept": "shirt",
-    "context": "shirt worn by the girl in the background",
-    "content_type": "object_identity",
+    "concept": "right",
+    "context": "position of one man within the image",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "the man to the right of the image"
+    ]
   },
   {
     "node_id": "2367132_033",
-    "concept": "pink",
-    "context": "modifies the girl's shirt color",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2367132_034",
-    "concept": "wearing",
-    "context": "relation between the people and their clothing items",
+    "concept": "bend",
+    "context": "posture/action attributed to the men while standing and playing",
     "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2367132_035",
-    "concept": "T-shirt",
-    "context": "shirts worn by the men",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2367132_036",
-    "concept": "jeans",
-    "context": "pants worn by the men",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2367132_037",
-    "concept": "brown",
-    "context": "modifies the couch color",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2367132_038",
-    "concept": "beige",
-    "context": "modifies the couch color",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "incorrect"
-  },
-  {
-    "node_id": "2367132_039",
-    "concept": "table",
-    "context": "table in front of the couch",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2367132_040",
-    "concept": "beer",
-    "context": "drink on the table in front of the couch",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2367132_041",
-    "concept": "in front of",
-    "context": "positions the men's hands in front of their bodies and the table in front of the couch",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2367132_042",
-    "concept": "up",
-    "context": "positions the men's hands raised upward",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2367132_043",
-    "concept": "right",
-    "context": "locates one man on the right side of the image",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2367132_044",
-    "concept": "daughter",
-    "context": "kinship label applied to the girl relative to one of the men",
-    "content_type": "object_identity",
-    "evidence_type": "speculative",
-    "status": "incorrect"
-  },
-  {
-    "node_id": "2367132_045",
-    "concept": "dad",
-    "context": "role label applied to the two men",
-    "content_type": "object_identity",
-    "evidence_type": "speculative",
-    "status": "incorrect"
-  },
-  {
-    "node_id": "2367132_046",
-    "concept": "cat",
-    "context": "hallucinated animal said to be beside a computer",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "incorrect"
-  },
-  {
-    "node_id": "2367132_047",
-    "concept": "computer",
-    "context": "hallucinated object said to be beside a cat",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "incorrect"
-  },
-  {
-    "node_id": "2367132_048",
-    "concept": "beside",
-    "context": "spatial relation placing the hallucinated cat next to the hallucinated computer",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "incorrect"
-  },
-  {
-    "node_id": "2367132_049",
-    "concept": "sitting",
-    "context": "posture of the hallucinated cat beside the computer",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "bending them is a blonde girl sat on the sofa"
+    ]
   }
 ]

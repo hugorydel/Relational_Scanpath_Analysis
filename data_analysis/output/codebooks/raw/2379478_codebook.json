@@ -2,193 +2,309 @@
   {
     "node_id": "2379478_001",
     "concept": "two",
-    "context": "modifies the number of babies in the scene",
+    "context": "count of babies in the scene",
     "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "two baby gitls",
+      "two babies",
+      "2 babies",
+      "toddler and smaller baby"
+    ]
   },
   {
     "node_id": "2379478_002",
     "concept": "baby",
-    "context": "identifies the young children lying on the bed",
+    "context": "main human figures depicted lying in the bed",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "baby gitls",
+      "babies",
+      "babie",
+      "smaller baby"
+    ]
   },
   {
     "node_id": "2379478_003",
     "concept": "girl",
-    "context": "identifies the babies as female",
+    "context": "gender attributed to the babies",
     "content_type": "object_identity",
     "evidence_type": "speculative",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "baby gitls"
+    ]
   },
   {
     "node_id": "2379478_004",
     "concept": "toddler",
-    "context": "identifies one of the children as older than a baby",
+    "context": "older child identity attributed to one of the two children",
     "content_type": "object_identity",
     "evidence_type": "latent",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "toddler"
+    ]
   },
   {
     "node_id": "2379478_005",
-    "concept": "smaller",
-    "context": "modifies one child relative to the other child",
+    "concept": "small",
+    "context": "size/age attribute modifying one baby relative to the other",
     "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct"
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "smaller baby"
+    ]
   },
   {
     "node_id": "2379478_006",
-    "concept": "one",
-    "context": "modifies the single baby described as wearing a nappy",
-    "content_type": "object_attribute",
+    "concept": "lie",
+    "context": "body posture/action of the babies on the bed",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "lying",
+      "lying down",
+      "laid",
+      "laying down",
+      "lying on their backs"
+    ]
   },
   {
     "node_id": "2379478_007",
     "concept": "bed",
-    "context": "identifies the surface the children are lying on",
+    "context": "surface/location the babies are lying on",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "bed",
+      "in bed",
+      "on the bed"
+    ]
   },
   {
     "node_id": "2379478_008",
-    "concept": "bottle",
-    "context": "identifies the containers the children are drinking from and holding",
-    "content_type": "object_identity",
+    "concept": "drink",
+    "context": "action performed by the babies with the milk/bottles",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "drinking",
+      "drink"
+    ]
   },
   {
     "node_id": "2379478_009",
     "concept": "milk",
-    "context": "identifies the liquid in the bottles being consumed by the children",
+    "context": "liquid being consumed from the bottles",
     "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct"
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "milk",
+      "baby milk",
+      "bottles of milk",
+      "bottle of milk"
+    ]
   },
   {
     "node_id": "2379478_010",
-    "concept": "mouth",
-    "context": "identifies where the bottle is positioned while the children drink",
+    "concept": "bottle",
+    "context": "container from which the babies are drinking/holding",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "bottles",
+      "baby bottle",
+      "bottle"
+    ]
   },
   {
     "node_id": "2379478_011",
-    "concept": "hand",
-    "context": "identifies the body part holding the bottles",
-    "content_type": "object_identity",
+    "concept": "from",
+    "context": "relation indicating the babies drink the milk from the bottle",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "from bottles",
+      "from a baby bottle",
+      "out of bottle",
+      "out of a bottle"
+    ]
   },
   {
     "node_id": "2379478_012",
-    "concept": "nappy",
-    "context": "identifies the diaper garment visible on one child",
-    "content_type": "object_identity",
+    "concept": "next to each other",
+    "context": "spatial relation between the two babies",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "next to eachother"
+    ]
   },
   {
     "node_id": "2379478_013",
-    "concept": "bib",
-    "context": "identifies a feeding garment reportedly worn by the children",
-    "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "incorrect"
+    "concept": "one",
+    "context": "count attribute specifying that one baby has a nappy",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one with nappy"
+    ]
   },
   {
     "node_id": "2379478_014",
-    "concept": "photograph",
-    "context": "identifies the image as a photographed picture",
+    "concept": "nappy",
+    "context": "garment/diaper worn by one baby",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "nappy"
+    ]
   },
   {
     "node_id": "2379478_015",
-    "concept": "black",
-    "context": "modifies the photograph's monochrome coloration",
-    "content_type": "object_attribute",
+    "concept": "hand",
+    "context": "body part holding the bottles",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "their hands"
+    ]
   },
   {
     "node_id": "2379478_016",
-    "concept": "white",
-    "context": "modifies the photograph's monochrome coloration",
-    "content_type": "object_attribute",
+    "concept": "hold",
+    "context": "action of the babies holding the bottles",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "with bottles in their hands",
+      "holding each their own bottle"
+    ]
   },
   {
     "node_id": "2379478_017",
-    "concept": "lying",
-    "context": "action performed by the children while resting on the bed",
-    "content_type": "action_relation",
+    "concept": "back",
+    "context": "body orientation of the babies while lying",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "lying on their backs"
+    ]
   },
   {
     "node_id": "2379478_018",
-    "concept": "drinking",
-    "context": "action performed by the children with the bottles",
-    "content_type": "action_relation",
+    "concept": "on",
+    "context": "spatial relation indicating the babies are positioned on the bed/back",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "on a bed",
+      "on the bed",
+      "on their backs"
+    ]
   },
   {
     "node_id": "2379478_019",
-    "concept": "holding",
-    "context": "action relating the children to the bottles in their hands",
-    "content_type": "action_relation",
+    "concept": "black",
+    "context": "colour attribute of the photograph/image",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "black and white photograph",
+      "black and white picture"
+    ]
   },
   {
     "node_id": "2379478_020",
-    "concept": "wearing",
-    "context": "relation between the children and their clothing items such as nappies or bibs",
-    "content_type": "action_relation",
+    "concept": "white",
+    "context": "colour attribute of the photograph/image",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "black and white photograph",
+      "black and white picture"
+    ]
   },
   {
     "node_id": "2379478_021",
-    "concept": "on",
-    "context": "positions the children relative to the bed",
-    "content_type": "spatial_relation",
+    "concept": "photograph",
+    "context": "image medium being described",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "photograph",
+      "picture"
+    ]
   },
   {
     "node_id": "2379478_022",
-    "concept": "in",
-    "context": "positions the children in the bed and the bottles in mouths or hands",
-    "content_type": "spatial_relation",
+    "concept": "mouth",
+    "context": "body part where the bottles of milk are placed",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "in their mouths"
+    ]
   },
   {
     "node_id": "2379478_023",
-    "concept": "next to",
-    "context": "positions the two children relative to each other",
+    "concept": "in",
+    "context": "spatial relation indicating babies are in bed or bottles are in mouths",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "in a bed",
+      "in bed",
+      "in their mouths"
+    ]
   },
   {
     "node_id": "2379478_024",
-    "concept": "on back",
-    "context": "describes the body orientation of the children while lying down",
-    "content_type": "spatial_relation",
+    "concept": "own",
+    "context": "possessive attribute indicating each baby has a separate bottle",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "each their own bottle",
+      "each has its own bottle"
+    ]
+  },
+  {
+    "node_id": "2379478_025",
+    "concept": "each",
+    "context": "distributive count attribute indicating one bottle per baby",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "each",
+      "each their own bottle",
+      "each has its own bottle",
+      "each lying"
+    ]
   }
 ]

@@ -1,314 +1,410 @@
 [
   {
     "node_id": "2385550_001",
-    "concept": "one",
-    "context": "counts each individual child category in descriptions such as one boy and one girl",
+    "concept": "two",
+    "context": "count of the children in the scene",
     "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "one boy and one girl",
+      "two children",
+      "two kids",
+      "2 children",
+      "two shildren"
+    ]
   },
   {
     "node_id": "2385550_002",
-    "concept": "two",
-    "context": "counts the total number of children in the scene",
-    "content_type": "object_attribute",
+    "concept": "child",
+    "context": "the people depicted in the scene",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "children",
+      "kids",
+      "shildren"
+    ]
   },
   {
     "node_id": "2385550_003",
-    "concept": "child",
-    "context": "refers to the two young people shown in the scene",
+    "concept": "boy",
+    "context": "one of the children in the scene",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "boy",
+      "younger brother"
+    ]
   },
   {
     "node_id": "2385550_004",
-    "concept": "boy",
-    "context": "identifies the child on the left",
+    "concept": "girl",
+    "context": "one of the children in the scene",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "girl",
+      "older sister"
+    ]
   },
   {
     "node_id": "2385550_005",
-    "concept": "girl",
-    "context": "identifies the child on the right",
+    "concept": "tangerine",
+    "context": "fruit pieces associated with the children's mouths",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "tangerines",
+      "quaters of tangerines",
+      "orange pieces",
+      "tangerine piece",
+      "slice of tangerine"
+    ]
   },
   {
     "node_id": "2385550_006",
-    "concept": "sibling",
-    "context": "hypothesized family relation between the two children",
+    "concept": "mouth",
+    "context": "location of the tangerine pieces on the children",
     "content_type": "object_identity",
-    "evidence_type": "speculative",
-    "status": "incorrect"
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in their mouths",
+      "in his mouth",
+      "in her mouth",
+      "inside their mouths"
+    ]
   },
   {
     "node_id": "2385550_007",
-    "concept": "sister",
-    "context": "hypothesized role of the girl relative to the boy",
-    "content_type": "object_identity",
-    "evidence_type": "speculative",
-    "status": "incorrect"
+    "concept": "holding",
+    "context": "children holding the tangerine pieces at their mouths",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding quaters of tangerines in their mouths",
+      "holding tangerines in their mouths"
+    ]
   },
   {
     "node_id": "2385550_008",
-    "concept": "brother",
-    "context": "hypothesized role of the boy relative to the girl",
-    "content_type": "object_identity",
-    "evidence_type": "speculative",
-    "status": "incorrect"
+    "concept": "eating",
+    "context": "action described for the children with the tangerines",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "is eating tangerines"
+    ]
   },
   {
     "node_id": "2385550_009",
-    "concept": "young",
-    "context": "describes the age appearance of the children",
-    "content_type": "object_attribute",
-    "evidence_type": "latent",
-    "status": "correct"
+    "concept": "smiling",
+    "context": "facial expression created by the children with the tangerines",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "while smiling",
+      "pretending to smile"
+    ]
   },
   {
     "node_id": "2385550_010",
-    "concept": "older",
-    "context": "describes the girl as relatively older than the boy",
-    "content_type": "object_attribute",
+    "concept": "posing",
+    "context": "children facing the camera for a picture",
+    "content_type": "action_relation",
     "evidence_type": "latent",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "posing to the camera",
+      "pose for picture"
+    ]
   },
   {
     "node_id": "2385550_011",
-    "concept": "younger",
-    "context": "describes the boy as relatively younger than the girl",
-    "content_type": "object_attribute",
-    "evidence_type": "latent",
-    "status": "correct"
+    "concept": "left",
+    "context": "position of the boy in the scene",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "boy is on the left of the screne",
+      "boy on left",
+      "boy on the left",
+      "a boy on the left"
+    ]
   },
   {
     "node_id": "2385550_012",
-    "concept": "eye",
-    "context": "facial feature of both children",
-    "content_type": "object_identity",
+    "concept": "right",
+    "context": "position of the girl in the scene",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "girl is on the right of the screen",
+      "girl on right",
+      "girl on the right",
+      "the girl is on the rught side"
+    ]
   },
   {
     "node_id": "2385550_013",
-    "concept": "brown",
-    "context": "modifies both children's eyes and the girl's hair",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_014",
-    "concept": "hair",
-    "context": "head hair of both children",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_015",
-    "concept": "blond",
-    "context": "modifies the boy's hair color",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_016",
-    "concept": "fringe",
-    "context": "part of the girl's hairstyle across her forehead",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_017",
-    "concept": "mouth",
-    "context": "location where the fruit is placed for both children",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_018",
-    "concept": "tooth",
-    "context": "teeth being covered by the fruit in the mouths",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_019",
-    "concept": "tangerine",
-    "context": "the citrus fruit placed in both children's mouths",
-    "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_020",
-    "concept": "segment",
-    "context": "describes the fruit as a piece or slice rather than an intact whole",
-    "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_021",
-    "concept": "peeled",
-    "context": "modifies the tangerine pieces in the mouths",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_022",
-    "concept": "unchewed",
-    "context": "describes the fruit in the mouths as intact rather than bitten",
-    "content_type": "object_attribute",
-    "evidence_type": "latent",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_023",
-    "concept": "hoodie",
-    "context": "garment worn by the boy",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_024",
-    "concept": "hood",
-    "context": "part of the boy's hoodie with a contrasting interior",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_025",
-    "concept": "different-colored",
-    "context": "modifies the inside of the boy's hood relative to the outer hoodie",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_026",
-    "concept": "pink",
-    "context": "modifies the girl's visible clothing",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_027",
-    "concept": "eating",
-    "context": "action involving the tangerine in the children's mouths",
-    "content_type": "action_relation",
-    "evidence_type": "latent",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_028",
-    "concept": "holding",
-    "context": "action of keeping the tangerine pieces in their mouths",
-    "content_type": "action_relation",
-    "evidence_type": "latent",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_029",
-    "concept": "smiling",
-    "context": "facial expression or smile-like display made by the children",
-    "content_type": "action_relation",
-    "evidence_type": "latent",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_030",
-    "concept": "pretending",
-    "context": "action of imitating a smile using the fruit in the mouth",
-    "content_type": "action_relation",
-    "evidence_type": "speculative",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_031",
-    "concept": "posing",
-    "context": "action of facing the camera for the picture",
-    "content_type": "action_relation",
-    "evidence_type": "latent",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_032",
-    "concept": "wearing",
-    "context": "relation between each child and their clothing",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_033",
-    "concept": "left",
-    "context": "position of the boy within the image",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_034",
-    "concept": "right",
-    "context": "position of the girl within the image",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2385550_035",
     "concept": "next to",
     "context": "spatial relation between the two children",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "next to each other"
+    ]
   },
   {
-    "node_id": "2385550_036",
+    "node_id": "2385550_014",
+    "concept": "eye",
+    "context": "facial feature described for both children",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "brown eyes"
+    ]
+  },
+  {
+    "node_id": "2385550_015",
+    "concept": "brown",
+    "context": "colour of the children's eyes and of the girl's hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "brown eyes",
+      "brown hair",
+      "brunette"
+    ]
+  },
+  {
+    "node_id": "2385550_016",
+    "concept": "sibling",
+    "context": "relationship inferred between the boy and girl",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "look like siblings",
+      "older sister and younger brother"
+    ]
+  },
+  {
+    "node_id": "2385550_017",
+    "concept": "blonde",
+    "context": "hair colour of the boy",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "boy blonde",
+      "young blonde boy"
+    ]
+  },
+  {
+    "node_id": "2385550_018",
+    "concept": "brunette",
+    "context": "hair colour descriptor applied to the girl",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "girl brunette"
+    ]
+  },
+  {
+    "node_id": "2385550_019",
+    "concept": "fringe",
+    "context": "hairstyle of the girl",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with a fringe",
+      "girl with fringe",
+      "has a fringe"
+    ]
+  },
+  {
+    "node_id": "2385550_020",
+    "concept": "younger",
+    "context": "relative age of the boy compared with the girl",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "younger girl",
+      "boy was younger than the girl",
+      "younger brother"
+    ]
+  },
+  {
+    "node_id": "2385550_021",
+    "concept": "older",
+    "context": "relative age of the girl compared with the boy",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "older sister",
+      "slightly older brunette girl"
+    ]
+  },
+  {
+    "node_id": "2385550_022",
+    "concept": "hoodie",
+    "context": "garment worn by the boy",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "boy is wearing a hoodie"
+    ]
+  },
+  {
+    "node_id": "2385550_023",
+    "concept": "different coloured",
+    "context": "attribute of the inside of the boy's hood",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "different coloured inside of hood"
+    ]
+  },
+  {
+    "node_id": "2385550_024",
     "concept": "inside",
-    "context": "spatial relation placing the fruit inside the mouths and the lining inside the hood",
+    "context": "spatial relation of the hood lining to the hood",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "inside of hood"
+    ]
   },
   {
-    "node_id": "2385550_037",
-    "concept": "covering",
-    "context": "spatial relation of the fruit over the children's teeth",
-    "content_type": "spatial_relation",
+    "node_id": "2385550_025",
+    "concept": "hair",
+    "context": "feature described for the girl",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "brown hair"
+    ]
   },
   {
-    "node_id": "2385550_038",
+    "node_id": "2385550_026",
     "concept": "outdoors",
-    "context": "claimed overall setting of the scene",
+    "context": "overall setting of the scene",
     "content_type": "scene_gist",
-    "evidence_type": "speculative",
-    "status": "incorrect"
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "outside"
+    ]
   },
   {
-    "node_id": "2385550_039",
+    "node_id": "2385550_027",
     "concept": "sunny",
-    "context": "claimed weather or lighting condition of the scene",
+    "context": "weather or lighting condition of the outdoor scene",
     "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "sunny"
+    ]
+  },
+  {
+    "node_id": "2385550_028",
+    "concept": "piece",
+    "context": "form of the tangerine shown at the mouths",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "orange pieces",
+      "tangerine piece"
+    ]
+  },
+  {
+    "node_id": "2385550_029",
+    "concept": "quarter",
+    "context": "quantity or subdivision of the tangerine pieces",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "quaters of tangerines"
+    ]
+  },
+  {
+    "node_id": "2385550_030",
+    "concept": "peeled",
+    "context": "state of the tangerine pieces",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "peeled tangerines"
+    ]
+  },
+  {
+    "node_id": "2385550_031",
+    "concept": "slice",
+    "context": "form of the tangerine in each child's mouth",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "slice of tangerine"
+    ]
+  },
+  {
+    "node_id": "2385550_032",
+    "concept": "unchewed",
+    "context": "state of the tangerines in the children's mouths",
+    "content_type": "object_attribute",
     "evidence_type": "speculative",
-    "status": "incorrect"
+    "status": "incorrect",
+    "source_phrases": [
+      "unchewed"
+    ]
+  },
+  {
+    "node_id": "2385550_033",
+    "concept": "pink",
+    "context": "colour of the girl's clothing",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the girl is earing pink"
+    ]
+  },
+  {
+    "node_id": "2385550_034",
+    "concept": "bangs",
+    "context": "hairstyle of the girl",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "bangs"
+    ]
   }
 ]

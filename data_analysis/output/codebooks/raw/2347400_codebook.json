@@ -2,337 +2,552 @@
   {
     "node_id": "2347400_001",
     "concept": "two",
-    "context": "modifies the count of the men and the wine glasses in the scene",
+    "context": "count of the people on the couch/sofa",
     "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "two men smelling red wine sitting on a couch",
+      "2 men sat on a sofa smelling red wine",
+      "two men smelling a glass of red wine each",
+      "two men sitting on a sofa smelling their glasses of red wine",
+      "two men on sofa sniffing red wine",
+      "two men are sat on the couch",
+      "two men sat on couch",
+      "two men on couches smelling wine",
+      "two men were sitting on a couch",
+      "two boys smell red wine",
+      "two men sat on a sofa",
+      "two men sat on a couch",
+      "two men on a couch",
+      "2 men sat on a sofa"
+    ]
   },
   {
     "node_id": "2347400_002",
     "concept": "man",
-    "context": "the seated adults in the foreground",
+    "context": "people depicted in the scene",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "two men smelling red wine sitting on a couch",
+      "2 men sat on a sofa smelling red wine",
+      "two men smelling a glass of red wine each",
+      "two men sitting on a sofa smelling their glasses of red wine",
+      "two men on sofa sniffing red wine",
+      "two men are sat on the couch",
+      "two men sat on couch",
+      "two men on couches smelling wine",
+      "two men were sitting on a couch",
+      "two men sat on a sofa",
+      "two men sat on a couch",
+      "two men on a couch",
+      "2 men sat on a sofa"
+    ]
   },
   {
     "node_id": "2347400_003",
-    "concept": "sitting",
-    "context": "posture/action of the men on the couch",
-    "content_type": "action_relation",
+    "concept": "boy",
+    "context": "alternative label used for the people depicted in the scene",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "incorrect",
+    "source_phrases": [
+      "two boys smell red wine sat in casual clothes on cpuch in living room"
+    ]
   },
   {
     "node_id": "2347400_004",
-    "concept": "on",
-    "context": "positions the men relative to the couch",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct"
+    "concept": "smelling",
+    "context": "action performed by the men toward the wine/wine glasses",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "smelling red wine",
+      "smelling a glass of red wine each",
+      "smelling their glasses of red wine",
+      "sniffing red wine",
+      "they are smelling",
+      "appearing to sniff them",
+      "smelling wine",
+      "one the one the right was smelling the wine",
+      "smell red wine",
+      "are smelling red wine",
+      "holding the glasses up to their noses and smelling it",
+      "sniffing two glasses of wine",
+      "each sniffing a glass of red wine"
+    ]
   },
   {
     "node_id": "2347400_005",
-    "concept": "couch",
-    "context": "the seat the men are sitting on",
-    "content_type": "object_identity",
+    "concept": "red",
+    "context": "color of the wine",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "red wine",
+      "a glass of red wine each",
+      "glasses of red wine",
+      "red wine",
+      "a glass of red wine that they are smelling",
+      "red wine",
+      "smell red wine",
+      "are smelling red wine",
+      "two glasses of red wine",
+      "a glass of red wine"
+    ]
   },
   {
     "node_id": "2347400_006",
-    "concept": "smelling",
-    "context": "action performed by the men toward the wine/glasses",
-    "content_type": "action_relation",
+    "concept": "wine",
+    "context": "beverage being smelled/held by the men",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "red wine",
+      "a glass of red wine each",
+      "glasses of red wine",
+      "red wine",
+      "a glass of red wine that they are smelling",
+      "red wine",
+      "smelling wine",
+      "was smelling the wine",
+      "smell red wine",
+      "are smelling red wine",
+      "two glasses of red wine",
+      "two glasses of wine",
+      "a glass of red wine"
+    ]
   },
   {
     "node_id": "2347400_007",
-    "concept": "holding",
-    "context": "action of the men with the glasses",
+    "concept": "sitting",
+    "context": "posture of the men on the couch/sofa",
     "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "sitting on a couch",
+      "sat on a sofa",
+      "two men sitting on a sofa",
+      "two men are sat on the couch",
+      "two men sat on couch",
+      "two men were sitting on a couch",
+      "sat in casual clothes on cpuch",
+      "two men sat on a sofa",
+      "two men sat on a couch",
+      "2 men sat on a sofa"
+    ]
   },
   {
     "node_id": "2347400_008",
-    "concept": "glass",
-    "context": "container being held and smelled",
+    "concept": "couch",
+    "context": "furniture the men are sitting on",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "sitting on a couch",
+      "sat on the couch",
+      "sat on couch",
+      "sitting on a couch",
+      "on a couch",
+      "sat on a couch"
+    ]
   },
   {
     "node_id": "2347400_009",
-    "concept": "wine",
-    "context": "drink inside the glasses",
+    "concept": "sofa",
+    "context": "furniture the men are sitting on",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "sat on a sofa",
+      "sitting on a sofa",
+      "on sofa",
+      "sat on a sofa",
+      "2 men sat on a sofa"
+    ]
   },
   {
     "node_id": "2347400_010",
-    "concept": "red",
-    "context": "colour of the wine",
-    "content_type": "object_attribute",
+    "concept": "on",
+    "context": "spatial relation between the men and the couch/sofa",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "sitting on a couch",
+      "sat on a sofa",
+      "sitting on a sofa",
+      "two men on sofa",
+      "sat on the couch",
+      "on couches",
+      "sitting on a couch",
+      "sat in casual clothes on cpuch",
+      "sat on a sofa",
+      "sat on a couch",
+      "on a couch",
+      "sat on a sofa"
+    ]
   },
   {
     "node_id": "2347400_011",
-    "concept": "indoors",
-    "context": "overall scene setting",
-    "content_type": "scene_gist",
-    "evidence_type": "literal",
-    "status": "correct"
+    "concept": "pokeball",
+    "context": "object reported in the background",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "there is a pokemon ball in the background"
+    ]
   },
   {
     "node_id": "2347400_012",
-    "concept": "living room",
-    "context": "room type of the scene",
+    "concept": "background",
+    "context": "location of the reported pokeball",
     "content_type": "scene_gist",
-    "evidence_type": "latent",
-    "status": "correct"
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "in the background"
+    ]
   },
   {
     "node_id": "2347400_013",
-    "concept": "window",
-    "context": "background fixture behind the men",
+    "concept": "glass",
+    "context": "container holding the wine",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "a glass of red wine each",
+      "their glasses of red wine",
+      "both have a glass of red wine",
+      "holding wine glasses",
+      "dringking",
+      "blue shirt with a face on it and the other is wearing grey",
+      "two glasses of red wine",
+      "two glasses of wine",
+      "a glass of red wine"
+    ]
   },
   {
     "node_id": "2347400_014",
-    "concept": "behind",
-    "context": "positions the window and small toy relative to the men",
-    "content_type": "spatial_relation",
+    "concept": "each",
+    "context": "distribution indicating one wine glass per man",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "a glass of red wine each",
+      "each sniffing a glass of red wine"
+    ]
   },
   {
     "node_id": "2347400_015",
-    "concept": "plushie",
-    "context": "small toy object in the background",
-    "content_type": "object_identity",
+    "concept": "inside",
+    "context": "overall setting of the scene",
+    "content_type": "scene_gist",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "two men sat on couch inside"
+    ]
   },
   {
     "node_id": "2347400_016",
-    "concept": "mushroom",
-    "context": "depicted form of the background plushie",
-    "content_type": "object_identity",
+    "concept": "holding",
+    "context": "action of the men holding the wine glasses",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "holding wine glasses",
+      "holding the glasses up to their noses"
+    ]
   },
   {
     "node_id": "2347400_017",
-    "concept": "Toad",
-    "context": "character identity assigned to the background plushie",
+    "concept": "window",
+    "context": "object located behind the men",
     "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct"
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "window behind them"
+    ]
   },
   {
     "node_id": "2347400_018",
-    "concept": "Mario",
-    "context": "franchise label applied to the background mushroom plushie",
-    "content_type": "object_attribute",
-    "evidence_type": "speculative",
-    "status": "correct"
+    "concept": "behind",
+    "context": "spatial relation of the window relative to the men",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "window behind them"
+    ]
   },
   {
     "node_id": "2347400_019",
-    "concept": "ball",
-    "context": "misremembered background object",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "incorrect"
+    "concept": "drinking",
+    "context": "action attributed to the men with the wine",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "dringking"
+    ]
   },
   {
     "node_id": "2347400_020",
-    "concept": "Pokémon",
-    "context": "franchise label applied to the misremembered ball",
-    "content_type": "object_attribute",
-    "evidence_type": "speculative",
-    "status": "incorrect"
+    "concept": "right",
+    "context": "side used to distinguish one of the men",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one the one the right was smelling the wine",
+      "the man on the right was squinting his eyes"
+    ]
   },
   {
     "node_id": "2347400_021",
-    "concept": "shirt",
-    "context": "upper-body garment worn by the men",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
+    "concept": "talking",
+    "context": "action attributed to one of the men",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "the other man was talking about something"
+    ]
   },
   {
     "node_id": "2347400_022",
-    "concept": "blue",
-    "context": "colour of the right man's shirt",
-    "content_type": "object_attribute",
+    "concept": "left",
+    "context": "side used to distinguish one of the men",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "the guy on the left was blonde",
+      "the man on the left had his wine glass held lower"
+    ]
   },
   {
     "node_id": "2347400_023",
-    "concept": "face",
-    "context": "graphic printed on the right man's shirt",
-    "content_type": "object_identity",
+    "concept": "blonde",
+    "context": "hair color of the man on the left",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "the guy on the left was blonde"
+    ]
   },
   {
     "node_id": "2347400_024",
-    "concept": "grey",
-    "context": "colour of the left man's shirt",
+    "concept": "casual",
+    "context": "style of the men's clothing",
     "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct"
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "casual clothes"
+    ]
   },
   {
     "node_id": "2347400_025",
-    "concept": "jeans",
-    "context": "pants worn by the men",
+    "concept": "clothes",
+    "context": "clothing worn by the men",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "casual clothes"
+    ]
   },
   {
     "node_id": "2347400_026",
-    "concept": "clothes",
-    "context": "general garments worn by the men",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct"
+    "concept": "living room",
+    "context": "overall indoor room setting",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "living room"
+    ]
   },
   {
     "node_id": "2347400_027",
-    "concept": "casual",
-    "context": "style of the men's clothes",
-    "content_type": "object_attribute",
-    "evidence_type": "latent",
-    "status": "correct"
+    "concept": "shirt",
+    "context": "garment worn by one man",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blue shirt with a face on it"
+    ]
   },
   {
     "node_id": "2347400_028",
-    "concept": "hair",
-    "context": "hair on the men's heads",
-    "content_type": "object_identity",
+    "concept": "blue",
+    "context": "color of one man's shirt",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "blue shirt with a face on it"
+    ]
   },
   {
     "node_id": "2347400_029",
+    "concept": "face",
+    "context": "graphic depicted on one man's shirt",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "shirt with a face on it"
+    ]
+  },
+  {
+    "node_id": "2347400_030",
+    "concept": "wearing",
+    "context": "relation between a man and his clothing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the other is wearing grey"
+    ]
+  },
+  {
+    "node_id": "2347400_031",
+    "concept": "grey",
+    "context": "color of the other man's clothing",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the other is wearing grey"
+    ]
+  },
+  {
+    "node_id": "2347400_032",
     "concept": "short",
     "context": "length of the men's hair",
     "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2347400_030",
-    "concept": "blonde",
-    "context": "colour of the left man's hair",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2347400_031",
-    "concept": "right",
-    "context": "locates the man on the right side of the image",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct"
-  },
-  {
-    "node_id": "2347400_032",
-    "concept": "left",
-    "context": "locates the man on the left side of the image",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "men have short hair"
+    ]
   },
   {
     "node_id": "2347400_033",
-    "concept": "drinking",
-    "context": "misremembered action involving the wine",
-    "content_type": "action_relation",
+    "concept": "hair",
+    "context": "hair of the men",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "incorrect"
+    "status": "correct",
+    "source_phrases": [
+      "the guy on the left was blonde",
+      "men have short hair"
+    ]
   },
   {
     "node_id": "2347400_034",
-    "concept": "talking",
-    "context": "misremembered action assigned to the left man",
-    "content_type": "action_relation",
-    "evidence_type": "speculative",
-    "status": "incorrect"
+    "concept": "hand",
+    "context": "body part referenced in relation to holding the wine glasses",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "one on each hand"
+    ]
   },
   {
     "node_id": "2347400_035",
-    "concept": "squinting",
-    "context": "facial action of the right man while smelling the wine",
-    "content_type": "action_relation",
+    "concept": "nose",
+    "context": "body part near which the glasses are held for smelling",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "holding the glasses up to their noses"
+    ]
   },
   {
     "node_id": "2347400_036",
-    "concept": "eye",
-    "context": "body part described as squinting on the right man",
-    "content_type": "object_identity",
+    "concept": "brown",
+    "context": "color of the couch",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "the couch was brown"
+    ]
   },
   {
     "node_id": "2347400_037",
-    "concept": "nose",
-    "context": "body part the glasses are held near while smelling",
-    "content_type": "object_identity",
+    "concept": "squinting",
+    "context": "eye action of the man on the right while smelling the wine",
+    "content_type": "action_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "the man on the right was squinting his eyes as he smelled the wine"
+    ]
   },
   {
     "node_id": "2347400_038",
-    "concept": "mouth",
-    "context": "body part near the left man's lower-held glass",
+    "concept": "eye",
+    "context": "body part involved in the squinting action",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "squinting his eyes"
+    ]
   },
   {
     "node_id": "2347400_039",
     "concept": "lower",
-    "context": "describes the left man's glass as held lower than the other",
+    "context": "relative position of the left man's wine glass",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "the man on the left had his wine glass held lower"
+    ]
   },
   {
     "node_id": "2347400_040",
-    "concept": "brown",
-    "context": "colour of the couch",
-    "content_type": "object_attribute",
+    "concept": "around",
+    "context": "approximate spatial relation of the left man's wine glass to his mouth area",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "around his mouth area"
+    ]
   },
   {
     "node_id": "2347400_041",
-    "concept": "greyish",
-    "context": "misremembered colour of the couch",
-    "content_type": "object_attribute",
+    "concept": "mouth",
+    "context": "body part near the left man's lowered wine glass",
+    "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "incorrect"
-  },
-  {
-    "node_id": "2347400_042",
-    "concept": "wearing",
-    "context": "relation between the men and their clothing",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct"
+    "status": "correct",
+    "source_phrases": [
+      "around his mouth area"
+    ]
   }
 ]

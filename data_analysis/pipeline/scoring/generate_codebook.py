@@ -125,6 +125,13 @@ evidence_type (choose exactly one):
 status (choose exactly one):
   correct   - Concept is plausibly shared memory content for this image
   incorrect - Concept appears to be a hallucination or confabulation
+
+source_phrases (list of short strings):
+  For each participant response that mentions this concept, extract the 1-2 words immediately
+  surrounding the concept that confirm the match. Do NOT copy the full sentence.
+  Examples: concept "dog" → ["big dog", "the dog", "a dog"] NOT ["I saw a big brown dog running"]
+            concept "red" → ["red shirt", "red bag"] NOT ["she was wearing a red shirt"]
+  Include one entry per distinct participant who mentioned this concept.
 """
 
 # ---------------------------------------------------------------------------
@@ -159,6 +166,10 @@ RESPONSE_SCHEMA = {
                                 "type": "string",
                                 "enum": sorted(VALID_STATUSES),
                             },
+                            "source_phrases": {
+                                "type": "array",
+                                "items": {"type": "string"},
+                            },
                         },
                         "required": [
                             "node_id",
@@ -167,6 +178,7 @@ RESPONSE_SCHEMA = {
                             "content_type",
                             "evidence_type",
                             "status",
+                            "source_phrases",
                         ],
                         "additionalProperties": False,
                     },
@@ -282,36 +294,20 @@ async def _append_jsonl(path: Path, record: dict) -> None:
 class CodebookScorer:
     """Async OpenAI client with semaphore concurrency and exponential backoff."""
 
-    def __init__(
-        self, api_key: str, model: str, max_concurrency: int, images_dir: Path
-    ):
+    def __init__(self, api_key: str, model: str, max_concurrency: int):
         from openai import AsyncOpenAI
 
         self.client = AsyncOpenAI(api_key=api_key)
         self.model = model
         self.semaphore = asyncio.Semaphore(max_concurrency)
-        self.images_dir = images_dir
         self.processed = 0
         self.errors = 0
         self._lock = asyncio.Lock()
 
-    async def _extract(
-        self, stim_id: str, user_prompt: str, image: tuple | None
-    ) -> list | None:
-        """Call API with retry. Returns list of nodes or None on failure."""
-        # Build user message — multimodal if image is available, text-only otherwise
-        if image is not None:
-            b64, media_type = image
-            user_content = [
-                {
-                    "type": "image_url",
-                    "image_url": {"url": f"data:{media_type};base64,{b64}"},
-                },
-                {"type": "text", "text": user_prompt},
-            ]
-        else:
-            user_content = user_prompt
-
+    async def _extract(self, stim_id: str, user_prompt: str) -> list | None:
+        """Call API with retry. Returns list of nodes or None on failure.
+        Phase 1 is text-only — image verification is Phase 1.5 (edit_codebook.py).
+        """
         delay = INITIAL_RETRY_DELAY
         for attempt in range(1, MAX_RETRIES + 1):
             try:
@@ -319,7 +315,7 @@ class CodebookScorer:
                     model=self.model,
                     messages=[
                         {"role": "system", "content": SYSTEM_PROMPT},
-                        {"role": "user", "content": user_content},
+                        {"role": "user", "content": user_prompt},
                     ],
                     response_format=RESPONSE_SCHEMA,
                     reasoning_effort=REASONING_EFFORT,
@@ -369,14 +365,13 @@ class CodebookScorer:
             }
 
         user_prompt = build_user_prompt(stim_id, responses)
-        image = _load_image_b64(stim_id, self.images_dir)
 
         async with self.semaphore:
             logger.info(
                 f"  [{stim_id}] calling {self.model} "
-                f"({'image+text' if image else 'text-only'}, {len(responses)} responses) ..."
+                f"(text-only, {len(responses)} responses) ..."
             )
-            nodes = await self._extract(stim_id, user_prompt, image)
+            nodes = await self._extract(stim_id, user_prompt)
 
         if nodes is None:
             async with self._lock:
@@ -487,7 +482,6 @@ async def run(args) -> None:
         api_key=api_key.strip(),
         model=args.model,
         max_concurrency=args.max_concurrency,
-        images_dir=Path(args.image_dir),
     )
     tasks = [
         scorer.process_stim(stim_id, responses, args.force)
@@ -534,11 +528,6 @@ def main():
         default=DEFAULT_CONCURRENCY,
         help=f"Max parallel API calls (default: {DEFAULT_CONCURRENCY}).",
     )
-    parser.add_argument(
-        "--image-dir",
-        default=str(IMAGES_DIR),
-        help="Directory containing stimulus images (jpg/png). Passed alongside text to the VLM.",
-    )
     args = parser.parse_args()
 
     logger.info("Phase 1: Automated Codebook Generation")
@@ -546,7 +535,6 @@ def main():
     logger.info(f"  Dry run         : {args.dry_run}")
     logger.info(f"  Force           : {args.force}")
     logger.info(f"  Max concurrency : {args.max_concurrency}")
-    logger.info(f"  Image dir       : {args.image_dir}")
     logger.info(f"  Output dir      : {OUTPUT_DIR}")
 
     asyncio.run(run(args))

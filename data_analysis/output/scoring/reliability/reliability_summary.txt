@@ -11,10 +11,10 @@ AI-1 vs AI-2 (node-level)
 ============================================================
   Level         : node
   N pairs       : 213
-  N nodes       : 7554
-  % agreement   : 97.4%
-  Cohen's kappa : 0.9265
-  Confusion     : TP=1668, TN=5687, FP=97, FN=102
+  N nodes       : 7947
+  % agreement   : 98.7%
+  Cohen's kappa : 0.9631
+  Confusion     : TP=1807, TN=6035, FP=24, FN=81
 
 ============================================================
 AI-1 vs Human (category-level)
@@ -35,13 +35,13 @@ AI-1 vs Human (category-level)
 AI-2 vs Human (category-level)
 ============================================================
   N pairs       : 214
-  Overall r     : 0.8718
-  Overall ICC   : 0.7686
-  Overall MAE   : 2.131 nodes
+  Overall r     : 0.8779
+  Overall ICC   : 0.7712
+  Overall MAE   : 2.159 nodes
 
   Per content type:
-    object_identity         r=+0.720  ICC=+0.601  MAE=1.14
-    object_attribute        r=+0.681  ICC=+0.603  MAE=0.91
-    action_relation         r=+0.740  ICC=+0.666  MAE=0.43
-    spatial_relation        r=+0.768  ICC=+0.742  MAE=0.49
-    scene_gist              r=+0.540  ICC=+0.470  MAE=0.24
+    object_identity         r=+0.722  ICC=+0.662  MAE=0.93
+    object_attribute        r=+0.666  ICC=+0.496  MAE=1.29
+    action_relation         r=+0.720  ICC=+0.669  MAE=0.42
+    spatial_relation        r=+0.759  ICC=+0.731  MAE=0.50
+    scene_gist              r=+0.565  ICC=+0.499  MAE=0.22

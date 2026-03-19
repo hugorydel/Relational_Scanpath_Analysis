@@ -10,7 +10,6 @@ from .constants import (
     ENC_BETWEEN_COVARIATES,
     ENC_COVARIATES,
     MODEL_SPECS,
-    PILOT_SUBJ_THRESHOLD,
 )
 from .loader import (
     apply_exclusions,
@@ -32,7 +31,6 @@ __all__ = [
     "ENC_BETWEEN_COVARIATES",
     "ENC_COVARIATES",
     "MODEL_SPECS",
-    "PILOT_SUBJ_THRESHOLD",
     "DEFAULT_SCORES_PATH",
     # loader
     "apply_exclusions",

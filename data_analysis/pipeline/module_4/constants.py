@@ -16,14 +16,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import config
 
 # ---------------------------------------------------------------------------
-# Thresholds
-# ---------------------------------------------------------------------------
-
-# Below this many subjects, statsmodels' REML C optimizer can hard-crash.
-# Fall back to OLS + C(SubjectID) fixed effect for pilot runs.
-PILOT_SUBJ_THRESHOLD = 10
-
-# ---------------------------------------------------------------------------
 # Covariate lists
 # ---------------------------------------------------------------------------
 
@@ -44,7 +36,6 @@ ENC_BETWEEN_COVARIATES = ["svg_z_enc_image_mean"]
 
 DEC_COVARIATES = [
     "n_fixations_dec",
-    "aoi_prop_dec",
     "mean_salience_relational_dec",
 ]
 

@@ -14,9 +14,6 @@ trial_features_all.csv via SubjectID × StimID.
 Output layout
 -------------
   output/scoring/recall_scores.csv           — flat per-node scores (one row per SubjectID × StimID × node_id)
-  output/scoring/score_results.jsonl         — successful API calls (append)
-  output/scoring/score_errors.jsonl          — failed API calls (append)
-  output/scoring/score_manifest.json         — run summary
 
 Run aggregate_recall.py afterwards to produce recall_by_category.csv.
 
@@ -30,7 +27,7 @@ Schema of recall_scores.csv
 
 Resume behaviour
 ----------------
-Any (SubjectID, StimID) pair already in score_results.jsonl is skipped.
+Any (SubjectID, StimID) pair already present in recall_scores.csv is skipped.
 Run with --force to reprocess everything.
 
 Usage
@@ -51,7 +48,6 @@ import getpass
 import json
 import logging
 import sys
-import time
 from collections import defaultdict
 from pathlib import Path
 
@@ -80,9 +76,6 @@ FINAL_DIR = config.OUTPUT_DIR / "codebooks" / "final"
 RAW_DIR = config.OUTPUT_DIR / "codebooks" / "raw"
 SCORING_DIR = config.OUTPUT_DIR / "scoring"
 SCORES_CSV = SCORING_DIR / "recall_scores.csv"
-RESULTS_PATH = SCORING_DIR / "score_results.jsonl"
-ERRORS_PATH = SCORING_DIR / "score_errors.jsonl"
-MANIFEST_PATH = SCORING_DIR / "score_manifest.json"
 
 SCORES_FIELDNAMES = [
     "SubjectID",
@@ -219,8 +212,7 @@ def load_codebook(stim_id: str) -> list | None:
 def load_processed_pairs() -> set:
     """
     Return set of (subject_id, stim_id) pairs that already have at least one
-    row in recall_scores.csv. This is the source of truth — the jsonl can be
-    stale if a run was interrupted after logging but before writing CSV rows.
+    row in recall_scores.csv.
     """
     processed = set()
     if not SCORES_CSV.exists():
@@ -266,11 +258,6 @@ def build_user_prompt(
 # JSONL helper
 # ---------------------------------------------------------------------------
 
-
-async def _append_jsonl(path: Path, record: dict) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "a", encoding="utf-8") as f:
-        f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
 # ---------------------------------------------------------------------------
@@ -352,16 +339,6 @@ class RecallScorer:
             logger.info(
                 f"  [{subject_id}×{stim_id}] empty response — skipping API call"
             )
-            await _append_jsonl(
-                RESULTS_PATH,
-                {
-                    "subject_id": subject_id,
-                    "stim_id": stim_id,
-                    "status": "ok_empty",
-                    "n_nodes": len(nodes),
-                    "n_recalled": 0,
-                },
-            )
             async with self._lock:
                 self.processed += 1
             return {"subject_id": subject_id, "stim_id": stim_id, "status": "ok_empty"}
@@ -374,14 +351,7 @@ class RecallScorer:
         if scores is None:
             async with self._lock:
                 self.errors += 1
-            await _append_jsonl(
-                ERRORS_PATH,
-                {
-                    "subject_id": subject_id,
-                    "stim_id": stim_id,
-                    "error": "API failed after retries",
-                },
-            )
+            logger.error(f"  [{subject_id}×{stim_id}] API failed after retries — skipping pair.")
             return {"subject_id": subject_id, "stim_id": stim_id, "status": "failed"}
 
         # Guard: drop any node_ids not in this codebook (model hallucination)
@@ -398,16 +368,6 @@ class RecallScorer:
         await _write_score_rows(rows)
 
         n_recalled = len(rows)
-        await _append_jsonl(
-            RESULTS_PATH,
-            {
-                "subject_id": subject_id,
-                "stim_id": stim_id,
-                "status": "ok",
-                "n_nodes": len(nodes),
-                "n_recalled": n_recalled,
-            },
-        )
 
         async with self._lock:
             self.processed += 1
@@ -544,25 +504,6 @@ def fill_zeros(pairs: list, codebooks: dict) -> int:
     return len(zero_rows)
 
 
-# ---------------------------------------------------------------------------
-# Manifest
-# ---------------------------------------------------------------------------
-
-
-def save_manifest(results: list, model: str) -> None:
-    MANIFEST_PATH.parent.mkdir(parents=True, exist_ok=True)
-    manifest = {
-        "model": model,
-        "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S"),
-        "n_total": len(results),
-        "n_ok": sum(1 for r in results if r["status"] in ("ok", "ok_empty")),
-        "n_failed": sum(1 for r in results if r["status"] == "failed"),
-        "results": results,
-    }
-    with open(MANIFEST_PATH, "w", encoding="utf-8") as f:
-        json.dump(manifest, f, indent=2, ensure_ascii=False)
-    logger.info(f"Score manifest written -> {MANIFEST_PATH}")
-
 
 # ---------------------------------------------------------------------------
 # Async main
@@ -635,8 +576,6 @@ async def run(args) -> None:
 
     logger.info("\nFilling in recalled=0 for unscored nodes ...")
     fill_zeros(pairs, {stim_id: nodes for _, stim_id, _, nodes in pairs})
-
-    save_manifest(list(results), args.model)
 
     n_ok = sum(1 for r in results if r["status"] in ("ok", "ok_empty"))
     n_failed = sum(1 for r in results if r["status"] == "failed")

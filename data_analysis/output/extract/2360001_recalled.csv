@@ -1,0 +1,179 @@
+SubjectID,StimID,node_id,concept,content_type,evidence_type,status,recalled,matched_phrase
+Encode-Decode_Experiment-1-1,2360001,2360001_002,four,object_attribute,literal,correct,1,four people
+Encode-Decode_Experiment-1-1,2360001,2360001_003,multiple,object_attribute,literal,correct,1,four people
+Encode-Decode_Experiment-1-1,2360001,2360001_004,people,object_identity,literal,correct,1,people
+Encode-Decode_Experiment-1-1,2360001,2360001_005,person,object_identity,literal,correct,1,people
+Encode-Decode_Experiment-1-1,2360001,2360001_006,clock,object_identity,literal,correct,1,a clock
+Encode-Decode_Experiment-1-1,2360001,2360001_007,scaffold,object_identity,literal,correct,1,a scaffold
+Encode-Decode_Experiment-1-1,2360001,2360001_019,standing,action_relation,literal,correct,1,standing
+Encode-Decode_Experiment-1-1,2360001,2360001_022,putting up,action_relation,latent,correct,1,fixing a clock
+Encode-Decode_Experiment-1-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on a scaffold
+Encode-Decode_Experiment-11-1,2360001,2360001_002,four,object_attribute,literal,correct,1,4 men
+Encode-Decode_Experiment-11-1,2360001,2360001_003,multiple,object_attribute,literal,correct,1,4 men
+Encode-Decode_Experiment-11-1,2360001,2360001_005,person,object_identity,literal,correct,1,men
+Encode-Decode_Experiment-11-1,2360001,2360001_005a,man,object_attribute,latent,correct,1,men
+Encode-Decode_Experiment-11-1,2360001,2360001_006,clock,object_identity,literal,correct,1,big clock
+Encode-Decode_Experiment-11-1,2360001,2360001_015,big,object_attribute,literal,correct,1,big clock
+Encode-Decode_Experiment-11-1,2360001,2360001_019,standing,action_relation,literal,correct,1,standing
+Encode-Decode_Experiment-11-1,2360001,2360001_020,raising,action_relation,literal,correct,1,raising
+Encode-Decode_Experiment-11-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on something
+Encode-Decode_Experiment-12-1,2360001,2360001_003,multiple,object_attribute,literal,correct,1,a few men
+Encode-Decode_Experiment-12-1,2360001,2360001_005,person,object_identity,literal,correct,1,men
+Encode-Decode_Experiment-12-1,2360001,2360001_005a,man,object_attribute,latent,correct,1,men
+Encode-Decode_Experiment-12-1,2360001,2360001_006,clock,object_identity,literal,correct,1,clock
+Encode-Decode_Experiment-12-1,2360001,2360001_008,scaffolding,object_identity,literal,correct,1,scaffolding
+Encode-Decode_Experiment-12-1,2360001,2360001_015,big,object_attribute,literal,correct,1,big old clock
+Encode-Decode_Experiment-12-1,2360001,2360001_022,putting up,action_relation,latent,correct,1,putting up
+Encode-Decode_Experiment-12-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on scaffolding
+Encode-Decode_Experiment-13-1,2360001,2360001_002,four,object_attribute,literal,correct,1,4 men
+Encode-Decode_Experiment-13-1,2360001,2360001_005,person,object_identity,literal,correct,1,men
+Encode-Decode_Experiment-13-1,2360001,2360001_005a,man,object_attribute,latent,correct,1,men
+Encode-Decode_Experiment-13-1,2360001,2360001_006,clock,object_identity,literal,correct,1,clock
+Encode-Decode_Experiment-13-1,2360001,2360001_008,scaffolding,object_identity,literal,correct,1,scaffolding
+Encode-Decode_Experiment-13-1,2360001,2360001_010,building,object_identity,literal,correct,1,building
+Encode-Decode_Experiment-13-1,2360001,2360001_020,raising,action_relation,literal,correct,1,raising
+Encode-Decode_Experiment-13-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on scaffolding
+Encode-Decode_Experiment-13-1,2360001,2360001_027,left side,spatial_relation,literal,correct,1,left side of building
+Encode-Decode_Experiment-14-1,2360001,2360001_003,multiple,object_attribute,literal,correct,1,a group of people
+Encode-Decode_Experiment-14-1,2360001,2360001_004,people,object_identity,literal,correct,1,people
+Encode-Decode_Experiment-14-1,2360001,2360001_006,clock,object_identity,literal,correct,1,the clock
+Encode-Decode_Experiment-14-1,2360001,2360001_008,scaffolding,object_identity,literal,correct,1,scaffolding
+Encode-Decode_Experiment-14-1,2360001,2360001_019,standing,action_relation,literal,correct,1,stood
+Encode-Decode_Experiment-14-1,2360001,2360001_020,raising,action_relation,literal,correct,1,attempting to raise
+Encode-Decode_Experiment-14-1,2360001,2360001_022,putting up,action_relation,latent,correct,1,raise the clock
+Encode-Decode_Experiment-14-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on scaffolding
+Encode-Decode_Experiment-15-1,2360001,2360001_003,multiple,object_attribute,literal,correct,1,multiple men
+Encode-Decode_Experiment-15-1,2360001,2360001_005,person,object_identity,literal,correct,1,men
+Encode-Decode_Experiment-15-1,2360001,2360001_005a,man,object_attribute,latent,correct,1,men
+Encode-Decode_Experiment-15-1,2360001,2360001_006,clock,object_identity,literal,correct,1,clock
+Encode-Decode_Experiment-15-1,2360001,2360001_008,scaffolding,object_identity,literal,correct,1,scaffolding
+Encode-Decode_Experiment-15-1,2360001,2360001_012,photo,object_identity,literal,correct,1,image
+Encode-Decode_Experiment-15-1,2360001,2360001_013,black,object_attribute,literal,correct,1,balck and white image
+Encode-Decode_Experiment-15-1,2360001,2360001_014,white,object_attribute,literal,correct,1,balck and white image
+Encode-Decode_Experiment-15-1,2360001,2360001_016,large,object_attribute,literal,correct,1,large clock
+Encode-Decode_Experiment-15-1,2360001,2360001_019,standing,action_relation,literal,correct,1,stood
+Encode-Decode_Experiment-15-1,2360001,2360001_020,raising,action_relation,literal,correct,1,raising
+Encode-Decode_Experiment-15-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on scaffolding
+Encode-Decode_Experiment-15-1,2360001,2360001_026,above,spatial_relation,literal,correct,1,above their heads
+Encode-Decode_Experiment-16-1,2360001,2360001_002,four,object_attribute,literal,correct,1,four men
+Encode-Decode_Experiment-16-1,2360001,2360001_005,person,object_identity,literal,correct,1,men
+Encode-Decode_Experiment-16-1,2360001,2360001_005a,man,object_attribute,latent,correct,1,men
+Encode-Decode_Experiment-16-1,2360001,2360001_006,clock,object_identity,literal,correct,1,clock
+Encode-Decode_Experiment-16-1,2360001,2360001_008,scaffolding,object_identity,literal,correct,1,scaffoling
+Encode-Decode_Experiment-16-1,2360001,2360001_012,photo,object_identity,literal,correct,1,photo
+Encode-Decode_Experiment-16-1,2360001,2360001_013,black,object_attribute,literal,correct,1,black and white photo
+Encode-Decode_Experiment-16-1,2360001,2360001_014,white,object_attribute,literal,correct,1,black and white photo
+Encode-Decode_Experiment-16-1,2360001,2360001_019,standing,action_relation,literal,correct,1,standing
+Encode-Decode_Experiment-16-1,2360001,2360001_022,putting up,action_relation,latent,correct,1,holding up clock
+Encode-Decode_Experiment-16-1,2360001,2360001_023,holding,action_relation,literal,correct,1,holding up clock
+Encode-Decode_Experiment-16-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on scaffoling
+Encode-Decode_Experiment-2-1,2360001,2360001_003,multiple,object_attribute,literal,correct,1,bunch of people
+Encode-Decode_Experiment-2-1,2360001,2360001_004,people,object_identity,literal,correct,1,people
+Encode-Decode_Experiment-2-1,2360001,2360001_006,clock,object_identity,literal,correct,1,a clock
+Encode-Decode_Experiment-2-1,2360001,2360001_008,scaffolding,object_identity,literal,correct,1,scaffolding
+Encode-Decode_Experiment-2-1,2360001,2360001_012,photo,object_identity,literal,correct,1,picture
+Encode-Decode_Experiment-2-1,2360001,2360001_013,black,object_attribute,literal,correct,1,balck and whote
+Encode-Decode_Experiment-2-1,2360001,2360001_014,white,object_attribute,literal,correct,1,balck and whote
+Encode-Decode_Experiment-2-1,2360001,2360001_019,standing,action_relation,literal,correct,1,standing
+Encode-Decode_Experiment-2-1,2360001,2360001_020,raising,action_relation,literal,correct,1,raising
+Encode-Decode_Experiment-2-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on the scaffolding
+Encode-Decode_Experiment-3-1,2360001,2360001_003,multiple,object_attribute,literal,correct,1,3 men
+Encode-Decode_Experiment-3-1,2360001,2360001_005,person,object_identity,literal,correct,1,3 men
+Encode-Decode_Experiment-3-1,2360001,2360001_005a,man,object_attribute,latent,correct,1,men
+Encode-Decode_Experiment-3-1,2360001,2360001_006,clock,object_identity,literal,correct,1,clock
+Encode-Decode_Experiment-3-1,2360001,2360001_008,scaffolding,object_identity,literal,correct,1,scaffolding
+Encode-Decode_Experiment-3-1,2360001,2360001_011,street,scene_gist,literal,correct,1,street
+Encode-Decode_Experiment-3-1,2360001,2360001_019,standing,action_relation,literal,correct,1,stand
+Encode-Decode_Experiment-3-1,2360001,2360001_022,putting up,action_relation,latent,correct,1,putting clock up
+Encode-Decode_Experiment-3-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on scaffolding
+Encode-Decode_Experiment-5-1,2360001,2360001_002,four,object_attribute,literal,correct,1,3 or 4 men
+Encode-Decode_Experiment-5-1,2360001,2360001_003,multiple,object_attribute,literal,correct,1,3 or 4 men
+Encode-Decode_Experiment-5-1,2360001,2360001_005,person,object_identity,literal,correct,1,men
+Encode-Decode_Experiment-5-1,2360001,2360001_005a,man,object_attribute,latent,correct,1,men
+Encode-Decode_Experiment-5-1,2360001,2360001_006,clock,object_identity,literal,correct,1,large clock
+Encode-Decode_Experiment-5-1,2360001,2360001_009,plank,object_identity,literal,correct,1,wooden plank
+Encode-Decode_Experiment-5-1,2360001,2360001_011,street,scene_gist,literal,correct,1,on a street
+Encode-Decode_Experiment-5-1,2360001,2360001_012,photo,object_identity,literal,correct,1,image
+Encode-Decode_Experiment-5-1,2360001,2360001_013,black,object_attribute,literal,correct,1,black and white image
+Encode-Decode_Experiment-5-1,2360001,2360001_014,white,object_attribute,literal,correct,1,black and white image
+Encode-Decode_Experiment-5-1,2360001,2360001_016,large,object_attribute,literal,correct,1,large clock
+Encode-Decode_Experiment-5-1,2360001,2360001_018,wooden,object_attribute,literal,correct,1,wooden plank
+Encode-Decode_Experiment-5-1,2360001,2360001_019,standing,action_relation,literal,correct,1,stood
+Encode-Decode_Experiment-5-1,2360001,2360001_020,raising,action_relation,literal,correct,1,attempting to raise
+Encode-Decode_Experiment-5-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on a street
+Encode-Decode_Experiment-6-1,2360001,2360001_002,four,object_attribute,literal,correct,1,4 men
+Encode-Decode_Experiment-6-1,2360001,2360001_005,person,object_identity,literal,correct,1,men
+Encode-Decode_Experiment-6-1,2360001,2360001_005a,man,object_attribute,latent,correct,1,men
+Encode-Decode_Experiment-6-1,2360001,2360001_006,clock,object_identity,literal,correct,1,a clock
+Encode-Decode_Experiment-6-1,2360001,2360001_007,scaffold,object_identity,literal,correct,1,a scaffold
+Encode-Decode_Experiment-6-1,2360001,2360001_012,photo,object_identity,literal,correct,1,picture
+Encode-Decode_Experiment-6-1,2360001,2360001_013,black,object_attribute,literal,correct,1,black and white picture
+Encode-Decode_Experiment-6-1,2360001,2360001_014,white,object_attribute,literal,correct,1,black and white picture
+Encode-Decode_Experiment-6-1,2360001,2360001_020,raising,action_relation,literal,correct,1,raising
+Encode-Decode_Experiment-6-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on a scaffold
+Encode-Decode_Experiment-7-1,2360001,2360001_002,four,object_attribute,literal,correct,1,4 men
+Encode-Decode_Experiment-7-1,2360001,2360001_005,person,object_identity,literal,correct,1,men
+Encode-Decode_Experiment-7-1,2360001,2360001_005a,man,object_attribute,latent,correct,1,men
+Encode-Decode_Experiment-7-1,2360001,2360001_006,clock,object_identity,literal,correct,1,big clock
+Encode-Decode_Experiment-7-1,2360001,2360001_008,scaffolding,object_identity,literal,correct,1,scafolding
+Encode-Decode_Experiment-7-1,2360001,2360001_012,photo,object_identity,literal,correct,1,photo
+Encode-Decode_Experiment-7-1,2360001,2360001_013,black,object_attribute,literal,correct,1,black and white photo
+Encode-Decode_Experiment-7-1,2360001,2360001_014,white,object_attribute,literal,correct,1,black and white photo
+Encode-Decode_Experiment-7-1,2360001,2360001_015,big,object_attribute,literal,correct,1,big clock
+Encode-Decode_Experiment-7-1,2360001,2360001_019,standing,action_relation,literal,correct,1,standing
+Encode-Decode_Experiment-7-1,2360001,2360001_023,holding,action_relation,literal,correct,1,holding up
+Encode-Decode_Experiment-7-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on scafolding
+Encode-Decode_Experiment-8-1,2360001,2360001_002,four,object_attribute,literal,correct,1,4 men
+Encode-Decode_Experiment-8-1,2360001,2360001_005,person,object_identity,literal,correct,1,men
+Encode-Decode_Experiment-8-1,2360001,2360001_005a,man,object_attribute,latent,correct,1,men
+Encode-Decode_Experiment-8-1,2360001,2360001_006,clock,object_identity,literal,correct,1,big clock
+Encode-Decode_Experiment-8-1,2360001,2360001_008,scaffolding,object_identity,literal,correct,1,scaffolding
+Encode-Decode_Experiment-8-1,2360001,2360001_012,photo,object_identity,literal,correct,1,photo
+Encode-Decode_Experiment-8-1,2360001,2360001_013,black,object_attribute,literal,correct,1,black and white photo
+Encode-Decode_Experiment-8-1,2360001,2360001_014,white,object_attribute,literal,correct,1,black and white photo
+Encode-Decode_Experiment-8-1,2360001,2360001_015,big,object_attribute,literal,correct,1,big clock
+Encode-Decode_Experiment-8-1,2360001,2360001_019,standing,action_relation,literal,correct,1,stood
+Encode-Decode_Experiment-8-1,2360001,2360001_023,holding,action_relation,literal,correct,1,holding up
+Encode-Decode_Experiment-8-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on scaffolding
+Encode-Decode_Experiment-9-1,2360001,2360001_003,multiple,object_attribute,literal,correct,1,3 men
+Encode-Decode_Experiment-9-1,2360001,2360001_005,person,object_identity,literal,correct,1,3 men
+Encode-Decode_Experiment-9-1,2360001,2360001_005a,man,object_attribute,latent,correct,1,3 men
+Encode-Decode_Experiment-9-1,2360001,2360001_006,clock,object_identity,literal,correct,1,a big clock
+Encode-Decode_Experiment-9-1,2360001,2360001_008,scaffolding,object_identity,literal,correct,1,scaffolding
+Encode-Decode_Experiment-9-1,2360001,2360001_010,building,object_identity,literal,correct,1,a building
+Encode-Decode_Experiment-9-1,2360001,2360001_012,photo,object_identity,literal,correct,1,the picture
+Encode-Decode_Experiment-9-1,2360001,2360001_013,black,object_attribute,literal,correct,1,black and white
+Encode-Decode_Experiment-9-1,2360001,2360001_014,white,object_attribute,literal,correct,1,black and white
+Encode-Decode_Experiment-9-1,2360001,2360001_015,big,object_attribute,literal,correct,1,big clock
+Encode-Decode_Experiment-9-1,2360001,2360001_019,standing,action_relation,literal,correct,1,were standing
+Encode-Decode_Experiment-9-1,2360001,2360001_020,raising,action_relation,literal,correct,1,were raising
+Encode-Decode_Experiment-9-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on scaffolding
+Encode-Decode_Experiment-9-1,2360001,2360001_028,onto,spatial_relation,literal,correct,1,onto a building
+Encode-Decode_Experiment-17-1,2360001,2360001_002,four,object_attribute,literal,correct,1,4 men
+Encode-Decode_Experiment-17-1,2360001,2360001_005,person,object_identity,literal,correct,1,men
+Encode-Decode_Experiment-17-1,2360001,2360001_005a,man,object_attribute,latent,correct,1,men
+Encode-Decode_Experiment-17-1,2360001,2360001_006,clock,object_identity,literal,correct,1,big clock
+Encode-Decode_Experiment-17-1,2360001,2360001_008,scaffolding,object_identity,literal,correct,1,on scaffolding
+Encode-Decode_Experiment-17-1,2360001,2360001_015,big,object_attribute,literal,correct,1,big clock
+Encode-Decode_Experiment-17-1,2360001,2360001_019,standing,action_relation,literal,correct,1,standing
+Encode-Decode_Experiment-17-1,2360001,2360001_020,raising,action_relation,literal,correct,1,raise
+Encode-Decode_Experiment-17-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on scaffolding
+Encode-Decode_Experiment-18-1,2360001,2360001_002,four,object_attribute,literal,correct,1,four
+Encode-Decode_Experiment-18-1,2360001,2360001_005,person,object_identity,literal,correct,1,workmen
+Encode-Decode_Experiment-18-1,2360001,2360001_005a,man,object_attribute,latent,correct,1,workmen
+Encode-Decode_Experiment-18-1,2360001,2360001_006,clock,object_identity,literal,correct,1,big clock
+Encode-Decode_Experiment-18-1,2360001,2360001_008,scaffolding,object_identity,literal,correct,1,scaffolding
+Encode-Decode_Experiment-18-1,2360001,2360001_015,big,object_attribute,literal,correct,1,big clock
+Encode-Decode_Experiment-18-1,2360001,2360001_019,standing,action_relation,literal,correct,1,standing
+Encode-Decode_Experiment-18-1,2360001,2360001_020,raising,action_relation,literal,correct,1,lifting up
+Encode-Decode_Experiment-18-1,2360001,2360001_022,putting up,action_relation,latent,correct,1,lifting up
+Encode-Decode_Experiment-18-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on scaffolding
+Encode-Decode_Experiment-19-1,2360001,2360001_003,multiple,object_attribute,literal,correct,1,three guys
+Encode-Decode_Experiment-19-1,2360001,2360001_005,person,object_identity,literal,correct,1,guys
+Encode-Decode_Experiment-19-1,2360001,2360001_005a,man,object_attribute,latent,correct,1,guys
+Encode-Decode_Experiment-19-1,2360001,2360001_006,clock,object_identity,literal,correct,1,a clock
+Encode-Decode_Experiment-19-1,2360001,2360001_008,scaffolding,object_identity,literal,correct,1,scaffolding
+Encode-Decode_Experiment-19-1,2360001,2360001_019,standing,action_relation,literal,correct,1,stoof on scaffolding
+Encode-Decode_Experiment-19-1,2360001,2360001_020,raising,action_relation,literal,correct,1,liftimng up
+Encode-Decode_Experiment-19-1,2360001,2360001_022,putting up,action_relation,latent,correct,1,liftimng up a clock
+Encode-Decode_Experiment-19-1,2360001,2360001_025,on,spatial_relation,literal,correct,1,on scaffolding

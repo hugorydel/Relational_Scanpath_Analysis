@@ -638,6 +638,11 @@ def summarise(
 
     enc = filtered.get("enc", pd.DataFrame())
 
+    # Write full enc table for use by test scripts
+    if not enc.empty:
+        enc.to_csv(fig_data_dir / "analysis_enc.csv", index=False)
+        logger.info("  Written → figure_data/analysis_enc.csv")
+
     # ── Model summaries text ────────────────────────────────────────────────
     all_coefs      = []
     summary_lines  = [_descriptives(filtered)]

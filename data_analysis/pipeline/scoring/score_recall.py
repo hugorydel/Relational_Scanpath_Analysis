@@ -217,20 +217,21 @@ def load_codebook(stim_id: str) -> list | None:
 
 
 def load_processed_pairs() -> set:
-    """Return set of (subject_id, stim_id) pairs already in score_results.jsonl."""
+    """
+    Return set of (subject_id, stim_id) pairs that already have at least one
+    row in recall_scores.csv. This is the source of truth — the jsonl can be
+    stale if a run was interrupted after logging but before writing CSV rows.
+    """
     processed = set()
-    if not RESULTS_PATH.exists():
+    if not SCORES_CSV.exists():
         return processed
-    with open(RESULTS_PATH, encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if line:
-                try:
-                    r = json.loads(line)
-                    processed.add((r["subject_id"], r["stim_id"]))
-                except (json.JSONDecodeError, KeyError):
-                    continue
-    logger.info(f"Found {len(processed)} already-scored (subject, stim) pairs.")
+    with open(SCORES_CSV, newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            subj = row.get("SubjectID", "").strip()
+            stim = row.get("StimID", "").strip()
+            if subj and stim:
+                processed.add((subj, stim))
+    logger.info(f"Found {len(processed)} already-scored (subject, stim) pairs in recall_scores.csv.")
     return processed
 
 

@@ -37,7 +37,19 @@ ENC_COVARIATES = [
 # Between-image SVG covariate — included in H2/Exploratory models alongside
 # the within-image predictor to decompose participant-level from image-level
 # SVG variance. Computed in loader.py via per-StimID mean centering.
-ENC_BETWEEN_COVARIATES = ["svg_z_enc_image_mean"]
+#
+# svg_z_enc_image_mean : image-level relational pull (mean SVG across participants)
+# svg_z_enc_within_sd  : per-image SD of within-image SVG — controls for images
+#                        where predictor variance is restricted (e.g. everyone
+#                        scans similarly relationally → weak correlation)
+# prop_total_image_sd  : per-image SD of total recall — controls for images
+#                        where outcome variance is restricted (gist-dominant
+#                        images where recall is near-uniform across participants)
+ENC_BETWEEN_COVARIATES = [
+    "svg_z_enc_image_mean",
+    "svg_z_enc_within_sd",
+    "prop_total_image_sd",
+]
 
 # ---------------------------------------------------------------------------
 # Dependent variables

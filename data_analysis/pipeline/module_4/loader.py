@@ -305,6 +305,40 @@ def apply_exclusions(tables: dict, flags_path: Path | None = None) -> dict:
         f"(should be ~0), sd={enc_filtered['svg_z_enc_within'].std():.4f}"
     )
 
+    # ------------------------------------------------------------------
+    # Per-image variance controls
+    #
+    # svg_z_enc_within_sd : SD of within-image SVG across participants.
+    #   Images where everyone scans similarly (low SD) contribute less
+    #   reliable predictor signal — e.g. 2348899 (tie), svg_mean=3.23.
+    #
+    # prop_total_image_sd : SD of prop_total across participants per image.
+    #   Images where recall is near-uniform (low SD) have little outcome
+    #   variance for the regression to detect — e.g. gist-dominant images.
+    # ------------------------------------------------------------------
+    stim_svg_within_sd = (
+        enc_filtered.groupby("StimID")["svg_z_enc_within"]
+        .std()
+        .rename("svg_z_enc_within_sd")
+    )
+    enc_filtered = enc_filtered.merge(stim_svg_within_sd, on="StimID", how="left")
+
+    if DV_TOTAL in enc_filtered.columns:
+        stim_prop_sd = (
+            enc_filtered.groupby("StimID")[DV_TOTAL]
+            .std()
+            .rename("prop_total_image_sd")
+        )
+        enc_filtered = enc_filtered.merge(stim_prop_sd, on="StimID", how="left")
+    else:
+        enc_filtered["prop_total_image_sd"] = np.nan
+
+    logger.info(
+        f"  Variance controls: "
+        f"svg_within_sd mean={enc_filtered['svg_z_enc_within_sd'].mean():.3f}, "
+        f"prop_total_sd mean={enc_filtered['prop_total_image_sd'].mean():.3f}"
+    )
+
     # Apply same exclusions to long table
     enc_long = tables["enc_long"]
     before_long = len(enc_long)
@@ -321,9 +355,10 @@ def apply_exclusions(tables: dict, flags_path: Path | None = None) -> dict:
         f"(low_n + wrong-image exclusions)"
     )
 
-    # Propagate decomposition columns into enc_long via SubjectID × StimID
+    # Propagate decomposition + variance columns into enc_long via SubjectID × StimID
     decomp_cols = enc_filtered[
-        ["SubjectID", "StimID", "svg_z_enc_within", "svg_z_enc_image_mean"]
+        ["SubjectID", "StimID", "svg_z_enc_within", "svg_z_enc_image_mean",
+         "svg_z_enc_within_sd", "prop_total_image_sd"]
     ]
     enc_long_filtered = enc_long_filtered.merge(
         decomp_cols, on=["SubjectID", "StimID"], how="left"

@@ -218,10 +218,15 @@ def _partial_regression_plot(enc: pd.DataFrame, output_path: Path) -> None:
         ax.tick_params(labelsize=8)
         ax.spines[["top", "right"]].set_visible(False)
 
+    all_cov_names = (
+        [c.replace("_enc", "").replace("_z", "") for c in ENC_COVARIATES]
+        + [c.replace("_z", "") for c in ENC_BETWEEN_COVARIATES]
+        + ["SubjectID"]
+    )
+    cov_str = ", ".join(all_cov_names)
     fig.suptitle(
         "Partial regression: Encoding SVG (within-image) → memory recall (proportion DVs)\n"
-        "Covariates removed: n_fixations, aoi_prop, mean_salience_relational,"
-        " svg_z_enc_image_mean, SubjectID",
+        f"Covariates removed: {cov_str}",
         fontsize=9,
         y=1.02,
     )

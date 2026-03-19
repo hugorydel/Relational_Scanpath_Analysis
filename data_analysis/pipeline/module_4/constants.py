@@ -29,16 +29,13 @@ PILOT_SUBJ_THRESHOLD = 10
 
 ENC_COVARIATES = [
     "n_fixations_enc",
-    "aoi_prop_enc",
     "mean_salience_relational_enc",
-    "enc_total_correct",
 ]
 
-# Between-image SVG covariate — included in H2/Exploratory models alongside
-# the within-image predictor to decompose participant-level from image-level
-# SVG variance. Computed in loader.py via per-StimID mean centering.
-ENC_BETWEEN_COVARIATES = ["svg_z_enc_image_mean","svg_z_enc_within_sd",
-    "prop_total_image_sd"]
+# Between-image covariates:
+#   svg_z_enc_image_mean : image-level mean relationality — controls for images
+#                          that are inherently more relationally structured.
+ENC_BETWEEN_COVARIATES = ["svg_z_enc_image_mean"]
 
 # ---------------------------------------------------------------------------
 # Decoding covariate lists

@@ -1,0 +1,47 @@
+============================================================
+Inter-rater Reliability Summary
+============================================================
+
+Note on comparison levels:
+  AI-1 vs AI-2  : node-level (binary recalled per node_id) — strongest test
+  AI vs Human   : category-level counts only (human has no node IDs)
+
+============================================================
+AI-1 vs AI-2 (node-level)
+============================================================
+  Level         : node
+  N pairs       : 213
+  N nodes       : 7554
+  % agreement   : 97.4%
+  Cohen's kappa : 0.9265
+  Confusion     : TP=1668, TN=5687, FP=97, FN=102
+
+============================================================
+AI-1 vs Human (category-level)
+============================================================
+  N pairs       : 214
+  Overall r     : 0.8821
+  Overall ICC   : 0.7495
+  Overall MAE   : 2.369 nodes
+
+  Per content type:
+    object_identity         r=+0.713  ICC=+0.638  MAE=1.01
+    object_attribute        r=+0.677  ICC=+0.481  MAE=1.40
+    action_relation         r=+0.730  ICC=+0.678  MAE=0.40
+    spatial_relation        r=+0.776  ICC=+0.752  MAE=0.47
+    scene_gist              r=+0.534  ICC=+0.455  MAE=0.23
+
+============================================================
+AI-2 vs Human (category-level)
+============================================================
+  N pairs       : 214
+  Overall r     : 0.8718
+  Overall ICC   : 0.7686
+  Overall MAE   : 2.131 nodes
+
+  Per content type:
+    object_identity         r=+0.720  ICC=+0.601  MAE=1.14
+    object_attribute        r=+0.681  ICC=+0.603  MAE=0.91
+    action_relation         r=+0.740  ICC=+0.666  MAE=0.43
+    spatial_relation        r=+0.768  ICC=+0.742  MAE=0.49
+    scene_gist              r=+0.540  ICC=+0.470  MAE=0.24

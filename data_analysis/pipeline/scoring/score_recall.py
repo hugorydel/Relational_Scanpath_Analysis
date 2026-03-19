@@ -72,8 +72,8 @@ MAX_RETRIES = 5
 INITIAL_RETRY_DELAY = 1.0
 DEFAULT_CONCURRENCY = 10
 
-FINAL_DIR = config.OUTPUT_DIR / "codebooks" / "final"
-RAW_DIR = config.OUTPUT_DIR / "codebooks" / "raw"
+EDITED_DIR = config.OUTPUT_CODEBOOKS_EDITED_DIR  # edited/ is the source of truth
+RAW_DIR   = config.OUTPUT_CODEBOOKS_RAW_DIR     # raw/ fallback (pre-edit)
 SCORING_DIR = config.OUTPUT_DIR / "scoring"
 SCORES_CSV = SCORING_DIR / "recall_scores.csv"
 
@@ -196,16 +196,16 @@ def load_responses() -> dict:
 def load_codebook(stim_id: str) -> list | None:
     """
     Load the codebook for a StimID.
-    Tries final/ first, falls back to raw/ if not found.
+    Tries edited/ first, falls back to raw/ if not found.
     Returns None if neither exists.
     """
-    for directory in (FINAL_DIR, RAW_DIR):
+    for directory in (EDITED_DIR, RAW_DIR):
         path = directory / f"{stim_id}_codebook.json"
         if path.exists():
             logger.info(f"  [{stim_id}] loading codebook from {directory.name}/")
             with open(path, encoding="utf-8") as f:
                 return json.load(f)
-    logger.warning(f"  [{stim_id}] no codebook found in final/ or raw/ — skipping")
+    logger.warning(f"  [{stim_id}] no codebook found in edited/ or raw/ — skipping")
     return None
 
 
@@ -436,7 +436,9 @@ async def _write_score_rows(rows: list[dict]) -> None:
         SCORING_DIR.mkdir(parents=True, exist_ok=True)
         write_header = not SCORES_CSV.exists()
         with open(SCORES_CSV, "a", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=SCORES_FIELDNAMES)
+            writer = csv.DictWriter(
+                f, fieldnames=SCORES_FIELDNAMES, quoting=csv.QUOTE_ALL
+            )
             if write_header:
                 writer.writeheader()
             writer.writerows(rows)
@@ -493,7 +495,9 @@ def fill_zeros(pairs: list, codebooks: dict) -> int:
         SCORING_DIR.mkdir(parents=True, exist_ok=True)
         write_header = not SCORES_CSV.exists()
         with open(SCORES_CSV, "a", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=SCORES_FIELDNAMES)
+            writer = csv.DictWriter(
+                f, fieldnames=SCORES_FIELDNAMES, quoting=csv.QUOTE_ALL
+            )
             if write_header:
                 writer.writeheader()
             writer.writerows(zero_rows)
@@ -623,8 +627,8 @@ def main():
     logger.info(f"  Stim filter     : {args.stim or 'all'}")
     logger.info(f"  Subject filter  : {args.subject or 'all'}")
     logger.info(f"  Max concurrency : {args.max_concurrency}")
-    logger.info(f"  Codebooks (final/): {FINAL_DIR}")
-    logger.info(f"  Codebooks (raw/):   {RAW_DIR}  (fallback)")
+    logger.info(f"  Codebooks (edited/): {EDITED_DIR}")
+    logger.info(f"  Codebooks (raw/):    {RAW_DIR}  (fallback)")
     logger.info(f"  Output          : {SCORING_DIR}")
 
     asyncio.run(run(args))

@@ -22,6 +22,11 @@ OUTPUT_BEHAVIORAL_DIR = OUTPUT_DIR / "behavioral"
 OUTPUT_EYETRACKING_DIR = OUTPUT_DIR / "eyetracking"
 OUTPUT_FEATURES_DIR = OUTPUT_DIR / "features"
 
+# Codebook directories
+OUTPUT_CODEBOOKS_DIR        = OUTPUT_DIR / "codebooks"
+OUTPUT_CODEBOOKS_RAW_DIR    = OUTPUT_CODEBOOKS_DIR / "raw"     # generate_codebook.py output
+OUTPUT_CODEBOOKS_EDITED_DIR = OUTPUT_CODEBOOKS_DIR / "edited"  # edit_codebook.py output (source of truth for scoring)
+
 METADATA_FILE = DATA_METADATA_DIR / "stimuli_dataset.json"
 
 # ---------------------------------------------------------------------------

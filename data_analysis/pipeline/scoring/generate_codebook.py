@@ -65,10 +65,10 @@ INITIAL_RETRY_DELAY = 1.0
 DEFAULT_CONCURRENCY = 30
 
 REASONING_EFFORT = config.REASONING_EFFORT
-OUTPUT_DIR = config.OUTPUT_DIR / "codebooks" / "raw"
-RESULTS_PATH = config.OUTPUT_DIR / "codebooks" / "results.jsonl"
-ERRORS_PATH = config.OUTPUT_DIR / "codebooks" / "errors.jsonl"
-MANIFEST_PATH = config.OUTPUT_DIR / "codebooks" / "manifest.json"
+OUTPUT_DIR    = config.OUTPUT_CODEBOOKS_RAW_DIR
+RESULTS_PATH  = config.OUTPUT_CODEBOOKS_DIR / "results.jsonl"
+ERRORS_PATH   = config.OUTPUT_CODEBOOKS_DIR / "errors.jsonl"
+MANIFEST_PATH = config.OUTPUT_CODEBOOKS_DIR / "manifest.json"
 IMAGES_DIR = config.DATA_METADATA_DIR / "images"
 
 

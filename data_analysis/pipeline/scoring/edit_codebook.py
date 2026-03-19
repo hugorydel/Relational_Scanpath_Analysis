@@ -66,12 +66,12 @@ MAX_RETRIES = 5
 INITIAL_RETRY_DELAY = 1.0
 DEFAULT_CONCURRENCY = 3  # Vision calls are heavy — keep this low
 
-RAW_DIR = config.OUTPUT_DIR / "codebooks" / "raw"
-EDITED_DIR = config.OUTPUT_DIR / "codebooks" / "edited"
+RAW_DIR = config.OUTPUT_CODEBOOKS_RAW_DIR
+EDITED_DIR = config.OUTPUT_CODEBOOKS_EDITED_DIR
 IMAGES_DIR = config.DATA_METADATA_DIR / "images"
-RESULTS_PATH = config.OUTPUT_DIR / "codebooks" / "edit_results.jsonl"
-ERRORS_PATH = config.OUTPUT_DIR / "codebooks" / "edit_errors.jsonl"
-MANIFEST_PATH = config.OUTPUT_DIR / "codebooks" / "edit_manifest.json"
+RESULTS_PATH = config.OUTPUT_CODEBOOKS_DIR / "edit_results.jsonl"
+ERRORS_PATH = config.OUTPUT_CODEBOOKS_DIR / "edit_errors.jsonl"
+MANIFEST_PATH = config.OUTPUT_CODEBOOKS_DIR / "edit_manifest.json"
 
 VALID_CONTENT_TYPES = {
     "object_identity",

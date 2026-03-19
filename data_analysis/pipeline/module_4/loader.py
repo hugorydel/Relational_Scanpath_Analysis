@@ -26,6 +26,8 @@ import pandas as pd
 
 from .constants import (
     DEFAULT_FLAGS_PATH,
+    DEC_BETWEEN_COVARIATES,
+    DEC_COVARIATES,
     DV_OBJECTS,
     DV_RELATIONS,
     DV_TOTAL,
@@ -226,7 +228,22 @@ def build_analysis_tables(df: pd.DataFrame, memory_scores: pd.DataFrame) -> dict
         f"{obj_rows['score'].notna().sum()} object rows with data)"
     )
 
-    return {"enc": enc, "enc_long": enc_long}
+    # Decoding table — blank-screen recall phase
+    dec = df[df["Phase"] == "decoding"].copy()
+    dec = dec.rename(
+        columns={
+            "svg_z": "svg_z_dec",
+            "n_fixations": "n_fixations_dec",
+            "aoi_prop": "aoi_prop_dec",
+            "mean_salience": "mean_salience_dec",
+            "mean_salience_relational": "mean_salience_relational_dec",
+            "low_n": "low_n_dec",
+        }
+    ).reset_index(drop=True)
+    dec = dec.merge(memory_scores, on=["SubjectID", "StimID"], how="left")
+    logger.info(f"  dec table:      {len(dec)} rows")
+
+    return {"enc": enc, "enc_long": enc_long, "dec": dec}
 
 
 # ---------------------------------------------------------------------------
@@ -364,7 +381,43 @@ def apply_exclusions(tables: dict, flags_path: Path | None = None) -> dict:
         decomp_cols, on=["SubjectID", "StimID"], how="left"
     )
 
-    return {"enc": enc_filtered, "enc_long": enc_long_filtered}
+    # ------------------------------------------------------------------
+    # Decoding exclusions + within-image SVG decomposition
+    # ------------------------------------------------------------------
+    dec = tables.get("dec", pd.DataFrame())
+    if not dec.empty:
+        before_dec = len(dec)
+        dec_filtered = dec[~dec["low_n_dec"]].copy()
+        logger.info(
+            f"  dec: {before_dec} → {len(dec_filtered)} "
+            f"(removed {before_dec - len(dec_filtered)}: low_n_dec=True)"
+        )
+
+        if flags_path.exists() and wrong:
+            mask_dec = dec_filtered.apply(
+                lambda r: (r["SubjectID"], r["StimID"]) in wrong, axis=1
+            )
+            dec_filtered = dec_filtered[~mask_dec].copy()
+            logger.info(f"  dec: removed {mask_dec.sum()} wrong-image pairs.")
+
+        stim_svg_dec_mean = (
+            dec_filtered.groupby("StimID")["svg_z_dec"]
+            .mean()
+            .rename("svg_z_dec_image_mean")
+        )
+        dec_filtered = dec_filtered.merge(stim_svg_dec_mean, on="StimID", how="left")
+        dec_filtered["svg_z_dec_within"] = (
+            dec_filtered["svg_z_dec"] - dec_filtered["svg_z_dec_image_mean"]
+        )
+        logger.info(
+            f"  Dec SVG decomposition: "
+            f"svg_z_dec_within mean={dec_filtered['svg_z_dec_within'].mean():.4f} "
+            f"(should be ~0), sd={dec_filtered['svg_z_dec_within'].std():.4f}"
+        )
+    else:
+        dec_filtered = dec
+
+    return {"enc": enc_filtered, "enc_long": enc_long_filtered, "dec": dec_filtered}
 
 
 # ---------------------------------------------------------------------------
@@ -379,13 +432,20 @@ def standardise_tables(filtered: dict) -> dict:
     """
     logger.info("Step 4: Standardising predictors ...")
 
-    cols_to_standardise = (
-        ["svg_z_enc", "svg_z_enc_within"] + ENC_COVARIATES + ENC_BETWEEN_COVARIATES
-    )
+    enc_cols = ["svg_z_enc", "svg_z_enc_within"] + ENC_COVARIATES + ENC_BETWEEN_COVARIATES
+    dec_cols = ["svg_z_dec", "svg_z_dec_within"] + DEC_COVARIATES + DEC_BETWEEN_COVARIATES
 
-    for key in ("enc", "enc_long"):
-        df = filtered[key]
-        for col in cols_to_standardise:
+    table_col_map = {
+        "enc":      enc_cols,
+        "enc_long": enc_cols,
+        "dec":      dec_cols,
+    }
+
+    for key, cols in table_col_map.items():
+        df = filtered.get(key)
+        if df is None or df.empty:
+            continue
+        for col in cols:
             if col not in df.columns:
                 continue
             mu, sd = df[col].mean(), df[col].std()

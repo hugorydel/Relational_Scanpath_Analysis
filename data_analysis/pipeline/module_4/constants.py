@@ -3,7 +3,7 @@ pipeline/module_4/constants.py
 ==============================
 All symbolic names, thresholds, and model specifications for Module 4.
 
-Encoding-only analysis. DVs are empirically normalised proportions (0-1)
+Encoding and decoding analysis. DVs are empirically normalised proportions (0-1)
 computed in loader.py as participant_recalled / max_recalled_per_stim.
 
 No analysis logic lives here.
@@ -37,19 +37,21 @@ ENC_COVARIATES = [
 # Between-image SVG covariate — included in H2/Exploratory models alongside
 # the within-image predictor to decompose participant-level from image-level
 # SVG variance. Computed in loader.py via per-StimID mean centering.
-#
-# svg_z_enc_image_mean : image-level relational pull (mean SVG across participants)
-# svg_z_enc_within_sd  : per-image SD of within-image SVG — controls for images
-#                        where predictor variance is restricted (e.g. everyone
-#                        scans similarly relationally → weak correlation)
-# prop_total_image_sd  : per-image SD of total recall — controls for images
-#                        where outcome variance is restricted (gist-dominant
-#                        images where recall is near-uniform across participants)
-ENC_BETWEEN_COVARIATES = [
-    "svg_z_enc_image_mean",
-    "svg_z_enc_within_sd",
-    "prop_total_image_sd",
+ENC_BETWEEN_COVARIATES = ["svg_z_enc_image_mean","svg_z_enc_within_sd",
+    "prop_total_image_sd"]
+
+# ---------------------------------------------------------------------------
+# Decoding covariate lists
+# ---------------------------------------------------------------------------
+# No enc_total_correct equivalent — that is encoding-task-specific.
+
+DEC_COVARIATES = [
+    "n_fixations_dec",
+    "aoi_prop_dec",
+    "mean_salience_relational_dec",
 ]
+
+DEC_BETWEEN_COVARIATES = ["svg_z_dec_image_mean"]
 
 # ---------------------------------------------------------------------------
 # Dependent variables
@@ -120,5 +122,35 @@ MODEL_SPECS = [
         "Exploratory: SVG (within-image) × memory_type (relations vs objects dissociation)",
         "enc_long",
         "Exploratory",
+    ),
+    # H1 — is decoding SVG reliably above zero?
+    (
+        "H1_svg_dec",
+        "1",
+        "H1: Decoding SVG — intercept test (mean SVG > 0?)",
+        "dec",
+        "H1",
+    ),
+    # H2 — decoding SVG → memory proportions
+    (
+        "H2_dec_total",
+        "svg_z_dec_within_z",
+        "H2 decoding overall: Decoding SVG (within-image) → total node recall proportion",
+        "dec",
+        "H2",
+    ),
+    (
+        "H2_dec_relations",
+        "svg_z_dec_within_z",
+        "H2 decoding relations: Decoding SVG (within-image) → relational recall proportion (action + spatial)",
+        "dec",
+        "H2",
+    ),
+    (
+        "H2_dec_objects",
+        "svg_z_dec_within_z",
+        "H2 decoding objects: Decoding SVG (within-image) → object recall proportion (identity + attribute)",
+        "dec",
+        "H2",
     ),
 ]

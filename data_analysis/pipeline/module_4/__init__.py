@@ -2,6 +2,8 @@
 # Public API — import from here in run_pipeline.py and module4_analysis.py.
 from .constants import (
     DEFAULT_SCORES_PATH,
+    DEC_BETWEEN_COVARIATES,
+    DEC_COVARIATES,
     DV_OBJECTS,
     DV_RELATIONS,
     DV_TOTAL,
@@ -22,6 +24,8 @@ from .output import summarise
 
 __all__ = [
     # constants
+    "DEC_BETWEEN_COVARIATES",
+    "DEC_COVARIATES",
     "DV_OBJECTS",
     "DV_RELATIONS",
     "DV_TOTAL",

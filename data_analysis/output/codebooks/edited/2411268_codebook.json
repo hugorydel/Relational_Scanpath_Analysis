@@ -1,0 +1,685 @@
+[
+  {
+    "node_id": "2411268_001",
+    "concept": "girl",
+    "context": "main person in the scene reaching toward the tree",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a girl",
+      "little girl",
+      "young girl",
+      "female child"
+    ]
+  },
+  {
+    "node_id": "2411268_002",
+    "concept": "child",
+    "context": "main person in the scene near the tree",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "child was",
+      "a child",
+      "another child"
+    ]
+  },
+  {
+    "node_id": "2411268_003",
+    "concept": "pink",
+    "context": "modifies the boots or wellies worn by the main person",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pink boots",
+      "pink wellies",
+      "pink wellington"
+    ]
+  },
+  {
+    "node_id": "2411268_004",
+    "concept": "boot",
+    "context": "footwear worn by the main person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pink boots",
+      "welly boots",
+      "had boots"
+    ]
+  },
+  {
+    "node_id": "2411268_005",
+    "concept": "wellies",
+    "context": "footwear worn by the main person",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "pink wellies",
+      "wellington boots",
+      "welly boots"
+    ]
+  },
+  {
+    "node_id": "2411268_006",
+    "concept": "pick",
+    "context": "action performed by the main person on the apples",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "picking apples",
+      "to pick",
+      "pick green"
+    ]
+  },
+  {
+    "node_id": "2411268_007",
+    "concept": "apple",
+    "context": "fruit being reached for or collected from the tree",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "picking apples",
+      "an apple",
+      "green apple"
+    ]
+  },
+  {
+    "node_id": "2411268_008",
+    "concept": "tree",
+    "context": "tree from which the apples are being picked",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the tree",
+      "apple tree",
+      "small tree"
+    ]
+  },
+  {
+    "node_id": "2411268_009",
+    "concept": "above",
+    "context": "position of the apple or branch relative to the main person's head",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "above her",
+      "above head",
+      "branch above"
+    ]
+  },
+  {
+    "node_id": "2411268_010",
+    "concept": "head",
+    "context": "body part used as reference for the apple or branch position",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "her head",
+      "above head"
+    ]
+  },
+  {
+    "node_id": "2411268_011",
+    "concept": "stand",
+    "context": "posture of the main person under the tree",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "girl standing"
+    ]
+  },
+  {
+    "node_id": "2411268_012",
+    "concept": "under",
+    "context": "position of the main person relative to the tree",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "under a",
+      "underneath an"
+    ]
+  },
+  {
+    "node_id": "2411268_013a",
+    "concept": "basket",
+    "context": "container carried by the main person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "brown basket"
+    ]
+  },
+  {
+    "node_id": "2411268_014a",
+    "concept": "brown",
+    "context": "modifies the basket carried by the main person",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "brown basket"
+    ]
+  },
+  {
+    "node_id": "2411268_015",
+    "concept": "field",
+    "context": "broader outdoor area surrounding the tree",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "large feild"
+    ]
+  },
+  {
+    "node_id": "2411268_016",
+    "concept": "little",
+    "context": "modifies the main person",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "little girl",
+      "little girl",
+      "a little"
+    ]
+  },
+  {
+    "node_id": "2411268_017",
+    "concept": "green",
+    "context": "modifies the apples or apple tree",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "green apples",
+      "green apple",
+      "green apple tree"
+    ]
+  },
+  {
+    "node_id": "2411268_018",
+    "concept": "red",
+    "context": "modifies the bag held by the main person",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "red bag",
+      "red bag",
+      "red and"
+    ]
+  },
+  {
+    "node_id": "2411268_019",
+    "concept": "bag",
+    "context": "container held by the main person for collecting apples",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "red bag",
+      "holding bag",
+      "the bag"
+    ]
+  },
+  {
+    "node_id": "2411268_020",
+    "concept": "high",
+    "context": "modifies the branch being reached toward",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "high branch"
+    ]
+  },
+  {
+    "node_id": "2411268_021",
+    "concept": "branch",
+    "context": "part of the tree being reached toward",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "high branch",
+      "a branch",
+      "the branch"
+    ]
+  },
+  {
+    "node_id": "2411268_022",
+    "concept": "put",
+    "context": "action of placing picked apples into the bag",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "putting them",
+      "into a"
+    ]
+  },
+  {
+    "node_id": "2411268_023",
+    "concept": "reach",
+    "context": "action of extending upward toward the apple or branch",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "reaching up",
+      "reaching for",
+      "reaches above"
+    ]
+  },
+  {
+    "node_id": "2411268_024",
+    "concept": "orchard",
+    "context": "setting described around the apple tree",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "in an orchard"
+    ]
+  },
+  {
+    "node_id": "2411268_025",
+    "concept": "hold",
+    "context": "action of the main person carrying the bag",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding a",
+      "she holds",
+      "was holding"
+    ]
+  },
+  {
+    "node_id": "2411268_026",
+    "concept": "one",
+    "context": "count of the main person",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "One young"
+    ]
+  },
+  {
+    "node_id": "2411268_027",
+    "concept": "young",
+    "context": "modifies the main person",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "young girl"
+    ]
+  },
+  {
+    "node_id": "2411268_028",
+    "concept": "collect",
+    "context": "purposeful action associated with the bag and apples",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "to collect"
+    ]
+  },
+  {
+    "node_id": "2411268_029",
+    "concept": "carry",
+    "context": "action of the main person transporting the bag",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "carrying a",
+      "girl carrying"
+    ]
+  },
+  {
+    "node_id": "2411268_030",
+    "concept": "attempt",
+    "context": "action of trying to grab the apple",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "attempting to"
+    ]
+  },
+  {
+    "node_id": "2411268_031",
+    "concept": "grab",
+    "context": "action of grasping the apple",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "to grab",
+      "grabbing green"
+    ]
+  },
+  {
+    "node_id": "2411268_032",
+    "concept": "hold",
+    "context": "action of the main person holding the bag",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding a",
+      "holding red"
+    ]
+  },
+  {
+    "node_id": "2411268_033",
+    "concept": "beige",
+    "context": "modifies the coat worn by the main person",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "beige coat"
+    ]
+  },
+  {
+    "node_id": "2411268_034",
+    "concept": "coat",
+    "context": "outer garment worn by the main person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "beige coat"
+    ]
+  },
+  {
+    "node_id": "2411268_035",
+    "concept": "black",
+    "context": "modifies the headband worn by the main person",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "black headband"
+    ]
+  },
+  {
+    "node_id": "2411268_036",
+    "concept": "headband",
+    "context": "headwear worn by the main person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "black headband"
+    ]
+  },
+  {
+    "node_id": "2411268_037",
+    "concept": "five",
+    "context": "stated age of the main person",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "aged 5"
+    ]
+  },
+  {
+    "node_id": "2411268_038",
+    "concept": "six",
+    "context": "stated age of the main person",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "or 6"
+    ]
+  },
+  {
+    "node_id": "2411268_039",
+    "concept": "waterproof",
+    "context": "modifies the trousers worn by the main person",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "waterproof trousers"
+    ]
+  },
+  {
+    "node_id": "2411268_040",
+    "concept": "trousers",
+    "context": "leg garment worn by the main person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "waterproof trousers"
+    ]
+  },
+  {
+    "node_id": "2411268_041",
+    "concept": "raincoat",
+    "context": "outer garment worn by the main person",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "raincoat on"
+    ]
+  },
+  {
+    "node_id": "2411268_042a",
+    "concept": "left",
+    "context": "position of the additional background figure from the viewer's perspective",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "to the left",
+      "far left"
+    ]
+  },
+  {
+    "node_id": "2411268_042b",
+    "concept": "left",
+    "context": "position of the bag hand from the viewer's perspective",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "left hand"
+    ]
+  },
+  {
+    "node_id": "2411268_043",
+    "concept": "hand",
+    "context": "body part holding the bag or used for reaching",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "left hand",
+      "right hand",
+      "non-reaching hand"
+    ]
+  },
+  {
+    "node_id": "2411268_044",
+    "concept": "garden",
+    "context": "setting described around the tree",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "in garden"
+    ]
+  },
+  {
+    "node_id": "2411268_045",
+    "concept": "background",
+    "context": "location of the second child/person relative to the main figure",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the background",
+      "far left background"
+    ]
+  },
+  {
+    "node_id": "2411268_046",
+    "concept": "another",
+    "context": "count-related modifier for the additional child/person",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "another child"
+    ]
+  },
+  {
+    "node_id": "2411268_047",
+    "concept": "small",
+    "context": "modifies the girl or the tree",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "small tree",
+      "small girl"
+    ]
+  },
+  {
+    "node_id": "2411268_048",
+    "concept": "low",
+    "context": "modifies the height of the branch or branches on the tree",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "relatively low",
+      "quite low"
+    ]
+  },
+  {
+    "node_id": "2411268_049",
+    "concept": "dress",
+    "context": "garment worn by the main person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "pink dress"
+    ]
+  },
+  {
+    "node_id": "2411268_050",
+    "concept": "blonde",
+    "context": "modifies the hair of the main person",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blonde hair"
+    ]
+  },
+  {
+    "node_id": "2411268_051",
+    "concept": "hair",
+    "context": "hair of the main person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blonde hair"
+    ]
+  },
+  {
+    "node_id": "2411268_052a",
+    "concept": "right",
+    "context": "position of the bag hand from the viewer's perspective",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "right hand"
+    ]
+  },
+  {
+    "node_id": "2411268_053",
+    "concept": "two",
+    "context": "count of apples said to remain on the tree",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "2 apples"
+    ]
+  },
+  {
+    "node_id": "2411268_054a",
+    "concept": "person",
+    "context": "additional figure in the far left background",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "someone in"
+    ]
+  },
+  {
+    "node_id": "2411268_054b",
+    "concept": "child",
+    "context": "additional figure in the far left background",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "another child"
+    ]
+  },
+  {
+    "node_id": "2411268_055",
+    "concept": "far",
+    "context": "modifies the left background position of the additional figure",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "far left"
+    ]
+  },
+  {
+    "node_id": "2411268_056",
+    "concept": "white",
+    "context": "modifies the bag held by the main person",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "and white bag"
+    ]
+  }
+]

@@ -64,7 +64,7 @@ logger = logging.getLogger(__name__)
 DEFAULT_MODEL = "gpt-5.4"
 MAX_RETRIES = 5
 INITIAL_RETRY_DELAY = 1.0
-DEFAULT_CONCURRENCY = 3  # Vision calls are heavy — keep this low
+DEFAULT_CONCURRENCY = 30  # Vision calls are heavy — keep this low
 
 RAW_DIR = config.OUTPUT_CODEBOOKS_RAW_DIR
 EDITED_DIR = config.OUTPUT_CODEBOOKS_EDITED_DIR
@@ -214,7 +214,6 @@ def _find_image(stim_id: str) -> Path | None:
         if p.exists():
             return p
     return None
-
 
 
 # ---------------------------------------------------------------------------
@@ -462,12 +461,11 @@ async def run(args) -> None:
         sys.exit(1)
 
     if not args.force:
-        stims = [
-            s for s in stims
-            if not (EDITED_DIR / f"{s}_codebook.json").exists()
-        ]
+        stims = [s for s in stims if not (EDITED_DIR / f"{s}_codebook.json").exists()]
         if not stims:
-            logger.info("All codebook files already edited on disk. Use --force to rerun.")
+            logger.info(
+                "All codebook files already edited on disk. Use --force to rerun."
+            )
             return
 
     logger.info(f"Processing {len(stims)} stim(s) with model={args.model} ...\n")

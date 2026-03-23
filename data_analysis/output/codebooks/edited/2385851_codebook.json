@@ -1,0 +1,784 @@
+[
+  {
+    "node_id": "2385851_001",
+    "concept": "two",
+    "context": "count of the people in the main scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two men",
+      "two men",
+      "two men",
+      "two people",
+      "two men",
+      "two men",
+      "two men",
+      "two man",
+      "2 were",
+      "2 taking",
+      "two men",
+      "two people",
+      "two men",
+      "to men",
+      "2 men",
+      "two men",
+      "2 men",
+      "2 man",
+      "two men"
+    ]
+  },
+  {
+    "node_id": "2385851_002",
+    "concept": "man",
+    "context": "primary people carrying luggage in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "two men",
+      "two men",
+      "two men",
+      "two men",
+      "two men",
+      "two men",
+      "two man",
+      "two men",
+      "two men",
+      "two men",
+      "to men",
+      "2 men",
+      "two men",
+      "2 men",
+      "2 man",
+      "two men"
+    ]
+  },
+  {
+    "node_id": "2385851_003",
+    "concept": "person",
+    "context": "primary human figures in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two people",
+      "two people",
+      "four people"
+    ]
+  },
+  {
+    "node_id": "2385851_004",
+    "concept": "carry",
+    "context": "action performed on the suitcases by the primary figures",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "men carrying",
+      "men carrying",
+      "people carrying",
+      "men carrying",
+      "are carrying",
+      "men carrying",
+      "men holding",
+      "are carrying",
+      "were carring",
+      "were carryinh",
+      "carrying large",
+      "carry suitcases",
+      "carrying red",
+      "holding each",
+      "carrying a",
+      "walking carryinh",
+      "carrying large"
+    ]
+  },
+  {
+    "node_id": "2385851_005",
+    "concept": "suitcase",
+    "context": "luggage being carried by the primary figures",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "carrying suitcases",
+      "carrying suitcases",
+      "red suitcases",
+      "red suitcases",
+      "holding red",
+      "red suitcases",
+      "taking suitcases",
+      "red suitcases",
+      "red suitcases",
+      "red suitcases"
+    ]
+  },
+  {
+    "node_id": "2385851_006",
+    "concept": "red",
+    "context": "color of the suitcases",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "are red",
+      "red suitcases",
+      "red one",
+      "carrying red",
+      "big red",
+      "red suitcases",
+      "red suitcases",
+      "red suitcases",
+      "red luggages",
+      "red suitcases",
+      "red suitcae",
+      "red suitcase",
+      "red suitcases",
+      "red suitcases"
+    ]
+  },
+  {
+    "node_id": "2385851_007",
+    "concept": "covered",
+    "context": "attribute of the walkway or passage area",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "covered walkway",
+      "a covered",
+      "under a cover",
+      "covered walkway",
+      "on covered",
+      "covered area",
+      "covered walkway",
+      "covered shelter",
+      "covered pathway",
+      "covered pathway"
+    ]
+  },
+  {
+    "node_id": "2385851_008",
+    "concept": "walkway",
+    "context": "passage structure the figures move through",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "covered walkway",
+      "covered walkway",
+      "covered walkway",
+      "under a walkway",
+      "covered passageway",
+      "covered walkway"
+    ]
+  },
+  {
+    "node_id": "2385851_009",
+    "concept": "through",
+    "context": "movement of the figures within the passage structure",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "go through",
+      "through underpass",
+      "walking through",
+      "walking through"
+    ]
+  },
+  {
+    "node_id": "2385851_010",
+    "concept": "under",
+    "context": "location of the figures relative to the cover or passage structure",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "under a",
+      "under a",
+      "underpass thing",
+      "under a",
+      "underneath a",
+      "under a",
+      "underneath a",
+      "under a",
+      "under a",
+      "under a",
+      "under a",
+      "under a",
+      "under a bridge"
+    ]
+  },
+  {
+    "node_id": "2385851_011",
+    "concept": "walk",
+    "context": "action performed by the primary figures",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "walking up",
+      "walking through",
+      "walking in",
+      "are walking",
+      "walking away",
+      "walking underneath",
+      "walking carryinh",
+      "men walking"
+    ]
+  },
+  {
+    "node_id": "2385851_012",
+    "concept": "path",
+    "context": "surface or route the figures move along",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "up a path",
+      "under a pathway",
+      "covered pathway",
+      "covered pathway"
+    ]
+  },
+  {
+    "node_id": "2385851_013",
+    "concept": "back",
+    "context": "orientation of the figures with their backs facing the viewer",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "back facing",
+      "their backs",
+      "their backs",
+      "their backs"
+    ]
+  },
+  {
+    "node_id": "2385851_014",
+    "concept": "face",
+    "context": "orientation of the figures relative to the viewer",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "facing me"
+    ]
+  },
+  {
+    "node_id": "2385851_015",
+    "concept": "ramp",
+    "context": "sloped surface in the walkway area",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "a ramp"
+    ]
+  },
+  {
+    "node_id": "2385851_016",
+    "concept": "on",
+    "context": "position of the suitcases relative to the carriers' backs",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on their",
+      "on their",
+      "on their",
+      "on their",
+      "on their"
+    ]
+  },
+  {
+    "node_id": "2385851_017",
+    "concept": "back",
+    "context": "body part supporting the suitcases",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "their backs",
+      "their backs",
+      "their backs",
+      "their backs",
+      "their backs"
+    ]
+  },
+  {
+    "node_id": "2385851_018",
+    "concept": "over",
+    "context": "position of the suitcases relative to the carriers' heads",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "over thei",
+      "above them",
+      "above is"
+    ]
+  },
+  {
+    "node_id": "2385851_019",
+    "concept": "head",
+    "context": "body part relative to which a suitcase is carried",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "thei heads",
+      "is head"
+    ]
+  },
+  {
+    "node_id": "2385851_020",
+    "concept": "shade",
+    "context": "lighting condition within the covered walkway",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in shade"
+    ]
+  },
+  {
+    "node_id": "2385851_021",
+    "concept": "left",
+    "context": "location of one figure within the scene",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "far left",
+      "leftmost one"
+    ]
+  },
+  {
+    "node_id": "2385851_022",
+    "concept": "sunny",
+    "context": "lighting condition in the uncovered area at the side",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "was sunny"
+    ]
+  },
+  {
+    "node_id": "2385851_023",
+    "concept": "away",
+    "context": "direction of movement relative to the camera or viewer",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "walking away",
+      "away from"
+    ]
+  },
+  {
+    "node_id": "2385851_024",
+    "concept": "camera",
+    "context": "viewer-relative reference point for movement direction",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "from camera"
+    ]
+  },
+  {
+    "node_id": "2385851_025",
+    "concept": "large",
+    "context": "size of the suitcases",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "bigger suitcase",
+      "big red",
+      "suitcases large",
+      "large suitcases",
+      "a large",
+      "large red"
+    ]
+  },
+  {
+    "node_id": "2385851_026",
+    "concept": "four",
+    "context": "count of people described in the alternative airport interpretation",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "total of 4",
+      "4 attendants",
+      "four people"
+    ]
+  },
+  {
+    "node_id": "2385851_027",
+    "concept": "airport",
+    "context": "interpreted setting in the alternative scene description",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "airport staff",
+      "an airport"
+    ]
+  },
+  {
+    "node_id": "2385851_028",
+    "concept": "staff",
+    "context": "role label for people in the alternative airport interpretation",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "airport staff"
+    ]
+  },
+  {
+    "node_id": "2385851_029",
+    "concept": "present",
+    "context": "existence of additional people in the alternative interpretation",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "staff present"
+    ]
+  },
+  {
+    "node_id": "2385851_030",
+    "concept": "oversee",
+    "context": "supervisory action in the alternative airport interpretation",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "were overseeign"
+    ]
+  },
+  {
+    "node_id": "2385851_031",
+    "concept": "help",
+    "context": "assisting action in the alternative airport interpretation",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "help move"
+    ]
+  },
+  {
+    "node_id": "2385851_032",
+    "concept": "move",
+    "context": "action applied to baggage in the alternative airport interpretation",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "help move"
+    ]
+  },
+  {
+    "node_id": "2385851_033",
+    "concept": "baggage",
+    "context": "luggage in the alternative airport interpretation",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "move baggage"
+    ]
+  },
+  {
+    "node_id": "2385851_034",
+    "concept": "onto",
+    "context": "placement relation of luggage relative to the conveyor belt",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "baggage onto",
+      "suitcase onto"
+    ]
+  },
+  {
+    "node_id": "2385851_035",
+    "concept": "conveyor",
+    "context": "airport equipment in the alternative interpretation",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "the conveyor",
+      "a conveyor",
+      "conveyer belt"
+    ]
+  },
+  {
+    "node_id": "2385851_036",
+    "concept": "belt",
+    "context": "part of the conveyor belt in the alternative interpretation",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "conveyor belt",
+      "conveyor belt",
+      "conveyer belt"
+    ]
+  },
+  {
+    "node_id": "2385851_037",
+    "concept": "tie",
+    "context": "attachment relation of one suitcase to one carrier",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "suitcase tied"
+    ]
+  },
+  {
+    "node_id": "2385851_038",
+    "concept": "right",
+    "context": "location of one figure within the scene",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the right"
+    ]
+  },
+  {
+    "node_id": "2385851_039",
+    "concept": "enclosed",
+    "context": "attribute of the sidewalk or passage area",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "an enclosed"
+    ]
+  },
+  {
+    "node_id": "2385851_040",
+    "concept": "sidewalk",
+    "context": "passage surface in one participant description",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "enclosed sidewalk"
+    ]
+  },
+  {
+    "node_id": "2385851_041",
+    "concept": "passage",
+    "context": "passage structure the figures move through",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "passage area",
+      "covered passageway"
+    ]
+  },
+  {
+    "node_id": "2385851_042",
+    "concept": "uniform",
+    "context": "clothing interpretation for the people in the alternative airport description",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "in uniforms"
+    ]
+  },
+  {
+    "node_id": "2385851_043",
+    "concept": "unload",
+    "context": "action of placing a suitcase onto a conveyor in the alternative interpretation",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "were unloading"
+    ]
+  },
+  {
+    "node_id": "2385851_044",
+    "concept": "jumpsuit",
+    "context": "clothing worn by the men in one description",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "red jumpsuits"
+    ]
+  },
+  {
+    "node_id": "2385851_045",
+    "concept": "all",
+    "context": "completeness attribute applied to the red clothing description",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "all red"
+    ]
+  },
+  {
+    "node_id": "2385851_046",
+    "concept": "wear",
+    "context": "clothing relation for the people",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "are wearing",
+      "wearing loose"
+    ]
+  },
+  {
+    "node_id": "2385851_047",
+    "concept": "grey",
+    "context": "color of the hair in one description",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "grey hair"
+    ]
+  },
+  {
+    "node_id": "2385851_048",
+    "concept": "hair",
+    "context": "body feature described for one or both people",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "grey hair"
+    ]
+  },
+  {
+    "node_id": "2385851_049",
+    "concept": "shoulder-length",
+    "context": "length attribute of the hair in one description",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "shoulder length"
+    ]
+  },
+  {
+    "node_id": "2385851_050",
+    "concept": "loose",
+    "context": "fit attribute of clothing in one description",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "loose clothing"
+    ]
+  },
+  {
+    "node_id": "2385851_051",
+    "concept": "clothing",
+    "context": "garments mentioned in one description",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "loose clothing"
+    ]
+  },
+  {
+    "node_id": "2385851_052",
+    "concept": "giant",
+    "context": "size attribute of the suitcases",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "giant red"
+    ]
+  },
+  {
+    "node_id": "2385851_053",
+    "concept": "bridge",
+    "context": "structure named as being overhead or nearby",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "a bridge"
+    ]
+  },
+  {
+    "node_id": "2385851_054",
+    "concept": "underpass",
+    "context": "covered passage structure in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "underpass thing",
+      "shielded underpass"
+    ]
+  },
+  {
+    "node_id": "2385851_055",
+    "concept": "shielded",
+    "context": "attribute of the underpass",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "shielded underpass"
+    ]
+  },
+  {
+    "node_id": "2385851_056",
+    "concept": "attendant",
+    "context": "role label for people in the alternative airport interpretation",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "4 attendants"
+    ]
+  },
+  {
+    "node_id": "2385851_057",
+    "concept": "colorful",
+    "context": "color property of a suitcase in the alternative airport interpretation",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "was colouful"
+    ]
+  },
+  {
+    "node_id": "2385851_058",
+    "concept": "stripey",
+    "context": "pattern property of a suitcase in the alternative airport interpretation",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "and stripey"
+    ]
+  }
+]

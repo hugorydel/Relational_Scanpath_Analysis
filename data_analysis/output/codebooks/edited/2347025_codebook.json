@@ -1,0 +1,567 @@
+[
+  {
+    "node_id": "2347025_001",
+    "concept": "woman",
+    "context": "adult person carrying the child in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "old woman",
+      "a woman",
+      "older woman",
+      "older lady's"
+    ]
+  },
+  {
+    "node_id": "2347025_002a",
+    "concept": "child",
+    "context": "young person on the woman's back",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a child",
+      "small child",
+      "baby on",
+      "baby/toddler"
+    ]
+  },
+  {
+    "node_id": "2347025_002b",
+    "concept": "baby",
+    "context": "young person on the woman's back",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a baby",
+      "small baby",
+      "A baby"
+    ]
+  },
+  {
+    "node_id": "2347025_003",
+    "concept": "umbrella",
+    "context": "item held above the people",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "an umbrella",
+      "pink umbrella",
+      "colourful umbrella",
+      "red umbrella"
+    ]
+  },
+  {
+    "node_id": "2347025_004",
+    "concept": "holding",
+    "context": "action performed on the umbrella",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding a",
+      "holding umbrella",
+      "child holding",
+      "is holding"
+    ]
+  },
+  {
+    "node_id": "2347025_005",
+    "concept": "on back",
+    "context": "child positioned on the woman's back",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on back",
+      "on her",
+      "on the",
+      "on womans"
+    ]
+  },
+  {
+    "node_id": "2347025_006",
+    "concept": "carrying",
+    "context": "action performed by the woman with the child",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "carrying the",
+      "carrying baby",
+      "carrying a",
+      "holds a"
+    ]
+  },
+  {
+    "node_id": "2347025_007",
+    "concept": "pink",
+    "context": "colour of the umbrella",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the pink",
+      "pink umbrella",
+      "a pink",
+      "pink umbrellla"
+    ]
+  },
+  {
+    "node_id": "2347025_008",
+    "concept": "old",
+    "context": "age-related appearance of the woman",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "old woman",
+      "old women",
+      "oldy woman",
+      "older woman"
+    ]
+  },
+  {
+    "node_id": "2347025_009",
+    "concept": "posing",
+    "context": "action of the people for the camera/photo",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "posing for"
+    ]
+  },
+  {
+    "node_id": "2347025_010",
+    "concept": "picture",
+    "context": "photo being posed for",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "a picture"
+    ]
+  },
+  {
+    "node_id": "2347025_011",
+    "concept": "red",
+    "context": "colour of the umbrella",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "redish pinky",
+      "a red",
+      "or red"
+    ]
+  },
+  {
+    "node_id": "2347025_012",
+    "concept": "mother",
+    "context": "familial/social role assigned to the woman carrying the child",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "mothers back",
+      "her mothers",
+      "their mothers",
+      "mother and"
+    ]
+  },
+  {
+    "node_id": "2347025_013",
+    "concept": "grandma",
+    "context": "familial/social role assigned to the older woman",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "granny with",
+      "grandma?"
+    ]
+  },
+  {
+    "node_id": "2347025_014",
+    "concept": "elderly",
+    "context": "advanced age appearance of the woman",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "eldery east"
+    ]
+  },
+  {
+    "node_id": "2347025_015",
+    "concept": "asian",
+    "context": "ethnicity/appearance attributed to the people",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "east asian",
+      "looking asian"
+    ]
+  },
+  {
+    "node_id": "2347025_016",
+    "concept": "earring",
+    "context": "jewelry worn by the woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "hoops earring",
+      "silver earrings",
+      "hoop earrings"
+    ]
+  },
+  {
+    "node_id": "2347025_017",
+    "concept": "jewellery",
+    "context": "accessories worn by the woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "lots of"
+    ]
+  },
+  {
+    "node_id": "2347025_018",
+    "concept": "small",
+    "context": "size of the child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "small east",
+      "small child",
+      "small baby"
+    ]
+  },
+  {
+    "node_id": "2347025_019",
+    "concept": "colourful",
+    "context": "colour description of the umbrella",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "colourful umbrella",
+      "multicoloured and"
+    ]
+  },
+  {
+    "node_id": "2347025_020",
+    "concept": "cartoon character",
+    "context": "figures depicted in the umbrella pattern",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "cartoon characters",
+      "little people",
+      "litrle pictures"
+    ]
+  },
+  {
+    "node_id": "2347025_021",
+    "concept": "row",
+    "context": "arrangement of the cartoon characters on the umbrella",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in rows"
+    ]
+  },
+  {
+    "node_id": "2347025_022",
+    "concept": "rain jacket",
+    "context": "outerwear worn by the child and woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "rain jackets",
+      "a raincoat"
+    ]
+  },
+  {
+    "node_id": "2347025_023",
+    "concept": "two",
+    "context": "count of people in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two people"
+    ]
+  },
+  {
+    "node_id": "2347025_024a",
+    "concept": "people",
+    "context": "group description for the figures in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two people"
+    ]
+  },
+  {
+    "node_id": "2347025_024b",
+    "concept": "people",
+    "context": "figures depicted in the umbrella pattern",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "little people"
+    ]
+  },
+  {
+    "node_id": "2347025_025",
+    "concept": "sunny",
+    "context": "weather condition of the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "correct",
+    "source_phrases": [
+      "weather was"
+    ]
+  },
+  {
+    "node_id": "2347025_026",
+    "concept": "looking at camera",
+    "context": "gaze direction of the woman and child",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "looking at",
+      "faces the"
+    ]
+  },
+  {
+    "node_id": "2347025_027",
+    "concept": "large",
+    "context": "size of the umbrella",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "large pink"
+    ]
+  },
+  {
+    "node_id": "2347025_028a",
+    "concept": "female",
+    "context": "gender attributed to the child",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "(female)",
+      "little girl"
+    ]
+  },
+  {
+    "node_id": "2347025_028b",
+    "concept": "girl",
+    "context": "gender/age description attributed to the child",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "a girl",
+      "little girl"
+    ]
+  },
+  {
+    "node_id": "2347025_029",
+    "concept": "sling",
+    "context": "device securing the child to the woman's back",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a sling",
+      "strapped to"
+    ]
+  },
+  {
+    "node_id": "2347025_030",
+    "concept": "wrinkled",
+    "context": "skin texture of the woman",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "wrinkled skin"
+    ]
+  },
+  {
+    "node_id": "2347025_031",
+    "concept": "skin",
+    "context": "visible body surface of the woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "wrinkled skin"
+    ]
+  },
+  {
+    "node_id": "2347025_032",
+    "concept": "happy",
+    "context": "facial expression attributed to the people",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "happy expression"
+    ]
+  },
+  {
+    "node_id": "2347025_033",
+    "concept": "smiling",
+    "context": "facial expression of the woman",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "is smiling",
+      "woman smiling",
+      "were smiling"
+    ]
+  },
+  {
+    "node_id": "2347025_034",
+    "concept": "dark",
+    "context": "colour of the hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "dark hair"
+    ]
+  },
+  {
+    "node_id": "2347025_035",
+    "concept": "hair",
+    "context": "hair of the woman and child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "dark hair"
+    ]
+  },
+  {
+    "node_id": "2347025_036",
+    "concept": "bob cut",
+    "context": "hairstyle of the child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "a bob"
+    ]
+  },
+  {
+    "node_id": "2347025_037",
+    "concept": "right",
+    "context": "side of the hand used to hold the umbrella",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "right hand"
+    ]
+  },
+  {
+    "node_id": "2347025_038",
+    "concept": "hand",
+    "context": "body part of the child used to hold the umbrella",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "right hand"
+    ]
+  },
+  {
+    "node_id": "2347025_039",
+    "concept": "hood",
+    "context": "head covering worn by the child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "hood up"
+    ]
+  },
+  {
+    "node_id": "2347025_040",
+    "concept": "up",
+    "context": "position of the hood",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "hood up"
+    ]
+  },
+  {
+    "node_id": "2347025_041",
+    "concept": "raining",
+    "context": "weather condition inferred for the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "it was"
+    ]
+  },
+  {
+    "node_id": "2347025_042",
+    "concept": "silver",
+    "context": "material/colour of the earrings",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "silver earrings"
+    ]
+  },
+  {
+    "node_id": "2347025_043",
+    "concept": "pattern",
+    "context": "design on the umbrella",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with a pattern",
+      "umbrella's design"
+    ]
+  },
+  {
+    "node_id": "2347025_044",
+    "concept": "hat",
+    "context": "headwear worn by the woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "wearing hats"
+    ]
+  }
+]

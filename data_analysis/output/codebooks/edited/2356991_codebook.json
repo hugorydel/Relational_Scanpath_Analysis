@@ -1,0 +1,739 @@
+[
+  {
+    "node_id": "2356991_001",
+    "concept": "two",
+    "context": "count of players in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two baseball",
+      "two men",
+      "2 men",
+      "two baseball",
+      "2 baseball"
+    ]
+  },
+  {
+    "node_id": "2356991_002",
+    "concept": "player",
+    "context": "human figures participating in the baseball play",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "baseball player",
+      "the player",
+      "one player",
+      "baseball players",
+      "2 baseball"
+    ]
+  },
+  {
+    "node_id": "2356991_003",
+    "concept": "baseball",
+    "context": "sport being played in the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "baseball player",
+      "playing baseball",
+      "baseball field",
+      "the baseball",
+      "baseball players"
+    ]
+  },
+  {
+    "node_id": "2356991_004",
+    "concept": "middle",
+    "context": "position of the players within the game action",
+    "content_type": "spatial_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "the middle"
+    ]
+  },
+  {
+    "node_id": "2356991_005",
+    "concept": "game",
+    "context": "overall event depicted",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "middle of",
+      "a game"
+    ]
+  },
+  {
+    "node_id": "2356991_006",
+    "concept": "left",
+    "context": "location of the diving/sliding player",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the left",
+      "to the left",
+      "on left",
+      "man on the left"
+    ]
+  },
+  {
+    "node_id": "2356991_007",
+    "concept": "dive",
+    "context": "action performed by the left player moving headfirst toward base/ground",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "is diving",
+      "man closest dove",
+      "player diving",
+      "man diving",
+      "a man dives"
+    ]
+  },
+  {
+    "node_id": "2356991_008",
+    "concept": "head first",
+    "context": "body orientation of the diving/sliding player",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "diving head first",
+      "headfirst to",
+      "sliding towards",
+      "diving head-first",
+      "slidign head first"
+    ]
+  },
+  {
+    "node_id": "2356991_009",
+    "concept": "grab",
+    "context": "attempt by the diving player to reach the ball",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "grab the ball"
+    ]
+  },
+  {
+    "node_id": "2356991_010",
+    "concept": "ball",
+    "context": "ball involved in the baseball play",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the ball",
+      "catching a ball",
+      "catch ball",
+      "ball in",
+      "baseball"
+    ]
+  },
+  {
+    "node_id": "2356991_011",
+    "concept": "right",
+    "context": "location of the standing/catching player",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the right",
+      "to the right",
+      "right of",
+      "the right"
+    ]
+  },
+  {
+    "node_id": "2356991_012",
+    "concept": "catch",
+    "context": "action performed by the standing player toward the ball",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "trying to catch",
+      "to catch",
+      "catching a",
+      "ready to catch",
+      "caught the ball"
+    ]
+  },
+  {
+    "node_id": "2356991_013",
+    "concept": "focused",
+    "context": "facial expression attributed to the catching player",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "focused face"
+    ]
+  },
+  {
+    "node_id": "2356991_014",
+    "concept": "face",
+    "context": "face of the catching player",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "focused face",
+      "face first"
+    ]
+  },
+  {
+    "node_id": "2356991_015",
+    "concept": "slide",
+    "context": "action performed by the left player moving into base/ground",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "was sliding",
+      "player sliding",
+      "sliding in",
+      "sliding into",
+      "sliding headfirst"
+    ]
+  },
+  {
+    "node_id": "2356991_016",
+    "concept": "base",
+    "context": "base being approached by the diving/sliding player or occupied by the fielder",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "to base",
+      "the base",
+      "towards base",
+      "reach base",
+      "into the base"
+    ]
+  },
+  {
+    "node_id": "2356991_017",
+    "concept": "boy",
+    "context": "age descriptor for the players",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "one boy",
+      "other boy"
+    ]
+  },
+  {
+    "node_id": "2356991_018",
+    "concept": "lie",
+    "context": "body posture of the left player on the ground",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "man lying",
+      "on the floor",
+      "on the ground"
+    ]
+  },
+  {
+    "node_id": "2356991_019",
+    "concept": "ground",
+    "context": "surface beneath the diving/sliding player",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on ground",
+      "to floor",
+      "orange ground",
+      "the ground"
+    ]
+  },
+  {
+    "node_id": "2356991_020",
+    "concept": "hand",
+    "context": "body part extended by the player on the ground or wearing glove",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "hands out",
+      "his hand",
+      "arm out"
+    ]
+  },
+  {
+    "node_id": "2356991_021",
+    "concept": "out",
+    "context": "extended outward position of hands/arm",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "hands out",
+      "arm out"
+    ]
+  },
+  {
+    "node_id": "2356991_022",
+    "concept": "stand",
+    "context": "upright posture of the right player",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "standing up",
+      "stood trying",
+      "standing and",
+      "standing upright"
+    ]
+  },
+  {
+    "node_id": "2356991_023",
+    "concept": "behind",
+    "context": "position of one player relative to the other",
+    "content_type": "spatial_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "man behind"
+    ]
+  },
+  {
+    "node_id": "2356991_024",
+    "concept": "ready",
+    "context": "prepared posture of the catching player",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "ready to catch",
+      "getting ready",
+      "ready to",
+      "had a glove on ready"
+    ]
+  },
+  {
+    "node_id": "2356991_025",
+    "concept": "air",
+    "context": "location of the ball above the ground",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in the air",
+      "mid air",
+      "still mid air",
+      "ball flying"
+    ]
+  },
+  {
+    "node_id": "2356991_026",
+    "concept": "helmet",
+    "context": "headwear on the left player",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "helmet on"
+    ]
+  },
+  {
+    "node_id": "2356991_027",
+    "concept": "red",
+    "context": "color of helmet, cap, or uniform elements",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "red helmet",
+      "white and red",
+      "read cap",
+      "red and white"
+    ]
+  },
+  {
+    "node_id": "2356991_028",
+    "concept": "field",
+    "context": "baseball playing area",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "baseball field"
+    ]
+  },
+  {
+    "node_id": "2356991_029",
+    "concept": "arm",
+    "context": "body part stretched or extended by a player",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "arm stretched",
+      "arm out"
+    ]
+  },
+  {
+    "node_id": "2356991_030",
+    "concept": "stretch",
+    "context": "action/posture of extending the arm",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "arm stretched"
+    ]
+  },
+  {
+    "node_id": "2356991_031",
+    "concept": "reach",
+    "context": "action of the sliding/diving player toward the base or ball",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "reach base",
+      "reaching head first",
+      "trying to get to base"
+    ]
+  },
+  {
+    "node_id": "2356991_032",
+    "concept": "safe",
+    "context": "outcome of the sliding player reaching base",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "base safely"
+    ]
+  },
+  {
+    "node_id": "2356991_033",
+    "concept": "catcher",
+    "context": "role label for the player trying to catch the ball",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "the catcher"
+    ]
+  },
+  {
+    "node_id": "2356991_034",
+    "concept": "individual",
+    "context": "human figure in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one individual"
+    ]
+  },
+  {
+    "node_id": "2356991_035",
+    "concept": "tackle",
+    "context": "purported action of one player against another",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "trying to tackle"
+    ]
+  },
+  {
+    "node_id": "2356991_036",
+    "concept": "rightmost",
+    "context": "extreme right position of the catching player",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "rightmost man"
+    ]
+  },
+  {
+    "node_id": "2356991_037",
+    "concept": "glove",
+    "context": "baseball glove worn by the catching player",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "glove on",
+      "a glove",
+      "with the glove",
+      "man with a glove"
+    ]
+  },
+  {
+    "node_id": "2356991_038",
+    "concept": "look",
+    "context": "action of one player looking at the ball",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "looking for the ball"
+    ]
+  },
+  {
+    "node_id": "2356991_039",
+    "concept": "fielder",
+    "context": "role label for the standing player fielding the ball near the base",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "fielder was"
+    ]
+  },
+  {
+    "node_id": "2356991_040",
+    "concept": "fall",
+    "context": "action/posture of the left player going downward",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "falling head first",
+      "falling over"
+    ]
+  },
+  {
+    "node_id": "2356991_041",
+    "concept": "wear",
+    "context": "relation of players to visible clothing items",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "wear white",
+      "wearing a glove",
+      "waering read cap"
+    ]
+  },
+  {
+    "node_id": "2356991_042",
+    "concept": "uniform",
+    "context": "baseball clothing worn by the players",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "uniforms are"
+    ]
+  },
+  {
+    "node_id": "2356991_043",
+    "concept": "white",
+    "context": "color of uniforms or clothing",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "wear white",
+      "white and",
+      "red and white"
+    ]
+  },
+  {
+    "node_id": "2356991_044",
+    "concept": "upright",
+    "context": "vertical posture of the catching player",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "standing upright"
+    ]
+  },
+  {
+    "node_id": "2356991_045",
+    "concept": "toss",
+    "context": "purported action of the player on the floor throwing the ball",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "just tossed it"
+    ]
+  },
+  {
+    "node_id": "2356991_046",
+    "concept": "incoming",
+    "context": "movement of the ball toward the player with the glove",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "ball that is incoming"
+    ]
+  },
+  {
+    "node_id": "2356991_047",
+    "concept": "cap",
+    "context": "headwear worn by the standing player",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "have caps",
+      "read cap"
+    ]
+  },
+  {
+    "node_id": "2356991_048",
+    "concept": "striped",
+    "context": "pattern on the outfit of the right player",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white striped"
+    ]
+  },
+  {
+    "node_id": "2356991_049",
+    "concept": "outfit",
+    "context": "clothing worn by the right player",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "striped outflit"
+    ]
+  },
+  {
+    "node_id": "2356991_050",
+    "concept": "wait",
+    "context": "posture of the right player awaiting the ball",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "waiting to"
+    ]
+  },
+  {
+    "node_id": "2356991_051",
+    "concept": "pitch",
+    "context": "playing surface described as the pitch",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "on a pitch"
+    ]
+  },
+  {
+    "node_id": "2356991_052",
+    "concept": "between",
+    "context": "position of the ball relative to the two players",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "between them"
+    ]
+  },
+  {
+    "node_id": "2356991_053",
+    "concept": "close",
+    "context": "proximity of the sliding player to the ground",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "close to the ground"
+    ]
+  },
+  {
+    "node_id": "2356991_054",
+    "concept": "orange",
+    "context": "color of the ground/dirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "orange ground"
+    ]
+  },
+  {
+    "node_id": "2356991_055",
+    "concept": "dust",
+    "context": "dust produced near the sliding player",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "dust cloud"
+    ]
+  },
+  {
+    "node_id": "2356991_056",
+    "concept": "cloud",
+    "context": "form of the visible dust near the slide",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "dust cloud"
+    ]
+  },
+  {
+    "node_id": "2356991_057",
+    "concept": "graze",
+    "context": "contact of the sliding player with the ground",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "has grazed"
+    ]
+  },
+  {
+    "node_id": "2356991_058",
+    "concept": "metal",
+    "context": "material of the fence in the background",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "metal fence"
+    ]
+  },
+  {
+    "node_id": "2356991_059",
+    "concept": "fence",
+    "context": "barrier visible in the upper background",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "metal fence"
+    ]
+  },
+  {
+    "node_id": "2356991_060",
+    "concept": "background",
+    "context": "location of the fence relative to the players",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in the background"
+    ]
+  }
+]

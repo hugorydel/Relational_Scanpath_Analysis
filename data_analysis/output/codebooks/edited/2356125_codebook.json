@@ -1,0 +1,725 @@
+[
+  {
+    "node_id": "2356125_001",
+    "concept": "four",
+    "context": "count of people/staff in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "four officers",
+      "four people",
+      "4 people",
+      "four staff",
+      "4 workers",
+      "4 uniformed"
+    ]
+  },
+  {
+    "node_id": "2356125_002",
+    "concept": "personnel",
+    "context": "people present in the airport scene",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "airport personnel",
+      "uniformed personnel"
+    ]
+  },
+  {
+    "node_id": "2356125_003",
+    "concept": "worker",
+    "context": "staff present near the conveyor belt",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "4 workers",
+      "uniformed workers",
+      "airport workers"
+    ]
+  },
+  {
+    "node_id": "2356125_004",
+    "concept": "staff",
+    "context": "airport employees present in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "airport staff",
+      "four staff"
+    ]
+  },
+  {
+    "node_id": "2356125_005",
+    "concept": "officer",
+    "context": "uniformed people described in the airport scene",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "uniformed officers",
+      "four officers"
+    ]
+  },
+  {
+    "node_id": "2356125_006",
+    "concept": "security guard",
+    "context": "role assigned to the uniformed workers",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "security guards"
+    ]
+  },
+  {
+    "node_id": "2356125_007",
+    "concept": "flight attendant",
+    "context": "role assigned to the uniformed women",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "3 flight",
+      "flight attendants"
+    ]
+  },
+  {
+    "node_id": "2356125_008",
+    "concept": "pilot",
+    "context": "role assigned to the man in uniform",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "one pilot"
+    ]
+  },
+  {
+    "node_id": "2356125_009",
+    "concept": "individual",
+    "context": "people present in the image",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "suited individuals"
+    ]
+  },
+  {
+    "node_id": "2356125_010",
+    "concept": "people",
+    "context": "humans present in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "four people",
+      "4 people"
+    ]
+  },
+  {
+    "node_id": "2356125_011",
+    "concept": "woman",
+    "context": "female people among the group",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "three women",
+      "two women",
+      "3 women",
+      "another women"
+    ]
+  },
+  {
+    "node_id": "2356125_012",
+    "concept": "three",
+    "context": "count of women in the group",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "three women",
+      "3 women"
+    ]
+  },
+  {
+    "node_id": "2356125_013",
+    "concept": "man",
+    "context": "male person among the group",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one man",
+      "man standing",
+      "a man",
+      "1 man"
+    ]
+  },
+  {
+    "node_id": "2356125_014",
+    "concept": "one",
+    "context": "count of man in the group",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one man",
+      "one pilot",
+      "1 man"
+    ]
+  },
+  {
+    "node_id": "2356125_015a",
+    "concept": "two",
+    "context": "count of people involved in handling luggage",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two women",
+      "2 woman",
+      "two helping",
+      "two of"
+    ]
+  },
+  {
+    "node_id": "2356125_015b",
+    "concept": "two",
+    "context": "hallucinated count of men involved in handling luggage",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "two men"
+    ]
+  },
+  {
+    "node_id": "2356125_016",
+    "concept": "conveyor belt",
+    "context": "belt used for moving luggage in the airport scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "conveyor belt",
+      "conveyer belt",
+      "the conveyor",
+      "onto belt",
+      "black conveyor"
+    ]
+  },
+  {
+    "node_id": "2356125_017",
+    "concept": "next to",
+    "context": "position of the people relative to the conveyor belt",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "standing next",
+      "staff next",
+      "next to"
+    ]
+  },
+  {
+    "node_id": "2356125_018",
+    "concept": "standing",
+    "context": "posture of some of the people in the scene",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "standing near",
+      "stood against",
+      "stands upright",
+      "man standing",
+      "women standing"
+    ]
+  },
+  {
+    "node_id": "2356125_019",
+    "concept": "putting",
+    "context": "action of placing luggage onto the conveyor belt",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "are putting",
+      "to put",
+      "loading a",
+      "putting a",
+      "loading one"
+    ]
+  },
+  {
+    "node_id": "2356125_020",
+    "concept": "baggage",
+    "context": "items being handled and moved in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "baggage onto",
+      "moving baggage",
+      "the baggage"
+    ]
+  },
+  {
+    "node_id": "2356125_021",
+    "concept": "onto",
+    "context": "direction of luggage placement relative to the conveyor belt",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "onto the",
+      "onto belt",
+      "onto a",
+      "on to"
+    ]
+  },
+  {
+    "node_id": "2356125_022",
+    "concept": "manually",
+    "context": "manner of placing baggage onto the conveyor belt",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "belt manually"
+    ]
+  },
+  {
+    "node_id": "2356125_023",
+    "concept": "bag",
+    "context": "luggage item on or near the conveyor belt",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "bags on",
+      "large bag"
+    ]
+  },
+  {
+    "node_id": "2356125_024a",
+    "concept": "three",
+    "context": "count of luggage items visible",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "3 bags",
+      "three luggages",
+      "three suitcases",
+      "3 suitcases"
+    ]
+  },
+  {
+    "node_id": "2356125_024b",
+    "concept": "four",
+    "context": "hallucinated count of suitcases visible",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "four suitcases"
+    ]
+  },
+  {
+    "node_id": "2356125_025",
+    "concept": "uniformed",
+    "context": "appearance of the airport personnel",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "uniformed officers",
+      "uniformed people",
+      "uniformed workers",
+      "uniformed women"
+    ]
+  },
+  {
+    "node_id": "2356125_026",
+    "concept": "luggage",
+    "context": "travel items being moved or visible on the belt",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the luggage",
+      "luggage onto",
+      "lifting luggage",
+      "luggage off"
+    ]
+  },
+  {
+    "node_id": "2356125_027",
+    "concept": "suitcase",
+    "context": "specific luggage items in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with suitcases",
+      "other suitcases",
+      "suitcases on",
+      "suitcase onto",
+      "a suitcase",
+      "the suitcase",
+      "3 suitcases"
+    ]
+  },
+  {
+    "node_id": "2356125_028",
+    "concept": "airport",
+    "context": "overall setting of the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "airport personnel",
+      "an airport",
+      "airport staff",
+      "airport workers"
+    ]
+  },
+  {
+    "node_id": "2356125_029",
+    "concept": "left",
+    "context": "position of some people relative to others in the scene",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "to the left",
+      "on the left"
+    ]
+  },
+  {
+    "node_id": "2356125_030",
+    "concept": "wall",
+    "context": "background surface behind the people",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "against a wall"
+    ]
+  },
+  {
+    "node_id": "2356125_031",
+    "concept": "back",
+    "context": "location relative to the scene depth or body posture",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in the back",
+      "his back"
+    ]
+  },
+  {
+    "node_id": "2356125_032",
+    "concept": "off",
+    "context": "direction of suitcase movement relative to the scanner opening",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "suitcase off",
+      "off the"
+    ]
+  },
+  {
+    "node_id": "2356125_033",
+    "concept": "ramp",
+    "context": "sloped baggage-check surface near the scanner",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "off ramp"
+    ]
+  },
+  {
+    "node_id": "2356125_034",
+    "concept": "moving",
+    "context": "action of transporting a suitcase or baggage",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "moving baggage",
+      "move it",
+      "moving a"
+    ]
+  },
+  {
+    "node_id": "2356125_035",
+    "concept": "behind",
+    "context": "position of a person or body part relative to another object",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "behind a",
+      "arms behind"
+    ]
+  },
+  {
+    "node_id": "2356125_036",
+    "concept": "either side",
+    "context": "position of two women relative to a suitcase",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "either side"
+    ]
+  },
+  {
+    "node_id": "2356125_037",
+    "concept": "upright",
+    "context": "posture of the man standing near the left side",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "stands upright"
+    ]
+  },
+  {
+    "node_id": "2356125_038",
+    "concept": "grey",
+    "context": "color of the man's uniform",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "grey side"
+    ]
+  },
+  {
+    "node_id": "2356125_039",
+    "concept": "side parting",
+    "context": "hairstyle of the man",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "side parting"
+    ]
+  },
+  {
+    "node_id": "2356125_040",
+    "concept": "suit",
+    "context": "clothing worn by the staff",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "suited individuals",
+      "wearing suits"
+    ]
+  },
+  {
+    "node_id": "2356125_041",
+    "concept": "weaves inbetween",
+    "context": "path of the conveyor belt relative to the staff",
+    "content_type": "spatial_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "weaves inbetween"
+    ]
+  },
+  {
+    "node_id": "2356125_042",
+    "concept": "another",
+    "context": "description of a second conveyor belt mentioned by one participant",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "onto another",
+      "another conveyor"
+    ]
+  },
+  {
+    "node_id": "2356125_043",
+    "concept": "large",
+    "context": "size of the bag being loaded",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "large bag",
+      "is big"
+    ]
+  },
+  {
+    "node_id": "2356125_044",
+    "concept": "red",
+    "context": "color of one luggage item",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "was red",
+      "were red"
+    ]
+  },
+  {
+    "node_id": "2356125_045",
+    "concept": "colorful",
+    "context": "appearance of the luggage being carried",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a colorful"
+    ]
+  },
+  {
+    "node_id": "2356125_046",
+    "concept": "striped",
+    "context": "pattern on one suitcase or bag",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "was striped",
+      "red, blue"
+    ]
+  },
+  {
+    "node_id": "2356125_047",
+    "concept": "blue",
+    "context": "color within the luggage or striped bag pattern",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blue and"
+    ]
+  },
+  {
+    "node_id": "2356125_048",
+    "concept": "green",
+    "context": "color of the scanner curtain or bag pattern",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "green stripes"
+    ]
+  },
+  {
+    "node_id": "2356125_049",
+    "concept": "trying",
+    "context": "attempted action of loading the large bag onto the conveyor belt",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "are trying"
+    ]
+  },
+  {
+    "node_id": "2356125_050",
+    "concept": "black",
+    "context": "color of the conveyor belt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "black conveyor"
+    ]
+  },
+  {
+    "node_id": "2356125_051",
+    "concept": "displayed",
+    "context": "state of other suitcases on the conveyor belt",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "are displayed"
+    ]
+  },
+  {
+    "node_id": "2356125_052",
+    "concept": "wrapped",
+    "context": "state of the suitcase being moved",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "and wrapped"
+    ]
+  },
+  {
+    "node_id": "2356125_053",
+    "concept": "cellophane",
+    "context": "material covering the suitcase",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "cellophane type"
+    ]
+  },
+  {
+    "node_id": "2356125_054",
+    "concept": "material",
+    "context": "covering quality of the wrapped suitcase",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "type of"
+    ]
+  },
+  {
+    "node_id": "2356125_055",
+    "concept": "photo",
+    "context": "reference to the depicted image",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "the photo"
+    ]
+  },
+  {
+    "node_id": "2356125_056",
+    "concept": "right",
+    "context": "position of the two women handling the suitcase",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the right",
+      "towards the right"
+    ]
+  },
+  {
+    "node_id": "2356125_057",
+    "concept": "arms behind back",
+    "context": "posture of the man standing to the left",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "arms behind"
+    ]
+  }
+]

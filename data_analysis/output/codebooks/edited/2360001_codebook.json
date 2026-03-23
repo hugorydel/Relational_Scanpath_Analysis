@@ -1,0 +1,556 @@
+[
+  {
+    "node_id": "2360001_001",
+    "concept": "four",
+    "context": "count of people on the platform handling the clock",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "four people",
+      "4 men",
+      "four men"
+    ]
+  },
+  {
+    "node_id": "2360001_002",
+    "concept": "three",
+    "context": "count of people on the platform handling the clock",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "three guys",
+      "3 men",
+      "3 or 4"
+    ]
+  },
+  {
+    "node_id": "2360001_003",
+    "concept": "people",
+    "context": "individuals on the platform handling the clock",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "four people",
+      "group of people",
+      "bunch of people"
+    ]
+  },
+  {
+    "node_id": "2360001_004",
+    "concept": "person",
+    "context": "individuals on the platform handling the clock",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "4 men",
+      "few men",
+      "multiple men"
+    ]
+  },
+  {
+    "node_id": "2360001_005",
+    "concept": "worker",
+    "context": "individuals handling and installing the clock",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "four workmen"
+    ]
+  },
+  {
+    "node_id": "2360001_006",
+    "concept": "guy",
+    "context": "male-presenting individuals on the platform",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "three guys"
+    ]
+  },
+  {
+    "node_id": "2360001_007",
+    "concept": "clock",
+    "context": "large street clock being handled by the workers",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a clock",
+      "big clock",
+      "large clock"
+    ]
+  },
+  {
+    "node_id": "2360001_008",
+    "concept": "scaffolding",
+    "context": "temporary structure/platform the people are standing on",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "a scaffold",
+      "on scaffolding",
+      "the scaffolding"
+    ]
+  },
+  {
+    "node_id": "2360001_009",
+    "concept": "building",
+    "context": "street building beside which the clock is mounted",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "of building",
+      "onto a building"
+    ]
+  },
+  {
+    "node_id": "2360001_010",
+    "concept": "ledge",
+    "context": "building ledge near the workers and clock",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a ledge"
+    ]
+  },
+  {
+    "node_id": "2360001_011",
+    "concept": "plank",
+    "context": "narrow platform beneath the workers",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "wooden plank"
+    ]
+  },
+  {
+    "node_id": "2360001_012",
+    "concept": "clothes",
+    "context": "clothing worn by the workers",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "building clothes"
+    ]
+  },
+  {
+    "node_id": "2360001_013",
+    "concept": "ZENITH",
+    "context": "word written on the clock face",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "word ZENITH",
+      "says ZENITH"
+    ]
+  },
+  {
+    "node_id": "2360001_014",
+    "concept": "few",
+    "context": "approximate count of people on the platform",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "few men"
+    ]
+  },
+  {
+    "node_id": "2360001_015",
+    "concept": "group",
+    "context": "collective quantity of people on the platform",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "group of people"
+    ]
+  },
+  {
+    "node_id": "2360001_016",
+    "concept": "multiple",
+    "context": "quantity of people on the platform",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "multiple men"
+    ]
+  },
+  {
+    "node_id": "2360001_017",
+    "concept": "bunch",
+    "context": "collective quantity of people on the platform",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "bunch of people"
+    ]
+  },
+  {
+    "node_id": "2360001_018",
+    "concept": "big",
+    "context": "size of the clock",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "big clock",
+      "a big clock"
+    ]
+  },
+  {
+    "node_id": "2360001_019",
+    "concept": "large",
+    "context": "size of the clock",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "large clock",
+      "a large clock"
+    ]
+  },
+  {
+    "node_id": "2360001_020",
+    "concept": "old",
+    "context": "apparent age or style of the clock",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "old clock"
+    ]
+  },
+  {
+    "node_id": "2360001_021",
+    "concept": "black",
+    "context": "color characteristic of the black-and-white photo",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "black and",
+      "black and white"
+    ]
+  },
+  {
+    "node_id": "2360001_022",
+    "concept": "white",
+    "context": "color characteristic of the black-and-white photo",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "and white",
+      "black and white"
+    ]
+  },
+  {
+    "node_id": "2360001_023",
+    "concept": "wooden",
+    "context": "material of the plank/platform",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "wooden plank"
+    ]
+  },
+  {
+    "node_id": "2360001_024",
+    "concept": "building",
+    "context": "descriptor applied to the workers' clothes",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "building clothes"
+    ]
+  },
+  {
+    "node_id": "2360001_025",
+    "concept": "standing",
+    "context": "posture of the people on the platform",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "men standing",
+      "were standing",
+      "are standing"
+    ]
+  },
+  {
+    "node_id": "2360001_026",
+    "concept": "fixing",
+    "context": "action directed toward installing the clock",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "people fixing"
+    ]
+  },
+  {
+    "node_id": "2360001_027",
+    "concept": "raising",
+    "context": "action of moving the clock upward",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "raising clock",
+      "to raise",
+      "raising a clock"
+    ]
+  },
+  {
+    "node_id": "2360001_028",
+    "concept": "putting up",
+    "context": "action of installing the clock",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "putting up",
+      "putting clock"
+    ]
+  },
+  {
+    "node_id": "2360001_029",
+    "concept": "holding",
+    "context": "manual contact with the clock",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding up",
+      "holding a clock",
+      "all touching"
+    ]
+  },
+  {
+    "node_id": "2360001_030",
+    "concept": "lifting",
+    "context": "action of lifting the clock upward",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "are lifting",
+      "lift it up"
+    ]
+  },
+  {
+    "node_id": "2360001_031",
+    "concept": "attempting",
+    "context": "effort to raise the clock",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "attempting to",
+      "trying to"
+    ]
+  },
+  {
+    "node_id": "2360001_032",
+    "concept": "touching",
+    "context": "contact between the people and the clock",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "all touching"
+    ]
+  },
+  {
+    "node_id": "2360001_033",
+    "concept": "on",
+    "context": "people positioned on the platform or ledge",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on something",
+      "on a ledge",
+      "on a scaffold"
+    ]
+  },
+  {
+    "node_id": "2360001_034",
+    "concept": "above",
+    "context": "clock positioned above the workers' heads",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "above their",
+      "clock above"
+    ]
+  },
+  {
+    "node_id": "2360001_035",
+    "concept": "left",
+    "context": "clock located toward the left side of the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "left side"
+    ]
+  },
+  {
+    "node_id": "2360001_036",
+    "concept": "side",
+    "context": "clock mounted on the side of the building",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "side of building",
+      "left side"
+    ]
+  },
+  {
+    "node_id": "2360001_037",
+    "concept": "onto",
+    "context": "clock being moved onto the building facade",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "onto a building"
+    ]
+  },
+  {
+    "node_id": "2360001_038",
+    "concept": "urban",
+    "context": "overall built-up street setting",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "an urban"
+    ]
+  },
+  {
+    "node_id": "2360001_039",
+    "concept": "city",
+    "context": "overall built-up street setting",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "city area"
+    ]
+  },
+  {
+    "node_id": "2360001_040",
+    "concept": "street",
+    "context": "street setting where the clock is being installed",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on a street"
+    ]
+  },
+  {
+    "node_id": "2360001_041",
+    "concept": "high street",
+    "context": "commercial street setting",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "a high street"
+    ]
+  },
+  {
+    "node_id": "2360001_042",
+    "concept": "image",
+    "context": "the depicted scene described as an image",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white image",
+      "the image"
+    ]
+  },
+  {
+    "node_id": "2360001_043",
+    "concept": "photo",
+    "context": "the depicted scene described as a photograph",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white photo",
+      "the photo",
+      "black and white photo"
+    ]
+  },
+  {
+    "node_id": "2360001_044",
+    "concept": "picture",
+    "context": "the depicted scene described as a picture",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white picture",
+      "the picture"
+    ]
+  },
+  {
+    "node_id": "2360001_045",
+    "concept": "era",
+    "context": "historical period inferred for the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "The era"
+    ]
+  },
+  {
+    "node_id": "2360001_046",
+    "concept": "industrial period",
+    "context": "historical period inferred for the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "industrial period"
+    ]
+  },
+  {
+    "node_id": "2360001_047",
+    "concept": "man",
+    "context": "gender of the people handling the clock",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "4 men",
+      "few men",
+      "three guys"
+    ]
+  }
+]

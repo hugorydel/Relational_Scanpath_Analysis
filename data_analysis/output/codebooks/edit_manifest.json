@@ -1,0 +1,220 @@
+{
+  "model": "gpt-5.4",
+  "timestamp": "2026-03-23T14:20:01",
+  "n_total": 30,
+  "n_ok": 30,
+  "n_skipped": 0,
+  "n_failed": 0,
+  "results": [
+    {
+      "stim_id": "150472",
+      "status": "ok",
+      "n_nodes_in": 55,
+      "n_nodes_out": 56,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\150472_codebook.json"
+    },
+    {
+      "stim_id": "2344622",
+      "status": "ok",
+      "n_nodes_in": 39,
+      "n_nodes_out": 39,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2344622_codebook.json"
+    },
+    {
+      "stim_id": "2345035",
+      "status": "ok",
+      "n_nodes_in": 54,
+      "n_nodes_out": 52,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2345035_codebook.json"
+    },
+    {
+      "stim_id": "2347025",
+      "status": "ok",
+      "n_nodes_in": 44,
+      "n_nodes_out": 47,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2347025_codebook.json"
+    },
+    {
+      "stim_id": "2347400",
+      "status": "ok",
+      "n_nodes_in": 45,
+      "n_nodes_out": 48,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2347400_codebook.json"
+    },
+    {
+      "stim_id": "2348899",
+      "status": "ok",
+      "n_nodes_in": 51,
+      "n_nodes_out": 60,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2348899_codebook.json"
+    },
+    {
+      "stim_id": "2349475",
+      "status": "ok",
+      "n_nodes_in": 59,
+      "n_nodes_out": 63,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2349475_codebook.json"
+    },
+    {
+      "stim_id": "2350974",
+      "status": "ok",
+      "n_nodes_in": 43,
+      "n_nodes_out": 46,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2350974_codebook.json"
+    },
+    {
+      "stim_id": "2356125",
+      "status": "ok",
+      "n_nodes_in": 57,
+      "n_nodes_out": 59,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2356125_codebook.json"
+    },
+    {
+      "stim_id": "2356991",
+      "status": "ok",
+      "n_nodes_in": 60,
+      "n_nodes_out": 60,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2356991_codebook.json"
+    },
+    {
+      "stim_id": "2360001",
+      "status": "ok",
+      "n_nodes_in": 46,
+      "n_nodes_out": 47,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2360001_codebook.json"
+    },
+    {
+      "stim_id": "2362704",
+      "status": "ok",
+      "n_nodes_in": 27,
+      "n_nodes_out": 28,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2362704_codebook.json"
+    },
+    {
+      "stim_id": "2367132",
+      "status": "ok",
+      "n_nodes_in": 57,
+      "n_nodes_out": 58,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2367132_codebook.json"
+    },
+    {
+      "stim_id": "2369373",
+      "status": "ok",
+      "n_nodes_in": 42,
+      "n_nodes_out": 42,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2369373_codebook.json"
+    },
+    {
+      "stim_id": "2370664",
+      "status": "ok",
+      "n_nodes_in": 47,
+      "n_nodes_out": 49,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2370664_codebook.json"
+    },
+    {
+      "stim_id": "2371471",
+      "status": "ok",
+      "n_nodes_in": 53,
+      "n_nodes_out": 53,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2371471_codebook.json"
+    },
+    {
+      "stim_id": "2374670",
+      "status": "ok",
+      "n_nodes_in": 55,
+      "n_nodes_out": 50,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2374670_codebook.json"
+    },
+    {
+      "stim_id": "2379478",
+      "status": "ok",
+      "n_nodes_in": 27,
+      "n_nodes_out": 28,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2379478_codebook.json"
+    },
+    {
+      "stim_id": "2383555",
+      "status": "ok",
+      "n_nodes_in": 53,
+      "n_nodes_out": 53,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2383555_codebook.json"
+    },
+    {
+      "stim_id": "2385550",
+      "status": "ok",
+      "n_nodes_in": 40,
+      "n_nodes_out": 40,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2385550_codebook.json"
+    },
+    {
+      "stim_id": "2385851",
+      "status": "ok",
+      "n_nodes_in": 58,
+      "n_nodes_out": 58,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2385851_codebook.json"
+    },
+    {
+      "stim_id": "2386442",
+      "status": "ok",
+      "n_nodes_in": 38,
+      "n_nodes_out": 38,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2386442_codebook.json"
+    },
+    {
+      "stim_id": "2387122",
+      "status": "ok",
+      "n_nodes_in": 52,
+      "n_nodes_out": 52,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2387122_codebook.json"
+    },
+    {
+      "stim_id": "2394020",
+      "status": "ok",
+      "n_nodes_in": 43,
+      "n_nodes_out": 44,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2394020_codebook.json"
+    },
+    {
+      "stim_id": "2397102",
+      "status": "ok",
+      "n_nodes_in": 48,
+      "n_nodes_out": 55,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2397102_codebook.json"
+    },
+    {
+      "stim_id": "2408717",
+      "status": "ok",
+      "n_nodes_in": 51,
+      "n_nodes_out": 44,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2408717_codebook.json"
+    },
+    {
+      "stim_id": "2409918",
+      "status": "ok",
+      "n_nodes_in": 38,
+      "n_nodes_out": 38,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2409918_codebook.json"
+    },
+    {
+      "stim_id": "2410309",
+      "status": "ok",
+      "n_nodes_in": 44,
+      "n_nodes_out": 47,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2410309_codebook.json"
+    },
+    {
+      "stim_id": "2411268",
+      "status": "ok",
+      "n_nodes_in": 56,
+      "n_nodes_out": 58,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2411268_codebook.json"
+    },
+    {
+      "stim_id": "2412687",
+      "status": "ok",
+      "n_nodes_in": 40,
+      "n_nodes_out": 42,
+      "path": "C:\\Users\\hugos\\Desktop\\Relational_Scanpath_Paper\\Relational_Scanpath_Analysis\\data_analysis\\output\\codebooks\\edited\\2412687_codebook.json"
+    }
+  ]
+}

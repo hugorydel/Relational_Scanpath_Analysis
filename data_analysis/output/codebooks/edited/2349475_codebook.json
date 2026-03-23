@@ -1,0 +1,767 @@
+[
+  {
+    "node_id": "2349475_001",
+    "concept": "blender",
+    "context": "central appliance being operated and held",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a blender",
+      "the blender",
+      "blender full",
+      "power blender",
+      "large blender"
+    ]
+  },
+  {
+    "node_id": "2349475_002",
+    "concept": "center",
+    "context": "location of the blender in the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "at the center"
+    ]
+  },
+  {
+    "node_id": "2349475_003",
+    "concept": "person",
+    "context": "person riding or powering the bike near the blender",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one person",
+      "someone riding",
+      "another person"
+    ]
+  },
+  {
+    "node_id": "2349475_003a",
+    "concept": "man",
+    "context": "person riding or powering the bike near the blender",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "the man",
+      "one man",
+      "a man",
+      "man on",
+      "man cycling"
+    ]
+  },
+  {
+    "node_id": "2349475_004",
+    "concept": "left",
+    "context": "position of the bike rider relative to the blender or image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the left",
+      "to the left",
+      "on left side"
+    ]
+  },
+  {
+    "node_id": "2349475_005",
+    "concept": "bike",
+    "context": "vehicle used to power the blender",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a bike",
+      "riding a bike",
+      "on bike",
+      "a cycle",
+      "exercise bike"
+    ]
+  },
+  {
+    "node_id": "2349475_006",
+    "concept": "riding",
+    "context": "action of operating the bike",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "is riding",
+      "man cycling",
+      "ride bike",
+      "riding a bike",
+      "was biking"
+    ]
+  },
+  {
+    "node_id": "2349475_007",
+    "concept": "person",
+    "context": "person holding the blender lid",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one hold",
+      "another was",
+      "there is a"
+    ]
+  },
+  {
+    "node_id": "2349475_007a",
+    "concept": "woman",
+    "context": "person holding the blender lid",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a woman",
+      "one lady",
+      "one woman",
+      "the woman",
+      "a women"
+    ]
+  },
+  {
+    "node_id": "2349475_007b",
+    "concept": "girl",
+    "context": "person holding the blender lid",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the girl"
+    ]
+  },
+  {
+    "node_id": "2349475_008",
+    "concept": "holding",
+    "context": "action of keeping the blender lid in place",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding the",
+      "holdingthe lid",
+      "hold lid",
+      "holding down",
+      "holding top"
+    ]
+  },
+  {
+    "node_id": "2349475_009",
+    "concept": "lid",
+    "context": "top cover of the blender",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the lid",
+      "top lid",
+      "the top"
+    ]
+  },
+  {
+    "node_id": "2349475_010",
+    "concept": "person",
+    "context": "additional figure in the background or count of people",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a person",
+      "3 people",
+      "someone standing",
+      "three people",
+      "other people"
+    ]
+  },
+  {
+    "node_id": "2349475_011",
+    "concept": "background",
+    "context": "location of the additional person behind the blender",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the background",
+      "in the background",
+      "in the back",
+      "in background"
+    ]
+  },
+  {
+    "node_id": "2349475_012",
+    "concept": "three",
+    "context": "number of people in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "3 people",
+      "three people",
+      "three individuals",
+      "3 friends"
+    ]
+  },
+  {
+    "node_id": "2349475_013",
+    "concept": "standing",
+    "context": "posture of the background person or people around the blender",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "people standing",
+      "man standing",
+      "someone stood",
+      "stands to"
+    ]
+  },
+  {
+    "node_id": "2349475_014",
+    "concept": "power",
+    "context": "relation of the bike pedaling to operating the blender",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "to power",
+      "powering the blender",
+      "power blender",
+      "pedal powering",
+      "using his bicycle"
+    ]
+  },
+  {
+    "node_id": "2349475_015",
+    "concept": "smoothie",
+    "context": "contents of the blender",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "type of smoothie",
+      "making smoothie",
+      "blend the smoothie"
+    ]
+  },
+  {
+    "node_id": "2349475_016",
+    "concept": "mixture",
+    "context": "contents of the blender",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "full of mixture"
+    ]
+  },
+  {
+    "node_id": "2349475_017",
+    "concept": "garden",
+    "context": "outdoor setting described for the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "in garden"
+    ]
+  },
+  {
+    "node_id": "2349475_018",
+    "concept": "middle",
+    "context": "location of the blender in the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in middle"
+    ]
+  },
+  {
+    "node_id": "2349475_019",
+    "concept": "right",
+    "context": "position of the woman relative to the blender or image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "to the right",
+      "on right",
+      "on the right",
+      "right side"
+    ]
+  },
+  {
+    "node_id": "2349475_020",
+    "concept": "watching",
+    "context": "action of the background person observing the blender activity",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "background watching",
+      "is watching",
+      "people watch"
+    ]
+  },
+  {
+    "node_id": "2349475_021",
+    "concept": "cigarette",
+    "context": "item held or used by the background person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "a cigarate"
+    ]
+  },
+  {
+    "node_id": "2349475_022",
+    "concept": "can",
+    "context": "item held by the background person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a beer"
+    ]
+  },
+  {
+    "node_id": "2349475_023",
+    "concept": "outside",
+    "context": "overall scene setting",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "they are outside",
+      "were outside",
+      "outside",
+      "outdoors"
+    ]
+  },
+  {
+    "node_id": "2349475_024",
+    "concept": "green",
+    "context": "color of the right person's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "green shirt",
+      "wearing green"
+    ]
+  },
+  {
+    "node_id": "2349475_025",
+    "concept": "shirt",
+    "context": "clothing worn by the right person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "green shirt"
+    ]
+  },
+  {
+    "node_id": "2349475_026",
+    "concept": "white",
+    "context": "color of the bike rider's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "a white one"
+    ]
+  },
+  {
+    "node_id": "2349475_027",
+    "concept": "image",
+    "context": "reference to the depicted photo containing three people",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in image",
+      "the photo",
+      "in photo"
+    ]
+  },
+  {
+    "node_id": "2349475_028",
+    "concept": "orange",
+    "context": "color of the liquid in the blender",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "orangey/brown liquid"
+    ]
+  },
+  {
+    "node_id": "2349475_029",
+    "concept": "liquid",
+    "context": "substance inside the blender",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "brown liquid",
+      "drink inside",
+      "liquid inside"
+    ]
+  },
+  {
+    "node_id": "2349475_030",
+    "concept": "silver",
+    "context": "color/material appearance of the bike handles and blender base",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "silver metal handles"
+    ]
+  },
+  {
+    "node_id": "2349475_031",
+    "concept": "metal",
+    "context": "material of the bike handles",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "silver metal handles"
+    ]
+  },
+  {
+    "node_id": "2349475_032",
+    "concept": "handle",
+    "context": "part of the bike",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "metal handles"
+    ]
+  },
+  {
+    "node_id": "2349475_033",
+    "concept": "two",
+    "context": "number of male-coded people in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "two men",
+      "2 boys"
+    ]
+  },
+  {
+    "node_id": "2349475_034",
+    "concept": "screen",
+    "context": "reference to the image frame",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "of the screen"
+    ]
+  },
+  {
+    "node_id": "2349475_035",
+    "concept": "moustache",
+    "context": "facial feature of the bike rider",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "a moustache"
+    ]
+  },
+  {
+    "node_id": "2349475_036",
+    "concept": "happy",
+    "context": "apparent emotional expression of the people",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "look happy"
+    ]
+  },
+  {
+    "node_id": "2349475_037",
+    "concept": "warm",
+    "context": "temperature-like description of the setting",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "somewhere warm"
+    ]
+  },
+  {
+    "node_id": "2349475_038",
+    "concept": "top",
+    "context": "upper part of the blender where the lid is held",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "top lid",
+      "holding top",
+      "top of",
+      "the top"
+    ]
+  },
+  {
+    "node_id": "2349475_039",
+    "concept": "yellow",
+    "context": "color of the drink inside the blender",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "yellow looking drink"
+    ]
+  },
+  {
+    "node_id": "2349475_040",
+    "concept": "drink",
+    "context": "beverage-like contents of the blender",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "looking drink"
+    ]
+  },
+  {
+    "node_id": "2349475_041",
+    "concept": "inside",
+    "context": "location of the liquid or drink within the blender",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "inside of",
+      "inside the"
+    ]
+  },
+  {
+    "node_id": "2349475_042",
+    "concept": "large",
+    "context": "size of the blender",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "large blender"
+    ]
+  },
+  {
+    "node_id": "2349475_043",
+    "concept": "connected",
+    "context": "relation between the bike and the blender",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "connected to"
+    ]
+  },
+  {
+    "node_id": "2349475_044",
+    "concept": "face",
+    "context": "face of the background person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "his face"
+    ]
+  },
+  {
+    "node_id": "2349475_045",
+    "concept": "seen",
+    "context": "visibility status of the background person's face",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "be seen"
+    ]
+  },
+  {
+    "node_id": "2349475_046",
+    "concept": "camera",
+    "context": "object the bike rider is looking toward",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "the camera"
+    ]
+  },
+  {
+    "node_id": "2349475_047",
+    "concept": "looking",
+    "context": "gaze direction of the bike rider",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "is looking"
+    ]
+  },
+  {
+    "node_id": "2349475_048",
+    "concept": "smiling",
+    "context": "facial expression of the bike rider",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "and smiling"
+    ]
+  },
+  {
+    "node_id": "2349475_049",
+    "concept": "sportswear",
+    "context": "clothing style worn by the people",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "wearing sportswear"
+    ]
+  },
+  {
+    "node_id": "2349475_050",
+    "concept": "friend",
+    "context": "social relation among the three people",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "3 friends"
+    ]
+  },
+  {
+    "node_id": "2349475_051",
+    "concept": "boy",
+    "context": "male people in the group",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "2 boys",
+      "one of the boys"
+    ]
+  },
+  {
+    "node_id": "2349475_052",
+    "concept": "girl",
+    "context": "female person in the group",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one girl",
+      "the girl"
+    ]
+  },
+  {
+    "node_id": "2349475_053",
+    "concept": "charity",
+    "context": "purpose of the outdoor activity",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "for charity"
+    ]
+  },
+  {
+    "node_id": "2349475_054",
+    "concept": "individual",
+    "context": "people described as surrounding the blender",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "three individuals"
+    ]
+  },
+  {
+    "node_id": "2349475_055",
+    "concept": "surrounding",
+    "context": "people positioned around the blender",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "are surrounding",
+      "surround a blender"
+    ]
+  },
+  {
+    "node_id": "2349475_056",
+    "concept": "lever",
+    "context": "mechanism said to be used to turn the blender",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "lever/pump to"
+    ]
+  },
+  {
+    "node_id": "2349475_056a",
+    "concept": "pump",
+    "context": "mechanism said to be used to turn the blender",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "lever/pump to"
+    ]
+  },
+  {
+    "node_id": "2349475_057",
+    "concept": "turn",
+    "context": "action applied to the blender by the rider",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "to turn"
+    ]
+  },
+  {
+    "node_id": "2349475_058",
+    "concept": "greyish",
+    "context": "color of the substance in the blender",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "greyish substance"
+    ]
+  },
+  {
+    "node_id": "2349475_059",
+    "concept": "substance",
+    "context": "contents of the blender",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "greyish substance"
+    ]
+  }
+]

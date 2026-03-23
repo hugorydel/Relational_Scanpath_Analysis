@@ -1,0 +1,332 @@
+[
+  {
+    "node_id": "2362704_001",
+    "concept": "bear",
+    "context": "main animals in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two bears",
+      "black bears",
+      "2 bears"
+    ]
+  },
+  {
+    "node_id": "2362704_002",
+    "concept": "two",
+    "context": "count of bears in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two bears",
+      "2 black bears",
+      "there were 2"
+    ]
+  },
+  {
+    "node_id": "2362704_003",
+    "concept": "eating",
+    "context": "action performed by the bears on the pumpkins",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "bears eating",
+      "are eating",
+      "eating pumpkin"
+    ]
+  },
+  {
+    "node_id": "2362704_004",
+    "concept": "pumpkin",
+    "context": "food/object being eaten by the bears",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a pumpkin",
+      "the pumpkins",
+      "eating pumpkins"
+    ]
+  },
+  {
+    "node_id": "2362704_005",
+    "concept": "black",
+    "context": "color attributed to the bears",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "black bears",
+      "two black",
+      "2 black bears"
+    ]
+  },
+  {
+    "node_id": "2362704_006",
+    "concept": "brown",
+    "context": "color attributed to the bears",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "brown bears",
+      "are brown"
+    ]
+  },
+  {
+    "node_id": "2362704_007",
+    "concept": "orange",
+    "context": "color attributed to the pumpkin-like object",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "something orange",
+      "orange pumpkin"
+    ]
+  },
+  {
+    "node_id": "2362704_008a",
+    "concept": "look",
+    "context": "gaze direction of the left bear toward the viewer/camera",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "looking at camera",
+      "looking toward",
+      "toward the camera"
+    ]
+  },
+  {
+    "node_id": "2362704_008b",
+    "concept": "look",
+    "context": "gaze direction of one bear away from the viewer/scene",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "looking away",
+      "looking around"
+    ]
+  },
+  {
+    "node_id": "2362704_009",
+    "concept": "away",
+    "context": "direction of one bear's gaze relative to the viewer/scene",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "looking away"
+    ]
+  },
+  {
+    "node_id": "2362704_010",
+    "concept": "left",
+    "context": "position of one bear in the scene",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "to the left"
+    ]
+  },
+  {
+    "node_id": "2362704_011",
+    "concept": "right",
+    "context": "position of one bear in the scene",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the right",
+      "one on right"
+    ]
+  },
+  {
+    "node_id": "2362704_012",
+    "concept": "camera",
+    "context": "reference point for one bear's gaze",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "at camera",
+      "toward the camera"
+    ]
+  },
+  {
+    "node_id": "2362704_013",
+    "concept": "ground",
+    "context": "surface where the bears are positioned",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the ground",
+      "on ground"
+    ]
+  },
+  {
+    "node_id": "2362704_014",
+    "concept": "lie",
+    "context": "body posture of the bears",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "laying down",
+      "lying on",
+      "were laid"
+    ]
+  },
+  {
+    "node_id": "2362704_015",
+    "concept": "sit",
+    "context": "body posture of the bears",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "sitting down",
+      "sit on",
+      "other sat"
+    ]
+  },
+  {
+    "node_id": "2362704_016",
+    "concept": "middle",
+    "context": "stage of the eating action",
+    "content_type": "spatial_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "middle of"
+    ]
+  },
+  {
+    "node_id": "2362704_017",
+    "concept": "half",
+    "context": "extent of pumpkin being eaten",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "half eaten"
+    ]
+  },
+  {
+    "node_id": "2362704_018",
+    "concept": "torn",
+    "context": "condition of the pumpkins",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "torn apart"
+    ]
+  },
+  {
+    "node_id": "2362704_019",
+    "concept": "apart",
+    "context": "spatial state of the torn pumpkins",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "torn apart"
+    ]
+  },
+  {
+    "node_id": "2362704_020",
+    "concept": "ravaged",
+    "context": "condition of the pumpkins from being eaten",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "being ravaged"
+    ]
+  },
+  {
+    "node_id": "2362704_021",
+    "concept": "mouth",
+    "context": "part of one bear contacting the pumpkin",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "mouth in"
+    ]
+  },
+  {
+    "node_id": "2362704_022",
+    "concept": "in",
+    "context": "relation of the bear's mouth to the pumpkin",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "mouth in"
+    ]
+  },
+  {
+    "node_id": "2362704_023",
+    "concept": "next to",
+    "context": "relation between the two bears",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "sat next to"
+    ]
+  },
+  {
+    "node_id": "2362704_024",
+    "concept": "back",
+    "context": "position of one bear relative to the other",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "at the back"
+    ]
+  },
+  {
+    "node_id": "2362704_025",
+    "concept": "obscured",
+    "context": "visibility of the rear bear relative to the front bear",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "slightly obscured"
+    ]
+  },
+  {
+    "node_id": "2362704_026",
+    "concept": "slightly",
+    "context": "degree of obscuration of the rear bear",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "slightly obscured"
+    ]
+  },
+  {
+    "node_id": "2362704_027",
+    "concept": "former",
+    "context": "reference to the front/clearer bear occluding the other",
+    "content_type": "spatial_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "the former bear"
+    ]
+  }
+]

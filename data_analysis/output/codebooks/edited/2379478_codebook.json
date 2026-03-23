@@ -1,0 +1,340 @@
+[
+  {
+    "node_id": "2379478_001",
+    "concept": "two",
+    "context": "count of the children in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two babies",
+      "2 babies"
+    ]
+  },
+  {
+    "node_id": "2379478_002",
+    "concept": "baby",
+    "context": "younger child in the bed",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two babies",
+      "smaller baby",
+      "baby girls"
+    ]
+  },
+  {
+    "node_id": "2379478_002a",
+    "concept": "child",
+    "context": "older young human figure in the bed",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "toddler and",
+      "two babies"
+    ]
+  },
+  {
+    "node_id": "2379478_003",
+    "concept": "girl",
+    "context": "gender label applied to the children",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "baby girls"
+    ]
+  },
+  {
+    "node_id": "2379478_004",
+    "concept": "lie",
+    "context": "posture/action of the children on the bed",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "girls lying",
+      "babies lying",
+      "lying down",
+      "laying down"
+    ]
+  },
+  {
+    "node_id": "2379478_005",
+    "concept": "bed",
+    "context": "surface/furniture the children are lying on",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a bed",
+      "the bed",
+      "in bed"
+    ]
+  },
+  {
+    "node_id": "2379478_006",
+    "concept": "drink",
+    "context": "action performed by the children with the bottles",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "drinking milk",
+      "drink milk",
+      "drinking from"
+    ]
+  },
+  {
+    "node_id": "2379478_007",
+    "concept": "milk",
+    "context": "liquid being consumed from the bottles",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "drinking milk",
+      "of milk",
+      "baby milk"
+    ]
+  },
+  {
+    "node_id": "2379478_008",
+    "concept": "bottle",
+    "context": "container the children are drinking from and holding",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "baby bottle",
+      "out of bottle",
+      "from bottle",
+      "their bottles"
+    ]
+  },
+  {
+    "node_id": "2379478_009",
+    "concept": "from",
+    "context": "relation between drinking action and the bottle",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "from bottles",
+      "from bottle"
+    ]
+  },
+  {
+    "node_id": "2379478_010",
+    "concept": "next to each other",
+    "context": "spatial relation between the two children",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "next toeachother"
+    ]
+  },
+  {
+    "node_id": "2379478_011",
+    "concept": "one",
+    "context": "count attribute for a single child singled out in the scene",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one with",
+      "one was"
+    ]
+  },
+  {
+    "node_id": "2379478_012",
+    "concept": "nappy",
+    "context": "garment worn by one child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with nappy",
+      "wearing a nappy",
+      "wearing bibs and nappies"
+    ]
+  },
+  {
+    "node_id": "2379478_013",
+    "concept": "back",
+    "context": "body part referenced in the children's lying posture",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "their backs",
+      "on their"
+    ]
+  },
+  {
+    "node_id": "2379478_014",
+    "concept": "on",
+    "context": "spatial relation of the children being positioned on the bed",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on a bed",
+      "on their bed",
+      "on the bed"
+    ]
+  },
+  {
+    "node_id": "2379478_015",
+    "concept": "hold",
+    "context": "action of the children grasping the bottles",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding and",
+      "in their hands",
+      "holding each"
+    ]
+  },
+  {
+    "node_id": "2379478_016",
+    "concept": "bib",
+    "context": "garment worn by the children",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "wearing bibs"
+    ]
+  },
+  {
+    "node_id": "2379478_017",
+    "concept": "wear",
+    "context": "action/state of the children having clothing or nappies on",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "are wearing",
+      "was wearing"
+    ]
+  },
+  {
+    "node_id": "2379478_018",
+    "concept": "hand",
+    "context": "body part used to hold the bottles",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "their hands"
+    ]
+  },
+  {
+    "node_id": "2379478_019",
+    "concept": "mouth",
+    "context": "body part containing the bottle nipples",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "their mouths"
+    ]
+  },
+  {
+    "node_id": "2379478_020",
+    "concept": "infant",
+    "context": "age-based label for the younger child",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "an infant"
+    ]
+  },
+  {
+    "node_id": "2379478_021",
+    "concept": "parent",
+    "context": "additional person claimed to be present in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "bottle parent"
+    ]
+  },
+  {
+    "node_id": "2379478_022",
+    "concept": "toddler",
+    "context": "age-based label for the older child",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "toddler and"
+    ]
+  },
+  {
+    "node_id": "2379478_023",
+    "concept": "small",
+    "context": "size/age attribute applied to one baby",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "smaller baby"
+    ]
+  },
+  {
+    "node_id": "2379478_024",
+    "concept": "each",
+    "context": "distribution indicating one bottle per child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "milk each",
+      "each their",
+      "each has"
+    ]
+  },
+  {
+    "node_id": "2379478_025",
+    "concept": "photograph",
+    "context": "image described as a photograph/picture",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white photograph",
+      "white picture",
+      "the photo"
+    ]
+  },
+  {
+    "node_id": "2379478_026",
+    "concept": "black",
+    "context": "color attribute of the photograph",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "black and"
+    ]
+  },
+  {
+    "node_id": "2379478_027",
+    "concept": "white",
+    "context": "color attribute of the photograph",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "and white"
+    ]
+  }
+]

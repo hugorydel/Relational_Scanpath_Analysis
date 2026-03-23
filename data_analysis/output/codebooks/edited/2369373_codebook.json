@@ -1,0 +1,503 @@
+[
+  {
+    "node_id": "2369373_001",
+    "concept": "chef",
+    "context": "person handling the pizza at the oven",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pizza chef",
+      "chef putting",
+      "a chef",
+      "there is a chef"
+    ]
+  },
+  {
+    "node_id": "2369373_002",
+    "concept": "person",
+    "context": "individual handling the pizza at the oven",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a man",
+      "someone with"
+    ]
+  },
+  {
+    "node_id": "2369373_003",
+    "concept": "male",
+    "context": "modifies the person handling the pizza",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "male chef",
+      "a man"
+    ]
+  },
+  {
+    "node_id": "2369373_004",
+    "concept": "white",
+    "context": "modifies the chef hat or clothing",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white hat",
+      "white uniform",
+      "white apron"
+    ]
+  },
+  {
+    "node_id": "2369373_005",
+    "concept": "hat",
+    "context": "worn by the chef",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white hat",
+      "chefs hat"
+    ]
+  },
+  {
+    "node_id": "2369373_006",
+    "concept": "apron",
+    "context": "worn by the chef",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "and apron",
+      "white apron"
+    ]
+  },
+  {
+    "node_id": "2369373_007",
+    "concept": "uniform",
+    "context": "worn by the chef",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white uniform",
+      "and uniform"
+    ]
+  },
+  {
+    "node_id": "2369373_008",
+    "concept": "outfit",
+    "context": "worn by the chef",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "chef outfit"
+    ]
+  },
+  {
+    "node_id": "2369373_009",
+    "concept": "pizza",
+    "context": "food on the peel near the oven opening",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a pizza",
+      "placing pizza",
+      "putting pizza",
+      "the pizza"
+    ]
+  },
+  {
+    "node_id": "2369373_010",
+    "concept": "oven",
+    "context": "appliance receiving the pizza",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "mouth oven",
+      "into oven",
+      "pizza oven",
+      "the oven"
+    ]
+  },
+  {
+    "node_id": "2369373_011",
+    "concept": "open",
+    "context": "describes the mouth-like oven opening",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "open mouth",
+      "mouth open",
+      "is open"
+    ]
+  },
+  {
+    "node_id": "2369373_012",
+    "concept": "mouth",
+    "context": "mouth-like opening of the face-shaped oven",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "open mouth",
+      "stone mouth",
+      "man's mouth"
+    ]
+  },
+  {
+    "node_id": "2369373_013",
+    "concept": "placing",
+    "context": "action of moving the pizza toward the oven",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "chef placing",
+      "placing a",
+      "putting pizza",
+      "slides pizza"
+    ]
+  },
+  {
+    "node_id": "2369373_014",
+    "concept": "into",
+    "context": "spatial relation of the pizza moving into the oven",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "into an",
+      "into oven",
+      "inside of"
+    ]
+  },
+  {
+    "node_id": "2369373_015",
+    "concept": "stone",
+    "context": "material or appearance of the face around the oven",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "stone mouth",
+      "stone figure",
+      "made of stone",
+      "stone face"
+    ]
+  },
+  {
+    "node_id": "2369373_016",
+    "concept": "statue",
+    "context": "large sculpted face surrounding the oven opening",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "a statue"
+    ]
+  },
+  {
+    "node_id": "2369373_017",
+    "concept": "shaped",
+    "context": "describes the oven as formed like a mouth or face",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "oven shaped",
+      "mouth shaped",
+      "shaped like"
+    ]
+  },
+  {
+    "node_id": "2369373_018",
+    "concept": "face",
+    "context": "large carved figure surrounding the oven",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a face",
+      "big face",
+      "stone face"
+    ]
+  },
+  {
+    "node_id": "2369373_019",
+    "concept": "figure",
+    "context": "stone form above and around the oven",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "stone figure"
+    ]
+  },
+  {
+    "node_id": "2369373_020",
+    "concept": "fire",
+    "context": "burning inside the oven",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with fire",
+      "had fire",
+      "fire inside"
+    ]
+  },
+  {
+    "node_id": "2369373_021",
+    "concept": "large",
+    "context": "modifies the carved face or oven structure",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a large",
+      "large carved",
+      "a big"
+    ]
+  },
+  {
+    "node_id": "2369373_022",
+    "concept": "paddle",
+    "context": "tool used by the chef to move the pizza",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pizza paddle"
+    ]
+  },
+  {
+    "node_id": "2369373_023",
+    "concept": "pan",
+    "context": "flat round surface under the pizza",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pizza pan",
+      "pizza pannel"
+    ]
+  },
+  {
+    "node_id": "2369373_024",
+    "concept": "slice",
+    "context": "describes the food item as a pizza slice",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "pizza slice"
+    ]
+  },
+  {
+    "node_id": "2369373_025",
+    "concept": "tool",
+    "context": "generic implement used to move the pizza",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pizza tool"
+    ]
+  },
+  {
+    "node_id": "2369373_026",
+    "concept": "spatula",
+    "context": "term used for the pizza-handling tool",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "pizza spatula"
+    ]
+  },
+  {
+    "node_id": "2369373_027",
+    "concept": "slider",
+    "context": "term used for the pizza-handling tool",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "pizza slider"
+    ]
+  },
+  {
+    "node_id": "2369373_028",
+    "concept": "plate",
+    "context": "term used for the pizza-handling tool",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "pizza plate"
+    ]
+  },
+  {
+    "node_id": "2369373_029",
+    "concept": "holding",
+    "context": "action of the chef with the pizza tool",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "he is holding",
+      "chef holds"
+    ]
+  },
+  {
+    "node_id": "2369373_030",
+    "concept": "using",
+    "context": "action relation between the chef and the pizza tool",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "using a"
+    ]
+  },
+  {
+    "node_id": "2369373_031",
+    "concept": "over",
+    "context": "spatial relation of the tool relative to the chef shoulder",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "over his"
+    ]
+  },
+  {
+    "node_id": "2369373_032",
+    "concept": "shoulder",
+    "context": "body part near which the chef holds the tool handle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "his shoulder"
+    ]
+  },
+  {
+    "node_id": "2369373_033",
+    "concept": "left",
+    "context": "location of the chef in the scene",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on left"
+    ]
+  },
+  {
+    "node_id": "2369373_034",
+    "concept": "right",
+    "context": "location of the oven opening in the scene",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on right"
+    ]
+  },
+  {
+    "node_id": "2369373_035",
+    "concept": "above",
+    "context": "location of the stone face relative to the oven opening",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "above the"
+    ]
+  },
+  {
+    "node_id": "2369373_036",
+    "concept": "inside",
+    "context": "location of the fire relative to the oven",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "inside oven",
+      "inside of"
+    ]
+  },
+  {
+    "node_id": "2369373_037",
+    "concept": "background",
+    "context": "location of the fire deeper within the oven opening",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the background"
+    ]
+  },
+  {
+    "node_id": "2369373_038",
+    "concept": "grey",
+    "context": "modifies the stone face or oven surround",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a grey"
+    ]
+  },
+  {
+    "node_id": "2369373_039",
+    "concept": "big",
+    "context": "modifies the face",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "big face"
+    ]
+  },
+  {
+    "node_id": "2369373_040",
+    "concept": "monster",
+    "context": "describes the face-like oven appearance",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "a monster"
+    ]
+  },
+  {
+    "node_id": "2369373_041",
+    "concept": "carved",
+    "context": "modifies the stone face",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "carved stone"
+    ]
+  },
+  {
+    "node_id": "2369373_042",
+    "concept": "making",
+    "context": "action of preparing the pizza",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "was making"
+    ]
+  }
+]

@@ -1,0 +1,683 @@
+[
+  {
+    "node_id": "2367132_001",
+    "concept": "two",
+    "context": "count of the men playing the game",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two men",
+      "2 men",
+      "two dad"
+    ]
+  },
+  {
+    "node_id": "2367132_002",
+    "concept": "man",
+    "context": "adult male people playing the game in the foreground",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "two men",
+      "2 men",
+      "two guys"
+    ]
+  },
+  {
+    "node_id": "2367132_003",
+    "concept": "play",
+    "context": "action performed by the men with the game controllers",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "men playing",
+      "men play",
+      "were playign"
+    ]
+  },
+  {
+    "node_id": "2367132_004",
+    "concept": "video game",
+    "context": "activity/object the men are engaged with",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "v'deo games",
+      "vidoe game",
+      "playing game"
+    ]
+  },
+  {
+    "node_id": "2367132_005",
+    "concept": "small",
+    "context": "modifies the child in the background",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "small child"
+    ]
+  },
+  {
+    "node_id": "2367132_006",
+    "concept": "child",
+    "context": "young person in the background on the sofa/couch",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "small child",
+      "young girl"
+    ]
+  },
+  {
+    "node_id": "2367132_007",
+    "concept": "sit",
+    "context": "posture of the child on the sofa or couch",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "child sitting",
+      "girl sitting",
+      "girl sits"
+    ]
+  },
+  {
+    "node_id": "2367132_008",
+    "concept": "sofa",
+    "context": "seat used by the child in the background",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on a sofa",
+      "the sofa",
+      "sat on sofa"
+    ]
+  },
+  {
+    "node_id": "2367132_009",
+    "concept": "background",
+    "context": "position of the child relative to the men",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in the background",
+      "girl in back",
+      "in the baclground"
+    ]
+  },
+  {
+    "node_id": "2367132_010",
+    "concept": "blonde",
+    "context": "modifies the girl's hair color as described by participants",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blonde girl"
+    ]
+  },
+  {
+    "node_id": "2367132_011",
+    "concept": "wii",
+    "context": "type/brand of game system or controllers used by the men",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "wii controllers",
+      "playing wii",
+      "wii console"
+    ]
+  },
+  {
+    "node_id": "2367132_012",
+    "concept": "controller",
+    "context": "handheld device held by the men while playing",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "wii controllers",
+      "remote controls",
+      "holding controllers"
+    ]
+  },
+  {
+    "node_id": "2367132_013",
+    "concept": "hold",
+    "context": "action of the men gripping the controllers/remotes",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding the",
+      "hold on",
+      "have wii"
+    ]
+  },
+  {
+    "node_id": "2367132_014",
+    "concept": "both",
+    "context": "modifies the hands used by each man to hold the devices",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "both hands",
+      "both their",
+      "in both"
+    ]
+  },
+  {
+    "node_id": "2367132_015",
+    "concept": "hand",
+    "context": "body part used by the men to hold the controllers",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "both hands",
+      "their hands",
+      "each hand"
+    ]
+  },
+  {
+    "node_id": "2367132_016",
+    "concept": "watch",
+    "context": "action of the child observing the men play",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "back watches",
+      "watching them",
+      "watches on"
+    ]
+  },
+  {
+    "node_id": "2367132_017",
+    "concept": "girl",
+    "context": "female attribute of the young person in the background",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "while girl",
+      "a girl",
+      "young girl"
+    ]
+  },
+  {
+    "node_id": "2367132_018",
+    "concept": "cat",
+    "context": "animal reportedly beside the computer",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "cat sat"
+    ]
+  },
+  {
+    "node_id": "2367132_019",
+    "concept": "beside",
+    "context": "reported position of the cat relative to the computer",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "sat bside"
+    ]
+  },
+  {
+    "node_id": "2367132_020",
+    "concept": "computer",
+    "context": "object reportedly next to the cat",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "bside computer"
+    ]
+  },
+  {
+    "node_id": "2367132_021",
+    "concept": "dad",
+    "context": "role/appearance label applied to the men",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "dad looking",
+      "two dad"
+    ]
+  },
+  {
+    "node_id": "2367132_022",
+    "concept": "couch",
+    "context": "seat used by the child in the background",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the couch",
+      "on the couch",
+      "a couch"
+    ]
+  },
+  {
+    "node_id": "2367132_023",
+    "concept": "stand",
+    "context": "posture of the men while playing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "standing up",
+      "stood up",
+      "men standing"
+    ]
+  },
+  {
+    "node_id": "2367132_024",
+    "concept": "pink",
+    "context": "modifies the child's shirt color",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pink shirt"
+    ]
+  },
+  {
+    "node_id": "2367132_025",
+    "concept": "shirt",
+    "context": "garment worn by the child",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pink shirt",
+      "wearing a"
+    ]
+  },
+  {
+    "node_id": "2367132_026",
+    "concept": "back",
+    "context": "position of the child or couch area relative to the men",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in the back",
+      "the back"
+    ]
+  },
+  {
+    "node_id": "2367132_027",
+    "concept": "table",
+    "context": "furniture in the room",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "table in"
+    ]
+  },
+  {
+    "node_id": "2367132_028",
+    "concept": "front",
+    "context": "position of the reported table relative to the couch",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "in front"
+    ]
+  },
+  {
+    "node_id": "2367132_029",
+    "concept": "beer",
+    "context": "drink bottle on the floor near the couch",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "a beer"
+    ]
+  },
+  {
+    "node_id": "2367132_030",
+    "concept": "living room",
+    "context": "overall indoor setting of the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "a living room",
+      "living room setting",
+      "im living"
+    ]
+  },
+  {
+    "node_id": "2367132_031",
+    "concept": "picture",
+    "context": "wall decoration in the room",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a picture"
+    ]
+  },
+  {
+    "node_id": "2367132_032",
+    "concept": "wall",
+    "context": "surface where the picture is located",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the wall"
+    ]
+  },
+  {
+    "node_id": "2367132_033",
+    "concept": "three",
+    "context": "count of the camels in the wall picture",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "of three"
+    ]
+  },
+  {
+    "node_id": "2367132_034",
+    "concept": "camel",
+    "context": "animal depicted in the wall picture",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "three camels"
+    ]
+  },
+  {
+    "node_id": "2367132_035",
+    "concept": "left",
+    "context": "position of the child/couch relative to the men",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "their left"
+    ]
+  },
+  {
+    "node_id": "2367132_036a",
+    "concept": "brown",
+    "context": "modifies the sofa color",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "brown/beige sofa"
+    ]
+  },
+  {
+    "node_id": "2367132_036b",
+    "concept": "brown",
+    "context": "modifies hair color of the men",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "brown hair"
+    ]
+  },
+  {
+    "node_id": "2367132_037",
+    "concept": "shaved",
+    "context": "modifies one man's hair appearance",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "shaved hair"
+    ]
+  },
+  {
+    "node_id": "2367132_038",
+    "concept": "hair",
+    "context": "hair of the men as described by participants",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "brown hair",
+      "shaved hair"
+    ]
+  },
+  {
+    "node_id": "2367132_039",
+    "concept": "t-shirt",
+    "context": "clothing worn by the men",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "wearing t-shirts"
+    ]
+  },
+  {
+    "node_id": "2367132_040",
+    "concept": "jeans",
+    "context": "pants worn by the men",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "and jeans"
+    ]
+  },
+  {
+    "node_id": "2367132_041",
+    "concept": "white",
+    "context": "modifies the controllers/remotes",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white controllers",
+      "white controller",
+      "which is white"
+    ]
+  },
+  {
+    "node_id": "2367132_042",
+    "concept": "young",
+    "context": "modifies the child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "young girl"
+    ]
+  },
+  {
+    "node_id": "2367132_043",
+    "concept": "look",
+    "context": "action of the men directed toward the off-camera screen",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "looking at"
+    ]
+  },
+  {
+    "node_id": "2367132_044",
+    "concept": "screen",
+    "context": "object the men are looking toward while playing",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "the screen"
+    ]
+  },
+  {
+    "node_id": "2367132_045",
+    "concept": "smile",
+    "context": "facial expression/action of the child",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "smiling on"
+    ]
+  },
+  {
+    "node_id": "2367132_046",
+    "concept": "glass",
+    "context": "material descriptor of the bottle near the couch",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a glass",
+      "glass bottle"
+    ]
+  },
+  {
+    "node_id": "2367132_047",
+    "concept": "bottle",
+    "context": "container near the couch",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "glass bottle"
+    ]
+  },
+  {
+    "node_id": "2367132_048",
+    "concept": "cheerful",
+    "context": "modifies the men's facial expressions",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "correct",
+    "source_phrases": [
+      "cheerful facial"
+    ]
+  },
+  {
+    "node_id": "2367132_049",
+    "concept": "facial expression",
+    "context": "described appearance of the men's faces",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "facial expressions"
+    ]
+  },
+  {
+    "node_id": "2367132_050",
+    "concept": "one",
+    "context": "count of controller held in one hand as described for each man",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one hand",
+      "one conroller"
+    ]
+  },
+  {
+    "node_id": "2367132_051",
+    "concept": "nunchuck",
+    "context": "secondary Wii controller held in the other hand",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "the nunchuck"
+    ]
+  },
+  {
+    "node_id": "2367132_052",
+    "concept": "other",
+    "context": "modifies the second hand/device contrasted with one hand",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the other"
+    ]
+  },
+  {
+    "node_id": "2367132_053",
+    "concept": "ginger",
+    "context": "modifies one man's hair or beard color",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "is ginger"
+    ]
+  },
+  {
+    "node_id": "2367132_054",
+    "concept": "daughter",
+    "context": "relationship label for the child relative to one man",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "daughter watches"
+    ]
+  },
+  {
+    "node_id": "2367132_055",
+    "concept": "beige",
+    "context": "modifies the sofa color",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "beige sofa"
+    ]
+  },
+  {
+    "node_id": "2367132_056",
+    "concept": "right",
+    "context": "position of one man within the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the right"
+    ]
+  },
+  {
+    "node_id": "2367132_057",
+    "concept": "bend",
+    "context": "reported body posture of the men while playing",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "and bending"
+    ]
+  }
+]

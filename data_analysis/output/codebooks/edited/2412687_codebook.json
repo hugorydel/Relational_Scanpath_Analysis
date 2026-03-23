@@ -1,0 +1,509 @@
+[
+  {
+    "node_id": "2412687_001",
+    "concept": "person",
+    "context": "human figure interacting with the dog and frisbee",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a person"
+    ]
+  },
+  {
+    "node_id": "2412687_001a",
+    "concept": "man",
+    "context": "human figure interacting with the dog and frisbee",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "a man",
+      "mans hand",
+      "by man",
+      "man in"
+    ]
+  },
+  {
+    "node_id": "2412687_002",
+    "concept": "dog",
+    "context": "animal interacting with the person and frisbee",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a dog",
+      "the dog",
+      "cute dog",
+      "dog trying",
+      "dog left",
+      "his dog",
+      "dog biting",
+      "dog in",
+      "the beige coloured dog"
+    ]
+  },
+  {
+    "node_id": "2412687_003",
+    "concept": "frisbee",
+    "context": "object being held by the person and reached for by the dog",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "red frisbee",
+      "red frizbee",
+      "red frizbe"
+    ]
+  },
+  {
+    "node_id": "2412687_004",
+    "concept": "red",
+    "context": "modifies the frisbee",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "red frisbee",
+      "red frizbee",
+      "red frizbe"
+    ]
+  },
+  {
+    "node_id": "2412687_005",
+    "concept": "playing",
+    "context": "interaction between the person and the dog involving the frisbee",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "man playing",
+      "playing with",
+      "were playin",
+      "playing frisbee"
+    ]
+  },
+  {
+    "node_id": "2412687_006",
+    "concept": "biting",
+    "context": "action performed by the dog on the frisbee",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "to bite",
+      "biting on",
+      "dog biting",
+      "was biting",
+      "trying to bite",
+      "biting a"
+    ]
+  },
+  {
+    "node_id": "2412687_007",
+    "concept": "holding",
+    "context": "action performed by the person on the frisbee",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "holding out",
+      "held by",
+      "is holding",
+      "holding it",
+      "holding a",
+      "man holding"
+    ]
+  },
+  {
+    "node_id": "2412687_008",
+    "concept": "night",
+    "context": "time/lighting condition of the outdoor scene",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "at night",
+      "nighttime",
+      "late at night"
+    ]
+  },
+  {
+    "node_id": "2412687_009",
+    "concept": "dark",
+    "context": "describes the scene lighting",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "dark lighting",
+      "its dark"
+    ]
+  },
+  {
+    "node_id": "2412687_010",
+    "concept": "outside",
+    "context": "describes the overall setting as outdoors",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "were outside",
+      "and outside"
+    ]
+  },
+  {
+    "node_id": "2412687_011",
+    "concept": "backyard",
+    "context": "describes the outdoor setting",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "a backyard"
+    ]
+  },
+  {
+    "node_id": "2412687_012",
+    "concept": "grass",
+    "context": "ground surface in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on grass"
+    ]
+  },
+  {
+    "node_id": "2412687_013",
+    "concept": "golden retriever",
+    "context": "breed label for the dog",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "a golden retriver",
+      "golden retriever or",
+      "golden retriver dog"
+    ]
+  },
+  {
+    "node_id": "2412687_014a",
+    "concept": "black",
+    "context": "modifies the shoes",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "black adidas"
+    ]
+  },
+  {
+    "node_id": "2412687_014b",
+    "concept": "black",
+    "context": "modifies the dog",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "black dog"
+    ]
+  },
+  {
+    "node_id": "2412687_015",
+    "concept": "park",
+    "context": "describes the outdoor setting",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "a park",
+      "or park"
+    ]
+  },
+  {
+    "node_id": "2412687_016",
+    "concept": "jumping",
+    "context": "action performed by the dog toward the frisbee",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "was jumping"
+    ]
+  },
+  {
+    "node_id": "2412687_017",
+    "concept": "cap",
+    "context": "item worn by the person",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "a cap"
+    ]
+  },
+  {
+    "node_id": "2412687_018",
+    "concept": "person",
+    "context": "human figure holding the frisbee",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a person"
+    ]
+  },
+  {
+    "node_id": "2412687_019",
+    "concept": "right",
+    "context": "location of the person relative to the image frame",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "to the right",
+      "on right",
+      "on the right"
+    ]
+  },
+  {
+    "node_id": "2412687_020",
+    "concept": "upright",
+    "context": "posture of the person",
+    "content_type": "spatial_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "standing up",
+      "stood upright"
+    ]
+  },
+  {
+    "node_id": "2412687_021",
+    "concept": "garden",
+    "context": "describes the outdoor setting",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "garden or",
+      "in a garden",
+      "back garden",
+      "in a garden"
+    ]
+  },
+  {
+    "node_id": "2412687_022",
+    "concept": "owner",
+    "context": "relationship label for the person relative to the dog",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "its owner"
+    ]
+  },
+  {
+    "node_id": "2412687_023",
+    "concept": "blonde",
+    "context": "modifies the dog's colour",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blonde labrador"
+    ]
+  },
+  {
+    "node_id": "2412687_024",
+    "concept": "labrador",
+    "context": "breed label for the dog",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "blonde labrador"
+    ]
+  },
+  {
+    "node_id": "2412687_025",
+    "concept": "centre",
+    "context": "location of the dog in the image frame",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in centre"
+    ]
+  },
+  {
+    "node_id": "2412687_026",
+    "concept": "sliders",
+    "context": "footwear worn by the person",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "in sliders"
+    ]
+  },
+  {
+    "node_id": "2412687_027",
+    "concept": "grey",
+    "context": "modifies the person's shorts",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "grey clothes",
+      "grey outfit"
+    ]
+  },
+  {
+    "node_id": "2412687_028",
+    "concept": "clothes",
+    "context": "garments worn by the person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "grey clothes"
+    ]
+  },
+  {
+    "node_id": "2412687_029",
+    "concept": "beige",
+    "context": "modifies the dog's colour",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "beige coloured"
+    ]
+  },
+  {
+    "node_id": "2412687_030",
+    "concept": "all fours",
+    "context": "posture of the dog",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on all fours"
+    ]
+  },
+  {
+    "node_id": "2412687_031",
+    "concept": "shoe",
+    "context": "footwear worn by the person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "adidas shoes"
+    ]
+  },
+  {
+    "node_id": "2412687_032",
+    "concept": "adidas",
+    "context": "modifies the shoes as brand label",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "adidas shoes"
+    ]
+  },
+  {
+    "node_id": "2412687_033",
+    "concept": "fence",
+    "context": "background object in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "a fence"
+    ]
+  },
+  {
+    "node_id": "2412687_034",
+    "concept": "background",
+    "context": "location of the fence within the scene",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in the background"
+    ]
+  },
+  {
+    "node_id": "2412687_035",
+    "concept": "left",
+    "context": "location of the dog relative to the image frame",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "dog left"
+    ]
+  },
+  {
+    "node_id": "2412687_036",
+    "concept": "white",
+    "context": "modifies the socks",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white adidas"
+    ]
+  },
+  {
+    "node_id": "2412687_037",
+    "concept": "shorts",
+    "context": "garment worn by the person",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "and shorts"
+    ]
+  },
+  {
+    "node_id": "2412687_038",
+    "concept": "mouth",
+    "context": "body part of the dog used to take the frisbee",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "its mouth"
+    ]
+  },
+  {
+    "node_id": "2412687_039",
+    "concept": "grab",
+    "context": "dog action directed toward the frisbee",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "to grab",
+      "to take",
+      "to reach",
+      "about to take"
+    ]
+  },
+  {
+    "node_id": "2412687_040",
+    "concept": "throwing",
+    "context": "action attributed to the person with the frisbee",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "being thrown"
+    ]
+  }
+]

@@ -374,7 +374,6 @@ Encode-Decode_Experiment-22-1,150472,3.142934,Encoding
 Encode-Decode_Experiment-22-1,2348899,1.51051,Encoding
 Encode-Decode_Experiment-22-1,2370664,0.04343,Encoding
 Encode-Decode_Experiment-22-1,2394020,3.265288,Encoding
-Encode-Decode_Experiment-22-1,2385851,0.483521,Encoding
 Encode-Decode_Experiment-22-1,2369373,0.553047,Encoding
 Encode-Decode_Experiment-22-1,2374670,1.118331,Encoding
 Encode-Decode_Experiment-22-1,2344622,1.072528,Encoding
@@ -386,7 +385,6 @@ Encode-Decode_Experiment-22-1,2356125,-0.592249,Encoding
 Encode-Decode_Experiment-22-1,2385550,-0.315236,Encoding
 Encode-Decode_Experiment-22-1,2386442,0.544681,Encoding
 Encode-Decode_Experiment-22-1,2347025,-0.025477,Encoding
-Encode-Decode_Experiment-22-1,2350974,2.788466,Encoding
 Encode-Decode_Experiment-22-1,2410309,-0.312748,Encoding
 Encode-Decode_Experiment-22-1,2411268,0.832156,Encoding
 Encode-Decode_Experiment-22-1,2367132,1.863307,Encoding
@@ -407,7 +405,6 @@ Encode-Decode_Experiment-23-1,2345035,0.929464,Encoding
 Encode-Decode_Experiment-23-1,2397102,4.73642,Encoding
 Encode-Decode_Experiment-23-1,2371471,2.249736,Encoding
 Encode-Decode_Experiment-23-1,2370664,3.596008,Encoding
-Encode-Decode_Experiment-23-1,2379478,3.795466,Encoding
 Encode-Decode_Experiment-23-1,2367132,5.609256,Encoding
 Encode-Decode_Experiment-23-1,2394020,2.743835,Encoding
 Encode-Decode_Experiment-23-1,2360001,2.249558,Encoding
@@ -855,7 +852,6 @@ Encode-Decode_Experiment-23-1,2344622,-0.341277,Decoding
 Encode-Decode_Experiment-23-1,2367132,1.231666,Decoding
 Encode-Decode_Experiment-23-1,2410309,-1.435236,Decoding
 Encode-Decode_Experiment-23-1,2360001,-0.802464,Decoding
-Encode-Decode_Experiment-23-1,2379478,-0.210028,Decoding
 Encode-Decode_Experiment-23-1,2394020,1.061443,Decoding
 Encode-Decode_Experiment-23-1,2349475,0.529537,Decoding
 Encode-Decode_Experiment-23-1,2386442,-0.637445,Decoding

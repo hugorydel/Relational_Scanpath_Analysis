@@ -25,9 +25,9 @@ import numpy as np
 import pandas as pd
 
 from .constants import (
-    DEFAULT_FLAGS_PATH,
     DEC_BETWEEN_COVARIATES,
     DEC_COVARIATES,
+    DEFAULT_FLAGS_PATH,
     DV_OBJECTS,
     DV_RELATIONS,
     DV_TOTAL,
@@ -261,13 +261,18 @@ def apply_exclusions(tables: dict, flags_path: Path | None = None) -> dict:
     """
     logger.info("Step 3: Applying exclusions ...")
 
+    completeness = {}  # structured log surfaced to output.py
+
     enc = tables["enc"]
     before = len(enc)
     enc_filtered = enc[~enc["low_n_enc"]].copy()
+    n_low_n = before - len(enc_filtered)
     logger.info(
-        f"  enc: {before} → {len(enc_filtered)} "
-        f"(removed {before - len(enc_filtered)}: low_n_enc=True)"
+        f"  enc: {before} → {len(enc_filtered)} " f"(removed {n_low_n}: low_n_enc=True)"
     )
+    completeness["enc_initial"] = before
+    completeness["enc_low_n"] = n_low_n
+    completeness["enc_wrong_image"] = 0
 
     # ------------------------------------------------------------------
     # Wrong-image exclusions
@@ -288,6 +293,7 @@ def apply_exclusions(tables: dict, flags_path: Path | None = None) -> dict:
                 lambda r: (r["SubjectID"], r["StimID"]) in wrong, axis=1
             )
             enc_filtered = enc_filtered[~mask].copy()
+            completeness["enc_wrong_image"] = int(mask.sum())
             logger.info(
                 f"  enc: removed {mask.sum()} wrong-image pairs "
                 f"({len(wrong)} unique flagged pairs in flags file)."
@@ -342,9 +348,7 @@ def apply_exclusions(tables: dict, flags_path: Path | None = None) -> dict:
 
     if DV_TOTAL in enc_filtered.columns:
         stim_prop_sd = (
-            enc_filtered.groupby("StimID")[DV_TOTAL]
-            .std()
-            .rename("prop_total_image_sd")
+            enc_filtered.groupby("StimID")[DV_TOTAL].std().rename("prop_total_image_sd")
         )
         enc_filtered = enc_filtered.merge(stim_prop_sd, on="StimID", how="left")
     else:
@@ -374,8 +378,14 @@ def apply_exclusions(tables: dict, flags_path: Path | None = None) -> dict:
 
     # Propagate decomposition + variance columns into enc_long via SubjectID × StimID
     decomp_cols = enc_filtered[
-        ["SubjectID", "StimID", "svg_z_enc_within", "svg_z_enc_image_mean",
-         "svg_z_enc_within_sd", "prop_total_image_sd"]
+        [
+            "SubjectID",
+            "StimID",
+            "svg_z_enc_within",
+            "svg_z_enc_image_mean",
+            "svg_z_enc_within_sd",
+            "prop_total_image_sd",
+        ]
     ]
     enc_long_filtered = enc_long_filtered.merge(
         decomp_cols, on=["SubjectID", "StimID"], how="left"
@@ -388,9 +398,13 @@ def apply_exclusions(tables: dict, flags_path: Path | None = None) -> dict:
     if not dec.empty:
         before_dec = len(dec)
         dec_filtered = dec[~dec["low_n_dec"]].copy()
+        n_dec_low_n = before_dec - len(dec_filtered)
+        completeness["dec_initial"] = before_dec
+        completeness["dec_low_n"] = n_dec_low_n
+        completeness["dec_wrong_image"] = 0
         logger.info(
             f"  dec: {before_dec} → {len(dec_filtered)} "
-            f"(removed {before_dec - len(dec_filtered)}: low_n_dec=True)"
+            f"(removed {n_dec_low_n}: low_n_dec=True)"
         )
 
         if flags_path.exists() and wrong:
@@ -398,6 +412,7 @@ def apply_exclusions(tables: dict, flags_path: Path | None = None) -> dict:
                 lambda r: (r["SubjectID"], r["StimID"]) in wrong, axis=1
             )
             dec_filtered = dec_filtered[~mask_dec].copy()
+            completeness["dec_wrong_image"] = int(mask_dec.sum())
             logger.info(f"  dec: removed {mask_dec.sum()} wrong-image pairs.")
 
         stim_svg_dec_mean = (
@@ -417,7 +432,15 @@ def apply_exclusions(tables: dict, flags_path: Path | None = None) -> dict:
     else:
         dec_filtered = dec
 
-    return {"enc": enc_filtered, "enc_long": enc_long_filtered, "dec": dec_filtered}
+    completeness["enc_final"] = len(enc_filtered)
+    completeness["dec_final"] = len(dec_filtered) if not dec_filtered.empty else 0
+
+    return {
+        "enc": enc_filtered,
+        "enc_long": enc_long_filtered,
+        "dec": dec_filtered,
+        "_data_completeness": completeness,
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -432,13 +455,17 @@ def standardise_tables(filtered: dict) -> dict:
     """
     logger.info("Step 4: Standardising predictors ...")
 
-    enc_cols = ["svg_z_enc", "svg_z_enc_within"] + ENC_COVARIATES + ENC_BETWEEN_COVARIATES
-    dec_cols = ["svg_z_dec", "svg_z_dec_within"] + DEC_COVARIATES + DEC_BETWEEN_COVARIATES
+    enc_cols = (
+        ["svg_z_enc", "svg_z_enc_within"] + ENC_COVARIATES + ENC_BETWEEN_COVARIATES
+    )
+    dec_cols = (
+        ["svg_z_dec", "svg_z_dec_within"] + DEC_COVARIATES + DEC_BETWEEN_COVARIATES
+    )
 
     table_col_map = {
-        "enc":      enc_cols,
+        "enc": enc_cols,
         "enc_long": enc_cols,
-        "dec":      dec_cols,
+        "dec": dec_cols,
     }
 
     for key, cols in table_col_map.items():

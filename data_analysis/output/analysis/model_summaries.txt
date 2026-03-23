@@ -6,6 +6,10 @@
   Relational recall (%)      N=22  M= 46.318  SD= 9.962  95% CI [ 41.901,  50.735]
   Object recall (%)          N=22  M= 56.386  SD=10.280  95% CI [ 51.828,  60.944]
 
+=== Data completeness ===
+  Encoding: 660 initial rows  →  0 removed (low_n)  + 30 removed (wrong image)  →  630 final rows
+  Decoding: 639 initial rows  →  134 removed (low_n)  + 24 removed (wrong image)  →  481 final rows
+
 
 ############################################################
 # H1 MODELS
@@ -237,3 +241,17 @@ StimID Var                      0.033    0.022
 =========================================================================
 
 Converged: True
+
+
+============================================================
+CONVERGENCE SUMMARY
+============================================================
+  H1_svg_enc                     mode=ttest  n_participants=22
+  H2_total                       mode=lmm  optimizer=nm  converged=True  n_obs=610  n_dropped=20
+  H2_relations                   mode=lmm  optimizer=nm  converged=True  n_obs=610  n_dropped=20
+  H2_objects                     mode=lmm  optimizer=nm  converged=True  n_obs=610  n_dropped=20
+  EXP_dissociation               mode=lmm  optimizer=nm  converged=True  n_obs=1220  n_dropped=40
+  H1_svg_dec                     mode=ttest  n_participants=22
+  H2_dec_total                   mode=lmm  optimizer=nm  converged=True  n_obs=295  n_dropped=186
+  H2_dec_relations               mode=lmm  optimizer=nm  converged=True  n_obs=295  n_dropped=186
+  H2_dec_objects                 mode=lmm  optimizer=nm  converged=True  n_obs=295  n_dropped=186

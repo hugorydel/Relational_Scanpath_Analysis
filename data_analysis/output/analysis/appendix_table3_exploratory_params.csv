@@ -1,0 +1,8 @@
+model,term,coef,std_err,z_or_t,p,ci_lower,ci_upper,optimizer,n_obs,n_dropped
+EXP_dissociation,Intercept,0.559,0.0101,55.42926328441386,0.0,0.5392,0.5788,nm,1220,40
+EXP_dissociation,svg_z_enc_within_z,0.0244,0.0103,2.36524500163079,0.018,0.0042,0.0446,nm,1220,40
+EXP_dissociation,memory_type,-0.0967,0.0098,-9.869750847125607,0.0,-0.1159,-0.0775,nm,1220,40
+EXP_dissociation,svg_z_enc_within_z:memory_type,-0.0004,0.0099,-0.04032518330224019,0.9678,-0.0198,0.019,nm,1220,40
+EXP_dissociation,n_fixations_enc_z,0.0174,0.009,1.9271562989413378,0.054,-0.0003,0.035,nm,1220,40
+EXP_dissociation,mean_salience_relational_enc_z,-0.0132,0.0089,-1.4821052908381995,0.1383,-0.0306,0.0043,nm,1220,40
+EXP_dissociation,svg_z_enc_image_mean_z,0.0095,0.0089,1.0631357100170518,0.2877,-0.008,0.0269,nm,1220,40

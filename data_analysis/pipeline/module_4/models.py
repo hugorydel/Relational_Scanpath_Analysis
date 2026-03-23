@@ -123,7 +123,17 @@ def _fit_one(name: str, formula: str, dv: str, df: pd.DataFrame) -> tuple:
         logger.warning(f"  {name}: insufficient data — skipping.")
         return None, "skipped"
 
-    return _fit_lmm(name, full_formula, model_df)
+    result, mode = _fit_lmm(name, full_formula, model_df)
+    _attach_fit_metadata(result, n_obs, dropped)
+    return result, mode
+
+
+def _attach_fit_metadata(result, n_obs: int, n_dropped: int):
+    """Attach sample-size metadata to any result namespace."""
+    if result is not None:
+        result.n_obs = n_obs
+        result.n_dropped = n_dropped
+    return result
 
 
 def _fit_lmm(name: str, full_formula: str, model_df: pd.DataFrame) -> tuple:
@@ -160,6 +170,7 @@ def _fit_lmm(name: str, full_formula: str, model_df: pd.DataFrame) -> tuple:
                         f"  {name}: {method} did not converge — trying next optimizer"
                     )
                     continue
+                result.optimizer_used = method
                 logger.info(f"    LMM converged ({method}): {result.converged}")
                 return result, "lmm"
             except Exception as e:

@@ -64,16 +64,18 @@ def _extract_coef_table(name: str, result) -> pd.DataFrame:
     if isinstance(result.params, dict):
         terms = list(result.params.keys())
         ci_df = result.conf_int()
-        return pd.DataFrame({
-            "model":   name,
-            "term":    terms,
-            "coef":    [result.params[t] for t in terms],
-            "std_err": [result.bse[t] for t in terms],
-            "z_or_t":  [result.tvalues[t] for t in terms],
-            "p":       [result.pvalues[t] for t in terms],
-            "ci_lower": ci_df["0"].values,
-            "ci_upper": ci_df["1"].values,
-        })
+        return pd.DataFrame(
+            {
+                "model": name,
+                "term": terms,
+                "coef": [result.params[t] for t in terms],
+                "std_err": [result.bse[t] for t in terms],
+                "z_or_t": [result.tvalues[t] for t in terms],
+                "p": [result.pvalues[t] for t in terms],
+                "ci_lower": ci_df["0"].values,
+                "ci_upper": ci_df["1"].values,
+            }
+        )
 
     # statsmodels result: params is a Series
     ci = result.conf_int()
@@ -100,29 +102,77 @@ def _extract_coef_table(name: str, result) -> pd.DataFrame:
 # ---------------------------------------------------------------------------
 
 
-def _descriptives(filtered: dict) -> str:
+def compute_descriptives(filtered: dict, output_dir: Path) -> tuple:
+    """
+    Compute participant-level descriptive statistics for all key variables.
+
+    Aggregation order:
+      1. Average trial-level values to one mean per participant (removes
+         within-participant dependence and matches the unit of inference).
+      2. Across those N participant means compute grand M, SD, and 95% CI.
+
+    Recall proportion DVs are multiplied by 100 for % reporting.
+
+    Writes descriptives.csv to output_dir.
+
+    Returns
+    -------
+    (log_text : str, desc_df : pd.DataFrame)
+    """
     enc = filtered.get("enc", pd.DataFrame())
-    lines = ["\n=== Encoding SVG and proportion DV descriptives ==="]
+    dec = filtered.get("dec", pd.DataFrame())
+    lines = ["\n=== Descriptive statistics (participant-level means) ==="]
+    rows = []
 
-    if "svg_z_enc" in enc.columns:
-        vals = enc["svg_z_enc"].dropna()
+    def _agg(df, col, scale=1.0):
+        """Aggregate col to participant means, return stats dict or None."""
+        if df.empty or col not in df.columns or "SubjectID" not in df.columns:
+            return None
+        subj_means = df.groupby("SubjectID")[col].mean().dropna() * scale
+        n = len(subj_means)
+        if n < 2:
+            return None
+        m = subj_means.mean()
+        sd = subj_means.std(ddof=1)
+        se = subj_means.sem()
+        ci_lo, ci_hi = stats.t.interval(0.95, df=n - 1, loc=m, scale=se)
+        return {
+            "n": n,
+            "M": m,
+            "SD": sd,
+            "SE": se,
+            "CI_lower": ci_lo,
+            "CI_upper": ci_hi,
+        }
+
+    _VARS = [
+        ("svg_z_enc", enc, 1.0, "Encoding SVG (z)"),
+        ("svg_z_dec", dec, 1.0, "Decoding SVG (z)"),
+        (DV_TOTAL, enc, 100.0, "Total recall (%)"),
+        (DV_RELATIONS, enc, 100.0, "Relational recall (%)"),
+        (DV_OBJECTS, enc, 100.0, "Object recall (%)"),
+    ]
+
+    for col, df, scale, label in _VARS:
+        s = _agg(df, col, scale)
+        if s is None:
+            lines.append(f"  {label:<25}  — data unavailable")
+            continue
         lines.append(
-            f"  svg_z_enc:     n={len(vals)}, mean={vals.mean():.3f}, "
-            f"sd={vals.std():.3f}, %>0={100*(vals>0).mean():.1f}%"
+            f"  {label:<25}  N={s['n']:2d}  "
+            f"M={s['M']:7.3f}  SD={s['SD']:6.3f}  "
+            f"95% CI [{s['CI_lower']:7.3f}, {s['CI_upper']:7.3f}]"
         )
+        rows.append({"variable": label, **s})
 
-    for col, label in [
-        (DV_TOTAL, "prop_total    "),
-        (DV_RELATIONS, "prop_relations"),
-        (DV_OBJECTS, "prop_objects  "),
-    ]:
-        if col in enc.columns:
-            vals = enc[col].dropna()
-            lines.append(
-                f"  {label}: n={len(vals)}, mean={vals.mean():.3f}, "
-                f"sd={vals.std():.3f}, range=[{vals.min():.3f}, {vals.max():.3f}]"
-            )
-    return "\n".join(lines)
+    desc_df = pd.DataFrame(rows)
+    if not desc_df.empty:
+        output_dir.mkdir(parents=True, exist_ok=True)
+        out_path = output_dir / "descriptives.csv"
+        desc_df.to_csv(out_path, index=False)
+        logger.info("  Written → descriptives.csv")
+
+    return "\n".join(lines), desc_df
 
 
 # ---------------------------------------------------------------------------
@@ -300,8 +350,8 @@ def _marginal_predict(result, design_fn, x_grid: np.ndarray) -> tuple:
         design = design_fn(x)
         row = np.array([design.get(n, 0.0) for n in fe_params.index])
         pred = float(row @ fe_params.values)
-        var  = float(row @ fe_cov.values @ row)
-        se   = np.sqrt(max(var, 0.0))
+        var = float(row @ fe_cov.values @ row)
+        se = np.sqrt(max(var, 0.0))
         preds.append(pred)
         ci_lo.append(pred - 1.96 * se)
         ci_hi.append(pred + 1.96 * se)
@@ -336,53 +386,90 @@ def _figure1_violin(
     has_dec = dec is not None and "svg_z_dec" in dec.columns
     dec_vals = pd.DataFrame()
     if has_dec:
-        dec_vals = dec[["svg_z_dec", "SubjectID", "StimID"]].dropna(subset=["svg_z_dec"]).copy()
+        dec_vals = (
+            dec[["svg_z_dec", "SubjectID", "StimID"]]
+            .dropna(subset=["svg_z_dec"])
+            .copy()
+        )
         dec_vals["phase"] = "Decoding"
         dec_vals = dec_vals.rename(columns={"svg_z_dec": "svg_z"})
 
     positions = [0, 1] if has_dec else [0]
-    colours   = ["#2166ac", "#b2182b"]
-    labels    = ["Encoding", "Decoding"]
-    datasets  = [enc_vals["svg_z"].values]
+    colours = ["#2166ac", "#b2182b"]
+    labels = ["Encoding", "Decoding"]
+    datasets = [enc_vals["svg_z"].values]
     if has_dec:
         datasets.append(dec_vals["svg_z"].values)
 
     fig, ax = plt.subplots(figsize=(4.5 + 2.5 * (len(positions) - 1), 6))
     rng = np.random.default_rng(42)
 
-    for i, (pos, colour, label, data) in enumerate(zip(positions, colours, labels, datasets)):
-        vp = ax.violinplot(data, positions=[pos], widths=0.55,
-                           showmedians=False, showextrema=False)
+    for i, (pos, colour, label, data) in enumerate(
+        zip(positions, colours, labels, datasets)
+    ):
+        vp = ax.violinplot(
+            data, positions=[pos], widths=0.55, showmedians=False, showextrema=False
+        )
         for body in vp["bodies"]:
-            body.set_facecolor(colour); body.set_alpha(0.35)
-            body.set_edgecolor(colour); body.set_linewidth(1.2)
+            body.set_facecolor(colour)
+            body.set_alpha(0.35)
+            body.set_edgecolor(colour)
+            body.set_linewidth(1.2)
 
         jitter = rng.uniform(-0.07, 0.07, len(data))
-        ax.scatter(np.ones(len(data)) * pos + jitter, data,
-                   color=colour, alpha=0.25, s=12, linewidths=0, zorder=3)
+        ax.scatter(
+            np.ones(len(data)) * pos + jitter,
+            data,
+            color=colour,
+            alpha=0.25,
+            s=12,
+            linewidths=0,
+            zorder=3,
+        )
 
         q25, q75 = np.percentile(data, [25, 75])
         ax.vlines(pos, q25, q75, color=colour, linewidth=5, alpha=0.7, zorder=4)
         ax.scatter([pos], [np.median(data)], color="white", s=30, zorder=5)
 
-        gm  = data.mean()
+        gm = data.mean()
         pct = 100 * (data > 0).mean()
-        ax.hlines(gm, pos - 0.35, pos + 0.35,
-                  color=colour, linewidth=1.6, linestyle="-", alpha=0.9, zorder=6)
+        ax.hlines(
+            gm,
+            pos - 0.35,
+            pos + 0.35,
+            color=colour,
+            linewidth=1.6,
+            linestyle="-",
+            alpha=0.9,
+            zorder=6,
+        )
 
         x_ann, ha_ann = (0.03, "left") if i == 0 else (0.97, "right")
         ax.annotate(
             f"{label}\nMean = {gm:.2f} SD\n{pct:.0f}% > chance",
-            xy=(x_ann, 0.97 - i * 0.18), xycoords="axes fraction",
-            fontsize=8.5, ha=ha_ann, va="top", color=colour,
+            xy=(x_ann, 0.97 - i * 0.18),
+            xycoords="axes fraction",
+            fontsize=8.5,
+            ha=ha_ann,
+            va="top",
+            color=colour,
             bbox=dict(boxstyle="round,pad=0.3", fc="white", alpha=0.88),
         )
 
-    ax.axhline(0, color="black", linewidth=1.0, linestyle="--",
-               alpha=0.6, label="Permutation chance (0)", zorder=2)
+    ax.axhline(
+        0,
+        color="black",
+        linewidth=1.0,
+        linestyle="--",
+        alpha=0.6,
+        label="Permutation chance (0)",
+        zorder=2,
+    )
     ax.set_xticks(positions)
-    ax.set_xticklabels(labels[:len(positions)], fontsize=10)
-    ax.set_ylabel("Relational scanpath strength\n(z-score above permutation baseline)", fontsize=9)
+    ax.set_xticklabels(labels[: len(positions)], fontsize=10)
+    ax.set_ylabel(
+        "Relational scanpath strength\n(z-score above permutation baseline)", fontsize=9
+    )
     ax.legend(fontsize=8, framealpha=0.85, loc="lower right")
     ax.spines[["top", "right"]].set_visible(False)
     ax.tick_params(labelsize=8)
@@ -393,7 +480,9 @@ def _figure1_violin(
     plt.close()
     logger.info(f"  Written → {output_path.name}")
 
-    all_vals = pd.concat([enc_vals, dec_vals], ignore_index=True) if has_dec else enc_vals
+    all_vals = (
+        pd.concat([enc_vals, dec_vals], ignore_index=True) if has_dec else enc_vals
+    )
     return all_vals[["SubjectID", "StimID", "svg_z", "phase"]].copy()
 
 
@@ -414,14 +503,18 @@ def _figure3_predicted_total(
     """
     entry = results.get("H2_total")
     if entry is None or entry[0] is None:
-        logger.warning("  _figure3_predicted_total: H2_total result missing — skipping.")
+        logger.warning(
+            "  _figure3_predicted_total: H2_total result missing — skipping."
+        )
         return pd.DataFrame()
 
     result, _ = entry
     svg_col = "svg_z_enc_within_z"
 
     if svg_col not in enc.columns:
-        logger.warning("  _figure3_predicted_total: svg_z_enc_within_z missing — skipping.")
+        logger.warning(
+            "  _figure3_predicted_total: svg_z_enc_within_z missing — skipping."
+        )
         return pd.DataFrame()
 
     vals = enc[svg_col].dropna().values
@@ -452,12 +545,14 @@ def _figure3_predicted_total(
     plt.close()
     logger.info(f"  Written → {output_path.name}")
 
-    return pd.DataFrame({
-        "svg_z_enc_within_z": x_grid,
-        "pred_total":          preds,
-        "ci_lower":            ci_lo,
-        "ci_upper":            ci_hi,
-    })
+    return pd.DataFrame(
+        {
+            "svg_z_enc_within_z": x_grid,
+            "pred_total": preds,
+            "ci_lower": ci_lo,
+            "ci_upper": ci_hi,
+        }
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -478,14 +573,18 @@ def _figure4_content_comparison(
     """
     entry = results.get("EXP_dissociation")
     if entry is None or entry[0] is None:
-        logger.warning("  _figure4_content_comparison: EXP_dissociation result missing — skipping.")
+        logger.warning(
+            "  _figure4_content_comparison: EXP_dissociation result missing — skipping."
+        )
         return pd.DataFrame()
 
     result, _ = entry
     svg_col = "svg_z_enc_within_z"
 
     if svg_col not in enc.columns:
-        logger.warning("  _figure4_content_comparison: svg_z_enc_within_z missing — skipping.")
+        logger.warning(
+            "  _figure4_content_comparison: svg_z_enc_within_z missing — skipping."
+        )
         return pd.DataFrame()
 
     vals = enc[svg_col].dropna().values
@@ -493,13 +592,21 @@ def _figure4_content_comparison(
 
     # Objects: memory_type = 0
     def design_obj(x):
-        return {"Intercept": 1.0, svg_col: x, "memory_type": 0.0,
-                f"{svg_col}:memory_type": 0.0}
+        return {
+            "Intercept": 1.0,
+            svg_col: x,
+            "memory_type": 0.0,
+            f"{svg_col}:memory_type": 0.0,
+        }
 
     # Relations: memory_type = 1
     def design_rel(x):
-        return {"Intercept": 1.0, svg_col: x, "memory_type": 1.0,
-                f"{svg_col}:memory_type": x}
+        return {
+            "Intercept": 1.0,
+            svg_col: x,
+            "memory_type": 1.0,
+            f"{svg_col}:memory_type": x,
+        }
 
     preds_obj, ci_lo_obj, ci_hi_obj = _marginal_predict(result, design_obj, x_grid)
     preds_rel, ci_lo_rel, ci_hi_rel = _marginal_predict(result, design_rel, x_grid)
@@ -510,19 +617,35 @@ def _figure4_content_comparison(
     fig, ax = plt.subplots(figsize=(5.5, 4.5))
 
     # Objects
-    ax.fill_between(x_grid, ci_lo_obj, ci_hi_obj, color=colour_obj, alpha=0.18, zorder=2)
+    ax.fill_between(
+        x_grid, ci_lo_obj, ci_hi_obj, color=colour_obj, alpha=0.18, zorder=2
+    )
     ax.plot(x_grid, preds_obj, color=colour_obj, linewidth=2.2, zorder=3)
 
     # Relations
-    ax.fill_between(x_grid, ci_lo_rel, ci_hi_rel, color=colour_rel, alpha=0.18, zorder=2)
+    ax.fill_between(
+        x_grid, ci_lo_rel, ci_hi_rel, color=colour_rel, alpha=0.18, zorder=2
+    )
     ax.plot(x_grid, preds_rel, color=colour_rel, linewidth=2.2, zorder=3)
 
     # Direct line labels at right edge
     x_label = x_grid[-1] + 0.05
-    ax.text(x_label, float(preds_obj[-1]), "Object recall",
-            color=colour_obj, fontsize=8.5, va="center")
-    ax.text(x_label, float(preds_rel[-1]), "Relational recall",
-            color=colour_rel, fontsize=8.5, va="center")
+    ax.text(
+        x_label,
+        float(preds_obj[-1]),
+        "Object recall",
+        color=colour_obj,
+        fontsize=8.5,
+        va="center",
+    )
+    ax.text(
+        x_label,
+        float(preds_rel[-1]),
+        "Relational recall",
+        color=colour_rel,
+        fontsize=8.5,
+        va="center",
+    )
 
     ax.axvline(0, color="grey", linewidth=0.7, linestyle="--", alpha=0.5)
     ax.set_xlabel(
@@ -543,15 +666,17 @@ def _figure4_content_comparison(
     plt.close()
     logger.info(f"  Written → {output_path.name}")
 
-    return pd.DataFrame({
-        "svg_z_enc_within_z":  x_grid,
-        "pred_objects":         preds_obj,
-        "ci_lower_objects":     ci_lo_obj,
-        "ci_upper_objects":     ci_hi_obj,
-        "pred_relations":       preds_rel,
-        "ci_lower_relations":   ci_lo_rel,
-        "ci_upper_relations":   ci_hi_rel,
-    })
+    return pd.DataFrame(
+        {
+            "svg_z_enc_within_z": x_grid,
+            "pred_objects": preds_obj,
+            "ci_lower_objects": ci_lo_obj,
+            "ci_upper_objects": ci_hi_obj,
+            "pred_relations": preds_rel,
+            "ci_lower_relations": ci_lo_rel,
+            "ci_upper_relations": ci_hi_rel,
+        }
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -588,9 +713,15 @@ def _supp_per_image(enc: pd.DataFrame, output_path: Path) -> pd.DataFrame:
     for i, row in img_stats.iterrows():
         c = "#2166ac" if row["mean"] > 0 else "#a63603"
         ax.errorbar(
-            row["mean"], i,
+            row["mean"],
+            i,
             xerr=[[row["mean"] - row["ci_lo"]], [row["ci_hi"] - row["mean"]]],
-            fmt="o", color=c, markersize=5, linewidth=1.2, capsize=2.5, alpha=0.8,
+            fmt="o",
+            color=c,
+            markersize=5,
+            linewidth=1.2,
+            capsize=2.5,
+            alpha=0.8,
         )
 
     ax.axvline(0, color="black", linewidth=0.8, linestyle="--", alpha=0.5)
@@ -599,7 +730,9 @@ def _supp_per_image(enc: pd.DataFrame, output_path: Path) -> pd.DataFrame:
     ax.set_yticks(range(n_img))
     ax.set_yticklabels(img_stats["StimID"].values, fontsize=7)
     ax.set_xlabel("Mean encoding SVG (z-score, ± 95% CI)", fontsize=9)
-    ax.set_title("Per-image mean relational scanpath strength\n(sorted ascending)", fontsize=9)
+    ax.set_title(
+        "Per-image mean relational scanpath strength\n(sorted ascending)", fontsize=9
+    )
     ax.spines[["top", "right"]].set_visible(False)
     ax.tick_params(labelsize=8)
 
@@ -610,8 +743,12 @@ def _supp_per_image(enc: pd.DataFrame, output_path: Path) -> pd.DataFrame:
     logger.info(f"  Written → {output_path.name}")
 
     return img_stats[["StimID", "mean", "sd", "n", "ci_lo", "ci_hi"]].rename(
-        columns={"mean": "svg_z_enc_image_mean", "sd": "svg_z_enc_image_sd",
-                 "ci_lo": "ci_lower", "ci_hi": "ci_upper"}
+        columns={
+            "mean": "svg_z_enc_image_mean",
+            "sd": "svg_z_enc_image_sd",
+            "ci_lo": "ci_lower",
+            "ci_hi": "ci_upper",
+        }
     )
 
 
@@ -637,6 +774,7 @@ def _save_partial_regression_data(enc: pd.DataFrame, output_path: Path) -> None:
 def _residualise_dec(df: pd.DataFrame, target: str) -> pd.Series:
     """Residualise target against DEC_COVARIATES + DEC_BETWEEN_COVARIATES + C(SubjectID)."""
     import warnings
+
     all_covs = DEC_COVARIATES + DEC_BETWEEN_COVARIATES
     req = [target] + [c for c in all_covs if c in df.columns]
     mask = df[req].notna().all(axis=1)
@@ -660,7 +798,9 @@ def _partial_regression_plot_dec(dec: pd.DataFrame, output_path: Path) -> None:
     """Three-panel partial regression for decoding SVG → memory DVs."""
     svg_col = "svg_z_dec_within"
     if svg_col not in dec.columns:
-        logger.warning("  _partial_regression_plot_dec: svg_z_dec_within missing — skipping.")
+        logger.warning(
+            "  _partial_regression_plot_dec: svg_z_dec_within missing — skipping."
+        )
         return
 
     all_covs = DEC_COVARIATES + DEC_BETWEEN_COVARIATES
@@ -681,21 +821,35 @@ def _partial_regression_plot_dec(dec: pd.DataFrame, output_path: Path) -> None:
         x = svg_resid.values
         y = dv_resid.values
         mask = ~(np.isnan(x) | np.isnan(y))
-        ax.scatter(x[mask], y[mask], color=colour, alpha=0.35, s=22, linewidths=0, zorder=3)
+        ax.scatter(
+            x[mask], y[mask], color=colour, alpha=0.35, s=22, linewidths=0, zorder=3
+        )
         if mask.sum() >= 5:
             slope, intercept, r, p, _ = stats.linregress(x[mask], y[mask])
             x_line = np.linspace(np.nanmin(x), np.nanmax(x), 100)
-            ax.plot(x_line, intercept + slope * x_line, color=colour, linewidth=2.0, zorder=4)
-            sig = "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
+            ax.plot(
+                x_line,
+                intercept + slope * x_line,
+                color=colour,
+                linewidth=2.0,
+                zorder=4,
+            )
+            sig = (
+                "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
+            )
             ax.annotate(
                 f"r = {r:+.3f},  p = {p:.3f}  {sig}",
-                xy=(0.05, 0.93), xycoords="axes fraction",
-                fontsize=8.5, color=colour,
+                xy=(0.05, 0.93),
+                xycoords="axes fraction",
+                fontsize=8.5,
+                color=colour,
                 bbox=dict(boxstyle="round,pad=0.25", fc="white", alpha=0.8),
             )
         ax.axhline(0, color="grey", linewidth=0.6, linestyle="--", alpha=0.5)
         ax.axvline(0, color="grey", linewidth=0.6, linestyle="--", alpha=0.5)
-        ax.set_xlabel("Decoding SVG (within-image)\n(covariate-residualised)", fontsize=9)
+        ax.set_xlabel(
+            "Decoding SVG (within-image)\n(covariate-residualised)", fontsize=9
+        )
         ax.set_ylabel(f"{dv_label}\n(covariate-residualised)", fontsize=9)
         ax.set_title(dv_label.replace("\n", " "), fontsize=10, fontweight="bold", pad=6)
         ax.tick_params(labelsize=8)
@@ -709,7 +863,8 @@ def _partial_regression_plot_dec(dec: pd.DataFrame, output_path: Path) -> None:
     fig.suptitle(
         "Partial regression: Decoding SVG (within-image) → memory recall (proportion DVs)\n"
         f"Covariates removed: {', '.join(cov_names)}",
-        fontsize=9, y=1.02,
+        fontsize=9,
+        y=1.02,
     )
     plt.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -743,15 +898,19 @@ def _figure5_dec_predicted_total(
     """
     entry = results.get("H2_dec_total")
     if entry is None or entry[0] is None:
-        logger.warning("  _figure5_dec_predicted_total: H2_dec_total missing — skipping.")
+        logger.warning(
+            "  _figure5_dec_predicted_total: H2_dec_total missing — skipping."
+        )
         return pd.DataFrame()
     result, _ = entry
     svg_col = "svg_z_dec_within_z"
     if svg_col not in dec.columns:
-        logger.warning("  _figure5_dec_predicted_total: svg_z_dec_within_z missing — skipping.")
+        logger.warning(
+            "  _figure5_dec_predicted_total: svg_z_dec_within_z missing — skipping."
+        )
         return pd.DataFrame()
 
-    vals   = dec[svg_col].dropna().values
+    vals = dec[svg_col].dropna().values
     x_grid = np.linspace(np.percentile(vals, 2.5), np.percentile(vals, 97.5), 120)
 
     def design(x):
@@ -773,12 +932,14 @@ def _figure5_dec_predicted_total(
     plt.close()
     logger.info(f"  Written → {output_path.name}")
 
-    return pd.DataFrame({
-        "svg_z_dec_within_z": x_grid,
-        "pred_total": preds,
-        "ci_lower": ci_lo,
-        "ci_upper": ci_hi,
-    })
+    return pd.DataFrame(
+        {
+            "svg_z_dec_within_z": x_grid,
+            "pred_total": preds,
+            "ci_lower": ci_lo,
+            "ci_upper": ci_hi,
+        }
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -808,9 +969,9 @@ def summarise(
     """
     logger.info("\nStep 6: Writing outputs ...")
 
-    figures_dir     = output_dir / "figures"
-    supp_dir        = output_dir / "supplementary"
-    fig_data_dir    = output_dir / "figure_data"
+    figures_dir = output_dir / "figures"
+    supp_dir = output_dir / "supplementary"
+    fig_data_dir = output_dir / "figure_data"
 
     for d in (output_dir, figures_dir, supp_dir, fig_data_dir):
         d.mkdir(parents=True, exist_ok=True)
@@ -826,9 +987,12 @@ def summarise(
         dec.to_csv(fig_data_dir / "analysis_dec.csv", index=False)
         logger.info("  Written → figure_data/analysis_dec.csv")
 
-    # ── Model summaries text ────────────────────────────────────────────────
-    all_coefs      = []
-    summary_lines  = [_descriptives(filtered)]
+    # ── Descriptive statistics ───────────────────────────────────────────────
+    desc_text, _ = compute_descriptives(filtered, output_dir)
+
+    # ── Model summaries text ─────────────────────────────────────────────────
+    all_coefs = []
+    summary_lines = [desc_text]
 
     for group in ["H1", "H2", "Exploratory"]:
         summary_lines.append(f"\n\n{'#'*60}\n# {group} MODELS\n{'#'*60}")
@@ -849,6 +1013,25 @@ def summarise(
             coef_df = _extract_coef_table(name, result)
             all_coefs.append(coef_df)
             summary_lines.append(str(result.summary()))
+
+            # For H1 t-test results, append Cohen's d and normality checks
+            if group == "H1" and hasattr(result, "cohens_d"):
+                h1_extra = [
+                    f"  Cohen's d      : {result.cohens_d:.3f}",
+                    f"  Shapiro-Wilk   : W={result.sw_stat:.3f}, p={result.sw_p:.4f}"
+                    + (
+                        "  *** NORMALITY VIOLATED ***"
+                        if result.normality_violated
+                        else "  (normality holds)"
+                    ),
+                    f"  Wilcoxon W     : {result.wx_stat}, p={result.wx_p:.4f}"
+                    + (
+                        "  [robustness check — normality violated]"
+                        if result.normality_violated
+                        else "  [robustness check]"
+                    ),
+                ]
+                summary_lines.extend(h1_extra)
 
             if hasattr(result, "rsquared"):
                 summary_lines.append(f"R²: {result.rsquared:.4f}")
@@ -876,10 +1059,13 @@ def summarise(
                 row = coef_df[coef_df["term"].str.strip() == term]
                 if row.empty:
                     continue
-                b, p   = row["coef"].values[0], row["p"].values[0]
+                b, p = row["coef"].values[0], row["p"].values[0]
                 lo, hi = row["ci_lower"].values[0], row["ci_upper"].values[0]
-                sig = ("***" if p < 0.001 else "**" if p < 0.01
-                       else "*" if p < 0.05 else "ns")
+                sig = (
+                    "***"
+                    if p < 0.001
+                    else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
+                )
                 logger.info(
                     f"    {term}: β={b:.4f} [{lo:.4f}, {hi:.4f}], p={p:.4f} {sig}"
                 )
@@ -897,7 +1083,8 @@ def summarise(
 
     # Figure 1: violin
     fig1_data = _figure1_violin(
-        enc, figures_dir / "figure1_violin.png",
+        enc,
+        figures_dir / "figure1_violin.png",
         dec=dec if not dec.empty else None,
     )
     if not fig1_data.empty:
@@ -905,20 +1092,26 @@ def summarise(
         logger.info("  Written → figure_data/figure1_data.csv")
 
     # Figure 3: predicted total recall (encoding)
-    fig3_data = _figure3_predicted_total(enc, results, figures_dir / "figure3_total_recall.png")
+    fig3_data = _figure3_predicted_total(
+        enc, results, figures_dir / "figure3_total_recall.png"
+    )
     if not fig3_data.empty:
         fig3_data.to_csv(fig_data_dir / "figure3_data.csv", index=False)
         logger.info("  Written → figure_data/figure3_data.csv")
 
     # Figure 4: object vs relational recall
-    fig4_data = _figure4_content_comparison(enc, results, figures_dir / "figure4_content_comparison.png")
+    fig4_data = _figure4_content_comparison(
+        enc, results, figures_dir / "figure4_content_comparison.png"
+    )
     if not fig4_data.empty:
         fig4_data.to_csv(fig_data_dir / "figure4_data.csv", index=False)
         logger.info("  Written → figure_data/figure4_data.csv")
 
     # Figure 5: decoding SVG → predicted total recall
     if not dec.empty:
-        fig5_data = _figure5_dec_predicted_total(dec, results, figures_dir / "figure5_dec_total_recall.png")
+        fig5_data = _figure5_dec_predicted_total(
+            dec, results, figures_dir / "figure5_dec_total_recall.png"
+        )
         if not fig5_data.empty:
             fig5_data.to_csv(fig_data_dir / "figure5_data.csv", index=False)
             logger.info("  Written → figure_data/figure5_data.csv")
@@ -927,12 +1120,16 @@ def summarise(
 
     # Encoding partial regression
     _partial_regression_plot(enc, supp_dir / "supp_partial_regression.png")
-    _save_partial_regression_data(enc, fig_data_dir / "supp_partial_regression_data.csv")
+    _save_partial_regression_data(
+        enc, fig_data_dir / "supp_partial_regression_data.csv"
+    )
 
     # Decoding partial regression
     if not dec.empty:
         _partial_regression_plot_dec(dec, supp_dir / "supp_partial_regression_dec.png")
-        _save_partial_regression_data_dec(dec, fig_data_dir / "supp_partial_regression_dec_data.csv")
+        _save_partial_regression_data_dec(
+            dec, fig_data_dir / "supp_partial_regression_dec_data.csv"
+        )
 
     # Per-image mean relationality
     img_data = _supp_per_image(enc, supp_dir / "supp_per_image_relationality.png")

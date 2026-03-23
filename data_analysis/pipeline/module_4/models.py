@@ -19,6 +19,7 @@ import re
 import types
 import warnings
 
+import numpy as np
 import pandas as pd
 import statsmodels.formula.api as smf
 from scipy import stats as scipy_stats
@@ -182,6 +183,12 @@ def _fit_h1_ttest(name: str, svg_col: str, df: pd.DataFrame) -> tuple:
     Aggregates to participant means first (removes within-participant
     dependence), then tests whether the mean of those means > 0.
 
+    Also computes:
+      - Cohen's d  = grand_mean / SD of participant means (one-sample, null=0)
+      - Shapiro-Wilk normality test on participant means
+      - Wilcoxon signed-rank test (non-parametric robustness check),
+        run unconditionally so the result is always available for reporting.
+
     Returns a lightweight namespace that mimics the statsmodels result
     interface used elsewhere in the module.
     """
@@ -193,15 +200,35 @@ def _fit_h1_ttest(name: str, svg_col: str, df: pd.DataFrame) -> tuple:
     subj_means = df.groupby("SubjectID")[svg_col].mean().dropna()
     n = len(subj_means)
     grand_mean = subj_means.mean()
+    sd = subj_means.std(ddof=1)
     se = subj_means.sem()
     t_stat, p_two = scipy_stats.ttest_1samp(subj_means, 0)
     ci = scipy_stats.t.interval(0.95, df=n - 1, loc=grand_mean, scale=se)
 
+    # Cohen's d for one-sample t-test against zero: d = mean / SD
+    cohens_d = grand_mean / sd if sd > 0 else np.nan
+
+    # Shapiro-Wilk normality test on participant means
+    sw_stat, sw_p = scipy_stats.shapiro(subj_means)
+    normality_violated = sw_p < 0.05
+
+    # Wilcoxon signed-rank test (always run as robustness check)
+    try:
+        wx_stat, wx_p = scipy_stats.wilcoxon(subj_means, alternative="two-sided")
+    except Exception as e:
+        logger.warning(f"  {name}: Wilcoxon failed ({e}) — storing NaN.")
+        wx_stat, wx_p = np.nan, np.nan
+
     pct_above = 100 * (vals > 0).mean()
+
     logger.info(
         f"  {name}: one-sample t-test on {n} participant means\n"
-        f"    grand mean={grand_mean:.3f}, SE={se:.3f}, "
+        f"    grand mean={grand_mean:.3f}, SD={sd:.3f}, SE={se:.3f}, "
         f"t({n-1})={t_stat:.3f}, p={p_two:.4f} (two-tailed)\n"
+        f"    Cohen's d={cohens_d:.3f}\n"
+        f"    Shapiro-Wilk: W={sw_stat:.3f}, p={sw_p:.4f} "
+        f"({'VIOLATED' if normality_violated else 'OK'})\n"
+        f"    Wilcoxon signed-rank: W={wx_stat}, p={wx_p:.4f}\n"
         f"    {pct_above:.1f}% of trials above permutation baseline"
     )
 
@@ -214,6 +241,16 @@ def _fit_h1_ttest(name: str, svg_col: str, df: pd.DataFrame) -> tuple:
     result.nobs = n
     result.df_resid = n - 1
 
+    # Additional fields for output.py
+    result.cohens_d = cohens_d
+    result.sd_subj_means = sd
+    result.sw_stat = sw_stat
+    result.sw_p = sw_p
+    result.normality_violated = normality_violated
+    result.wx_stat = wx_stat
+    result.wx_p = wx_p
+    result.pct_above = pct_above
+
     def _conf_int(alpha=0.05):
         ci_lo, ci_hi = scipy_stats.t.interval(
             1 - alpha, df=n - 1, loc=grand_mean, scale=se
@@ -223,14 +260,22 @@ def _fit_h1_ttest(name: str, svg_col: str, df: pd.DataFrame) -> tuple:
     result.conf_int = _conf_int
 
     def _summary():
+        normality_note = (
+            f"  Shapiro-Wilk   : W={sw_stat:.3f}, p={sw_p:.4f}  *** NORMALITY VIOLATED ***\n"
+            f"  Wilcoxon W     : {wx_stat}, p={wx_p:.4f}  (non-parametric robustness check)\n"
+            if normality_violated
+            else f"  Shapiro-Wilk   : W={sw_stat:.3f}, p={sw_p:.4f}  (normality holds)\n"
+            f"  Wilcoxon W     : {wx_stat}, p={wx_p:.4f}  (non-parametric robustness check)\n"
+        )
         return (
             f"H1 one-sample t-test (participant means vs 0)\n"
             f"  N participants : {n}\n"
-            f"  Grand mean SVG : {grand_mean:.4f}  (SE={se:.4f})\n"
+            f"  Grand mean SVG : {grand_mean:.4f}  (SD={sd:.4f}, SE={se:.4f})\n"
             f"  t({n-1})        : {t_stat:.3f}\n"
             f"  p (two-tailed) : {p_two:.4f}\n"
             f"  95% CI         : [{ci[0]:.4f}, {ci[1]:.4f}]\n"
-            f"  % trials > 0   : {pct_above:.1f}%"
+            f"  Cohen's d      : {cohens_d:.3f}\n"
+            f"  % trials > 0   : {pct_above:.1f}%\n" + normality_note
         )
 
     result.summary = _summary

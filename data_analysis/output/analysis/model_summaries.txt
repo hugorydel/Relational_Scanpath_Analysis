@@ -1,9 +1,10 @@
 
-=== Encoding SVG and proportion DV descriptives ===
-  svg_z_enc:     n=629, mean=1.319, sd=1.434, %>0=80.0%
-  prop_total    : n=616, mean=0.560, sd=0.232, range=[0.000, 1.000]
-  prop_relations: n=616, mean=0.462, sd=0.263, range=[0.000, 1.000]
-  prop_objects  : n=616, mean=0.561, sd=0.237, range=[0.000, 1.000]
+=== Descriptive statistics (participant-level means) ===
+  Encoding SVG (z)           N=22  M=  1.315  SD= 0.287  95% CI [  1.187,   1.442]
+  Decoding SVG (z)           N=22  M=  0.202  SD= 0.271  95% CI [  0.082,   0.323]
+  Total recall (%)           N=22  M= 56.197  SD=10.429  95% CI [ 51.573,  60.821]
+  Relational recall (%)      N=22  M= 46.318  SD= 9.962  95% CI [ 41.901,  50.735]
+  Object recall (%)          N=22  M= 56.386  SD=10.280  95% CI [ 51.828,  60.944]
 
 
 ############################################################
@@ -16,11 +17,18 @@ H1_svg_enc: H1: Encoding SVG — intercept test (mean SVG > 0?)
 Mode: ttest
 H1 one-sample t-test (participant means vs 0)
   N participants : 22
-  Grand mean SVG : 1.3148  (SE=0.0612)
+  Grand mean SVG : 1.3148  (SD=0.2872, SE=0.0612)
   t(21)        : 21.476
   p (two-tailed) : 0.0000
   95% CI         : [1.1875, 1.4421]
+  Cohen's d      : 4.579
   % trials > 0   : 80.0%
+  Shapiro-Wilk   : W=0.976, p=0.8472  (normality holds)
+  Wilcoxon W     : 0.0, p=0.0000  (non-parametric robustness check)
+
+  Cohen's d      : 4.579
+  Shapiro-Wilk   : W=0.976, p=0.8472  (normality holds)
+  Wilcoxon W     : 0.0, p=0.0000  [robustness check]
 Converged: True
 
 ============================================================
@@ -29,11 +37,18 @@ H1_svg_dec: H1: Decoding SVG — intercept test (mean SVG > 0?)
 Mode: ttest
 H1 one-sample t-test (participant means vs 0)
   N participants : 22
-  Grand mean SVG : 0.2024  (SE=0.0579)
+  Grand mean SVG : 0.2024  (SD=0.2714, SE=0.0579)
   t(21)        : 3.499
   p (two-tailed) : 0.0021
   95% CI         : [0.0821, 0.3228]
+  Cohen's d      : 0.746
   % trials > 0   : 57.9%
+  Shapiro-Wilk   : W=0.964, p=0.5648  (normality holds)
+  Wilcoxon W     : 36.0, p=0.0022  (non-parametric robustness check)
+
+  Cohen's d      : 0.746
+  Shapiro-Wilk   : W=0.964, p=0.5648  (normality holds)
+  Wilcoxon W     : 36.0, p=0.0022  [robustness check]
 Converged: True
 
 

@@ -588,160 +588,119 @@ def _write_parameter_tables(
 
 
 # ---------------------------------------------------------------------------
-# Figure 1 — Vertical violin of encoding SVG
+# APA shared style helper
 # ---------------------------------------------------------------------------
 
 
-def _figure1_violin(
+def _apply_apa_style(ax, font="Arial", fontsize=10):
+    """Apply APA-7 axis style: left/bottom spines only, Arial font, no gridlines."""
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.tick_params(labelsize=fontsize, direction="out")
+    for label in ax.get_xticklabels() + ax.get_yticklabels():
+        label.set_fontfamily(font)
+        label.set_fontsize(fontsize)
+    ax.xaxis.label.set_fontfamily(font)
+    ax.xaxis.label.set_fontsize(fontsize)
+    ax.yaxis.label.set_fontfamily(font)
+    ax.yaxis.label.set_fontsize(fontsize)
+    ax.grid(False)
+
+
+# ---------------------------------------------------------------------------
+# Figure 1 — Box and whisker: encoding and decoding SVG
+# ---------------------------------------------------------------------------
+
+
+def _figure1_boxplot(
     enc: pd.DataFrame,
     output_path: Path,
     dec: pd.DataFrame | None = None,
 ) -> pd.DataFrame:
     """
-    Vertical violin plot of trial-level SVG values.
-    Always plots Encoding. When dec is provided, adds a Decoding violin.
-    Returns the combined figure data DataFrame.
+    APA-style side-by-side boxplots of trial-level SVG z-scores.
+    Encoding on left, Decoding on right.
+    Permutation baseline (y = 0) shown as dashed line.
+    Returns figure data DataFrame.
     """
     svg_enc = "svg_z_enc"
     if svg_enc not in enc.columns:
-        logger.warning("  _figure1_violin: svg_z_enc missing — skipping.")
+        logger.warning("  _figure1_boxplot: svg_z_enc missing — skipping.")
         return pd.DataFrame()
 
-    enc_vals = enc[[svg_enc, "SubjectID", "StimID"]].dropna(subset=[svg_enc]).copy()
-    enc_vals["phase"] = "Encoding"
-    enc_vals = enc_vals.rename(columns={svg_enc: "svg_z"})
-
+    enc_vals = enc[svg_enc].dropna().values
     has_dec = dec is not None and "svg_z_dec" in dec.columns
-    dec_vals = pd.DataFrame()
-    if has_dec:
-        dec_vals = (
-            dec[["svg_z_dec", "SubjectID", "StimID"]]
-            .dropna(subset=["svg_z_dec"])
-            .copy()
-        )
-        dec_vals["phase"] = "Decoding"
-        dec_vals = dec_vals.rename(columns={"svg_z_dec": "svg_z"})
+    dec_vals = dec["svg_z_dec"].dropna().values if has_dec else np.array([])
 
-    positions = [0, 1] if has_dec else [0]
-    colours = ["#2166ac", "#b2182b"]
-    labels = ["Encoding", "Decoding"]
-    datasets = [enc_vals["svg_z"].values]
-    if has_dec:
-        datasets.append(dec_vals["svg_z"].values)
+    datasets = [enc_vals] + ([dec_vals] if has_dec else [])
+    labels = ["Encoding"] + (["Decoding"] if has_dec else [])
+    positions = list(range(len(datasets)))
 
-    fig, ax = plt.subplots(figsize=(4.5 + 2.5 * (len(positions) - 1), 6))
-    rng = np.random.default_rng(42)
+    fig, ax = plt.subplots(figsize=(3.5, 3.5))
 
-    for i, (pos, colour, label, data) in enumerate(
-        zip(positions, colours, labels, datasets)
-    ):
-        vp = ax.violinplot(
-            data, positions=[pos], widths=0.55, showmedians=False, showextrema=False
-        )
-        for body in vp["bodies"]:
-            body.set_facecolor(colour)
-            body.set_alpha(0.35)
-            body.set_edgecolor(colour)
-            body.set_linewidth(1.2)
-
-        jitter = rng.uniform(-0.07, 0.07, len(data))
-        ax.scatter(
-            np.ones(len(data)) * pos + jitter,
-            data,
-            color=colour,
-            alpha=0.25,
-            s=12,
-            linewidths=0,
-            zorder=3,
-        )
-
-        q25, q75 = np.percentile(data, [25, 75])
-        ax.vlines(pos, q25, q75, color=colour, linewidth=5, alpha=0.7, zorder=4)
-        ax.scatter([pos], [np.median(data)], color="white", s=30, zorder=5)
-
-        gm = data.mean()
-        pct = 100 * (data > 0).mean()
-        ax.hlines(
-            gm,
-            pos - 0.35,
-            pos + 0.35,
-            color=colour,
-            linewidth=1.6,
-            linestyle="-",
-            alpha=0.9,
-            zorder=6,
-        )
-
-        x_ann, ha_ann = (0.03, "left") if i == 0 else (0.97, "right")
-        ax.annotate(
-            f"{label}\nMean = {gm:.2f} SD\n{pct:.0f}% > chance",
-            xy=(x_ann, 0.97 - i * 0.18),
-            xycoords="axes fraction",
-            fontsize=8.5,
-            ha=ha_ann,
-            va="top",
-            color=colour,
-            bbox=dict(boxstyle="round,pad=0.3", fc="white", alpha=0.88),
-        )
-
-    ax.axhline(
-        0,
-        color="black",
-        linewidth=1.0,
-        linestyle="--",
-        alpha=0.6,
-        label="Permutation chance (0)",
-        zorder=2,
+    bp = ax.boxplot(
+        datasets,
+        positions=positions,
+        widths=0.45,
+        patch_artist=True,
+        medianprops=dict(color="black", linewidth=1.5),
+        boxprops=dict(facecolor="white", color="black", linewidth=1.2),
+        whiskerprops=dict(color="black", linewidth=1.0),
+        capprops=dict(color="black", linewidth=1.0),
+        flierprops=dict(
+            marker="o",
+            markerfacecolor="black",
+            markeredgecolor="black",
+            markersize=3,
+            linewidth=0.5,
+        ),
+        showfliers=True,
     )
+
+    ax.axhline(0, color="black", linewidth=0.8, linestyle="--", zorder=1)
     ax.set_xticks(positions)
-    ax.set_xticklabels(labels[: len(positions)], fontsize=10)
-    ax.set_ylabel(
-        "Relational scanpath strength\n(z-score above permutation baseline)", fontsize=9
-    )
-    ax.legend(fontsize=8, framealpha=0.85, loc="lower right")
-    ax.spines[["top", "right"]].set_visible(False)
-    ax.tick_params(labelsize=8)
+    ax.set_xticklabels(labels)
+    ax.set_ylabel("Relational SVG Score")
+    _apply_apa_style(ax)
 
     plt.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    plt.savefig(output_path, dpi=150, bbox_inches="tight")
+    plt.savefig(output_path, dpi=300, bbox_inches="tight")
     plt.close()
     logger.info(f"  Written → {output_path.name}")
 
-    all_vals = (
-        pd.concat([enc_vals, dec_vals], ignore_index=True) if has_dec else enc_vals
-    )
-    return all_vals[["SubjectID", "StimID", "svg_z", "phase"]].copy()
+    rows = [
+        {"phase": lbl, "svg_z": v} for lbl, arr in zip(labels, datasets) for v in arr
+    ]
+    return pd.DataFrame(rows)
 
 
 # ---------------------------------------------------------------------------
-# Figure 3 — Model-predicted total recall
+# Figure 2 — Model-predicted total recall
 # ---------------------------------------------------------------------------
 
 
-def _figure3_predicted_total(
+def _figure2_predicted_total(
     enc: pd.DataFrame,
     results: dict,
     output_path: Path,
 ) -> pd.DataFrame:
     """
-    Model-predicted total recall proportion as a function of within-image SVG.
-    Fixed effects only; all covariates at their standardised mean (0).
-    Returns the figure data DataFrame.
+    APA-style model-predicted total recall (%) as a function of within-image
+    encoding SVG. Greyscale line + shaded 95% CI band.
+    Returns figure data DataFrame.
     """
     entry = results.get("H2_total")
     if entry is None or entry[0] is None:
         logger.warning(
-            "  _figure3_predicted_total: H2_total result missing — skipping."
+            "  _figure2_predicted_total: H2_total result missing — skipping."
         )
         return pd.DataFrame()
 
     result, _ = entry
     svg_col = "svg_z_enc_within_z"
-
     if svg_col not in enc.columns:
         logger.warning(
-            "  _figure3_predicted_total: svg_z_enc_within_z missing — skipping."
+            "  _figure2_predicted_total: svg_z_enc_within_z missing — skipping."
         )
         return pd.DataFrame()
 
@@ -753,81 +712,68 @@ def _figure3_predicted_total(
 
     preds, ci_lo, ci_hi = _marginal_predict(result, design, x_grid)
 
-    fig, ax = plt.subplots(figsize=(5.5, 4.5))
+    # Convert proportions → percentages
+    preds_pct = preds * 100
+    ci_lo_pct = ci_lo * 100
+    ci_hi_pct = ci_hi * 100
 
-    ax.fill_between(x_grid, ci_lo, ci_hi, color="#2166ac", alpha=0.18, zorder=2)
-    ax.plot(x_grid, preds, color="#2166ac", linewidth=2.2, zorder=3)
-
-    ax.axvline(0, color="grey", linewidth=0.7, linestyle="--", alpha=0.5)
-    ax.set_xlabel(
-        "Encoding relational scanpath strength within image (z)",
-        fontsize=9,
-    )
-    ax.set_ylabel("Predicted total recall proportion", fontsize=9)
-    ax.spines[["top", "right"]].set_visible(False)
-    ax.tick_params(labelsize=8)
+    fig, ax = plt.subplots(figsize=(3.5, 3.5))
+    ax.fill_between(x_grid, ci_lo_pct, ci_hi_pct, color="#BBBBBB", alpha=0.6, zorder=2)
+    ax.plot(x_grid, preds_pct, color="#333333", linewidth=1.8, zorder=3)
+    ax.axvline(0, color="black", linewidth=0.7, linestyle="--", alpha=0.5, zorder=1)
+    ax.set_xlabel("Relational SVG Score at Encoding")
+    ax.set_ylabel("Predicted Total Recall (%)")
+    _apply_apa_style(ax)
 
     plt.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    plt.savefig(output_path, dpi=150, bbox_inches="tight")
+    plt.savefig(output_path, dpi=300, bbox_inches="tight")
     plt.close()
     logger.info(f"  Written → {output_path.name}")
 
     return pd.DataFrame(
         {
             "svg_z_enc_within_z": x_grid,
-            "pred_total": preds,
-            "ci_lower": ci_lo,
-            "ci_upper": ci_hi,
+            "pred_total_pct": preds_pct,
+            "ci_lower_pct": ci_lo_pct,
+            "ci_upper_pct": ci_hi_pct,
         }
     )
 
 
 # ---------------------------------------------------------------------------
-# Figure 4 — Model-predicted object vs relational recall
+# Figure 3 — Model-predicted relational vs object recall
 # ---------------------------------------------------------------------------
 
 
-def _figure4_content_comparison(
+def _figure3_content_comparison(
     enc: pd.DataFrame,
     results: dict,
     output_path: Path,
 ) -> pd.DataFrame:
     """
-    Two parallel model-predicted lines from the dissociation model:
-    object recall (rust) and relational recall (blue), both vs within-image SVG.
-    Shows equal slopes and baseline gap.
-    Returns the figure data DataFrame.
+    APA-style two-line plot: model-predicted relational recall (dark grey)
+    and object recall (light grey) as a function of within-image encoding SVG.
+    Y-axis in percentages. Returns figure data DataFrame.
     """
     entry = results.get("EXP_dissociation")
     if entry is None or entry[0] is None:
         logger.warning(
-            "  _figure4_content_comparison: EXP_dissociation result missing — skipping."
+            "  _figure3_content_comparison: EXP_dissociation result missing — skipping."
         )
         return pd.DataFrame()
 
     result, _ = entry
     svg_col = "svg_z_enc_within_z"
-
     if svg_col not in enc.columns:
         logger.warning(
-            "  _figure4_content_comparison: svg_z_enc_within_z missing — skipping."
+            "  _figure3_content_comparison: svg_z_enc_within_z missing — skipping."
         )
         return pd.DataFrame()
 
     vals = enc[svg_col].dropna().values
     x_grid = np.linspace(np.percentile(vals, 2.5), np.percentile(vals, 97.5), 120)
 
-    # Objects: memory_type = 0
-    def design_obj(x):
-        return {
-            "Intercept": 1.0,
-            svg_col: x,
-            "memory_type": 0.0,
-            f"{svg_col}:memory_type": 0.0,
-        }
-
-    # Relations: memory_type = 1
     def design_rel(x):
         return {
             "Intercept": 1.0,
@@ -836,73 +782,73 @@ def _figure4_content_comparison(
             f"{svg_col}:memory_type": x,
         }
 
-    preds_obj, ci_lo_obj, ci_hi_obj = _marginal_predict(result, design_obj, x_grid)
+    def design_obj(x):
+        return {
+            "Intercept": 1.0,
+            svg_col: x,
+            "memory_type": 0.0,
+            f"{svg_col}:memory_type": 0.0,
+        }
+
     preds_rel, ci_lo_rel, ci_hi_rel = _marginal_predict(result, design_rel, x_grid)
+    preds_obj, ci_lo_obj, ci_hi_obj = _marginal_predict(result, design_obj, x_grid)
 
-    colour_obj = "#a63603"
-    colour_rel = "#2166ac"
+    # Convert to percentages
+    preds_rel *= 100
+    ci_lo_rel *= 100
+    ci_hi_rel *= 100
+    preds_obj *= 100
+    ci_lo_obj *= 100
+    ci_hi_obj *= 100
 
-    fig, ax = plt.subplots(figsize=(5.5, 4.5))
+    dark = "#333333"  # relational recall
+    light = "#999999"  # object recall
 
-    # Objects
-    ax.fill_between(
-        x_grid, ci_lo_obj, ci_hi_obj, color=colour_obj, alpha=0.18, zorder=2
-    )
-    ax.plot(x_grid, preds_obj, color=colour_obj, linewidth=2.2, zorder=3)
+    fig, ax = plt.subplots(figsize=(4.5, 3.5))
 
-    # Relations
-    ax.fill_between(
-        x_grid, ci_lo_rel, ci_hi_rel, color=colour_rel, alpha=0.18, zorder=2
-    )
-    ax.plot(x_grid, preds_rel, color=colour_rel, linewidth=2.2, zorder=3)
-
-    # Direct line labels at right edge
-    x_label = x_grid[-1] + 0.05
-    ax.text(
-        x_label,
-        float(preds_obj[-1]),
-        "Object recall",
-        color=colour_obj,
-        fontsize=8.5,
-        va="center",
-    )
-    ax.text(
-        x_label,
-        float(preds_rel[-1]),
-        "Relational recall",
-        color=colour_rel,
-        fontsize=8.5,
-        va="center",
+    # Relational — dark grey
+    ax.fill_between(x_grid, ci_lo_rel, ci_hi_rel, color=dark, alpha=0.15, zorder=2)
+    ax.plot(
+        x_grid,
+        preds_rel,
+        color=dark,
+        linewidth=1.8,
+        label="Relational recall",
+        zorder=3,
     )
 
-    ax.axvline(0, color="grey", linewidth=0.7, linestyle="--", alpha=0.5)
-    ax.set_xlabel(
-        "Encoding relational scanpath strength within image (z)",
-        fontsize=9,
+    # Object — light grey
+    ax.fill_between(x_grid, ci_lo_obj, ci_hi_obj, color=light, alpha=0.25, zorder=2)
+    ax.plot(
+        x_grid, preds_obj, color=light, linewidth=1.8, label="Object recall", zorder=3
     )
-    ax.set_ylabel("Predicted recall proportion", fontsize=9)
-    ax.spines[["top", "right"]].set_visible(False)
-    ax.tick_params(labelsize=8)
 
-    # Extra right margin for labels
-    xlo, xhi = ax.get_xlim()
-    ax.set_xlim(xlo, xhi + (xhi - xlo) * 0.22)
+    ax.axvline(0, color="black", linewidth=0.7, linestyle="--", alpha=0.5, zorder=1)
+
+    ax.set_xlabel("Relational SVG Score at Encoding")
+    ax.set_ylabel("Predicted Recall (%)")
+
+    legend = ax.legend(frameon=False, fontsize=10, loc="upper left", handlelength=1.5)
+    for text in legend.get_texts():
+        text.set_fontfamily("Arial")
+
+    _apply_apa_style(ax)
 
     plt.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    plt.savefig(output_path, dpi=150, bbox_inches="tight")
+    plt.savefig(output_path, dpi=300, bbox_inches="tight")
     plt.close()
     logger.info(f"  Written → {output_path.name}")
 
     return pd.DataFrame(
         {
             "svg_z_enc_within_z": x_grid,
-            "pred_objects": preds_obj,
-            "ci_lower_objects": ci_lo_obj,
-            "ci_upper_objects": ci_hi_obj,
-            "pred_relations": preds_rel,
-            "ci_lower_relations": ci_lo_rel,
-            "ci_upper_relations": ci_hi_rel,
+            "pred_relations_pct": preds_rel,
+            "ci_lower_rel_pct": ci_lo_rel,
+            "ci_upper_rel_pct": ci_hi_rel,
+            "pred_objects_pct": preds_obj,
+            "ci_lower_obj_pct": ci_lo_obj,
+            "ci_upper_obj_pct": ci_hi_obj,
         }
     )
 
@@ -992,182 +938,6 @@ def _save_partial_regression_data(enc: pd.DataFrame, output_path: Path) -> None:
         output_path.parent.mkdir(parents=True, exist_ok=True)
         df_out.to_csv(output_path, index=False)
         logger.info("  Written → figure_data/supp_partial_regression_data.csv")
-
-
-# ---------------------------------------------------------------------------
-# Decoding partial regression + figure 5
-# ---------------------------------------------------------------------------
-
-
-def _residualise_dec(df: pd.DataFrame, target: str) -> pd.Series:
-    """Residualise target against DEC_COVARIATES + DEC_BETWEEN_COVARIATES + C(SubjectID)."""
-    import warnings
-
-    all_covs = DEC_COVARIATES + DEC_BETWEEN_COVARIATES
-    req = [target] + [c for c in all_covs if c in df.columns]
-    mask = df[req].notna().all(axis=1)
-    out = pd.Series(np.nan, index=df.index)
-    sub = df[mask].copy()
-    if len(sub) < 10:
-        return out
-    cov_terms = " + ".join(f"{c}_z" for c in all_covs if f"{c}_z" in sub.columns)
-    formula = f"{target} ~ {cov_terms} + C(SubjectID)"
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore")
-        try:
-            res = smf.ols(formula, data=sub).fit()
-            out.loc[mask] = res.resid.values
-        except Exception as e:
-            logger.warning(f"  dec residualisation of {target} failed: {e}")
-    return out
-
-
-def _partial_regression_plot_dec(dec: pd.DataFrame, output_path: Path) -> None:
-    """Three-panel partial regression for decoding SVG → memory DVs."""
-    svg_col = "svg_z_dec_within"
-    if svg_col not in dec.columns:
-        logger.warning(
-            "  _partial_regression_plot_dec: svg_z_dec_within missing — skipping."
-        )
-        return
-
-    all_covs = DEC_COVARIATES + DEC_BETWEEN_COVARIATES
-    for c in all_covs:
-        if f"{c}_z" not in dec.columns and c in dec.columns:
-            mu, sd = dec[c].mean(), dec[c].std()
-            dec = dec.copy()
-            dec[f"{c}_z"] = (dec[c] - mu) / sd if sd > 0 else 0.0
-
-    svg_resid = _residualise_dec(dec, svg_col)
-    fig, axes = plt.subplots(1, 3, figsize=(13, 4.5), sharey=False)
-
-    for ax, (dv_col, dv_label, colour) in zip(axes, _DV_SPECS):
-        if dv_col not in dec.columns:
-            ax.set_visible(False)
-            continue
-        dv_resid = _residualise_dec(dec, dv_col)
-        x = svg_resid.values
-        y = dv_resid.values
-        mask = ~(np.isnan(x) | np.isnan(y))
-        ax.scatter(
-            x[mask], y[mask], color=colour, alpha=0.35, s=22, linewidths=0, zorder=3
-        )
-        if mask.sum() >= 5:
-            slope, intercept, r, p, _ = stats.linregress(x[mask], y[mask])
-            x_line = np.linspace(np.nanmin(x), np.nanmax(x), 100)
-            ax.plot(
-                x_line,
-                intercept + slope * x_line,
-                color=colour,
-                linewidth=2.0,
-                zorder=4,
-            )
-            sig = (
-                "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
-            )
-            ax.annotate(
-                f"r = {r:+.3f},  p = {p:.3f}  {sig}",
-                xy=(0.05, 0.93),
-                xycoords="axes fraction",
-                fontsize=8.5,
-                color=colour,
-                bbox=dict(boxstyle="round,pad=0.25", fc="white", alpha=0.8),
-            )
-        ax.axhline(0, color="grey", linewidth=0.6, linestyle="--", alpha=0.5)
-        ax.axvline(0, color="grey", linewidth=0.6, linestyle="--", alpha=0.5)
-        ax.set_xlabel(
-            "Decoding SVG (within-image)\n(covariate-residualised)", fontsize=9
-        )
-        ax.set_ylabel(f"{dv_label}\n(covariate-residualised)", fontsize=9)
-        ax.set_title(dv_label.replace("\n", " "), fontsize=10, fontweight="bold", pad=6)
-        ax.tick_params(labelsize=8)
-        ax.spines[["top", "right"]].set_visible(False)
-
-    cov_names = (
-        [c.replace("_dec", "").replace("_z", "") for c in DEC_COVARIATES]
-        + [c.replace("_z", "") for c in DEC_BETWEEN_COVARIATES]
-        + ["SubjectID"]
-    )
-    fig.suptitle(
-        "Partial regression: Decoding SVG (within-image) → memory recall (proportion DVs)\n"
-        f"Covariates removed: {', '.join(cov_names)}",
-        fontsize=9,
-        y=1.02,
-    )
-    plt.tight_layout()
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    plt.savefig(output_path, dpi=150, bbox_inches="tight")
-    plt.close()
-    logger.info(f"  Written → {output_path.name}")
-
-
-def _save_partial_regression_data_dec(dec: pd.DataFrame, output_path: Path) -> None:
-    """Save residualised decoding data for the partial regression supplementary figure."""
-    svg_col = "svg_z_dec_within"
-    rows = {}
-    for t in [svg_col, DV_TOTAL, DV_RELATIONS, DV_OBJECTS]:
-        if t in dec.columns:
-            rows[t + "_resid"] = _residualise_dec(dec, t).values
-    if rows:
-        df_out = pd.DataFrame(rows)
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        df_out.to_csv(output_path, index=False)
-        logger.info("  Written → figure_data/supp_partial_regression_dec_data.csv")
-
-
-def _figure5_dec_predicted_total(
-    dec: pd.DataFrame,
-    results: dict,
-    output_path: Path,
-) -> pd.DataFrame:
-    """
-    Model-predicted total recall as a function of within-image decoding SVG.
-    Mirrors Figure 3 for the blank-screen recall phase.
-    """
-    entry = results.get("H2_dec_total")
-    if entry is None or entry[0] is None:
-        logger.warning(
-            "  _figure5_dec_predicted_total: H2_dec_total missing — skipping."
-        )
-        return pd.DataFrame()
-    result, _ = entry
-    svg_col = "svg_z_dec_within_z"
-    if svg_col not in dec.columns:
-        logger.warning(
-            "  _figure5_dec_predicted_total: svg_z_dec_within_z missing — skipping."
-        )
-        return pd.DataFrame()
-
-    vals = dec[svg_col].dropna().values
-    x_grid = np.linspace(np.percentile(vals, 2.5), np.percentile(vals, 97.5), 120)
-
-    def design(x):
-        return {"Intercept": 1.0, svg_col: x}
-
-    preds, ci_lo, ci_hi = _marginal_predict(result, design, x_grid)
-    colour = "#b2182b"
-    fig, ax = plt.subplots(figsize=(5.5, 4.5))
-    ax.fill_between(x_grid, ci_lo, ci_hi, color=colour, alpha=0.18, zorder=2)
-    ax.plot(x_grid, preds, color=colour, linewidth=2.2, zorder=3)
-    ax.axvline(0, color="grey", linewidth=0.7, linestyle="--", alpha=0.5)
-    ax.set_xlabel("Decoding relational scanpath strength within image (z)", fontsize=9)
-    ax.set_ylabel("Predicted total recall proportion", fontsize=9)
-    ax.spines[["top", "right"]].set_visible(False)
-    ax.tick_params(labelsize=8)
-    plt.tight_layout()
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    plt.savefig(output_path, dpi=150, bbox_inches="tight")
-    plt.close()
-    logger.info(f"  Written → {output_path.name}")
-
-    return pd.DataFrame(
-        {
-            "svg_z_dec_within_z": x_grid,
-            "pred_total": preds,
-            "ci_lower": ci_lo,
-            "ci_upper": ci_hi,
-        }
-    )
 
 
 # ---------------------------------------------------------------------------
@@ -1385,57 +1155,41 @@ def summarise(
 
     # ── Main figures ────────────────────────────────────────────────────────
 
-    # Figure 1: violin
-    fig1_data = _figure1_violin(
+    # Figure 1: box and whisker — encoding and decoding SVG
+    fig1_data = _figure1_boxplot(
         enc,
-        figures_dir / "figure1_violin.png",
+        figures_dir / "figure1_boxplot.png",
         dec=dec if not dec.empty else None,
     )
     if not fig1_data.empty:
         fig1_data.to_csv(fig_data_dir / "figure1_data.csv", index=False)
         logger.info("  Written → figure_data/figure1_data.csv")
 
-    # Figure 3: predicted total recall (encoding)
-    fig3_data = _figure3_predicted_total(
-        enc, results, figures_dir / "figure3_total_recall.png"
+    # Figure 2: model-predicted total recall (encoding SVG)
+    fig2_data = _figure2_predicted_total(
+        enc, results, figures_dir / "figure2_predicted_total.png"
+    )
+    if not fig2_data.empty:
+        fig2_data.to_csv(fig_data_dir / "figure2_data.csv", index=False)
+        logger.info("  Written → figure_data/figure2_data.csv")
+
+    # Figure 3: model-predicted relational vs object recall
+    fig3_data = _figure3_content_comparison(
+        enc, results, figures_dir / "figure3_content_comparison.png"
     )
     if not fig3_data.empty:
         fig3_data.to_csv(fig_data_dir / "figure3_data.csv", index=False)
         logger.info("  Written → figure_data/figure3_data.csv")
 
-    # Figure 4: object vs relational recall
-    fig4_data = _figure4_content_comparison(
-        enc, results, figures_dir / "figure4_content_comparison.png"
-    )
-    if not fig4_data.empty:
-        fig4_data.to_csv(fig_data_dir / "figure4_data.csv", index=False)
-        logger.info("  Written → figure_data/figure4_data.csv")
-
-    # Figure 5: decoding SVG → predicted total recall
-    if not dec.empty:
-        fig5_data = _figure5_dec_predicted_total(
-            dec, results, figures_dir / "figure5_dec_total_recall.png"
-        )
-        if not fig5_data.empty:
-            fig5_data.to_csv(fig_data_dir / "figure5_data.csv", index=False)
-            logger.info("  Written → figure_data/figure5_data.csv")
-
     # ── Supplementary figures ────────────────────────────────────────────────
 
-    # Encoding partial regression
+    # Encoding partial regression (supports linearity assumption claim)
     _partial_regression_plot(enc, supp_dir / "supp_partial_regression.png")
     _save_partial_regression_data(
         enc, fig_data_dir / "supp_partial_regression_data.csv"
     )
 
-    # Decoding partial regression
-    if not dec.empty:
-        _partial_regression_plot_dec(dec, supp_dir / "supp_partial_regression_dec.png")
-        _save_partial_regression_data_dec(
-            dec, fig_data_dir / "supp_partial_regression_dec_data.csv"
-        )
-
-    # Per-image mean relationality
+    # Per-image mean relationality (supports methods description)
     img_data = _supp_per_image(enc, supp_dir / "supp_per_image_relationality.png")
     if not img_data.empty:
         img_data.to_csv(fig_data_dir / "supp_per_image_data.csv", index=False)

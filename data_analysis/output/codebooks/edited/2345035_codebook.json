@@ -2,70 +2,44 @@
   {
     "node_id": "2345035_001",
     "concept": "two",
-    "context": "count of the players in the foreground",
+    "context": "count of main players in the scene",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "two girls chasing a football",
-      "2 girls chasing after a foootball",
-      "two girls from diferent teams chasing a football",
-      "two girls chasing a football, one in blue and one in white",
-      "two girls on left chasing after ball",
-      "two girls, one with a black top and one with a blue top are chasing the football",
-      "two girls with numbers 20 amd 3 on their backs are chasing after a ball",
-      "two young girls in right of photo running for the ball",
-      "two girls were chasing a ball",
-      "two girls are chasing a football",
-      "2 girls running for the ball",
-      "there were two girls",
-      "2 girls running after a football"
+      "two girls",
+      "2 girls",
+      "two girls",
+      "two girls",
+      "two girls",
+      "two girls",
+      "two girls",
+      "two young girls",
+      "2 girls",
+      "two girls",
+      "two girls",
+      "2 girls",
+      "2 female players"
     ]
   },
   {
     "node_id": "2345035_002",
-    "concept": "person",
-    "context": "foreground players chasing/running for the ball",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "two girls chasing a football",
-      "2 girls chasing after a foootball",
-      "two girls from diferent teams chasing a football",
-      "two girls chasing a football, one in blue and one in white",
-      "two girls on left chasing after ball",
-      "two girls, one with a black top and one with a blue top are chasing the football",
-      "two girls with numbers 20 amd 3 on their backs are chasing after a ball",
-      "two young girls in right of photo running for the ball",
-      "two girls were chasing a ball",
-      "two girls are chasing a football",
-      "2 girls running for the ball",
-      "there were two girls",
-      "2 girls running after a football"
-    ]
-  },
-  {
-    "node_id": "2345035_002a",
     "concept": "girl",
-    "context": "gender/age attribute of the foreground players",
+    "context": "main players chasing the ball",
     "content_type": "object_attribute",
     "evidence_type": "latent",
     "status": "correct",
     "source_phrases": [
-      "two girls chasing a football",
-      "2 girls chasing after a foootball",
-      "two girls from diferent teams chasing a football",
-      "two girls chasing a football, one in blue and one in white",
-      "two girls on left chasing after ball",
-      "two girls, one with a black top and one with a blue top are chasing the football",
-      "two girls with numbers 20 amd 3 on their backs are chasing after a ball",
-      "two young girls in right of photo running for the ball",
-      "two girls were chasing a ball",
-      "two girls are chasing a football",
-      "2 girls running for the ball",
-      "there were two girls",
-      "2 girls running after a football"
+      "two girls",
+      "2 girls",
+      "two girls",
+      "two girls",
+      "two girls",
+      "two young girls",
+      "2 girls",
+      "two girls",
+      "two girls",
+      "2 girls"
     ]
   },
   {
@@ -76,128 +50,117 @@
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "two girls chasing a football",
-      "2 girls chasing after a foootball",
-      "two girls from diferent teams chasing a football",
-      "two girls chasing a football, one in blue and one in white",
-      "two girls on left chasing after ball",
-      "two girls, one with a black top and one with a blue top are chasing the football",
-      "two girls with numbers 20 amd 3 on their backs are chasing after a ball",
-      "20 chases 3 with football across a field",
-      "two girls are chasing a football away from the screen",
-      "they were from opposite teams and were chasing a football",
-      "2 girls running after a football"
+      "girls chasing",
+      "girls chasing",
+      "chasing a football",
+      "girls chasing",
+      "are chasing",
+      "are chasing",
+      "are chasing",
+      "seen chasing",
+      "are chasing",
+      "were chasing"
     ]
   },
   {
-    "node_id": "2345035_004",
-    "concept": "football",
-    "context": "ball being pursued by the players",
+    "node_id": "2345035_004a",
+    "concept": "soccer ball",
+    "context": "object the players are pursuing",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "two girls chasing a football",
-      "2 girls chasing after a foootball",
-      "two girls from diferent teams chasing a football",
+      "a football",
+      "a foootball",
+      "a football",
       "the football",
-      "football pitch",
       "football",
       "a football",
-      "football"
+      "a ball",
+      "the ball",
+      "a football",
+      "a football",
+      "football across",
+      "a football",
+      "the ball",
+      "a football",
+      "a football",
+      "ball on"
     ]
   },
   {
     "node_id": "2345035_005",
     "concept": "jersey",
-    "context": "garment worn by one of the players",
+    "context": "garment worn by one or both players",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "one has a jersey that has the number 20 on it"
+      "a jersey",
+      "a jersey",
+      "wearing a jersey"
     ]
   },
   {
     "node_id": "2345035_006",
     "concept": "20",
-    "context": "number displayed on one player's clothing/back",
+    "context": "number on one player's jersey",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "the number 20 on it",
-      "the number 20",
-      "numbers 20 amd 3 on their backs",
-      "one was earing the number 20",
-      "20 chases 3"
+      "number 20",
+      "number 20",
+      "numbers 20",
+      "number 20",
+      "number 20",
+      "20 on",
+      "20 chases"
     ]
   },
   {
     "node_id": "2345035_007",
-    "concept": "wearing",
-    "context": "relation between a player and her clothing/number",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "one of them was wearing a white kit with the number 20",
-      "one was wearing the number 3",
-      "one was earing the number 20"
-    ]
-  },
-  {
-    "node_id": "2345035_008",
     "concept": "white",
-    "context": "colour of one player's kit/top and the goal",
+    "context": "colour of one player's shirt",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "a white kit with the number 20",
-      "one in blue and one in white",
-      "white goal was in far left of photo"
+      "white kit",
+      "in white",
+      "a white one",
+      "white shirt"
     ]
   },
   {
-    "node_id": "2345035_009",
+    "node_id": "2345035_008",
     "concept": "kit",
     "context": "sports clothing worn by a player",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "a white kit with the number 20",
+      "white kit",
       "sports kit"
     ]
   },
   {
-    "node_id": "2345035_010",
-    "concept": "different",
-    "context": "describes the teams the two players belong to",
-    "content_type": "object_attribute",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "two girls from diferent teams"
-    ]
-  },
-  {
-    "node_id": "2345035_011",
+    "node_id": "2345035_009",
     "concept": "team",
-    "context": "team membership of the two players",
+    "context": "players belonging to opposing sides",
     "content_type": "object_identity",
     "evidence_type": "latent",
     "status": "correct",
     "source_phrases": [
-      "two girls from diferent teams",
-      "they were from opposite teams"
+      "diferent teams",
+      "opposite teams",
+      "opposite teams"
     ]
   },
   {
-    "node_id": "2345035_012",
+    "node_id": "2345035_010",
     "concept": "match",
-    "context": "describes the sporting event taking place",
+    "context": "organized soccer play taking place on the field",
     "content_type": "scene_gist",
     "evidence_type": "latent",
     "status": "correct",
@@ -206,62 +169,451 @@
     ]
   },
   {
-    "node_id": "2345035_013",
+    "node_id": "2345035_011",
     "concept": "field",
-    "context": "playing surface/environment of the scene",
+    "context": "playing area of the scene",
     "content_type": "scene_gist",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "on a football field",
-      "on a feild",
+      "football field",
+      "a feild",
       "in a field",
       "across a field"
     ]
   },
   {
-    "node_id": "2345035_014",
+    "node_id": "2345035_012",
     "concept": "blue",
-    "context": "colour of one player's top/shirt",
+    "context": "colour of one player's shirt",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "one in blue",
-      "one with a blue top",
-      "one had a blue shirt"
+      "in blue",
+      "a blue top",
+      "wearing blue",
+      "blue shirt",
+      "wearing blue",
+      "blue top"
     ]
   },
   {
-    "node_id": "2345035_015",
+    "node_id": "2345035_013",
     "concept": "left",
-    "context": "position of the goal or one player relative to the other",
+    "context": "location of the goal within the scene",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "two girls on left",
-      "white goal was in far left of photo",
-      "taller girl was to the left of a shorter girl"
+      "on left",
+      "far left",
+      "to the left",
+      "on the left"
+    ]
+  },
+  {
+    "node_id": "2345035_014",
+    "concept": "background",
+    "context": "area behind the main players containing other people",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in back ground",
+      "in the background",
+      "in the background",
+      "parents in background",
+      "people in the background"
+    ]
+  },
+  {
+    "node_id": "2345035_015",
+    "concept": "black",
+    "context": "colour of shorts, socks, or footwear worn by the players",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "black top",
+      "wearing black",
+      "blacl stripped",
+      "black knee"
     ]
   },
   {
     "node_id": "2345035_016",
-    "concept": "ball",
-    "context": "object the players are running/chasing after",
+    "concept": "top",
+    "context": "upper-body garment worn by a player",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "chasing after ball",
-      "a ball",
-      "running for the ball",
-      "the ball",
-      "ball on the right of the girls"
+      "black top",
+      "blue top",
+      "blue top"
     ]
   },
   {
     "node_id": "2345035_017",
+    "concept": "3",
+    "context": "number on one player's jersey",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "number 3",
+      "the number 3",
+      "number 3",
+      "numbers 20 amd 3",
+      "number 3",
+      "numbers 20 and 3"
+    ]
+  },
+  {
+    "node_id": "2345035_018",
+    "concept": "back",
+    "context": "location of numbers on the players' jerseys",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "their backs"
+    ]
+  },
+  {
+    "node_id": "2345035_019",
+    "concept": "pitch",
+    "context": "soccer playing surface in the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "football pitch",
+      "football pitch behind",
+      "grass pitch",
+      "of the pitch",
+      "footbacll pitch",
+      "on a pitch"
+    ]
+  },
+  {
+    "node_id": "2345035_020",
+    "concept": "goal",
+    "context": "object visible on the far left of the photo",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white goal"
+    ]
+  },
+  {
+    "node_id": "2345035_021",
+    "concept": "photo",
+    "context": "reference frame for positional descriptions",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "of photo",
+      "of the photo"
+    ]
+  },
+  {
+    "node_id": "2345035_022",
+    "concept": "young",
+    "context": "age-related description of the players",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "young girls",
+      "two young girls"
+    ]
+  },
+  {
+    "node_id": "2345035_023",
+    "concept": "right",
+    "context": "location of the ball or players within the scene",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "right of photo",
+      "on the right",
+      "top right",
+      "on the right"
+    ]
+  },
+  {
+    "node_id": "2345035_024",
+    "concept": "running",
+    "context": "action performed by the players toward the ball",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "girls running",
+      "2 girls running",
+      "girls running",
+      "running after"
+    ]
+  },
+  {
+    "node_id": "2345035_025",
+    "concept": "tall",
+    "context": "relative height of one player",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "taller girl",
+      "is taller"
+    ]
+  },
+  {
+    "node_id": "2345035_026",
+    "concept": "short",
+    "context": "relative height of the other player",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "shorter girl"
+    ]
+  },
+  {
+    "node_id": "2345035_027",
+    "concept": "man",
+    "context": "background spectators on the field edge",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "men in the background"
+    ]
+  },
+  {
+    "node_id": "2345035_028",
+    "concept": "grass",
+    "context": "surface beneath the players and ball",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the grass",
+      "grass pitch"
+    ]
+  },
+  {
+    "node_id": "2345035_029",
+    "concept": "green",
+    "context": "colour of one player's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "had a green"
+    ]
+  },
+  {
+    "node_id": "2345035_030",
+    "concept": "shirt",
+    "context": "garment worn by a player",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blue shirt",
+      "navy shirt",
+      "white shirt",
+      "white shirt",
+      "their shirt",
+      "long sleeve shirt"
+    ]
+  },
+  {
+    "node_id": "2345035_031",
+    "concept": "navy",
+    "context": "colour of one player's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a navy shirt",
+      "wearing navy blue"
+    ]
+  },
+  {
+    "node_id": "2345035_032",
+    "concept": "boot",
+    "context": "footwear worn by the players",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "football boots"
+    ]
+  },
+  {
+    "node_id": "2345035_033",
+    "concept": "nike",
+    "context": "brand visible on the footwear",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "black nike football"
+    ]
+  },
+  {
+    "node_id": "2345035_034",
+    "concept": "long",
+    "context": "length of one player's hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "ling hair"
+    ]
+  },
+  {
+    "node_id": "2345035_036",
+    "concept": "30",
+    "context": "number on one player's shirt",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "number 30"
+    ]
+  },
+  {
+    "node_id": "2345035_037",
+    "concept": "winning",
+    "context": "one player being ahead in the race to the ball",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "winning the race"
+    ]
+  },
+  {
+    "node_id": "2345035_038",
+    "concept": "race",
+    "context": "competitive pursuit of the ball by the players",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "the race to"
+    ]
+  },
+  {
+    "node_id": "2345035_039",
+    "concept": "parent",
+    "context": "people in the background",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "parents in background"
+    ]
+  },
+  {
+    "node_id": "2345035_040",
+    "concept": "player",
+    "context": "soccer participants in the scene",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "other players",
+      "female players"
+    ]
+  },
+  {
+    "node_id": "2345035_041",
+    "concept": "away",
+    "context": "direction of movement relative to the viewer",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "away from"
+    ]
+  },
+  {
+    "node_id": "2345035_042",
+    "concept": "screen",
+    "context": "viewer reference point for movement direction",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the screen"
+    ]
+  },
+  {
+    "node_id": "2345035_043",
+    "concept": "hair",
+    "context": "feature of the players mentioned in appearance descriptions",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "their hair"
+    ]
+  },
+  {
+    "node_id": "2345035_045",
+    "concept": "ponytail",
+    "context": "hairstyle of one or both players",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in ponytails",
+      "have ponytails"
+    ]
+  },
+  {
+    "node_id": "2345035_046",
+    "concept": "sock",
+    "context": "legwear worn by the players",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "knee high socks"
+    ]
+  },
+  {
+    "node_id": "2345035_047",
+    "concept": "knee-high",
+    "context": "length of the socks",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "black knee high"
+    ]
+  },
+  {
+    "node_id": "2345035_048",
+    "concept": "sport",
+    "context": "type of kit worn by the players",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "sports kit"
+    ]
+  },
+  {
+    "node_id": "2345035_049",
     "concept": "person",
     "context": "people visible in the background",
     "content_type": "object_identity",
@@ -273,409 +625,58 @@
     ]
   },
   {
-    "node_id": "2345035_018",
-    "concept": "background",
-    "context": "location of the additional people behind the main action",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "people in back ground",
-      "parents in background",
-      "men in the background",
-      "people in the background"
-    ]
-  },
-  {
-    "node_id": "2345035_019",
-    "concept": "black",
-    "context": "colour of players' shorts or socks",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "one with a black top",
-      "blacl stripped uniform",
-      "black knee high socks"
-    ]
-  },
-  {
-    "node_id": "2345035_020",
-    "concept": "top",
-    "context": "upper-body garment worn by a player",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "one with a black top",
-      "one with a blue top",
-      "one with a blue top with 20 on it"
-    ]
-  },
-  {
-    "node_id": "2345035_021",
-    "concept": "3",
-    "context": "number displayed on one player's clothing/back",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "numbers 20 amd 3 on their backs",
-      "20 chases 3",
-      "the two girls chasing are numbers 20 and 3",
-      "the other was wearing the number 3"
-    ]
-  },
-  {
-    "node_id": "2345035_022",
-    "concept": "back",
-    "context": "location on the players where numbers are visible",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "on their backs"
-    ]
-  },
-  {
-    "node_id": "2345035_023",
-    "concept": "front",
-    "context": "position of the ball relative to the players",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "a ball infront on them"
-    ]
-  },
-  {
-    "node_id": "2345035_024",
-    "concept": "pitch",
-    "context": "soccer playing surface/environment",
-    "content_type": "scene_gist",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "football pitch",
-      "another football pitch behind",
-      "footbacll pitch",
-      "on a pitch"
-    ]
-  },
-  {
-    "node_id": "2345035_025",
-    "concept": "goal",
-    "context": "goal visible on the far left of the photo",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "white goal was in far left of photo"
-    ]
-  },
-  {
-    "node_id": "2345035_026",
-    "concept": "far",
-    "context": "modifies the leftward position of the goal in the photo",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "far left of photo"
-    ]
-  },
-  {
-    "node_id": "2345035_027",
-    "concept": "photo",
-    "context": "frame of reference for spatial description",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "far left of photo",
-      "right of photo"
-    ]
-  },
-  {
-    "node_id": "2345035_028",
-    "concept": "young",
-    "context": "age-related appearance of the players",
-    "content_type": "object_attribute",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "two young girls"
-    ]
-  },
-  {
-    "node_id": "2345035_029",
-    "concept": "right",
-    "context": "position of the players or ball within the scene",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "in right of photo",
-      "ball on the right of the girls"
-    ]
-  },
-  {
-    "node_id": "2345035_030",
-    "concept": "running",
-    "context": "action performed by the players toward the ball",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "running for the ball",
-      "2 girls running for the ball",
-      "2 girls running after a football"
-    ]
-  },
-  {
-    "node_id": "2345035_031",
-    "concept": "tall",
-    "context": "relative height of one player compared with the other",
-    "content_type": "object_attribute",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "taller girl was to the left of a shorter girl"
-    ]
-  },
-  {
-    "node_id": "2345035_032",
-    "concept": "short",
-    "context": "relative height of one player compared with the other",
-    "content_type": "object_attribute",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "a shorter girl"
-    ]
-  },
-  {
-    "node_id": "2345035_033",
-    "concept": "man",
-    "context": "male figures visible in the background",
-    "content_type": "object_attribute",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "men in the background"
-    ]
-  },
-  {
-    "node_id": "2345035_034",
-    "concept": "behind",
-    "context": "position of another pitch relative to the main pitch",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "another football pitch behind"
-    ]
-  },
-  {
-    "node_id": "2345035_035",
-    "concept": "green",
-    "context": "colour of one player's shirt",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "incorrect",
-    "source_phrases": [
-      "one had a green"
-    ]
-  },
-  {
-    "node_id": "2345035_036",
-    "concept": "shirt",
-    "context": "garment worn by a player",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "one had a blue shirt",
-      "one had number 10 on their shirt"
-    ]
-  },
-  {
-    "node_id": "2345035_037",
-    "concept": "10",
-    "context": "number displayed on one player's shirt",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "incorrect",
-    "source_phrases": [
-      "one had number 10 on their shirt"
-    ]
-  },
-  {
-    "node_id": "2345035_038",
-    "concept": "parent",
-    "context": "adults visible in the background",
-    "content_type": "object_identity",
-    "evidence_type": "speculative",
-    "status": "incorrect",
-    "source_phrases": [
-      "parents in background"
-    ]
-  },
-  {
-    "node_id": "2345035_039",
-    "concept": "away",
-    "context": "direction of movement of the players relative to the viewer/screen",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "away from the screen"
-    ]
-  },
-  {
-    "node_id": "2345035_040",
-    "concept": "screen",
-    "context": "viewer-based frame of reference for movement direction",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "incorrect",
-    "source_phrases": [
-      "away from the screen"
-    ]
-  },
-  {
-    "node_id": "2345035_041",
-    "concept": "other",
-    "context": "describes additional players beyond the main two",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "other players"
-    ]
-  },
-  {
-    "node_id": "2345035_042",
-    "concept": "player",
-    "context": "additional people on the pitch and female participants in the scene",
-    "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "other players",
-      "2 female players"
-    ]
-  },
-  {
-    "node_id": "2345035_043",
-    "concept": "long",
-    "context": "length of the girls' hair",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "both have ling hair"
-    ]
-  },
-  {
-    "node_id": "2345035_044",
-    "concept": "hair",
-    "context": "hair of the two players",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "ling hair in ponytails",
-      "ponytails in their hair"
-    ]
-  },
-  {
-    "node_id": "2345035_045",
-    "concept": "ponytail",
-    "context": "hairstyle of the players",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "ponytails",
-      "ponytails in their hair"
-    ]
-  },
-  {
-    "node_id": "2345035_046",
-    "concept": "close",
-    "context": "distance between the players and the ball",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "both really close to it"
-    ]
-  },
-  {
-    "node_id": "2345035_047",
-    "concept": "striped",
-    "context": "pattern on the uniform",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "incorrect",
-    "source_phrases": [
-      "blacl stripped uniform"
-    ]
-  },
-  {
-    "node_id": "2345035_048",
-    "concept": "uniform",
-    "context": "sports clothing worn by the girls",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "blacl stripped uniform"
-    ]
-  },
-  {
-    "node_id": "2345035_049",
-    "concept": "sock",
-    "context": "legwear worn by the players",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "black knee high socks"
-    ]
-  },
-  {
     "node_id": "2345035_050",
-    "concept": "knee-high",
-    "context": "height/length of the socks",
-    "content_type": "object_attribute",
+    "concept": "individual",
+    "context": "people visible in the background",
+    "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "black knee high socks"
+      "of individuals"
     ]
   },
   {
     "node_id": "2345035_051",
-    "concept": "opposite",
-    "context": "describes the teams the two players belong to",
-    "content_type": "object_attribute",
+    "concept": "watching",
+    "context": "action of background individuals",
+    "content_type": "action_relation",
     "evidence_type": "latent",
     "status": "correct",
     "source_phrases": [
-      "they were from opposite teams"
+      "background watching"
     ]
   },
   {
     "node_id": "2345035_052",
-    "concept": "female",
-    "context": "gender of the players",
+    "concept": "coach",
+    "context": "role attributed to one background person",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "a coach"
+    ]
+  },
+  {
+    "node_id": "2345035_053",
+    "concept": "striped",
+    "context": "pattern description of the uniform",
     "content_type": "object_attribute",
-    "evidence_type": "latent",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "blacl stripped uniform"
+    ]
+  },
+  {
+    "node_id": "2345035_054",
+    "concept": "uniform",
+    "context": "clothing worn by the players",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "2 female players"
+      "stripped uniform"
     ]
   }
 ]

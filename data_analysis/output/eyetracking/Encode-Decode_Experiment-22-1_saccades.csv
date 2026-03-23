@@ -1,0 +1,1351 @@
+SubjectID,StimID,CueText,Phase,TrialIndex,TrialID,SaccStart_ms,SaccEnd_ms,Duration_ms,StartX,StartY,EndX,EndY,PeakVelocity
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,178,246,68,1788.2,459.3,1095.8,373.7,504.9
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,406,448,42,1113.7,382.2,1076.6,249.3,348.8
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,650,724,74,1072.4,215.2,1074.5,956.1,654.1
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,944,1022,78,1077.8,942.9,1077.8,200.3,601.8
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,1188,1250,62,1089.8,212.8,644.1,219.3,408.0
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,1548,1624,76,643.2,221.9,1131.0,568.1,403.1
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,1820,1870,50,1130.2,565.9,1059.7,915.9,553.3
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,2114,2186,72,1049.0,940.2,1204.2,360.6,547.1
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,2408,2456,48,1204.0,362.8,1071.4,206.5,361.8
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,2820,2892,72,1053.3,181.8,1110.6,888.8,555.4
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,3096,3156,60,1108.4,908.8,1206.2,380.6,550.6
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,3366,3412,46,1211.2,351.5,1054.8,194.3,387.7
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,3650,3714,64,1038.8,175.4,1109.6,846.8,609.6
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,3906,3986,80,1095.1,868.9,979.9,183.0,552.3
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,4158,4208,50,987.5,194.3,641.3,237.9,365.3
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,4620,4700,80,622.9,229.5,1080.1,752.9,438.6
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,1,1,4914,4980,66,1087.4,775.4,1198.7,278.9,554.0
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,2,2,5282,5320,38,996.0,529.5,1304.0,340.5,345.6
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,2,2,5460,5484,24,1313.6,336.6,1377.1,458.5,266.7
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,2,2,5610,5672,62,1376.6,458.4,899.1,477.4,403.3
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,2,2,5808,5860,52,908.2,488.1,1357.4,487.2,374.0
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,2,2,5988,6064,76,1383.5,482.7,584.3,692.2,545.7
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,2,2,6304,6326,22,594.1,686.3,488.9,638.8,168.7
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,2,2,6440,6496,56,498.8,647.6,1368.6,289.4,544.9
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,2,2,6744,6810,66,1386.4,293.5,851.8,494.7,433.8
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,2,2,7016,7032,16,863.7,494.4,893.1,460.4,90.9
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,2,2,7788,7820,32,878.6,453.7,970.4,521.0,170.5
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,2,2,7974,7998,24,981.9,516.8,890.0,440.1,211.5
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,2,2,8884,8896,12,881.9,442.9,920.7,452.4,66.7
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,2,2,9240,9278,38,924.8,448.0,929.9,514.2,117.3
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,2,2,9430,9478,48,923.8,509.0,1310.7,480.5,274.3
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,2,2,9782,9818,36,1328.9,481.1,903.1,459.3,393.0
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,3,3,10380,10418,38,1010.6,519.6,1389.2,345.8,357.0
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,3,3,10600,10652,52,1395.7,354.0,934.4,487.9,422.2
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,3,3,10996,11050,54,913.1,491.1,1347.5,463.2,317.8
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,3,3,11256,11306,50,1368.6,463.1,1051.4,545.9,393.2
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,3,3,11550,11572,22,1019.5,549.6,911.5,481.4,200.1
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,3,3,12108,12136,28,897.6,478.6,1125.3,509.8,272.1
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,3,3,12420,12454,34,1136.9,512.7,1333.2,309.3,300.7
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,3,3,12684,12704,20,1351.4,310.1,1330.3,248.5,137.3
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,3,3,13040,13104,64,1333.1,271.5,1005.4,507.7,362.6
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,3,3,13360,13384,24,1011.0,501.1,863.7,466.2,200.6
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,3,3,13656,13686,30,880.6,473.2,621.4,607.5,322.2
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,3,3,14000,14050,50,635.5,603.1,929.1,619.5,271.6
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,3,3,14258,14284,26,934.6,638.2,888.4,462.8,312.3
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,3,3,14738,14748,10,892.8,482.7,871.0,465.6,57.7
+Encode-Decode_Experiment-22-1,2356991,baseball,encoding,3,3,15002,15054,52,885.7,468.4,778.6,630.0,283.4
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,4,4,15462,15482,20,1001.6,524.2,997.8,434.1,181.8
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,4,4,15622,15662,40,1002.3,448.5,822.2,526.3,263.2
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,4,4,15878,15930,52,797.8,534.6,979.8,317.8,324.7
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,4,4,16276,16330,54,973.8,299.8,853.7,565.9,333.3
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,4,4,16718,16740,22,844.6,581.4,738.4,595.0,149.5
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,4,4,17298,17344,46,747.5,595.2,978.8,784.8,237.1
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,4,4,17676,17734,58,974.1,798.1,695.1,481.3,390.0
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,4,4,18114,18186,72,687.9,462.2,1358.3,344.8,311.4
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,4,4,18476,18512,36,1392.4,346.8,1705.9,380.6,314.8
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,4,4,18890,18958,68,1705.8,390.7,844.8,361.0,480.7
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,4,4,19244,19274,30,826.4,369.5,554.8,336.5,300.6
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,4,4,19674,19716,42,555.8,343.0,764.5,513.7,354.2
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,4,4,20304,20316,12,780.2,512.2,741.9,542.9,66.5
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,5,5,20572,20596,24,1044.5,531.8,893.5,552.4,189.4
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,5,5,20818,20846,28,898.3,549.3,997.5,758.1,302.5
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,5,5,21220,21236,16,991.9,768.8,1047.2,791.1,95.3
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,5,5,21400,21456,56,1033.8,783.3,735.5,599.9,298.7
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,5,5,21714,21748,34,727.3,588.0,1014.9,736.9,402.4
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,5,5,22292,22312,20,1023.4,757.9,1119.1,753.6,125.3
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,5,5,22500,22522,22,1114.6,756.4,993.6,767.0,170.1
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,5,5,22736,22794,58,1009.0,769.0,878.6,365.0,453.6
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,5,5,23026,23072,46,870.8,346.1,1028.6,690.9,525.2
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,5,5,24762,24782,20,1049.9,702.9,943.8,654.3,161.8
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,5,5,25152,25176,24,925.6,623.6,1042.4,728.4,250.2
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,25648,25682,34,1036.8,534.7,902.5,541.2,204.8
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,25852,25894,42,883.7,538.8,666.9,341.0,261.0
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,26052,26078,26,663.2,339.0,634.3,187.6,275.0
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,26286,26306,20,635.1,200.8,560.4,197.0,123.9
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,26482,26562,80,573.3,198.8,1495.2,351.3,430.1
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,26918,26958,40,1515.3,372.2,1609.1,558.8,298.3
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,27212,27274,62,1622.4,562.6,948.5,581.4,461.3
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,27502,27556,54,920.0,584.1,504.2,476.7,376.7
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,27940,27968,28,497.7,470.4,238.3,552.3,301.2
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,28180,28240,60,233.1,563.1,887.1,580.5,411.4
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,28482,28516,34,913.5,588.9,998.9,721.3,339.0
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,28768,28806,38,1006.2,745.1,868.8,545.9,435.3
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,29170,29200,30,880.3,526.9,1069.2,524.8,243.8
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,29482,29524,42,1091.2,520.1,903.4,536.3,263.7
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,29750,29966,216,867.3,537.0,930.7,656.7,1095.9
+Encode-Decode_Experiment-22-1,2348899,tie,encoding,6,6,30200,30240,40,923.8,608.8,1043.9,700.3,358.2
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,7,7,30708,30736,28,1054.6,549.4,1091.3,407.0,235.3
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,7,7,31018,31066,48,1097.4,412.6,1584.5,532.9,304.2
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,7,7,31264,31278,14,1578.7,524.6,1539.7,492.4,84.0
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,7,7,31544,31626,82,1533.1,485.6,605.1,521.8,428.9
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,7,7,31952,31996,44,621.7,533.1,1143.3,638.7,391.9
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,7,7,32258,32316,58,1157.8,651.0,1111.5,365.3,392.4
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,7,7,32582,32602,20,1113.0,365.3,1203.7,368.4,132.5
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,7,7,32996,33030,34,1176.6,363.5,1552.2,471.2,359.6
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,7,7,33216,33244,28,1563.3,480.2,1509.3,474.6,123.8
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,7,7,33434,33512,78,1502.1,459.1,573.5,494.0,512.8
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,7,7,33694,33724,30,588.2,497.9,657.2,492.1,166.0
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,7,7,33964,34018,54,670.5,490.9,1116.9,373.2,395.5
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,7,7,34562,34608,46,1143.1,365.6,1546.3,402.8,291.1
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,7,7,34826,34890,64,1561.7,406.1,1090.5,413.3,426.6
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,7,7,35230,35254,24,1094.3,417.6,1175.9,486.3,155.1
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,35818,35834,16,1000.7,532.4,983.4,480.4,110.7
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,35988,36026,38,981.9,489.3,1377.9,554.7,342.0
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,36232,36264,32,1392.4,566.8,1570.8,463.3,188.8
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,36680,36728,48,1579.9,469.5,1062.6,572.7,365.4
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,36970,37018,48,1065.7,578.0,1440.0,768.0,321.0
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,37382,37434,52,1430.0,778.9,1193.0,708.0,273.2
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,37670,37722,52,1187.3,697.7,1071.7,495.0,303.2
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,37978,38010,32,1065.6,489.5,1348.5,551.0,269.8
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,38178,38204,26,1368.3,559.3,1320.7,360.9,338.5
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,38472,38518,46,1330.1,367.1,1800.8,393.5,251.7
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,38758,38816,58,1809.5,389.7,1330.8,624.2,470.0
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,39244,39280,36,1309.4,633.5,989.3,489.6,283.8
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,39506,39566,60,962.7,481.9,1537.5,469.5,415.3
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,39996,40060,64,1563.8,485.0,1054.6,520.7,343.0
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,40274,40320,46,1035.3,517.6,1583.8,496.8,380.1
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,8,8,40618,40660,42,1580.8,503.0,991.3,526.3,433.5
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,9,9,40880,40914,34,1067.3,539.2,939.2,405.4,267.7
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,9,9,41090,41122,32,947.0,406.5,1210.2,348.1,279.2
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,9,9,41426,41448,22,1208.1,343.9,1172.3,379.2,113.5
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,9,9,41696,41740,44,1163.3,364.9,948.4,467.8,295.2
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,9,9,42050,42074,24,917.8,461.2,873.2,345.5,203.1
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,9,9,42324,42610,286,867.1,349.1,1147.2,556.9,1295.6
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,9,9,42878,42924,46,1134.8,527.7,1159.6,337.4,352.9
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,9,9,43168,43192,24,1162.6,309.3,1094.2,247.1,174.7
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,9,9,43576,43616,40,1099.9,272.7,886.9,366.8,403.9
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,9,9,43878,43938,60,872.2,385.4,1363.4,350.7,367.5
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,9,9,44138,44172,34,1360.4,343.7,1292.4,405.2,218.1
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,9,9,44310,44368,58,1269.3,411.8,722.7,359.3,439.5
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,9,9,44622,44676,54,705.2,369.4,909.7,569.1,361.9
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,9,9,45362,45404,42,920.9,573.7,1078.9,304.2,320.8
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,10,10,45972,46000,28,1049.7,531.9,1053.6,484.8,168.6
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,10,10,46144,46168,24,1049.4,478.7,1235.5,563.6,302.3
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,10,10,46388,46418,30,1236.5,564.1,1139.1,581.4,201.0
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,10,10,46614,46682,68,1118.7,587.9,958.1,207.0,388.3
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,10,10,46950,47006,56,969.9,209.5,1156.3,564.7,474.8
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,10,10,47176,47240,64,1149.2,586.1,524.7,565.2,399.6
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,10,10,47486,47700,214,493.4,567.5,351.9,775.0,931.3
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,10,10,47808,47830,22,360.0,756.0,277.1,750.5,126.8
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,10,10,47972,48172,200,294.3,749.3,1112.2,645.7,1253.4
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,10,10,48456,48500,44,1114.3,625.9,974.4,704.5,297.8
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,10,10,48948,49000,52,983.0,714.7,1268.6,558.0,340.7
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,10,10,49244,49322,78,1279.1,559.6,454.1,544.0,475.1
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,10,10,49602,49632,30,458.8,547.0,551.6,730.5,340.9
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,10,10,49822,49870,48,576.3,747.2,296.1,734.5,284.1
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,10,10,50008,50078,70,270.7,741.1,1013.4,323.6,546.4
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,11,11,51128,51150,22,1108.0,545.4,1014.4,470.8,206.4
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,11,11,51424,51480,56,1020.8,479.2,741.2,752.5,436.4
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,11,11,51716,51780,64,718.9,762.1,633.7,356.6,315.5
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,11,11,51926,51994,68,630.9,339.4,1277.3,656.7,527.3
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,11,11,52274,52326,52,1289.3,683.5,1056.5,481.7,379.0
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,11,11,52644,52698,54,1037.7,467.7,973.0,165.7,337.8
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,11,11,52886,52950,64,967.4,153.8,1656.7,353.5,444.7
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,11,11,53244,53286,42,1685.4,380.4,1634.2,221.9,333.1
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,11,11,53640,53698,58,1636.8,214.7,1083.3,88.9,418.7
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,11,11,53912,53950,38,1066.5,98.6,633.0,126.6,383.1
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,11,11,54374,54440,66,627.9,138.0,1008.5,481.6,441.5
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,11,11,54690,54728,38,1014.9,492.6,1170.9,542.2,308.3
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,11,11,55184,55212,28,1189.6,560.9,960.6,467.5,300.3
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,11,11,55718,55736,18,955.5,460.2,895.3,400.8,156.1
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,11,11,55854,55916,62,911.7,414.4,401.4,369.3,394.7
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,56228,56254,26,1034.9,543.3,862.6,502.6,213.5
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,56462,56520,58,863.1,498.9,1385.2,573.2,382.1
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,56670,56724,54,1405.2,573.7,1000.1,527.5,394.2
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,56966,57042,76,967.0,519.0,1634.4,662.6,389.9
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,57260,57284,24,1624.3,651.6,1780.6,715.4,224.8
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,57434,57468,34,1760.9,717.7,1838.9,838.6,294.1
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,57718,57784,66,1859.9,858.1,1487.3,628.3,457.6
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,57952,57998,46,1492.0,625.9,1727.0,623.0,262.3
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,58168,58198,30,1749.1,636.5,1799.0,653.3,149.4
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,58392,58462,70,1809.4,667.8,961.4,428.9,520.7
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,58868,58910,42,930.1,412.9,1121.4,263.3,320.4
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,59242,59262,20,1133.4,234.9,1044.3,240.2,125.5
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,59530,59562,32,1053.8,232.4,877.4,468.4,445.0
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,59828,59848,20,876.7,472.8,757.3,445.7,188.9
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,60170,60230,60,773.1,449.8,500.7,208.8,290.1
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,60450,60528,78,490.1,187.6,1492.2,240.5,481.0
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,12,12,60858,60928,70,1533.8,247.2,925.8,434.7,459.8
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,13,13,61200,61238,38,960.4,534.7,814.3,369.1,211.6
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,13,13,61372,61424,52,816.2,368.0,1273.8,399.7,368.7
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,13,13,61680,61702,22,1296.3,412.5,1259.7,377.9,108.5
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,13,13,62060,62124,64,1256.1,385.2,1279.5,912.0,483.9
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,13,13,62408,62442,34,1274.5,950.7,1059.2,773.1,323.1
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,13,13,62752,62792,40,1071.9,766.2,937.1,717.2,226.6
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,13,13,62954,63024,70,922.3,712.5,804.5,304.2,400.1
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,13,13,63378,63400,22,812.9,298.0,773.5,236.2,126.1
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,13,13,63632,63688,56,770.0,245.2,1239.9,360.5,442.1
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,13,13,64008,64026,18,1254.1,381.5,1272.4,325.3,113.1
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,13,13,64568,64588,20,1252.8,328.8,1187.9,298.0,125.3
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,13,13,65250,65268,18,1202.3,314.4,1263.1,352.1,113.8
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,13,13,65648,65690,42,1258.7,326.6,785.2,231.6,415.7
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,13,13,65872,65892,20,780.2,227.5,732.8,195.6,111.2
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,66110,66122,12,1047.1,544.4,1073.8,523.0,64.2
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,66370,66390,20,1065.0,529.0,1213.4,564.4,192.6
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,66624,66646,22,1235.9,556.2,1090.0,581.8,208.9
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,66800,66858,58,1101.3,572.6,605.3,582.9,359.1
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,67020,67082,62,582.4,587.2,988.4,733.0,384.2
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,67358,67602,244,959.2,734.9,936.9,738.0,1212.2
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,67750,67786,36,933.1,705.1,1223.6,522.9,402.1
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,67982,68038,56,1220.4,514.7,1002.5,317.4,352.4
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,68168,68196,28,997.7,300.4,1211.9,526.9,485.0
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,68462,68528,66,1216.2,541.6,935.5,280.5,427.3
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,68882,68936,54,952.0,298.1,711.5,576.7,258.1
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,69148,69192,44,698.5,593.2,510.0,571.6,266.4
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,69430,69480,50,489.7,564.0,299.9,712.7,348.8
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,69710,69780,70,290.1,733.1,956.6,293.2,527.9
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,69936,70012,76,980.5,280.1,962.1,915.1,540.5
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,70230,70280,50,968.9,902.7,1168.8,533.3,540.5
+Encode-Decode_Experiment-22-1,2369373,chef,encoding,14,14,70826,71104,278,1172.2,507.4,1209.8,602.2,1381.6
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,15,15,71512,71554,42,1017.9,541.4,1432.3,509.0,287.9
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,15,15,71708,71778,70,1450.1,513.5,628.8,444.3,396.7
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,15,15,71928,71954,26,627.5,452.4,424.9,394.5,257.9
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,15,15,72160,72184,24,426.9,401.1,608.2,364.1,265.7
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,15,15,72518,72558,40,605.1,377.7,807.4,452.8,296.8
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,15,15,72854,72908,54,820.8,460.5,1091.2,665.1,351.4
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,15,15,73092,73134,42,1086.2,684.7,864.0,779.5,363.7
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,15,15,73380,73440,60,845.9,799.6,1403.0,835.7,362.3
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,15,15,73668,73716,48,1426.1,842.5,1433.8,494.0,522.0
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,15,15,73914,73968,54,1444.9,465.5,999.2,595.9,421.0
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,15,15,74184,74232,48,988.7,602.6,463.2,557.9,383.1
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,15,15,74530,74568,38,462.6,546.3,337.1,522.5,206.6
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,15,15,74860,74888,28,325.7,513.6,551.1,484.5,276.6
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,15,15,75254,75286,32,564.3,498.2,455.1,437.8,223.6
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,15,15,75576,75606,30,449.0,418.3,754.3,453.3,312.7
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,76516,76550,34,1043.5,543.1,1303.7,465.3,279.4
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,76676,76746,70,1297.0,459.9,1104.7,918.7,492.3
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,76942,76968,26,1104.9,907.3,910.2,911.9,251.6
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,77174,77204,30,920.3,915.6,1189.0,1002.2,336.4
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,77362,77394,32,1193.3,1002.0,863.6,914.1,364.4
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,77718,77734,16,849.9,908.4,813.4,857.2,115.1
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,77880,77956,76,818.7,862.6,696.6,226.3,538.7
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,78226,78294,68,694.4,249.2,831.0,872.4,519.2
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,78592,78668,76,812.4,894.0,1173.2,286.2,581.4
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,78812,78848,36,1177.6,295.3,1060.5,232.3,262.5
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,79212,79248,36,1051.7,218.6,1237.9,378.0,314.6
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,79432,79492,60,1252.3,383.8,646.6,252.9,475.3
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,79744,79772,28,613.9,248.5,552.5,469.5,418.5
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,80048,80098,50,546.0,474.2,626.2,251.5,357.8
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,80410,80450,40,637.1,216.3,1084.0,187.5,351.4
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,80594,80642,48,1108.3,185.3,1624.8,349.9,423.6
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,80886,80918,32,1626.1,351.2,1657.7,397.0,179.4
+Encode-Decode_Experiment-22-1,2397102,cake,encoding,16,16,81202,81260,58,1652.6,416.5,927.2,672.6,467.0
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,81658,81682,24,1031.6,535.1,963.9,609.2,179.1
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,81874,81904,30,975.9,617.5,1131.7,501.0,240.1
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,82020,82064,44,1130.9,502.0,1620.8,316.6,377.3
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,82216,82260,44,1637.4,314.6,1780.7,144.2,335.4
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,82512,82528,16,1772.7,118.2,1821.8,75.5,108.5
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,82832,82902,70,1811.7,81.6,1321.0,421.9,529.8
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,83192,83226,34,1314.0,420.0,1204.1,436.4,215.2
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,83434,83458,24,1176.5,434.3,1135.3,544.1,178.3
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,83742,83776,34,1125.3,538.4,1015.1,594.9,204.1
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,84036,84058,22,1004.1,597.4,926.3,613.0,138.2
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,84660,84694,34,935.6,605.7,1086.7,692.0,134.4
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,84914,84956,42,1076.0,714.3,1267.5,605.0,254.1
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,85084,85148,64,1285.5,603.0,997.7,176.3,531.0
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,85390,85432,42,1010.4,157.6,819.5,71.3,295.4
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,85680,85754,74,813.6,60.7,972.6,587.9,525.3
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,85964,86026,62,971.3,575.1,1529.3,772.6,431.2
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,17,17,86254,86296,42,1525.2,777.8,1435.1,912.5,304.4
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,18,18,86614,86644,30,1076.1,452.8,1285.5,301.7,321.5
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,18,18,86920,86976,56,1276.9,297.6,1594.7,504.8,327.6
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,18,18,87084,87142,58,1602.7,519.0,1254.9,284.8,420.1
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,18,18,87416,87492,76,1228.7,268.9,374.9,296.6,464.2
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,18,18,87858,87924,66,390.8,312.6,1228.7,269.7,456.1
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,18,18,88148,88184,36,1251.8,267.8,1262.9,323.1,172.0
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,18,18,88572,88608,36,1263.9,346.9,1222.9,257.6,217.8
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,18,18,88818,88894,76,1225.8,246.4,432.5,389.7,468.6
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,18,18,89180,89226,46,419.9,404.7,412.1,599.5,353.3
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,18,18,89408,89426,18,409.0,620.3,451.5,592.9,92.2
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,18,18,89816,89902,86,435.6,587.3,1535.0,562.4,472.6
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,18,18,90184,90246,62,1526.0,555.0,1823.5,573.4,302.8
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,18,18,90508,90838,330,1829.6,566.6,497.2,580.1,1300.1
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,18,18,91138,91158,20,482.8,611.0,444.5,593.3,91.6
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,91700,91746,46,1062.0,518.6,907.9,561.3,208.6
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,91968,92000,32,901.1,581.8,810.8,575.8,179.8
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,92206,92260,54,791.9,576.5,522.4,382.8,343.5
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,92476,92530,54,506.4,369.8,983.9,311.8,400.9
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,92818,92878,60,1009.7,303.2,1366.2,445.4,339.1
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,93058,93112,54,1382.3,448.4,1603.3,610.7,391.8
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,93462,93508,46,1609.2,630.2,1257.7,862.3,352.9
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,93706,93768,62,1231.4,854.0,996.7,360.5,584.9
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,94002,94024,22,982.8,334.2,888.7,290.1,162.4
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,94416,94452,36,908.0,293.9,933.7,442.8,352.4
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,94660,94714,54,938.9,463.4,549.2,416.4,365.8
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,94966,94998,32,523.1,418.4,492.8,334.6,228.5
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,95204,95244,40,498.8,319.0,941.4,305.5,354.5
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,95682,95716,34,957.3,313.5,931.7,391.4,157.6
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,95916,95940,24,918.0,387.8,915.5,262.3,226.0
+Encode-Decode_Experiment-22-1,150472,pizza-slice,encoding,19,19,96374,96398,24,919.1,281.6,925.2,447.8,315.2
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,96764,96796,32,1046.0,543.6,1226.5,326.8,342.6
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,97036,97058,22,1250.1,302.0,1244.6,233.2,129.9
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,97204,97268,64,1242.7,245.1,563.2,507.8,504.1
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,97466,97494,28,536.3,522.2,410.9,341.2,340.1
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,97870,97904,34,387.1,350.6,333.5,285.3,160.7
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,98218,98282,64,332.6,280.6,596.4,512.2,349.5
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,98406,98470,64,601.9,531.1,1318.9,543.7,504.4
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,98606,98642,36,1354.9,551.2,1234.8,421.5,348.0
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,98998,99020,22,1216.8,408.7,1141.2,463.9,177.0
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,99286,99356,70,1154.4,442.0,446.1,432.1,438.7
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,99718,99778,60,433.1,445.4,494.4,590.2,171.6
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,100150,100228,78,508.4,590.3,1491.9,654.6,442.6
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,100534,100608,74,1532.6,686.7,1290.2,227.7,556.8
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,100814,100856,42,1305.4,228.8,1092.6,119.9,369.5
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,101216,101278,62,1093.2,93.8,1666.0,306.4,411.1
+Encode-Decode_Experiment-22-1,2409918,elephant,encoding,20,20,101566,101646,80,1674.8,323.6,1039.1,575.4,513.2
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,101864,101910,46,1005.1,535.8,741.6,483.5,254.2
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,102062,102102,40,725.3,483.0,1217.0,526.7,392.3
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,102266,102286,20,1242.3,530.5,1187.5,475.9,130.9
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,102628,102686,58,1193.3,482.6,1276.0,750.7,371.9
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,102920,102940,20,1266.1,735.4,1201.3,669.2,170.3
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,103238,103304,66,1197.3,680.4,664.8,399.9,326.5
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,103474,103484,10,638.8,405.6,621.3,427.6,60.6
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,103700,103746,46,628.1,420.9,386.7,442.6,273.2
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,104366,104400,34,363.6,434.7,520.8,680.3,397.4
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,104496,104558,62,540.6,705.3,1159.8,498.1,466.7
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,104756,104786,30,1181.3,499.4,1166.0,463.8,123.5
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,105022,105052,30,1160.5,458.2,1459.9,448.6,303.3
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,105500,105524,24,1476.5,461.6,1550.8,453.4,66.5
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,105618,105644,26,1540.7,464.4,1306.8,464.3,311.0
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,105840,105928,88,1324.4,472.7,533.1,785.4,442.4
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,106170,106190,20,534.7,792.2,497.6,709.6,170.4
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,106416,106436,20,507.3,712.7,389.7,701.8,168.4
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,21,21,106676,106724,48,413.7,709.4,194.9,680.4,212.4
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,106978,107026,48,1013.9,536.2,1361.2,523.1,338.9
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,107186,107218,32,1381.3,540.6,1377.2,590.8,156.2
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,107328,107396,68,1372.0,601.8,620.4,440.3,510.8
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,107692,107766,74,591.5,437.9,1359.6,472.5,446.0
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,107942,107972,30,1348.2,461.3,1288.6,452.8,162.6
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,108342,108372,30,1255.4,447.6,1482.3,437.1,242.3
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,108548,108618,70,1480.6,436.0,602.6,377.6,514.0
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,108810,108838,28,589.1,377.8,661.5,368.3,157.3
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,109168,109216,48,669.0,369.1,1318.9,448.7,429.4
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,109492,109540,48,1334.3,447.5,919.8,450.2,366.0
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,109706,109760,54,921.3,458.6,1356.0,609.4,417.3
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,110076,110118,42,1379.5,620.6,838.9,578.1,453.9
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,110326,110352,26,833.3,593.8,943.4,490.8,223.8
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,110528,110556,28,933.6,506.6,1082.4,320.7,343.9
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,110740,110796,56,1107.1,309.6,1373.3,483.8,456.2
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,111004,111026,22,1375.2,490.1,1304.3,546.3,169.3
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,111208,111244,36,1304.8,529.6,1202.4,386.1,270.6
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,22,22,111438,111504,66,1193.8,391.3,733.7,375.8,416.7
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,112054,112102,48,1024.9,513.1,1325.2,444.6,321.1
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,112288,112322,34,1353.6,442.2,1333.2,352.1,228.1
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,112476,112550,74,1335.7,334.6,430.6,242.5,480.2
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,112704,112728,24,417.0,246.9,253.0,261.9,193.8
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,112864,112940,76,263.1,264.4,965.1,617.7,601.2
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,113174,113204,30,955.5,612.4,1021.1,606.8,147.7
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,113296,113348,52,1028.0,602.9,1356.3,352.8,456.8
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,113512,113528,16,1363.6,330.0,1324.1,335.1,75.0
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,113654,113722,68,1330.4,331.4,1744.8,948.7,629.4
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,113992,114060,68,1749.9,969.9,947.2,647.7,538.6
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,114478,114510,32,955.8,652.4,895.7,642.1,154.5
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,114648,114676,28,880.7,629.5,620.9,723.2,360.3
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,114868,114924,56,617.8,726.2,328.5,535.9,337.5
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,115294,115318,24,308.8,515.1,187.0,541.7,157.2
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,115580,115652,72,191.0,538.2,1125.1,567.8,420.2
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,115888,115946,58,1161.9,571.9,1251.6,317.0,399.0
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,116108,116156,48,1254.7,330.0,610.1,287.8,456.3
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,116332,116376,44,612.0,284.8,392.7,280.7,264.3
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,116574,116596,22,362.0,277.4,461.3,273.9,149.3
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,23,23,116782,116822,40,449.9,283.6,893.5,499.3,571.3
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,24,24,117466,117522,56,1030.5,561.6,1675.6,246.6,422.1
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,24,24,117672,117694,22,1675.2,231.8,1811.1,134.0,237.0
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,24,24,117878,117896,18,1818.9,124.2,1838.1,66.7,117.5
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,24,24,118140,118228,88,1832.0,76.7,1448.1,1046.9,677.2
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,24,24,118446,118518,72,1444.2,1039.4,1388.7,481.5,543.1
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,24,24,118760,118804,44,1381.1,478.2,1217.0,440.5,265.9
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,24,24,119060,119120,60,1187.4,427.8,992.8,624.6,411.5
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,24,24,119392,119414,22,987.2,617.4,930.9,595.8,120.9
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,24,24,119792,119814,22,939.3,605.2,871.7,647.9,137.2
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,24,24,120180,120228,48,885.2,651.8,1132.7,813.7,311.8
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,24,24,120368,120428,60,1139.4,839.1,1128.0,505.9,472.6
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,24,24,120934,120966,32,1122.5,510.5,978.2,642.2,329.9
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,24,24,121486,121544,58,958.7,616.1,1155.4,423.2,329.2
+Encode-Decode_Experiment-22-1,2412687,dog,encoding,24,24,121790,121836,46,1154.0,419.3,919.8,627.1,438.2
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,25,25,122144,122160,16,1052.1,547.6,1093.5,504.9,90.0
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,25,25,122404,122458,54,1083.2,504.2,624.2,594.9,366.4
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,25,25,122802,122862,60,588.2,597.5,1213.4,588.9,414.4
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,25,25,123034,123056,22,1241.4,595.1,1221.2,542.7,123.4
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,25,25,123606,123626,20,1236.1,553.0,1308.4,544.0,91.6
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,25,25,123896,123954,58,1287.9,531.6,1705.3,475.2,310.5
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,25,25,124186,124252,66,1718.5,488.7,1232.0,525.9,438.0
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,25,25,124406,124424,18,1228.7,534.7,1185.8,537.9,91.6
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,25,25,125132,125172,40,1172.2,522.3,1371.8,454.0,193.1
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,25,25,125368,125402,34,1394.4,464.3,1208.2,516.2,314.1
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,25,25,125684,125752,68,1193.5,518.2,606.9,534.6,399.4
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,25,25,126188,126224,36,622.0,543.2,814.5,593.5,297.2
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,25,25,126502,126562,60,836.2,605.4,1469.2,251.6,423.2
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,25,25,126890,126916,26,1470.9,242.4,1265.7,179.1,282.0
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,26,26,127270,127310,40,1073.3,539.5,897.0,365.4,301.5
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,26,26,127438,127460,22,888.0,366.4,773.6,313.9,190.4
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,26,26,127790,127808,18,768.9,315.4,696.4,320.5,110.8
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,26,26,128372,128442,70,700.5,316.5,1195.8,459.0,358.9
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,26,26,128706,128746,40,1182.5,465.5,1028.7,480.6,220.1
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,26,26,128986,129036,50,1000.7,484.4,787.5,337.7,299.5
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,26,26,129248,129276,28,770.9,328.1,741.0,303.4,125.3
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,26,26,129426,129488,62,730.3,302.4,831.9,478.9,223.2
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,26,26,129692,129736,44,839.7,471.4,811.5,659.3,390.0
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,26,26,129934,129990,56,802.6,705.7,540.6,773.3,270.3
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,26,26,130184,130230,46,553.0,781.1,255.1,842.4,307.0
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,26,26,130510,130588,78,232.4,844.6,312.3,193.5,526.7
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,26,26,131038,131128,90,314.5,201.6,673.4,790.9,476.5
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,26,26,131236,131292,56,680.3,815.9,441.9,203.7,561.0
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,26,26,131572,131664,92,428.4,204.0,1360.3,359.9,345.7
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,27,27,132352,132386,34,1038.4,533.8,1089.4,396.7,190.0
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,27,27,132698,132758,60,1096.5,388.0,1569.7,535.6,399.0
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,27,27,132938,132958,20,1560.0,540.2,1514.2,483.7,133.7
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,27,27,133226,133298,72,1518.4,491.0,631.3,538.9,448.5
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,27,27,133526,133610,84,611.0,547.2,1817.0,950.9,498.6
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,27,27,133852,133932,80,1835.4,950.1,1144.2,387.7,660.2
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,27,27,134160,134182,22,1161.0,401.7,1058.2,372.5,158.5
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,27,27,134424,134474,50,1071.1,379.6,1163.2,700.1,417.7
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,27,27,134794,135054,260,1141.6,727.0,1074.2,716.4,1147.5
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,27,27,135400,135462,62,1068.2,683.4,1116.5,359.2,479.2
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,27,27,135778,135828,50,1123.4,379.2,1571.5,475.4,364.2
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,27,27,136146,136206,60,1607.9,464.6,1141.9,337.5,400.8
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,27,27,136478,136508,30,1106.6,335.8,1049.0,362.1,149.4
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,27,27,136662,136722,60,1032.6,365.3,642.2,550.7,459.5
+Encode-Decode_Experiment-22-1,2370664,donuts,encoding,27,27,137012,137076,64,617.7,555.4,1165.2,422.6,414.1
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,137312,137326,14,1127.2,532.1,1080.6,539.1,73.9
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,137468,137488,20,1089.8,543.9,976.1,489.8,207.2
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,137766,137814,48,986.2,495.9,1490.1,513.8,324.6
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,137982,138000,18,1498.1,504.9,1573.0,470.2,119.0
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,138162,138216,54,1575.4,472.5,1356.5,839.4,420.1
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,138610,138662,52,1354.5,857.5,990.0,665.7,270.2
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,138978,139020,42,983.4,659.8,991.9,506.3,259.7
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,139190,139236,46,980.9,489.4,1513.6,544.5,364.0
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,139412,139438,26,1528.9,542.1,1556.8,422.5,187.8
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,139652,139678,26,1570.9,444.0,1361.9,371.4,263.8
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,140268,140314,46,1344.9,370.7,1139.2,526.7,206.4
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,140484,140508,24,1130.6,523.0,977.1,530.3,208.5
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,140776,140794,18,966.7,534.7,972.3,607.2,147.0
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,141030,141072,42,968.0,603.2,1074.7,822.0,286.6
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,141280,141300,20,1084.3,836.0,1176.9,900.7,158.4
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,141504,141550,46,1203.7,901.2,1725.7,928.7,331.2
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,142076,142124,48,1736.5,923.4,1230.3,686.8,368.5
+Encode-Decode_Experiment-22-1,2394020,horse ride,encoding,28,28,142248,142306,58,1232.3,678.0,982.6,867.9,349.1
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,142514,142550,36,1045.2,548.0,877.3,381.4,262.1
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,142678,142710,32,879.0,384.3,655.6,255.8,310.9
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,142890,142966,76,644.5,239.7,1368.6,589.2,443.4
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,143160,143216,56,1357.8,574.6,1101.7,904.7,511.4
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,143734,143758,24,1070.0,930.1,1264.5,963.8,246.9
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,143970,144024,54,1252.3,961.5,1291.0,605.1,487.3
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,144166,144196,30,1302.1,580.0,1353.3,573.1,144.4
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,144358,144394,36,1378.6,584.0,1644.2,736.2,414.6
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,144652,144676,24,1643.2,761.2,1808.9,879.4,286.0
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,144876,144944,68,1807.7,883.9,1358.1,589.2,491.6
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,145100,145162,62,1367.1,597.1,715.3,564.7,455.0
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,145336,145404,68,692.1,577.8,564.1,203.2,445.5
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,145980,146046,66,563.3,221.7,1254.3,603.8,527.1
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,146204,146226,22,1275.8,604.8,1362.2,565.8,164.5
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,146598,146622,24,1339.0,565.4,1295.7,684.3,228.2
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,146906,146988,82,1294.0,678.7,1796.2,880.6,244.2
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,29,29,147310,147388,78,1806.2,911.8,1290.3,534.6,589.1
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,30,30,147634,147694,60,1013.0,542.3,1107.3,256.2,429.3
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,30,30,147998,148012,14,1120.6,262.9,1136.8,285.4,69.2
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,30,30,148150,148186,36,1130.2,277.3,1225.8,354.1,249.8
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,30,30,148334,148352,18,1234.5,362.9,1185.6,341.1,106.8
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,30,30,148722,148744,22,1197.4,350.8,1314.2,293.7,192.4
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,30,30,148990,149064,74,1314.2,284.6,1135.5,846.2,529.5
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,30,30,149344,149376,32,1136.4,851.4,1088.1,878.5,166.3
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,30,30,149602,149648,46,1059.9,884.7,1477.7,856.6,326.2
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,30,30,149950,150024,74,1474.0,850.5,1112.0,344.3,387.3
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,30,30,150184,150216,32,1102.6,322.6,1078.3,283.0,148.1
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,30,30,150726,150754,28,1078.1,276.5,945.8,159.0,212.0
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,30,30,151062,151100,38,974.2,158.2,1094.9,283.7,295.4
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,30,30,151414,151432,18,1117.8,286.4,1092.8,266.2,82.7
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,30,30,151794,151810,16,1096.8,264.7,1123.4,253.2,57.1
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,30,30,152198,152272,74,1114.3,255.8,1050.5,826.7,455.4
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,152662,152714,52,1010.4,545.4,896.1,346.2,273.5
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,152838,152890,52,888.6,331.1,1378.1,341.4,389.7
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,153148,153168,20,1402.7,350.0,1348.7,314.8,112.3
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,153328,153372,44,1348.3,323.1,1693.0,639.8,483.5
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,153674,153746,72,1682.1,643.3,1280.1,317.5,467.8
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,153874,153960,86,1282.7,331.1,619.6,539.2,438.3
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,154126,154176,50,609.5,566.5,242.8,705.5,431.6
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,154326,154354,28,225.0,705.4,206.0,662.2,150.2
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,155060,155112,52,192.9,654.6,708.2,260.6,461.7
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,155570,155630,60,729.5,256.5,478.6,641.4,474.9
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,155852,155914,62,472.8,674.6,863.5,311.2,453.7
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,156082,156126,44,880.4,283.7,1247.1,304.4,352.1
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,156328,156402,74,1273.5,301.9,426.8,691.9,520.7
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,156594,156642,48,416.2,713.4,194.4,904.8,308.4
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,156730,156818,88,172.7,918.2,1102.2,322.3,617.0
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,157062,157088,26,1107.0,328.2,1309.0,281.7,245.5
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,31,31,157462,157550,88,1318.5,274.2,755.8,259.3,419.0
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,157776,157800,24,1099.1,505.6,1234.6,501.4,183.0
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,158104,158158,54,1213.2,494.1,725.3,453.8,376.5
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,158402,158438,36,695.6,450.8,376.1,570.7,344.4
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,158570,158608,38,387.3,577.2,369.5,473.0,279.7
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,158766,158810,44,371.9,450.6,172.2,682.8,449.4
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,159064,159098,34,157.4,693.6,536.6,846.7,358.6
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,159310,159374,64,585.4,851.0,1517.0,935.5,392.8
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,159732,159784,52,1527.0,923.3,1219.3,659.2,459.5
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,160188,160234,46,1216.6,642.9,1187.0,482.4,316.4
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,160676,160714,38,1182.2,463.9,1324.6,615.2,312.4
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,161118,161156,38,1358.7,645.5,1474.8,468.7,288.7
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,161564,161608,44,1487.6,458.6,1204.8,442.3,299.8
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,161784,161798,14,1173.6,445.5,1136.6,463.1,72.3
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,161978,162044,66,1143.5,462.3,611.5,658.1,420.5
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,162234,162274,40,600.3,677.4,1121.8,489.2,447.7
+Encode-Decode_Experiment-22-1,2356125,airport,encoding,32,32,162578,162616,38,1177.3,470.7,660.5,416.0,393.9
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,162862,162906,44,1064.5,544.7,822.9,511.5,271.4
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,163084,163120,36,801.4,504.0,1102.7,523.8,313.7
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,163522,163580,58,1097.6,520.8,890.4,786.5,411.1
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,164042,164094,52,878.0,796.8,1046.4,540.7,437.8
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,164348,164404,56,1056.5,513.3,1567.4,265.0,400.5
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,164638,164656,18,1594.6,263.9,1571.2,245.3,76.5
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,164916,164942,26,1582.4,258.6,1411.7,408.9,338.2
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,165384,165424,40,1390.1,419.3,1579.4,255.3,263.7
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,165762,165814,52,1591.8,244.7,1696.5,474.4,343.9
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,166078,166106,28,1695.6,493.1,1392.4,520.8,338.6
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,166372,166398,26,1394.4,541.9,1393.0,368.4,296.8
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,166620,166682,62,1388.8,386.1,950.2,471.0,374.0
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,166854,166874,20,923.7,479.4,876.3,515.5,86.0
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,166914,166956,42,892.3,514.0,738.4,484.3,252.9
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,167354,167418,64,704.0,474.1,1047.0,834.6,436.2
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,33,33,167660,167718,58,1063.2,868.5,1056.6,536.6,433.2
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,167960,167996,36,1005.8,527.8,990.8,595.9,198.7
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,168232,168270,38,981.7,601.8,962.1,671.5,225.3
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,168640,168676,36,945.9,692.4,1261.1,672.5,280.0
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,169016,169064,48,1265.7,660.5,1011.7,783.6,325.1
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,169270,169306,36,987.8,788.4,1264.7,815.5,245.1
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,169532,169606,74,1282.7,808.9,880.3,435.9,464.3
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,169796,169816,20,888.2,447.1,843.7,403.9,111.0
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,170078,170120,42,848.8,403.0,1273.6,405.7,346.0
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,170332,170382,50,1286.9,398.3,896.1,376.6,433.8
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,170554,170562,8,867.1,369.7,842.5,374.3,53.7
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,170900,170950,50,847.5,390.4,951.3,615.2,320.9
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,171232,171274,42,955.4,640.1,1306.1,672.1,222.9
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,171588,171654,66,1320.3,681.0,966.3,407.8,459.4
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,171846,171868,22,966.3,404.8,846.5,381.0,192.2
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,172264,172314,50,870.0,382.2,1307.9,494.9,344.4
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,34,34,172574,172628,54,1322.2,493.2,935.1,428.3,363.4
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,173040,173078,38,1028.0,541.5,1378.2,482.5,297.7
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,173234,173272,38,1391.6,493.1,1372.8,385.9,232.1
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,173430,173500,70,1369.9,370.3,927.7,690.7,443.7
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,173798,173820,22,941.2,693.8,923.2,639.2,124.8
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,173958,174020,62,918.0,644.1,401.2,439.6,409.1
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,174316,174342,26,381.5,438.0,266.0,280.7,298.0
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,174588,174654,66,249.7,290.3,978.2,579.4,561.8
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,174858,174912,54,998.8,601.0,1316.7,376.8,424.4
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,175348,175410,62,1332.9,356.5,964.0,535.3,416.3
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,175630,175668,38,967.5,556.3,922.6,621.4,181.1
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,175942,175960,18,913.7,642.6,880.4,631.7,80.0
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,176170,176226,56,879.9,632.2,637.1,833.7,379.7
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,176462,176502,40,626.8,839.8,951.0,632.0,446.2
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,176650,176718,68,963.5,613.8,379.0,323.4,424.9
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,176966,176988,22,354.4,321.1,487.4,315.0,183.5
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,177098,177162,64,481.6,316.3,1306.0,342.4,514.0
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,177584,177654,70,1332.0,351.0,921.7,596.7,492.4
+Encode-Decode_Experiment-22-1,2386442,teeth,encoding,35,35,177852,177876,24,925.1,593.5,646.2,409.4,440.4
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,36,36,178168,178196,28,1040.2,549.6,855.2,507.3,223.5
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,36,36,178456,178514,58,850.5,503.5,1378.8,563.9,424.1
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,36,36,178784,178842,58,1406.6,560.1,910.8,492.4,405.8
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,36,36,179076,179112,36,886.5,491.2,800.4,498.9,173.0
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,36,36,179424,179494,70,784.8,498.4,543.6,249.5,281.4
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,36,36,179868,179948,80,544.1,257.0,1436.5,651.0,529.0
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,36,36,180392,180418,26,1450.6,661.3,1636.1,640.2,198.4
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,36,36,180566,180612,46,1633.9,636.7,1291.3,555.2,448.0
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,36,36,181106,181162,56,1275.1,551.7,1155.1,279.4,379.2
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,36,36,181586,181632,46,1140.6,259.1,1600.4,259.8,335.2
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,36,36,182054,182072,18,1599.4,252.0,1514.5,223.7,124.6
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,36,36,182284,182340,56,1532.2,237.3,1361.0,570.7,424.6
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,36,36,182584,182636,52,1350.5,591.2,1752.1,664.5,400.5
+Encode-Decode_Experiment-22-1,2344622,cat,encoding,36,36,182886,182922,36,1784.0,670.1,1305.9,559.3,450.6
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,183232,183274,42,1055.0,535.1,1032.3,388.5,255.4
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,183522,183538,16,1031.2,381.0,1098.8,373.5,102.0
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,183794,183860,66,1084.9,368.7,937.6,722.4,441.4
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,184144,184166,22,942.3,707.1,949.9,575.0,232.7
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,184488,184514,26,943.0,585.0,982.4,712.3,254.0
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,184690,184742,52,983.9,720.5,1111.7,442.6,424.8
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,184938,184996,58,1113.7,416.9,1556.9,601.2,333.4
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,185224,185264,40,1594.4,612.7,1636.5,938.8,406.2
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,185532,185596,64,1657.3,948.9,1615.5,360.1,500.2
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,185956,185998,42,1631.7,343.3,1136.9,333.5,363.7
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,186226,186296,70,1119.9,336.1,704.9,618.9,322.4
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,186460,186490,30,685.0,629.1,627.2,663.3,148.3
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,186672,186696,24,603.7,666.6,520.8,565.2,206.9
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,186860,186922,62,513.4,579.8,698.8,247.7,495.3
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,187172,187212,40,699.0,254.0,746.2,173.6,188.1
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,187426,187444,18,754.0,156.8,733.2,210.8,110.5
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,37,37,187762,187788,26,744.6,193.4,942.8,264.8,289.8
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,188158,188172,14,1012.0,547.1,1063.7,537.7,79.6
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,188298,188322,24,1051.6,535.7,1140.9,428.8,217.6
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,188498,188524,26,1151.8,418.3,1085.0,261.8,285.7
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,188834,188894,60,1080.3,277.9,1147.1,567.2,457.9
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,189104,189136,32,1144.3,559.9,1290.4,500.0,248.4
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,189324,189338,14,1280.3,476.2,1306.8,460.0,69.4
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,189472,189524,52,1295.6,462.6,1088.1,274.1,370.8
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,189776,189792,16,1061.1,264.1,1004.9,251.8,93.0
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,190042,190088,46,1008.5,260.5,1115.5,740.3,546.0
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,190354,190406,52,1132.7,795.3,750.5,827.8,394.2
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,190656,190706,50,722.9,827.0,1162.8,417.7,492.0
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,190914,190948,34,1176.3,402.3,1277.6,427.6,225.3
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,191108,191124,16,1289.3,449.3,1263.8,454.1,58.5
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,191888,191938,50,1263.3,441.6,1080.1,274.2,369.4
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,192116,192136,20,1063.9,267.9,1010.6,250.7,101.3
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,192462,192512,50,1012.5,246.1,1212.8,411.2,389.8
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,192686,192706,20,1213.8,437.9,1259.6,435.6,104.0
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,38,38,193086,193132,46,1249.2,437.7,962.7,326.8,335.4
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,193404,193450,46,1096.9,541.1,791.2,476.6,301.0
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,193630,193680,50,767.4,478.8,431.5,420.8,336.6
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,194044,194086,42,412.8,429.9,667.6,233.4,405.2
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,194318,194348,30,669.8,227.2,949.4,223.1,310.9
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,194618,194688,70,954.4,216.8,869.4,691.8,525.6
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,194958,194978,20,868.7,692.6,758.3,689.6,150.4
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,195112,195156,44,768.9,689.9,1245.0,611.4,379.0
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,195598,195652,54,1259.1,610.7,1093.1,856.3,262.3
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,195876,195936,60,1084.6,864.2,541.6,891.2,394.6
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,196086,196166,80,523.6,896.8,550.1,246.1,498.3
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,196360,196386,26,557.4,259.1,460.8,176.9,179.4
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,196524,196606,82,485.3,180.5,1620.4,395.9,522.6
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,196892,196920,28,1646.8,400.3,1481.9,215.2,354.0
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,197070,197126,56,1483.6,230.3,1089.2,480.8,530.2
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,197354,197376,22,1066.4,498.4,980.5,454.5,155.9
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,197514,197550,36,989.7,461.1,1231.9,611.5,380.9
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,197916,197974,58,1236.5,634.5,504.3,412.7,418.2
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,encoding,39,39,198128,198162,34,508.3,409.6,435.9,378.3,174.8
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,198402,198440,38,1042.5,538.9,1327.2,411.9,284.2
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,198698,198756,58,1327.8,405.0,783.5,515.3,409.2
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,198968,198990,22,743.9,515.9,680.5,424.4,191.6
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,199270,199332,62,665.3,425.1,1301.2,409.2,427.4
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,199540,199558,18,1330.3,414.8,1266.9,429.1,98.5
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,199882,199904,22,1277.5,428.8,1267.5,384.9,112.9
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,200054,200100,46,1264.9,388.7,683.8,400.8,456.9
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,200282,200310,28,686.0,405.4,652.9,434.2,131.9
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,200748,200792,44,642.0,441.6,455.5,420.5,269.0
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,201078,201128,50,433.5,406.4,722.1,553.0,368.7
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,201354,201404,50,750.7,567.0,1190.4,476.3,395.3
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,201738,201774,36,1219.5,458.4,1319.0,827.4,533.1
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,201932,201972,40,1337.5,864.1,1335.3,682.9,379.4
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,202240,202296,56,1331.0,661.6,1284.9,373.8,449.3
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,202616,202674,58,1279.1,370.4,1782.7,623.9,393.8
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,202924,202982,58,1773.2,630.8,1316.2,398.4,365.6
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,40,40,203158,203222,64,1278.0,392.6,719.3,519.4,462.1
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,203494,203536,42,1060.3,550.1,1339.4,427.6,225.5
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,203764,203838,74,1346.9,428.4,1171.7,899.4,409.8
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,204022,204072,50,1171.7,900.6,1400.9,697.3,355.5
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,204262,204280,18,1405.0,679.0,1373.5,624.0,115.5
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,204526,204588,62,1364.1,632.7,876.3,615.2,397.0
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,204806,204858,52,861.6,609.3,638.6,466.6,332.7
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,204974,205024,50,616.9,456.9,258.6,594.9,407.3
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,205286,205340,54,237.1,597.9,310.0,284.9,441.5
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,205556,205616,60,325.3,263.6,666.3,478.5,444.4
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,205968,206030,62,669.8,471.2,609.1,768.6,264.2
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,206256,206316,60,612.3,796.6,1219.1,580.5,429.2
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,206616,206648,32,1245.7,554.5,1349.9,580.4,242.8
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,206860,206914,54,1365.2,599.8,1300.2,364.3,464.0
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,207096,207136,40,1304.5,382.8,997.6,541.7,458.4
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,207566,207612,46,961.5,559.0,1266.0,387.1,323.1
+Encode-Decode_Experiment-22-1,2347400,wine,encoding,41,41,207878,207942,64,1280.6,391.8,794.1,450.1,439.0
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,42,42,208452,208466,14,1002.4,535.1,1056.5,517.1,88.3
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,42,42,208586,208628,42,1056.1,531.2,1402.0,380.1,321.1
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,42,42,208858,208880,22,1402.2,374.3,1354.6,307.0,149.8
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,42,42,209040,209100,60,1353.2,313.4,813.3,247.6,412.8
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,42,42,209282,209330,48,785.3,249.8,249.0,660.7,455.5
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,42,42,209570,209588,18,245.3,666.9,196.0,663.6,81.0
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,42,42,210854,210916,62,192.6,658.7,143.2,937.3,348.6
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,42,42,211376,211464,88,150.5,936.1,1358.6,835.7,435.8
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,42,42,211668,211738,70,1412.7,846.3,1186.8,392.1,521.5
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,42,42,211930,211964,34,1189.8,400.8,783.7,307.9,425.2
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,42,42,212146,212170,24,767.6,301.5,701.6,472.4,336.4
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,42,42,212452,212498,46,696.2,461.0,1251.7,348.8,381.3
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,42,42,212698,212754,56,1260.6,336.6,740.0,260.2,370.8
+Encode-Decode_Experiment-22-1,2367132,video game,encoding,42,42,213058,213118,60,722.7,254.5,1300.9,372.1,401.9
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,43,43,213662,213692,30,1013.6,544.0,1146.2,385.0,283.5
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,43,43,213892,213936,44,1157.7,391.7,1109.3,521.4,258.7
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,43,43,214148,214208,60,1098.8,539.1,1217.5,911.1,523.2
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,43,43,214428,214448,20,1215.0,935.4,1177.9,864.5,141.3
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,43,43,214906,214926,20,1168.9,881.5,1071.7,857.2,137.3
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,43,43,215162,215204,42,1090.5,863.6,891.0,909.5,281.6
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,43,43,215428,215486,58,866.9,905.9,707.9,655.3,333.8
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,43,43,215830,215848,18,701.3,624.9,731.1,560.8,142.4
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,43,43,216144,216376,232,726.6,571.4,1018.2,490.5,983.8
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,43,43,216726,216782,56,1017.5,468.7,1086.1,285.8,307.6
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,43,43,217088,217124,36,1091.3,283.1,1126.7,348.1,200.4
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,43,43,217272,217324,52,1140.3,367.1,995.4,154.7,374.8
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,43,43,217684,217714,30,979.7,115.7,1237.2,183.1,284.8
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,43,43,217956,218002,46,1251.7,187.8,1114.7,346.5,412.8
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,43,43,218244,218276,32,1104.4,368.9,1081.2,442.5,213.9
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,44,44,218730,218756,26,1031.2,540.4,985.0,399.4,240.7
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,44,44,218916,218932,16,991.2,410.9,929.3,375.1,125.7
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,44,44,219060,219088,28,932.9,371.8,1150.8,240.4,318.8
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,44,44,219316,219390,74,1166.5,242.4,115.1,283.9,468.4
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,44,44,219780,219794,14,86.3,292.5,78.4,253.1,81.4
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,44,44,220072,220170,98,81.9,252.5,1429.1,391.6,475.5
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,44,44,220574,220648,74,1455.9,403.7,758.5,416.5,444.4
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,44,44,220958,221010,52,778.2,427.7,1167.8,676.2,292.2
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,44,44,221276,221346,70,1175.3,674.7,591.9,829.6,479.5
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,44,44,221670,221724,54,598.1,837.8,1062.9,785.5,348.2
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,44,44,221922,221980,58,1100.8,779.0,913.5,465.9,384.4
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,44,44,222134,222186,52,898.6,445.6,1416.7,633.8,427.7
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,44,44,222672,222738,66,1421.7,634.6,1186.2,320.4,272.3
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,44,44,222868,222904,36,1171.5,311.9,1164.2,239.9,205.4
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,44,44,223282,223330,48,1165.4,216.6,890.8,347.6,423.1
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,45,45,223734,223746,12,1047.5,527.2,1007.4,524.1,69.0
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,45,45,223844,223892,48,1022.3,524.2,819.4,333.4,389.8
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,45,45,224058,224078,20,808.8,323.5,747.7,313.1,108.4
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,45,45,224566,224622,56,735.8,307.8,927.2,485.7,304.7
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,45,45,224742,224810,68,935.5,504.7,676.5,924.2,532.8
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,45,45,225046,225124,78,672.4,907.2,549.7,331.6,451.9
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,45,45,225330,225358,28,558.5,341.7,455.1,245.8,214.0
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,45,45,225504,225558,54,452.5,259.2,77.2,696.4,478.0
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,45,45,225848,225920,72,86.9,694.5,906.2,409.2,399.2
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,45,45,226094,226146,52,918.5,393.4,566.4,347.2,354.3
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,45,45,226422,226488,66,538.0,334.3,1190.1,410.1,414.8
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,45,45,228026,228084,58,1210.8,409.1,735.9,281.2,396.9
+Encode-Decode_Experiment-22-1,2350974,drink,encoding,45,45,228504,228546,42,716.9,284.6,482.0,220.2,267.5
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,46,46,228898,228948,50,944.5,557.9,1190.7,424.4,335.9
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,46,46,229250,229314,64,1202.4,417.0,745.0,310.3,423.3
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,46,46,229774,229810,36,746.6,301.2,1159.2,361.7,346.9
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,46,46,230272,230308,36,1206.9,377.5,784.5,304.5,389.7
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,46,46,230544,230576,32,769.8,293.4,828.7,478.8,286.3
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,46,46,230728,230756,28,828.8,462.2,754.1,288.2,295.8
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,46,46,231060,231108,48,763.8,309.0,1086.2,261.7,278.3
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,46,46,231364,231446,82,1109.4,249.7,747.4,267.7,223.4
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,46,46,231698,231760,62,727.0,273.8,1197.1,403.6,475.2
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,46,46,232238,232298,60,1204.8,417.1,743.0,308.1,348.0
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,46,46,232642,232722,80,721.3,300.0,1250.3,985.1,570.5
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,46,46,232918,232942,24,1249.2,999.6,1070.9,869.4,305.1
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,46,46,233140,233170,30,1037.4,868.0,1053.8,924.9,162.6
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,encoding,46,46,233480,233526,46,1063.8,942.9,1441.9,931.9,285.3
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,233976,234016,40,1060.8,546.3,975.5,483.9,178.3
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,234164,234210,46,964.7,471.6,1486.6,683.2,478.5
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,234364,234402,38,1492.5,685.8,1171.4,920.4,531.2
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,234694,234714,20,1151.0,939.8,1054.8,929.2,156.6
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,235864,235904,40,1043.4,937.2,1304.3,840.0,238.2
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,236028,236082,54,1315.8,844.6,1319.6,580.0,402.6
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,236334,236354,20,1316.4,569.6,1411.6,598.2,135.2
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,236500,236546,46,1408.0,602.2,1632.7,815.8,391.0
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,236754,236782,28,1620.8,828.6,1843.2,922.4,219.2
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,236948,237020,72,1875.9,927.0,1375.0,599.9,454.7
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,237292,237314,22,1384.3,600.9,1279.3,641.5,167.5
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,237436,237500,64,1284.5,635.0,680.8,288.9,472.3
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,237710,237746,36,659.9,281.4,600.6,220.6,212.8
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,238088,238162,74,593.5,215.4,1256.9,604.4,570.1
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,238378,238400,22,1265.0,621.9,1374.5,558.6,186.6
+Encode-Decode_Experiment-22-1,2410309,laptop,encoding,47,47,238706,238746,40,1351.1,565.1,1578.1,827.9,358.1
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,48,48,239102,239134,32,1037.3,537.8,822.7,496.3,202.6
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,48,48,239374,239424,50,828.2,483.7,475.4,466.9,328.4
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,48,48,239672,239698,26,458.2,469.2,594.7,351.7,274.1
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,48,48,239910,239980,70,593.6,357.7,1422.8,452.3,438.8
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,48,48,240370,240414,44,1439.6,463.7,1663.0,620.2,405.5
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,48,48,240646,240718,72,1667.6,613.8,764.9,566.5,544.2
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,48,48,240988,241018,30,730.8,559.8,1037.2,565.6,298.4
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,48,48,241254,241296,42,1064.0,568.0,535.4,540.9,436.6
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,48,48,241760,241782,22,543.9,536.8,398.5,454.3,224.2
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,48,48,242158,242220,62,393.1,440.4,627.5,645.0,397.5
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,48,48,242356,242386,30,634.8,637.1,355.6,696.1,292.8
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,48,48,242686,242736,50,370.1,699.5,505.8,512.3,289.7
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,48,48,242872,242914,42,509.8,492.7,352.7,714.8,393.0
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,48,48,243502,243594,92,330.1,738.7,1369.5,713.4,354.8
+Encode-Decode_Experiment-22-1,2408717,surfboard,encoding,48,48,243772,243820,48,1409.8,734.2,1432.9,482.1,395.5
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,244184,244214,30,1016.3,558.8,1167.2,403.0,264.5
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,244420,244454,34,1177.1,402.3,1141.4,500.6,217.0
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,244666,244732,66,1124.7,503.9,1009.6,839.5,401.0
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,244950,244994,44,1006.7,831.0,918.5,922.9,200.1
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,245246,245284,38,898.1,946.3,1229.1,925.6,298.4
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,245676,245716,40,1233.1,938.0,1111.5,910.8,219.5
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,245874,245916,42,1088.1,903.5,922.4,912.1,260.0
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,246112,246166,54,896.8,910.6,753.6,707.3,305.7
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,246472,246494,22,742.2,678.1,735.6,598.9,134.9
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,247040,247094,54,729.7,587.9,1080.4,423.6,324.6
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,247330,247364,34,1094.1,397.6,1100.3,445.2,153.9
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,247518,247550,32,1105.3,467.0,760.6,624.4,425.7
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,247808,247864,56,761.5,635.6,1127.1,435.2,416.9
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,248204,248228,24,1146.9,415.8,1190.5,302.6,195.3
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,248530,248556,26,1180.4,303.5,1001.9,304.3,249.4
+Encode-Decode_Experiment-22-1,2387122,polar bear,encoding,49,49,248870,248908,38,1016.8,305.8,1101.0,438.2,271.3
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,249268,249296,28,1060.6,528.4,1271.1,494.5,224.5
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,249542,249572,30,1276.7,485.6,1113.7,616.3,251.9
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,249716,249776,60,1109.7,606.6,1056.7,296.8,478.4
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,249962,249982,20,1052.4,305.7,1043.5,267.5,84.8
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,250160,250230,70,1041.3,281.0,1123.0,215.0,106.7
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,250546,250622,76,1130.4,207.2,1263.5,584.2,340.0
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,250806,250874,68,1263.6,603.3,731.0,842.2,529.1
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,251286,251346,60,732.4,826.9,1108.2,528.7,407.2
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,251632,251688,56,1107.4,503.3,947.7,889.0,497.1
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,251946,252008,62,933.8,917.4,1232.7,517.6,481.0
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,252168,252190,22,1241.1,493.1,1245.1,449.6,108.8
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,252458,252480,22,1246.5,458.2,1110.1,449.5,199.3
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,252642,252698,56,1128.8,452.4,1023.0,260.2,384.2
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,252874,252892,18,1028.4,272.9,989.1,250.5,81.4
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,253278,253304,26,999.6,252.3,811.6,308.2,258.6
+Encode-Decode_Experiment-22-1,2379478,baby-milk,encoding,50,50,253862,253886,24,822.4,296.8,976.9,256.4,196.6
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,254182,254198,16,973.5,525.1,1050.3,516.6,125.7
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,254362,254416,54,1039.4,509.6,1148.0,291.5,402.6
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,254596,254620,24,1151.1,296.2,1129.0,287.6,87.1
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,254726,254750,24,1111.9,280.3,1263.6,336.1,236.7
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,254910,254930,20,1253.0,341.4,1169.8,338.0,125.8
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,255210,255236,26,1178.2,334.3,1324.9,275.4,201.6
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,255726,255796,70,1303.4,276.2,1047.9,873.7,504.3
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,256192,256270,78,1042.9,885.4,1022.4,254.5,514.7
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,256488,256530,42,1021.1,251.0,850.9,154.1,292.8
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,256718,256740,22,831.6,144.9,972.1,136.0,200.2
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,256880,256934,54,957.8,136.8,540.0,142.7,388.0
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,257248,257458,210,505.1,153.5,1095.3,280.5,1205.4
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,257670,257688,18,1091.5,230.3,1054.2,244.1,76.4
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,257828,257884,56,1063.6,245.8,576.0,132.8,408.6
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,258204,258236,32,561.5,145.3,543.1,87.4,174.4
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,258542,258590,48,544.4,67.4,807.7,363.8,507.9
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,258814,258874,60,834.0,399.3,1066.2,672.1,487.3
+Encode-Decode_Experiment-22-1,2411268,apple,encoding,51,51,259058,259096,38,1068.4,683.9,998.2,810.0,309.3
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,52,52,259254,259276,22,1001.1,488.4,966.0,506.3,100.0
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,52,52,259452,259500,48,965.0,495.7,1306.9,500.0,368.5
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,52,52,259776,259840,64,1330.7,519.2,638.6,432.1,457.5
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,52,52,260162,261720,1558,607.6,447.9,316.9,1376.4,936.3
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,52,52,262132,262158,26,1112.3,526.5,1251.3,405.6,263.7
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,52,52,262576,262620,44,1269.8,432.2,705.4,376.4,429.1
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,52,52,262868,263090,222,686.3,397.6,1290.3,525.7,1881.4
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,52,52,263534,263596,62,1301.5,504.1,694.1,403.1,473.0
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,52,52,263782,264024,242,663.6,418.0,767.4,479.6,1080.5
+Encode-Decode_Experiment-22-1,2385550,tangerines,encoding,52,52,264132,264184,52,775.9,421.8,1225.6,476.5,340.7
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,264470,264516,46,1057.2,511.9,1018.7,287.0,309.6
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,264548,264582,34,1022.3,275.7,1131.2,264.2,209.7
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,264804,264868,64,1146.8,257.0,1263.8,815.3,493.7
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,265060,265138,78,1259.7,815.7,962.2,289.5,409.1
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,265338,265376,38,959.8,301.4,897.4,222.0,198.2
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,265562,265628,66,886.8,215.0,958.5,807.0,509.3
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,265912,265994,82,955.3,831.5,883.9,236.2,438.5
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,266142,266198,56,881.7,245.3,1323.5,181.3,417.4
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,266408,266482,74,1336.2,184.2,1385.8,924.5,553.2
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,266650,266710,60,1364.8,933.2,1151.0,603.0,388.8
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,266844,266900,56,1140.8,581.6,1098.7,354.9,376.1
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,267052,267086,34,1101.0,363.3,1108.3,290.6,206.4
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,267444,267482,38,1112.0,280.9,929.8,395.1,349.8
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,267892,267938,46,900.3,395.4,1243.1,800.7,508.0
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,268284,268358,74,1253.3,829.2,1320.0,353.6,435.0
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,268552,268608,56,1323.9,356.3,1289.8,172.2,260.6
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,268766,268830,64,1298.1,160.2,714.3,335.9,461.3
+Encode-Decode_Experiment-22-1,2345035,football,encoding,53,53,269204,269274,70,692.1,335.9,977.6,602.2,307.8
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,269570,269602,32,1136.7,462.4,1228.2,534.6,290.7
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,270086,270148,62,1252.2,552.9,730.3,583.5,323.9
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,270404,270458,54,713.1,580.3,1239.5,564.7,341.7
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,270666,270686,20,1257.6,559.4,1215.2,533.4,96.9
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,270958,270998,40,1210.0,536.7,1578.8,529.9,238.7
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,271308,271340,32,1595.6,546.4,1723.0,564.9,198.4
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,271602,271618,16,1747.3,579.2,1703.2,623.7,99.0
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,272044,272080,36,1725.8,646.2,1292.7,603.6,352.8
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,272454,272478,24,1264.5,597.9,1066.2,592.4,266.7
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,272606,272664,58,1063.6,596.6,1593.0,981.5,522.1
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,272966,273014,48,1592.0,1002.6,1172.7,616.5,451.2
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,273188,273242,54,1173.1,601.9,739.2,589.5,363.0
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,273436,273468,32,708.3,579.9,647.4,568.9,137.9
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,273890,273918,28,637.3,567.0,840.5,640.0,292.0
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,274110,274140,30,844.6,624.8,1195.3,550.5,404.3
+Encode-Decode_Experiment-22-1,2347025,umbrella,encoding,54,54,274322,274338,16,1226.5,549.5,1178.0,529.0,83.0
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,55,55,274642,274668,26,1028.9,540.3,982.1,407.7,246.3
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,55,55,274988,275012,24,985.0,408.8,1154.8,360.7,215.6
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,55,55,275202,275236,34,1187.1,325.5,1397.6,199.7,292.8
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,55,55,275666,275732,66,1408.3,205.0,1204.1,562.4,351.3
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,55,55,275968,276016,48,1206.4,582.0,1170.0,377.3,265.1
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,55,55,276462,276484,22,1154.4,358.9,1056.5,390.9,153.9
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,55,55,276702,276746,44,1065.0,378.5,887.6,382.5,252.1
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,55,55,277192,277208,16,859.8,370.0,846.0,333.5,85.9
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,55,55,277456,277478,22,847.2,343.3,885.7,421.4,156.6
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,55,55,277846,278094,248,879.6,417.2,940.4,594.5,990.2
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,55,55,278288,278318,30,942.1,545.4,895.5,563.3,143.6
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,55,55,278662,278688,26,873.8,564.3,1098.7,586.4,293.2
+Encode-Decode_Experiment-22-1,2385851,suitcase,encoding,55,55,278946,279004,58,1120.5,587.6,1127.6,330.7,339.8
+Encode-Decode_Experiment-22-1,2345035,football,encoding,56,56,279704,279750,46,1051.8,542.4,1052.7,339.1,334.8
+Encode-Decode_Experiment-22-1,2345035,football,encoding,56,56,280034,280104,70,1050.9,312.2,1234.0,817.2,359.1
+Encode-Decode_Experiment-22-1,2345035,football,encoding,56,56,280304,280354,50,1236.1,831.7,995.5,823.2,264.6
+Encode-Decode_Experiment-22-1,2345035,football,encoding,56,56,280558,280578,20,958.9,824.6,868.5,845.9,136.5
+Encode-Decode_Experiment-22-1,2345035,football,encoding,56,56,280850,280874,24,871.7,829.5,1070.7,824.0,229.7
+Encode-Decode_Experiment-22-1,2345035,football,encoding,56,56,281196,281220,24,1113.0,846.4,1328.6,890.7,262.8
+Encode-Decode_Experiment-22-1,2345035,football,encoding,56,56,281458,281538,80,1330.9,891.0,1384.8,256.6,515.9
+Encode-Decode_Experiment-22-1,2345035,football,encoding,56,56,281674,281700,26,1393.5,269.0,1333.1,134.3,266.4
+Encode-Decode_Experiment-22-1,2345035,football,encoding,56,56,281930,281984,54,1347.0,163.5,1064.4,286.7,407.4
+Encode-Decode_Experiment-22-1,2345035,football,encoding,56,56,282306,282338,32,1058.0,307.3,736.0,342.2,357.6
+Encode-Decode_Experiment-22-1,2345035,football,encoding,56,56,282590,282698,108,733.5,343.8,1350.9,895.0,425.6
+Encode-Decode_Experiment-22-1,2345035,football,encoding,56,56,282952,283032,80,1350.0,899.0,1055.6,363.8,370.6
+Encode-Decode_Experiment-22-1,2345035,football,encoding,56,56,283450,283492,42,1063.2,351.0,788.4,329.8,312.2
+Encode-Decode_Experiment-22-1,2345035,football,encoding,56,56,283956,284000,44,766.1,328.7,969.8,378.7,228.4
+Encode-Decode_Experiment-22-1,2345035,football,encoding,56,56,284490,284518,28,988.6,383.1,770.4,360.1,255.7
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,57,57,284788,284812,24,1037.5,551.6,971.1,441.7,202.6
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,57,57,285026,285072,46,956.9,436.9,1167.2,277.4,344.4
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,57,57,285292,285500,208,1173.5,269.7,1211.9,328.8,880.9
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,57,57,285754,285802,48,1194.2,288.3,828.6,523.5,492.6
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,57,57,286072,286116,44,811.5,520.7,882.3,385.3,294.0
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,57,57,286424,286468,44,885.4,348.5,1136.1,603.2,498.9
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,57,57,286764,286832,68,1159.0,631.3,1134.7,217.6,474.7
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,57,57,287252,287282,30,1148.5,218.7,909.1,346.3,349.5
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,57,57,287562,287610,48,916.1,331.7,831.5,639.1,336.3
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,57,57,287912,288158,246,836.6,644.2,966.3,821.1,1331.5
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,57,57,288660,288720,60,955.2,721.3,539.3,811.5,374.0
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,57,57,289182,289236,54,569.0,823.4,769.1,495.3,520.6
+Encode-Decode_Experiment-22-1,2383555,boat,encoding,57,57,289498,289526,28,785.4,463.2,901.9,316.6,292.6
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,289898,289942,44,1179.7,382.9,1338.1,496.6,374.2
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,290160,290228,68,1355.9,518.1,780.0,504.1,453.4
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,290444,290492,48,777.3,510.4,569.6,788.6,467.3
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,290744,290784,40,559.9,796.8,416.7,951.6,357.1
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,290918,290974,56,393.1,961.5,784.7,730.4,415.2
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,291366,291428,62,808.4,725.2,423.6,898.3,324.8
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,291610,291642,32,410.7,909.4,339.7,964.4,195.4
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,291892,291964,72,323.2,980.6,691.0,498.4,551.3
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,292414,292466,52,685.9,493.3,579.0,683.1,300.8
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,292758,292784,26,573.7,721.5,809.1,790.4,290.7
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,293058,293078,20,832.2,784.5,872.0,785.7,88.6
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,293498,293548,50,882.7,776.8,748.5,496.1,416.7
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,293718,293784,66,744.7,473.9,415.6,1000.0,574.2
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,294020,294058,38,414.6,1013.3,674.1,512.7,612.3
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,294458,294504,46,726.0,467.1,1072.8,473.8,347.7
+Encode-Decode_Experiment-22-1,2349475,blender,encoding,58,58,294666,294736,70,1102.6,464.4,1547.4,214.5,462.4
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,59,59,294968,295002,34,1033.5,534.8,975.2,345.2,258.2
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,59,59,295160,295182,22,981.1,337.6,1115.7,367.2,197.4
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,59,59,295470,295538,68,1099.0,374.0,844.5,838.0,515.8
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,59,59,295868,295892,24,833.0,829.7,919.7,711.9,231.7
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,59,59,296148,296196,48,920.2,707.7,930.6,495.0,319.4
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,59,59,296444,296480,36,923.0,480.0,959.2,730.6,457.7
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,59,59,296876,296900,24,972.8,757.9,896.7,842.8,190.3
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,59,59,297246,297300,54,904.9,809.6,845.5,517.7,374.9
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,59,59,297766,297812,46,835.2,488.1,959.8,647.9,283.2
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,59,59,298064,298126,62,957.8,668.1,1020.2,367.3,273.5
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,59,59,298422,298484,62,1025.9,341.9,635.3,587.3,410.0
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,59,59,298618,298676,58,616.0,610.1,655.9,281.7,497.5
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,59,59,299016,299040,24,670.7,293.4,751.0,207.3,206.9
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,59,59,299338,299362,24,748.0,216.7,939.8,244.5,272.1
+Encode-Decode_Experiment-22-1,2360001,clock,encoding,59,59,299548,299582,34,931.6,240.2,1054.0,346.0,337.2
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,300036,300076,40,992.5,531.0,1064.1,622.9,256.2
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,300332,300356,24,1070.3,637.4,945.0,715.3,215.7
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,300750,300812,62,943.3,695.6,858.6,391.7,453.3
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,300954,300970,16,858.9,405.3,835.7,413.5,60.0
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,301526,301600,74,821.9,406.1,1017.9,811.7,382.9
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,301770,301794,24,1030.5,808.3,952.4,824.6,143.4
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,301944,301990,46,960.9,830.3,1214.0,958.0,428.4
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,302160,302228,68,1239.1,977.5,1323.0,567.3,469.6
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,302486,302516,30,1336.3,573.9,1274.8,638.0,204.9
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,302850,302882,32,1267.6,645.6,938.0,568.2,356.9
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,303118,303144,26,942.8,559.3,870.1,403.2,308.5
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,303340,303354,14,861.8,411.6,814.6,403.0,78.2
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,303618,303676,58,822.8,411.3,924.7,683.3,334.3
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,304056,304110,54,926.8,702.2,890.9,508.4,263.5
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,304274,304296,22,898.6,476.8,855.1,383.4,193.8
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,304500,304508,8,852.5,395.7,826.0,397.5,58.0
+Encode-Decode_Experiment-22-1,2362704,bears,encoding,60,60,304872,304892,20,827.5,398.2,970.1,608.7,345.7
+Encode-Decode_Experiment-22-1,2367132,video game,decoding,1,61,305234,305242,8,970.1,516.8,994.7,511.6,54.0
+Encode-Decode_Experiment-22-1,2367132,video game,decoding,1,61,305622,305636,14,999.5,514.5,958.0,492.0,77.1
+Encode-Decode_Experiment-22-1,2367132,video game,decoding,1,61,306370,306388,18,968.3,493.7,932.0,431.9,129.9
+Encode-Decode_Experiment-22-1,2367132,video game,decoding,1,61,306614,306632,18,931.0,434.9,915.9,408.0,73.0
+Encode-Decode_Experiment-22-1,2367132,video game,decoding,1,61,307014,307050,36,920.2,401.4,1062.7,360.7,199.2
+Encode-Decode_Experiment-22-1,2367132,video game,decoding,1,61,307274,307322,48,1075.1,366.3,871.0,502.9,321.8
+Encode-Decode_Experiment-22-1,2367132,video game,decoding,1,61,307576,307596,20,863.4,501.6,972.2,502.9,150.7
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,312014,312036,22,1024.7,551.9,946.9,551.5,120.5
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,312452,312472,20,947.7,531.3,831.9,527.7,153.7
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,312746,312758,12,831.7,533.0,795.8,515.0,71.9
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,313750,313774,24,818.5,508.8,737.6,504.0,84.9
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,313960,313976,16,749.0,515.1,810.7,506.4,94.4
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,314786,314792,6,818.6,508.7,835.7,502.9,48.7
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,314998,315004,6,826.9,504.5,809.1,505.7,49.1
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,315596,315614,18,826.1,526.4,784.3,530.3,82.3
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,315814,315820,6,796.6,529.7,816.6,527.9,50.7
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,316182,316204,22,814.0,507.5,677.3,516.1,187.7
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,316458,316482,24,691.1,522.2,831.7,511.6,182.1
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,316772,316778,6,827.5,510.7,809.7,519.4,54.1
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,317926,317960,34,818.7,510.6,553.8,534.3,202.0
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,318198,318232,34,509.9,535.4,800.6,524.8,247.5
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,318602,318622,20,824.9,509.4,957.4,497.7,164.2
+Encode-Decode_Experiment-22-1,2347025,umbrella,decoding,2,62,318804,318830,26,1024.4,501.0,843.9,503.9,221.2
+Encode-Decode_Experiment-22-1,2410309,laptop,decoding,3,63,319476,319498,22,1018.0,536.4,895.7,524.9,142.3
+Encode-Decode_Experiment-22-1,2410309,laptop,decoding,3,63,319766,319774,8,888.2,529.5,861.2,526.5,57.5
+Encode-Decode_Experiment-22-1,2410309,laptop,decoding,3,63,321354,321366,12,826.3,504.7,867.4,506.1,65.9
+Encode-Decode_Experiment-22-1,2410309,laptop,decoding,3,63,321544,321554,10,853.4,507.9,818.2,503.7,64.7
+Encode-Decode_Experiment-22-1,2410309,laptop,decoding,3,63,321974,321980,6,832.5,504.6,815.3,499.8,47.2
+Encode-Decode_Experiment-22-1,2410309,laptop,decoding,3,63,322590,322616,26,845.5,518.6,1028.7,509.5,185.7
+Encode-Decode_Experiment-22-1,2410309,laptop,decoding,3,63,322806,322834,28,1062.2,509.3,844.7,521.6,245.2
+Encode-Decode_Experiment-22-1,2410309,laptop,decoding,3,63,323376,323604,228,842.7,510.4,920.5,563.6,1076.0
+Encode-Decode_Experiment-22-1,2410309,laptop,decoding,3,63,323712,323742,30,921.5,523.9,1175.5,719.3,373.2
+Encode-Decode_Experiment-22-1,2410309,laptop,decoding,3,63,323910,323952,42,1204.4,723.1,883.4,508.4,388.5
+Encode-Decode_Experiment-22-1,2410309,laptop,decoding,3,63,324326,324508,182,895.3,543.6,907.3,508.2,820.2
+Encode-Decode_Experiment-22-1,2410309,laptop,decoding,3,63,324708,324716,8,902.3,522.2,890.0,536.1,45.9
+Encode-Decode_Experiment-22-1,2410309,laptop,decoding,3,63,325318,325324,6,891.6,534.6,904.5,526.9,43.5
+Encode-Decode_Experiment-22-1,2410309,laptop,decoding,3,63,325812,325834,22,898.0,542.5,1028.9,526.8,143.1
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,decoding,4,64,326482,326504,22,939.0,556.6,815.1,529.0,170.9
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,decoding,4,64,326756,326760,4,841.5,530.7,853.0,534.0,44.8
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,decoding,4,64,327514,327534,20,846.0,525.0,937.9,513.8,107.6
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,decoding,4,64,327720,327740,20,931.1,505.6,836.6,521.8,133.3
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,decoding,4,64,328408,328416,8,834.0,523.1,857.4,526.9,49.0
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,decoding,4,64,328596,328602,6,856.9,540.8,843.6,527.7,53.3
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,decoding,4,64,328946,329140,194,833.4,525.2,825.0,505.9,1136.5
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,decoding,4,64,330924,330948,24,849.9,529.9,1001.9,517.2,162.2
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,decoding,4,64,331144,331172,28,1021.1,525.5,824.0,517.9,220.6
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,decoding,4,64,331552,331576,24,838.3,520.3,983.3,515.7,165.9
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,decoding,4,64,331736,331760,24,992.0,522.9,832.7,533.5,203.2
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,decoding,4,64,332132,332172,40,835.8,528.4,1185.8,649.1,293.5
+Encode-Decode_Experiment-22-1,2374670,spray-vehicle,decoding,4,64,332348,332392,44,1203.4,665.4,831.7,517.9,323.2
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,333600,333622,22,1021.8,532.9,867.3,521.2,200.4
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,334084,334096,12,858.4,522.2,819.9,521.4,63.2
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,334586,334630,44,816.1,522.7,1198.5,526.3,255.4
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,334914,334966,52,1203.6,526.7,832.1,496.2,343.6
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,335656,335662,6,833.3,512.0,851.3,512.3,45.9
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,335832,335838,6,850.2,520.5,833.0,521.9,44.8
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,336344,336386,42,836.4,531.8,540.4,502.8,231.6
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,336604,336638,34,542.5,489.8,844.4,533.1,280.2
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,336884,336892,8,854.3,525.0,828.8,513.8,59.9
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,337750,337968,218,867.3,522.5,852.8,496.3,1017.2
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,338146,338162,16,864.8,459.6,871.7,511.0,95.2
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,338808,338860,52,877.8,531.9,1268.1,731.2,299.3
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,339006,339050,44,1278.3,745.9,853.3,510.3,365.3
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,339310,339318,8,861.9,516.8,884.8,524.2,52.2
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,339494,339540,46,879.0,522.4,1407.0,710.1,326.3
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,339756,339798,42,1418.5,728.1,942.5,540.7,417.7
+Encode-Decode_Experiment-22-1,2412687,dog,decoding,5,65,339960,339978,18,946.6,543.0,855.1,526.2,128.4
+Encode-Decode_Experiment-22-1,2383555,boat,decoding,6,66,340206,340214,8,1029.3,519.1,1057.1,526.8,61.1
+Encode-Decode_Experiment-22-1,2383555,boat,decoding,6,66,340510,340718,208,1044.5,523.0,1002.5,651.1,1243.3
+Encode-Decode_Experiment-22-1,2383555,boat,decoding,6,66,340926,340972,46,1001.9,617.8,813.0,468.2,318.5
+Encode-Decode_Experiment-22-1,2383555,boat,decoding,6,66,341280,341360,80,803.9,464.5,845.2,-331.5,352.4
+Encode-Decode_Experiment-22-1,2383555,boat,decoding,6,66,345326,345380,54,746.1,670.9,602.5,341.2,312.4
+Encode-Decode_Experiment-22-1,2383555,boat,decoding,6,66,345524,345562,38,624.5,348.4,974.0,517.4,333.1
+Encode-Decode_Experiment-22-1,2383555,boat,decoding,6,66,345716,345740,24,1017.1,543.3,869.2,520.2,191.7
+Encode-Decode_Experiment-22-1,2383555,boat,decoding,6,66,346004,346046,42,886.6,528.0,1310.6,627.5,329.6
+Encode-Decode_Experiment-22-1,2383555,boat,decoding,6,66,346250,346292,42,1314.3,626.0,962.5,512.3,293.3
+Encode-Decode_Experiment-22-1,2383555,boat,decoding,6,66,346476,346494,18,963.0,511.1,882.4,512.2,106.7
+Encode-Decode_Experiment-22-1,2383555,boat,decoding,6,66,347116,347140,24,887.1,512.8,1033.5,495.2,146.3
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,347292,347312,20,1116.5,526.6,1019.4,522.8,133.1
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,347668,347694,26,1037.9,533.5,870.9,509.0,178.5
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,348728,348754,26,833.8,502.1,923.0,490.6,68.4
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,348928,349128,200,907.1,505.6,824.2,536.6,1338.4
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,349984,350002,18,828.3,514.8,924.9,499.9,131.2
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,350094,350296,202,941.2,510.1,817.0,554.1,1307.9
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,350518,350522,4,811.0,510.7,822.7,511.7,40.9
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,350842,350848,6,830.6,526.4,809.9,527.9,53.9
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,351514,351534,20,836.3,513.7,904.4,496.6,75.3
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,351698,351720,22,899.5,507.1,817.5,518.4,135.8
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,352134,352152,18,816.8,511.0,893.5,513.9,89.6
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,352346,352364,18,904.3,515.4,815.0,512.8,137.3
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,353054,353068,14,834.7,505.6,896.8,505.7,93.3
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,353250,353264,14,910.7,515.3,848.1,517.6,97.6
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,353548,353552,4,863.7,531.1,851.7,531.5,45.0
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,353780,353824,44,849.0,524.3,1171.3,711.7,298.0
+Encode-Decode_Experiment-22-1,2344622,cat,decoding,7,67,353994,354024,30,1182.1,698.5,906.3,557.6,301.7
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,354654,354678,24,1012.4,517.8,872.0,506.0,176.4
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,355130,355364,234,846.2,512.6,903.3,578.5,1332.2
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,355554,355572,18,895.4,514.4,818.4,519.2,116.6
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,355910,355960,50,827.1,517.0,1147.3,744.6,289.0
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,356132,356166,34,1158.7,734.6,866.3,527.7,384.3
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,356422,356430,8,860.5,510.6,837.3,503.1,51.1
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,357194,357404,210,833.7,507.2,821.9,535.0,1303.5
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,357578,357590,12,829.4,473.2,858.0,502.9,80.3
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,358670,358708,38,854.2,509.8,549.8,468.0,187.5
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,358896,358936,40,536.7,456.8,946.4,523.6,348.5
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,359070,359090,20,945.3,530.0,840.7,506.9,157.3
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,359424,359448,24,846.2,504.8,1052.3,514.7,231.3
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,359622,359656,34,1107.4,529.7,844.5,499.2,248.5
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,359958,360166,208,846.8,504.1,858.5,499.6,1110.8
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,360358,360366,8,859.8,496.5,872.6,511.6,50.1
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,360806,360822,16,889.3,505.6,816.6,503.7,100.6
+Encode-Decode_Experiment-22-1,2386442,teeth,decoding,8,68,361014,361026,12,831.3,496.1,876.3,507.6,78.6
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,361484,361518,34,981.7,513.2,1237.4,688.2,330.1
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,361704,361734,30,1240.0,734.0,931.6,519.3,436.2
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,361950,361968,18,912.5,496.4,829.9,496.3,130.3
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,362176,362224,48,846.2,506.2,1292.5,774.1,380.3
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,362508,362764,256,1276.0,790.8,846.3,552.7,1332.8
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,363104,363146,42,837.5,520.9,1206.3,668.8,261.0
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,363338,363378,40,1222.0,677.8,871.0,521.1,300.0
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,363620,363628,8,879.3,518.5,854.5,505.3,65.4
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,363874,363920,46,850.6,495.9,1239.7,664.1,313.9
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,364090,364142,52,1245.8,672.2,865.5,510.0,393.9
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,365000,365030,30,847.4,507.1,1072.9,535.1,182.7
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,365202,365234,32,1088.4,535.3,822.5,499.5,274.8
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,365444,365450,6,832.3,493.7,855.1,498.0,60.1
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,365862,365894,32,855.3,510.3,1078.4,520.6,167.1
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,366090,366132,42,1100.6,519.2,850.4,514.1,314.4
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,366722,366748,26,866.3,514.3,1093.7,499.4,216.0
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,366956,366988,32,1161.1,499.1,874.7,519.6,281.0
+Encode-Decode_Experiment-22-1,2394020,horse ride,decoding,9,69,367252,367256,4,878.4,512.7,867.3,510.3,40.7
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,368414,368626,212,1000.1,477.5,978.5,525.1,1139.0
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,368882,368906,24,973.1,509.5,824.4,489.0,200.5
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,369200,369248,48,835.6,492.8,1181.8,681.6,316.1
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,369460,369510,50,1189.5,684.9,897.3,504.0,346.2
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,369710,369716,6,892.7,497.0,877.3,503.8,45.2
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,369960,370010,50,873.2,501.6,1275.0,728.8,301.6
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,370248,370292,44,1276.4,725.6,862.7,517.4,356.3
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,370532,370588,56,872.8,519.8,1486.3,788.5,344.2
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,370858,370906,48,1495.1,787.4,953.5,536.1,429.7
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,371090,371112,22,959.4,533.3,863.6,498.7,127.2
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,371560,371582,22,874.2,505.8,981.4,507.9,114.1
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,371750,371774,24,975.7,506.4,839.4,492.2,163.5
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,371954,371962,8,851.7,496.5,878.3,498.0,57.3
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,372472,372494,22,868.2,499.6,967.8,503.2,92.1
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,372666,372688,22,962.4,504.4,857.3,497.1,147.4
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,374150,374162,12,852.3,494.5,903.3,494.7,81.6
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,374330,374348,18,899.6,494.7,825.3,488.7,105.8
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,374678,374700,22,848.5,481.8,985.7,490.3,173.6
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,374872,374896,24,1001.8,496.9,847.2,490.7,190.2
+Encode-Decode_Experiment-22-1,2349475,blender,decoding,10,70,375210,375232,22,864.4,501.6,1043.3,491.3,199.5
+Encode-Decode_Experiment-22-1,150472,pizza-slice,decoding,11,71,375448,375538,90,1043.7,540.0,-41.5,1341.7,431.0
+Encode-Decode_Experiment-22-1,150472,pizza-slice,decoding,11,71,375970,376044,74,817.3,791.0,108.1,1372.1,542.4
+Encode-Decode_Experiment-22-1,150472,pizza-slice,decoding,11,71,377724,377760,36,730.5,248.2,423.1,103.5,340.6
+Encode-Decode_Experiment-22-1,150472,pizza-slice,decoding,11,71,377944,377988,44,425.8,117.6,867.1,221.8,387.4
+Encode-Decode_Experiment-22-1,150472,pizza-slice,decoding,11,71,378260,378290,30,893.3,219.5,898.4,58.7,192.4
+Encode-Decode_Experiment-22-1,150472,pizza-slice,decoding,11,71,378672,378680,8,890.3,57.8,869.4,64.8,49.5
+Encode-Decode_Experiment-22-1,150472,pizza-slice,decoding,11,71,379518,379578,60,873.0,51.2,1058.9,314.0,307.1
+Encode-Decode_Experiment-22-1,150472,pizza-slice,decoding,11,71,379838,380048,210,1065.5,343.9,850.4,396.0,1283.5
+Encode-Decode_Experiment-22-1,150472,pizza-slice,decoding,11,71,380334,380376,42,855.8,407.0,1251.7,282.0,297.2
+Encode-Decode_Experiment-22-1,150472,pizza-slice,decoding,11,71,380576,380624,48,1241.8,287.2,802.3,478.0,366.9
+Encode-Decode_Experiment-22-1,150472,pizza-slice,decoding,11,71,380916,380934,18,798.1,482.3,864.1,505.4,118.9
+Encode-Decode_Experiment-22-1,150472,pizza-slice,decoding,11,71,381242,381286,44,858.2,514.0,1226.2,695.4,291.6
+Encode-Decode_Experiment-22-1,150472,pizza-slice,decoding,11,71,381468,381508,40,1235.8,701.5,909.8,510.3,364.1
+Encode-Decode_Experiment-22-1,150472,pizza-slice,decoding,11,71,381710,381728,18,918.2,516.1,842.5,510.7,120.2
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,382478,382500,22,1052.3,538.3,1154.9,542.6,103.4
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,382740,382768,28,1144.7,540.5,925.1,515.5,254.4
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,382970,382978,8,904.8,506.4,877.0,508.4,59.6
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,383418,383634,216,868.4,514.4,855.0,533.3,1333.5
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,383944,384176,232,837.9,486.1,843.4,545.2,1290.1
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,384432,384436,4,844.7,489.8,833.8,491.3,40.4
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,384856,384884,28,828.5,496.7,1009.5,537.7,188.2
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,385032,385074,42,1008.8,546.5,816.9,498.2,276.0
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,385244,385258,14,788.5,511.0,838.7,506.9,88.0
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,385724,385744,20,842.1,497.4,851.3,480.9,52.3
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,385974,385980,6,853.1,499.5,838.9,503.9,40.0
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,386294,386312,18,844.4,488.5,899.7,465.6,101.9
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,386474,386494,20,893.1,465.8,837.2,469.9,98.6
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,386970,386984,14,836.3,498.0,822.1,495.8,42.9
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,387338,387352,14,816.7,495.0,842.9,496.8,56.5
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,388868,388878,10,861.1,485.9,892.2,476.7,62.2
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,388998,389018,20,889.7,474.9,844.2,487.1,86.2
+Encode-Decode_Experiment-22-1,2347400,wine,decoding,12,72,389406,389416,10,849.7,488.8,815.6,487.4,62.9
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,389834,389862,28,1087.5,534.2,909.6,516.1,199.0
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,390086,390090,4,877.4,512.4,866.9,513.7,39.7
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,390346,390392,46,857.8,507.5,1219.4,747.9,370.2
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,390592,390658,66,1245.5,759.5,820.7,473.3,421.1
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,390862,391078,216,840.2,487.6,865.7,495.8,1138.0
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,391224,391242,18,866.3,458.6,897.8,507.4,104.5
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,392054,392084,30,854.7,508.7,1009.0,495.7,133.6
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,392254,392278,24,1001.0,491.3,834.6,479.6,210.2
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,392546,392586,40,858.8,484.3,1103.4,524.7,180.2
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,392792,392820,28,1091.5,525.0,870.8,490.2,255.3
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,393108,393160,52,883.4,504.7,1350.0,610.1,229.8
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,393344,393400,56,1365.0,623.0,899.6,482.4,417.9
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,394068,394236,168,887.4,512.3,866.3,482.7,1137.1
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,394500,394506,6,877.3,495.1,879.3,508.0,44.5
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,394766,394772,6,869.4,529.7,867.2,517.4,43.4
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,395234,395250,16,879.7,501.5,932.5,485.5,69.8
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,395440,395460,20,933.8,478.9,845.4,490.4,127.2
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,396206,396230,24,853.0,515.4,965.7,481.3,144.4
+Encode-Decode_Experiment-22-1,2379478,baby-milk,decoding,13,73,396394,396414,20,954.4,491.9,843.7,512.3,169.5
+Encode-Decode_Experiment-22-1,2369373,chef,decoding,14,74,396568,396574,6,1026.5,511.8,1035.9,517.0,41.8
+Encode-Decode_Experiment-22-1,2369373,chef,decoding,14,74,396862,396886,24,1026.1,515.8,869.6,505.0,193.4
+Encode-Decode_Experiment-22-1,2369373,chef,decoding,14,74,397424,397658,234,856.5,511.7,866.7,556.1,1232.7
+Encode-Decode_Experiment-22-1,2369373,chef,decoding,14,74,397990,398002,12,858.6,498.9,842.3,523.7,63.7
+Encode-Decode_Experiment-22-1,2369373,chef,decoding,14,74,398382,398618,236,839.2,519.3,878.5,508.3,1190.8
+Encode-Decode_Experiment-22-1,2369373,chef,decoding,14,74,398742,398754,12,882.6,452.1,857.9,486.6,84.7
+Encode-Decode_Experiment-22-1,2369373,chef,decoding,14,74,401808,401814,6,864.3,486.1,846.7,485.2,48.0
+Encode-Decode_Experiment-22-1,2369373,chef,decoding,14,74,402216,402228,12,848.1,486.8,882.8,489.2,56.9
+Encode-Decode_Experiment-22-1,2369373,chef,decoding,14,74,402452,402460,8,868.9,492.6,842.2,488.9,56.4
+Encode-Decode_Experiment-22-1,2369373,chef,decoding,14,74,402864,403078,214,837.7,496.6,834.5,530.8,1310.8
+Encode-Decode_Experiment-22-1,2369373,chef,decoding,14,74,403260,403264,4,854.3,501.3,863.4,497.2,40.7
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,403968,403990,22,1040.5,523.8,915.7,517.3,171.0
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,404150,404168,18,922.7,530.9,846.2,508.7,120.5
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,404688,404718,30,856.3,510.5,1119.9,600.2,281.7
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,404932,404972,40,1140.2,602.2,809.7,503.1,365.9
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,405232,405238,6,810.3,513.7,830.9,506.1,59.1
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,405642,405666,24,847.0,507.3,975.8,499.1,158.3
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,405830,405852,22,955.2,494.0,832.9,500.8,180.9
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,406180,406184,4,841.3,509.1,851.5,507.7,39.1
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,407198,407202,4,854.3,501.0,845.3,497.4,39.6
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,407502,407726,224,831.1,497.7,826.0,520.9,1112.8
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,408222,408234,12,850.6,502.7,900.9,504.1,84.4
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,408426,408434,8,903.9,509.9,880.4,509.5,49.7
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,408982,409000,18,889.1,509.6,967.3,492.7,90.9
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,409186,409206,20,982.2,501.1,871.4,506.0,145.9
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,409828,409844,16,865.8,511.1,931.7,505.6,87.1
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,410018,410034,16,932.4,502.5,863.1,510.2,106.2
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,410354,410374,20,864.7,503.3,977.2,480.6,133.0
+Encode-Decode_Experiment-22-1,2370664,donuts,decoding,15,75,410590,410616,26,1017.8,477.5,848.2,496.2,217.5
+Encode-Decode_Experiment-22-1,2385550,tangerines,decoding,16,76,410736,410756,20,958.5,523.9,1048.1,507.9,124.5
+Encode-Decode_Experiment-22-1,2385550,tangerines,decoding,16,76,410974,411506,532,1024.6,500.3,299.8,-821.9,1205.6
+Encode-Decode_Experiment-22-1,2385550,tangerines,decoding,16,76,416426,416460,34,810.2,483.9,1098.0,412.7,324.9
+Encode-Decode_Experiment-22-1,2385550,tangerines,decoding,16,76,416714,416736,22,1128.1,408.8,962.8,426.4,211.0
+Encode-Decode_Experiment-22-1,2385550,tangerines,decoding,16,76,416870,416890,20,963.6,444.9,863.3,477.6,148.8
+Encode-Decode_Experiment-22-1,2348899,tie,decoding,17,77,418108,418266,158,1014.9,522.8,1157.4,-489.7,892.0
+Encode-Decode_Experiment-22-1,2348899,tie,decoding,17,77,421608,421632,24,728.6,438.8,862.8,442.5,157.1
+Encode-Decode_Experiment-22-1,2348899,tie,decoding,17,77,421798,421812,14,898.0,467.9,859.6,500.4,86.5
+Encode-Decode_Experiment-22-1,2348899,tie,decoding,17,77,423352,423358,6,873.0,522.5,869.9,510.5,43.8
+Encode-Decode_Experiment-22-1,2348899,tie,decoding,17,77,424552,424570,18,861.3,492.4,890.9,482.8,64.6
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,decoding,18,78,425192,425212,20,929.0,526.5,835.1,532.4,131.5
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,decoding,18,78,427408,427616,208,824.5,523.3,817.5,558.0,1204.7
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,decoding,18,78,427780,427786,6,837.4,508.7,854.8,519.3,57.3
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,decoding,18,78,428236,428242,6,842.4,536.2,827.5,538.6,40.5
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,decoding,18,78,429120,429142,22,823.4,533.6,925.8,522.2,113.8
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,decoding,18,78,429310,429334,24,937.3,531.9,797.3,522.4,179.9
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,decoding,18,78,429524,429530,6,812.7,523.2,836.0,522.7,57.6
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,decoding,18,78,430370,430382,12,835.0,529.4,879.1,517.0,78.6
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,decoding,18,78,430584,430592,8,864.6,520.1,834.1,521.0,62.9
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,decoding,18,78,431040,431058,18,851.1,519.5,895.8,497.2,63.4
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,decoding,18,78,431286,431304,18,914.7,497.7,830.2,516.7,124.8
+Encode-Decode_Experiment-22-1,2371471,bike-stuntmen,decoding,18,78,431568,431590,22,841.1,512.4,950.6,522.0,134.1
+Encode-Decode_Experiment-22-1,2356125,airport,decoding,19,79,432254,432278,24,981.1,521.1,836.6,500.9,182.9
+Encode-Decode_Experiment-22-1,2356125,airport,decoding,19,79,432932,432948,16,825.9,521.6,767.0,510.9,78.8
+Encode-Decode_Experiment-22-1,2356125,airport,decoding,19,79,433160,433176,16,767.5,503.0,833.6,511.0,100.8
+Encode-Decode_Experiment-22-1,2356125,airport,decoding,19,79,433986,433996,10,832.8,522.9,797.4,520.5,62.3
+Encode-Decode_Experiment-22-1,2356125,airport,decoding,19,79,434432,434442,10,811.7,528.0,843.9,528.3,57.8
+Encode-Decode_Experiment-22-1,2356125,airport,decoding,19,79,437462,437470,8,864.0,508.7,889.4,510.5,55.2
+Encode-Decode_Experiment-22-1,2356125,airport,decoding,19,79,438210,438216,6,863.9,519.1,849.3,517.1,38.9
+Encode-Decode_Experiment-22-1,2345035,football,decoding,20,80,439280,439300,20,918.0,530.2,826.9,507.1,137.4
+Encode-Decode_Experiment-22-1,2345035,football,decoding,20,80,441886,441892,6,820.7,494.6,804.8,501.4,46.9
+Encode-Decode_Experiment-22-1,2345035,football,decoding,20,80,442660,442668,8,813.9,506.7,796.3,506.1,37.6
+Encode-Decode_Experiment-22-1,2345035,football,decoding,20,80,442890,442894,4,810.8,510.5,821.2,511.0,39.8
+Encode-Decode_Experiment-22-1,2345035,football,decoding,20,80,443600,443616,16,838.7,517.1,903.0,516.3,86.1
+Encode-Decode_Experiment-22-1,2345035,football,decoding,20,80,443808,443820,12,914.0,512.7,864.5,509.0,81.2
+Encode-Decode_Experiment-22-1,2345035,football,decoding,20,80,444090,444096,6,847.0,505.8,830.3,504.3,46.3
+Encode-Decode_Experiment-22-1,2345035,football,decoding,20,80,444188,444340,152,822.6,515.8,820.4,532.0,977.0
+Encode-Decode_Experiment-22-1,2345035,football,decoding,20,80,445374,445382,8,876.2,514.4,895.7,515.6,40.6
+Encode-Decode_Experiment-22-1,2345035,football,decoding,20,80,445592,445596,4,890.0,512.1,878.6,512.4,41.8
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,446216,446238,22,1056.9,523.5,937.2,516.7,151.6
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,446472,446490,18,926.9,508.9,841.8,511.4,126.7
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,446770,446804,34,826.5,500.2,1112.8,612.0,255.1
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,446978,447026,48,1145.9,631.2,863.7,508.4,342.0
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,447278,447492,214,840.1,506.4,830.8,537.6,1139.2
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,448602,448606,4,853.1,500.1,842.1,500.5,42.4
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,448882,448910,28,841.3,493.1,1123.5,607.4,331.8
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,449078,449116,38,1147.4,631.3,841.6,496.6,358.4
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,449366,449372,6,856.4,495.2,838.2,495.6,46.7
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,449864,449868,4,847.6,505.6,857.4,505.6,38.4
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,450798,450816,18,876.4,513.0,952.5,489.0,109.9
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,450990,451008,18,957.2,489.3,868.5,508.3,131.8
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,451728,451736,8,872.3,505.1,894.0,505.8,45.2
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,451948,451954,6,886.0,522.4,864.7,517.8,55.9
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,452326,452350,24,872.6,515.9,1030.2,510.3,157.8
+Encode-Decode_Experiment-22-1,2409918,elephant,decoding,21,81,452534,452562,28,1058.6,522.9,858.8,522.9,214.1
+Encode-Decode_Experiment-22-1,2385851,suitcase,decoding,22,82,453042,453058,16,1061.9,507.6,1001.6,499.2,84.7
+Encode-Decode_Experiment-22-1,2385851,suitcase,decoding,22,82,453378,453404,26,997.1,501.0,831.6,476.9,195.7
+Encode-Decode_Experiment-22-1,2385851,suitcase,decoding,22,82,454564,454732,168,829.1,498.3,499.0,285.5,1179.9
+Encode-Decode_Experiment-22-1,2385851,suitcase,decoding,22,82,454934,455108,174,502.5,289.4,835.3,569.4,1249.9
+Encode-Decode_Experiment-22-1,2385851,suitcase,decoding,22,82,455328,455340,12,853.0,525.0,827.2,499.3,68.1
+Encode-Decode_Experiment-22-1,2385851,suitcase,decoding,22,82,456550,456564,14,860.9,499.0,895.6,473.9,64.4
+Encode-Decode_Experiment-22-1,2385851,suitcase,decoding,22,82,456752,456762,10,886.1,471.5,856.9,484.4,61.2
+Encode-Decode_Experiment-22-1,2385851,suitcase,decoding,22,82,457222,457226,4,845.3,496.8,834.2,497.8,42.6
+Encode-Decode_Experiment-22-1,2385851,suitcase,decoding,22,82,457668,457674,6,838.2,491.9,853.2,486.3,42.7
+Encode-Decode_Experiment-22-1,2385851,suitcase,decoding,22,82,459186,459200,14,864.5,514.1,905.1,494.2,65.6
+Encode-Decode_Experiment-22-1,2385851,suitcase,decoding,22,82,459378,459390,12,888.1,493.4,847.9,499.6,71.8
+Encode-Decode_Experiment-22-1,2411268,apple,decoding,23,83,460074,460336,262,1014.2,516.5,983.9,583.9,1189.9
+Encode-Decode_Experiment-22-1,2411268,apple,decoding,23,83,460464,460714,250,979.0,547.5,884.3,582.6,1241.4
+Encode-Decode_Experiment-22-1,2411268,apple,decoding,23,83,461138,461148,10,881.3,509.0,843.2,504.0,72.3
+Encode-Decode_Experiment-22-1,2411268,apple,decoding,23,83,461890,461922,32,834.3,499.5,1003.3,564.6,152.1
+Encode-Decode_Experiment-22-1,2411268,apple,decoding,23,83,462102,462126,24,1002.9,557.1,848.4,511.9,214.3
+Encode-Decode_Experiment-22-1,2411268,apple,decoding,23,83,462592,462602,10,856.5,491.0,833.2,478.1,52.0
+Encode-Decode_Experiment-22-1,2411268,apple,decoding,23,83,462780,462786,6,832.1,483.6,845.4,494.3,52.7
+Encode-Decode_Experiment-22-1,2411268,apple,decoding,23,83,463322,463330,8,854.4,497.0,834.1,491.6,46.6
+Encode-Decode_Experiment-22-1,2411268,apple,decoding,23,83,463570,463574,4,839.1,484.2,850.4,486.9,41.8
+Encode-Decode_Experiment-22-1,2411268,apple,decoding,23,83,464440,464444,4,869.2,506.5,880.8,504.9,43.6
+Encode-Decode_Experiment-22-1,2411268,apple,decoding,23,83,465312,465322,10,880.6,503.1,848.2,502.5,59.3
+Encode-Decode_Experiment-22-1,2411268,apple,decoding,23,83,465894,465898,4,821.1,492.5,833.3,500.7,57.3
+Encode-Decode_Experiment-22-1,2411268,apple,decoding,23,83,466598,466626,28,841.1,497.8,931.6,465.8,109.3
+Encode-Decode_Experiment-22-1,2411268,apple,decoding,23,83,466834,466850,16,914.6,481.9,842.2,493.0,116.5
+Encode-Decode_Experiment-22-1,2360001,clock,decoding,24,84,467508,467532,24,1026.8,506.2,848.5,507.5,226.1
+Encode-Decode_Experiment-22-1,2360001,clock,decoding,24,84,467862,467868,6,857.2,499.6,844.3,493.1,40.3
+Encode-Decode_Experiment-22-1,2360001,clock,decoding,24,84,468012,468238,226,840.6,491.4,835.6,545.3,1083.6
+Encode-Decode_Experiment-22-1,2360001,clock,decoding,24,84,468428,468438,10,830.6,484.8,871.0,489.4,75.7
+Encode-Decode_Experiment-22-1,2360001,clock,decoding,24,84,469364,469376,12,876.1,504.5,908.3,506.8,51.5
+Encode-Decode_Experiment-22-1,2360001,clock,decoding,24,84,469560,469576,16,879.8,495.4,852.0,489.7,55.9
+Encode-Decode_Experiment-22-1,2360001,clock,decoding,24,84,470450,470454,4,857.6,481.7,845.2,483.2,42.4
+Encode-Decode_Experiment-22-1,2360001,clock,decoding,24,84,471540,471558,18,839.9,484.7,900.2,474.0,60.5
+Encode-Decode_Experiment-22-1,2360001,clock,decoding,24,84,471760,471776,16,917.6,486.0,845.3,486.4,112.0
+Encode-Decode_Experiment-22-1,2360001,clock,decoding,24,84,473102,473128,26,848.4,507.4,962.6,522.6,99.0
+Encode-Decode_Experiment-22-1,2360001,clock,decoding,24,84,473324,473346,22,953.7,525.7,844.1,500.5,139.5
+Encode-Decode_Experiment-22-1,2360001,clock,decoding,24,84,473708,473730,22,851.8,515.1,977.1,480.8,146.5
+Encode-Decode_Experiment-22-1,2360001,clock,decoding,24,84,473914,473944,30,1014.7,482.4,857.6,518.7,170.4
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,474160,474176,16,1012.4,513.3,1070.3,498.6,82.8
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,474396,474422,26,1071.8,496.5,885.1,475.7,229.9
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,474602,474622,20,897.8,504.7,835.8,506.4,109.1
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,474910,474942,32,834.9,506.8,578.4,459.2,235.6
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,475118,475146,28,570.1,452.6,811.9,523.2,307.8
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,475358,475362,4,843.1,519.2,832.9,517.7,41.4
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,475674,475906,232,841.9,517.6,877.5,503.9,1064.3
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,476142,476150,8,890.0,519.6,862.8,519.4,57.7
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,476958,476976,18,851.8,504.7,894.7,494.9,54.3
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,477152,477160,8,867.1,499.2,842.7,502.1,51.2
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,477802,477810,8,837.2,516.6,825.1,499.8,53.8
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,478098,478112,14,849.7,482.3,901.1,499.6,84.0
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,478286,478300,14,907.5,496.2,854.3,489.1,88.4
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,478604,478620,16,859.2,490.6,937.4,495.4,98.3
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,478814,478836,22,944.0,499.0,836.1,494.6,129.9
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,479280,479288,8,868.1,504.8,891.8,509.7,52.9
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,479480,479486,6,883.7,511.7,869.2,511.5,47.1
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,479838,479860,22,876.5,512.6,941.6,510.5,64.1
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,480036,480052,16,922.3,510.9,847.1,508.8,104.1
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,480334,480506,172,853.8,526.2,845.8,531.4,1071.6
+Encode-Decode_Experiment-22-1,2408717,surfboard,decoding,25,85,480952,480972,20,873.1,516.2,989.9,498.2,138.2
+Encode-Decode_Experiment-22-1,2350974,drink,decoding,26,86,481404,481448,44,1544.3,550.0,1005.0,531.1,386.8
+Encode-Decode_Experiment-22-1,2350974,drink,decoding,26,86,481704,481732,28,1005.5,534.7,827.2,521.7,207.9
+Encode-Decode_Experiment-22-1,2350974,drink,decoding,26,86,481910,482032,122,860.9,524.6,411.1,-891.3,678.8
+Encode-Decode_Experiment-22-1,2397102,cake,decoding,27,87,488464,488672,208,1017.6,556.3,1146.7,-295.6,1189.6
+Encode-Decode_Experiment-22-1,2397102,cake,decoding,27,87,493266,493488,222,590.4,854.7,388.4,1429.8,1060.3
+Encode-Decode_Experiment-22-1,2397102,cake,decoding,27,87,494076,494112,36,1026.6,815.8,1380.8,841.1,249.5
+Encode-Decode_Experiment-22-1,2397102,cake,decoding,27,87,494342,494354,12,1383.9,833.1,1341.5,825.3,72.0
+Encode-Decode_Experiment-22-1,2397102,cake,decoding,27,87,494570,494614,44,1358.5,843.8,912.8,559.4,363.3
+Encode-Decode_Experiment-22-1,2397102,cake,decoding,27,87,494880,495144,264,913.4,583.6,915.9,548.1,852.6
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,495756,495778,22,1033.0,522.9,894.3,524.4,183.2
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,495944,495950,6,891.7,522.0,877.2,526.5,41.8
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,496470,496494,24,859.6,526.8,1050.4,556.8,235.9
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,496670,496714,44,1087.4,555.4,847.2,515.3,306.0
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,496898,496904,6,832.6,509.7,848.1,517.7,50.8
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,497198,497228,30,846.3,509.0,995.4,532.0,151.5
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,497394,497432,38,985.9,525.4,862.3,522.6,204.5
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,497732,497754,22,829.2,515.8,966.6,494.8,151.1
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,497954,497982,28,990.8,507.9,813.4,522.4,181.1
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,498216,498222,6,836.8,522.3,856.5,520.5,50.5
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,498682,498690,8,857.4,522.8,828.3,521.8,61.1
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,499502,499514,12,871.7,532.5,910.5,524.4,62.5
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,499718,499730,12,904.2,535.9,866.5,535.6,61.4
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,500030,500048,18,876.8,532.7,968.0,525.2,112.6
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,500244,500266,22,971.4,532.5,855.2,533.1,160.0
+Encode-Decode_Experiment-22-1,2362704,bears,decoding,28,88,500992,500996,4,870.4,520.4,861.8,516.0,39.8
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,502518,502714,196,1049.7,546.5,1008.6,583.7,1074.4
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,502886,502908,22,1012.4,536.4,874.8,531.4,180.4
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,503222,503264,42,880.6,533.4,1233.4,578.6,232.6
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,503436,503478,42,1244.9,575.5,869.7,499.3,304.1
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,503754,503758,4,902.3,516.4,907.9,522.7,38.7
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,504302,504334,32,888.5,534.1,1145.5,513.5,215.3
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,504580,504612,32,1207.5,519.8,933.2,522.6,254.1
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,504812,504820,8,924.8,521.1,894.7,526.4,63.0
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,505078,505102,24,892.0,524.8,1027.9,540.4,137.0
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,505264,505290,26,1026.4,546.8,856.2,522.6,204.7
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,505610,505650,40,865.0,526.4,1204.3,673.0,286.2
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,505834,505886,52,1207.7,678.2,882.9,508.1,314.5
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,506136,506148,12,875.8,515.1,879.9,544.3,67.6
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,506364,506410,46,875.4,537.9,1348.5,850.5,377.8
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,506612,506618,6,1351.3,864.6,1332.4,855.0,56.4
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,506842,506892,50,1337.8,838.1,902.7,527.6,343.3
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,507114,507120,6,919.3,537.9,894.1,534.8,63.4
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,507362,507390,28,893.4,526.7,1093.1,561.3,204.6
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,507566,507596,30,1108.9,558.1,889.5,513.4,241.1
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,508214,508220,6,895.3,522.4,910.8,519.6,42.2
+Encode-Decode_Experiment-22-1,2356991,baseball,decoding,29,89,509282,509290,8,893.9,522.4,918.5,521.0,52.3
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,509756,509780,24,954.9,535.5,829.7,510.4,162.8
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,509862,510094,232,834.4,521.3,841.5,571.3,1154.9
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,510456,510482,26,837.5,516.2,1006.0,517.9,188.9
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,510684,510714,30,1033.4,531.7,841.9,520.2,197.6
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,511006,511046,40,853.5,527.9,1115.8,568.5,231.6
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,511278,511308,30,1116.6,563.7,845.3,535.3,288.3
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,511578,511624,46,851.9,525.3,1212.4,657.6,281.6
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,511812,511858,46,1225.7,656.5,912.1,491.2,325.9
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,512006,512024,18,892.7,483.5,835.2,495.6,91.8
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,512198,512250,52,845.5,492.9,1277.7,826.1,426.1
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,512592,512632,40,1291.3,821.0,916.1,531.8,402.4
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,512814,512828,14,914.2,533.3,870.1,509.4,83.8
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,513092,513132,40,874.0,505.2,1218.7,694.8,371.5
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,513316,513358,42,1238.2,716.7,866.2,508.1,389.3
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,514402,514414,12,853.0,517.8,817.2,521.9,62.0
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,514712,514718,6,827.5,522.6,842.8,525.9,42.0
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,515110,515144,34,845.2,533.3,1066.8,519.7,164.3
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,515328,515354,26,1073.7,536.6,871.1,535.3,259.9
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,515578,515588,10,885.3,542.2,852.5,530.5,67.9
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,515886,515910,24,865.6,518.2,1037.4,526.6,174.7
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,516100,516126,26,1071.1,533.7,873.7,525.3,239.1
+Encode-Decode_Experiment-22-1,2387122,polar bear,decoding,30,90,516364,516408,44,873.6,542.2,100000000.0,100000000.0,837.9

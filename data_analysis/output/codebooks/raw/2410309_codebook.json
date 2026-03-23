@@ -2,324 +2,350 @@
   {
     "node_id": "2410309_001",
     "concept": "woman",
-    "context": "adult person seated on the couch/sofa, using a laptop",
+    "context": "adult person seated on the sofa/couch with a laptop",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "a woman",
-      "woman",
-      "mum",
-      "lady",
-      "a woman with a laptop",
-      "woman on laptop"
+      "woman and baby",
+      "a woman",
+      "a woman",
+      "mum on left",
+      "a woman",
+      "woman on laptop",
+      "mum and baby",
+      "mother and her",
+      "older lady",
+      "a wo,me,",
+      "a woman",
+      "a woman",
+      "woman faces",
+      "mum in",
+      "a woman",
+      "a woman",
+      "lady on left"
     ]
   },
   {
     "node_id": "2410309_002",
     "concept": "baby",
-    "context": "child seated beside the woman, interacting with a laptop",
+    "context": "young child seated beside the woman with a laptop",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "a child",
-      "baby",
-      "babay",
-      "the baby"
+      "and baby",
+      "a baby",
+      "and baby",
+      "babay on",
+      "a baby",
+      "and a baby",
+      "baby to",
+      "her child",
+      "a baby",
+      "baby and",
+      "woman and baby",
+      "and baby",
+      "The infant",
+      "and baby",
+      "and a baby",
+      "a baby",
+      "baby on right"
     ]
   },
   {
     "node_id": "2410309_003",
-    "concept": "couch",
-    "context": "shared seating furniture the woman and baby are on",
-    "content_type": "object_identity",
+    "concept": "sitting",
+    "context": "posture of the woman and baby on the sofa/couch",
+    "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "couch",
-      "counch"
+      "child sitting",
+      "baby sat",
+      "baby on",
+      "sat on",
+      "sitting on",
+      "were sitting",
+      "sit on",
+      "on a couch"
     ]
   },
   {
     "node_id": "2410309_004",
     "concept": "sofa",
-    "context": "shared seating furniture the woman and baby are on",
+    "context": "shared seating furniture for the woman and baby",
     "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "sofa"
-    ]
-  },
-  {
-    "node_id": "2410309_005",
-    "concept": "laptop",
-    "context": "device used by the woman and the baby",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "laptop",
-      "laptops",
-      "dell laptop",
-      "laption"
-    ]
-  },
-  {
-    "node_id": "2410309_006",
-    "concept": "two",
-    "context": "count of laptops present in the scene",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "both of them have a laptop",
-      "two different laptops",
-      "two separate laptops",
-      "2 laptops"
-    ]
-  },
-  {
-    "node_id": "2410309_007",
-    "concept": "keyboard",
-    "context": "part of the laptop being touched or typed on",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "keyboard",
-      "the keyboard",
-      "black keyboard"
-    ]
-  },
-  {
-    "node_id": "2410309_008",
-    "concept": "bottle",
-    "context": "drink container positioned between the woman and baby",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "bottle",
-      "plastic bottle"
-    ]
-  },
-  {
-    "node_id": "2410309_009",
-    "concept": "drink",
-    "context": "contents/category of the bottle between the woman and baby",
-    "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "some drink",
-      "diet coke"
-    ]
-  },
-  {
-    "node_id": "2410309_010",
-    "concept": "Diet Coke",
-    "context": "specific drink label assigned to the bottle between the woman and baby",
-    "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "diet coke",
-      "bottle of diet coke"
-    ]
-  },
-  {
-    "node_id": "2410309_011",
-    "concept": "left",
-    "context": "position of the woman relative to the baby",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "mum on left",
-      "to the left of the woman",
-      "woman on the left",
-      "while the woman was on the elft",
-      "lady on left"
-    ]
-  },
-  {
-    "node_id": "2410309_012",
-    "concept": "right",
-    "context": "position of the baby relative to the woman",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "baby on right",
-      "baby to right of her",
-      "while the baby was on the right"
-    ]
-  },
-  {
-    "node_id": "2410309_013",
-    "concept": "beside",
-    "context": "the baby positioned next to the woman",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "beside her",
-      "next to one"
-    ]
-  },
-  {
-    "node_id": "2410309_014",
-    "concept": "between",
-    "context": "location of the bottle relative to the woman and baby",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "in the middle of them",
-      "in between them",
-      "inbetween her and a baby"
-    ]
-  },
-  {
-    "node_id": "2410309_015",
-    "concept": "on",
-    "context": "the woman and baby positioned on the couch/sofa",
-    "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "on a couch",
       "on sofa",
-      "on a couch",
-      "on the right with hands on keyboard"
+      "beside her",
+      "on a sofa",
+      "on sofa",
+      "using two",
+      "on counch",
+      "on a sofa",
+      "of the sofa",
+      "on a sofa",
+      "on a beige",
+      "sit on a",
+      "on couch",
+      "on a couch"
     ]
   },
   {
-    "node_id": "2410309_016",
-    "concept": "lap",
-    "context": "location of the laptop relative to the seated person",
+    "node_id": "2410309_005",
+    "concept": "laptop",
+    "context": "device used by the woman and baby",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "on their laps",
+      "have a laptop",
+      "working on laptop",
+      "a laptop",
+      "looking at laptops",
+      "different laptops",
+      "separate laptops",
+      "on a laptop",
+      "looking at laption",
+      "on a laptop",
+      "at laptops",
+      "2 laptops",
+      "dell laptop",
+      "a laptop",
+      "its own laptop",
+      "another laptop",
+      "had laptops",
+      "a laptop",
+      "2 laptops"
+    ]
+  },
+  {
+    "node_id": "2410309_006",
+    "concept": "lap",
+    "context": "location of the woman's laptop",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "their laps",
+      "on her lap",
+      "on her lap",
+      "laptop on her lap",
+      "the woman had",
+      "on her lap",
       "on her lap"
     ]
   },
   {
-    "node_id": "2410309_017",
-    "concept": "sitting",
-    "context": "posture/action of the woman and baby on the couch/sofa",
-    "content_type": "action_relation",
+    "node_id": "2410309_007",
+    "concept": "two",
+    "context": "count of laptops in the scene",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "sitting together",
-      "sat",
-      "were sitting"
+      "Two different laptops",
+      "both using two",
+      "with 2 laptops",
+      "2 laptops"
     ]
   },
   {
-    "node_id": "2410309_018",
-    "concept": "using",
-    "context": "general interaction of the woman and baby with laptops",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "using two separate laptops",
-      "both looking at laptops",
-      "woman working on laptop"
-    ]
-  },
-  {
-    "node_id": "2410309_019",
-    "concept": "working",
-    "context": "action attributed to the woman using the laptop",
-    "content_type": "action_relation",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "woman working on laptop"
-    ]
-  },
-  {
-    "node_id": "2410309_020",
-    "concept": "touching",
-    "context": "the baby touching the laptop keyboard",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "baby touching the keyboard",
-      "touching a keyboard",
-      "touching the keyboard"
-    ]
-  },
-  {
-    "node_id": "2410309_021",
-    "concept": "typing",
-    "context": "the woman typing on her laptop keyboard",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "woman is typing"
-    ]
-  },
-  {
-    "node_id": "2410309_022",
-    "concept": "holding",
-    "context": "the woman holding her laptop",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "the woman was holding one"
-    ]
-  },
-  {
-    "node_id": "2410309_023",
+    "node_id": "2410309_008",
     "concept": "looking",
-    "context": "the woman and/or baby looking at the laptop or screen",
+    "context": "visual attention directed toward the laptops or screen",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "both looking at laptops",
-      "facing screen and looking at laptop",
-      "looking the a dell laptop",
-      "she was looking to a laptop"
-    ]
-  },
-  {
-    "node_id": "2410309_024",
-    "concept": "screen",
-    "context": "part of the laptop the woman is facing",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
+      "both looking",
+      "looking at laptops",
+      "looking at laptop",
+      "looking at laptops",
+      "looking the a",
+      "looking at the",
+      "concentrating on",
       "facing screen"
     ]
   },
   {
-    "node_id": "2410309_025",
-    "concept": "facing forward",
-    "context": "orientation of the woman on the couch",
+    "node_id": "2410309_009",
+    "concept": "touching",
+    "context": "baby's hand contacting the laptop keyboard",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "baby touching",
+      "touching a keyboard",
+      "touching the keyboard",
+      "touching keyboard",
+      "hands on the",
+      "hand is on",
+      "hand were on",
+      "touching the keyboard",
+      "touching a laptop",
+      "hand on the",
+      "hands on keyboard"
+    ]
+  },
+  {
+    "node_id": "2410309_010",
+    "concept": "keyboard",
+    "context": "part of the laptop contacted by the baby",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "touching the keyboard",
+      "a keyboard",
+      "typing",
+      "on keyboards",
+      "touching the keyboard",
+      "touching keyboard",
+      "hands on the keyboard",
+      "hand is on the black keyboard",
+      "hand were on the keyboard",
+      "touching the keyboard",
+      "pressing the keyboard",
+      "hand on the keyboard",
+      "hands on keyboard"
+    ]
+  },
+  {
+    "node_id": "2410309_011",
+    "concept": "bottle",
+    "context": "drink container located between or beside the woman and baby",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a bottle",
+      "plastic bottle",
+      "coke bottle",
+      "a bottle of coke",
+      "diet coke bottle",
+      "empty diet coke bottle"
+    ]
+  },
+  {
+    "node_id": "2410309_012",
+    "concept": "Diet Coke",
+    "context": "label/type of the drink bottle in the middle",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "bottle of diet coke",
+      "diet coke bottle",
+      "empty diet coke bottle"
+    ]
+  },
+  {
+    "node_id": "2410309_013",
+    "concept": "middle",
+    "context": "position of the bottle relative to the woman and baby",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
+      "in the middle",
+      "in between them",
+      "inbetween her",
+      "between them"
+    ]
+  },
+  {
+    "node_id": "2410309_014",
+    "concept": "left",
+    "context": "woman's position on the sofa/couch",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "mum on left",
+      "to the left",
+      "older lady on the left",
+      "was on the elft",
+      "sat on the left",
+      "woman on the left",
+      "lady on left"
+    ]
+  },
+  {
+    "node_id": "2410309_015",
+    "concept": "right",
+    "context": "baby's position on the sofa/couch or gaze direction",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on right",
+      "baby to right",
+      "is on the right",
+      "baby was on the right",
+      "to the right",
+      "on the right",
+      "baby on right"
+    ]
+  },
+  {
+    "node_id": "2410309_016",
+    "concept": "typing",
+    "context": "action performed by the woman on her laptop",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "woman is typing",
+      "on keyboards"
+    ]
+  },
+  {
+    "node_id": "2410309_017",
+    "concept": "working",
+    "context": "activity attributed to the woman using the laptop",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "woman working"
+    ]
+  },
+  {
+    "node_id": "2410309_018",
+    "concept": "screen",
+    "context": "visible part of the woman's laptop being looked at",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "facing screen",
+      "the screen"
+    ]
+  },
+  {
+    "node_id": "2410309_019",
+    "concept": "facing forward",
+    "context": "orientation of the woman",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "woman faces forward",
       "facing forward"
     ]
   },
   {
-    "node_id": "2410309_026",
+    "node_id": "2410309_020",
     "concept": "sideways",
-    "context": "orientation of the baby relative to the camera or woman",
+    "context": "orientation of the baby",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
@@ -329,9 +355,32 @@
     ]
   },
   {
-    "node_id": "2410309_027",
+    "node_id": "2410309_021",
+    "concept": "purple",
+    "context": "color of the woman's dress/top",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "purple dress"
+    ]
+  },
+  {
+    "node_id": "2410309_022",
+    "concept": "dress",
+    "context": "woman's clothing",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "purple dress",
+      "red dress"
+    ]
+  },
+  {
+    "node_id": "2410309_023",
     "concept": "red",
-    "context": "color of the woman's top/dress",
+    "context": "color of the woman's clothing",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
@@ -341,9 +390,9 @@
     ]
   },
   {
-    "node_id": "2410309_028",
+    "node_id": "2410309_024",
     "concept": "top",
-    "context": "garment worn by the woman",
+    "context": "woman's clothing",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
@@ -352,78 +401,79 @@
     ]
   },
   {
-    "node_id": "2410309_029",
-    "concept": "dress",
-    "context": "garment worn by the woman",
+    "node_id": "2410309_025",
+    "concept": "beige",
+    "context": "color of the couch",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "beige couch"
+    ]
+  },
+  {
+    "node_id": "2410309_026",
+    "concept": "white",
+    "context": "color of the sofa",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "sofa is white"
+    ]
+  },
+  {
+    "node_id": "2410309_027",
+    "concept": "large",
+    "context": "body size/build of the woman",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "largely built"
+    ]
+  },
+  {
+    "node_id": "2410309_028",
+    "concept": "hair",
+    "context": "woman's visible hair",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "red dress"
+      "dark hair"
+    ]
+  },
+  {
+    "node_id": "2410309_029",
+    "concept": "dark",
+    "context": "color of the woman's hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "dark hair"
     ]
   },
   {
     "node_id": "2410309_030",
-    "concept": "annoyed",
-    "context": "facial expression attributed to the woman",
-    "content_type": "object_attribute",
-    "evidence_type": "speculative",
-    "status": "incorrect",
+    "concept": "hand",
+    "context": "baby's hand placed on the keyboard",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
     "source_phrases": [
-      "annoyed look on her face"
+      "their hands",
+      "its hand",
+      "her hand",
+      "right hand",
+      "hand is on"
     ]
   },
   {
     "node_id": "2410309_031",
-    "concept": "face",
-    "context": "woman's face described with an expression",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "her face"
-    ]
-  },
-  {
-    "node_id": "2410309_032",
-    "concept": "Dell",
-    "context": "brand attributed to the laptop",
-    "content_type": "object_attribute",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "dell laptop"
-    ]
-  },
-  {
-    "node_id": "2410309_033",
-    "concept": "person",
-    "context": "human figure mentioned in the confabulated cat scene",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "incorrect",
-    "source_phrases": [
-      "a person's hand",
-      "the person"
-    ]
-  },
-  {
-    "node_id": "2410309_034",
-    "concept": "hand",
-    "context": "body part placed on the keyboard in the confabulated response",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "incorrect",
-    "source_phrases": [
-      "a person's hand",
-      "her hand were on the keyboard",
-      "with hands on keyboard"
-    ]
-  },
-  {
-    "node_id": "2410309_035",
     "concept": "black",
-    "context": "color attributed to the keyboard in the confabulated response",
+    "context": "color of the keyboard in the confabulated response",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "incorrect",
@@ -432,21 +482,21 @@
     ]
   },
   {
-    "node_id": "2410309_036",
+    "node_id": "2410309_032",
     "concept": "cat",
-    "context": "animal mentioned in the confabulated response",
+    "context": "animal described to the left of a person in the confabulated response",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "incorrect",
     "source_phrases": [
-      "cat",
-      "grey and black cat"
+      "black cat",
+      "and cat"
     ]
   },
   {
-    "node_id": "2410309_037",
+    "node_id": "2410309_033",
     "concept": "grey",
-    "context": "color attributed to the cat in the confabulated response",
+    "context": "color of the cat in the confabulated response",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "incorrect",
@@ -455,18 +505,19 @@
     ]
   },
   {
-    "node_id": "2410309_038",
+    "node_id": "2410309_034",
     "concept": "laying",
     "context": "posture/action of the cat in the confabulated response",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "incorrect",
     "source_phrases": [
-      "laying"
+      "cat to the left",
+      "laying ona"
     ]
   },
   {
-    "node_id": "2410309_039",
+    "node_id": "2410309_035",
     "concept": "blue",
     "context": "color of the cloth in the confabulated response",
     "content_type": "object_attribute",
@@ -477,14 +528,103 @@
     ]
   },
   {
-    "node_id": "2410309_040",
+    "node_id": "2410309_036",
     "concept": "cloth",
-    "context": "surface under the cat in the confabulated response",
+    "context": "fabric item under the cat in the confabulated response",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "incorrect",
     "source_phrases": [
-      "cloth"
+      "blue cloth"
+    ]
+  },
+  {
+    "node_id": "2410309_037",
+    "concept": "annoyed",
+    "context": "facial expression attributed to the woman",
+    "content_type": "object_attribute",
+    "evidence_type": "speculative",
+    "status": "correct",
+    "source_phrases": [
+      "annoyed look"
+    ]
+  },
+  {
+    "node_id": "2410309_038",
+    "concept": "look",
+    "context": "woman's facial expression",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "annoyed look"
+    ]
+  },
+  {
+    "node_id": "2410309_039",
+    "concept": "empty",
+    "context": "state of the Diet Coke bottle",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "empty diet coke bottle"
+    ]
+  },
+  {
+    "node_id": "2410309_040",
+    "concept": "pressing",
+    "context": "baby's action on the keyboard",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "pressing the keyboard"
+    ]
+  },
+  {
+    "node_id": "2410309_041",
+    "concept": "holding",
+    "context": "woman's action with her laptop",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "was holding one"
+    ]
+  },
+  {
+    "node_id": "2410309_042",
+    "concept": "next to",
+    "context": "baby positioned beside the laptop or woman",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "sat next to",
+      "baby was next to"
+    ]
+  },
+  {
+    "node_id": "2410309_043",
+    "concept": "Dell",
+    "context": "brand attributed to the laptop",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "a dell laptop"
+    ]
+  },
+  {
+    "node_id": "2410309_044",
+    "concept": "outdoors",
+    "context": "implied scene setting from the confabulated cat response",
+    "content_type": "scene_gist",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "blue cloth"
     ]
   }
 ]

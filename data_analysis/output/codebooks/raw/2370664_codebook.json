@@ -2,14 +2,15 @@
   {
     "node_id": "2370664_001",
     "concept": "three",
-    "context": "count of the people in the scene",
+    "context": "count of people in the scene",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "two men and one woman",
       "3 people",
-      "three people"
+      "three people",
+      "Three individuals",
+      "3 friends"
     ]
   },
   {
@@ -20,111 +21,119 @@
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "people",
-      "men",
-      "woman",
-      "friends"
+      "3 people",
+      "three people",
+      "Three individuals",
+      "three adults"
     ]
   },
   {
     "node_id": "2370664_003",
     "concept": "two",
-    "context": "count of the men in the group",
+    "context": "count of men in the group",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "two men",
-      "2 men"
+      "2 men",
+      "two men"
     ]
   },
   {
     "node_id": "2370664_004",
     "concept": "man",
-    "context": "male people in the group",
+    "context": "male-presenting people in the group",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "men",
-      "man"
+      "two men",
+      "one man",
+      "2 men",
+      "two men"
     ]
   },
   {
     "node_id": "2370664_005",
     "concept": "one",
-    "context": "count of the woman in the group",
+    "context": "count of woman in the group",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "one woman",
       "a woman",
-      "1 woman"
+      "1 woman",
+      "the woman"
     ]
   },
   {
     "node_id": "2370664_006",
     "concept": "woman",
-    "context": "female person in the group",
+    "context": "female-presenting person in the group",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "woman",
-      "women"
+      "one woman",
+      "a woman",
+      "the woman",
+      "woman in"
     ]
   },
   {
     "node_id": "2370664_007",
     "concept": "eating",
-    "context": "action performed by the people with the donuts",
+    "context": "action performed with the donuts by the people",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "eating donut",
       "eating donuts",
-      "eating one donut each"
+      "all eating",
+      "each eating"
     ]
   },
   {
     "node_id": "2370664_008",
     "concept": "donut",
-    "context": "food item being eaten or held by the people",
+    "context": "food item held or eaten by the people",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "donut",
-      "donuts",
-      "dounut",
-      "docut"
+      "eating donut",
+      "eating donuts",
+      "pink donuts",
+      "ring donuts"
     ]
   },
   {
     "node_id": "2370664_009",
     "concept": "street",
-    "context": "location where the people are positioned",
+    "context": "location of the people",
     "content_type": "scene_gist",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "in the street",
+      "the street",
       "on a street",
-      "outside on the street"
+      "in the street",
+      "streets all"
     ]
   },
   {
     "node_id": "2370664_010",
     "concept": "standing",
-    "context": "body posture of the people",
+    "context": "posture of the people in the scene",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "standing",
-      "was standing"
+      "standing in",
+      "people standing"
     ]
   },
   {
@@ -135,8 +144,9 @@
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "standing in the middle of the two men",
-      "in the middle"
+      "in the middle",
+      "the middle",
+      "woman in"
     ]
   },
   {
@@ -147,245 +157,344 @@
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "red shirt"
+      "red shirt",
+      "red/orange t"
     ]
   },
   {
     "node_id": "2370664_013",
     "concept": "shirt",
-    "context": "clothing worn by people in the scene",
+    "context": "garment worn by the woman",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "shirt",
-      "shirts"
+      "red shirt",
+      "colored shirt",
+      "t shirt",
+      "orange t"
     ]
   },
   {
     "node_id": "2370664_014",
-    "concept": "one",
-    "context": "count of donuts per person",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "one donut each",
-      "a donut each"
-    ]
-  },
-  {
-    "node_id": "2370664_015",
     "concept": "caravan park",
-    "context": "alternative setting proposed for the scene",
+    "context": "alternate described setting of the scene",
     "content_type": "scene_gist",
     "evidence_type": "speculative",
     "status": "incorrect",
     "source_phrases": [
-      "in caravan park"
+      "caravan park"
     ]
   },
   {
-    "node_id": "2370664_016",
-    "concept": "looking at",
-    "context": "people directing their gaze toward the camera",
+    "node_id": "2370664_015",
+    "concept": "looking",
+    "context": "gaze directed toward the camera",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "looking at the camera"
+      "looking at",
+      "looked at",
+      "smiling in"
     ]
   },
   {
-    "node_id": "2370664_017",
+    "node_id": "2370664_016",
     "concept": "camera",
     "context": "target of the people's gaze",
     "content_type": "object_identity",
     "evidence_type": "latent",
     "status": "correct",
     "source_phrases": [
-      "looking at the camera"
+      "the camera",
+      "at the camera",
+      "in to"
     ]
   },
   {
-    "node_id": "2370664_018",
+    "node_id": "2370664_017",
     "concept": "pink",
     "context": "colour of the donuts",
     "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct",
+    "status": "incorrect",
     "source_phrases": [
       "pink donuts"
     ]
   },
   {
-    "node_id": "2370664_019",
+    "node_id": "2370664_018",
     "concept": "sugar",
-    "context": "type or coating of the donuts",
+    "context": "descriptive property of the donuts",
     "content_type": "object_attribute",
-    "evidence_type": "latent",
+    "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "sugar donuts",
-      "sugar ring donuts"
+      "sugar ring"
     ]
   },
   {
-    "node_id": "2370664_020",
+    "node_id": "2370664_019",
     "concept": "mouth",
-    "context": "body part where the donuts are being held or eaten",
+    "context": "body part where the donuts are being held or bitten",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "in their mouths",
-      "up to their mouths",
-      "up to her mouth"
+      "their mouths",
+      "to their mouths",
+      "her mouth"
     ]
   },
   {
-    "node_id": "2370664_021",
+    "node_id": "2370664_020",
     "concept": "outside",
-    "context": "general outdoor setting of the scene",
+    "context": "broader setting of the scene",
     "content_type": "scene_gist",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "outside on the street"
+      "outside on"
+    ]
+  },
+  {
+    "node_id": "2370664_021",
+    "concept": "left",
+    "context": "position of one man in the group",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on the left",
+      "bottom left",
+      "the left"
     ]
   },
   {
     "node_id": "2370664_022",
-    "concept": "left",
-    "context": "position of one man relative to the group",
+    "concept": "right",
+    "context": "position of one man in the group",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "one man on the left",
-      "the one on the left"
+      "on the right",
+      "bottom right",
+      "the right"
     ]
   },
   {
     "node_id": "2370664_023",
-    "concept": "right",
-    "context": "position of one man relative to the group",
-    "content_type": "spatial_relation",
+    "concept": "holding",
+    "context": "action of keeping the donut up near the mouth",
+    "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "one on the right",
-      "the man on the right"
+      "holding a",
+      "hold up",
+      "just holding"
     ]
   },
   {
     "node_id": "2370664_024",
     "concept": "ring",
-    "context": "shape or type of the donuts",
+    "context": "shape/form descriptor of the donuts",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "ring donuts",
-      "sugar ring donuts"
+      "ring donut",
+      "sugar ring"
     ]
   },
   {
     "node_id": "2370664_025",
-    "concept": "holding",
-    "context": "action of the people holding the donuts",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "holding a donut up to their mouths",
-      "holding a donut each",
-      "held the donut up to her mouth"
-    ]
-  },
-  {
-    "node_id": "2370664_026",
-    "concept": "same-colored",
-    "context": "matching colour property of the two men's shirts",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "the same colored shirt"
-    ]
-  },
-  {
-    "node_id": "2370664_027",
     "concept": "biting",
     "context": "action of taking a bite from the donut",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "biting a donut",
-      "taking a bite out of a dounut",
-      "sunk his teeth into his donut"
+      "biting a",
+      "biting donuts",
+      "a bite"
     ]
   },
   {
-    "node_id": "2370664_028",
+    "node_id": "2370664_026",
     "concept": "watch",
-    "context": "accessory worn by the man on the left",
+    "context": "accessory worn by the person on the left",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "waearing a watch"
+      "a watch"
     ]
   },
   {
-    "node_id": "2370664_029",
+    "node_id": "2370664_027",
     "concept": "earring",
     "context": "accessory worn by the woman",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "earings"
+      "had earings"
+    ]
+  },
+  {
+    "node_id": "2370664_028",
+    "concept": "same",
+    "context": "shared colour relation between the two men's shirts",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "ame colored"
+    ]
+  },
+  {
+    "node_id": "2370664_029",
+    "concept": "color",
+    "context": "attribute of the two men's shirts",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "colored shirt"
     ]
   },
   {
     "node_id": "2370664_030",
-    "concept": "friend",
-    "context": "social relationship label for the group",
-    "content_type": "object_identity",
-    "evidence_type": "speculative",
+    "concept": "two",
+    "context": "count of donuts, front teeth, or women as separately described in responses",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
     "status": "incorrect",
     "source_phrases": [
-      "friends"
+      "two front",
+      "two women"
     ]
   },
   {
     "node_id": "2370664_031",
-    "concept": "side",
-    "context": "position of the two men relative to the woman",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
+    "concept": "adult",
+    "context": "age category of the people",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
     "status": "correct",
     "source_phrases": [
-      "at either side of her"
+      "three adults"
     ]
   },
   {
     "node_id": "2370664_032",
-    "concept": "teeth",
-    "context": "visible teeth of the man on the right while biting the donut",
-    "content_type": "object_identity",
+    "concept": "either side",
+    "context": "positions of the two men relative to the woman",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "his two front teeth"
+      "either side",
+      "at eaither"
     ]
   },
   {
     "node_id": "2370664_033",
+    "concept": "sit",
+    "context": "posture of the three individuals",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "individuals sit"
+    ]
+  },
+  {
+    "node_id": "2370664_034",
+    "concept": "triangle formation",
+    "context": "arrangement of the three people in the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "triangle formation"
+    ]
+  },
+  {
+    "node_id": "2370664_035",
+    "concept": "blue",
+    "context": "colour of the men's shirts",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blue t"
+    ]
+  },
+  {
+    "node_id": "2370664_036",
+    "concept": "orange",
+    "context": "colour of the woman's shirt as alternatively described",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "orange t"
+    ]
+  },
+  {
+    "node_id": "2370664_037",
+    "concept": "glazed",
+    "context": "descriptive property of the donut",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "glazed ring"
+    ]
+  },
+  {
+    "node_id": "2370664_038",
+    "concept": "smiling",
+    "context": "facial expression directed toward the camera",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "smiling in"
+    ]
+  },
+  {
+    "node_id": "2370664_039",
+    "concept": "friend",
+    "context": "social relationship among the people",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "3 friends"
+    ]
+  },
+  {
+    "node_id": "2370664_040",
+    "concept": "teeth",
+    "context": "visible front teeth of the man on the right",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "front teeth"
+    ]
+  },
+  {
+    "node_id": "2370664_041",
     "concept": "front",
-    "context": "location attribute of the visible teeth",
+    "context": "position descriptor of the visible teeth",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
@@ -394,7 +503,7 @@
     ]
   },
   {
-    "node_id": "2370664_034",
+    "node_id": "2370664_042",
     "concept": "brown",
     "context": "colour of the woman's hair",
     "content_type": "object_attribute",
@@ -405,36 +514,59 @@
     ]
   },
   {
-    "node_id": "2370664_035",
+    "node_id": "2370664_043",
     "concept": "hair",
     "context": "the woman's hair",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "brown hair"
+      "brown hair",
+      "long hair"
     ]
   },
   {
-    "node_id": "2370664_036",
-    "concept": "close-up",
+    "node_id": "2370664_044",
+    "concept": "close up",
     "context": "framing of the photo",
     "content_type": "scene_gist",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "close up photo"
+      "close up"
     ]
   },
   {
-    "node_id": "2370664_037",
-    "concept": "photo",
-    "context": "image format being described",
+    "node_id": "2370664_045",
+    "concept": "silly faces",
+    "context": "facial expressions made by the people",
+    "content_type": "action_relation",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "silly faces"
+    ]
+  },
+  {
+    "node_id": "2370664_046",
+    "concept": "woman",
+    "context": "alternative claim that there are two women and one man",
     "content_type": "object_identity",
-    "evidence_type": "speculative",
+    "evidence_type": "literal",
     "status": "incorrect",
     "source_phrases": [
-      "photo"
+      "two women"
+    ]
+  },
+  {
+    "node_id": "2370664_047",
+    "concept": "long",
+    "context": "length attribute of the hair",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "long hair"
     ]
   }
 ]

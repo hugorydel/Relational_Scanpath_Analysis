@@ -7,21 +7,25 @@
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "two men wearing cowboy hats are on horses",
-      "two men riding horses on a beach wearing cowboy hats and boots",
-      "two men wearing cowboy hats riding horses beside water",
-      "two men middle aged in cow boy hats riding two horses along beach",
-      "two men are riding brown and white horses on the sand by the beach",
-      "2 men riding them in cowboy hats",
-      "two men with coyboy hats riding by beach",
-      "along the beach two men were riding horses",
-      "two men with cowboy hats ride horses down beach at sunset",
-      "two men riding black white and brown horses along a beach",
-      "2 men riding brown horses along the beach",
-      "two men riding horses on the beach",
-      "2 men on a beach wearing cowboy hats riding white and brown patched horses",
-      "2 men in cowboy hats on the beach riding horses",
-      "two men wearing cowboy hats were riding two horses along a beach"
+      "two men",
+      "two men",
+      "two men",
+      "two men",
+      "two men",
+      "2 men",
+      "two men",
+      "Two men",
+      "two men",
+      "two guys",
+      "two men",
+      "two men",
+      "two men",
+      "two men",
+      "2 men",
+      "two men",
+      "2 men",
+      "2 men",
+      "two men"
     ]
   },
   {
@@ -32,313 +36,229 @@
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "two men wearing cowboy hats are on horses",
-      "two men riding horses on a beach wearing cowboy hats and boots",
-      "two men wearing cowboy hats riding horses beside water",
-      "two men middle aged in cow boy hats riding two horses along beach",
-      "two men are riding brown and white horses on the sand by the beach",
-      "2 men riding them in cowboy hats",
-      "two men with coyboy hats riding by beach",
-      "along the beach two men were riding horses",
-      "two men with cowboy hats ride horses down beach at sunset",
-      "two men riding black white and brown horses along a beach",
-      "2 men riding brown horses along the beach",
-      "two men riding horses on the beach",
-      "2 men on a beach wearing cowboy hats riding white and brown patched horses",
-      "2 men in cowboy hats on the beach riding horses",
-      "two men wearing cowboy hats were riding two horses along a beach"
+      "two men",
+      "two men",
+      "two men",
+      "two men",
+      "two men",
+      "2 men",
+      "two men",
+      "Two men",
+      "two men",
+      "two guys",
+      "two men",
+      "two men",
+      "two men",
+      "two men",
+      "2 men",
+      "two men",
+      "2 men",
+      "2 men",
+      "two men"
     ]
   },
   {
     "node_id": "2394020_003",
+    "concept": "wearing",
+    "context": "relation between the men and their clothing items",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "men wearing",
+      "wearing cowboy",
+      "men wearing",
+      "men middle",
+      "men are",
+      "men riding",
+      "men with",
+      "beach wearing",
+      "they are",
+      "hats on",
+      "were wearing",
+      "men were",
+      "both wearing",
+      "with cowboy",
+      "cowboy hats",
+      "wearing cowboy",
+      "men in",
+      "wearing cowboy",
+      "men wearing"
+    ]
+  },
+  {
+    "node_id": "2394020_004",
     "concept": "cowboy hat",
     "context": "hat worn by the men",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "two men wearing cowboy hats are on horses",
-      "two men riding horses on a beach wearing cowboy hats and boots",
-      "two men wearing cowboy hats riding horses beside water",
-      "two men middle aged in cow boy hats riding two horses along beach",
-      "the men are wearing cowboy hats",
-      "2 men riding them in cowboy hats",
-      "two men with coyboy hats riding by beach",
-      "both were wearing cowbot hats",
-      "two men with cowboy hats ride horses down beach at sunset",
-      "both wearing cowboy hats",
-      "with cowboy hats on",
-      "theyre both wearing cowboy hats",
-      "2 men on a beach wearing cowboy hats riding white and brown patched horses",
-      "2 men in cowboy hats on the beach riding horses",
-      "two men wearing cowboy hats were riding two horses along a beach"
+      "cowboy hats",
+      "cowboy hats",
+      "cowboy hats",
+      "boy hats",
+      "cowboy hats",
+      "cowboy hats",
+      "coyboy hats",
+      "cowboy hats",
+      "cowboy hats",
+      "cowboy hats",
+      "cowbot hats",
+      "cowboy hats",
+      "cowboy hats",
+      "cowboy hats",
+      "cowboy hats",
+      "cowboy hats",
+      "cowboy hats",
+      "cowboy hats",
+      "cowboy hats"
     ]
   },
   {
-    "node_id": "2394020_004",
+    "node_id": "2394020_005",
     "concept": "horse",
     "context": "animals being ridden by the men",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "on horses, the horses are walking",
-      "two men riding horses on a beach",
-      "riding horses beside water",
-      "riding two horses along beach",
-      "riding brown and white horses",
-      "two horses waliing along beach",
+      "on horses",
       "riding horses",
-      "riding horses down beach",
-      "riding black white and brown horses along a beach",
-      "riding brown horses",
-      "two men riding horses on the beach",
-      "riding white and brown patched horses",
       "riding horses",
-      "riding two horses along a beach"
+      "two horses",
+      "white horses",
+      "two horses",
+      "riding by",
+      "a horse",
+      "riding horses",
+      "riding horses",
+      "riding horses",
+      "riding horses",
+      "ride horses",
+      "brown horses",
+      "riding horses",
+      "horses on",
+      "riding horses",
+      "riding horses",
+      "two horses"
     ]
   },
   {
-    "node_id": "2394020_005",
+    "node_id": "2394020_006",
     "concept": "riding",
     "context": "action performed by the men on the horses",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "two men riding horses on a beach",
-      "two men wearing cowboy hats riding horses beside water",
-      "two men are riding brown and white horses",
-      "2 men riding them in cowboy hats",
-      "two men with coyboy hats riding by beach",
-      "two men were riding horses",
-      "two men with cowboy hats ride horses",
-      "two men riding black white and brown horses",
-      "2 men riding brown horses",
-      "two men riding horses on the beach",
-      "2 men on a beach wearing cowboy hats riding white and brown patched horses",
-      "2 men in cowboy hats on the beach riding horses",
-      "two men wearing cowboy hats were riding two horses along a beach"
-    ]
-  },
-  {
-    "node_id": "2394020_006",
-    "concept": "beach",
-    "context": "overall shoreline setting where the men and horses are located",
-    "content_type": "scene_gist",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "alongside a shore",
-      "on a beach",
-      "along beach",
-      "by the beach",
-      "along beach",
-      "by beach",
-      "along the beach",
-      "down beach",
-      "along a beach",
-      "along the beach",
-      "on the beach",
-      "on a beach",
-      "on the beach",
-      "along a beach"
+      "men wearing",
+      "men riding",
+      "hats riding",
+      "are riding",
+      "men riding",
+      "hats riding",
+      "hats riding",
+      "were ridign",
+      "are riding",
+      "guys riding",
+      "men riding",
+      "men were",
+      "hats ride",
+      "men riding",
+      "riding black",
+      "men riding",
+      "hats riding",
+      "beach riding",
+      "were riding"
     ]
   },
   {
     "node_id": "2394020_007",
-    "concept": "walking",
-    "context": "motion of the horses along the shore",
-    "content_type": "action_relation",
+    "concept": "beach",
+    "context": "coastal setting where the men and horses are located",
+    "content_type": "scene_gist",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "the horses are walking alongside a shore",
-      "two horses waliing along beach"
+      "a shore",
+      "a beach",
+      "along beach",
+      "the beach",
+      "along beach",
+      "by beach",
+      "a beach",
+      "near the",
+      "the beach",
+      "the beach",
+      "the beach",
+      "a beach",
+      "down beach",
+      "a beach",
+      "the beach",
+      "a beach",
+      "the beach",
+      "the beach",
+      "a beach"
     ]
   },
   {
     "node_id": "2394020_008",
+    "concept": "along",
+    "context": "movement of the riders parallel to the beach/shore",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "walking alongside",
+      "alongside a",
+      "along beach",
+      "along the",
+      "along beach",
+      "along beach",
+      "along a",
+      "along the",
+      "along th",
+      "down a",
+      "down beach",
+      "along the"
+    ]
+  },
+  {
+    "node_id": "2394020_009",
+    "concept": "shore",
+    "context": "waterline area beside which the horses are moving",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a shore"
+    ]
+  },
+  {
+    "node_id": "2394020_010",
     "concept": "boot",
     "context": "footwear worn by the men",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "wearing cowboy hats and boots"
-    ]
-  },
-  {
-    "node_id": "2394020_009",
-    "concept": "middle aged",
-    "context": "apparent age attribute of the men",
-    "content_type": "object_attribute",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "two men middle aged in cow boy hats"
-    ]
-  },
-  {
-    "node_id": "2394020_010",
-    "concept": "brown",
-    "context": "color attribute of the horses",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "brown and white horses",
-      "the one on the right is more brown",
-      "brown horses",
-      "white and brown patched horses",
-      "left horse is white and brown",
-      "white with brown patches",
-      "riding black white and brown horses along a beach"
+      "and boots"
     ]
   },
   {
     "node_id": "2394020_011",
-    "concept": "white",
-    "context": "color attribute of the horses",
-    "content_type": "object_attribute",
+    "concept": "beside",
+    "context": "position of the riders relative to the water",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "brown and white horses",
-      "white and brown patched horses",
-      "left horse is white and brown",
-      "white with brown patches",
-      "riding black white and brown horses along a beach"
+      "horses beside"
     ]
   },
   {
     "node_id": "2394020_012",
-    "concept": "sand",
-    "context": "ground surface under the horses on the beach",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "on the sand by the beach",
-      "riding on sand"
-    ]
-  },
-  {
-    "node_id": "2394020_013",
-    "concept": "sea",
-    "context": "body of water behind the riders",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "there is the sea behind them",
-      "behind them was sea"
-    ]
-  },
-  {
-    "node_id": "2394020_014",
-    "concept": "behind",
-    "context": "position of the sea relative to the men and horses",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "the sea behind them",
-      "behind them was sea"
-    ]
-  },
-  {
-    "node_id": "2394020_015",
-    "concept": "grass",
-    "context": "patches visible on the ground near the sand",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "with few grassy patches"
-    ]
-  },
-  {
-    "node_id": "2394020_016",
-    "concept": "few",
-    "context": "count attribute of the grassy patches",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "few grassy patches"
-    ]
-  },
-  {
-    "node_id": "2394020_017",
-    "concept": "sunset",
-    "context": "time-of-day appearance in the background",
-    "content_type": "scene_gist",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "sea and then sunset",
-      "down beach at sunset"
-    ]
-  },
-  {
-    "node_id": "2394020_018",
-    "concept": "right",
-    "context": "direction of travel or side placement in the scene",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "riding from my perspective to the right",
-      "the one on the right is more brown"
-    ]
-  },
-  {
-    "node_id": "2394020_019",
-    "concept": "shirt",
-    "context": "clothing worn by the men",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "both wearing cowboy hats and shirts/jeans"
-    ]
-  },
-  {
-    "node_id": "2394020_020",
-    "concept": "jeans",
-    "context": "clothing worn by the men",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "both wearing cowboy hats and shirts/jeans"
-    ]
-  },
-  {
-    "node_id": "2394020_021",
-    "concept": "black",
-    "context": "color attribute mentioned for the horses",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "incorrect",
-    "source_phrases": [
-      "black white and brown horses"
-    ]
-  },
-  {
-    "node_id": "2394020_022",
-    "concept": "blue",
-    "context": "color attribute of the water",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "the waters are blue"
-    ]
-  },
-  {
-    "node_id": "2394020_023",
     "concept": "water",
     "context": "body of water next to the beach",
     "content_type": "object_identity",
@@ -346,25 +266,285 @@
     "status": "correct",
     "source_phrases": [
       "beside water",
-      "the waters are blue"
+      "near the",
+      "the waters",
+      "blue and"
     ]
   },
   {
-    "node_id": "2394020_024",
-    "concept": "ahead",
-    "context": "relative position of one horse compared with the other",
+    "node_id": "2394020_013",
+    "concept": "middle aged",
+    "context": "apparent age attribute of the men",
+    "content_type": "object_attribute",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "men middle"
+    ]
+  },
+  {
+    "node_id": "2394020_014",
+    "concept": "brown",
+    "context": "color of the horses",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "brown and",
+      "brown and",
+      "brown and",
+      "white and",
+      "were brown",
+      "and brown",
+      "brown horses",
+      "and brown",
+      "more brown",
+      "with brown"
+    ]
+  },
+  {
+    "node_id": "2394020_015",
+    "concept": "white",
+    "context": "color of the horses",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "and white",
+      "white horses",
+      "brown and",
+      "both white",
+      "white and",
+      "white and",
+      "is white",
+      "white with"
+    ]
+  },
+  {
+    "node_id": "2394020_016",
+    "concept": "sand",
+    "context": "ground surface of the beach under the horses",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the sand",
+      "on sand"
+    ]
+  },
+  {
+    "node_id": "2394020_017",
+    "concept": "sea",
+    "context": "body of water behind the riders",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the sea",
+      "was sea"
+    ]
+  },
+  {
+    "node_id": "2394020_018",
+    "concept": "behind",
+    "context": "position of the sea relative to the riders",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "one horse is slightly ahead of the other"
+      "sea behind",
+      "behind them"
+    ]
+  },
+  {
+    "node_id": "2394020_019",
+    "concept": "walking",
+    "context": "motion of the horses along the beach",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "horses are",
+      "horses waliing"
+    ]
+  },
+  {
+    "node_id": "2394020_020",
+    "concept": "few",
+    "context": "count-related attribute of the grassy patches",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "with few"
+    ]
+  },
+  {
+    "node_id": "2394020_021",
+    "concept": "patch",
+    "context": "small areas of grass on the sand",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "grassy patches"
+    ]
+  },
+  {
+    "node_id": "2394020_022",
+    "concept": "grassy",
+    "context": "appearance/material attribute of the patches on the sand",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "grassy patches"
+    ]
+  },
+  {
+    "node_id": "2394020_023",
+    "concept": "sunset",
+    "context": "time-of-day appearance in the background sky",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "then sunset",
+      "at sunset"
+    ]
+  },
+  {
+    "node_id": "2394020_024",
+    "concept": "checkered",
+    "context": "pattern attribute of the men's shirts",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "checkered shirts",
+      "chequered shirts"
     ]
   },
   {
     "node_id": "2394020_025",
-    "concept": "slightly",
-    "context": "degree modifier of how far ahead one horse is",
+    "concept": "shirt",
+    "context": "upper-body clothing worn by the men",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "checkered shirts",
+      "chequered shirts",
+      "and shirts"
+    ]
+  },
+  {
+    "node_id": "2394020_026",
+    "concept": "ocean",
+    "context": "body of water visible at the beachfront",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the ocean"
+    ]
+  },
+  {
+    "node_id": "2394020_027",
+    "concept": "visible",
+    "context": "stated visibility of the ocean in the scene",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "was visible"
+    ]
+  },
+  {
+    "node_id": "2394020_028",
+    "concept": "right",
+    "context": "direction of rider movement or side of image for one horse",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the right",
+      "on the",
+      "one the"
+    ]
+  },
+  {
+    "node_id": "2394020_029",
+    "concept": "black",
+    "context": "color mentioned for one of the horses",
     "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "riding black"
+    ]
+  },
+  {
+    "node_id": "2394020_030",
+    "concept": "perspective",
+    "context": "viewer-centered reference for direction in the image",
+    "content_type": "spatial_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "my perspective"
+    ]
+  },
+  {
+    "node_id": "2394020_031",
+    "concept": "jean",
+    "context": "lower-body clothing worn by the men",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "shirts/jeans"
+    ]
+  },
+  {
+    "node_id": "2394020_032",
+    "concept": "blue",
+    "context": "color of the water",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "are blue"
+    ]
+  },
+  {
+    "node_id": "2394020_033",
+    "concept": "one",
+    "context": "count of a single horse referenced in comparison",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one horse",
+      "the one"
+    ]
+  },
+  {
+    "node_id": "2394020_034",
+    "concept": "slightly",
+    "context": "degree modifier for one horse being ahead",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "is slightly"
+    ]
+  },
+  {
+    "node_id": "2394020_035",
+    "concept": "ahead",
+    "context": "relative position of one horse compared with the other",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
@@ -372,81 +552,92 @@
     ]
   },
   {
-    "node_id": "2394020_026",
+    "node_id": "2394020_036",
     "concept": "landscape",
-    "context": "image orientation or framing",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "its a landscape image"
-    ]
-  },
-  {
-    "node_id": "2394020_027",
-    "concept": "left",
-    "context": "side placement of one horse in the scene",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "the left horse is white and brown"
-    ]
-  },
-  {
-    "node_id": "2394020_028",
-    "concept": "patch",
-    "context": "marking pattern on the horses' coats",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "white and brown patched horses",
-      "white with brown patches"
-    ]
-  },
-  {
-    "node_id": "2394020_029",
-    "concept": "daytime",
-    "context": "time-of-day description of the scene",
+    "context": "overall image orientation/format",
     "content_type": "scene_gist",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "it was daytime"
+      "a landscape"
     ]
   },
   {
-    "node_id": "2394020_030",
-    "concept": "similarly coloured",
-    "context": "shared appearance attribute of both horses",
-    "content_type": "object_attribute",
+    "node_id": "2394020_037",
+    "concept": "left",
+    "context": "side of the image where one horse is located",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "both horses were similarly coloured"
+      "the left"
     ]
   },
   {
-    "node_id": "2394020_031",
-    "concept": "saddle",
-    "context": "equipment on the horses",
+    "node_id": "2394020_038",
+    "concept": "patch",
+    "context": "markings on the horses' coats",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "both horses had saddles on"
+      "brown patched",
+      "brown patches"
     ]
   },
   {
-    "node_id": "2394020_032",
+    "node_id": "2394020_039",
+    "concept": "saddle",
+    "context": "tack on the horses being ridden",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "had saddles"
+    ]
+  },
+  {
+    "node_id": "2394020_040",
+    "concept": "daytime",
+    "context": "time-of-day of the scene",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "was daytime"
+    ]
+  },
+  {
+    "node_id": "2394020_041",
+    "concept": "similar",
+    "context": "comparative attribute of the horses' coloring",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "were similarly"
+    ]
+  },
+  {
+    "node_id": "2394020_042",
+    "concept": "mid",
+    "context": "temporal/stage attribute of the horses' motion",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "were mid"
+    ]
+  },
+  {
+    "node_id": "2394020_043",
     "concept": "gallop",
-    "context": "gait or motion of the horses",
+    "context": "gait of the horses while moving on the beach",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "both horses were mid gallop"
+      "mid gallop"
     ]
   }
 ]

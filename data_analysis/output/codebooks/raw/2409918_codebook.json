@@ -8,46 +8,103 @@
     "status": "correct",
     "source_phrases": [
       "two elephants",
+      "2 elephants",
+      "two elephants",
+      "two elephants",
+      "two elephants",
+      "two grey elephants",
+      "two elephants",
+      "two elephants",
+      "Two men were riding on elephants",
+      "two elephants",
+      "two elephants",
+      "two elephants",
+      "two elephants",
+      "two elephants",
+      "two elephants",
+      "2 men sit on top of elephants",
+      "two elephants",
+      "two elephants",
+      "2 elephants",
       "2 elephants"
     ]
   },
   {
     "node_id": "2409918_002",
     "concept": "elephant",
-    "context": "main animals depicted in the scene",
+    "context": "main animals in the scene",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "elephants",
-      "elephant"
+      "two elephants",
+      "2 elephants",
+      "two elephants",
+      "two elephants",
+      "two elephants",
+      "two grey elephants",
+      "two elephants",
+      "elephant on right",
+      "One of the elephants",
+      "two elephants",
+      "elephants were being cleaned",
+      "two elephants",
+      "two elephants",
+      "two elephants",
+      "two elephants",
+      "top of elephants",
+      "two elephants",
+      "one of the left",
+      "2 elephants",
+      "2 elephants"
     ]
   },
   {
     "node_id": "2409918_003",
-    "concept": "water",
-    "context": "substance surrounding the elephants",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "in water",
-      "the water was brown",
-      "blue green water",
-      "water/lake"
-    ]
-  },
-  {
-    "node_id": "2409918_004",
     "concept": "man",
-    "context": "human riders on the elephants",
+    "context": "people riding or positioned on the elephants",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "two men",
-      "man",
-      "people"
+      "2 men",
+      "one man",
+      "two men",
+      "two men",
+      "two men",
+      "people on",
+      "shirtless man",
+      "Two men",
+      "two men",
+      "two men",
+      "two men",
+      "men sat",
+      "shirtless man",
+      "2 men",
+      "two men",
+      "a man",
+      "men on",
+      "man on",
+      "two men"
+    ]
+  },
+  {
+    "node_id": "2409918_004",
+    "concept": "sit",
+    "context": "posture/action of the men on the elephants",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "men sitting",
+      "men sat",
+      "men sat",
+      "guys sat",
+      "men sat",
+      "men sit",
+      "man sits",
+      "man sitting"
     ]
   },
   {
@@ -59,88 +116,142 @@
     "status": "correct",
     "source_phrases": [
       "on top of",
-      "on top",
-      "on them"
+      "on top of",
+      "man on each",
+      "men on them",
+      "riding them",
+      "on the backs",
+      "top of elephants",
+      "on their backs",
+      "sat on their backs",
+      "on their backs",
+      "on top of",
+      "standing on top",
+      "sitting on top",
+      "stood on top",
+      "man on top",
+      "on top of"
     ]
   },
   {
     "node_id": "2409918_006",
-    "concept": "sitting",
-    "context": "posture of a man on an elephant",
-    "content_type": "action_relation",
+    "concept": "water",
+    "context": "medium surrounding the elephants",
+    "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "sitting",
-      "sat on top",
-      "sit on top",
-      "sits on the elephant"
+      "in water",
+      "in a river",
+      "in water",
+      "in water",
+      "in water",
+      "in water",
+      "blue green water",
+      "in a stream",
+      "deep water",
+      "in the water",
+      "in water",
+      "in water",
+      "in water",
+      "sat in the water",
+      "in water",
+      "in a stream",
+      "in water",
+      "in water",
+      "in water",
+      "in water"
     ]
   },
   {
     "node_id": "2409918_007",
+    "concept": "river",
+    "context": "possible type of water setting",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a river",
+      "in a river",
+      "stream or river"
+    ]
+  },
+  {
+    "node_id": "2409918_008",
     "concept": "right",
-    "context": "identifies the elephant on the right side of the scene",
+    "context": "location of the elephant that is eating",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "on the right",
-      "the elephant on the right",
-      "man on the right"
+      "on the right",
+      "on the right",
+      "on right",
+      "the right",
+      "elephant on the right",
+      "man on the right",
+      "on the right",
+      "one on the right",
+      "the right",
+      "on the right",
+      "elephant on the right"
     ]
   },
   {
-    "node_id": "2409918_008",
-    "concept": "eating",
+    "node_id": "2409918_009",
+    "concept": "eat",
     "context": "action performed by an elephant",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "is eating",
+      "was eating",
+      "is eating",
+      "is eating",
+      "fed plants",
+      "was eating",
+      "was eating",
+      "to eat",
+      "is eating",
       "were eating",
+      "eating leaves",
+      "was eating",
+      "was eating",
+      "uses its trunk to get leaves",
+      "are eating",
+      "eating leaves",
+      "was eating",
       "was eating"
     ]
   },
   {
-    "node_id": "2409918_009",
+    "node_id": "2409918_010",
     "concept": "plant",
-    "context": "item being eaten by the elephant",
+    "context": "vegetation being eaten by the elephant",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "plants",
+      "eating plants",
       "a plant",
-      "from a plant"
-    ]
-  },
-  {
-    "node_id": "2409918_010",
-    "concept": "one",
-    "context": "count of man per elephant",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "one man on each",
-      "one elephant is eating a plant"
+      "a plant",
+      "plants on",
+      "from a plant",
+      "eating plants",
+      "eating leaves",
+      "some food",
+      "eating greenery",
+      "eating leaves",
+      "eating plants",
+      "get leaves",
+      "eating leaves",
+      "eating plants"
     ]
   },
   {
     "node_id": "2409918_011",
-    "concept": "each",
-    "context": "distribution of one man to each elephant",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "one man on each"
-    ]
-  },
-  {
-    "node_id": "2409918_012",
     "concept": "grey",
     "context": "color of the elephants",
     "content_type": "object_attribute",
@@ -151,66 +262,88 @@
     ]
   },
   {
-    "node_id": "2409918_013",
-    "concept": "swimming",
-    "context": "action attributed to the elephants in the water",
+    "node_id": "2409918_012",
+    "concept": "swim",
+    "context": "movement of the elephants in the water",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "are swimming"
+      "are swimming",
+      "were swimming",
+      "were swimming",
+      "swimming in water",
+      "swimming or sat"
     ]
   },
   {
-    "node_id": "2409918_014",
+    "node_id": "2409918_013",
     "concept": "cave",
-    "context": "purported surrounding environment of the water",
+    "context": "described surrounding environment of the water",
     "content_type": "scene_gist",
     "evidence_type": "speculative",
     "status": "incorrect",
     "source_phrases": [
-      "water of a cave"
+      "of a cave"
+    ]
+  },
+  {
+    "node_id": "2409918_014",
+    "concept": "ride",
+    "context": "action of the men on the elephants",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "are riding",
+      "riding them",
+      "were riding"
     ]
   },
   {
     "node_id": "2409918_015",
-    "concept": "riding",
-    "context": "action performed by the men on the elephants",
-    "content_type": "action_relation",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "riding them"
-    ]
-  },
-  {
-    "node_id": "2409918_016",
     "concept": "back",
-    "context": "part of the elephant where the men are positioned",
+    "context": "body location of the elephants where the men are positioned",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "on the backs",
-      "with men on their backs"
+      "the backs",
+      "their backs",
+      "their backs",
+      "their backs",
+      "thier backs"
+    ]
+  },
+  {
+    "node_id": "2409918_016",
+    "concept": "person",
+    "context": "alternative reference to people on the elephants",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "people on"
     ]
   },
   {
     "node_id": "2409918_017",
     "concept": "shirtless",
-    "context": "attribute of one man riding an elephant",
+    "context": "attribute of one or both men on the elephants",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "shirtless",
-      "one man is shirtless"
+      "is shirtless",
+      "shirtless man",
+      "shirtless man",
+      "shirtless man"
     ]
   },
   {
     "node_id": "2409918_018",
-    "concept": "blue",
-    "context": "color attributed to the water",
+    "concept": "blue green",
+    "context": "color of the water",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
@@ -220,42 +353,19 @@
   },
   {
     "node_id": "2409918_019",
-    "concept": "green",
-    "context": "color attributed to the water or branch being eaten",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "blue green water",
-      "green branch"
-    ]
-  },
-  {
-    "node_id": "2409918_020",
     "concept": "lake",
-    "context": "purported type of water setting",
+    "context": "possible type of water setting",
     "content_type": "scene_gist",
-    "evidence_type": "latent",
-    "status": "correct",
+    "evidence_type": "speculative",
+    "status": "incorrect",
     "source_phrases": [
       "water/lake"
     ]
   },
   {
-    "node_id": "2409918_021",
-    "concept": "leaf",
-    "context": "item being eaten by the elephant",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "leaves"
-    ]
-  },
-  {
-    "node_id": "2409918_022",
+    "node_id": "2409918_020",
     "concept": "shirt",
-    "context": "garment worn by one man",
+    "context": "clothing worn by the man on the left elephant",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
@@ -264,129 +374,210 @@
     ]
   },
   {
-    "node_id": "2409918_023",
-    "concept": "wearing",
-    "context": "relation between the man and his shirt",
+    "node_id": "2409918_021",
+    "concept": "left",
+    "context": "location of one elephant or man in the scene",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "man on left",
+      "on the left",
+      "man on the left",
+      "on the left",
+      "one on the left"
+    ]
+  },
+  {
+    "node_id": "2409918_022",
+    "concept": "wade",
+    "context": "movement of the elephants through the water",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "was wearing a shirt"
+      "wading through"
+    ]
+  },
+  {
+    "node_id": "2409918_023",
+    "concept": "deep",
+    "context": "depth attribute of the water",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "deep water"
     ]
   },
   {
     "node_id": "2409918_024",
-    "concept": "cleaning",
+    "concept": "leg",
+    "context": "body part of the man on the right positioned up on the elephant",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one leg up"
+    ]
+  },
+  {
+    "node_id": "2409918_025",
+    "concept": "up",
+    "context": "position of the man's leg relative to the elephant",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "leg up"
+    ]
+  },
+  {
+    "node_id": "2409918_026",
+    "concept": "stick",
+    "context": "object held by the man on the left",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a stick"
+    ]
+  },
+  {
+    "node_id": "2409918_027",
+    "concept": "clean",
     "context": "action allegedly performed by the men toward the elephants",
     "content_type": "action_relation",
     "evidence_type": "speculative",
     "status": "incorrect",
     "source_phrases": [
-      "being cleaned by two men",
-      "they were being cleaned"
-    ]
-  },
-  {
-    "node_id": "2409918_025",
-    "concept": "stream",
-    "context": "purported type of water setting",
-    "content_type": "scene_gist",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "in a stream"
-    ]
-  },
-  {
-    "node_id": "2409918_026",
-    "concept": "left",
-    "context": "identifies the elephant or man on the left side of the scene",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "on the left",
-      "the one on the left",
-      "man on left"
-    ]
-  },
-  {
-    "node_id": "2409918_027",
-    "concept": "standing",
-    "context": "posture of a man on an elephant",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "stands",
-      "stood on top",
-      "standing on top"
+      "being cleaned"
     ]
   },
   {
     "node_id": "2409918_028",
-    "concept": "body of water",
-    "context": "general setting containing the elephants",
-    "content_type": "scene_gist",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "body of water"
-    ]
-  },
-  {
-    "node_id": "2409918_029",
-    "concept": "branch",
-    "context": "item being eaten by the elephant",
+    "concept": "waterfall",
+    "context": "background element behind the elephants",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "branch"
+      "a waterfall"
+    ]
+  },
+  {
+    "node_id": "2409918_029",
+    "concept": "behind",
+    "context": "position of the waterfall relative to the elephants",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "behind them"
     ]
   },
   {
     "node_id": "2409918_030",
     "concept": "trunk",
-    "context": "body part used by the elephant to eat plants",
+    "context": "body part used by the elephant to get or eat vegetation",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "with its trunk"
+      "their trunk",
+      "its trunk",
+      "uses its trunk"
     ]
   },
   {
     "node_id": "2409918_031",
-    "concept": "talking",
-    "context": "interaction allegedly occurring between the two men",
-    "content_type": "action_relation",
-    "evidence_type": "speculative",
-    "status": "incorrect",
+    "concept": "tree",
+    "context": "source of the leaves being taken by the elephant",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
     "source_phrases": [
-      "they looked like they were talking to each other"
+      "from a tree"
     ]
   },
   {
     "node_id": "2409918_032",
-    "concept": "to each other",
-    "context": "reciprocal relation between the two men",
-    "content_type": "spatial_relation",
+    "concept": "smile",
+    "context": "facial expression attributed to the men",
+    "content_type": "action_relation",
     "evidence_type": "speculative",
     "status": "incorrect",
     "source_phrases": [
-      "to each other"
+      "are smiling"
     ]
   },
   {
     "node_id": "2409918_033",
-    "concept": "brown",
-    "context": "color attributed to the water",
+    "concept": "stream",
+    "context": "type of water setting",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a stream",
+      "in a stream"
+    ]
+  },
+  {
+    "node_id": "2409918_034",
+    "concept": "stand",
+    "context": "posture/action of a man on an elephant",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "man stands",
+      "stood on top",
+      "man standing"
+    ]
+  },
+  {
+    "node_id": "2409918_035",
+    "concept": "branch",
+    "context": "vegetation being eaten by the elephant",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "green branch"
+    ]
+  },
+  {
+    "node_id": "2409918_036",
+    "concept": "green",
+    "context": "color of the branch being eaten",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "the water was brown"
+      "green branch"
+    ]
+  },
+  {
+    "node_id": "2409918_037",
+    "concept": "talk",
+    "context": "interaction inferred between the two men",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "were talking"
+    ]
+  },
+  {
+    "node_id": "2409918_038",
+    "concept": "brown",
+    "context": "color of the water",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "water was brown"
     ]
   }
 ]

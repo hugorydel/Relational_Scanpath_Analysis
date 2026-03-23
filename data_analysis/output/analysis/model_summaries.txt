@@ -1,6 +1,6 @@
 
 === Encoding SVG and proportion DV descriptives ===
-  svg_z_enc:     n=572, mean=1.323, sd=1.439, %>0=80.1%
+  svg_z_enc:     n=632, mean=1.324, sd=1.436, %>0=80.1%
   prop_total    : n=559, mean=0.575, sd=0.235, range=[0.000, 1.000]
   prop_relations: n=559, mean=0.482, sd=0.278, range=[0.000, 1.000]
   prop_objects  : n=559, mean=0.577, sd=0.240, range=[0.000, 1.000]
@@ -15,11 +15,11 @@ H1_svg_enc: H1: Encoding SVG — intercept test (mean SVG > 0?)
 ============================================================
 Mode: ttest
 H1 one-sample t-test (participant means vs 0)
-  N participants : 20
-  Grand mean SVG : 1.3186  (SE=0.0593)
-  t(19)        : 22.222
+  N participants : 22
+  Grand mean SVG : 1.3204  (SE=0.0614)
+  t(21)        : 21.494
   p (two-tailed) : 0.0000
-  95% CI         : [1.1944, 1.4427]
+  95% CI         : [1.1926, 1.4481]
   % trials > 0   : 80.1%
 Converged: True
 
@@ -28,12 +28,12 @@ H1_svg_dec: H1: Decoding SVG — intercept test (mean SVG > 0?)
 ============================================================
 Mode: ttest
 H1 one-sample t-test (participant means vs 0)
-  N participants : 20
-  Grand mean SVG : 0.2414  (SE=0.0522)
-  t(19)        : 4.627
-  p (two-tailed) : 0.0002
-  95% CI         : [0.1322, 0.3507]
-  % trials > 0   : 59.3%
+  N participants : 22
+  Grand mean SVG : 0.2012  (SE=0.0580)
+  t(21)        : 3.472
+  p (two-tailed) : 0.0023
+  95% CI         : [0.0807, 0.3218]
+  % trials > 0   : 57.8%
 Converged: True
 
 
@@ -46,23 +46,23 @@ H2_total: H2 overall: Encoding SVG (within-image) → total node recall proporti
 ============================================================
 Mode: lmm
                   Mixed Linear Model Regression Results
-=========================================================================
-Model:                   MixedLM      Dependent Variable:      prop_total
-No. Observations:        553          Method:                  REML      
-No. Groups:              20           Scale:                   0.0257    
-Min. group size:         15           Log-Likelihood:          6.5081    
-Max. group size:         30           Converged:               Yes       
-Mean group size:         27.6                                            
--------------------------------------------------------------------------
-                               Coef.  Std.Err.   z    P>|z| [0.025 0.975]
--------------------------------------------------------------------------
-Intercept                       0.573    0.010 57.977 0.000  0.554  0.592
-svg_z_enc_within_z              0.026    0.010  2.516 0.012  0.006  0.045
-n_fixations_enc_z               0.027    0.010  2.680 0.007  0.007  0.047
-mean_salience_relational_enc_z -0.004    0.010 -0.443 0.658 -0.024  0.015
-svg_z_enc_image_mean_z          0.010    0.010  0.979 0.327 -0.010  0.029
-StimID Var                      0.028                                    
-=========================================================================
+==========================================================================
+Model:                  MixedLM       Dependent Variable:       prop_total
+No. Observations:       553           Method:                   REML      
+No. Groups:             20            Scale:                    0.0270    
+Min. group size:        15            Log-Likelihood:           6.2880    
+Max. group size:        30            Converged:                Yes       
+Mean group size:        27.6                                              
+--------------------------------------------------------------------------
+                               Coef.  Std.Err.    z    P>|z| [0.025 0.975]
+--------------------------------------------------------------------------
+Intercept                       0.572    0.002 300.011 0.000  0.569  0.576
+svg_z_enc_within_z              0.024    0.010   2.324 0.020  0.004  0.044
+n_fixations_enc_z               0.027    0.010   2.731 0.006  0.008  0.046
+mean_salience_relational_enc_z -0.004    0.010  -0.411 0.681 -0.024  0.015
+svg_z_enc_image_mean_z          0.012    0.010   1.198 0.231 -0.008  0.031
+StimID Var                      0.027                                     
+==========================================================================
 
 Converged: True
 
@@ -70,24 +70,24 @@ Converged: True
 H2_relations: H2 relations: Encoding SVG (within-image) → relational recall proportion (action + spatial)
 ============================================================
 Mode: lmm
-                   Mixed Linear Model Regression Results
-===========================================================================
-Model:                 MixedLM      Dependent Variable:      prop_relations
-No. Observations:      553          Method:                  REML          
-No. Groups:            20           Scale:                   0.0376        
-Min. group size:       15           Log-Likelihood:          -86.1100      
-Max. group size:       30           Converged:               Yes           
-Mean group size:       27.6                                                
----------------------------------------------------------------------------
-                               Coef.   Std.Err.    z    P>|z| [0.025 0.975]
----------------------------------------------------------------------------
-Intercept                      0.481       0.012 41.100 0.000  0.458  0.504
-svg_z_enc_within_z             0.023       0.012  1.936 0.053 -0.000  0.047
-n_fixations_enc_z              0.025       0.012  2.085 0.037  0.002  0.048
-mean_salience_relational_enc_z 0.004       0.012  0.373 0.709 -0.019  0.028
-svg_z_enc_image_mean_z         0.026       0.012  2.161 0.031  0.002  0.049
-StimID Var                     0.038 1103911.372                           
-===========================================================================
+                  Mixed Linear Model Regression Results
+==========================================================================
+Model:                  MixedLM     Dependent Variable:     prop_relations
+No. Observations:       553         Method:                 REML          
+No. Groups:             20          Scale:                  0.0373        
+Min. group size:        15          Log-Likelihood:         -85.9287      
+Max. group size:        30          Converged:              Yes           
+Mean group size:        27.6                                              
+--------------------------------------------------------------------------
+                               Coef.  Std.Err.    z    P>|z| [0.025 0.975]
+--------------------------------------------------------------------------
+Intercept                      0.480      0.012 41.060 0.000  0.458  0.503
+svg_z_enc_within_z             0.021      0.012  1.753 0.080 -0.002  0.045
+n_fixations_enc_z              0.025      0.012  2.132 0.033  0.002  0.048
+mean_salience_relational_enc_z 0.005      0.012  0.388 0.698 -0.018  0.028
+svg_z_enc_image_mean_z         0.028      0.012  2.377 0.017  0.005  0.051
+StimID Var                     0.038 956120.004                           
+==========================================================================
 
 Converged: True
 
@@ -99,19 +99,19 @@ Mode: lmm
 ============================================================================
 Model:                  MixedLM       Dependent Variable:       prop_objects
 No. Observations:       553           Method:                   REML        
-No. Groups:             20            Scale:                    0.0267      
-Min. group size:        15            Log-Likelihood:           -4.6450     
+No. Groups:             20            Scale:                    0.0278      
+Min. group size:        15            Log-Likelihood:           -4.7993     
 Max. group size:        30            Converged:                Yes         
 Mean group size:        27.6                                                
 ----------------------------------------------------------------------------
                                Coef.    Std.Err.    z    P>|z| [0.025 0.975]
 ----------------------------------------------------------------------------
-Intercept                       0.575       0.010 57.024 0.000  0.555  0.595
-svg_z_enc_within_z              0.026       0.010  2.546 0.011  0.006  0.047
-n_fixations_enc_z               0.018       0.010  1.742 0.081 -0.002  0.038
-mean_salience_relational_enc_z -0.021       0.010 -2.017 0.044 -0.041 -0.001
-svg_z_enc_image_mean_z         -0.009       0.010 -0.866 0.386 -0.029  0.011
-StimID Var                      0.029 1575843.834                           
+Intercept                       0.575       0.010 56.973 0.000  0.555  0.595
+svg_z_enc_within_z              0.026       0.010  2.508 0.012  0.006  0.047
+n_fixations_enc_z               0.017       0.010  1.704 0.088 -0.003  0.037
+mean_salience_relational_enc_z -0.020       0.010 -1.984 0.047 -0.040 -0.000
+svg_z_enc_image_mean_z         -0.009       0.010 -0.857 0.391 -0.029  0.011
+StimID Var                      0.028 1494622.789                           
 ============================================================================
 
 Converged: True
@@ -120,24 +120,24 @@ Converged: True
 H2_dec_total: H2 decoding overall: Decoding SVG (within-image) → total node recall proportion
 ============================================================
 Mode: lmm
-                  Mixed Linear Model Regression Results
-=========================================================================
-Model:                   MixedLM      Dependent Variable:      prop_total
-No. Observations:        270          Method:                  REML      
-No. Groups:              20           Scale:                   0.0271    
-Min. group size:         3            Log-Likelihood:          -3.4438   
-Max. group size:         22           Converged:               Yes       
-Mean group size:         13.5                                            
--------------------------------------------------------------------------
-                               Coef.  Std.Err.   z    P>|z| [0.025 0.975]
--------------------------------------------------------------------------
-Intercept                       0.597    0.014 41.323 0.000  0.569  0.625
-svg_z_dec_within_z              0.012    0.015  0.792 0.429 -0.017  0.040
-n_fixations_dec_z               0.002    0.014  0.142 0.887 -0.026  0.030
-mean_salience_relational_dec_z  0.016    0.014  1.208 0.227 -0.010  0.043
-svg_z_dec_image_mean_z         -0.010    0.015 -0.624 0.533 -0.039  0.020
-StimID Var                      0.027                                    
-=========================================================================
+                   Mixed Linear Model Regression Results
+============================================================================
+Model:                    MixedLM       Dependent Variable:       prop_total
+No. Observations:         270           Method:                   REML      
+No. Groups:               20            Scale:                    0.0271    
+Min. group size:          3             Log-Likelihood:           -3.5689   
+Max. group size:          22            Converged:                Yes       
+Mean group size:          13.5                                              
+----------------------------------------------------------------------------
+                               Coef.    Std.Err.    z    P>|z| [0.025 0.975]
+----------------------------------------------------------------------------
+Intercept                       0.596       0.015 41.036 0.000  0.568  0.625
+svg_z_dec_within_z              0.010       0.015  0.698 0.485 -0.019  0.039
+n_fixations_dec_z               0.003       0.015  0.176 0.861 -0.026  0.031
+mean_salience_relational_dec_z  0.018       0.014  1.245 0.213 -0.010  0.046
+svg_z_dec_image_mean_z         -0.006       0.015 -0.371 0.710 -0.036  0.024
+StimID Var                      0.027 4511141.558                           
+============================================================================
 
 Converged: True
 
@@ -146,23 +146,23 @@ H2_dec_relations: H2 decoding relations: Decoding SVG (within-image) → relatio
 ============================================================
 Mode: lmm
                   Mixed Linear Model Regression Results
-==========================================================================
-Model:                  MixedLM     Dependent Variable:     prop_relations
-No. Observations:       270         Method:                 REML          
-No. Groups:             20          Scale:                  0.0398        
-Min. group size:        3           Log-Likelihood:         -54.5080      
-Max. group size:        22          Converged:              Yes           
-Mean group size:        13.5                                              
---------------------------------------------------------------------------
-                               Coef.  Std.Err.    z    P>|z| [0.025 0.975]
---------------------------------------------------------------------------
-Intercept                       0.503    0.005 102.547 0.000  0.493  0.512
-svg_z_dec_within_z              0.008    0.018   0.478 0.632 -0.026  0.043
-n_fixations_dec_z               0.023    0.017   1.323 0.186 -0.011  0.057
-mean_salience_relational_dec_z  0.027    0.016   1.640 0.101 -0.005  0.059
-svg_z_dec_image_mean_z         -0.002    0.018  -0.099 0.921 -0.038  0.034
-StimID Var                      0.040                                     
-==========================================================================
+=========================================================================
+Model:                 MixedLM     Dependent Variable:     prop_relations
+No. Observations:      270         Method:                 REML          
+No. Groups:            20          Scale:                  0.0378        
+Min. group size:       3           Log-Likelihood:         -54.3812      
+Max. group size:       22          Converged:              Yes           
+Mean group size:       13.5                                              
+-------------------------------------------------------------------------
+                               Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+-------------------------------------------------------------------------
+Intercept                       0.503    0.018 28.571 0.000  0.468  0.537
+svg_z_dec_within_z              0.009    0.018  0.523 0.601 -0.026  0.044
+n_fixations_dec_z               0.023    0.018  1.319 0.187 -0.011  0.058
+mean_salience_relational_dec_z  0.029    0.017  1.657 0.098 -0.005  0.063
+svg_z_dec_image_mean_z         -0.004    0.019 -0.232 0.817 -0.041  0.032
+StimID Var                      0.042                                    
+=========================================================================
 
 Converged: True
 
@@ -170,24 +170,24 @@ Converged: True
 H2_dec_objects: H2 decoding objects: Decoding SVG (within-image) → object recall proportion (identity + attribute)
 ============================================================
 Mode: lmm
-                   Mixed Linear Model Regression Results
-============================================================================
-Model:                  MixedLM       Dependent Variable:       prop_objects
-No. Observations:       270           Method:                   REML        
-No. Groups:             20            Scale:                    0.0277      
-Min. group size:        3             Log-Likelihood:           -6.4840     
-Max. group size:        22            Converged:                Yes         
-Mean group size:        13.5                                                
-----------------------------------------------------------------------------
-                               Coef.    Std.Err.    z    P>|z| [0.025 0.975]
-----------------------------------------------------------------------------
-Intercept                       0.600       0.015 41.086 0.000  0.572  0.629
-svg_z_dec_within_z              0.013       0.015  0.844 0.399 -0.017  0.042
-n_fixations_dec_z              -0.001       0.015 -0.051 0.960 -0.029  0.028
-mean_salience_relational_dec_z -0.006       0.014 -0.401 0.689 -0.032  0.021
-svg_z_dec_image_mean_z         -0.001       0.015 -0.060 0.952 -0.031  0.029
-StimID Var                      0.028 1334963.604                           
-============================================================================
+                  Mixed Linear Model Regression Results
+=========================================================================
+Model:                 MixedLM      Dependent Variable:      prop_objects
+No. Observations:      270          Method:                  REML        
+No. Groups:            20           Scale:                   0.0277      
+Min. group size:       3            Log-Likelihood:          -6.4758     
+Max. group size:       22           Converged:               Yes         
+Mean group size:       13.5                                              
+-------------------------------------------------------------------------
+                               Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+-------------------------------------------------------------------------
+Intercept                       0.599    0.014 44.092 0.000  0.573  0.626
+svg_z_dec_within_z              0.011    0.014  0.797 0.425 -0.016  0.039
+n_fixations_dec_z              -0.001    0.012 -0.044 0.965 -0.024  0.023
+mean_salience_relational_dec_z -0.006    0.014 -0.410 0.682 -0.033  0.021
+svg_z_dec_image_mean_z          0.003    0.014  0.231 0.818 -0.023  0.030
+StimID Var                      0.028                                    
+=========================================================================
 
 Converged: True
 
@@ -205,19 +205,19 @@ Mode: lmm
 Model:                    MixedLM       Dependent Variable:       score  
 No. Observations:         1106          Method:                   REML   
 No. Groups:               20            Scale:                    0.0319 
-Min. group size:          30            Log-Likelihood:           -4.1135
+Min. group size:          30            Log-Likelihood:           -4.2655
 Max. group size:          60            Converged:                Yes    
 Mean group size:          55.3                                           
 -------------------------------------------------------------------------
                                Coef.  Std.Err.   z    P>|z| [0.025 0.975]
 -------------------------------------------------------------------------
-Intercept                       0.575    0.011 52.502 0.000  0.554  0.597
-svg_z_enc_within_z              0.026    0.011  2.305 0.021  0.004  0.048
-memory_type                    -0.094    0.011 -8.738 0.000 -0.115 -0.073
-svg_z_enc_within_z:memory_type -0.002    0.011 -0.188 0.851 -0.023  0.019
-n_fixations_enc_z               0.021    0.010  2.199 0.028  0.002  0.041
-mean_salience_relational_enc_z -0.008    0.010 -0.837 0.403 -0.027  0.011
-svg_z_enc_image_mean_z          0.008    0.010  0.867 0.386 -0.011  0.027
+Intercept                       0.575    0.011 52.444 0.000  0.553  0.596
+svg_z_enc_within_z              0.025    0.011  2.255 0.024  0.003  0.048
+memory_type                    -0.094    0.011 -8.736 0.000 -0.115 -0.073
+svg_z_enc_within_z:memory_type -0.004    0.011 -0.322 0.747 -0.025  0.018
+n_fixations_enc_z               0.021    0.010  2.206 0.027  0.002  0.040
+mean_salience_relational_enc_z -0.008    0.010 -0.810 0.418 -0.027  0.011
+svg_z_enc_image_mean_z          0.010    0.010  1.003 0.316 -0.009  0.029
 StimID Var                      0.034    0.024                           
 =========================================================================
 

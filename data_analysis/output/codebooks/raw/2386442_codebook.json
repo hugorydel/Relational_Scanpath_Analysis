@@ -2,135 +2,183 @@
   {
     "node_id": "2386442_001",
     "concept": "woman",
-    "context": "person brushing teeth on the left side of the group",
+    "context": "adult female person in the group brushing teeth",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "a woman",
-      "woman",
+      "woman and",
       "one woman",
-      "woman man and child",
-      "three people, a man, woman and child",
-      "mum",
-      "a woman was on the left",
-      "mum baby dad",
-      "a woman man and ababy",
-      "a woman, man and a child",
-      "a woman on the left",
-      "a woman on the left brushing her teeth",
-      "woman on left"
+      "woman man",
+      "a man, woman",
+      "mum far",
+      "woman was",
+      "a woman,",
+      "her mum",
+      "a woman man",
+      "a woman, man",
+      "a woman on",
+      "woman on"
     ]
   },
   {
     "node_id": "2386442_002",
     "concept": "man",
-    "context": "person brushing teeth on the right side of the group",
+    "context": "adult male person in the group brushing teeth",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "a man",
-      "man",
+      "man are",
       "one man",
-      "woman man and child",
-      "three people, a man, woman and child",
-      "dad",
-      "a man was on the right",
-      "mum baby dad",
-      "a woman man and ababy",
-      "a woman, man and a child",
-      "a man on the right",
-      "man on right hand side"
+      "woman man",
+      "man, woman",
+      "dad all",
+      "dad wearing",
+      "a man was",
+      "a man were",
+      "dad to",
+      "a woman man",
+      "a woman, man",
+      "and a man",
+      "man on"
     ]
   },
   {
     "node_id": "2386442_003",
     "concept": "child",
-    "context": "person brushing teeth in the middle of the group",
+    "context": "young person in the group brushing teeth",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "a child",
-      "child",
+      "and child",
+      "a child",
+      "and child",
+      "a child all",
+      "toddler and",
+      "and kid",
+      "a child was",
+      "a child and",
+      "small child",
+      "ababy are",
       "and a child",
-      "two children",
-      "baby middle",
-      "toddler",
-      "child was in the middle",
-      "baby",
-      "ababy",
-      "young boy",
-      "child in middle"
+      "a child in",
+      "child in"
     ]
   },
   {
     "node_id": "2386442_004",
     "concept": "three",
-    "context": "count of people in the scene",
+    "context": "count of people in the group",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
+      "three people",
+      "three are",
       "three people",
       "3 people"
     ]
   },
   {
     "node_id": "2386442_005",
-    "concept": "brushing teeth",
-    "context": "action performed by the people",
+    "concept": "brushing",
+    "context": "action performed by the people on their teeth",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "brushing their teeth",
-      "burshing teeth",
-      "all brushing their teeth",
-      "brushing teeth together",
-      "brushing her teeth",
-      "also brushing his teeth",
-      "people brushing their teeth"
+      "are brushing",
+      "child brushing",
+      "brushing their",
+      "all burshing",
+      "all brushing",
+      "brushing their",
+      "brushing thier",
+      "were brushing",
+      "are brushing",
+      "brushing their",
+      "brushing teeth",
+      "brushing their",
+      "brushing her",
+      "top brushing",
+      "people brushing"
     ]
   },
   {
     "node_id": "2386442_006",
+    "concept": "teeth",
+    "context": "body part being brushed by the people",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "their teeth",
+      "their teeth",
+      "their teeth",
+      "teeth man",
+      "their teeth",
+      "their teeth",
+      "their teeth",
+      "their teeth",
+      "their teeth",
+      "their teeth",
+      "teeth. The",
+      "their teeth",
+      "teeth. they",
+      "their teeth",
+      "his teeth"
+    ]
+  },
+  {
+    "node_id": "2386442_007",
     "concept": "right",
     "context": "location of the man in the group",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "man on the r'ght",
+      "on the r'ght",
       "man on right",
-      "with man on the right",
-      "dad on far right",
-      "a man was on the right",
-      "man on the right",
-      "man on right hand side"
+      "man on the",
+      "on far right",
+      "a man was",
+      "the right.",
+      "dad to her",
+      "on the right",
+      "man on the",
+      "right hand side"
     ]
   },
   {
-    "node_id": "2386442_007",
+    "node_id": "2386442_008",
     "concept": "purple",
-    "context": "colour of the man's shirt or top",
+    "context": "colour modifying the man's shirt or top",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "purple shirt",
-      "man wearing purple shirt",
-      "man in purple shirt",
-      "dad in purple shirt",
-      "the man was wearing a purple shirt",
-      "wearing a purple shir",
-      "whos wearing a purple shirt",
-      "wearing a purple top"
+      "purple shirt",
+      "purple shirt",
+      "in purple shirt",
+      "a purple shir",
+      "purple shirt",
+      "a purple shirt",
+      "a purple shirt",
+      "purple and",
+      "purple shirt",
+      "a purple sweater",
+      "a purple shirt",
+      "purple top"
     ]
   },
   {
-    "node_id": "2386442_008",
+    "node_id": "2386442_009",
     "concept": "shirt",
     "context": "garment worn by the man",
     "content_type": "object_identity",
@@ -138,237 +186,289 @@
     "status": "correct",
     "source_phrases": [
       "purple shirt",
-      "man wearing purple shirt",
-      "man in purple shirt",
-      "the man was wearing a purple shirt",
-      "wearing a purple shir",
-      "whos wearing a purple shirt"
+      "checked shirt",
+      "triped shirt",
+      "purple shirt",
+      "a purple shir",
+      "purple shirt",
+      "a purple shirt",
+      "pink checkered shirt",
+      "a striped shirt",
+      "purple and",
+      "purple shirt",
+      "pink shirts",
+      "a purple shirt"
     ]
   },
   {
-    "node_id": "2386442_009",
+    "node_id": "2386442_010",
+    "concept": "checked",
+    "context": "pattern modifying the child's shirt or top",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "checked shirt",
+      "pink check",
+      "pink checkered shirt",
+      "checkered one"
+    ]
+  },
+  {
+    "node_id": "2386442_011",
+    "concept": "striped",
+    "context": "pattern modifying the woman's shirt or top",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "wearing triped",
+      "a striped shirt",
+      "brown and yellow stripy top"
+    ]
+  },
+  {
+    "node_id": "2386442_012",
+    "concept": "two",
+    "context": "count of children described with objects in mouth",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "two children",
+      "two children"
+    ]
+  },
+  {
+    "node_id": "2386442_013",
+    "concept": "tangerine",
+    "context": "object said to be in children's mouths",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "with tangerines",
+      "had tangerines"
+    ]
+  },
+  {
+    "node_id": "2386442_014",
+    "concept": "mouth",
+    "context": "location of object or toothpaste during tooth brushing",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in mouth",
+      "their mouths",
+      "around her mouth",
+      "inside his mouth",
+      "in his mouth"
+    ]
+  },
+  {
+    "node_id": "2386442_015",
     "concept": "left",
-    "context": "location of the woman in the group",
+    "context": "location of the woman within the group",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "woman left",
       "mum far left",
-      "a woman was on the left",
-      "woman at the left side",
-      "a woman on the left",
+      "on the left",
+      "left side",
+      "to her left",
+      "woman at the",
+      "woman on the",
       "woman on left"
     ]
   },
   {
-    "node_id": "2386442_010",
+    "node_id": "2386442_016",
     "concept": "middle",
-    "context": "location of the child in the group",
+    "context": "location of the child within the group",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "baby middle",
-      "a child was in the middle",
-      "child in the middle",
-      "young boy in the middle",
+      "child was in",
+      "child was in",
+      "in the middle",
+      "child in the",
+      "young boy in",
       "child in middle"
     ]
   },
   {
-    "node_id": "2386442_011",
-    "concept": "checked",
-    "context": "pattern of the child's shirt or top",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "checked shirt",
-      "pink check top",
-      "checkered one"
-    ]
-  },
-  {
-    "node_id": "2386442_012",
-    "concept": "striped",
-    "context": "pattern of the woman's shirt or top",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "triped shirt",
-      "striped shirt",
-      "brown and yellow stripy top"
-    ]
-  },
-  {
-    "node_id": "2386442_013",
-    "concept": "two",
-    "context": "count of children described in one response",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "incorrect",
-    "source_phrases": [
-      "two children"
-    ]
-  },
-  {
-    "node_id": "2386442_014",
-    "concept": "tangerine",
-    "context": "object described as being in the children's mouth",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "incorrect",
-    "source_phrases": [
-      "tangerines in mouth"
-    ]
-  },
-  {
-    "node_id": "2386442_015",
-    "concept": "mouth",
-    "context": "body part containing the toothbrush or toothpaste",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "tangerines in mouth",
-      "visible toothpaste around her mouth",
-      "toothbrush inside his mouth",
-      "toothbrush also in his mouth"
-    ]
-  },
-  {
-    "node_id": "2386442_016",
-    "concept": "close-up",
-    "context": "framing of the photo",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "close up photo"
-    ]
-  },
-  {
     "node_id": "2386442_017",
-    "concept": "photo",
-    "context": "image format of the scene",
-    "content_type": "object_identity",
+    "concept": "close",
+    "context": "near viewing distance of the photo",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "close up photo"
+      "close up",
+      "close proximity"
     ]
   },
   {
     "node_id": "2386442_018",
-    "concept": "pink",
-    "context": "colour of the child's shirt or top",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
+    "concept": "photo",
+    "context": "image described as a close-up photograph",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
     "status": "correct",
     "source_phrases": [
-      "baby in pink check top",
-      "child was wearing a pink shirt",
-      "the baby a checkered one",
-      "young boy in the middle with a pink top"
+      "up photo"
     ]
   },
   {
     "node_id": "2386442_019",
+    "concept": "pink",
+    "context": "colour modifying the child's shirt or top",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in pink",
+      "a pink check",
+      "a pink shirt",
+      "pink top",
+      "pink shirts"
+    ]
+  },
+  {
+    "node_id": "2386442_020",
     "concept": "top",
     "context": "garment worn by the child or man",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "pink check top",
-      "wearing a purple top",
-      "with a pink top"
-    ]
-  },
-  {
-    "node_id": "2386442_020",
-    "concept": "bathroom",
-    "context": "scene setting where the tooth brushing is happening",
-    "content_type": "scene_gist",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "they ina bathroom"
+      "check top",
+      "pink top",
+      "purple top"
     ]
   },
   {
     "node_id": "2386442_021",
-    "concept": "brown",
-    "context": "colour of the woman's top",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
+    "concept": "bathroom",
+    "context": "setting where the tooth brushing is taking place",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
     "status": "correct",
     "source_phrases": [
-      "bworn hair",
-      "brown and yellow stripy top"
+      "ina bathroom"
     ]
   },
   {
     "node_id": "2386442_022",
-    "concept": "hair",
-    "context": "hair of the three people",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "they all have bworn hair"
-    ]
-  },
-  {
-    "node_id": "2386442_023",
-    "concept": "glasses",
-    "context": "accessory worn by the woman",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "the woman wears glasses"
-    ]
-  },
-  {
-    "node_id": "2386442_024",
-    "concept": "looking toward camera",
-    "context": "gaze direction of the three people",
+    "concept": "looking",
+    "context": "gaze direction of the people toward the camera",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "they all look directly towards the camera"
+      "all looking",
+      "look directly"
     ]
   },
   {
-    "node_id": "2386442_025",
+    "node_id": "2386442_023",
     "concept": "camera",
-    "context": "object the people are facing",
+    "context": "object the people are looking toward",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
+      "the camera",
+      "into the camera",
       "towards the camera"
     ]
   },
   {
+    "node_id": "2386442_024",
+    "concept": "small",
+    "context": "size attribute modifying the child",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "small child"
+    ]
+  },
+  {
+    "node_id": "2386442_025",
+    "concept": "side",
+    "context": "part of the man's hair described in hairstyle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "dark side"
+    ]
+  },
+  {
     "node_id": "2386442_026",
+    "concept": "parting",
+    "context": "man's hairstyle feature",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "side parting"
+    ]
+  },
+  {
+    "node_id": "2386442_027",
+    "concept": "brown",
+    "context": "hair colour of the people",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "bworn hair"
+    ]
+  },
+  {
+    "node_id": "2386442_028",
+    "concept": "hair",
+    "context": "hair of the people or man",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "have bworn hair"
+    ]
+  },
+  {
+    "node_id": "2386442_029",
+    "concept": "glasses",
+    "context": "object worn by the woman",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "wears glasses"
+    ]
+  },
+  {
+    "node_id": "2386442_030",
     "concept": "toothpaste",
     "context": "substance visible around the woman's mouth",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "visible toothpaste around her mouth"
+      "visible toothpaste"
     ]
   },
   {
-    "node_id": "2386442_027",
+    "node_id": "2386442_031",
     "concept": "around",
-    "context": "location of the toothpaste relative to the woman's mouth",
+    "context": "position of toothpaste relative to the woman's mouth",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
@@ -377,80 +477,69 @@
     ]
   },
   {
-    "node_id": "2386442_028",
+    "node_id": "2386442_032",
     "concept": "toothbrush",
-    "context": "object used by the people for brushing teeth",
+    "context": "object used for brushing teeth",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "with the toothbrush inside his mouth",
-      "the toothbrush also in his mouth",
-      "with white and green tooth brush",
+      "the toothbrush",
+      "the toothbrush",
+      "green tooth brush",
       "with white and green brush"
     ]
   },
   {
-    "node_id": "2386442_029",
+    "node_id": "2386442_033",
     "concept": "inside",
-    "context": "location of the toothbrush relative to the child's or man's mouth",
+    "context": "position of the toothbrush relative to the child's mouth",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "toothbrush inside his mouth"
-    ]
-  },
-  {
-    "node_id": "2386442_030",
-    "concept": "white",
-    "context": "colour of the toothbrush",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "white and green tooth brush",
-      "white and green brush"
-    ]
-  },
-  {
-    "node_id": "2386442_031",
-    "concept": "green",
-    "context": "colour of the toothbrush",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "white and green tooth brush",
-      "white and green brush"
-    ]
-  },
-  {
-    "node_id": "2386442_032",
-    "concept": "sweater",
-    "context": "garment worn by the man",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "wearing a purple sweater"
-    ]
-  },
-  {
-    "node_id": "2386442_033",
-    "concept": "boy",
-    "context": "identity of the child in one response",
-    "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "young boy"
+      "inside his mouth"
     ]
   },
   {
     "node_id": "2386442_034",
+    "concept": "white",
+    "context": "colour modifying the toothbrush",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "white and green",
+      "with white and"
+    ]
+  },
+  {
+    "node_id": "2386442_035",
+    "concept": "green",
+    "context": "colour modifying the toothbrush",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "green tooth brush",
+      "green brush"
+    ]
+  },
+  {
+    "node_id": "2386442_036",
+    "concept": "boy",
+    "context": "young male child in the middle",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "young boy"
+    ]
+  },
+  {
+    "node_id": "2386442_037",
     "concept": "young",
-    "context": "age-related description of the boy",
+    "context": "age attribute modifying the boy",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
@@ -459,59 +548,15 @@
     ]
   },
   {
-    "node_id": "2386442_035",
-    "concept": "mother",
-    "context": "familial role label for the woman",
-    "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "mum"
-    ]
-  },
-  {
-    "node_id": "2386442_036",
-    "concept": "father",
-    "context": "familial role label for the man",
-    "content_type": "object_identity",
-    "evidence_type": "latent",
-    "status": "correct",
-    "source_phrases": [
-      "dad"
-    ]
-  },
-  {
-    "node_id": "2386442_037",
-    "concept": "yellow",
-    "context": "colour of the woman's top",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "brown and yellow stripy top"
-    ]
-  },
-  {
     "node_id": "2386442_038",
-    "concept": "far",
-    "context": "emphasized edge position of the woman or man in the group",
-    "content_type": "spatial_relation",
+    "concept": "yellow",
+    "context": "colour modifying the woman's top or the man's shirt",
+    "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "mum far left",
-      "dad on far right"
-    ]
-  },
-  {
-    "node_id": "2386442_039",
-    "concept": "pink",
-    "context": "colour of the man's shirt in one response",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "incorrect",
-    "source_phrases": [
-      "the man wears a pink shirts"
+      "brown and yellow",
+      "purple and yellow"
     ]
   }
 ]

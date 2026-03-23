@@ -2,17 +2,30 @@
   {
     "node_id": "2374670_001",
     "concept": "vehicle",
-    "context": "main machine in the scene being driven and spraying liquid",
+    "context": "main transport object in the scene being driven and spraying liquid",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "spray vehicle",
-      "truck",
-      "van",
-      "vehicle",
+      "red truck",
+      "redd truck",
+      "red truck",
+      "red truck",
+      "red truck",
+      "red van",
+      "red truck",
+      "red truck",
+      "spray vehicle",
+      "vehicle spraying",
+      "red truck",
+      "vehcile spraying",
+      "red tractor",
+      "red truck",
       "farem vehicle",
-      "car"
+      "red truck",
+      "spraying truck",
+      "red veirchle"
     ]
   },
   {
@@ -23,11 +36,22 @@
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "red spray vehicle",
+      "red spray",
       "red truck",
       "redd truck",
-      "big red truck",
+      "big red",
+      "red truck",
+      "red truck",
       "red van",
+      "red truck",
+      " red truck",
+      "was red",
+      "red truck",
+      "red tractor",
+      "red truck",
+      "red farem",
+      "red truck",
+      "red spraying",
       "red veirchle"
     ]
   },
@@ -39,171 +63,207 @@
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "a man on the back",
-      "man on the back",
-      "one man driving",
-      "another on back",
-      "guy in front driving",
-      "guy on ledge at back"
+      "a man",
+      "man on",
+      "a man",
+      "man standing",
+      "one man",
+      "a man",
+      "man stood",
+      "guy in",
+      "guy on",
+      "A man",
+      "there was",
+      "man was",
+      "a man",
+      "second man",
+      "A man",
+      "with man",
+      "a man",
+      "man stood",
+      "man on"
     ]
   },
   {
     "node_id": "2374670_004",
     "concept": "back",
-    "context": "location at the rear of the vehicle where a man is positioned and where liquid emerges",
+    "context": "rear part of the vehicle where one man is located",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "on the back of a spray vehicle",
-      "on the back of the truck",
-      "at the back",
-      "out the back",
+      "the back",
+      "the back",
+      "the back",
+      "the back",
+      "on back",
+      "the back",
+      "the back",
+      "at back",
       "rear end",
-      "behind of truck"
+      "the back",
+      "the back",
+      "behind the",
+      "the bavk",
+      "the back",
+      "the back",
+      "on the back",
+      "back of",
+      "the back",
+      "behind of"
     ]
   },
   {
     "node_id": "2374670_005",
     "concept": "spraying",
-    "context": "action performed by the vehicle with liquid or water",
+    "context": "action of liquid being emitted from the vehicle",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
+      "spray vehicle",
+      "truck spraying",
+      "is sparying",
+      "water spraying",
+      "spray coming",
+      "is spraying",
+      "van spraying",
+      "water spraying",
+      "was spraying",
+      "spurts of water",
+      "vehicle spraying",
+      "sparing water",
+      "vehcile spraying",
+      "tractor spraying",
       "spraying water",
-      "sparying water",
-      "spray coming out",
-      "spraying liquid",
-      "spraying out the back",
-      "spraying along the rear end"
+      "spraying water",
+      "spraying truck",
+      "pipe spraying"
     ]
   },
   {
     "node_id": "2374670_006",
     "concept": "water",
-    "context": "substance being sprayed from the vehicle",
+    "context": "liquid being sprayed from the vehicle",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "spraying water",
-      "water spraying out the back",
-      "multiple outlets of water"
+      "sparying water",
+      "with water",
+      "spraying water",
+      "spraying liquid",
+      "outlets of water",
+      "spurts of water",
+      "spraying water",
+      "spraying water",
+      "spraying water",
+      "spraying water"
     ]
   },
   {
     "node_id": "2374670_007",
-    "concept": "holding",
-    "context": "action of the man gripping the vehicle while on the back",
+    "concept": "driving",
+    "context": "action of the vehicle moving with a driver present",
     "content_type": "action_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "holding on"
+      "man driving",
+      "was visble",
+      "moving and",
+      "being driven",
+      "is moving",
+      "rriving down",
+      "appears to be"
     ]
   },
   {
     "node_id": "2374670_008",
-    "concept": "standing",
-    "context": "posture of the man at the back of the vehicle",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "man standing at the back",
-      "man standing on the back",
-      "man is standing on the back",
-      "man stood at the back",
-      "stood on a fixture"
-    ]
-  },
-  {
-    "node_id": "2374670_009",
-    "concept": "field",
-    "context": "surface or area receiving the sprayed water",
-    "content_type": "scene_gist",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "what look slike a field",
-      "onto a field"
-    ]
-  },
-  {
-    "node_id": "2374670_010",
-    "concept": "big",
-    "context": "modifies the vehicle",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "big red truck"
-    ]
-  },
-  {
-    "node_id": "2374670_011",
-    "concept": "driving",
-    "context": "action of the vehicle moving forward and of the front man operating it",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "one man driving red truck",
-      "driving was visble",
-      "rriving down dirt track",
-      "appears to be driving down street"
-    ]
-  },
-  {
-    "node_id": "2374670_012",
     "concept": "road",
-    "context": "ground surface the vehicle is traveling on or being sprayed onto",
-    "content_type": "scene_gist",
+    "context": "surface or route the vehicle is traveling on",
+    "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
       "on road",
-      "onto the road",
+      "the road",
+      "grey road",
+      "on the road",
       "dirt road"
+    ]
+  },
+  {
+    "node_id": "2374670_009",
+    "concept": "ground",
+    "context": "surface receiving the sprayed liquid",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "the ground"
+    ]
+  },
+  {
+    "node_id": "2374670_010",
+    "concept": "field",
+    "context": "area the vehicle may be spraying onto or traveling beside",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "a field",
+      "onto a field"
+    ]
+  },
+  {
+    "node_id": "2374670_011",
+    "concept": "big",
+    "context": "modifies the vehicle size",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "big red"
+    ]
+  },
+  {
+    "node_id": "2374670_012",
+    "concept": "one",
+    "context": "count of a man mentioned as driver",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "one man"
     ]
   },
   {
     "node_id": "2374670_013",
     "concept": "another",
-    "context": "count of an additional man separate from the driver",
+    "context": "indicates a second man distinct from the driver",
     "content_type": "object_attribute",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "another on back"
+      "another on"
     ]
   },
   {
     "node_id": "2374670_014",
     "concept": "bottom",
-    "context": "location on the vehicle where spray emerges",
+    "context": "lower rear area of the vehicle where spray exits",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "out of back at bottom",
-      "spraying water from the bottom"
+      "at bottom",
+      "from the bottom"
     ]
   },
   {
     "node_id": "2374670_015",
-    "concept": "ground",
-    "context": "surface receiving the sprayed water",
-    "content_type": "scene_gist",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "spraying water on the ground"
-    ]
-  },
-  {
-    "node_id": "2374670_016",
     "concept": "liquid",
     "context": "substance being sprayed from the vehicle",
     "content_type": "object_identity",
@@ -211,133 +271,27 @@
     "status": "correct",
     "source_phrases": [
       "spraying liquid",
-      "water like liquid"
+      "like liquid",
+      "some fluid"
+    ]
+  },
+  {
+    "node_id": "2374670_016",
+    "concept": "onto",
+    "context": "direction of the sprayed liquid toward a surface",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "out of",
+      "onto the road",
+      "onto a mud",
+      "onto street",
+      "spraying water"
     ]
   },
   {
     "node_id": "2374670_017",
-    "concept": "onto",
-    "context": "trajectory of the sprayed liquid toward the road, field, or ground",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "onto the road",
-      "onto a field"
-    ]
-  },
-  {
-    "node_id": "2374670_018",
-    "concept": "visible",
-    "context": "describes the front driver being seen",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "guy in front driving was visble"
-    ]
-  },
-  {
-    "node_id": "2374670_019",
-    "concept": "front",
-    "context": "location of the driver within the vehicle",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "guy in front driving"
-    ]
-  },
-  {
-    "node_id": "2374670_020",
-    "concept": "ledge",
-    "context": "part of the vehicle where the rear man is positioned",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "guy on ledge at back of truck"
-    ]
-  },
-  {
-    "node_id": "2374670_021",
-    "concept": "bending",
-    "context": "posture or action of the rear man",
-    "content_type": "action_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "guy on ledge at back of truck bending over"
-    ]
-  },
-  {
-    "node_id": "2374670_022",
-    "concept": "multiple",
-    "context": "count attribute of the spray outlets at the rear of the vehicle",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "multiple outlets of water"
-    ]
-  },
-  {
-    "node_id": "2374670_023",
-    "concept": "outlet",
-    "context": "rear components from which water is sprayed",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "multiple outlets of water"
-    ]
-  },
-  {
-    "node_id": "2374670_024",
-    "concept": "along",
-    "context": "distribution of the spray outlets across the rear end of the vehicle",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "along the rear end"
-    ]
-  },
-  {
-    "node_id": "2374670_025",
-    "concept": "rear",
-    "context": "location on the vehicle where spray equipment is attached",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "rear end of car"
-    ]
-  },
-  {
-    "node_id": "2374670_026",
-    "concept": "tube",
-    "context": "equipment attached at the back of the vehicle",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "blue tube at back of car"
-    ]
-  },
-  {
-    "node_id": "2374670_027",
-    "concept": "blue",
-    "context": "modifies the tube attached at the back of the vehicle",
-    "content_type": "object_attribute",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "blue tube"
-    ]
-  },
-  {
-    "node_id": "2374670_028",
     "concept": "dirt",
     "context": "modifies the road or track surface",
     "content_type": "object_attribute",
@@ -349,20 +303,302 @@
     ]
   },
   {
-    "node_id": "2374670_029",
-    "concept": "track",
-    "context": "type of path the vehicle is traveling on",
-    "content_type": "scene_gist",
+    "node_id": "2374670_018",
+    "concept": "guy",
+    "context": "informal reference to a man on or in the vehicle",
+    "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
+      "guy in",
+      "guy on",
+      "with a guy"
+    ]
+  },
+  {
+    "node_id": "2374670_019",
+    "concept": "front",
+    "context": "front part of the vehicle where the driver is visible",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "in front"
+    ]
+  },
+  {
+    "node_id": "2374670_020",
+    "concept": "ledge",
+    "context": "part of the vehicle where the rear man is positioned",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "on ledge"
+    ]
+  },
+  {
+    "node_id": "2374670_021",
+    "concept": "bending",
+    "context": "posture or action of the man on the rear ledge",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "bending over"
+    ]
+  },
+  {
+    "node_id": "2374670_022",
+    "concept": "multiple",
+    "context": "count-like descriptor of the spray outlets",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "multiple outlets"
+    ]
+  },
+  {
+    "node_id": "2374670_023",
+    "concept": "outlet",
+    "context": "spray-emitting openings at the rear of the vehicle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "multiple outlets"
+    ]
+  },
+  {
+    "node_id": "2374670_024",
+    "concept": "rear",
+    "context": "back surface or end of the vehicle",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "rear end",
+      "its rear",
+      "rear surface"
+    ]
+  },
+  {
+    "node_id": "2374670_025",
+    "concept": "blue",
+    "context": "modifies the tube attached at the back of the vehicle",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blue tube"
+    ]
+  },
+  {
+    "node_id": "2374670_026",
+    "concept": "tube",
+    "context": "object attached at the back of the vehicle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "blue tube"
+    ]
+  },
+  {
+    "node_id": "2374670_027",
+    "concept": "mud",
+    "context": "modifies the track surface",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "mud track"
+    ]
+  },
+  {
+    "node_id": "2374670_028",
+    "concept": "track",
+    "context": "route or ground surface the vehicle is on",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "mud track",
       "dirt track"
     ]
   },
   {
+    "node_id": "2374670_029",
+    "concept": "eight",
+    "context": "count of water spurts at the back of the vehicle",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "eight spurts"
+    ]
+  },
+  {
     "node_id": "2374670_030",
+    "concept": "spurt",
+    "context": "individual jets of water from the rear of the vehicle",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "eight spurts"
+    ]
+  },
+  {
+    "node_id": "2374670_031",
+    "concept": "grey",
+    "context": "modifies the road color",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "grey road"
+    ]
+  },
+  {
+    "node_id": "2374670_032",
+    "concept": "residential-looking",
+    "context": "describes the surrounding area beyond the road",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "residential-looking area"
+    ]
+  },
+  {
+    "node_id": "2374670_033",
+    "concept": "area",
+    "context": "surrounding environment around the road",
+    "content_type": "scene_gist",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "looking area"
+    ]
+  },
+  {
+    "node_id": "2374670_034",
+    "concept": "street",
+    "context": "route the vehicle moves along",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "through the street",
+      "onto street",
+      "down street"
+    ]
+  },
+  {
+    "node_id": "2374670_035",
+    "concept": "path",
+    "context": "route the vehicle is driven along",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "along a path"
+    ]
+  },
+  {
+    "node_id": "2374670_036",
+    "concept": "amid",
+    "context": "spatial relation placing the path within surrounding farmland",
+    "content_type": "spatial_relation",
+    "evidence_type": "literal",
+    "status": "incorrect",
+    "source_phrases": [
+      "amid a farm"
+    ]
+  },
+  {
+    "node_id": "2374670_037",
+    "concept": "farm",
+    "context": "broader agricultural setting inferred around the path or field",
+    "content_type": "scene_gist",
+    "evidence_type": "latent",
+    "status": "correct",
+    "source_phrases": [
+      "amid a farm"
+    ]
+  },
+  {
+    "node_id": "2374670_038",
+    "concept": "several",
+    "context": "count-like descriptor of spray holes on the vehicle rear",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "several holes"
+    ]
+  },
+  {
+    "node_id": "2374670_039",
+    "concept": "hole",
+    "context": "openings on the rear surface from which water sprays",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "several holes"
+    ]
+  },
+  {
+    "node_id": "2374670_040",
+    "concept": "clasped",
+    "context": "action of the man holding onto the vehicle rear",
+    "content_type": "action_relation",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "is clasped"
+    ]
+  },
+  {
+    "node_id": "2374670_041",
+    "concept": "casual clothing",
+    "context": "description of what the rear man is wearing",
+    "content_type": "object_identity",
+    "evidence_type": "latent",
+    "status": "incorrect",
+    "source_phrases": [
+      "wearing casual"
+    ]
+  },
+  {
+    "node_id": "2374670_042",
+    "concept": "sun",
+    "context": "celestial object inferred from bright conditions",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "The sun"
+    ]
+  },
+  {
+    "node_id": "2374670_043",
+    "concept": "shining",
+    "context": "action attributed to the sun or lighting conditions",
+    "content_type": "action_relation",
+    "evidence_type": "speculative",
+    "status": "incorrect",
+    "source_phrases": [
+      "sun is shining"
+    ]
+  },
+  {
+    "node_id": "2374670_044",
     "concept": "campervan",
-    "context": "other vehicles reported behind the main vehicle",
+    "context": "background vehicles mentioned behind the main vehicle",
     "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "incorrect",
@@ -371,63 +607,41 @@
     ]
   },
   {
-    "node_id": "2374670_031",
+    "node_id": "2374670_045",
     "concept": "behind",
-    "context": "position of the campervans relative to the main vehicle",
+    "context": "background position relative to the main vehicle",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "incorrect",
     "source_phrases": [
+      "behind the truck",
       "campervans behind"
     ]
   },
   {
-    "node_id": "2374670_032",
-    "concept": "street",
-    "context": "type of roadway the vehicle appears to be driving on",
-    "content_type": "scene_gist",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "driving down street"
-    ]
-  },
-  {
-    "node_id": "2374670_033",
-    "concept": "facing",
-    "context": "orientation of the man's back toward the viewer",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "mans back is facing screen"
-    ]
-  },
-  {
-    "node_id": "2374670_034",
+    "node_id": "2374670_046",
     "concept": "screen",
     "context": "viewer-facing reference for the man's orientation",
-    "content_type": "spatial_relation",
-    "evidence_type": "literal",
-    "status": "correct",
+    "content_type": "object_identity",
+    "evidence_type": "speculative",
+    "status": "incorrect",
     "source_phrases": [
       "facing screen"
     ]
   },
   {
-    "node_id": "2374670_035",
-    "concept": "hose",
-    "context": "equipment attached to the vehicle associated with the spraying system",
-    "content_type": "object_identity",
+    "node_id": "2374670_047",
+    "concept": "facing",
+    "context": "orientation of the man's back relative to the viewer",
+    "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "green hose",
-      "4 hoses"
+      "back is facing"
     ]
   },
   {
-    "node_id": "2374670_036",
+    "node_id": "2374670_048",
     "concept": "green",
     "context": "modifies the hose or pipe attached to the vehicle",
     "content_type": "object_attribute",
@@ -439,69 +653,81 @@
     ]
   },
   {
-    "node_id": "2374670_037",
+    "node_id": "2374670_049",
+    "concept": "hose",
+    "context": "attached object on the vehicle used for spraying",
+    "content_type": "object_identity",
+    "evidence_type": "literal",
+    "status": "correct",
+    "source_phrases": [
+      "green hose",
+      "4 hoses"
+    ]
+  },
+  {
+    "node_id": "2374670_050",
     "concept": "left",
-    "context": "side of the vehicle's back where the man stands",
+    "context": "describes the man's position on the left side of the vehicle rear",
     "content_type": "spatial_relation",
     "evidence_type": "literal",
     "status": "correct",
     "source_phrases": [
-      "left side of back of truck"
+      "left side"
     ]
   },
   {
-    "node_id": "2374670_038",
-    "concept": "four",
-    "context": "count of hoses attached to the vehicle",
-    "content_type": "object_attribute",
+    "node_id": "2374670_051",
+    "concept": "side",
+    "context": "part of the vehicle rear where the man stands",
+    "content_type": "object_identity",
     "evidence_type": "literal",
     "status": "correct",
+    "source_phrases": [
+      "left side"
+    ]
+  },
+  {
+    "node_id": "2374670_052",
+    "concept": "four",
+    "context": "count of hoses attached to the truck",
+    "content_type": "object_attribute",
+    "evidence_type": "literal",
+    "status": "incorrect",
     "source_phrases": [
       "4 hoses"
     ]
   },
   {
-    "node_id": "2374670_039",
+    "node_id": "2374670_053",
     "concept": "fixture",
-    "context": "part at the back of the vehicle that the man stands on",
+    "context": "object at the back of the vehicle where the man stands",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct",
+    "status": "incorrect",
     "source_phrases": [
-      "stood on a fixture"
+      "a fixture"
     ]
   },
   {
-    "node_id": "2374670_040",
+    "node_id": "2374670_054",
     "concept": "wooden",
-    "context": "material attribute of the plank-like fixture",
+    "context": "material of the plank-like standing surface",
     "content_type": "object_attribute",
     "evidence_type": "literal",
-    "status": "correct",
+    "status": "incorrect",
     "source_phrases": [
       "wooden plank"
     ]
   },
   {
-    "node_id": "2374670_041",
+    "node_id": "2374670_055",
     "concept": "plank",
-    "context": "board-like object at the back of the vehicle used as a standing surface",
+    "context": "board-like object the man appears to stand on",
     "content_type": "object_identity",
     "evidence_type": "literal",
-    "status": "correct",
+    "status": "incorrect",
     "source_phrases": [
       "wooden plank"
-    ]
-  },
-  {
-    "node_id": "2374670_042",
-    "concept": "pipe",
-    "context": "equipment attached to the vehicle associated with spraying",
-    "content_type": "object_identity",
-    "evidence_type": "literal",
-    "status": "correct",
-    "source_phrases": [
-      "green pipe"
     ]
   }
 ]

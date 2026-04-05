@@ -13,6 +13,7 @@ import logging
 from pathlib import Path
 
 import matplotlib
+from matplotlib.ticker import MultipleLocator
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -617,7 +618,7 @@ def _figure1_boxplot(
     dec: pd.DataFrame | None = None,
 ) -> pd.DataFrame:
     """
-    APA-style side-by-side boxplots of trial-level SVG z-scores.
+    APA-style side-by-side boxplots of participant-level SVG z-scores.
     Encoding on left, Decoding on right.
     Permutation baseline (y = 0) shown as dashed line.
     Returns figure data DataFrame.
@@ -627,20 +628,25 @@ def _figure1_boxplot(
         logger.warning("  _figure1_boxplot: svg_z_enc missing — skipping.")
         return pd.DataFrame()
 
-    enc_vals = enc[svg_enc].dropna().values
+    # Aggregate to participant means — matches the unit of the t-test
+    enc_means = enc.groupby("SubjectID")[svg_enc].mean().dropna().values
     has_dec = dec is not None and "svg_z_dec" in dec.columns
-    dec_vals = dec["svg_z_dec"].dropna().values if has_dec else np.array([])
+    dec_means = (
+        dec.groupby("SubjectID")["svg_z_dec"].mean().dropna().values
+        if has_dec
+        else np.array([])
+    )
 
-    datasets = [enc_vals] + ([dec_vals] if has_dec else [])
+    datasets = [enc_means] + ([dec_means] if has_dec else [])
     labels = ["Encoding"] + (["Decoding"] if has_dec else [])
-    positions = list(range(len(datasets)))
+    positions = [1.0, 1.7] if has_dec else [1.0]
 
-    fig, ax = plt.subplots(figsize=(3.5, 3.5))
+    fig, ax = plt.subplots(figsize=(5.4, 4.8))
 
-    bp = ax.boxplot(
+    ax.boxplot(
         datasets,
         positions=positions,
-        widths=0.45,
+        widths=0.28,
         patch_artist=True,
         medianprops=dict(color="black", linewidth=1.5),
         boxprops=dict(facecolor="white", color="black", linewidth=1.2),
@@ -650,7 +656,7 @@ def _figure1_boxplot(
             marker="o",
             markerfacecolor="black",
             markeredgecolor="black",
-            markersize=3,
+            markersize=4,
             linewidth=0.5,
         ),
         showfliers=True,
@@ -659,7 +665,9 @@ def _figure1_boxplot(
     ax.axhline(0, color="black", linewidth=0.8, linestyle="--", zorder=1)
     ax.set_xticks(positions)
     ax.set_xticklabels(labels)
-    ax.set_ylabel("Relational SVG Score")
+    ax.set_ylabel("Relational Score")
+    ax.set_xlim(0.7, 2.1 if has_dec else 1.4)
+
     _apply_apa_style(ax)
 
     plt.tight_layout()
@@ -669,7 +677,9 @@ def _figure1_boxplot(
     logger.info(f"  Written → {output_path.name}")
 
     rows = [
-        {"phase": lbl, "svg_z": v} for lbl, arr in zip(labels, datasets) for v in arr
+        {"phase": lbl, "participant_mean_svg_z": v}
+        for lbl, arr in zip(labels, datasets)
+        for v in arr
     ]
     return pd.DataFrame(rows)
 
@@ -685,7 +695,7 @@ def _figure2_predicted_total(
     output_path: Path,
 ) -> pd.DataFrame:
     """
-    APA-style model-predicted total recall (%) as a function of within-image
+    APA-style model-predicted total recall (%) by within-image
     encoding SVG. Greyscale line + shaded 95% CI band.
     Returns figure data DataFrame.
     """
@@ -705,7 +715,9 @@ def _figure2_predicted_total(
         return pd.DataFrame()
 
     vals = enc[svg_col].dropna().values
-    x_grid = np.linspace(np.percentile(vals, 2.5), np.percentile(vals, 97.5), 120)
+    x_min = np.floor(np.percentile(vals, 2.5))
+    x_max = np.ceil(np.percentile(vals, 97.5))
+    x_grid = np.linspace(x_min, x_max, 120)
 
     def design(x):
         return {"Intercept": 1.0, svg_col: x}
@@ -717,12 +729,15 @@ def _figure2_predicted_total(
     ci_lo_pct = ci_lo * 100
     ci_hi_pct = ci_hi * 100
 
-    fig, ax = plt.subplots(figsize=(3.5, 3.5))
+    fig, ax = plt.subplots(figsize=(4.0, 3.5))
     ax.fill_between(x_grid, ci_lo_pct, ci_hi_pct, color="#BBBBBB", alpha=0.6, zorder=2)
     ax.plot(x_grid, preds_pct, color="#333333", linewidth=1.8, zorder=3)
     ax.axvline(0, color="black", linewidth=0.7, linestyle="--", alpha=0.5, zorder=1)
-    ax.set_xlabel("Relational SVG Score at Encoding")
+    ax.set_xlim(x_min, x_max)
+    ax.set_xlabel("Relational Score at Encoding")
     ax.set_ylabel("Predicted Total Recall (%)")
+    ax.xaxis.set_major_locator(plt.MaxNLocator(integer=True))
+    ax.yaxis.set_major_locator(MultipleLocator(5))
     _apply_apa_style(ax)
 
     plt.tight_layout()
@@ -772,7 +787,9 @@ def _figure3_content_comparison(
         return pd.DataFrame()
 
     vals = enc[svg_col].dropna().values
-    x_grid = np.linspace(np.percentile(vals, 2.5), np.percentile(vals, 97.5), 120)
+    x_min = np.floor(np.percentile(vals, 2.5))
+    x_max = np.ceil(np.percentile(vals, 97.5))
+    x_grid = np.linspace(x_min, x_max, 120)
 
     def design_rel(x):
         return {
@@ -802,12 +819,12 @@ def _figure3_content_comparison(
     ci_hi_obj *= 100
 
     dark = "#333333"  # relational recall
-    light = "#999999"  # object recall
+    light = "#888888"  # object recall
 
-    fig, ax = plt.subplots(figsize=(4.5, 3.5))
+    fig, ax = plt.subplots(figsize=(4.0, 3.5))
 
-    # Relational — dark grey
-    ax.fill_between(x_grid, ci_lo_rel, ci_hi_rel, color=dark, alpha=0.15, zorder=2)
+    # Relational — dark grey, lighter CI band
+    ax.fill_between(x_grid, ci_lo_rel, ci_hi_rel, color=dark, alpha=0.10, zorder=2)
     ax.plot(
         x_grid,
         preds_rel,
@@ -817,16 +834,17 @@ def _figure3_content_comparison(
         zorder=3,
     )
 
-    # Object — light grey
-    ax.fill_between(x_grid, ci_lo_obj, ci_hi_obj, color=light, alpha=0.25, zorder=2)
+    # Object — light grey, lighter CI band
+    ax.fill_between(x_grid, ci_lo_obj, ci_hi_obj, color=light, alpha=0.15, zorder=2)
     ax.plot(
         x_grid, preds_obj, color=light, linewidth=1.8, label="Object recall", zorder=3
     )
 
     ax.axvline(0, color="black", linewidth=0.7, linestyle="--", alpha=0.5, zorder=1)
-
-    ax.set_xlabel("Relational SVG Score at Encoding")
+    ax.set_xlim(x_min, x_max)
+    ax.set_xlabel("Relational Score at Encoding")
     ax.set_ylabel("Predicted Recall (%)")
+    ax.xaxis.set_major_locator(plt.MaxNLocator(integer=True))
 
     legend = ax.legend(frameon=False, fontsize=10, loc="upper left", handlelength=1.5)
     for text in legend.get_texts():

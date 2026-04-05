@@ -116,7 +116,7 @@ def analyse_shift_subject(
     subject_id: str, graph_index: dict, rng: np.random.Generator
 ) -> dict | None:
     """
-    Load fixations_aoi.csv for one participant, compute per-trial SVG scores,
+    Load fixations_aoi.csv for one participant, compute per-trial relational scores,
     and compute the enc_first → enc_second diff for each image.
 
     Returns a dict with per-image diffs and per-participant summary stats,
@@ -325,7 +325,7 @@ def main():
     print(f"{'='*65}")
 
     for subject_id in subject_ids:
-        logger.info(f"  [{subject_id}] Computing per-trial SVG scores ...")
+        logger.info(f"  [{subject_id}] Computing per-trial relational scores ...")
         result = analyse_shift_subject(subject_id, graph_index, rng)
         if result:
             all_results.append(result)

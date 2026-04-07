@@ -963,6 +963,93 @@ def _save_partial_regression_data(enc: pd.DataFrame, output_path: Path) -> None:
 # ---------------------------------------------------------------------------
 
 
+def _write_results_summary(results: dict, output_dir: Path) -> None:
+    """
+    Write a flat results_summary.csv with one row per primary hypothesis test.
+
+    Columns
+    -------
+    model              : model name (e.g. H2_total)
+    hypothesis_group   : H1 | H2 | Exploratory
+    dv                 : dependent variable column name (or SVG column for H1)
+    predictor          : primary predictor term
+    b                  : coefficient estimate
+    se                 : standard error
+    ci_lower           : 95% CI lower bound
+    ci_upper           : 95% CI upper bound
+    z_or_t             : test statistic
+    p                  : two-tailed p-value
+    sig                : significance stars (*** ** * ns)
+    cohens_d           : Cohen's d (H1 only; blank for LMM models)
+    n_obs              : number of observations (LMM) or participants (H1)
+    mode               : ttest | lmm | skipped | failed
+    converged          : True/False/na
+    """
+    # Map model name → primary predictor term in the coefficient table
+    _PRIMARY_TERM = {
+        "H1_svg_enc": "Intercept",
+        "H1_svg_dec": "Intercept",
+        "H2_total": "svg_z_enc_within_z",
+        "H2_relations": "svg_z_enc_within_z",
+        "H2_objects": "svg_z_enc_within_z",
+        "EXP_dissociation": "svg_z_enc_within_z:memory_type",
+        "H2_dec_total": "svg_z_dec_within_z",
+        "H2_dec_relations": "svg_z_dec_within_z",
+        "H2_dec_objects": "svg_z_dec_within_z",
+    }
+
+    rows = []
+    for name, primary_pred, desc, table_key, group in MODEL_SPECS:
+        entry = results.get(name)
+        result, mode = entry if entry else (None, "skipped")
+
+        base = {
+            "model": name,
+            "hypothesis_group": group,
+            "description": desc,
+            "predictor": _PRIMARY_TERM.get(name, primary_pred),
+            "mode": mode,
+        }
+
+        if result is None or mode in ("skipped", "failed"):
+            rows.append({**base, "converged": "na"})
+            continue
+
+        coef_df = _extract_coef_table(name, result)
+        primary_term = _PRIMARY_TERM.get(name, primary_pred)
+        row_match = coef_df[coef_df["term"].str.strip() == primary_term]
+
+        if row_match.empty:
+            # Fallback: use first row
+            row_match = coef_df.iloc[[0]]
+
+        r = row_match.iloc[0]
+        p = float(r["p"])
+        sig = "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
+
+        row = {
+            **base,
+            "b": round(float(r["coef"]), 4),
+            "se": round(float(r["std_err"]), 4),
+            "ci_lower": round(float(r["ci_lower"]), 4),
+            "ci_upper": round(float(r["ci_upper"]), 4),
+            "z_or_t": round(float(r["z_or_t"]), 3),
+            "p": round(p, 4),
+            "sig": sig,
+            "cohens_d": (
+                round(result.cohens_d, 3) if hasattr(result, "cohens_d") else ""
+            ),
+            "n_obs": getattr(result, "n_obs", getattr(result, "nobs", "")),
+            "converged": getattr(result, "converged", ""),
+        }
+        rows.append(row)
+
+    df = pd.DataFrame(rows)
+    out_path = output_dir / "results_summary.csv"
+    df.to_csv(out_path, index=False)
+    logger.info("  Written → results_summary.csv")
+
+
 def summarise(
     results: dict,
     filtered: dict,
@@ -1167,6 +1254,8 @@ def summarise(
     with open(output_dir / "model_summaries.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(summary_lines))
     logger.info("  Written → model_summaries.txt")
+
+    _write_results_summary(results, output_dir)
 
     if not plot or enc.empty:
         return coef_all

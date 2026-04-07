@@ -1,8 +1,8 @@
 model,term,coef,std_err,z_or_t,p,ci_lower,ci_upper,optimizer,n_obs,n_dropped
-EXP_dissociation,Intercept,0.5608,0.0099,56.74493400312962,0.0,0.5414,0.5802,nm,1280,40
-EXP_dissociation,svg_z_enc_within_z,0.0239,0.0101,2.358922116222856,0.0183,0.004,0.0437,nm,1280,40
-EXP_dissociation,memory_type,-0.1025,0.0095,-10.782684757878839,0.0,-0.1212,-0.0839,nm,1280,40
-EXP_dissociation,svg_z_enc_within_z:memory_type,-0.0038,0.0096,-0.3993156117037376,0.6897,-0.0227,0.015,nm,1280,40
-EXP_dissociation,n_fixations_enc_z,0.0213,0.0089,2.399675731003259,0.0164,0.0039,0.0387,nm,1280,40
-EXP_dissociation,mean_salience_relational_enc_z,-0.0196,0.0087,-2.2404989819198877,0.0251,-0.0367,-0.0025,nm,1280,40
-EXP_dissociation,svg_z_enc_image_mean_z,0.0063,0.0087,0.72253000319824,0.47,-0.0108,0.0235,nm,1280,40
+EXP_dissociation,Intercept,0.5571,0.0093,59.90303258884713,0.0,0.5389,0.5753,nm,1390,42
+EXP_dissociation,svg_z_enc_within_z,0.0212,0.0095,2.2186484181863335,0.0265,0.0025,0.0399,nm,1390,42
+EXP_dissociation,memory_type,-0.0969,0.0093,-10.468911664329623,0.0,-0.115,-0.0788,nm,1390,42
+EXP_dissociation,svg_z_enc_within_z:memory_type,0.002,0.0093,0.2098433946951879,0.8338,-0.0164,0.0203,nm,1390,42
+EXP_dissociation,n_fixations_enc_z,0.0279,0.0083,3.3650868362532096,0.0008,0.0117,0.0442,nm,1390,42
+EXP_dissociation,mean_salience_relational_enc_z,-0.0194,0.0081,-2.3937781594262613,0.0167,-0.0353,-0.0035,nm,1390,42
+EXP_dissociation,svg_z_enc_image_mean_z,0.0076,0.0081,0.9370107723251613,0.3488,-0.0083,0.0236,nm,1390,42

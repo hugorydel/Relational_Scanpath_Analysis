@@ -1,8 +1,8 @@
 model,vif_svg_z_enc_within_z,vif_n_fixations_enc_z,vif_mean_salience_relational_enc_z,vif_svg_z_enc_image_mean_z,max_vif,vif_svg_z_dec_within_z,vif_n_fixations_dec_z,vif_mean_salience_relational_dec_z,vif_svg_z_dec_image_mean_z
-H2_total,1.032,1.036,1.013,1.008,1.036,,,,
-H2_relations,1.032,1.036,1.013,1.008,1.036,,,,
-H2_objects,1.032,1.036,1.013,1.008,1.036,,,,
-EXP_dissociation,1.032,1.036,1.013,1.008,1.036,,,,
-H2_dec_total,,,,,1.007,1.007,1.005,1.001,1.003
-H2_dec_relations,,,,,1.007,1.007,1.005,1.001,1.003
-H2_dec_objects,,,,,1.007,1.007,1.005,1.001,1.003
+H2_total,1.042,1.044,1.01,1.007,1.044,,,,
+H2_relations,1.042,1.044,1.01,1.007,1.044,,,,
+H2_objects,1.042,1.044,1.01,1.007,1.044,,,,
+EXP_dissociation,1.042,1.044,1.01,1.007,1.044,,,,
+H2_dec_total,,,,,1.009,1.009,1.008,1.001,1.002
+H2_dec_relations,,,,,1.009,1.009,1.008,1.001,1.002
+H2_dec_objects,,,,,1.009,1.009,1.008,1.001,1.002

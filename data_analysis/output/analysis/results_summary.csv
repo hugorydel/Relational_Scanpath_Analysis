@@ -1,0 +1,10 @@
+model,hypothesis_group,description,predictor,mode,b,se,ci_lower,ci_upper,z_or_t,p,sig,cohens_d,n_obs,converged
+H1_svg_enc,H1,H1: Encoding SVG — intercept test (mean SVG > 0?),Intercept,ttest,1.3309,0.0619,1.2031,1.4587,21.494,0.0,***,4.299,25,True
+H2_total,H2,H2 overall: Encoding SVG (within-image) → total node recall proportion,svg_z_enc_within_z,lmm,0.0236,0.0086,0.0067,0.0404,2.741,0.0061,**,,695,True
+H2_relations,H2,H2 relations: Encoding SVG (within-image) → relational recall proportion (action + spatial),svg_z_enc_within_z,lmm,0.0231,0.0101,0.0032,0.043,2.279,0.0227,*,,695,True
+H2_objects,H2,H2 objects: Encoding SVG (within-image) → object recall proportion (identity + attribute),svg_z_enc_within_z,lmm,0.0212,0.0089,0.0037,0.0387,2.376,0.0175,*,,695,True
+EXP_dissociation,Exploratory,Exploratory: SVG (within-image) × memory_type (relations vs objects dissociation),svg_z_enc_within_z:memory_type,lmm,0.002,0.0093,-0.0164,0.0203,0.21,0.8338,ns,,1390,True
+H1_svg_dec,H1,H1: Decoding SVG — intercept test (mean SVG > 0?),Intercept,ttest,0.1929,0.0542,0.0811,0.3048,3.56,0.0016,**,0.712,25,True
+H2_dec_total,H2,H2 decoding overall: Decoding SVG (within-image) → total node recall proportion,svg_z_dec_within_z,lmm,-0.006,0.0124,-0.0304,0.0183,-0.483,0.6288,ns,,334,True
+H2_dec_relations,H2,H2 decoding relations: Decoding SVG (within-image) → relational recall proportion (action + spatial),svg_z_dec_within_z,lmm,-0.0021,0.015,-0.0314,0.0272,-0.142,0.887,ns,,334,True
+H2_dec_objects,H2,H2 decoding objects: Decoding SVG (within-image) → object recall proportion (identity + attribute),svg_z_dec_within_z,lmm,-0.0065,0.0128,-0.0316,0.0186,-0.507,0.6119,ns,,334,True

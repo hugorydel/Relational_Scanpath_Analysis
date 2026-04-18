@@ -454,8 +454,8 @@ def _draw_graph_elements(ax, poly_list, edges, colours, linewidth: float = 1.8):
     """Draw relation edges and centroid nodes onto ax (shared by overlay and transparent)."""
     id_to_idx = {obj["object_id"]: i for i, obj in enumerate(poly_list)}
     centroids = {obj["object_id"]: obj["centroid"] for obj in poly_list}
-    # Node size scales slightly with line weight for visual consistency
-    markersize = max(4.0, min(12.0, linewidth * 3.2))
+    # Node size scales with line weight for visual consistency
+    markersize = max(7.0, min(18.0, linewidth * 4.5))
 
     for edge in edges:
         ids = list(edge)
@@ -692,7 +692,7 @@ def process_stim(
     )
 
     # Panels 3a/b/c — relational graph on image, three line weights
-    for label, lw in [("thin", 0.7), ("moderate", 1.8), ("thick", 4.0)]:
+    for label, lw in [("thin", 0.7), ("moderate", 3.0), ("thick", 5.5)]:
         _save_relational_graph(
             img_rgb,
             poly_list,
@@ -703,7 +703,7 @@ def process_stim(
         )
 
     # Panels 4a/b/c — relational graph on transparent background, three line weights
-    for label, lw in [("thin", 0.7), ("moderate", 1.8), ("thick", 4.0)]:
+    for label, lw in [("thin", 0.7), ("moderate", 3.0), ("thick", 5.5)]:
         _save_relational_graph_transparent(
             img_rgb,
             poly_list,

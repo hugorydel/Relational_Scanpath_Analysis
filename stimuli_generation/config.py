@@ -62,7 +62,7 @@ N_CLUSTERS = None  # For "clustering" method: None = same as N_FINAL_IMAGES
 EMBEDDING_BATCH_SIZE = 32  # Batch size for CLIP processing
 
 # OpenAI API
-OPENAI_MODEL = "gpt-5.2"
+OPENAI_MODEL = "gpt-5.4"
 
 #  ============================================================================
 # OPENAI SCORING CONFIGURATION

@@ -23,9 +23,11 @@ OUTPUT_EYETRACKING_DIR = OUTPUT_DIR / "eyetracking"
 OUTPUT_FEATURES_DIR = OUTPUT_DIR / "features"
 
 # Codebook directories
-OUTPUT_CODEBOOKS_DIR        = OUTPUT_DIR / "codebooks"
-OUTPUT_CODEBOOKS_RAW_DIR    = OUTPUT_CODEBOOKS_DIR / "raw"     # generate_codebook.py output
-OUTPUT_CODEBOOKS_EDITED_DIR = OUTPUT_CODEBOOKS_DIR / "edited"  # edit_codebook.py output (source of truth for scoring)
+OUTPUT_CODEBOOKS_DIR = OUTPUT_DIR / "codebooks"
+OUTPUT_CODEBOOKS_RAW_DIR = OUTPUT_CODEBOOKS_DIR / "raw"  # generate_codebook.py output
+OUTPUT_CODEBOOKS_EDITED_DIR = (
+    OUTPUT_CODEBOOKS_DIR / "edited"
+)  # edit_codebook.py output (source of truth for scoring)
 
 METADATA_FILE = DATA_METADATA_DIR / "stimuli_dataset.json"
 
@@ -53,7 +55,7 @@ MEMORY_SCORES_FILE = OUTPUT_SCORING_DIR / "memory_scores.csv"
 MEMORY_ANNOTATIONS_FILE = OUTPUT_SCORING_DIR / "memory_annotations.json"
 REASONING_EFFORT = "none"
 
-N_PARTICIPANTS = 30
+N_PARTICIPANTS = 25
 
 # ---------------------------------------------------------------------------
 # Display geometry (needed for gaze → image pixel coordinate transform)

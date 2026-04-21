@@ -1,14 +1,14 @@
 
 === Descriptive statistics (participant-level means) ===
   Encoding SVG (z)           N=25  M=  1.331  SD= 0.310  95% CI [  1.203,   1.459]
-  Decoding SVG (z)           N=25  M=  0.193  SD= 0.271  95% CI [  0.081,   0.305]
+  Retrieval SVG (z)          N=25  M=  0.193  SD= 0.271  95% CI [  0.081,   0.305]
   Total recall (%)           N=25  M= 55.341  SD=10.536  95% CI [ 50.992,  59.690]
   Relational recall (%)      N=25  M= 46.073  SD=10.111  95% CI [ 41.899,  50.247]
   Object recall (%)          N=25  M= 56.109  SD=10.595  95% CI [ 51.735,  60.482]
 
 === Data completeness ===
   Encoding: 750 initial rows  →  0 removed (low_n)  + 34 removed (wrong image)  →  716 final rows
-  Decoding: 728 initial rows  →  151 removed (low_n)  + 28 removed (wrong image)  →  549 final rows
+  Retrieval: 728 initial rows  →  151 removed (low_n)  + 28 removed (wrong image)  →  549 final rows
 
 
 ############################################################

@@ -149,7 +149,7 @@ def compute_descriptives(filtered: dict, output_dir: Path) -> tuple:
 
     _VARS = [
         ("svg_z_enc", enc, 1.0, "Encoding SVG (z)"),
-        ("svg_z_dec", dec, 1.0, "Decoding SVG (z)"),
+        ("svg_z_dec", dec, 1.0, "Retrieval SVG (z)"),
         (DV_TOTAL, enc, 100.0, "Total recall (%)"),
         (DV_RELATIONS, enc, 100.0, "Relational recall (%)"),
         (DV_OBJECTS, enc, 100.0, "Object recall (%)"),
@@ -619,7 +619,7 @@ def _figure1_boxplot(
 ) -> pd.DataFrame:
     """
     APA-style side-by-side boxplots of participant-level SVG z-scores.
-    Encoding on left, Decoding on right.
+    Encoding on left, Retrieval on right.
     Permutation baseline (y = 0) shown as dashed line.
     Returns figure data DataFrame.
     """
@@ -638,7 +638,7 @@ def _figure1_boxplot(
     )
 
     datasets = [enc_means] + ([dec_means] if has_dec else [])
-    labels = ["Encoding"] + (["Decoding"] if has_dec else [])
+    labels = ["Encoding"] + (["Retrieval"] if has_dec else [])
     positions = [1.0, 1.7] if has_dec else [1.0]
 
     fig, ax = plt.subplots(figsize=(5.4, 4.8))
@@ -1132,7 +1132,7 @@ def summarise(
         summary_lines.append("\n=== Data completeness ===")
         for phase, initial_key, low_n_key, wrong_key, final_key in [
             ("Encoding", "enc_initial", "enc_low_n", "enc_wrong_image", "enc_final"),
-            ("Decoding", "dec_initial", "dec_low_n", "dec_wrong_image", "dec_final"),
+            ("Retrieval", "dec_initial", "dec_low_n", "dec_wrong_image", "dec_final"),
         ]:
             if initial_key in completeness:
                 summary_lines.append(

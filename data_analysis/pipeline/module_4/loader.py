@@ -175,7 +175,7 @@ def build_analysis_tables(df: pd.DataFrame, memory_scores: pd.DataFrame) -> dict
     Also builds a long-format table for the dissociation model
     (SVG × memory_type: relations vs objects).
 
-    Returns dict with keys: "enc", "enc_long"
+    Returns dict with keys: "enc", "enc_long", "dec"
     """
     logger.info("Step 2: Building analysis tables ...")
 
@@ -187,6 +187,7 @@ def build_analysis_tables(df: pd.DataFrame, memory_scores: pd.DataFrame) -> dict
             "aoi_prop": "aoi_prop_enc",
             "mean_salience": "mean_salience_enc",
             "mean_salience_relational": "mean_salience_relational_enc",
+            "mean_meaning": "mean_meaning_enc",
             "low_n": "low_n_enc",
         }
     ).reset_index(drop=True)
@@ -237,6 +238,7 @@ def build_analysis_tables(df: pd.DataFrame, memory_scores: pd.DataFrame) -> dict
             "aoi_prop": "aoi_prop_dec",
             "mean_salience": "mean_salience_dec",
             "mean_salience_relational": "mean_salience_relational_dec",
+            "mean_meaning": "mean_meaning_dec",
             "low_n": "low_n_dec",
         }
     ).reset_index(drop=True)

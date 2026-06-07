@@ -5,11 +5,11 @@ Module 3: Feature extraction for the relational replay analysis.
 
 Runs per-participant, in sequence:
     Step 3  — AOI assignment (screen→image transform, point-in-polygon,
-               proximity fallback, saliency sampling)
+               proximity fallback, saliency and meaning sampling)
     Step 4  — Build object sequences per trial
     Step 5  — SVG alignment z-scores (all relations + interactional only)
     Step 7  — Per-trial covariates (fixation count, AOI proportion,
-               mean saliency)
+               mean saliency, mean meaning)
     Step 8  — Join behavioral data (encoding + decoding accuracy,
                confidence, RT per question)
     Step 9  — Assemble trial_features.csv (60 rows per participant)
@@ -145,8 +145,16 @@ def _compute_covariates(
     trial_df: pd.DataFrame,
 ) -> pd.DataFrame:
     """
-    Compute fixation count, AOI proportion, and mean saliency per trial.
-    Joined onto trial_df by StimID × Phase.
+    Compute fixation count, AOI proportion, mean saliency, and mean meaning
+    per trial. Joined onto trial_df by StimID × Phase.
+
+    mean_salience and mean_meaning are computed across ALL fixations in the
+    trial (not restricted to relational fixations), so they are independent
+    of the SVG predictor and correctly operationalise bottom-up guidance
+    as a trial-level covariate.
+
+    mean_meaning is NaN for trials whose _fixations_aoi.csv predates the
+    meaning map pipeline. Run Module 3 with --force-aoi to populate it.
     """
     logger.info(f"  Step 7: Computing covariates ...")
 
@@ -160,6 +168,13 @@ def _compute_covariates(
         aoi_prop = n_aoi / n_fixations if n_fixations > 0 else np.nan
         mean_salience = group["SalienceAtFixation"].mean()
 
+        # mean_meaning: all-fixation mean of CLIP meaning map values.
+        # Guard against _fixations_aoi.csv files written before this column existed.
+        if "MeaningAtFixation" in group.columns:
+            mean_meaning = group["MeaningAtFixation"].mean()
+        else:
+            mean_meaning = np.nan
+
         covariate_rows.append(
             {
                 "StimID": str(stim_id),
@@ -169,6 +184,9 @@ def _compute_covariates(
                 "aoi_prop": round(aoi_prop, 4) if not np.isnan(aoi_prop) else np.nan,
                 "mean_salience": (
                     round(mean_salience, 6) if not np.isnan(mean_salience) else np.nan
+                ),
+                "mean_meaning": (
+                    round(mean_meaning, 6) if not np.isnan(mean_meaning) else np.nan
                 ),
             }
         )
@@ -330,6 +348,7 @@ def _validate(subject_id: str, trial_df: pd.DataFrame) -> bool:
         "n_fixations",
         "aoi_prop",
         "mean_salience",
+        "mean_meaning",
         "mean_salience_relational",
         "mean_salience_nonrelational",
     ]

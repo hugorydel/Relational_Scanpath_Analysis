@@ -4,7 +4,7 @@ module_3/aoi.py
 Step 3 of Module 3: AOI assignment for fixations.
 
 Takes the fixation CSV from Module 2, assigns each fixation to an object
-polygon (or None), and appends saliency values. Writes an enriched
+polygon (or None), and appends saliency and meaning values. Writes an enriched
 _fixations_aoi.csv per participant.
 
 Pipeline
@@ -14,18 +14,21 @@ Pipeline
 3. Proximity fallback if no polygon hit — assign to nearest centroid within
    AOI_PROXIMITY_THRESHOLD_ENCODING_PX (encoding) or
    AOI_PROXIMITY_THRESHOLD_DECODING_PX (decoding)
-4. Sample saliency map at fixation location (bilinear interpolation)
+4. Sample saliency map and meaning map at fixation location (bilinear
+   interpolation)
 5. Write enriched fixations CSV
 
 Output columns (appended to all Module 2 columns)
 --------------------------------------------------
-ImgX              : float  — fixation x in image space (0–1024)
-ImgY              : float  — fixation y in image space (0–768)
-ObjectID          : int or NaN — assigned object ID
-ObjectName        : str or NaN — object label
-AssignmentMethod  : "polygon" | "proximity" | "none"
-ProximityDist_px  : float or NaN — centroid distance for proximity hits
-SalienceAtFixation: float — saliency map value at (ImgX, ImgY)
+ImgX                : float  — fixation x in image space (0–1024)
+ImgY                : float  — fixation y in image space (0–768)
+ObjectID            : int or NaN — assigned object ID
+ObjectName          : str or NaN — object label
+AssignmentMethod    : "polygon" | "proximity" | "none"
+ProximityDist_px    : float or NaN — centroid distance for proximity hits
+SalienceAtFixation  : float — saliency map value at (ImgX, ImgY)
+MeaningAtFixation   : float — meaning map value at (ImgX, ImgY); NaN if
+                      meaning maps have not yet been computed
 
 Usage (from Module 3):
     from pipeline.module_3.aoi import assign_aoi
@@ -124,28 +127,30 @@ def _centroid_distance(x: float, y: float, centroid: tuple) -> float:
 
 
 # ---------------------------------------------------------------------------
-# Saliency lookup
+# Map sampling  (bilinear interpolation — works for saliency or meaning maps)
 # ---------------------------------------------------------------------------
 
 
-def _sample_saliency(
+def _sample_map(
     img_x: float,
     img_y: float,
-    sal_map: np.ndarray,
+    map_2d: np.ndarray,
 ) -> float:
     """
-    Bilinear interpolation of saliency map at sub-pixel location (img_x, img_y).
+    Bilinear interpolation of a 2-D float map at sub-pixel location (img_x, img_y).
+
+    Used for both saliency maps and meaning maps.
 
     Parameters
     ----------
     img_x, img_y : float        — image coordinates (0–1024, 0–768)
-    sal_map      : np.ndarray   — (IMAGE_H, IMAGE_W) float32 saliency map
+    map_2d       : np.ndarray   — (IMAGE_H, IMAGE_W) float32 map
 
     Returns
     -------
-    float — interpolated saliency value
+    float — interpolated map value
     """
-    h, w = sal_map.shape
+    h, w = map_2d.shape
 
     # Clamp to valid range
     x = float(np.clip(img_x, 0, w - 1))
@@ -156,14 +161,18 @@ def _sample_saliency(
 
     dx, dy = x - x0, y - y0
 
-    # Bilinear interpolation
     val = (
-        sal_map[y0, x0] * (1 - dx) * (1 - dy)
-        + sal_map[y0, x1] * dx * (1 - dy)
-        + sal_map[y1, x0] * (1 - dx) * dy
-        + sal_map[y1, x1] * dx * dy
+        map_2d[y0, x0] * (1 - dx) * (1 - dy)
+        + map_2d[y0, x1] * dx * (1 - dy)
+        + map_2d[y1, x0] * (1 - dx) * dy
+        + map_2d[y1, x1] * dx * dy
     )
     return float(val)
+
+
+# Keep the old name as an alias so any external code that imports it directly
+# continues to work without modification.
+_sample_saliency = _sample_map
 
 
 # ---------------------------------------------------------------------------
@@ -247,9 +256,10 @@ def assign_aoi(
     fixations_df: pd.DataFrame,
     image_dir: Optional[Path] = None,
     cache_dir: Optional[Path] = None,
+    meaning_dir: Optional[Path] = None,
 ) -> pd.DataFrame:
     """
-    Assign AOI labels and saliency values to all fixations.
+    Assign AOI labels, saliency values, and meaning values to all fixations.
 
     Parameters
     ----------
@@ -260,21 +270,30 @@ def assign_aoi(
         Directory of stimulus images (for saliency map loading).
     cache_dir : Path, optional
         Directory of cached saliency .npy files.
+    meaning_dir : Path, optional
+        Directory of cached meaning map .npy files. If None, defaults to
+        config.OUTPUT_DIR / "meaning_maps". MeaningAtFixation is set to NaN
+        for any stimulus whose meaning map file is absent (e.g. before
+        pipeline.meaning.meaning has been run).
 
     Returns
     -------
     pd.DataFrame
         Original fixations_df with additional columns:
         ImgX, ImgY, ObjectID, ObjectName, AssignmentMethod,
-        ProximityDist_px, SalienceAtFixation.
+        ProximityDist_px, SalienceAtFixation, MeaningAtFixation.
     """
     polygon_index = build_polygon_index()
 
     image_dir = Path(image_dir) if image_dir else config.DATA_METADATA_DIR / "images"
     cache_dir = Path(cache_dir) if cache_dir else config.OUTPUT_DIR / "saliency_maps"
+    meaning_dir = (
+        Path(meaning_dir) if meaning_dir else config.OUTPUT_DIR / "meaning_maps"
+    )
 
-    # Pre-load saliency maps for all unique StimIDs in this participant's data
     stim_ids = fixations_df["StimID"].unique()
+
+    # --- pre-load saliency maps ---
     sal_maps = {}
     for stim_id in stim_ids:
         try:
@@ -285,26 +304,55 @@ def assign_aoi(
             logger.warning(f"  Saliency map not found for {stim_id} — will use NaN.")
             sal_maps[stim_id] = None
 
-    # Build result rows
+    # --- pre-load meaning maps (gracefully absent before meaning pipeline runs) ---
+    try:
+        from pipeline.meaning.meaning import get_meaning_map as _get_meaning_map
+
+        _meaning_available = True
+    except ImportError:
+        logger.warning(
+            "  open-clip-torch not installed — MeaningAtFixation will be NaN. "
+            "Install with: pip install open-clip-torch"
+        )
+        _meaning_available = False
+
+    meaning_maps = {}
+    if _meaning_available:
+        for stim_id in stim_ids:
+            try:
+                meaning_maps[stim_id] = _get_meaning_map(
+                    stim_id, image_dir=image_dir, cache_dir=meaning_dir
+                )
+            except FileNotFoundError:
+                logger.warning(
+                    f"  Meaning map not found for {stim_id} — will use NaN. "
+                    "Run `python -m pipeline.meaning.meaning` to pre-compute."
+                )
+                meaning_maps[stim_id] = None
+
+    # --- build result rows ---
     results = []
 
     for _, row in fixations_df.iterrows():
         stim_id = str(row["StimID"])
         phase = str(row["Phase"])
 
-        # Transform coordinates
         img_x, img_y = screen_to_image(float(row["GazeX"]), float(row["GazeY"]))
 
-        # AOI assignment
         poly_list = polygon_index.get(stim_id, [])
         assignment = _assign_single_fixation(img_x, img_y, phase, poly_list)
 
-        # Saliency lookup
+        # Saliency
         sal_map = sal_maps.get(stim_id)
-        if sal_map is not None:
-            salience = _sample_saliency(img_x, img_y, sal_map)
-        else:
-            salience = np.nan
+        salience = _sample_map(img_x, img_y, sal_map) if sal_map is not None else np.nan
+
+        # Meaning
+        meaning_map = meaning_maps.get(stim_id) if _meaning_available else None
+        meaning = (
+            _sample_map(img_x, img_y, meaning_map)
+            if meaning_map is not None
+            else np.nan
+        )
 
         results.append(
             {
@@ -317,22 +365,31 @@ def assign_aoi(
                 "SalienceAtFixation": (
                     round(salience, 6) if not np.isnan(salience) else np.nan
                 ),
+                "MeaningAtFixation": (
+                    round(meaning, 6) if not np.isnan(meaning) else np.nan
+                ),
             }
         )
 
     result_df = pd.DataFrame(results, index=fixations_df.index)
     enriched = pd.concat([fixations_df, result_df], axis=1)
 
-    # Log assignment summary
+    # --- log assignment summary ---
     n_total = len(enriched)
     n_polygon = (enriched["AssignmentMethod"] == "polygon").sum()
     n_proximity = (enriched["AssignmentMethod"] == "proximity").sum()
     n_none = (enriched["AssignmentMethod"] == "none").sum()
+    n_meaning_nan = enriched["MeaningAtFixation"].isna().sum()
     logger.info(
         f"  AOI assignment: {n_polygon} polygon ({100*n_polygon/n_total:.1f}%), "
         f"{n_proximity} proximity ({100*n_proximity/n_total:.1f}%), "
         f"{n_none} none ({100*n_none/n_total:.1f}%)  [n={n_total}]"
     )
+    if n_meaning_nan > 0:
+        logger.info(
+            f"  MeaningAtFixation: {n_meaning_nan}/{n_total} NaN "
+            "(meaning maps not yet computed for some stimuli)"
+        )
 
     return enriched
 
@@ -348,6 +405,7 @@ def run_aoi_assignment(
     output_path: Path,
     image_dir: Optional[Path] = None,
     cache_dir: Optional[Path] = None,
+    meaning_dir: Optional[Path] = None,
 ) -> pd.DataFrame:
     """
     Load fixations for one participant, assign AOIs, write enriched CSV.
@@ -358,7 +416,8 @@ def run_aoi_assignment(
     fixations_path: Path  — {SubjectID}_fixations.csv from Module 2
     output_path   : Path  — where to write {SubjectID}_fixations_aoi.csv
     image_dir     : Path, optional
-    cache_dir     : Path, optional
+    cache_dir     : Path, optional   — saliency map cache directory
+    meaning_dir   : Path, optional   — meaning map cache directory
 
     Returns
     -------
@@ -372,7 +431,12 @@ def run_aoi_assignment(
     fixations_df = pd.read_csv(fixations_path, dtype={"StimID": str})
     logger.info(f"  Loaded {len(fixations_df)} fixations.")
 
-    enriched = assign_aoi(fixations_df, image_dir=image_dir, cache_dir=cache_dir)
+    enriched = assign_aoi(
+        fixations_df,
+        image_dir=image_dir,
+        cache_dir=cache_dir,
+        meaning_dir=meaning_dir,
+    )
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     enriched.to_csv(output_path, index=False)

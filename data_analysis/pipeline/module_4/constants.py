@@ -19,9 +19,28 @@ import config
 # Covariate lists
 # ---------------------------------------------------------------------------
 
+# Trial-level covariates for encoding models.
+#
+# mean_salience_enc : mean saliency map value across ALL fixations in the trial.
+#   Controls for the degree to which this participant's scanpath was driven by
+#   low-level visual salience on this trial, independently of whether those
+#   fixations were relational or not.
+#
+# mean_meaning_enc  : mean CLIP-based meaning map value across ALL fixations.
+#   Controls for the degree to which this participant's scanpath was driven by
+#   semantic meaning/recognizability on this trial, independently of whether
+#   those fixations were relational or not.
+#
+# Both are all-fixation means (not restricted to relational fixations) so that
+# they are operationally independent of the SVG predictor. The between-image
+# component of salience/meaning variance is already absorbed by the (1|StimID)
+# random effect; these covariates capture the within-image, between-participant
+# variation — i.e. did this participant specifically track salience/meaning more
+# than others on this image?
 ENC_COVARIATES = [
     "n_fixations_enc",
-    "mean_salience_relational_enc",
+    "mean_salience_enc",
+    "mean_meaning_enc",
 ]
 
 # Between-image covariates:
@@ -32,11 +51,11 @@ ENC_BETWEEN_COVARIATES = ["svg_z_enc_image_mean"]
 # ---------------------------------------------------------------------------
 # Decoding covariate lists
 # ---------------------------------------------------------------------------
-# No enc_total_correct equivalent — that is encoding-task-specific.
 
 DEC_COVARIATES = [
     "n_fixations_dec",
-    "mean_salience_relational_dec",
+    "mean_salience_dec",
+    "mean_meaning_dec",
 ]
 
 DEC_BETWEEN_COVARIATES = ["svg_z_dec_image_mean"]

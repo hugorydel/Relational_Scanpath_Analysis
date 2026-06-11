@@ -10,3 +10,12 @@ __pycache__/*.pyc
 .ipynb_checkpoints/
 *.pyc
 *.log
+
+third_party/deepmeaning/data/create_meaning_maps/patch_temp/
+third_party/deepmeaning/data/create_meaning_maps/input/
+third_party/deepmeaning/data/create_meaning_maps/output/
+third_party/deepmeaning/data/DeepMeaning/CAT/
+third_party/deepmeaning/data/DeepMeaning/diffeomorph_test/
+third_party/deepmeaning/data/interpretation/
+third_party/deepmeaning/data/grid/1920x1080_128px_73over.npz
+third_party/deepmeaning/data/grid/diffeomorph_grid.csv

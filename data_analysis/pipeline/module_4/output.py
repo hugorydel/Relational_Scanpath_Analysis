@@ -3,10 +3,11 @@ pipeline/module_4/output.py
 ============================
 Step 6: Summarise results and write outputs.
 
-  - _extract_coef_table : normalises coefficients from LMM or OLS result
-  - _descriptives       : proportion DV summary stats
-  - _forest_plot        : two-panel forest plot (H2 | Exploratory)
-  - summarise           : master function
+  - _extract_coef_table  : normalises coefficients from LMM or OLS result
+  - compute_descriptives : proportion DV summary stats
+  - _check_lmm_assumptions : Q-Q, residuals-vs-fitted, VIF diagnostics
+  - _figure1/2/3_*       : main paper figures
+  - summarise            : master function
 """
 
 import logging
@@ -35,21 +36,6 @@ from .constants import (
 )
 
 logger = logging.getLogger(__name__)
-
-# Nuisance terms to skip in the forest plot
-_SKIP_TERMS = (
-    {f"{c}_z" for c in ENC_COVARIATES}
-    | {f"{c}_z" for c in ENC_BETWEEN_COVARIATES}
-    | {"Group Var", "StimID Var", "Intercept"}
-)
-
-_PALETTE = {
-    "H1_svg_enc": "#636363",
-    "H2_total": "#2166ac",
-    "H2_relations": "#084594",
-    "H2_objects": "#a63603",
-    "EXP_dissociation": "#74c476",
-}
 
 
 # ---------------------------------------------------------------------------
@@ -369,13 +355,15 @@ def _marginal_predict(result, design_fn, x_grid: np.ndarray) -> tuple:
 _VIF_COLS_ENC = [
     "svg_z_enc_within_z",
     "n_fixations_enc_z",
-    "mean_salience_relational_enc_z",
+    "mean_salience_enc_z",
+    "mean_meaning_enc_z",
     "svg_z_enc_image_mean_z",
 ]
 _VIF_COLS_DEC = [
     "svg_z_dec_within_z",
     "n_fixations_dec_z",
-    "mean_salience_relational_dec_z",
+    "mean_salience_dec_z",
+    "mean_meaning_dec_z",
     "svg_z_dec_image_mean_z",
 ]
 _VIF_COLS_LONG = _VIF_COLS_ENC  # same predictors as enc

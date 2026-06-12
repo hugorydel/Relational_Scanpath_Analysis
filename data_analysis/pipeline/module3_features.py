@@ -390,8 +390,12 @@ def process_subject(subject_id, force_aoi=False, force=False, rng=None) -> pd.Da
     aoi_path = config.OUTPUT_FEATURES_DIR / f"{subject_id}_fixations_aoi.csv"
     output_path = config.OUTPUT_FEATURES_DIR / f"{subject_id}_trial_features.csv"
 
-    # Skip if output already exists and force not requested
-    if output_path.exists() and not force:
+    # Skip only if output already exists AND neither --force nor --force-aoi
+    # was requested. --force-aoi alone must NOT early-return here, since
+    # regenerating _fixations_aoi.csv (Step 3) requires Steps 4-10 to also
+    # re-run so _trial_features.csv reflects the new AOI-derived columns
+    # (e.g. MeaningAtFixation -> mean_meaning).
+    if output_path.exists() and not force and not force_aoi:
         logger.info(f"  Already processed — loading cached output.")
         return pd.read_csv(output_path, dtype={"StimID": str, "SubjectID": str})
 

@@ -205,6 +205,10 @@ def build_analysis_tables(df: pd.DataFrame, memory_scores: pd.DataFrame) -> dict
     # Long-format table for dissociation model
     # Stack prop_relations and prop_objects with a memory_type factor.
     # Both DVs are already on a 0-1 scale so no further normalisation needed.
+    # memory_type is effect-coded (-0.5 / +0.5) rather than dummy-coded, so the
+    # SVG main effect in the interaction model is the average slope across both
+    # memory types instead of the simple slope for objects alone. The interaction
+    # term is unaffected by the choice of coding.
     # ------------------------------------------------------------------
     id_cols = (
         ["SubjectID", "StimID", "svg_z_enc"]
@@ -214,11 +218,11 @@ def build_analysis_tables(df: pd.DataFrame, memory_scores: pd.DataFrame) -> dict
 
     rel_rows = enc[[c for c in id_cols if c in enc.columns] + [DV_RELATIONS]].copy()
     rel_rows = rel_rows.rename(columns={DV_RELATIONS: "score"})
-    rel_rows["memory_type"] = 1  # relations = 1
+    rel_rows["memory_type"] = 0.5  # relations = +0.5
 
     obj_rows = enc[[c for c in id_cols if c in enc.columns] + [DV_OBJECTS]].copy()
     obj_rows = obj_rows.rename(columns={DV_OBJECTS: "score"})
-    obj_rows["memory_type"] = 0  # objects = 0
+    obj_rows["memory_type"] = -0.5  # objects = -0.5
 
     enc_long = pd.concat([rel_rows, obj_rows], ignore_index=True)
 

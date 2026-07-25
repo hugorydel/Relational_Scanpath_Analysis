@@ -18,6 +18,11 @@ from matplotlib.ticker import MultipleLocator
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+
+# Embed TrueType rather than Type 3 fonts in vector output. Type 3 is matplotlib's
+# default and is rejected by many journals, including the Nature portfolio.
+matplotlib.rcParams["pdf.fonttype"] = 42
+matplotlib.rcParams["ps.fonttype"] = 42
 import numpy as np
 import pandas as pd
 import statsmodels.formula.api as smf
@@ -595,6 +600,24 @@ def _apply_apa_style(ax, font="Arial", fontsize=10):
     ax.grid(False)
 
 
+def _save_publication_figure(output_path, dpi=300):
+    """
+    Save a main-paper figure as vector (SVG + PDF) alongside the raster PNG.
+
+    Journals ask for vector format for line art and graphs; the SVG is what gets
+    placed in the Word manuscript, the PDF is for production, and the PNG is kept
+    as a convenience preview. Returns the list of paths written.
+    """
+    output_path = Path(output_path)
+    written = []
+    for suffix in (".png", ".svg", ".pdf"):
+        path = output_path.with_suffix(suffix)
+        # dpi only affects the raster output; it is ignored for svg/pdf
+        plt.savefig(path, dpi=dpi, bbox_inches="tight")
+        written.append(path)
+    return written
+
+
 # ---------------------------------------------------------------------------
 # Figure 1 — Box and whisker: encoding and decoding SVG
 # ---------------------------------------------------------------------------
@@ -660,7 +683,7 @@ def _figure1_boxplot(
 
     plt.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    plt.savefig(output_path, dpi=300, bbox_inches="tight")
+    _save_publication_figure(output_path, dpi=300)
     plt.close()
     logger.info(f"  Written → {output_path.name}")
 
@@ -730,7 +753,7 @@ def _figure2_predicted_total(
 
     plt.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    plt.savefig(output_path, dpi=300, bbox_inches="tight")
+    _save_publication_figure(output_path, dpi=300)
     plt.close()
     logger.info(f"  Written → {output_path.name}")
 
@@ -779,20 +802,22 @@ def _figure3_content_comparison(
     x_max = np.ceil(np.percentile(vals, 97.5))
     x_grid = np.linspace(x_min, x_max, 120)
 
+    # memory_type is effect-coded (-0.5 / +0.5) in loader.py, so the design rows
+    # for each memory type must use those values, not 1 / 0.
     def design_rel(x):
         return {
             "Intercept": 1.0,
             svg_col: x,
-            "memory_type": 1.0,
-            f"{svg_col}:memory_type": x,
+            "memory_type": 0.5,
+            f"{svg_col}:memory_type": 0.5 * x,
         }
 
     def design_obj(x):
         return {
             "Intercept": 1.0,
             svg_col: x,
-            "memory_type": 0.0,
-            f"{svg_col}:memory_type": 0.0,
+            "memory_type": -0.5,
+            f"{svg_col}:memory_type": -0.5 * x,
         }
 
     preds_rel, ci_lo_rel, ci_hi_rel = _marginal_predict(result, design_rel, x_grid)
@@ -842,7 +867,7 @@ def _figure3_content_comparison(
 
     plt.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    plt.savefig(output_path, dpi=300, bbox_inches="tight")
+    _save_publication_figure(output_path, dpi=300)
     plt.close()
     logger.info(f"  Written → {output_path.name}")
 

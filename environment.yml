@@ -1,0 +1,62 @@
+# Conda environment for reproducing the analyses in
+# "Relational Gaze During Encoding Predicts Episodic Recall of Naturalistic Scenes"
+#
+#   conda env create -f environment.yml
+#   conda activate relational-scanpath
+#   cd data_analysis && python run_pipeline.py --modules 4
+#
+# This covers the analysis pipeline (data_analysis/). Optional extras for the
+# meaning-map and stimulus-selection stages are listed at the bottom; they are not
+# needed to reproduce the statistics, figures, or tables in the paper.
+#
+# Versions are those used to produce the reported results.
+
+name: relational-scanpath
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11
+
+  # core analysis
+  - numpy=2.4
+  - pandas=3.0
+  - scipy=1.17
+  - statsmodels=0.14      # linear mixed-effects models (REML, Nelder-Mead)
+  - scikit-learn=1.8      # variance inflation factor support utilities
+
+  # figures
+  - matplotlib=3.10
+
+  # image / salience processing
+  - opencv=4.13           # spectral-residual salience maps
+  - pillow=12.1
+
+  # utilities
+  - tqdm=4.67
+
+  - pip
+  - pip:
+      # eye-tracker EDF reading (not on conda-forge)
+      - eyelinkio
+      # automated recall scoring via the OpenAI API; requires OPENAI_API_KEY.
+      # Only needed to regenerate codebooks and recall scores from raw responses.
+      # The scored outputs are committed, so the statistical analyses run without it.
+      - openai==2.30.0
+
+# ---------------------------------------------------------------------------
+# Optional extras, not required to reproduce the reported results
+# ---------------------------------------------------------------------------
+# Meaning maps (data_analysis/pipeline/meaning, third_party/deepmeaning):
+#     torch, torchvision, open_clip_torch, pingouin
+#     The precomputed meaning maps are included, so these are only needed to
+#     regenerate them from scratch.
+#
+# Stimulus selection (stimuli_generation/):
+#     seaborn, pycocotools, datasets, sentence-transformers, huggingface_hub, PyQt5
+#     The final stimulus set is committed, so these are only needed to repeat the
+#     selection procedure over the Synthetic Visual Genome dataset.
+#
+# Manual scoring app (data_analysis/output/scoring/human_rated_responses):
+#     flask
